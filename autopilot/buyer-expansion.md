@@ -1,11 +1,10 @@
 # Buyer Expansion
 
-Buyer Expansion is how Autopilot discovers new prospects automatically. Every 24 hours, it mines your best-performing accounts to find more people like them—without requiring manual prospecting.
+Buyer Expansion is how Autopilot discovers new prospects automatically. Every 24 hours, it mines your best-performing accounts to find more people like them, without requiring manual prospecting.
 
 {% hint style="info" %}
 **When Autopilot is enabled**, all searches are automatically set with Buyer Expansion turned ON. This means they will run every day to keep your pipeline full with fresh leads.
 {% endhint %}
-
 
 ## How Expansion Works
 
@@ -16,17 +15,17 @@ When you enable Autopilot, it:
 3. Rotates to fresh accounts every 24 hours
 4. Keeps your pipeline flowing with new leads
 
-Expansion is always running in the background, so you never manually have to say "find me more people like this."
+Expansion runs continuously in the background, so you never need to manually say "find me more people like this."
 
 ## X/Twitter Expansion
 
 On X, Autopilot:
 
-1. **Monitors target accounts** — Watches accounts you've flagged with `buyer_expansion: true`
-2. **Calculates daily batches** — Determines how many followers to extract (100–200 per day)
-3. **Increments extraction goals** — Tracks progress toward full follower extraction
-4. **Adds random delay** — Waits 0–6 hours before triggering extraction (spreads activity naturally)
-5. **Detects exhaustion** — If an account's followers are fully extracted, automatically disables expansion for that account
+1. **Monitors target accounts**: Watches accounts you've flagged with `buyer_expansion: true`
+2. **Calculates daily batches**: Determines how many followers to extract (100-200 per day)
+3. **Increments extraction goals**: Tracks progress toward full follower extraction
+4. **Adds random delay**: Waits 0-6 hours before triggering extraction (spreads activity naturally)
+5. **Detects exhaustion**: If an account's followers are fully extracted, automatically disables expansion for that account
 
 This ensures you're continuously discovering new X prospects while staying within platform limits.
 
@@ -56,7 +55,7 @@ On LinkedIn, Autopilot takes a role-based approach:
 This means you systematically build a prospect list across all decision-maker levels without manual configuration.
 
 {% hint style="success" %}
-**Role rotation is smart.** By cycling through roles, you discover different buyer personas at target companies—not just CEOs.
+**Role rotation is smart.** By cycling through roles, you discover different buyer personas at target companies, not just CEOs.
 {% endhint %}
 
 ## Exhaustion Detection
@@ -73,10 +72,12 @@ This prevents wasted effort on accounts or roles you've already fully mined.
 
 Typical expansion brings in:
 
-- **X:** 100–200 new followers per account per day
-- **LinkedIn:** 50–150 new prospects per role per day
+| Platform     | Volume                             |
+| ------------ | ---------------------------------- |
+| **X**        | 100-200 new followers per account per day  |
+| **LinkedIn** | 50-150 new prospects per role per day      |
 
-Combined, Autopilot can add **200–350+ new prospects daily** without manual work.
+Combined, Autopilot can add **200-350+ new prospects daily** without manual work.
 
 ## Keeping Your Pipeline Fresh
 
@@ -97,7 +98,6 @@ Check expansion status:
    - Daily new leads from expansion
    - Active expansion accounts/roles
    - Exhaustion status
-
 3. Check **Activity Log** to see real-time expansion events
 
 ## Expansion and Your Lead Pool
@@ -115,15 +115,15 @@ High-scoring expansion leads auto-enroll into sequences within minutes.
 
 ```
 Expansion discovers new leads
-         ↓
+         |
 Real-time scoring evaluates them
-         ↓
+         |
 Auto-enrollment moves score 60+ to sequences
-         ↓
+         |
 Sequences run outreach campaigns
-         ↓
-Replies come in → moved to Inbox
-         ↓
+         |
+Replies come in -> moved to Inbox
+         |
 You close deals
 ```
 
@@ -137,25 +137,25 @@ Expansion is the top of the funnel that never stops flowing.
 
 You can adjust:
 
-- **Priority roles** — Customize the LinkedIn role rotation order
-- **Expansion accounts** — Add/remove accounts to expand from
-- **Expansion frequency** — Speed up or slow down (default: every 24 hours)
-- **Pause expansion** — Temporarily stop expansion without disabling Autopilot
+- **Priority roles**: Customize the LinkedIn role rotation order
+- **Expansion accounts**: Add or remove accounts to expand from
+- **Expansion frequency**: Speed up or slow down (default: every 24 hours)
+- **Pause expansion**: Temporarily stop expansion without disabling Autopilot
 
 Go to **Autopilot Settings > Expansion** to customize.
 
 ## Common Questions
 
-**Q: Where do expansion leads come from?**  
-A: Followers of accounts you've flagged for expansion + LinkedIn users in priority roles at target companies.
+**Q: Where do expansion leads come from?**
+A: Followers of accounts you've flagged for expansion, plus LinkedIn users in priority roles at target companies.
 
-**Q: Are expansion leads warm?**  
-A: Warmer than cold database lists, yes. They follow relevant accounts or work at target companies. But they're not pre-qualified—that's what scoring does.
+**Q: Are expansion leads warm?**
+A: Warmer than cold database lists, yes. They follow relevant accounts or work at target companies. But they're not pre-qualified; that's what scoring does.
 
-**Q: Can I expand from my competitors?**  
+**Q: Can I expand from my competitors?**
 A: Absolutely. Many users add competitor accounts as expansion sources to build lookalike audiences.
 
-**Q: What if I run out of followers to extract?**  
+**Q: What if I run out of followers to extract?**
 A: Autopilot detects exhaustion and disables that source. You can add new expansion accounts to keep it going, or let Autopilot cycle to the next priority role.
 
 ---

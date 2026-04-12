@@ -15,7 +15,7 @@ LinkedIn enrichment extracts comprehensive professional profile data from Linked
 | Profile Summary | About/Bio section text |
 | Profile Pictures | URLs to profile and banner images |
 
-The headline is especially valuable for outreach—it's often the first signal of seniority, role, and company.
+The headline is especially valuable for outreach. It is often the first signal of seniority, role, and company.
 
 ### Work Experience
 
@@ -89,7 +89,7 @@ Network size can indicate influence and engagement level.
 **Authentication:** LinkedIn data is accessed using a cookie-based session + `li_at` token. This token is configured in your AutoReach workspace settings under **Settings > Accounts > LinkedIn**.
 {% endhint %}
 
-The `li_at` token is a private authentication token that authorizes AutoReach to make API requests to LinkedIn on your behalf. It's sensitive—treat it like a password and don't share it.
+The `li_at` token is a private authentication token that authorizes AutoReach to make API requests to LinkedIn on your behalf. It is sensitive: treat it like a password and never share it.
 
 ## Data Quality & Completeness
 
@@ -99,7 +99,7 @@ LinkedIn profiles vary in completeness:
 - **Sparse profiles** might be missing education, skills, or only have a headline
 - **Private profiles** restrict what data can be accessed
 
-AutoReach handles incomplete profiles gracefully—missing fields simply won't be populated, and scoring algorithms account for incomplete data.
+AutoReach handles incomplete profiles gracefully. Missing fields simply will not be populated, and scoring algorithms account for incomplete data.
 
 {% hint style="warning" %}
 **Privacy Consideration:** Be respectful of LinkedIn's Terms of Service. AutoReach extracts profile data for legitimate outreach and lead qualification purposes. Avoid bulk scraping of profiles that weren't added to your workspace through proper channels.

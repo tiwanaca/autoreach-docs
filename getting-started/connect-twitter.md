@@ -22,7 +22,7 @@ The extension will automatically extract your session cookies and link your X ac
 
 ## Proxy Configuration
 
-AutoReach automatically provisions a secure ISP residential static proxy for your account when you pick a location during onboarding. You don't need to configure or purchase a proxy separately — it's handled for you.
+AutoReach automatically provisions a secure ISP residential static proxy for your account when you pick a location during onboarding. You don't need to configure or purchase a proxy separately.
 
 ### How It Works
 
@@ -34,7 +34,6 @@ AutoReach automatically provisions a secure ISP residential static proxy for you
 {% hint style="info" %}
 **Why ISP proxies?** ISP residential static proxies use real internet service provider IPs, making your activity indistinguishable from a normal user. This is the safest proxy type for social media automation.
 {% endhint %}
-
 
 ## Activity Window Setup
 
@@ -50,7 +49,7 @@ Set a time window during which AutoReach will run actions on your account. This 
 During off-hours, AutoReach pauses all actions. They resume the next morning within your activity window.
 
 {% hint style="info" %}
-**Example**: If you set 9am–9pm EST, AutoReach will only like posts, follow users, and send DMs between those hours. This looks natural to X's systems and reduces detection risk.
+**Example**: If you set 9am to 9pm EST, AutoReach will only like posts, follow users, and send DMs between those hours. This looks natural to X's systems and reduces detection risk.
 {% endhint %}
 
 ## Daily DM Limits
@@ -69,9 +68,11 @@ AutoReach will never send more DMs than this limit, even if your sequence would 
 
 ### Recommended Limits
 
-- **New accounts** (< 3 months): 10–15 DMs/day
-- **Established accounts** (3–12 months): 20–30 DMs/day
-- **Mature accounts** (> 1 year): 40–50 DMs/day
+| Account Age             | Recommended Limit |
+| ----------------------- | ----------------- |
+| New (< 3 months)        | 10-15 DMs/day     |
+| Established (3-12 months) | 20-30 DMs/day   |
+| Mature (> 1 year)       | 40-50 DMs/day     |
 
 Start conservative and increase slowly as your account builds reputation.
 
@@ -81,13 +82,13 @@ AutoReach monitors your X account health and shows you warnings if something's w
 
 ### Account Status Indicators
 
-| Status | Meaning | Action |
-|--------|---------|--------|
-| **Healthy** | Account is running normally | Keep going! |
-| **Warning** | Minor activity detected (likes, follows tracking) | Monitor closely |
-| **Rate Limited** | Hit X's DM or action limit | Wait 24 hours for cooldown |
-| **Bot Detected** | X flagged suspicious activity | Account may need rest (7–14 days) |
-| **Suspended** | Account is temporarily or permanently blocked | Review activity; contact X support if needed |
+| Status           | Meaning                                        | Action                                            |
+| ---------------- | ---------------------------------------------- | ------------------------------------------------- |
+| **Healthy**      | Account is running normally                    | Keep going!                                       |
+| **Warning**      | Minor activity detected (likes, follows tracking) | Monitor closely                                |
+| **Rate Limited** | Hit X's DM or action limit                     | Wait 24 hours for cooldown                        |
+| **Bot Detected** | X flagged suspicious activity                  | Account may need rest (7-14 days)                 |
+| **Suspended**    | Account is temporarily or permanently blocked  | Review activity; contact X support if needed      |
 
 ### What Causes Account Issues
 
@@ -100,6 +101,7 @@ AutoReach monitors your X account health and shows you warnings if something's w
 ### Rate Limit Cooldown
 
 If you hit the DM rate limit:
+
 - You'll see a **Rate Limited** status
 - AutoReach will pause all DM actions
 - You can still like posts and follow users
@@ -108,6 +110,7 @@ If you hit the DM rate limit:
 ### Bot Detection Cooldown
 
 If X detects bot-like behavior:
+
 - You'll see a **Bot Detected** status
 - AutoReach will pause **all actions** (likes, follows, DMs)
 - This cooldown lasts **7 days**
@@ -116,7 +119,7 @@ If X detects bot-like behavior:
 {% hint style="warning" %}
 **Prevention Tips**:
 1. Use a residential proxy to avoid IP-based detection
-2. Set realistic daily DM limits (start with 15–20)
+2. Set realistic daily DM limits (start with 15-20)
 3. Space out your sequences with wait periods (never run continuous actions)
 4. Don't engage with spam, adult, or hateful content
 5. Monitor your account health weekly
@@ -140,7 +143,7 @@ If all checks pass, you're ready to use this account in sequences.
 
 ### "Cookies Invalid"
 
-Your X session has expired. Open the Chrome Extension, click the **three dots (⋯)** next to the account, and click **Reconnect**.
+Your X session has expired. Open the Chrome Extension, click the **three dots** next to the account, and click **Reconnect**.
 
 ### "Proxy Connection Failed"
 
@@ -159,7 +162,7 @@ X flagged suspicious activity. Wait 7 days for the cooldown to expire. In the me
 Once your X account is connected:
 
 1. **Create an Offer** to define your target audience and message tone
-2. **Build a Sequence** to automate outreach (like → follow → DM)
+2. **Build a Sequence** to automate outreach (like, follow, DM)
 3. **Add Leads** manually or via Autopilot
 4. **Launch your Sequence** and monitor results in your Inbox
 

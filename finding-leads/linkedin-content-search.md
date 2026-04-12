@@ -27,7 +27,7 @@ AutoReach searches LinkedIn for:
 - **Hashtags** associated with your offer domain
 
 {% hint style="info" %}
-LinkedIn comment extraction is powerful because commenters are often decision-makers actively engaging with relevant content—a strong buying signal.
+LinkedIn comment extraction is powerful because commenters are often decision-makers actively engaging with relevant content, which is a strong buying signal.
 {% endhint %}
 
 ### 3. Multi-Page Pagination
@@ -50,9 +50,9 @@ Not every LinkedIn post matching your keywords is relevant. Our AI:
 
 We extract prospects from two sources:
 
-**Post Authors:** Decision-makers posting about relevant topics—often senior professionals with buying authority
+**Post Authors:** Decision-makers posting about relevant topics, often senior professionals with buying authority.
 
-**Commenters:** Engaged professionals discussing solutions—frequently stakeholders in purchasing decisions
+**Commenters:** Engaged professionals discussing solutions, frequently stakeholders in purchasing decisions.
 
 Each prospect is automatically scored against your ICP and enriched with professional data.
 
@@ -91,7 +91,7 @@ Real-time progress helps you understand search effectiveness and identify if res
 
 4. **Monitor topic relevance:** Review the topics appearing in your top results. Adjust queries if you're seeing off-topic content.
 
-5. **Leverage comments:** Remember that LinkedIn commenters are often highly engaged decision-makers—don't ignore comment-based prospects.
+5. **Leverage comments:** LinkedIn commenters are often highly engaged decision-makers. Do not overlook comment-based prospects.
 
 6. **Run recurring searches:** Like Twitter, set up daily LinkedIn content searches to capture new prospects continuously.
 
@@ -111,7 +111,7 @@ Real-time progress helps you understand search effectiveness and identify if res
 - "need better visibility into talent"
 - "looking for people analytics solution"
 
-**Result:** Content search finds posts discussing HR challenges, hiring, and performance management—extracting CHRO, VP of People, and Talent Acquisition leaders discussing your exact problem space.
+**Result:** Content search finds posts discussing HR challenges, hiring, and performance management, extracting CHRO, VP of People, and Talent Acquisition leaders discussing your exact problem space.
 
 ## Troubleshooting
 
@@ -131,5 +131,5 @@ Real-time progress helps you understand search effectiveness and identify if res
 - Consider whether LinkedIn is where your buyers congregate
 
 **High duplicate rate across searches?**
-- This is normal—the same prospect may comment on multiple relevant posts
+- This is normal. The same prospect may comment on multiple relevant posts
 - ICP matching automatically deduplicates before adding to your lead database

@@ -1,6 +1,6 @@
 # Knowledge Base & RAG
 
-The Knowledge Base is AutoReach's memory system. Upload your sales playbooks, case studies, FAQs, and objection handling docs, and the AI will reference them when generating responses—making your AI assistant smarter with every document you add.
+The Knowledge Base is AutoReach's memory system. Upload your sales playbooks, case studies, FAQs, and objection handling docs, and the AI will reference them when generating responses, making your AI assistant smarter with every document you add.
 
 ## What Is RAG?
 
@@ -16,9 +16,9 @@ This approach is far better than "fine-tuning" the AI on your data. The AI stays
 
 You can upload:
 
-- **PDF files** — Sales decks, case studies, whitepapers
-- **DOCX files** — Word documents, playbooks, sales guides
-- **TXT files** — FAQs, objection handling scripts, notes
+- **PDF files**: Sales decks, case studies, whitepapers
+- **DOCX files**: Word documents, playbooks, sales guides
+- **TXT files**: FAQs, objection handling scripts, notes
 
 Simply drag and drop or click **Upload Documents** in your Knowledge Base section.
 
@@ -35,7 +35,7 @@ When you upload a document, AutoReach:
 3. **Stores embeddings** in **pgvector** (a vector database)
 4. **Indexes by relevance** so the AI can quickly find matching content
 
-This entire process happens automatically in the background. You don't need to do anything—just upload and the Knowledge Base is ready to use.
+This entire process happens automatically in the background. Just upload the file and the Knowledge Base is ready to use.
 
 ## How Knowledge Base Is Retrieved
 
@@ -64,7 +64,7 @@ The AI has separate token limits for different retrieval sources to balance cont
 This means the AI can include significant context from your docs and tone examples while staying within token limits.
 
 {% hint style="info" %}
-**What Are Tokens?**: Roughly, 1 token ≈ 4 characters. A 600-token knowledge base can include ~2,400 characters (about 1–2 pages of text).
+**What Are Tokens?**: Roughly, 1 token is about 4 characters. A 600-token knowledge base can include approximately 2,400 characters (about 1-2 pages of text).
 {% endhint %}
 
 ## When Knowledge Base Is Used
@@ -72,6 +72,7 @@ This means the AI can include significant context from your docs and tone exampl
 The Knowledge Base powers AI responses in three key moments:
 
 ### 1. Cold DM Generation
+
 When the AI generates your initial outreach message, it references your Knowledge Base to:
 
 - Match your company's value proposition
@@ -79,6 +80,7 @@ When the AI generates your initial outreach message, it references your Knowledg
 - Include credible social proof
 
 ### 2. Response Generation
+
 When a prospect replies, the AI searches your Knowledge Base for:
 
 - Relevant case studies (if the prospect's industry matches)
@@ -86,6 +88,7 @@ When a prospect replies, the AI searches your Knowledge Base for:
 - Product details (if they ask about your solution)
 
 ### 3. Offer-Specific Context
+
 Your Knowledge Base can be attached to a specific **Offer** (ICP), so:
 
 - Different offers can have different knowledge bases
@@ -95,6 +98,7 @@ Your Knowledge Base can be attached to a specific **Offer** (ICP), so:
 ## Best Practices for Your Knowledge Base
 
 ### 1. Upload Your Sales Playbook
+
 Include:
 
 - Your core value proposition
@@ -107,6 +111,7 @@ Include:
 ---
 
 ### 2. Include Objection Handling
+
 Upload a document with:
 
 - Common objections you hear (budget, timing, fit, etc.)
@@ -118,9 +123,10 @@ Upload a document with:
 ---
 
 ### 3. Add Case Studies
+
 Include:
 
-- 3–5 detailed case studies from similar prospects
+- 3-5 detailed case studies from similar prospects
 - Before/after metrics (time saved, revenue impact, etc.)
 - Company size, industry, specific challenge
 
@@ -129,6 +135,7 @@ Include:
 ---
 
 ### 4. Create a FAQ Document
+
 Include:
 
 - Pricing (if relevant)
@@ -141,6 +148,7 @@ Include:
 ---
 
 ### 5. Keep It Updated
+
 - Review your Knowledge Base quarterly
 - Replace outdated case studies with fresh ones
 - Update pricing, timelines, or process changes
@@ -154,7 +162,7 @@ Include:
 
 Your 1,100 token RAG budget is split across Knowledge Base (600) and Tone Examples (500). If you're running out of tokens:
 
-- **Prioritize brevity**: Keep case studies to 100–150 words each
+- **Prioritize brevity**: Keep case studies to 100-150 words each
 - **Use summaries**: Instead of uploading full whitepapers, create summary docs
 - **Segment by offer**: If you have multiple offers, use separate Knowledge Bases for each
 
@@ -167,12 +175,12 @@ If you consistently exceed your budget, consider uploading only your highest-imp
 ## Example: A Well-Structured Knowledge Base
 
 ```
-📁 Knowledge Base
-├── Playbook.docx (Your sales process, buyer personas, value prop)
-├── Case Studies.pdf (3–5 recent case studies with metrics)
-├── Objection Handling.docx (Common objections + responses)
-├── FAQ.txt (Pricing, implementation, support FAQs)
-└── Product Overview.pdf (Feature overview, use cases)
+Knowledge Base
+  Playbook.docx (Your sales process, buyer personas, value prop)
+  Case Studies.pdf (3-5 recent case studies with metrics)
+  Objection Handling.docx (Common objections + responses)
+  FAQ.txt (Pricing, implementation, support FAQs)
+  Product Overview.pdf (Feature overview, use cases)
 ```
 
 This structure gives the AI a complete picture of your business without overloading any single category.

@@ -28,7 +28,7 @@ These examples capture different tones and scenarios so the AI has a diverse ran
 AutoReach automatically removes redundant or overly similar examples using **Jaccard similarity**. If two examples are more than **85% similar**, the weaker one is removed. This keeps your tone library focused and non-repetitive.
 
 {% hint style="info" %}
-**Jaccard Similarity**: A measure of how much two pieces of text overlap. Similarity > 0.85 means the examples are almost identical, so removing one saves the AI from learning the same pattern twice.
+**Jaccard Similarity**: A measure of how much two pieces of text overlap. Similarity above 0.85 means the examples are almost identical, so removing one saves the AI from learning the same pattern twice.
 {% endhint %}
 
 ## Anti-Pattern Detection
@@ -71,7 +71,7 @@ Only examples above the 0.5 threshold are used to inform the response. This keep
 
 You can review, edit, or delete tone examples at any time:
 
-1. **Open your sequence** → **Tone Examples** tab
+1. **Open your sequence** > **Tone Examples** tab
 2. **View all examples** by stage (Opener Reply, Discovery, Objections, etc.)
 3. **Edit an example** to match your voice better
 4. **Delete an example** if it doesn't fit your style
@@ -104,32 +104,32 @@ Delete examples when:
 - They're too long or too short compared to your actual style
 
 {% hint style="warning" %}
-**Deleting Examples**: Once deleted, examples won't be used to train future AI responses. Make sure you're not deleting something you actually like—you can always edit instead of delete.
+**Deleting Examples**: Once deleted, examples won't be used to train future AI responses. Make sure you're not deleting something you actually like. You can always edit instead of delete.
 {% endhint %}
 
 ## Matching Tone, Length, and Energy
 
 The AI uses your tone examples to:
 
-- **Match word choice** — If your examples use "totally" instead of "absolutely", the AI will too
-- **Match sentence structure** — If your examples use short, punchy sentences, the AI follows suit
-- **Match formality level** — If you're casual, the AI sounds casual
-- **Match question style** — Do you ask open-ended or closed-ended questions?
-- **Match energy** — Are you enthusiastic, matter-of-fact, or somewhere in between?
+- **Match word choice.** If your examples use "totally" instead of "absolutely", the AI will too
+- **Match sentence structure.** If your examples use short, punchy sentences, the AI follows suit
+- **Match formality level.** If you're casual, the AI sounds casual
+- **Match question style.** Do you ask open-ended or closed-ended questions?
+- **Match energy.** Are you enthusiastic, matter-of-fact, or somewhere in between?
 
 The more consistent your tone examples are, the more consistent the AI's responses will be.
 
 ## Pro Tips for Tone Examples
 
-1. **Review after your first 5 conversations** — Have the AI responses matched your actual voice? If not, edit examples.
+1. **Review after your first 5 conversations.** Have the AI responses matched your actual voice? If not, edit examples.
 
-2. **Keep examples 40–120 words** — This range captures full conversational turns without being unwieldy.
+2. **Keep examples 40-120 words.** This range captures full conversational turns without being unwieldy.
 
-3. **Mix stages** — Make sure you have examples for all 7 conversation stages. If you have 10 examples of Discovery and none of Objection Handling, the AI will struggle with objections.
+3. **Mix stages.** Make sure you have examples for all 7 conversation stages. If you have 10 examples of Discovery and none of Objection Handling, the AI will struggle with objections.
 
-4. **Use real conversations** — The best tone examples come from conversations that actually went well with prospects. Copy & paste them in!
+4. **Use real conversations.** The best tone examples come from conversations that actually went well with prospects. Copy and paste them in.
 
-5. **Update quarterly** — As your sales pitch evolves, refresh your tone examples to match your current voice.
+5. **Update quarterly.** As your sales pitch evolves, refresh your tone examples to match your current voice.
 
 ---
 

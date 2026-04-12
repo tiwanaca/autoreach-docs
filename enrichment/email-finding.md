@@ -6,7 +6,7 @@ Email finding automatically discovers work email addresses for your leads using 
 
 ### Findymail Integration
 
-AutoReach integrates with **Findymail**, a dedicated email discovery service. Here's the flow:
+AutoReach integrates with **Findymail**, a dedicated email discovery service. The flow works as follows:
 
 1. You provide a LinkedIn profile URL or X/Twitter handle
 2. AutoReach queries Findymail's API with the profile information
@@ -15,7 +15,7 @@ AutoReach integrates with **Findymail**, a dedicated email discovery service. He
 5. High-confidence emails are automatically populated on the lead profile
 
 {% hint style="info" %}
-**Your Own API Key:** Email finding requires your own Findymail API key. AutoReach doesn't provide this—you'll sign up for Findymail separately and add your credentials to AutoReach.
+**Your Own API Key:** Email finding requires your own Findymail API key. AutoReach does not provide one. You will need to sign up for Findymail separately and add your credentials to AutoReach.
 {% endhint %}
 
 ### Setting Up Your Findymail API Key
@@ -32,7 +32,7 @@ Once configured, email finding automatically runs on all new leads.
 
 ## Email Validation
 
-Not all discovered emails are created equal. AutoReach validates every email found:
+Discovered emails vary in reliability. AutoReach validates every email found:
 
 ### Format Validation
 

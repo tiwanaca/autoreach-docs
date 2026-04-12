@@ -8,17 +8,17 @@ AutoReach connects six core concepts into an intelligent outreach machine. Under
 
 ### The Six Core Concepts
 
-**Offers** are the foundation. An offer represents the specific product or service you're selling. It's not just a description—it's the knowledge base that powers everything else on the platform, from lead scoring to personalized messaging.
+**Offers** are the foundation. An offer represents the specific product or service you're selling. It is not just a description: it is the knowledge base that powers everything else on the platform, from lead scoring to personalized messaging.
 
 **Leads** are the people you're trying to reach. AutoReach automatically discovers them across X and LinkedIn, unifying their profiles across platforms. Each lead gets enriched with education, experience, signals, and social activity data.
 
-**Buyer Intelligence** is the AI-powered brain of AutoReach. Our proprietary FIT-FIRST scoring system analyzes each lead across three dimensions—fit, intent, and timing—to predict their purchase probability and readiness to buy.
+**Buyer Intelligence** is the AI-powered brain of AutoReach. Our proprietary FIT-FIRST scoring system analyzes each lead across three dimensions (fit, intent, and timing) to predict their purchase probability and readiness to buy.
 
 **Sequences** are your multi-step outreach campaigns. Define the actions you want to take (send DM, like post, follow), set the timing, and AutoReach executes them automatically across your enrolled leads.
 
-**Conversations** are the intelligent back-and-forth messaging with leads. AutoReach's AI can understand responses, generate contextual replies, and escalate to you when needed—all while maintaining your authentic voice.
+**Conversations** are the intelligent back-and-forth messaging with leads. AutoReach's AI can understand responses, generate contextual replies, and escalate to you when needed, all while maintaining your authentic voice.
 
-**Autopilot** is the full automation mode. When enabled, AutoReach discovers new leads matching your offer, scores them, enrolls them in sequences, and responds to their messages—all without you lifting a finger.
+**Autopilot** is the full automation mode. When enabled, AutoReach discovers new leads matching your offer, scores them, enrolls them in sequences, and responds to their messages, all without you lifting a finger.
 
 ## The Outreach Lifecycle
 
@@ -50,9 +50,9 @@ Here's how these concepts work together in practice:
 └──────┬──────┘
        │
        ▼
-┌─────────────┐
-│  6. Resurface│ ← Monitor signals, re-engage at right moment
-└──────┬──────┘
+┌──────────────┐
+│  6. Resurface│ ← Monitor signals, re-engage at the right moment
+└──────┬───────┘
        │
        ▼
 ┌──────────────┐
@@ -68,7 +68,7 @@ Each concept builds on the others:
 - Without **Leads**, you have no one to contact
 - Without **Buyer Intelligence**, you're reaching everyone equally
 - Without **Sequences**, you have no consistent outreach cadence
-- Without **Conversations**, you can't scale personal response
+- Without **Conversations**, you can't scale personal responses
 - Without **Autopilot**, you're manually triggering everything
 
 {% hint style="info" %}
@@ -77,8 +77,8 @@ Each concept builds on the others:
 
 ## What's Next?
 
-- **[How Leads Work](./leads.md)** — Discover how AutoReach sources, enriches, and organizes leads
-- **[Buyer Intelligence & Scoring](./buyer-scoring.md)** — Understand the three-dimensional scoring model
-- **[Buyer States](./buyer-states.md)** — Learn the five lead states and where they appear in the UI
-- **[Offers & Knowledge Base](./offers-and-knowledge-base.md)** — Deep dive into how offers power everything
-- **[Signal Detection](./signals.md)** — Catalog of all signals AutoReach identifies
+- **[How Leads Work](./leads.md)** - Discover how AutoReach sources, enriches, and organizes leads
+- **[Buyer Intelligence & Scoring](./buyer-scoring.md)** - Understand the three-dimensional scoring model
+- **[Buyer States](./buyer-states.md)** - Learn the five lead states and where they appear in the UI
+- **[Offers & Knowledge Base](./offers-and-knowledge-base.md)** - Deep dive into how offers power everything
+- **[Signal Detection](./signals.md)** - Catalog of all signals AutoReach identifies

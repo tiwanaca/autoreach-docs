@@ -91,7 +91,7 @@ These specific titles yield higher-quality matches than generic searches.
 
 2. **Use job descriptions as ICP validation:** The skills and requirements mentioned tell you what problems the company is solving
 
-3. **Extract multiple decision-makers:** Don't just email the hiring manager—identify their boss, skip-level, and peer decision-makers
+3. **Extract multiple decision-makers:** Go beyond the hiring manager. Identify their boss, skip-level, and peer decision-makers
 
 4. **Monitor posting recency:** Fresh postings (< 24 hours) mean active hiring and responsiveness
 
@@ -120,7 +120,7 @@ These specific titles yield higher-quality matches than generic searches.
 
 ## Company Hiring Signals
 
-Jobs postings indicate:
+Job postings indicate:
 - **Active budget:** Companies posting are actively hiring (have budget allocated)
 - **Department priority:** Growth areas show where companies are investing
 - **Cultural fit:** Job descriptions reveal company values and priorities
@@ -148,12 +148,12 @@ Job Search pairs well with:
 - Use 24-hour or 7-day filters instead of "any time"
 
 **Not finding enough decision-makers per job?**
-- This is normal—not every posting will have multiple extractable contacts
+- This is normal. Not every posting will have multiple extractable contacts
 - Focus on quality over quantity
 - Combine with [LinkedIn People Search](linkedin-people-search.md) to find additional people at hiring companies
 
 **Decision-makers extracted don't seem relevant?**
-- Review the job posting—it should indicate their relevance
+- Review the job posting, which should indicate their relevance
 - Sometimes hiring managers are contractors or recruiters (filter these out)
 - Cross-check extracted contacts against the company organization
 
@@ -168,4 +168,4 @@ Job Search pairs well with:
 - Run monthly job searches
 - Identify companies posting repeatedly
 - These are high-growth companies with continuous hiring (proven buyers)
-- Prioritize outreach to serial hirers—they're actively scaling
+- Prioritize outreach to serial hirers, as they are actively scaling

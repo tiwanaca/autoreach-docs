@@ -20,7 +20,7 @@ AutoReach's AI uses this information to:
 
 ## Creating Your Offer
 
-Go to **Offers** → **Create Offer**. The easiest way is to **add your website URL** — AutoReach will automatically extract your business details and pre-populate the offer fields. Review and modify what's needed, then save. You can also fill in all the details manually.
+Go to **Offers** > **Create Offer**. The easiest way is to **add your website URL**. AutoReach will automatically extract your business details and pre-populate the offer fields. Review and modify what's needed, then save. You can also fill in all the details manually.
 
 ### Required Fields
 
@@ -36,7 +36,7 @@ The name of your offer or product. Keep it short and clear.
 
 #### Description
 
-What you do, in 10–300 characters. Be specific about the transformation or value you provide.
+What you do, in 10-300 characters. Be specific about the transformation or value you provide.
 
 **Good descriptions**:
 - "We help mid-market tech companies reduce security risk through automated vulnerability scanning."
@@ -50,10 +50,10 @@ What you do, in 10–300 characters. Be specific about the transformation or val
 
 #### Target Audience
 
-Who you're trying to reach, in 10–400 characters. Describe the role, company size, industry, or pain point.
+Who you're trying to reach, in 10-400 characters. Describe the role, company size, industry, or pain point.
 
 **Good target audiences**:
-- "CTOs and security leads at Series B–D tech companies (50–1000 employees)"
+- "CTOs and security leads at Series B-D tech companies (50-1000 employees)"
 - "Startup founders and early-stage employees managing financial operations"
 - "Marketing directors at B2B SaaS companies looking to scale content production"
 - "VP of Sales at enterprise software companies dealing with sales cycle delays"
@@ -62,20 +62,20 @@ Who you're trying to reach, in 10–400 characters. Describe the role, company s
 
 What you want to achieve with outreach. Choose one:
 
-- **`start_conversation`** — Your main goal is to get a response and open dialogue
-- **`provide_value`** — You want to share useful insights, resources, or introductions
-- **`soft_pitch`** — Introduce your solution gently without hard selling
-- **`book_call`** — Schedule a meeting or call directly
+- **`start_conversation`**: Your main goal is to get a response and open dialogue.
+- **`provide_value`**: You want to share useful insights, resources, or introductions.
+- **`soft_pitch`**: Introduce your solution gently without hard selling.
+- **`book_call`**: Schedule a meeting or call directly.
 
 Your goal influences how AutoReach personalizes DMs. For example:
-- `start_conversation` → Friendly, low-pressure opener ("Quick question about...")
-- `book_call` → Direct and specific ("Let's chat on Tuesday at 2pm")
+- `start_conversation` results in a friendly, low-pressure opener ("Quick question about...")
+- `book_call` results in a direct and specific ask ("Let's chat on Tuesday at 2pm")
 
 ### Optional but Recommended Fields
 
 #### Pain Points
 
-A list of 3–5 pain points your Offer solves. Use short phrases (3–7 words each).
+A list of 3-5 pain points your Offer solves. Use short phrases (3-7 words each).
 
 **Examples**:
 - "Security vulnerabilities going undetected"
@@ -87,7 +87,7 @@ Pain points help AutoReach find prospects who mention these issues on social med
 
 #### Competitors
 
-3–6 companies or products you compete with. This helps AutoReach understand your market position and identify target prospects.
+3-6 companies or products you compete with. This helps AutoReach understand your market position and identify target prospects.
 
 **Examples**:
 - Slack (if you're a communication tool)
@@ -114,7 +114,7 @@ Upload your strategy docs, case studies, and other context. AutoReach's AI uses 
 
 ### What to Upload
 
-Upload 1–5 documents (PDF, DOCX, or TXT) with:
+Upload 1-5 documents (PDF, DOCX, or TXT) with:
 
 - **Case studies**: How you solved problems for past clients
 - **Playbooks**: Your outreach strategy, sales process, or methodology
@@ -126,7 +126,7 @@ Upload 1–5 documents (PDF, DOCX, or TXT) with:
 
 1. In your Offer, go to **Knowledge Base**
 2. Click **Upload Documents**
-3. Select 1–5 files (PDF, DOCX, TXT)
+3. Select 1-5 files (PDF, DOCX, TXT)
 4. Click **Upload**
 
 AutoReach will:
@@ -168,7 +168,7 @@ These examples help AutoReach's AI understand your style so it generates message
 
 ### Reviewing Tone Examples
 
-1. Go to your Offer → **Tone Examples**
+1. Go to your Offer > **Tone Examples**
 2. Review the 21 auto-generated examples
 3. Edit any that don't match your voice (click the example to edit)
 4. Add custom examples if you want to emphasize a specific style
@@ -185,7 +185,7 @@ If the auto-generated examples don't feel right:
 The more examples you provide, the better AutoReach learns your voice.
 
 {% hint style="info" %}
-**Tip**: Use tone examples from your own past successful outreach. If you have 5–10 DMs that got great responses, add them as custom tone examples. AutoReach will learn from your winners.
+**Tip**: Use tone examples from your own past successful outreach. If you have 5-10 DMs that got great responses, add them as custom tone examples. AutoReach will learn from your winners.
 {% endhint %}
 
 ## How Your Offer Powers AutoReach
@@ -265,7 +265,7 @@ As your business evolves, update your Offer:
 
 **Description**: Automated security assessments that identify vulnerabilities in your SaaS stack. Our framework checks 200+ integrations and compliance requirements in 2 hours.
 
-**Target Audience**: CTOs and Security leads at Series B–D tech companies (50–500 employees), managing cloud security and compliance.
+**Target Audience**: CTOs and Security leads at Series B-D tech companies (50-500 employees), managing cloud security and compliance.
 
 **Goal**: Book Call
 
@@ -285,7 +285,7 @@ As your business evolves, update your Offer:
 3. Compliance Checklist: SOC 2, ISO 27001, HIPAA requirements we check
 
 **Tone Examples**: (Auto-generated, reviewed for accuracy)
-- Friendly examples: "Just reviewed your security setup — 2 quick questions..."
+- Friendly examples: "Just reviewed your security setup. 2 quick questions..."
 - Closing examples: "Let's run a 30-min security audit next Tuesday?"
 
 Now you're ready to use this Offer to build sequences, find leads, and automate outreach!

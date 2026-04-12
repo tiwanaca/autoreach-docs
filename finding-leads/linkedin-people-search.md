@@ -90,7 +90,7 @@ If AutoReach's server restarts during an active search:
 
 ### Example 1: CTOs at Funded Startups
 - **Title:** Chief Technology Officer, CTO, VP Engineering
-- **Company:** (leave empty—we'll find startups)
+- **Company:** (leave empty to find startups broadly)
 - **Location:** San Francisco Bay Area
 - **Result:** Find all CTOs in your metro area
 

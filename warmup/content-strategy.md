@@ -6,13 +6,13 @@ Your Account Warmup content is organized around **5 content pillars** derived fr
 
 Content pillars are 5 core themes that represent different angles of your expertise and value proposition. Think of them as the main topics you should be known for.
 
-AutoReach automatically derives these from your offer. For example, if you're selling sales automation software, your pillars might be:
+AutoReach automatically derives these from your offer. For example, if you are selling sales automation software, your pillars might be:
 
-1. **Industry Insights** — Market trends, industry news, and analysis
-2. **Practical Tips** — How-to content and actionable advice
-3. **Case Studies** — Real results and customer wins
-4. **Thought Leadership** — Original perspectives on industry challenges
-5. **Community Engagement** — Replies and conversations with your audience
+1. **Industry Insights**: market trends, industry news, and analysis
+2. **Practical Tips**: how-to content and actionable advice
+3. **Case Studies**: real results and customer wins
+4. **Thought Leadership**: original perspectives on industry challenges
+5. **Community Engagement**: replies and conversations with your audience
 
 Your specific pillars will differ based on your business and offer.
 
@@ -24,12 +24,12 @@ Pillars help you build authority across multiple angles rather than being a one-
 
 AutoReach generates **13 weeks of content** with a rotating weekly theme:
 
-- **Week 1** — Pillar 1 focused
-- **Week 2** — Pillar 2 focused
-- **Week 3** — Pillar 3 focused
-- **Week 4** — Pillar 4 focused
-- **Week 5** — Pillar 5 focused
-- **Week 6** — Pillar 1 focused (cycle repeats)
+- **Week 1**: Pillar 1 focused
+- **Week 2**: Pillar 2 focused
+- **Week 3**: Pillar 3 focused
+- **Week 4**: Pillar 4 focused
+- **Week 5**: Pillar 5 focused
+- **Week 6**: Pillar 1 focused (cycle repeats)
 - ... and so on through 13 weeks
 
 Within each week, all content (tweets, LinkedIn posts, engagement replies) aligns with that week's pillar. This creates a natural rotation that keeps your content fresh and relevant.
@@ -55,7 +55,7 @@ When your warmup engine engages with other posts (likes, replies, follows), it u
 - Focuses on quality engagement, not volume
 - Comments are contextual and relevant to the original post
 
-This ensures your engagement looks natural and relevant—not spam.
+This ensures your engagement looks natural and relevant, not spammy.
 
 ## High Follower Filtering
 
@@ -69,7 +69,7 @@ Engaging with mega-influencers looks spammy and isn't effective. Warmup focuses 
 - Keeps engagement with accounts that are more likely to notice and appreciate your interaction
 - Maintains authentic, peer-level conversations
 
-## How Your Content Strategy is Created
+## How Your Content Strategy Is Created
 
 Your content strategy is automatically created when you:
 1. Enable **Autopilot** (recommended for hands-off setup)
@@ -81,10 +81,10 @@ AutoReach analyzes your offer, pain points, target audience, and search signals 
 - Engagement keywords for targeting relevant posts
 - AI prompts for generating authentic-sounding posts
 
-No manual pillar selection needed—it's all automatic.
+No manual pillar selection is needed. It is all automatic.
 
 ## Next Steps
 
-- **[Daily Action Allocation](daily-actions.md)** — See how content is distributed daily
-- **[Tweet & Post Generation](content-generation.md)** — Learn about the types of content created
-- **[Engagement Automation](engagement.md)** — Understand how pillars guide your engagement
+- **[Daily Action Allocation](daily-actions.md)**: See how content is distributed daily
+- **[Tweet & Post Generation](content-generation.md)**: Learn about the types of content created
+- **[Engagement Automation](engagement.md)**: Understand how pillars guide your engagement

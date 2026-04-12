@@ -6,13 +6,13 @@ All content in your Account Warmup is AI-generated using your offer context, con
 
 AutoReach generates **2-4 short-form tweets daily** using:
 
-- **Content Pillars** — Each week focuses on one pillar (industry insights, tips, case studies, etc.)
-- **Current Trends** — AI has awareness of the current year and recent industry trends
-- **Your Voice** — Generated content matches your professional tone
-- **Platform Norms** — Tweets are concise, engaging, and optimized for retweets and replies
+- **Content Pillars**: each week focuses on one pillar (industry insights, tips, case studies, etc.)
+- **Current Trends**: AI has awareness of the current year and recent industry trends
+- **Your Voice**: generated content matches your professional tone
+- **Platform Norms**: tweets are concise, engaging, and optimized for retweets and replies
 
 **Example tweet:**
-> "Just realized most sales teams spend 40% of their day on manual data entry. That's not a process problem—it's a tool problem. If your CRM requires manual input, it's creating busywork, not sales velocity. Better tools = better sales."
+> "Just realized most sales teams spend 40% of their day on manual data entry. That's not a process problem, it's a tool problem. If your CRM requires manual input, it's creating busywork, not sales velocity. Better tools = better sales."
 
 Tweets aim to educate, spark conversation, or share quick insights relevant to your niche.
 
@@ -20,10 +20,10 @@ Tweets aim to educate, spark conversation, or share quick insights relevant to y
 
 AutoReach generates **1 long-form LinkedIn post daily** using a proven structure:
 
-1. **Hook** — A compelling first line that stops the scroll
-2. **Context** — 1-3 sentences explaining the problem
-3. **Body** — 3-5 sentences with the main insights or story
-4. **Takeaway** — A clear lesson or actionable insight
+1. **Hook**: a compelling first line that stops the scroll
+2. **Context**: 1-3 sentences explaining the problem
+3. **Body**: 3-5 sentences with the main insights or story
+4. **Takeaway**: a clear lesson or actionable insight
 
 **Example LinkedIn post:**
 > **I spent 3 months analyzing cold outreach patterns across 50 B2B companies.**
@@ -52,7 +52,7 @@ When your warmup engine replies to other posts, it generates **short, contextual
 **Example engagement reply:**
 > Original post: "Anyone else using AI for customer research?"
 >
-> Your reply: "We've been using it to analyze support tickets—uncovers patterns in customer pain points that manual review misses. Game changer for prioritizing product improvements."
+> Your reply: "We've been using it to analyze support tickets. It uncovers patterns in customer pain points that manual review misses. Game changer for prioritizing product improvements."
 
 Replies are 1-3 sentences and feel like a natural continuation of the conversation.
 
@@ -80,7 +80,7 @@ When engaging on LinkedIn, AutoReach generates **50-300 character professional c
 - Relevant to the original post
 
 **Example comment:**
-> "This aligns with our findings—companies that invest in account warmup see 3x higher reply rates on cold outreach. The trust-building phase is critical before asking for anything."
+> "This aligns with our findings. Companies that invest in account warmup see 3x higher reply rates on cold outreach. The trust-building phase is critical before asking for anything."
 
 LinkedIn comments are shorter than posts but more substantive than Twitter replies.
 
@@ -88,11 +88,11 @@ LinkedIn comments are shorter than posts but more substantive than Twitter repli
 
 All content generation happens automatically:
 
-1. **Input**: Your offer, ICP, pain points, industry, and content pillars
-2. **Processing**: AI analyzes current week's pillar and relevant niche context
-3. **Generation**: Natural, authentic-sounding content is created
-4. **Quality Check**: Content is reviewed for relevance and tone
-5. **Approval Queue**: Content awaits your review (or auto-posts if enabled)
+1. **Input**: your offer, ICP, pain points, industry, and content pillars
+2. **Processing**: AI analyzes the current week's pillar and relevant niche context
+3. **Generation**: natural, authentic-sounding content is created
+4. **Quality Check**: content is reviewed for relevance and tone
+5. **Approval Queue**: content awaits your review (or auto-posts if enabled)
 
 ## Content Authenticity
 
@@ -118,6 +118,6 @@ See [Approvals](approvals.md) for details on managing the approval queue.
 
 ## Next Steps
 
-- **[Daily Action Allocation](daily-actions.md)** — See how often content is posted
-- **[Engagement Automation](engagement.md)** — Learn how engagement replies are targeted
-- **[Approvals](approvals.md)** — Review and manage content before posting
+- **[Daily Action Allocation](daily-actions.md)**: See how often content is posted
+- **[Engagement Automation](engagement.md)**: Learn how engagement replies are targeted
+- **[Approvals](approvals.md)**: Review and manage content before posting

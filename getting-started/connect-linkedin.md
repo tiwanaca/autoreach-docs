@@ -33,10 +33,10 @@ Each LinkedIn account gets its own dedicated ISP residential static proxy. This 
 
 LinkedIn enforces weekly limits on connection requests. AutoReach tracks these automatically:
 
-| Account Type | Weekly Limit |
-|---|---|
-| Free / Premium | 100 connections/week |
-| Sales Navigator | 200 connections/week |
+| Account Type       | Weekly Limit           |
+| ------------------ | ---------------------- |
+| Free / Premium     | 100 connections/week   |
+| Sales Navigator    | 200 connections/week   |
 
 These limits reset weekly. AutoReach tracks your usage and pauses connection requests when you approach the limit. If a connection request gets rate-limited, it enters a **deferred state** and automatically resumes the following Monday.
 
@@ -46,9 +46,9 @@ These limits reset weekly. AutoReach tracks your usage and pauses connection req
 
 AutoReach protects your LinkedIn account with three layers of rate limiting:
 
-1. **Concurrency semaphore** — Maximum 1 concurrent request per account. No parallel API calls that could look suspicious.
-2. **Token bucket** — 15 requests per minute. Spreads activity naturally across time.
-3. **Daily budget** — 25,000 requests per day. A hard ceiling that prevents excessive activity.
+1. **Concurrency semaphore**: Maximum 1 concurrent request per account. No parallel API calls that could look suspicious.
+2. **Token bucket**: 15 requests per minute. Spreads activity naturally across time.
+3. **Daily budget**: 25,000 requests per day. A hard ceiling that prevents excessive activity.
 
 If LinkedIn returns automation-detection signals (429 after retries, 999 status, or 403 with automation keywords), AutoReach triggers an **emergency pause** that instantly stops all activity on that account.
 
@@ -58,11 +58,11 @@ If LinkedIn returns automation-detection signals (429 after retries, 999 status,
 
 Set the hours during which AutoReach can perform actions on your LinkedIn account:
 
-- **Timezone** — Your local timezone (e.g., UTC, America/New\_York)
-- **Start time** — When outreach can begin (e.g., 09:00)
-- **End time** — When outreach stops (e.g., 21:00)
+- **Timezone**: Your local timezone (e.g., UTC, America/New\_York)
+- **Start time**: When outreach can begin (e.g., 09:00)
+- **End time**: When outreach stops (e.g., 21:00)
 
-Outside this window, no actions are taken. This makes your activity pattern look natural — real people don't send LinkedIn messages at 3am.
+Outside this window, no actions are taken. This makes your activity pattern look natural. Real people don't send LinkedIn messages at 3am.
 
 {% hint style="info" %}
 Enable the **24/7 Pipeline** toggle if you want enrichment and scoring to run around the clock. Outreach actions still respect your activity window.
@@ -86,7 +86,7 @@ AutoReach monitors your LinkedIn notifications for inbound engagement:
 - **Connection requests** received
 - **Profile views**
 
-These are processed as buying signals — someone engaging with your content may be a potential buyer. AutoReach can automatically create leads from high-intent engagers (replies, comments, connections) and update signals on existing leads.
+These are processed as buying signals. Someone engaging with your content may be a potential buyer. AutoReach can automatically create leads from high-intent engagers (replies, comments, connections) and update signals on existing leads.
 
 ---
 
@@ -94,13 +94,13 @@ These are processed as buying signals — someone engaging with your content may
 
 AutoReach continuously monitors your LinkedIn account health. If issues arise:
 
-| Issue | Cooldown | What Happens |
-|---|---|---|
-| Rate limit | 24 hours | Activity reduced by 50% |
-| Bot detection | 7 days | Activity reduced by 90% (near full stop) |
-| Auth error | 48 hours | Auto-recovery attempted |
-| Proxy error | 24 hours | Auto-recovery attempted |
-| IP blocked | 24 hours | Full activity stop |
+| Issue          | Cooldown   | What Happens                              |
+| -------------- | ---------- | ----------------------------------------- |
+| Rate limit     | 24 hours   | Activity reduced by 50%                   |
+| Bot detection  | 7 days     | Activity reduced by 90% (near full stop)  |
+| Auth error     | 48 hours   | Auto-recovery attempted                   |
+| Proxy error    | 24 hours   | Auto-recovery attempted                   |
+| IP blocked     | 24 hours   | Full activity stop                        |
 
 {% hint style="warning" %}
 If you see a bot detection warning, do not try to bypass it. Wait the full 7-day cooldown and let AutoReach gradually resume activity.
@@ -110,8 +110,8 @@ If you see a bot detection warning, do not try to bypass it. Wait the full 7-day
 
 ## Best Practices
 
-- **One proxy per account** — Never share proxies between LinkedIn accounts
-- **Start with warmup** — Let the Engagement Engine build activity history before launching sequences
-- **Keep connection requests conservative** — Stay well under the weekly limit, especially for new accounts
-- **Use realistic activity windows** — Match the hours you'd normally be active on LinkedIn
-- **Monitor the health dashboard** — Check your account status regularly in the Accounts page
+- **One proxy per account**: Never share proxies between LinkedIn accounts.
+- **Start with warmup**: Let the Engagement Engine build activity history before launching sequences.
+- **Keep connection requests conservative**: Stay well under the weekly limit, especially for new accounts.
+- **Use realistic activity windows**: Match the hours you'd normally be active on LinkedIn.
+- **Monitor the health dashboard**: Check your account status regularly in the Accounts page.

@@ -11,7 +11,7 @@ Autopilot is always working. Here's a breakdown of the continuous operations it 
 - Rotates to fresh seeds before current ones deplete
 - Ensures a continuous pipeline of high-intent prospects
 
-This means you never run out of new leads to reach—Autopilot automatically discovers new sources.
+This means you never run out of new leads to reach. Autopilot automatically discovers new sources.
 
 {% hint style="info" %}
 **Why lookalikes?** Followers of industry influencers are pre-validated as interested in your space, making them higher-intent than cold database searches.
@@ -31,7 +31,7 @@ See all enrolled leads in **Sequences > Leads**.
 
 ## Daily Tweets
 
-**2–4 AI-generated tweets per day** based on your content strategy:
+**2-4 AI-generated tweets per day** based on your content strategy:
 
 - Tweets align with your content pillars and weekly themes
 - Posted at optimal engagement times
@@ -60,7 +60,7 @@ This builds visibility and relationships with your target audience.
 - Updates scores continuously as new data arrives
 - Identifies when leads become "active" (score >= 60)
 
-Higher scores = more ready to buy.
+Higher scores mean more readiness to buy.
 
 {% hint style="success" %}
 **Scoring is continuous.** A lead might start at score 35, then jump to 65 when they post about your space. Autopilot catches that shift and enrolls them instantly.
@@ -102,20 +102,23 @@ Your inbox gets responses without you typing them.
 
 **Tiered re-checking** of low-score leads for new buying signals:
 
-- **Tier 1** (score 50–59) — Every 5 days
-- **Tier 2** (score 40–49) — Every 10 days
-- **Tier 3** (score 30–39) — Every 14 days
-- **Tier 4** (score 0–29) — Every 21 days
+| Tier       | Score Range | Re-check Frequency |
+| ---------- | ----------- | ------------------ |
+| **Tier 1** | 50-59       | Every 5 days       |
+| **Tier 2** | 40-49       | Every 10 days      |
+| **Tier 3** | 30-39       | Every 14 days      |
+| **Tier 4** | 0-29        | Every 21 days      |
 
 Resurfacing checks:
+
 - LinkedIn headline changes (job changes trigger a 25-point boost)
 - Company job data refreshes (if > 7 days stale)
 - New activity patterns
 - Updated social signals
 
-Budget: 40–60 leads per window = ~120–180 leads rescored daily per user.
+Budget: 40-60 leads per window, approximately 120-180 leads rescored daily per user.
 
-If a lead's score improves to >= 60, they're upgraded to "active" and you're notified—this is how Autopilot catches leads who weren't ready before but are now.
+If a lead's score improves to >= 60, they are upgraded to "active" and you are notified. This is how Autopilot catches leads who weren't ready before but are now.
 
 {% hint style="success" %}
 **Leads get second chances.** Monitor resurfacing ensures you don't miss prospects who become buyers later.

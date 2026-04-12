@@ -4,12 +4,12 @@ AutoReach respects platform limits and maintains human-like behavior to keep you
 
 ## Activity Window
 
-The **Activity Window** defines when AutoReach sends messages and takes actions. It simulates real human work hours—you don't work at 3am, and neither should your automation.
+The **Activity Window** defines when AutoReach sends messages and takes actions. It simulates real human work hours. You don't work at 3am, and neither should your automation.
 
 ### Setting Your Activity Window
 
-1. Go to **Account Settings** → **Activity Window**
-2. Set your preferred hours (e.g., 9am–9pm)
+1. Go to **Account Settings** > **Activity Window**
+2. Set your preferred hours (e.g., 9am-9pm)
 3. Choose your timezone
 
 ### How It Works
@@ -18,7 +18,8 @@ The **Activity Window** defines when AutoReach sends messages and takes actions.
 - **Enrichment and lead qualification** can run 24/7 (see below)
 - **Limits reset daily** at the start of your Activity Window
 
-**Example:** If your Activity Window is 9am–9pm US Eastern:
+**Example:** If your Activity Window is 9am-9pm US Eastern:
+
 - A DM scheduled for 8:30am ET is queued and sent at 9:01am ET
 - Connection requests made at 11:30pm ET are queued for 9am ET the next day
 
@@ -35,7 +36,7 @@ Enable **24/7 Pipeline Mode** in settings to run enrichment and lead scoring aro
 - **Outreach:** Still respects Activity Window
 - **Benefit:** Your leads are fully researched and scored when your Activity Window opens; you start sending immediately
 
-Toggle this in **Account Settings** → **24/7 Pipeline Mode**.
+Toggle this in **Account Settings** > **24/7 Pipeline Mode**.
 
 ---
 
@@ -48,10 +49,10 @@ Daily limits prevent your accounts from being flagged for suspicious behavior. A
 Set a **Daily DM Limit** per sequence (e.g., 20, 30, 50 DMs/day):
 
 - **Effect:** If you exceed the limit, excess DMs are queued for the next day
-- **Default:** 20–30/day (depends on account age and history)
+- **Default:** 20-30/day (depends on account age and history)
 - **Why:** Platforms flag accounts sending 100+ DMs in a few hours as spam
 
-Configure in **Sequence Settings** → **Daily Limits**.
+Configure in **Sequence Settings** > **Daily Limits**.
 
 ### Action Limits
 
@@ -65,10 +66,10 @@ Set a **Combined Daily Action Limit** (all actions combined):
 
 LinkedIn enforces hard weekly connection request limits:
 
-| Account Type | Weekly Limit |
-|--------------|------------|
-| Free/Premium | 100 requests/week |
-| Sales Navigator | 200 requests/week |
+| Account Type    | Weekly Limit       |
+| --------------- | ------------------ |
+| Free/Premium    | 100 requests/week  |
+| Sales Navigator | 200 requests/week  |
 
 - **Reset:** Every Monday at 12:01am PT
 - **Effect:** Connection requests exceeding the limit go into **Deferred** state and auto-resume the following Monday
@@ -78,14 +79,15 @@ LinkedIn enforces hard weekly connection request limits:
 
 You have 3 sequences running simultaneously:
 
-| Sequence | Daily DM Limit | Daily Action Limit |
-|----------|---|---|
-| Sequence A (Tech CTOs) | 20 | 30 |
-| Sequence B (VP Sales) | 15 | 25 |
-| Sequence C (Founders) | 15 | 25 |
-| **Total** | **50** | **80** |
+| Sequence                   | Daily DM Limit | Daily Action Limit |
+| -------------------------- | -------------- | ------------------ |
+| Sequence A (Tech CTOs)     | 20             | 30                 |
+| Sequence B (VP Sales)      | 15             | 25                 |
+| Sequence C (Founders)      | 15             | 25                 |
+| **Total**                  | **50**         | **80**             |
 
 On a given day:
+
 - Combined DM limit: 50/day across all sequences
 - Combined action limit: 80/day across all sequences
 - If Sequence A sends 20 DMs by 2pm, remaining sequences have 30 DMs left for the day
@@ -94,14 +96,14 @@ On a given day:
 
 ## Anti-Burst Protection
 
-When you **resume a paused sequence** or restart a stopped sequence, AutoReach spaces out re-activated actions by **15–25 minutes** to avoid sudden spikes.
+When you **resume a paused sequence** or restart a stopped sequence, AutoReach spaces out re-activated actions by **15-25 minutes** to avoid sudden spikes.
 
 ### Example
 
 Your "Tech CTOs" sequence was paused for 3 days with 500 pending DMs.
 
-- **Without anti-burst:** All 500 DMs would fire in the first hour → Platform flags account as spam
-- **With anti-burst:** DMs fire in batches of 5–10 every 15 minutes → Looks natural
+- **Without anti-burst:** All 500 DMs would fire in the first hour, causing the platform to flag your account as spam
+- **With anti-burst:** DMs fire in batches of 5-10 every 15 minutes, which looks natural
 
 This protection activates automatically; you don't need to configure it.
 
@@ -116,6 +118,7 @@ Even with anti-burst protection, resuming a large paused sequence requires cauti
 When a LinkedIn connection request hits the weekly limit, it enters **Deferred** state:
 
 ### What Happens
+
 1. Action attempts to execute
 2. LinkedIn says "You've hit your 100 connection requests this week"
 3. AutoReach moves the action to **Deferred** state
@@ -123,6 +126,7 @@ When a LinkedIn connection request hits the weekly limit, it enters **Deferred**
 5. The action is automatically **retried the following Monday** when limits reset
 
 ### Lead Status
+
 - Lead remains **Active** in the sequence
 - Other actions continue normally (DMs, Likes, etc. still execute)
 - Only the deferred connection request waits until Monday
@@ -130,11 +134,13 @@ When a LinkedIn connection request hits the weekly limit, it enters **Deferred**
 ### Example Timeline
 
 **Wednesday:**
+
 - You have 5 pending connection requests on a Free/Premium LinkedIn account
 - You've already sent 100 requests this week
 - 3 requests execute successfully; 2 hit the limit and go to **Deferred**
 
 **Monday (next week):**
+
 - Weekly limits reset
 - The 2 deferred requests auto-execute
 - No action needed from you
@@ -146,32 +152,41 @@ When a LinkedIn connection request hits the weekly limit, it enters **Deferred**
 AutoReach simulates realistic human behavior to avoid detection and maintain authenticity.
 
 ### Reading Speed
+
 When you enable AI auto-replies, AutoReach simulates reading time:
-- **Speed:** 200–300 words per minute (realistic human reading)
-- **Effect:** If a lead sends a 150-word reply, AutoReach waits 30–45 seconds before typing a response
+
+- **Speed:** 200-300 words per minute (realistic human reading)
+- **Effect:** If a lead sends a 150-word reply, AutoReach waits 30-45 seconds before typing a response
 - **Randomness:** Adds variance so timing doesn't feel mechanical
 
 ### Typing Speed
+
 AI responses are "typed" at a human pace:
-- **Speed:** 40–60 words per minute
-- **Effect:** A 200-word response takes 3–5 minutes to "type"
+
+- **Speed:** 40-60 words per minute
+- **Effect:** A 200-word response takes 3-5 minutes to "type"
 - **Benefit:** Looks like a real human writing in real-time
 
 ### Time-of-Day Multiplier
+
 Response speed varies based on time of day:
-- **9am–12pm:** Fast responses (people are energized)
-- **2pm–4pm:** Slower (post-lunch)
-- **6pm–8pm:** Medium (evening, winding down)
+
+- **9am-12pm:** Fast responses (people are energized)
+- **2pm-4pm:** Slower (post-lunch)
+- **6pm-8pm:** Medium (evening, winding down)
 - **Night:** Very slow or no response
 
 ### Probability of Abandonment
+
 There's a **4% chance** that a partial response is abandoned mid-flow:
+
 - Lead types 2 sentences, gets distracted, leaves the conversation
 - AutoReach simulates this by sending partial responses or delaying further
 - Adds realism without feeling robotic
 
 ### Distribution
-All timing randomness follows a **log-normal distribution**—some responses fast, some slow, with a natural bell curve rather than uniform randomness.
+
+All timing randomness follows a **log-normal distribution**: some responses fast, some slow, with a natural bell curve rather than uniform randomness.
 
 ---
 
@@ -180,19 +195,20 @@ All timing randomness follows a **log-normal distribution**—some responses fas
 Limit how many times AI auto-replies in a single conversation:
 
 - **Default:** 0 (AI disabled; you manually respond)
-- **Common setting:** 2–3 (AI handles initial replies, you take over)
+- **Common setting:** 2-3 (AI handles initial replies, you take over)
 - **Maximum:** 10
 
-Configure in **Sequence Settings** → **AI & Responses**.
+Configure in **Sequence Settings** > **AI & Responses**.
 
 **Example:** If set to 2:
-1. Lead replies to your DM → AI auto-replies (count: 1)
-2. Lead replies again → AI auto-replies (count: 2)
-3. Lead replies a third time → **AI does not reply; your account goes silent**
+
+1. Lead replies to your DM > AI auto-replies (count: 1)
+2. Lead replies again > AI auto-replies (count: 2)
+3. Lead replies a third time > **AI does not reply; your account goes silent**
    - (You can then manually jump in or let the conversation drop)
 
 {% hint style="info" %}
-For warm leads or high-value prospects, set this to 0 and handle replies manually. For cold outreach funnels, 2–3 auto-replies is common.
+For warm leads or high-value prospects, set this to 0 and handle replies manually. For cold outreach funnels, 2-3 auto-replies is common.
 {% endhint %}
 
 ---
@@ -218,7 +234,7 @@ Day 3 (Wednesday 9am): [Wait 2 Days]
 Day 5 (Friday 9am): [Send DM] - executes at 9:12am
 ```
 
-- All actions execute during Activity Window (9am–9pm)
+- All actions execute during Activity Window (9am-9pm)
 - Daily limit: 50 actions/day (plenty of buffer)
 - Lead receives 3 gentle touchpoints over 5 days
 
@@ -232,9 +248,9 @@ Sequence C: 10 DMs/day limit, 20 actions/day limit
 
 - Total daily: 50 DMs, 80 actions
 - If all 3 sequences queue DMs early in the day:
-  - Sequence A sends 20 DMs (9am–11am)
-  - Sequence B sends 20 DMs (11am–1pm)
-  - Sequence C sends 10 DMs (1pm–3pm)
+  - Sequence A sends 20 DMs (9am-11am)
+  - Sequence B sends 20 DMs (11am-1pm)
+  - Sequence C sends 10 DMs (1pm-3pm)
   - Remaining 30 DMs queued for next day
 
 ### Example 3: Resume After Pause (Anti-Burst)
@@ -243,26 +259,26 @@ Sequence C: 10 DMs/day limit, 20 actions/day limit
 Sequence paused with 1000 pending actions (Friday 5pm)
 Resumed on Monday 9am
 
-Monday 9am–12pm:
-  - Batches of 5–10 actions fire every 15 min (anti-burst)
+Monday 9am-12pm:
+  - Batches of 5-10 actions fire every 15 min (anti-burst)
   - ~50 actions execute (spread across 3 hours)
   - Remaining actions queue for next day
 ```
 
-- Without anti-burst: All 1000 would fire in first hour → Spam flag
-- With anti-burst: ~50/hour → Looks natural
+- Without anti-burst: All 1000 would fire in first hour, triggering a spam flag
+- With anti-burst: ~50/hour, which looks natural
 
 ---
 
 ## Best Practices
 
-1. **Set Activity Window to your actual work hours** – Keeps messaging patterns realistic
-2. **Leave buffer in daily limits** – If limit is 50, aim for 30–40 daily. Avoid hitting limits daily.
-3. **Stagger sequence starts** – Don't launch 5 sequences on the same day; space them out
-4. **Monitor limits on LinkedIn** – 100/week fills up fast; track weekly progress
-5. **Resume paused sequences carefully** – If 1000+ pending actions, lower daily limit temporarily
-6. **Test with small batches first** – Launch with 50 leads before scaling to 1000
-7. **Respect weekends** – Consider disabling sequences Friday afternoon if you want human-like behavior
+1. **Set Activity Window to your actual work hours** - Keeps messaging patterns realistic
+2. **Leave buffer in daily limits** - If limit is 50, aim for 30-40 daily. Avoid hitting limits daily.
+3. **Stagger sequence starts** - Don't launch 5 sequences on the same day; space them out
+4. **Monitor limits on LinkedIn** - 100/week fills up fast; track weekly progress
+5. **Resume paused sequences carefully** - If 1000+ pending actions, lower daily limit temporarily
+6. **Test with small batches first** - Launch with 50 leads before scaling to 1000
+7. **Respect weekends** - Consider disabling sequences Friday afternoon if you want human-like behavior
 
 ---
 
@@ -273,6 +289,7 @@ Monday 9am–12pm:
 **Cause:** Daily limit is too low or Activity Window has passed.
 
 **Solution:**
+
 - Check Activity Window is currently active (what time is it vs. your window?)
 - Increase daily limit in Sequence Settings
 - Verify account isn't rate-limited by platform
@@ -282,6 +299,7 @@ Monday 9am–12pm:
 **Cause:** Hit LinkedIn's weekly connection limit (100 for Free/Premium).
 
 **Solution:**
+
 - Check how many requests you've sent this week
 - Wait until next Monday for automatic retry
 - Or lower your connection request frequency in future sequences
@@ -291,8 +309,9 @@ Monday 9am–12pm:
 **Cause:** Activity Window or delay timing issue.
 
 **Solution:**
+
 - Verify Activity Window is set correctly
-- Check sequence step delays (should be 1–3 days apart)
+- Check sequence step delays (should be 1-3 days apart)
 - Review daily limits (too high = no spacing between actions)
 
 ---

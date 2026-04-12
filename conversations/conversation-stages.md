@@ -5,14 +5,16 @@ AutoReach divides your outreach conversations into 7 distinct stages. Each stage
 ## The 7 Stages
 
 ### 1. Opener Reply
-**Triggered**: Lead just responded to your cold DM  
-**Length Target**: 50–80 words  
+
+**Triggered**: Lead just responded to your cold DM
+**Length Target**: 50-80 words
 **Goal**: Acknowledge their message, be genuinely interested, light touch
 
 **AI Behavior**:
+
 - Short and conversational
 - Reference something specific they said
-- Don't pitch yet—you're just getting to know them
+- Don't pitch yet. You're just getting to know them
 - Keep it human and warm
 
 **Example**:
@@ -21,11 +23,13 @@ AutoReach divides your outreach conversations into 7 distinct stages. Each stage
 ---
 
 ### 2. Discovery
-**Triggered**: You're asking questions and learning about their situation  
-**Length Target**: 70–100 words  
+
+**Triggered**: You're asking questions and learning about their situation
+**Length Target**: 70-100 words
 **Goal**: Dig deeper into their pain, timeline, and constraints
 
 **AI Behavior**:
+
 - Curious and investigative
 - Ask targeted, specific questions
 - Build on what they've already shared
@@ -38,11 +42,13 @@ AutoReach divides your outreach conversations into 7 distinct stages. Each stage
 ---
 
 ### 3. Value Prop
-**Triggered**: Lead is asking about your solution or you're introducing it  
-**Length Target**: 80–120 words  
+
+**Triggered**: Lead is asking about your solution or you're introducing it
+**Length Target**: 80-120 words
 **Goal**: Show how you solve their specific problem without overselling
 
 **AI Behavior**:
+
 - Confident but consultative
 - Tie your value directly to what they mentioned
 - Share relevant case studies or proof points (from knowledge base)
@@ -55,11 +61,13 @@ AutoReach divides your outreach conversations into 7 distinct stages. Each stage
 ---
 
 ### 4. Objections
-**Triggered**: Lead raises a concern, budget question, or pushback  
-**Length Target**: 50–100 words  
+
+**Triggered**: Lead raises a concern, budget question, or pushback
+**Length Target**: 50-100 words
 **Goal**: Address concerns directly and compassionately
 
 **AI Behavior**:
+
 - Validate their concern first ("That makes sense")
 - Address the objection head-on
 - Provide a specific counter-point or alternative
@@ -67,17 +75,18 @@ AutoReach divides your outreach conversations into 7 distinct stages. Each stage
 - Move forward with a next step
 
 **Example**:
-> *Totally get that—cost is always a conversation. Here's the thing: most teams see ROI within 60 days because of the time savings. Plus we offer a free 30-day trial so you can test it with your team before committing.
- Ready to see it?*
+> *Totally get that. Cost is always a conversation. Here's the thing: most teams see ROI within 60 days because of the time savings. Plus we offer a free 30-day trial so you can test it with your team before committing. Ready to see it?*
 
 ---
 
 ### 5. Soft Close
-**Triggered**: Lead seems ready to move forward or book a call  
-**Length Target**: 40–70 words  
+
+**Triggered**: Lead seems ready to move forward or book a call
+**Length Target**: 40-70 words
 **Goal**: Suggest the next step naturally, without being pushy
 
 **AI Behavior**:
+
 - Calm and collected
 - Suggest a specific, easy next step (call, demo, trial)
 - Make it feel collaborative, not transactional
@@ -89,11 +98,13 @@ AutoReach divides your outreach conversations into 7 distinct stages. Each stage
 ---
 
 ### 6. Graceful Exit
-**Triggered**: Lead declines or goes silent for a very long time  
-**Length Target**: 30–50 words  
+
+**Triggered**: Lead declines or goes silent for a very long time
+**Length Target**: 30-50 words
 **Goal**: Exit with dignity, leave the door open for the future
 
 **AI Behavior**:
+
 - Respectful and low-pressure
 - Acknowledge their decision
 - Offer a soft re-engagement point
@@ -105,11 +116,13 @@ AutoReach divides your outreach conversations into 7 distinct stages. Each stage
 ---
 
 ### 7. Follow Up
-**Triggered**: Lead went silent for a period (configurable); you're re-engaging  
-**Length Target**: 50–80 words  
+
+**Triggered**: Lead went silent for a period (configurable); you're re-engaging
+**Length Target**: 50-80 words
 **Goal**: Get back on their radar with a fresh angle or new information
 
 **AI Behavior**:
+
 - Light touch, not pushy
 - Reference something new (new feature, case study, benchmark data)
 - Acknowledge the silence without calling it out directly
@@ -127,7 +140,7 @@ You don't need to manually tag conversations. AutoReach automatically detects th
 - **Message history**: How many messages have been exchanged?
 - **Conversation content**: Are they asking about your product? Raising objections? Going silent?
 - **Lead signals**: Did they say "yes"? Did they say "no"? Are they hot or cold?
-- **Sentiment and intent**: Extract intent from message text
+- **Sentiment and intent**: Extracted from the message text
 
 The AI uses this analysis to pick the right stage and adjust its response accordingly.
 
@@ -139,15 +152,15 @@ The AI uses this analysis to pick the right stage and adjust its response accord
 
 Each stage has a word-count range to keep messages natural and readable:
 
-| Stage | Min Words | Max Words | Why? |
-|-------|-----------|-----------|------|
-| Opener Reply | 50 | 80 | Short and punchy—don't overwhelm a cold lead |
-| Discovery | 70 | 100 | Room to ask thoughtful questions |
-| Value Prop | 80 | 120 | Need space to explain your value without overselling |
-| Objections | 50 | 100 | Direct, but not dismissive |
-| Soft Close | 40 | 70 | Keep it simple and easy |
-| Graceful Exit | 30 | 50 | Brief, respectful goodbye |
-| Follow Up | 50 | 80 | Fresh but not overwhelming |
+| Stage         | Min Words | Max Words | Why?                                                |
+| ------------- | --------- | --------- | --------------------------------------------------- |
+| Opener Reply  | 50        | 80        | Short and punchy. Don't overwhelm a cold lead       |
+| Discovery     | 70        | 100       | Room to ask thoughtful questions                     |
+| Value Prop    | 80        | 120       | Need space to explain your value without overselling |
+| Objections    | 50        | 100       | Direct, but not dismissive                           |
+| Soft Close    | 40        | 70        | Keep it simple and easy                              |
+| Graceful Exit | 30        | 50        | Brief, respectful goodbye                            |
+| Follow Up     | 50        | 80        | Fresh but not overwhelming                           |
 
 These targets prevent your messages from being too long (which kills response rates) or too short (which feels dismissive).
 

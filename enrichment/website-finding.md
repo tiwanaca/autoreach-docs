@@ -25,7 +25,7 @@ Website finding leverages OpenAI's web search capabilities to find websites:
 4. **Link Extraction** - Extracts and validates discovered URLs
 5. **Storage** - Saves discovered websites to the lead profile
 
-The process is intelligent—it filters out irrelevant results and focuses on discovering real professional presence.
+The process is intelligent: it filters out irrelevant results and focuses on discovering real professional presence.
 
 ## Requirements
 
@@ -129,7 +129,7 @@ This is normal. Not every lead has discoverable web presence:
 - Company websites might not be indexed well
 - The lead might be newer to the role
 
-This doesn't affect outreach quality—you can still reference LinkedIn and X data.
+This does not affect outreach quality. You can still reference LinkedIn and X data.
 
 ### Irrelevant Websites Found
 

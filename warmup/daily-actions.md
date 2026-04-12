@@ -8,24 +8,24 @@ Each day, warmup generates a random number of actions **within specific ranges**
 
 ## Twitter/X Daily Actions
 
-| Action | Daily Range | Notes |
-|--------|-------------|-------|
-| **Tweets** | 2-4 per day | New content using your content pillars |
-| **Likes** | 2-8 per day | Engagement with relevant posts |
-| **Follows** | 1-5 per day | Following relevant accounts |
-| **Replies** | 2-8 per day | Contextual replies to other posts |
-| **Skip Day Chance** | 15% | No activity on ~1 in 7 days (human behavior) |
+| Action            | Daily Range   | Notes                                            |
+| ----------------- | ------------- | ------------------------------------------------ |
+| **Tweets**        | 2-4 per day   | New content using your content pillars            |
+| **Likes**         | 2-8 per day   | Engagement with relevant posts                   |
+| **Follows**       | 1-5 per day   | Following relevant accounts                      |
+| **Replies**       | 2-8 per day   | Contextual replies to other posts                |
+| **Skip Day Chance** | 15%         | No activity on ~1 in 7 days (human behavior)     |
 
 ## LinkedIn Daily Actions
 
-| Action | Daily Range | Notes |
-|--------|-------------|-------|
-| **Posts** | 1 per day | Long-form professional content |
-| **Likes** | 1-5 per day | Engagement with relevant posts |
-| **Connections** | 0-2 per day | Connection requests to relevant profiles |
-| **Comments** | 1-3 per day | 50-300 character replies on others' posts |
-| **Profile Views** | 1-3 per day | Passive visibility through profile visits |
-| **Skip Day Chance** | 15% | No activity on ~1 in 7 days (human behavior) |
+| Action            | Daily Range   | Notes                                            |
+| ----------------- | ------------- | ------------------------------------------------ |
+| **Posts**         | 1 per day     | Long-form professional content                   |
+| **Likes**         | 1-5 per day   | Engagement with relevant posts                   |
+| **Connections**   | 0-2 per day   | Connection requests to relevant profiles          |
+| **Comments**      | 1-3 per day   | 50-300 character replies on others' posts         |
+| **Profile Views** | 1-3 per day   | Passive visibility through profile visits         |
+| **Skip Day Chance** | 15%         | No activity on ~1 in 7 days (human behavior)     |
 
 ## Randomization & Natural Variation
 
@@ -38,7 +38,7 @@ Instead of posting exactly 3 tweets every day, warmup might post 2 today, 4 tomo
 **Example daily schedule:**
 - Monday: 3 tweets, 5 likes, 3 follows, 4 replies
 - Tuesday: 2 tweets, 6 likes, 1 follow, 6 replies
-- Wednesday: No activity (skip day—15% chance)
+- Wednesday: No activity (skip day, 15% chance)
 - Thursday: 4 tweets, 3 likes, 5 follows, 2 replies
 
 ## Skip Days Simulate Real Life
@@ -48,7 +48,7 @@ About 15% of the time (roughly 1 in 7 days), warmup will take a complete skip da
 - No posts, likes, follows, or engagement
 - This mimics real human behavior (everyone takes days off)
 - Makes your account look authentic and prevents algorithm flagging
-- Your account still runs sequences and completes outreach on skip days—only warmup pauses
+- Your account still runs sequences and completes outreach on skip days. Only warmup pauses.
 
 {% hint style="warning" %}
 Skip days are **not** days when your outreach stops. Sequences continue as scheduled. Skip days only affect warmup content and engagement activity.
@@ -56,14 +56,14 @@ Skip days are **not** days when your outreach stops. Sequences continue as sched
 
 ## Activity Window & Timing
 
-All daily actions are spread throughout your **Activity Window**—the hours you define as your active time. For example:
+All daily actions are spread throughout your **Activity Window**, the hours you define as your active time. For example:
 
-- If your Activity Window is 9am–6pm EST
+- If your Activity Window is 9am-6pm EST
 - 3 tweets will be posted at random times within those hours
 - 5 likes will be spread throughout the day
 - Follows and replies distributed similarly
 
-This ensures your activity looks like it's coming from a real person working during normal hours, not a bot posting 24/7.
+This ensures your activity looks like it is coming from a real person working during normal hours, not a bot posting 24/7.
 
 ## No Manual Tuning Required
 
@@ -89,5 +89,5 @@ Randomized action allocation:
 
 ## Next Steps
 
-- **[Content Generation](content-generation.md)** — Learn what kind of content fills these daily slots
-- **[Engagement Automation](engagement.md)** — See how engagement targeting works
+- **[Content Generation](content-generation.md)**: Learn what kind of content fills these daily slots
+- **[Engagement Automation](engagement.md)**: See how engagement targeting works

@@ -6,13 +6,13 @@ The Conversation Analyzer is your AI coaching assistant. It reviews your convers
 
 The Analyzer examines:
 
-- **Positive outcomes** — Conversations where leads replied enthusiastically, asked about your product, or booked calls
-- **Negative outcomes** — Conversations that stalled, received objections, or ended prematurely
-- **Tone alignment** — Are your AI-generated responses actually matching your tone examples?
-- **Stage fit** — Are responses appropriate for the conversation stage detected?
-- **Word count adherence** — Are responses hitting the target length for their stage?
+- **Positive outcomes**: Conversations where leads replied enthusiastically, asked about your product, or booked calls
+- **Negative outcomes**: Conversations that stalled, received objections, or ended prematurely
+- **Tone alignment**: Are your AI-generated responses actually matching your tone examples?
+- **Stage fit**: Are responses appropriate for the conversation stage detected?
+- **Word count adherence**: Are responses hitting the target length for their stage?
 
-Based on this analysis, the Analyzer generates **3–7 actionable suggestions** to optimize your outreach.
+Based on this analysis, the Analyzer generates **3-7 actionable suggestions** to optimize your outreach.
 
 ## Suggestion Types
 
@@ -55,7 +55,7 @@ The Analyzer generates four types of suggestions:
 > *Your current prompt emphasizes product features, but your successful conversations focus on pain points and ROI. Suggest updating the prompt to lead with pain point alignment.*
 
 {% hint style="info" %}
-**Prompt Modifications**: These are advanced suggestions. Most users won't need to modify their prompt frequently—tone examples usually handle voice adjustment. But if you have a specific strategy shift, prompt modifications can help.
+**Prompt Modifications**: These are advanced suggestions. Most users won't need to modify their prompt frequently. Tone examples usually handle voice adjustment. However, if you have a specific strategy shift, prompt modifications can help.
 {% endhint %}
 
 ## How to Use Suggestions
@@ -67,7 +67,7 @@ Click **Analyze Conversations** in your sequence settings. The Analyzer will:
 - Fetch your last 20-50 conversations (depending on availability)
 - Classify outcomes (positive, neutral, negative)
 - Identify patterns and misalignments
-- Generate suggestions (usually takes 30–60 seconds)
+- Generate suggestions (usually takes 30-60 seconds)
 
 ### 2. Review Suggestions
 
@@ -81,19 +81,19 @@ The Analyzer presents suggestions one by one with:
 
 For each suggestion, you can:
 
-- **Apply** — Implement the change immediately
-- **Dismiss** — Skip this suggestion (it won't appear again)
-- **Edit** — Modify the suggestion before applying (e.g., tweak the wording)
+- **Apply**: Implement the change immediately
+- **Dismiss**: Skip this suggestion (it won't appear again)
+- **Edit**: Modify the suggestion before applying (e.g., tweak the wording)
 
 ### 4. Monitor Results
 
-After applying suggestions, monitor your next 10–15 conversations:
+After applying suggestions, monitor your next 10-15 conversations:
 
 - Are response rates improving?
 - Are conversations moving to later stages?
 - Do responses feel more authentic?
 
-If you're seeing improvements, great! If not, you can always revert or try a different suggestion.
+If you're seeing improvements, great. If not, you can always revert or try a different suggestion.
 
 {% hint style="tip" %}
 **When to Run Analysis**: After your first 20 conversations, then monthly as you accumulate more data. Early analysis is less accurate because the sample size is small.
@@ -115,10 +115,10 @@ This cycle helps you build a feedback loop where your outreach continuously impr
 
 The Analyzer is powerful but has limits:
 
-- **It can't assess lead quality** — If a lead is a poor fit, no tone example will help
-- **It can't predict outcomes** — A great response doesn't guarantee a deal (timing, budget, priorities matter)
-- **It needs sample size** — Running analysis on 5 conversations is less reliable than 50
-- **It can't suggest revenue impact** — It focuses on conversational quality, not pipeline value
+- **It can't assess lead quality.** If a lead is a poor fit, no tone example will help
+- **It can't predict outcomes.** A great response doesn't guarantee a deal (timing, budget, and priorities matter)
+- **It needs sample size.** Running analysis on 5 conversations is less reliable than 50
+- **It can't suggest revenue impact.** It focuses on conversational quality, not pipeline value
 
 Use the Analyzer for conversational improvement, but combine it with your own sales judgment.
 
@@ -133,7 +133,7 @@ Use the Analyzer for conversational improvement, but combine it with your own sa
 **Problem**: Your tone examples are formal ("I would"), but your actual conversations are casual ("I'd").
 
 **Analyzer Output**:
-> Modify Tone Example: "I would love to hop on a call" → "I'd love to hop on a call" (but also matches the contraction preference and removes overused phrase)
+> Modify Tone Example: "I would love to hop on a call" > "I'd love to hop on a call" (but also matches the contraction preference and removes overused phrase)
 
 **Better suggestion**: Remove this example entirely (anti-pattern) and add a real response like "Let's jump on a call and dig into this."
 
@@ -155,7 +155,7 @@ Use the Analyzer for conversational improvement, but combine it with your own sa
 **Problem**: One of your auto-generated examples uses "Worth a quick look?"
 
 **Analyzer Output**:
-> Remove Tone Example: "Let me send you this—worth a quick look?" (anti-pattern). This phrase appears in 3 conversations that stalled.
+> Remove Tone Example: "Let me send you this - worth a quick look?" (anti-pattern). This phrase appears in 3 conversations that stalled.
 
 **What you do**: Approve the removal. The AI will stop using this phrase.
 

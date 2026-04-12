@@ -1,6 +1,6 @@
 # AI Model Configuration
 
-Configure which AI providers and models AutoReach uses for different tasks. You can customize each category independently or stick with our battle-tested defaults.
+Configure which AI providers and models AutoReach uses for different tasks. You can customize each category independently or stick with the battle-tested defaults.
 
 ## Accessing AI Model Settings
 
@@ -10,12 +10,12 @@ Navigate to **Settings > AI & Models** to configure your AI provider setup.
 
 Connect your AI provider accounts by adding API keys:
 
-- **OpenAI API Key** — Required for GPT-4o and GPT-4 Turbo fallbacks
-- **Anthropic API Key** — Required for Claude Opus (our recommended primary model)
-- **Findymail API Key** — Used for email discovery; if not provided, email finding is skipped
+- **OpenAI API Key** - required for GPT-4o and GPT-4 Turbo fallbacks
+- **Anthropic API Key** - required for Claude Opus (the recommended primary model)
+- **Findymail API Key** - used for email discovery; if not provided, email finding is skipped
 
 {% hint style="info" %}
-You only need to add keys for providers you plan to use. If you're using Claude Opus as your primary model, you only need the Anthropic key.
+You only need to add keys for providers you plan to use. If you are using Claude Opus as your primary model, you only need the Anthropic key.
 {% endhint %}
 
 ## Model Configuration Categories
@@ -69,7 +69,7 @@ Generates meeting preparation documents with background research.
 
 ## How Fallback Models Work
 
-If your primary model fails (timeout, rate limit, API error), AutoReach automatically switches to the fallback model for that operation. Fallback activation is logged in your activity feed so you can see when it's happening.
+If your primary model fails (timeout, rate limit, API error), AutoReach automatically switches to the fallback model for that operation. Fallback activation is logged in your activity feed so you can see when it is happening.
 
 ## Dynamic Cost Estimation
 

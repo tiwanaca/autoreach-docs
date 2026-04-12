@@ -73,7 +73,7 @@ Cross-Platform Matching runs automatically during the enrichment pipeline:
 5. **Profile Linking:** Updates prospect record with both platform profiles
 6. **ICP Scoring:** Evaluates prospect against your ICP
 
-You don't need to do anything—it happens automatically.
+You do not need to do anything. It happens automatically.
 
 ## Search Strategies
 
@@ -168,7 +168,7 @@ These strategies run in sequence until a high-confidence match is found.
 ## Troubleshooting
 
 **Not finding X profiles for LinkedIn leads?**
-- This is normal—not all professionals are on X
+- This is normal. Not all professionals are on X
 - Some X accounts are private or inactive
 - Try with more distinctive names (less competition for matches)
 - Company information improves match success
@@ -179,7 +179,7 @@ These strategies run in sequence until a high-confidence match is found.
 - Check company and role alignment carefully
 
 **Getting false positives?**
-- Review confidence scores—only use 80%+ matches for automatic outreach
+- Review confidence scores and only use 80%+ matches for automatic outreach
 - Manually verify 60-80% matches before sending messages
 - If false positive rate is high, adjust match thresholds
 

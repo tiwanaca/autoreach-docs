@@ -1,6 +1,6 @@
 # Finding Leads Overview
 
-AutoReach provides multiple intelligent lead discovery methods to help you find prospects that match your ideal customer profile (ICP). Whether you're searching for intent signals, industry-specific profiles, or lookalike audiences, we've got you covered.
+AutoReach provides multiple intelligent lead discovery methods to help you find prospects that match your ideal customer profile (ICP). Whether you are searching for intent signals, industry-specific profiles, or lookalike audiences, AutoReach has you covered.
 
 ## Available Lead Discovery Methods
 

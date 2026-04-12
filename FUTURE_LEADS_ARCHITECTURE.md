@@ -8,8 +8,9 @@ The current architecture has two lead tables with bidirectional foreign keys:
 - `linkedin_leads` - Extension CRM (stages, invitations, copilot)
 
 This creates:
+
 - Two sources of truth for "who is a lead"
-- Sync complexity (bidirectional FKs: `extracted_leads.linkedin_lead_id` ↔ `linkedin_leads.extracted_lead_id`)
+- Sync complexity (bidirectional FKs: `extracted_leads.linkedin_lead_id` and `linkedin_leads.extracted_lead_id`)
 - Risk of orphaned records or data drift over time
 - Confusing queries ("which table do I query?")
 
@@ -104,25 +105,25 @@ Separate the **lead identity** from the **CRM workflow state**.
 
 ## Why This Is Better
 
-| Concern | Current (Dual Tables) | Proposed (Single + CRM State) |
-|---------|----------------------|------------------------------|
-| Source of truth | Two tables, unclear which is primary | One `leads` table |
-| Sync complexity | Bidirectional FKs, must keep in sync | No sync needed |
-| "Who is a lead?" | Query both tables | Query `leads` |
-| Extension CRM | Mixed with lead identity | Separate concern in `linkedin_crm_state` |
-| Frontend queries | Complex joins or dual queries | Simple `SELECT FROM leads` |
-| Extension queries | Query `linkedin_leads` | `JOIN linkedin_crm_state` when needed |
-| Delete handling | Must delete from both | `ON DELETE CASCADE` handles it |
+| Concern             | Current (Dual Tables)                    | Proposed (Single + CRM State)                  |
+| ------------------- | ---------------------------------------- | ---------------------------------------------- |
+| Source of truth      | Two tables, unclear which is primary     | One `leads` table                              |
+| Sync complexity      | Bidirectional FKs, must keep in sync     | No sync needed                                 |
+| "Who is a lead?"     | Query both tables                        | Query `leads`                                  |
+| Extension CRM        | Mixed with lead identity                 | Separate concern in `linkedin_crm_state`       |
+| Frontend queries     | Complex joins or dual queries            | Simple `SELECT FROM leads`                     |
+| Extension queries    | Query `linkedin_leads`                   | `JOIN linkedin_crm_state` when needed          |
+| Delete handling      | Must delete from both                    | `ON DELETE CASCADE` handles it                 |
 
 ---
 
 ## Key Insight
 
-A **lead** is a person you want to reach. That's the entity.
+A **lead** is a person you want to reach. That is the entity.
 
-The **CRM workflow** (requested → accepted → contacted → replied) is metadata about *how you're managing* that lead on a specific platform. It's not the lead itself.
+The **CRM workflow** (requested, accepted, contacted, replied) is metadata about *how you are managing* that lead on a specific platform. It is not the lead itself.
 
-Current architecture conflates these. Proposed architecture separates them.
+The current architecture conflates these two concerns. The proposed architecture separates them.
 
 ---
 
@@ -188,15 +189,18 @@ LEFT JOIN leads new_lead ON ...;
 ### Phase 3: Update Code
 
 **Backend:**
+
 - Update extension endpoints to read/write `leads` + `linkedin_crm_state`
 - Update main app to query `leads` only
 - Remove bidirectional sync logic
 
 **Extension:**
+
 - Update queries: `SELECT l.*, lcs.* FROM leads l LEFT JOIN linkedin_crm_state lcs ON lcs.lead_id = l.id`
 - Update inserts: Insert into `leads` first, then `linkedin_crm_state`
 
 **Frontend:**
+
 - No changes needed (already queries `leads`/`extracted_leads`)
 
 ### Phase 4: Cleanup
@@ -210,11 +214,13 @@ LEFT JOIN leads new_lead ON ...;
 ## Queries After Migration
 
 **Frontend - Get all leads:**
+
 ```sql
 SELECT * FROM leads WHERE user_id = $1;
 ```
 
 **Extension - Get LinkedIn leads with CRM state:**
+
 ```sql
 SELECT l.*, lcs.*
 FROM leads l
@@ -224,6 +230,7 @@ WHERE l.user_id = $1
 ```
 
 **Extension - Update CRM stage:**
+
 ```sql
 UPDATE linkedin_crm_state
 SET stage = $1, stage_history = stage_history || $2
@@ -231,6 +238,7 @@ WHERE lead_id = $3;
 ```
 
 **Extension - Add new LinkedIn lead:**
+
 ```sql
 -- Insert lead
 INSERT INTO leads (user_id, name, linkedin_profile_url, source, ...)
@@ -247,12 +255,13 @@ VALUES ($lead_id, $1, 'new', $4, ...);
 ## When To Do This
 
 Consider this refactor when:
+
 - Sync bugs appear between `linkedin_leads` and `extracted_leads`
 - You need cross-platform deduplication (same person on X and LinkedIn)
 - Extension development slows due to dual-table complexity
 - You want unified analytics across all lead sources
 
-Not urgent if current bidirectional sync is working. But worth planning for.
+Not urgent if the current bidirectional sync is working. But worth planning for.
 
 ---
 

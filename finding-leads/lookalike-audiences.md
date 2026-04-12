@@ -132,7 +132,7 @@ This keeps your prospect pipeline flowing while maintaining quality and preventi
 - [@StripesSupport](https://twitter.com/StripesSupport) - Competitor ecosystem
 - Y Combinator Alumni network - Early-stage companies, technical founders
 
-**Expected results:** Thousands of CTOs, VPs Engineering, and startup founders who follow payment/API thought leaders—perfect match for your ICP.
+**Expected results:** Thousands of CTOs, VPs Engineering, and startup founders who follow payment/API thought leaders, a perfect match for your ICP.
 
 **Follower extraction:** 5,000 followers × 5 accounts = 25,000 prospects automatically scored and filtered down to 2,000-5,000 ICP matches.
 
@@ -144,12 +144,12 @@ This keeps your prospect pipeline flowing while maintaining quality and preventi
 - Verify your offer description includes relevant domain keywords
 
 **Extracted followers have low ICP match rate?**
-- Review your seed accounts—they may not align with your actual ICP
+- Review your seed accounts, as they may not align with your actual ICP
 - Check your ICP definition (pain points, audience, search signals)
 - Try different seed accounts that directly focus on your niche
 
 **Seed accounts are getting exhausted quickly?**
-- This is normal—followers extracted don't get re-extracted
+- This is normal. Previously extracted followers are not re-extracted
 - Automatic rotation finds new seed accounts (under Autopilot)
 - Add more seed accounts manually to increase prospect flow
 

@@ -1,15 +1,15 @@
 # Blacklisting Accounts
 
-Blacklist specific X/Twitter and LinkedIn accounts to prevent AutoReach from discovering, enriching, or engaging with them. Useful for protecting competitors, existing customers, and personal contacts.
+Blacklist specific X/Twitter and LinkedIn accounts to prevent AutoReach from discovering, enriching, or engaging with them. This is useful for protecting competitors, existing customers, and personal contacts.
 
 ## How Blacklisting Works
 
 When you blacklist an account:
 
-1. **Discovery** — Account is excluded from search and prospect extraction
-2. **Enrichment** — Account is skipped during profile enrichment
-3. **Engagement** — Account will never receive messages, likes, follows, or comments
-4. **All Offers & Sequences** — Blacklist applies globally across your workspace
+1. **Discovery** - the account is excluded from search and prospect extraction
+2. **Enrichment** - the account is skipped during profile enrichment
+3. **Engagement** - the account will never receive messages, likes, follows, or comments
+4. **All Offers & Sequences** - the blacklist applies globally across your workspace
 
 Once blacklisted, an account remains blacklisted until you manually remove it.
 
@@ -25,15 +25,15 @@ Example competitors to blacklist:
 ```
 
 ### Block Existing Customers
-Don't re-engage customers who already use your product. Some customers may have free or trial accounts; blacklisting prevents repeated outreach.
+Do not re-engage customers who already use your product. Some customers may have free or trial accounts; blacklisting prevents repeated outreach.
 
 ```
 Example: Blacklist @acme_corp and key decision-makers
-if they're already a customer
+if they are already a customer
 ```
 
 ### Block Personal Contacts
-Prevent AutoReach from engaging with friends, family, or personal contacts who shouldn't receive your sales messages.
+Prevent AutoReach from engaging with friends, family, or personal contacts who should not receive your sales messages.
 
 ```
 Example: Blacklist your CEO, board members, or other
@@ -66,17 +66,17 @@ If a prospect replies asking not to be contacted, add them to the blacklist imme
 4. Click **Import**
 
 {% hint style="info" %}
-AutoReach automatically handles username variations and profile URL formats. You don't need to worry about exact formatting.
+AutoReach automatically handles username variations and profile URL formats. You do not need to worry about exact formatting.
 {% endhint %}
 
 ## Viewing Your Blacklist
 
 Visit **Settings > Blacklist** to see all blacklisted accounts:
 
-- **Account Name** — Display name or username
-- **Platform** — X/Twitter or LinkedIn
-- **Date Added** — When the account was blacklisted
-- **Reason** — Optional note you added (competitor, customer, personal, etc.)
+- **Account Name** - display name or username
+- **Platform** - X/Twitter or LinkedIn
+- **Date Added** - when the account was blacklisted
+- **Reason** - optional note you added (competitor, customer, personal, etc.)
 
 ## Removing from Blacklist
 
@@ -92,20 +92,19 @@ The account can now be discovered and engaged with again.
 ## Blacklist Best Practices
 
 ### Blacklist Competitors Early
-Don't wait until you've enriched competitor accounts. Add them to your blacklist before starting discovery:
+Do not wait until you have enriched competitor accounts. Add them to your blacklist before starting discovery:
 
 ```
 BEFORE: discovery runs, wastes $50 enriching competitors
-AFTER: competitors excluded from discovery, saves enrichment cost
+AFTER:  competitors excluded from discovery, saves enrichment cost
 ```
 
 ### Use Notes for Context
 Add a note when blacklisting to remember why later:
 
 ```
-❌ "Acme Corp"
-✓ "Acme Corp - competitor in data space"
-✓ "Acme Corp - existing customer, enterprise plan"
+- "Acme Corp - competitor in data space"
+- "Acme Corp - existing customer, enterprise plan"
 ```
 
 ### Separate Competitors from Do-Not-Contacts
@@ -125,12 +124,12 @@ DO-NOT-CONTACT (personal or explicit request)
 - prospect-requested-removal@
 ```
 
-### Don't Over-Blacklist
+### Do Not Over-Blacklist
 Blacklist strategically. Over-blacklisting reduces your addressable market:
 
 ```
 GOOD: Blacklist direct competitors only
-BAD: Blacklist entire industries or everyone who mentioned competitor
+BAD:  Blacklist entire industries or everyone who mentioned competitor
 ```
 
 ### Update Blacklist Quarterly
@@ -142,7 +141,7 @@ Review and update your blacklist quarterly:
 
 ## Impact on Enrichment Costs
 
-Blacklisting saves money by avoiding enrichment of accounts you'll never contact:
+Blacklisting saves money by avoiding enrichment of accounts you will never contact:
 
 ```
 Without Blacklist:
@@ -162,11 +161,11 @@ The savings grow with company size and competitive landscape.
 ## Automation & Blacklist
 
 ### Sequences Respect Blacklist
-If you've already enrolled someone in a sequence and then blacklist them:
+If you have already enrolled someone in a sequence and then blacklist them:
 
 - **Pending actions** are canceled
 - **Active messages** are halted
-- **They're removed** from the sequence
+- **They are removed** from the sequence
 
 ### Discovery Respects Blacklist
 Future discovery runs automatically exclude blacklisted accounts from search results.
@@ -182,10 +181,10 @@ Blacklisting is permanent until manually removed. If you blacklist someone by mi
 
 Blacklisting supports your compliance efforts:
 
-- **CAN-SPAM** — Blacklist accounts that request removal
-- **GDPR** — Blacklist accounts from regions you don't operate in
-- **Legal Holds** — Blacklist accounts involved in legal disputes
-- **Internal Policy** — Blacklist employees, partners, friends
+- **CAN-SPAM** - blacklist accounts that request removal
+- **GDPR** - blacklist accounts from regions you do not operate in
+- **Legal Holds** - blacklist accounts involved in legal disputes
+- **Internal Policy** - blacklist employees, partners, friends
 
 Maintain documentation of why accounts are blacklisted for compliance audits.
 
@@ -200,13 +199,13 @@ Ensure the account:
 Try pasting the full profile URL instead of the username.
 
 ### "Blacklist Isn't Preventing Discovery"
-Blacklist applies to new discovery runs. If you've already discovered and enriched an account:
+Blacklist applies to new discovery runs. If you have already discovered and enriched an account:
 
 1. Remove the enriched lead from your database
 2. Add the account to blacklist
 3. Run discovery again
 
-Blacklist doesn't retroactively remove already-enriched accounts.
+Blacklist does not retroactively remove already-enriched accounts.
 
 ### "I Blacklisted By Mistake"
 Go to **Settings > Blacklist**, find the account, and click **Remove**. The account will be discoverable again in future runs.

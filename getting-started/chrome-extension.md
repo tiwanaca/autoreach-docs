@@ -36,8 +36,9 @@ After installation, activate your license key:
 {% endhint %}
 
 If you don't have a license key yet:
+
 1. Log into your AutoReach account
-2. Go to **Settings** → **Integrations**
+2. Go to **Settings** > **Integrations**
 3. Copy your license key
 4. Return to the extension and paste it
 
@@ -49,28 +50,30 @@ The AutoReach Chrome Extension adds three core features to your browser:
 
 Manage your sales pipeline directly from the browser. As you browse LinkedIn and Twitter, you can:
 
-- **Create leads**: See a prospect's profile? Click the extension icon and add them to your CRM
-- **Track pipeline stage**: Move leads through your sales funnel (new → requested → accepted → contacted → replied → meeting → won/lost)
-- **Add notes**: Track your interactions with each prospect
-- **View lead history**: See all messages and interactions with a prospect
+- **Create leads**: See a prospect's profile? Click the extension icon and add them to your CRM.
+- **Track pipeline stage**: Move leads through your sales funnel (new > requested > accepted > contacted > replied > meeting > won/lost).
+- **Add notes**: Track your interactions with each prospect.
+- **View lead history**: See all messages and interactions with a prospect.
 
 ### Pipeline Stages
 
-- **New**: Prospect added to your CRM
-- **Requested**: You sent a connection request or message
-- **Accepted**: Prospect accepted your connection or replied positively
-- **Contacted**: You've reached out directly
-- **Replied**: Prospect has engaged in conversation
-- **Meeting**: Call or meeting scheduled
-- **Won/Lost**: Deal closed (won) or opportunity over (lost)
+| Stage         | Description                                          |
+| ------------- | ---------------------------------------------------- |
+| **New**       | Prospect added to your CRM                           |
+| **Requested** | You sent a connection request or message              |
+| **Accepted**  | Prospect accepted your connection or replied positively |
+| **Contacted** | You've reached out directly                          |
+| **Replied**   | Prospect has engaged in conversation                 |
+| **Meeting**   | Call or meeting scheduled                            |
+| **Won/Lost**  | Deal closed (won) or opportunity over (lost)         |
 
 ### 2. Social Account Connection
 
 The extension is the **only way** to connect your X and LinkedIn accounts to AutoReach:
 
-- **LinkedIn**: Visit linkedin.com, click the extension, enter your first and last name, and click Connect Account
-- **X/Twitter**: Visit x.com, click the extension, enter your name and a 4-digit PIN for DM Chat, and click Connect Account
-- **Automatic cookie extraction**: The extension handles all authentication automatically — no manual DevTools or cookie copying needed
+- **LinkedIn**: Visit linkedin.com, click the extension, enter your first and last name, and click Connect Account.
+- **X/Twitter**: Visit x.com, click the extension, enter your name and a 4-digit PIN for DM Chat, and click Connect Account.
+- **Automatic cookie extraction**: The extension handles all authentication automatically. No manual DevTools or cookie copying needed.
 
 See [Connecting X](connect-twitter.md) and [Connecting LinkedIn](connect-linkedin.md) for details.
 
@@ -102,10 +105,10 @@ The extension uses fuzzy matching to recognize accepted connections even if the 
 
 - "Robert J. Chen" matches "Rob Chen" or "R. Chen"
 - "Sarah Johnson" matches "Sarah" if that's a pending request
-- "José García-López" matches "Jose Garcia Lopez" (accent handling)
+- "Jose Garcia-Lopez" matches "Jose Garcia Lopez" (accent handling)
 - "Michael O'Brien" matches "Mike O Brien"
 
-This means you don't have to worry about name variations — AutoReach will catch them.
+You don't have to worry about name variations. AutoReach will catch them.
 
 {% hint style="info" %}
 **Tip**: The more exact your original connection message, the more reliable the matching. Use their full name in your message for best results.
@@ -124,9 +127,9 @@ When a match is detected:
 
 The extension automatically detects which platform you're on:
 
-- **LinkedIn.com** → LinkedIn interface and features active
-- **X.com / Twitter.com** → X interface and features active
-- **Other sites** → Extension shows limited features (CRM access only)
+- **LinkedIn.com**: LinkedIn interface and features active
+- **X.com / Twitter.com**: X interface and features active
+- **Other sites**: Extension shows limited features (CRM access only)
 
 This uses the `navigator.platform` API to detect your operating system and adjust the interface accordingly.
 
@@ -137,18 +140,19 @@ The extension includes anti-phishing protection by detecting Cyrillic characters
 ### What It Does
 
 If the extension detects Cyrillic characters in:
+
 - URLs (e.g., a domain using Cyrillic lookalikes of Latin characters)
 - Message content
 - Profile bios
 
 It will **warn you** with a security alert. This helps prevent:
 
-- **Phishing attacks**: Fake domains using Cyrillic lookalikes (Cyrillic 'а' looks like Latin 'a')
+- **Phishing attacks**: Fake domains using Cyrillic lookalikes (Cyrillic 'a' looks like Latin 'a')
 - **Fraudulent messages**: Spam or scam messages written in Cyrillic
 - **Compromised profiles**: Accounts taken over by bad actors
 
 {% hint style="warning" %}
-**Example**: A fake domain might use Cyrillic 'а' (U+0430) instead of Latin 'a' to mimic a legitimate domain. The extension will flag this.
+**Example**: A fake domain might use Cyrillic 'a' (U+0430) instead of Latin 'a' to mimic a legitimate domain. The extension will flag this.
 {% endhint %}
 
 If you see a Cyrillic warning, be cautious before clicking links or providing information.
@@ -157,14 +161,14 @@ If you see a Cyrillic warning, be cautious before clicking links or providing in
 
 When you install the extension, you'll be asked to grant permissions. Here's what we need and why:
 
-| Permission | Purpose |
-|-----------|---------|
-| **Read and change data on linkedin.com** | Extract cookies, detect connections, scrape profile data |
-| **Read and change data on x.com** | Extract cookies, detect follows, scrape profile data |
-| **Read and change data on twitter.com** | Support legacy Twitter URLs |
-| **Read your browsing history** | Detect when you visit LinkedIn/X (local only, not stored) |
-| **Access tabs and windows** | Switch between open tabs to extract data |
-| **Storage** | Save your license key and settings locally |
+| Permission                                    | Purpose                                                      |
+| --------------------------------------------- | ------------------------------------------------------------ |
+| **Read and change data on linkedin.com**      | Extract cookies, detect connections, scrape profile data      |
+| **Read and change data on x.com**             | Extract cookies, detect follows, scrape profile data          |
+| **Read and change data on twitter.com**       | Support legacy Twitter URLs                                  |
+| **Read your browsing history**                | Detect when you visit LinkedIn/X (local only, not stored)    |
+| **Access tabs and windows**                   | Switch between open tabs to extract data                     |
+| **Storage**                                   | Save your license key and settings locally                   |
 
 All data is stored locally in your browser. We do not log your browsing activity.
 
@@ -224,6 +228,7 @@ Your license key has expired or is incorrect.
 ### "Extension Can't Access This Page"
 
 The extension only works on:
+
 - linkedin.com
 - x.com / twitter.com
 - autoreach.tech
@@ -235,7 +240,7 @@ If you're on a different site, the extension will show limited features.
 Your session may have expired. To reconnect:
 
 1. Open the **AutoReach Chrome Extension**
-2. Click the **three dots (⋯)** next to the account
+2. Click the **three dots** next to the account
 3. Click **Reconnect**
 
 Make sure you're logged into the social account in your browser before reconnecting.
@@ -259,6 +264,7 @@ LinkedIn connection acceptance detection requires:
 4. The pending connection to still be in your pending requests
 
 If detection isn't working:
+
 - Refresh your LinkedIn page
 - Check that you have pending requests in the right stage
 - Re-authenticate your license key
@@ -276,7 +282,7 @@ If detection isn't working:
 
 - Keep your extracted cookies private
 - Don't share your license key
-- Cookies expire over time (2–4 weeks) — reconnect via the extension (three dots ⋯ → Reconnect)
+- Cookies expire over time (2-4 weeks). Reconnect via the extension (three dots > Reconnect).
 - If you log out of your social accounts, reconnect via the extension
 
 ### Reporting Issues

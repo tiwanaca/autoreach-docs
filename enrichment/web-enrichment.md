@@ -51,7 +51,7 @@ Recent news about the lead or their company:
 - **Publication Date** - When the news was published
 - **Summary** - Brief description of the news content
 
-News signals are powerful for outreach timing—someone who just got funded or hired is especially receptive.
+News signals are powerful for outreach timing. Someone who just got funded or hired is especially receptive.
 
 ### Insights & Achievements
 
@@ -113,7 +113,7 @@ Web-enriched data powers more specific outreach:
 - **Technology Alignment** - "I see you're building on AWS and React..."
 - **Investor Context** - "With Sequoia backing you, you're obviously scaling fast..."
 
-More data = more personalization = higher response rates.
+More data leads to stronger personalization and higher response rates.
 
 {% hint style="warning" %}
 **API Rate Limits:** Web enrichment uses external APIs to search and scrape company data. If you have very large workspaces (1000+ leads), enrichment may be slower due to API rate limits. AutoReach queues requests fairly across all customers.

@@ -153,7 +153,7 @@ Set it once, then AutoReach searches automatically every day.
 
 6. **Update keywords with offer changes:** When you refine your offer description, regenerate keywords to stay aligned.
 
-7. **Combine with other discovery:** Keywords should complement content search, people search, and lookalike audiences—not replace them.
+7. **Combine with other discovery:** Keywords should complement content search, people search, and lookalike audiences, not replace them.
 
 ## Keyword Quality Metrics
 
@@ -205,7 +205,7 @@ Monitor these metrics to evaluate keyword effectiveness:
 - Check if your target audience actually discusses these topics
 
 **Keywords seem obvious/generic?**
-- This is fine—generic keywords still surface prospects
+- This is fine. Generic keywords still surface prospects
 - More important to have relevant keywords than clever ones
 - Combine generic + niche keywords for coverage
 

@@ -6,10 +6,10 @@ Account Warmup generates all content automatically, but you maintain full contro
 
 The Engagement Engine shows all pending warmup content awaiting your review:
 
-- **Pending Tweets** — AI-generated tweets ready to post
-- **Pending Posts** — LinkedIn posts awaiting approval
-- **Pending Engagement** — Replies, likes, and other engagement actions
-- **Auto-Replies** — Responses to incoming engagement on your posts
+- **Pending Tweets**: AI-generated tweets ready to post
+- **Pending Posts**: LinkedIn posts awaiting approval
+- **Pending Engagement**: replies, likes, and other engagement actions
+- **Auto-Replies**: responses to incoming engagement on your posts
 
 Each item shows:
 - The content text
@@ -19,7 +19,7 @@ Each item shows:
 
 ## Reviewing Content
 
-When you open the approval queue, you'll see a feed of pending content:
+When you open the approval queue, you will see a feed of pending content:
 
 {% hint style="info" %}
 Take time reviewing the first week of content. This helps you calibrate the tone and ensure it matches how you'd write. After that, you can decide whether to manually review or enable auto-approval.
@@ -27,9 +27,9 @@ Take time reviewing the first week of content. This helps you calibrate the tone
 
 For each piece of content, you can:
 
-1. **Approve** — Post exactly as written
-2. **Reject** — Discard and generate a replacement
-3. **Edit** — Modify the text and then approve the edited version
+1. **Approve**: post exactly as written
+2. **Reject**: discard and generate a replacement
+3. **Edit**: modify the text and then approve the edited version
 
 ## Approving Content
 
@@ -105,14 +105,14 @@ You can disable auto-approval anytime to return to manual review.
 
 **Tips for staying on top of reviews:**
 
-- **Review daily** — Spend 5-10 minutes reviewing pending content each morning
-- **Batch editing** — Review all tweets, then all posts, then engagement
-- **Use filters** — Some dashboards let you filter by type (tweets, posts, replies)
-- **Set reminders** — Calendar reminder for daily approval review
+- **Review daily**: spend 5-10 minutes reviewing pending content each morning
+- **Batch editing**: review all tweets, then all posts, then engagement
+- **Use filters**: some dashboards let you filter by type (tweets, posts, replies)
+- **Set reminders**: calendar reminder for daily approval review
 
 **If you fall behind:**
 - Pending content queues but doesn't post until approved
-- No posts are lost—they wait for your review
+- No posts are lost. They wait for your review.
 - Clear the queue during slower periods
 - Consider enabling auto-approval temporarily if backlog builds up
 
@@ -139,5 +139,5 @@ Assign one person as the "warmup approver" to maintain consistent tone.
 
 ## Next Steps
 
-- **[Content Generation](content-generation.md)** — Learn about the types of content generated
-- **[Engagement Engine Dashboard](overview.md)** — Return to the warmup overview
+- **[Content Generation](content-generation.md)**: Learn about the types of content generated
+- **[Engagement Engine Dashboard](overview.md)**: Return to the warmup overview

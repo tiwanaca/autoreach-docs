@@ -2,12 +2,12 @@
 
 Prepare for every meeting with AI-generated call briefs that give you an instant edge. Call briefs pull data from your lead profiles, conversation history, and buyer intelligence to arm you with talking points before you pick up the phone.
 
-## What is a Call Brief?
+## What Is a Call Brief?
 
 A call brief is a pre-call preparation document generated in seconds that combines everything AutoReach knows about a lead into actionable insights.
 
 {% hint style="success" %}
-Call briefs help you walk into every meeting confident, prepared, and informed—without scrambling through conversations or notes.
+Call briefs help you walk into every meeting confident, prepared, and informed, without scrambling through conversations or notes.
 {% endhint %}
 
 ## How to Generate a Call Brief
@@ -50,11 +50,11 @@ That's it. The brief appears inline in the conversation thread.
 
 AutoReach draws on multiple sources to create a comprehensive brief:
 
-- **Lead profile data** — enriched contact information, social profiles, company details
-- **Full conversation history** — every message exchanged in the thread
-- **Buyer intelligence scores** — signals showing purchase intent and buying stage
-- **Offer context** — the pain points and competitors associated with your offer
-- **Stage-aware guidance** — personalized next-step recommendations based on their current position in your pipeline
+- **Lead profile data** - enriched contact information, social profiles, company details
+- **Full conversation history** - every message exchanged in the thread
+- **Buyer intelligence scores** - signals showing purchase intent and buying stage
+- **Offer context** - the pain points and competitors associated with your offer
+- **Stage-aware guidance** - personalized next-step recommendations based on their current position in your pipeline
 
 ## Tips for Best Results
 
@@ -66,19 +66,19 @@ AutoReach draws on multiple sources to create a comprehensive brief:
 - Personalize your pitch based on their specific situation
 - Prepare talking points that resonate with their role and company
 
-**Don't just read it—reference it during the call.** Keep the brief open on a second monitor or device during your meeting to stay grounded and on-message.
+**Don't just read it. Reference it during the call.** Keep the brief open on a second monitor or device during your meeting to stay grounded and on-message.
 
 {% hint style="tip" %}
-If a conversation is missing context or you've had multiple touchpoints, the brief may be more general. Add notes to the lead's profile to give AutoReach more information for next time.
+If a conversation is missing context or you have had multiple touchpoints, the brief may be more general. Add notes to the lead's profile to give AutoReach more information for next time.
 {% endhint %}
 
 ## When Call Briefs Are Most Valuable
 
-- **First calls with a new lead** — understand their context before introducing yourself
-- **Follow-up meetings** — remind yourself of prior conversations
-- **Objection handling** — see anticipated pushback and prep your responses
-- **High-stakes meetings** — ensure you're fully prepared with talking points
-- **Cold calls** — lead with insights that show you've done your homework
+- **First calls with a new lead** - understand their context before introducing yourself
+- **Follow-up meetings** - remind yourself of prior conversations
+- **Objection handling** - see anticipated pushback and prep your responses
+- **High-stakes meetings** - ensure you are fully prepared with talking points
+- **Cold calls** - lead with insights that show you have done your homework
 
 {% hint style="info" %}
 Call briefs are powered by AI and trained on your past successful conversations. The quality improves as AutoReach learns more about your leads and sales patterns.

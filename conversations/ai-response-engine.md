@@ -8,19 +8,19 @@ Every time a prospect replies to you, AutoReach runs this flow:
 
 ```
 Fetch Conversation History (last 10 messages)
-        ↓
+        |
 Extract Lead Context & Signals
-        ↓
+        |
 Classify Conversation Stage
-        ↓
+        |
 Build Stage-Specific Prompt
-        ↓
+        |
 Generate Response (Claude or GPT)
-        ↓
+        |
 Validate Length, Format, Patterns
-        ↓
-Schedule with Human-Like Delay (30s–5min)
-        ↓
+        |
+Schedule with Human-Like Delay (30s-5min)
+        |
 Send
 ```
 
@@ -33,7 +33,7 @@ AutoReach uses **Claude as the primary AI model** with GPT as an intelligent fal
 - Claude excels at nuance, context awareness, and natural conversational tone
 - If Claude is unavailable, GPT seamlessly takes over
 - Both models respect your tone examples and anti-consulting rules
-- You don't need to choose—this happens automatically
+- You don't need to choose. This happens automatically
 
 ## Anti-Consulting Rules
 
@@ -54,7 +54,7 @@ These rules are baked into the AI prompts and reinforced by response validation.
 
 Before any message is scheduled to send, AutoReach validates:
 
-- **Length**: Does it match the conversation stage guidelines? (e.g., 50–80 words for openers)
+- **Length**: Does it match the conversation stage guidelines? (e.g., 50-80 words for openers)
 - **Formatting**: No markdown, bullets, or overly formatted text in DMs
 - **Anti-patterns**: See the blocked patterns list below
 - **Tone match**: Does the response align with your provided tone examples?
@@ -76,25 +76,25 @@ The AI is trained to **never use** these phrases and patterns:
 
 - "I'd love to" (overused, unnatural)
 - "Absolutely" or "For sure" (too formal/bot-like)
-- "Happy to [verb]" (clichéd)
-- Em dashes (—) in DMs
+- "Happy to [verb]" (cliched)
+- Em dashes in DMs
 - Semicolons (;) in casual messages
 - Bullet points in DMs (breaks conversational flow)
 - "Worth a quick look?" (overused closing)
 
 {% hint style="info" %}
-**Why These Rules?** These phrases are tell-tales of AI-generated content. Real salespeople don't use them. Blocking them makes AutoReach responses indistinguishable from human outreach.
+**Why These Rules?** These phrases are telltale signs of AI-generated content. Real salespeople don't use them. Blocking them makes AutoReach responses indistinguishable from human outreach.
 {% endhint %}
 
 ## What Always Works
 
 Conversely, the AI is encouraged to:
 
-- **Use contractions** ("I'm", "you're", "they're") — formal writing sounds robotic
-- **Use sentence fragments** — *"Totally understand. Budget is always tight."* — feels more natural
-- **Match the lead's energy** — If they're casual, be casual. If they're formal, match that
-- **Ask one question max per message** — Multiple questions feel like an interrogation
-- **Skip the question sometimes** — Not every response needs to ask for something
+- **Use contractions** ("I'm", "you're", "they're"). Formal writing sounds robotic
+- **Use sentence fragments.** *"Totally understand. Budget is always tight."* This feels more natural
+- **Match the lead's energy.** If they're casual, be casual. If they're formal, match that
+- **Ask one question max per message.** Multiple questions feel like an interrogation
+- **Skip the question sometimes.** Not every response needs to ask for something
 
 ## Stage-Specific Generation
 
@@ -117,7 +117,7 @@ The [Conversation Analyzer](conversation-analyzer.md) reviews your AI-generated 
 - Are responses matching your tone?
 - Are they hitting the word count targets?
 - Are they moving deals forward or stalling?
-- Should we adjust the prompt or tone examples?
+- Should you adjust the prompt or tone examples?
 
 Run regular analyses to continuously improve your AI's performance.
 

@@ -17,12 +17,14 @@ Search and filter by lead name, platform, or conversation status to quickly find
 
 ## Real-Time Message Detection
 
-AutoReach detects new messages as they arrive using platform-optimized methods:
+AutoReach detects new messages as they arrive using platform-optimized methods.
 
 ### X/Twitter
+
 Uses **WebSocket connections** (the same real-time protocol X's web UI uses) for instant message detection. Your conversations appear in the Inbox within milliseconds of arrival.
 
 ### LinkedIn
+
 Uses **adaptive polling** with intervals between 1-15 minutes. Message detection depends on your account activity and LinkedIn's rate limits.
 
 {% hint style="info" %}
@@ -42,9 +44,9 @@ Each message is logged exactly once, even if you're running multiple sequences o
 
 Look for these visual cues in your conversation list:
 
-- **Green bubbles** = AI-generated responses (either pending or already sent)
-- **Regular text** = Your manual messages or incoming lead messages
-- **AI ON toggle** (top of conversation) = AI is enabled for that conversation and can reply automatically
+- **Green bubbles**: AI-generated responses (either pending or already sent)
+- **Regular text**: Your manual messages or incoming lead messages
+- **AI ON toggle** (top of conversation): AI is enabled for that conversation and can reply automatically
 
 ## AI Control Per Conversation
 

@@ -126,7 +126,7 @@ After initial enrichment:
 
 6. **Combine with other methods:** Use Lead Pool for scaling while continuing to do content/Twitter searches for fresh signal discovery.
 
-7. **Review filtering:** Set similarity thresholds appropriately—higher thresholds get fewer but higher-quality matches.
+7. **Review filtering:** Set similarity thresholds appropriately. Higher thresholds yield fewer but higher-quality matches.
 
 ## Lead Pool vs. Other Methods
 
@@ -146,7 +146,7 @@ After initial enrichment:
 - Try updating your offer to trigger new matching
 
 **Match quality seems low?**
-- Review your offer description—it may be too generic
+- Review your offer description, as it may be too generic
 - Add more specific pain points and search signals
 - Check if your target audience characteristics match your database
 

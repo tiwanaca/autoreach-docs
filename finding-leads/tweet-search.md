@@ -20,7 +20,7 @@ Tweet search queries use Twitter's native operators: AND, OR, and exclusion term
 Our AI identifies eight key intent categories:
 
 | Intent Type | What We're Looking For |
-|-------------|----------------------|
+|-------------|------------------------|
 | **budget_pressure** | Cost reduction, financial constraints, budget cycles |
 | **operational_pain** | Inefficient processes, manual work, bottlenecks |
 | **security_compliance** | Security concerns, regulatory requirements, certifications |
@@ -76,7 +76,7 @@ AutoReach uses **specificity scoring** to select the best keywords:
 Set up recurring daily searches that automatically:
 - Run each day at consistent times
 - Re-query the same search terms
-- Extract new prospects who've posted since yesterday
+- Extract new prospects who have posted since yesterday
 - Score and enrich new matches
 
 This ensures you capture fresh intent signals from decision-makers entering your awareness window.
@@ -116,7 +116,7 @@ Aggressive scraping patterns can trigger Twitter's anti-bot detection. AutoReach
 - "struggling with sales forecasting"
 - "team spends too much time on admin"
 
-**Result:** Each query finds 20-100 relevant tweets from CTOs, VPs of Sales, and Ops Managers—exactly your target audience.
+**Result:** Each query finds 20-100 relevant tweets from CTOs, VPs of Sales, and Ops Managers, precisely matching your target audience.
 
 ## Troubleshooting
 
@@ -131,5 +131,5 @@ Aggressive scraping patterns can trigger Twitter's anti-bot detection. AutoReach
 - Check if your target audience actually discusses this on Twitter
 
 **Seeing duplicate prospects across searches?**
-- This is normal—ICP matching deduplicates before adding to database
+- This is normal. ICP matching deduplicates before adding to your database
 - The same prospect may appear in multiple relevant searches

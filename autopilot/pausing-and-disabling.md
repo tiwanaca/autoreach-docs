@@ -1,4 +1,4 @@
-# Pausing & Disabling Autopilot
+# Pausing and Disabling Autopilot
 
 Autopilot gives you full control. You can pause temporarily, disable completely, or adjust individual components without losing your leads or conversation history.
 
@@ -7,9 +7,11 @@ Autopilot gives you full control. You can pause temporarily, disable completely,
 There are two ways to stop Autopilot:
 
 ### Pause
+
 **Temporarily stops all Autopilot operations without cleanup.**
 
 When paused:
+
 - All scheduled actions freeze (no new enrollments, tweets, or messages)
 - Existing conversations stay open
 - All lead data is preserved
@@ -17,6 +19,7 @@ When paused:
 - Can be resumed anytime
 
 **Best for:**
+
 - Vacations (pause for 2 weeks, resume when back)
 - Account maintenance or testing
 - Brief outreach adjustments
@@ -25,9 +28,11 @@ When paused:
 Resume immediately by clicking **Resume Autopilot**. Everything picks up where it left off.
 
 ### Disable
+
 **Fully stops everything and cleans up automation infrastructure.**
 
 When disabled:
+
 - All scheduled searches stop
 - Expansion is disabled
 - All active sequences are paused
@@ -36,6 +41,7 @@ When disabled:
 - Activity data is archived
 
 **Best for:**
+
 - Fully stopping outreach for an Offer
 - Switching to manual-only mode
 - Long-term (month+) pauses
@@ -61,7 +67,7 @@ Autopilot stops immediately. All leads, conversations, and configuration are int
 2. Click **Resume**
 3. Autopilot resumes within seconds
 
-The timeline doesn't change—if you paused on Day 5, resume picks up on Day 6.
+The timeline doesn't change. If you paused on Day 5, resume picks up on Day 6.
 
 ## Disabling Autopilot
 
@@ -72,9 +78,10 @@ To disable:
 3. Select **Disable Autopilot**
 4. Confirm (warning message shows what will be cleaned up)
 
-Disabling takes 30–60 seconds. You'll see a confirmation when it's complete.
+Disabling takes 30-60 seconds. You'll see a confirmation when it's complete.
 
 **What's preserved after disabling:**
+
 - All leads
 - Conversation history
 - Reply data
@@ -82,6 +89,7 @@ Disabling takes 30–60 seconds. You'll see a confirmation when it's complete.
 - Offer configuration
 
 **What's removed:**
+
 - Active searches (recurring schedules deleted)
 - Expansion configurations (lookalike accounts removed)
 - Sequence templates (but not the leads enrolled)
@@ -107,15 +115,16 @@ After disabling, you can turn Autopilot back on:
 
 1. Go to **Autopilot Dashboard**
 2. Click **Enable Autopilot**
-3. Setup runs in the background (~1–2 minutes)
+3. Setup runs in the background (approximately 1-2 minutes)
 
 Re-enabling will:
+
 - Recreate your content strategy (based on your Offer)
 - Create new sequences
 - Discover new lookalike seed accounts
 - Restart daily searches
 
-Your existing leads are not affected—only new lead generation and automation resets.
+Your existing leads are not affected. Only new lead generation and automation resets.
 
 {% hint style="success" %}
 **Stateless design.** Re-enabling Autopilot doesn't require any additional setup from you. It's the same one-click process as the first time.
@@ -124,6 +133,7 @@ Your existing leads are not affected—only new lead generation and automation r
 ## Common Scenarios
 
 ### Scenario 1: Vacation
+
 You're going on vacation for 2 weeks.
 
 **Action:** Click **Pause Autopilot**
@@ -131,9 +141,11 @@ You're going on vacation for 2 weeks.
 When you return, click **Resume**. Everything continues as if you never left.
 
 ### Scenario 2: Campaign Adjustment
+
 You want to tweak your Offer and re-run with new criteria.
 
-**Action:** 
+**Action:**
+
 1. Click **Disable Autopilot**
 2. Update your Offer
 3. Create a new Autopilot instance with the updated Offer
@@ -142,23 +154,27 @@ You want to tweak your Offer and re-run with new criteria.
 Now you're running two campaigns simultaneously.
 
 ### Scenario 3: Testing
+
 You want to test manual outreach before re-enabling Autopilot.
 
 **Action:** Click **Pause** (not disable). Test your sequences manually. Click **Resume** to restart automation.
 
 ### Scenario 4: Archiving Old Offers
+
 You're done with an Offer and moving to something new.
 
-**Action:** Click **Disable Autopilot** for the old Offer. Export/save conversation data if needed. Start a new Autopilot for the new Offer.
+**Action:** Click **Disable Autopilot** for the old Offer. Export or save conversation data if needed. Start a new Autopilot for the new Offer.
 
 ## Billing and Paused Autopilots
 
 Paused Autopilots:
+
 - Still count toward your active Autopilots limit
 - Are cheaper or free to keep paused (depending on your plan)
 - Resume instantly when you're ready
 
 Disabled Autopilots:
+
 - Don't count toward your active limit
 - Can be re-enabled anytime
 - Preserve all historical data
@@ -168,11 +184,13 @@ Check your plan details for specific pause/disable costs.
 ## What Happens to Active Leads?
 
 **If you pause:**
+
 - Active leads stay enrolled in sequences (but sequences are paused)
 - No new messages are sent
 - Replies still come through to your inbox
 
 **If you disable:**
+
 - Active sequences are paused
 - No new messages are sent
 - Leads remain in the system (not deleted)
@@ -181,38 +199,40 @@ Check your plan details for specific pause/disable costs.
 ## Monitoring After Pause/Disable
 
 After pausing:
+
 - Dashboard still shows stats
 - Activity log records the pause time
 - You can resume anytime
 
 After disabling:
+
 - Dashboard switches to "Disabled" state
 - You can view historical data and leads
 - Activity log shows the disable timestamp
 
 ## Quick Reference
 
-| Action | Reversible | Deletes Data | Use Case |
-|--------|-----------|-------------|----------|
-| **Pause** | Yes (Resume) | No | Short-term stops, vacations |
-| **Disable** | Yes (Re-enable) | No (cleans up automation) | Long-term stops, archiving |
-| **Pause Sequence** | Yes (Resume) | No | Stop one platform only |
+| Action             | Reversible       | Deletes Data              | Use Case                    |
+| ------------------ | ---------------- | ------------------------- | --------------------------- |
+| **Pause**          | Yes (Resume)     | No                        | Short-term stops, vacations |
+| **Disable**        | Yes (Re-enable)  | No (cleans up automation) | Long-term stops, archiving  |
+| **Pause Sequence** | Yes (Resume)     | No                        | Stop one platform only      |
 
 ## Support and Questions
 
-**Q: If I pause, do my leads stay engaged?**  
+**Q: If I pause, do my leads stay engaged?**
 A: No. Sequences are paused, so no new messages. Existing conversations remain open.
 
-**Q: Can I pause for more than a few weeks?**  
+**Q: Can I pause for more than a few weeks?**
 A: Yes, there's no limit. But for very long pauses (month+), consider disabling instead.
 
-**Q: Will re-enabling change my leads?**  
+**Q: Will re-enabling change my leads?**
 A: No. Your leads are preserved. Re-enabling only resets automation (searches, sequences, expansion).
 
-**Q: Can I export my leads before disabling?**  
+**Q: Can I export my leads before disabling?**
 A: Yes. Go to **Leads > Export** to download your lead database.
 
-**Q: What if I disable and re-enable multiple times?**  
+**Q: What if I disable and re-enable multiple times?**
 A: Each cycle treats it as a fresh start. New sequences, new content strategy, new lookalikes. Leads are preserved across cycles.
 
 ---

@@ -10,7 +10,7 @@ Account Warmup automatically:
 - **Grows your followers organically** through natural interactions
 - **Maintains human-like behavior** to keep your accounts healthy and undetected
 
-Think of warmup as building credibility before asking for anything. When a lead receives your message, they'll see an active account with genuine engagement history—not a bot.
+Think of warmup as building credibility before asking for anything. When a lead receives your message, they will see an active account with genuine engagement history, not a bot.
 
 ## How Warmup Works
 
@@ -25,8 +25,8 @@ All activity is randomized and spread throughout the day to mimic natural human 
 ## Available Platforms
 
 Account Warmup works on both:
-- **X/Twitter** — tweets, likes, follows, and replies
-- **LinkedIn** — posts, comments, profile views, and connection requests
+- **X/Twitter**: tweets, likes, follows, and replies
+- **LinkedIn**: posts, comments, profile views, and connection requests
 
 You can run warmup on multiple accounts simultaneously.
 
@@ -34,10 +34,10 @@ You can run warmup on multiple accounts simultaneously.
 
 The Engagement Engine dashboard shows your warmup progress at a glance:
 
-- **Day Counter** — e.g., "Day 40" tells you how long warmup has been running
-- **Daily Activity Chart** — Visual breakdown of posts, likes, replies, and follows per day
-- **Action Summary** — Total engagement metrics over the warmup period
-- **Activity Window** — When actions are scheduled during your active hours
+- **Day Counter**: e.g., "Day 40" tells you how long warmup has been running
+- **Daily Activity Chart**: visual breakdown of posts, likes, replies, and follows per day
+- **Action Summary**: total engagement metrics over the warmup period
+- **Activity Window**: when actions are scheduled during your active hours
 
 ## Why Warmup Matters for Outreach
 
@@ -47,14 +47,14 @@ A warmed-up account is dramatically more effective at outreach:
 Leads receive hundreds of outreach messages daily. An account with active engagement history, relevant posts, and genuine followers is infinitely more trustworthy than a brand new account. Warmup bridges that trust gap before you send your first message.
 {% endhint %}
 
-- **Higher reply rates** — Leads are more likely to respond to someone with an established presence
-- **Lower spam scores** — Platform algorithms treat active, engaged accounts better
-- **Natural lead discovery** — Engagement activity generates passive lead generation as people discover you
-- **Account safety** — Gradual, human-like behavior keeps your account from being flagged as spam
+- **Higher reply rates**: leads are more likely to respond to someone with an established presence
+- **Lower spam scores**: platform algorithms treat active, engaged accounts better
+- **Natural lead discovery**: engagement activity generates passive lead generation as people discover you
+- **Account safety**: gradual, human-like behavior keeps your account from being flagged as spam
 
 ## Next Steps
 
-- **[Content Strategy & Pillars](content-strategy.md)** — Learn how warmup content is organized and created
-- **[Daily Action Allocation](daily-actions.md)** — Understand the natural patterns of warmup activity
-- **[Engagement Automation](engagement.md)** — See how warmup engages with relevant content
-- **[Approvals](approvals.md)** — Review and manage warmup content before it posts
+- **[Content Strategy & Pillars](content-strategy.md)**: Learn how warmup content is organized and created
+- **[Daily Action Allocation](daily-actions.md)**: Understand the natural patterns of warmup activity
+- **[Engagement Automation](engagement.md)**: See how warmup engages with relevant content
+- **[Approvals](approvals.md)**: Review and manage warmup content before it posts

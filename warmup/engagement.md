@@ -1,15 +1,15 @@
 # Engagement Automation
 
-Engagement is the engine of Account Warmup. While your account posts content, it simultaneously engages with other relevant posts—liking, commenting, following, and building visibility in your niche. This dual approach accelerates account growth and generates passive lead discovery.
+Engagement is the engine of Account Warmup. While your account posts content, it simultaneously engages with other relevant posts by liking, commenting, following, and building visibility in your niche. This dual approach accelerates account growth and generates passive lead discovery.
 
 ## How Engagement Works
 
 Engagement automation runs in **10-minute cycles**:
 
-1. **Scan** — Identify posts in your niche matching your engagement keywords
-2. **Filter** — Apply quality filters (relevance, follower count, timing)
-3. **Engage** — Like, reply, follow, or view profiles based on daily allocation
-4. **Delay** — Use randomized human-like delays between actions
+1. **Scan**: identify posts in your niche matching your engagement keywords
+2. **Filter**: apply quality filters (relevance, follower count, timing)
+3. **Engage**: like, reply, follow, or view profiles based on daily allocation
+4. **Delay**: use randomized human-like delays between actions
 
 All engagement is keyword-based and selective, not indiscriminate.
 
@@ -58,7 +58,7 @@ Engagement uses **keyword-based targeting** to find and engage with relevant con
 When a post contains any of these keywords, it becomes a candidate for engagement.
 
 {% hint style="info" %}
-Keyword-based targeting is the difference between strategic warmup and spam-like engagement. You're not just clicking everything—you're having niche-specific conversations.
+Keyword-based targeting is the difference between strategic warmup and spam-like engagement. You are not just clicking everything. You are having niche-specific conversations.
 {% endhint %}
 
 ## High Follower Filtering
@@ -98,17 +98,17 @@ Beyond building warmup presence, engagement **generates passive lead discovery**
 - When you follow someone, they often follow back
 - This creates organic inbound interest before you reach out
 
-The benefit: By the time you start outreach sequences, your target accounts have often already seen and engaged with your content. They recognize your name.
+The benefit: by the time you start outreach sequences, your target accounts have often already seen and engaged with your content. They recognize your name.
 
 ## The Engagement Engine Dashboard
 
 The Engagement Engine dashboard tracks your engagement activity:
 
-- **Tweets Posted** — Daily and cumulative count
-- **Likes Given** — Per day and total
-- **Replies Sent** — Engagement replies by day
-- **Follows** — New followers gained
-- **Activity Chart** — Visual breakdown of engagement over time
+- **Tweets Posted**: daily and cumulative count
+- **Likes Given**: per day and total
+- **Replies Sent**: engagement replies by day
+- **Follows**: new followers gained
+- **Activity Chart**: visual breakdown of engagement over time
 
 This gives you real-time visibility into what warmup is doing.
 
@@ -132,10 +132,10 @@ Engagement activity and outreach sequences are **independent**. Your warmup engi
 - Warmup engagement is continuous (10-minute cycles)
 - Outreach sequences run on their own schedule
 - Both contribute to your account's visibility and growth
-- Engagement builds the presence, outreach converts leads
+- Engagement builds the presence; outreach converts leads
 
 ## Next Steps
 
-- **[Daily Action Allocation](daily-actions.md)** — See the breakdown of daily engagement actions
-- **[Content Strategy & Pillars](content-strategy.md)** — Learn how pillars guide your engagement keywords
-- **[Engagement Automation](engagement.md)** — Return to this page for detailed engagement mechanics
+- **[Daily Action Allocation](daily-actions.md)**: See the breakdown of daily engagement actions
+- **[Content Strategy & Pillars](content-strategy.md)**: Learn how pillars guide your engagement keywords
+- **[Engagement Automation](engagement.md)**: Return to this page for detailed engagement mechanics
