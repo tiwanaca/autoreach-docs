@@ -1,11 +1,11 @@
-# Table of Contents
+# Table of contents
 
 * [Welcome](README.md)
 
 ## Getting Started
 
 * [Quickstart](getting-started/quickstart.md)
-* [Connecting Your X/Twitter Account](getting-started/connect-twitter.md)
+* [Connecting Your X Account](getting-started/connect-twitter.md)
 * [Connecting Your LinkedIn Account](getting-started/connect-linkedin.md)
 * [Creating Your First Offer](getting-started/create-offer.md)
 * [Installing the Chrome Extension](getting-started/chrome-extension.md)
