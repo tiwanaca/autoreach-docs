@@ -18,7 +18,7 @@ AutoReach connects six core concepts into an intelligent outreach machine. Under
 
 **Conversations** are the intelligent back-and-forth messaging with leads. AutoReach's AI can understand responses, generate contextual replies, and escalate to you when needed, all while maintaining your authentic voice.
 
-**Autopilot** is the full automation mode. When enabled, AutoReach discovers new leads matching your offer, scores them, enrolls them in sequences, and responds to their messages, all without you lifting a finger.
+**Autopilot** is the quick-start assistant. It automatically configures searches, creates a sequence, and enrolls leads for you. You can do all of this manually, but Autopilot handles the initial setup so you can get started faster.
 
 ## The Outreach Lifecycle
 
@@ -26,7 +26,7 @@ Here's how these concepts work together in practice:
 
 ```
 ┌─────────────┐
-│  1. Discover│ ← Autopilot finds leads matching your Offer
+│  1. Discover│ ← Find leads matching your Offer via searches
 └──────┬──────┘
        │
        ▼
@@ -69,7 +69,7 @@ Each concept builds on the others:
 - Without **Buyer Intelligence**, you're reaching everyone equally
 - Without **Sequences**, you have no consistent outreach cadence
 - Without **Conversations**, you can't scale personal responses
-- Without **Autopilot**, you're manually triggering everything
+- Without **Autopilot**, you configure searches and sequences yourself (which is totally fine)
 
 {% hint style="info" %}
 **Pro Tip:** Start by creating a detailed Offer. The richer your Offer definition (target audience, pain points, search signals), the smarter your Buyer Intelligence scores become.
