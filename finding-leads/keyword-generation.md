@@ -245,3 +245,8 @@ Run separate searches with persona-specific keywords, then combine results.
 - Q4: Strategic planning ("next year", "planning", "budget")
 
 Match keyword themes to procurement seasonality in your market.
+
+## Next Steps
+
+- **[X/Twitter Tweet Search](tweet-search.md)**: Use generated keywords to find high-intent prospects on X
+- **[LinkedIn Content Search](linkedin-content-search.md)**: Apply keywords to discover decision-makers on LinkedIn

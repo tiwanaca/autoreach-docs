@@ -65,3 +65,8 @@ The whole process takes just 1-2 minutes, and you'll see progress indicators as 
 {% hint style="success" %}
 **Ready to go?** Once Autopilot is active, your outreach runs 24/7. Check the Autopilot dashboard to monitor leads, view activity, and adjust settings as needed.
 {% endhint %}
+
+## Next Steps
+
+- **[Enabling Autopilot](enabling.md)**: Walk through the one-click enable process step by step
+- **[What Autopilot Does](what-it-does.md)**: See every operation Autopilot manages around the clock

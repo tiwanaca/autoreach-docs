@@ -335,3 +335,8 @@ In the lead profile, you can see:
 {% hint style="info" %}
 **Custom Signals are Powerful:** If you notice a certain phrase or pattern in conversations with buyers, add it as a custom signal. AutoReach will find more people with that pattern.
 {% endhint %}
+
+## Next Steps
+
+- **[Buyer Intelligence & Scoring](buyer-scoring.md)**: See how signals feed into fit, intent, and timing scores
+- **[Finding Leads Overview](../finding-leads/overview.md)**: Discover leads showing the signals that matter most

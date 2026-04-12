@@ -276,3 +276,8 @@ Each has different ICPs, signals, and messaging.
 {% hint style="warning" %}
 **Don't Overload the Knowledge Base:** Uploading 200-page documents doesn't help. Upload 5-10 high-quality docs instead. Longer isn't smarter; relevance is.
 {% endhint %}
+
+## Next Steps
+
+- **[Creating Your First Offer](../getting-started/create-offer.md)**: Walk through the offer creation process step by step
+- **[Knowledge Base](../conversations/knowledge-base.md)**: Learn more about uploading and managing knowledge base documents

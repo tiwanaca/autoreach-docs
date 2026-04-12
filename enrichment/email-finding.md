@@ -161,3 +161,8 @@ If you're seeing info@, contact@, etc. in results:
 - Verify your Findymail API key configuration
 - Generic email filtering should auto-exclude these
 - If they're still appearing, manually remove them from the lead profile
+
+## Next Steps
+
+- **[Website Finding](website-finding.md)**: Discover professional websites to enrich lead profiles further
+- **[Template Variables](../outreach/template-variables.md)**: Use discovered emails and data in personalized outreach messages

@@ -182,3 +182,8 @@ When you add a lead to a sequence:
 {% hint style="info" %}
 **Use Manual Outreach Strategically:** It's powerful for high-value accounts, but don't overuse it. It bypasses the scoring logic for a reason.
 {% endhint %}
+
+## Next Steps
+
+- **[Buyer Intelligence & Scoring](buyer-scoring.md)**: Understand how fit, intent, and timing scores are calculated
+- **[Auto-Enrollment](../autopilot/auto-enrollment.md)**: See how active leads get enrolled into sequences automatically

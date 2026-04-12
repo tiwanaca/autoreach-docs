@@ -203,3 +203,9 @@ If someone you think should score high is coming in low, check:
 5. **Offer definition** - Is your target audience/keywords specific enough?
 
 Request a **Deep Analysis** rescore and review the scoring breakdown in the Buyer Intelligence dashboard to see exactly why they scored where they did.
+
+## Next Steps
+
+- **[Buyer States](buyer-states.md)**: Understand how scores translate into lead states and pipeline visibility
+- **[Signal Detection](signals.md)**: See the full list of signals that power scoring
+- **[Auto-Enrollment](../autopilot/auto-enrollment.md)**: Learn how high-scoring leads get enrolled into sequences automatically

@@ -155,3 +155,8 @@ Check the **Accounts** page regularly:
 - **Multiple Suspensions?** Consider adding more accounts to spread activity load
 
 AutoReach automatically pauses accounts showing severe health issues (like IP blocks), but lighter issues (rate limits, bot detection) are surfaced as warnings for you to decide.
+
+## Next Steps
+
+- **[Account Safety & Anti-Detection](account-safety.md)**: Learn how AutoReach protects your accounts from detection
+- **[Connecting LinkedIn](../getting-started/connect-linkedin.md)**: Add a new LinkedIn account to your workspace

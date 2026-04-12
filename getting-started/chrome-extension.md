@@ -296,4 +296,4 @@ Found a security issue? Email security@autoreach.tech with details. We take secu
 3. **Create an Offer**: [Creating Your First Offer](create-offer.md)
 4. **Follow the Quickstart**: [Quickstart](quickstart.md)
 
-Questions? Check our [FAQ](../help/faq.md) or email support@autoreach.tech.
+Need help? Email support@autoreach.tech.

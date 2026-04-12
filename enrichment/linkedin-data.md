@@ -115,3 +115,8 @@ AI message generation uses LinkedIn data to:
 - **Find connection points** - "I see you've worked with AWS and Salesforce..."
 
 The richer the LinkedIn profile, the more personalized your AI-generated outreach can be.
+
+## Next Steps
+
+- **[X/Twitter Profile Data](twitter-data.md)**: See what data is extracted from X profiles
+- **[Web Enrichment](web-enrichment.md)**: Discover how company-level data is gathered from the web

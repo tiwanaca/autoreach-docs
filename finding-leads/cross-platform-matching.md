@@ -216,3 +216,8 @@ This creates impression frequency without spamming via multiple platform touches
 2. Cross-Platform Matching finds their LinkedIn profiles
 3. Automatically have full professional context for outreach
 4. Enrichment data from LinkedIn improves ICP scoring
+
+## Next Steps
+
+- **[Enrichment Pipeline](../enrichment/pipeline.md)**: See how matched profiles flow through enrichment and scoring
+- **[How Leads Work](../core-concepts/leads.md)**: Understand unified lead profiles across platforms

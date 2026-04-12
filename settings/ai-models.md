@@ -98,3 +98,8 @@ The default model configuration works well for most users. Only customize if you
 - **Fallback:** GPT-4o mini (backup for edge cases)
 
 Test your configuration with a small pilot sequence before rolling out to your full lead list.
+
+## Next Steps
+
+- **[Pipeline Cost Estimation](cost-estimation.md)**: See how your model choices affect per-lead costs
+- **[Creating Your First Offer](../getting-started/create-offer.md)**: Set up an offer to start using your configured models

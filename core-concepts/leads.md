@@ -171,3 +171,8 @@ Once enrolled in a sequence, a lead's state evolves:
 {% hint style="warning" %}
 **Respect Platform Limits:** AutoReach respects X and LinkedIn's rate limits. Bulk imports of 10,000+ leads will be throttled to avoid account restrictions.
 {% endhint %}
+
+## Next Steps
+
+- **[Buyer Intelligence & Scoring](buyer-scoring.md)**: Learn how AutoReach scores leads across fit, intent, and timing
+- **[Finding Leads Overview](../finding-leads/overview.md)**: Explore all the ways to discover new leads

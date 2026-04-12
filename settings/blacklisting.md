@@ -209,3 +209,8 @@ Blacklist does not retroactively remove already-enriched accounts.
 
 ### "I Blacklisted By Mistake"
 Go to **Settings > Blacklist**, find the account, and click **Remove**. The account will be discoverable again in future runs.
+
+## Next Steps
+
+- **[Account Safety & Anti-Detection](account-safety.md)**: Learn how AutoReach keeps your accounts safe from platform detection
+- **[Multi-Account Management](multi-account.md)**: Manage multiple accounts and their blacklist settings

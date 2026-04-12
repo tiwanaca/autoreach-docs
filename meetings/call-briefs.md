@@ -83,3 +83,8 @@ If a conversation is missing context or you have had multiple touchpoints, the b
 {% hint style="info" %}
 Call briefs are powered by AI and trained on your past successful conversations. The quality improves as AutoReach learns more about your leads and sales patterns.
 {% endhint %}
+
+## Next Steps
+
+- **[Meeting Booking Integration](booking-integration.md)**: Set up Calendly or Cal.com to track bookings automatically
+- **[Chrome Extension CRM](chrome-extension-crm.md)**: Access call briefs and pipeline data from your browser

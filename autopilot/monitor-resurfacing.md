@@ -179,3 +179,8 @@ A: They move into your sequence and are no longer resurfaced (they're active). I
 ---
 
 Resurfacing is your safety net. It ensures no lead is left behind. They just have to earn their way back onto your active list.
+
+## Next Steps
+
+- **[Auto-Enrollment](auto-enrollment.md)**: See how resurfaced leads get enrolled into sequences
+- **[Buyer Intelligence & Scoring](../core-concepts/buyer-scoring.md)**: Understand the scoring system that drives resurfacing decisions

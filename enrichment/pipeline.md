@@ -85,3 +85,8 @@ The better the enrichment, the better the scoring and the more relevant your out
 {% hint style="warning" %}
 **Enrichment Quality Matters:** Leads with incomplete enrichment (missing LinkedIn profile, no recent activity) will receive lower scoring and less personalized outreach. Encourage leads to have complete profiles on X/LinkedIn for best results.
 {% endhint %}
+
+## Next Steps
+
+- **[Buyer Intelligence & Scoring](../core-concepts/buyer-scoring.md)**: Learn how enriched data powers fit, intent, and timing scores
+- **[Outreach Overview](../outreach/overview.md)**: See how enriched profiles drive personalized messaging

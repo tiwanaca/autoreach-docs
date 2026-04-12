@@ -137,3 +137,9 @@ Here's how it all works together:
 7. **Engagement** builds relationships across the platform
 
 This cycle runs 24/7, turning your ICP into a continuous revenue pipeline.
+
+## Next Steps
+
+- **[Auto-Enrollment](auto-enrollment.md)**: Learn how scored leads get added to sequences automatically
+- **[Buyer Expansion](buyer-expansion.md)**: See how Autopilot discovers new prospects every day
+- **[Monitor Resurfacing](monitor-resurfacing.md)**: Understand how low-score leads get a second chance

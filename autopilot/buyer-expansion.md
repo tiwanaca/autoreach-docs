@@ -161,3 +161,8 @@ A: Autopilot detects exhaustion and disables that source. You can add new expans
 ---
 
 Expansion turns your best-performing accounts into a lead generation machine. Let Autopilot do the mining while you focus on selling.
+
+## Next Steps
+
+- **[Auto-Enrollment](auto-enrollment.md)**: Learn how expansion leads get enrolled into sequences
+- **[Lookalike Audiences](../finding-leads/lookalike-audiences.md)**: Understand the seed account strategy that powers expansion

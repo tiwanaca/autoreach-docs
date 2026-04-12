@@ -93,3 +93,9 @@ If you see a bot detection warning, do not try to bypass it. Wait the full 7-day
 * **Keep connection requests conservative**: Stay well under the weekly limit, especially for new accounts.
 * **Use realistic activity windows**: Match the hours you'd normally be active on LinkedIn.
 * **Monitor the health dashboard**: Check your account status regularly in the Accounts page.
+
+## Next Steps
+
+- **[Creating Your First Offer](create-offer.md)**: Define your target audience and value proposition
+- **[Building Sequences](../outreach/building-sequences.md)**: Set up LinkedIn outreach sequences for your leads
+- **[Quickstart](quickstart.md)**: Follow the full setup guide from start to finish

@@ -133,3 +133,8 @@ Aggressive scraping patterns can trigger Twitter's anti-bot detection. AutoReach
 **Seeing duplicate prospects across searches?**
 - This is normal. ICP matching deduplicates before adding to your database
 - The same prospect may appear in multiple relevant searches
+
+## Next Steps
+
+- **[Enrichment Pipeline](../enrichment/pipeline.md)**: Learn how discovered leads get enriched with profile and company data
+- **[Building Sequences](../outreach/building-sequences.md)**: Set up outreach sequences for your newly discovered leads

@@ -151,3 +151,8 @@ You might want to refresh if:
 - The lead recently launched a new website
 - You suspect the discovered URL is outdated
 - You want to confirm current professional presence
+
+## Next Steps
+
+- **[Email Finding](email-finding.md)**: Discover work email addresses using Findymail integration
+- **[Web Enrichment](web-enrichment.md)**: Gather company-level context like funding, tech stack, and news

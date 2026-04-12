@@ -186,3 +186,8 @@ Account heat requires:
 - **Recent signals** (older signals decay over time)
 
 If your leads are highly distributed across companies, account heat provides less value. Use it where you have density (3+ contacts per target company).
+
+## Next Steps
+
+- **[Interaction Orbit](interaction-orbit.md)**: Detect dark funnel buying behavior through engagement patterns
+- **[Buyer Intelligence & Scoring](../core-concepts/buyer-scoring.md)**: Understand how account heat boosts individual lead scores

@@ -94,3 +94,8 @@ AI message generation leverages X data to:
 - **High-Activity Accounts** - Popular accounts update frequently; activity data refreshes on each enrichment
 
 AutoReach handles data fetch failures gracefully and will retry enrichment periodically.
+
+## Next Steps
+
+- **[LinkedIn Profile Data](linkedin-data.md)**: See what professional data is extracted from LinkedIn
+- **[Web Enrichment](web-enrichment.md)**: Learn how company-level context is gathered from the web

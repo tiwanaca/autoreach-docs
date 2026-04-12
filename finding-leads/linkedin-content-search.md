@@ -133,3 +133,8 @@ Real-time progress helps you understand search effectiveness and identify if res
 **High duplicate rate across searches?**
 - This is normal. The same prospect may comment on multiple relevant posts
 - ICP matching automatically deduplicates before adding to your lead database
+
+## Next Steps
+
+- **[LinkedIn People Search](linkedin-people-search.md)**: Target prospects by job title, company, and location
+- **[Enrichment Pipeline](../enrichment/pipeline.md)**: See how discovered leads get enriched with full profile data

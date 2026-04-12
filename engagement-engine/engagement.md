@@ -138,4 +138,4 @@ Engagement activity and outreach sequences are **independent**. The Engagement E
 
 - **[Daily Action Allocation](daily-actions.md)**: See the breakdown of daily engagement actions
 - **[Content Strategy & Pillars](content-strategy.md)**: Learn how pillars guide your engagement keywords
-- **[Engagement Automation](engagement.md)**: Return to this page for detailed engagement mechanics
+- **[Autopilot Overview](../autopilot/overview.md)**: Set up Autopilot to automate engagement alongside lead discovery and outreach

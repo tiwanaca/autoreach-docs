@@ -184,3 +184,8 @@ This ensures high-quality core prospects while allowing for discovery of adjacen
 - Extract followers from competitor accounts
 - Extract followers from industry thought leaders
 - Cross-reference overlapping followers (strongest ICP indicators)
+
+## Next Steps
+
+- **[Buyer Expansion](../autopilot/buyer-expansion.md)**: Automate lookalike discovery with Autopilot's daily expansion
+- **[Enrichment Pipeline](../enrichment/pipeline.md)**: Understand how extracted followers get enriched and scored

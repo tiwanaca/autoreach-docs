@@ -318,6 +318,6 @@ Monday 9am-12pm:
 
 ## Next Steps
 
-- Configure [Activity Window](../getting-started/account-settings.md) in Account Settings
+- Configure [Activity Window](../getting-started/quickstart.md) in Account Settings
 - Learn [Building Sequences](building-sequences.md) to apply daily limits per sequence
 - Explore [Supported Actions](supported-actions.md) to understand action-specific limits

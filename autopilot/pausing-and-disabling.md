@@ -238,3 +238,8 @@ A: Each cycle treats it as a fresh start. New sequences, new content strategy, n
 ---
 
 Autopilot gives you the flexibility to run full automation or dial it back anytime. Pause for a break, disable for a pivot, resume when you're ready.
+
+## Next Steps
+
+- **[Enabling Autopilot](enabling.md)**: Re-enable Autopilot after pausing or disabling
+- **[Autopilot Overview](overview.md)**: Review everything Autopilot manages for you

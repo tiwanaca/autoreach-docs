@@ -103,3 +103,8 @@ All booked meetings appear in:
 {% hint style="info" %}
 Meeting status updates happen in real-time. You will see bookings appear in AutoReach within seconds of the attendee confirming on Calendly or Cal.com.
 {% endhint %}
+
+## Next Steps
+
+- **[Call Brief Generation](call-briefs.md)**: Prepare for booked meetings with AI-generated call briefs
+- **[Chrome Extension CRM](chrome-extension-crm.md)**: Track meeting status and pipeline stages from your browser

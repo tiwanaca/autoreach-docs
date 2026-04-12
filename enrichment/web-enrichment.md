@@ -128,3 +128,8 @@ Web enrichment is enabled by default. To disable it (to preserve credits):
 3. Save
 
 You can re-enable it anytime. Leads already enriched won't be re-processed unless manually refreshed.
+
+## Next Steps
+
+- **[Email Finding](email-finding.md)**: Discover work email addresses for your enriched leads
+- **[Website Finding](website-finding.md)**: Find professional and company websites for deeper personalization

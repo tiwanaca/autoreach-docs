@@ -128,4 +128,4 @@ Once your X account is connected:
 3. **Add Leads** manually or via Autopilot
 4. **Launch your Sequence** and monitor results in your Inbox
 
-See [Quickstart](quickstart.md) for the full setup flow, or read [Core Concepts](../core-concepts/sequences.md) to learn more about sequences and automation.
+See [Quickstart](quickstart.md) for the full setup flow, or read [Building Sequences](../outreach/building-sequences.md) to learn more about sequences and automation.

@@ -143,3 +143,8 @@ The Chrome Extension is the bridge between your daily browsing and your outreach
 {% hint style="success" %}
 Install the extension and pin it to your toolbar for quick access. It is designed to fit seamlessly into your workflow without slowing you down.
 {% endhint %}
+
+## Next Steps
+
+- **[Installing the Chrome Extension](../getting-started/chrome-extension.md)**: Get started with installation and license activation
+- **[Call Brief Generation](call-briefs.md)**: Prepare for meetings with AI-generated briefs from your pipeline

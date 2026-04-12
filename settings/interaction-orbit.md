@@ -124,3 +124,8 @@ If a lead lacks engagement history or accounts are private, Orbit data simply wi
 {% hint style="info" %}
 Not all leads will have rich interaction orbit data. Focus on those who do. They are your highest-intent prospects.
 {% endhint %}
+
+## Next Steps
+
+- **[Account-Level Signal Aggregation](account-signals.md)**: See how signals from multiple leads at one company combine
+- **[Signal Detection](../core-concepts/signals.md)**: Review all the signal types that feed into scoring

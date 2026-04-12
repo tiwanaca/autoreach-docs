@@ -139,3 +139,8 @@ Estimates are typically accurate to within 5-10%. Factors that might increase ac
 {% hint style="tip" %}
 Run a pilot with 10-20 leads using your chosen model configuration. Compare estimated costs to actual costs to calibrate your projections.
 {% endhint %}
+
+## Next Steps
+
+- **[AI Model Configuration](ai-models.md)**: Customize your model choices to optimize cost and quality
+- **[Finding Leads Overview](../finding-leads/overview.md)**: Explore discovery methods and their associated costs

@@ -128,3 +128,8 @@ A: It depends on your sequence length. Typical sequences run 7-21 days. After co
 ---
 
 Auto-Enrollment is the heart of your automation. It's the reason you can run full B2B outreach without manually picking which leads to reach.
+
+## Next Steps
+
+- **[Buyer Expansion](buyer-expansion.md)**: See how Autopilot discovers new prospects to fill your pipeline
+- **[Buyer States](../core-concepts/buyer-states.md)**: Understand the score thresholds that drive enrollment decisions
