@@ -35,6 +35,10 @@ AutoReach automatically provisions a secure ISP residential static proxy for you
 **Why ISP proxies?** ISP residential static proxies use real internet service provider IPs, making your activity indistinguishable from a normal user. This is the safest proxy type for social media automation.
 {% endhint %}
 
+{% hint style="warning" %}
+**Do not use automatic replies on X.** We strongly advise against enabling auto-replies inside sequences to reply to tweets, and against turning on auto-reply in the Engagement Engine. Do not send replies from the application. Automated replies are the number one reason accounts get suspended on X.
+{% endhint %}
+
 ## Account Health Monitoring
 
 AutoReach monitors your X account health and shows you warnings if something's wrong.
