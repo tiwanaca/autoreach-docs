@@ -227,7 +227,6 @@ Real examples make your AI responses more credible.
 
 **Upload**:
 - A 1-page case study showing a client's problem, your solution, and results
-- A screenshot of customer success (e.g., 40% improvement in conversion rate)
 - Testimonial highlighting the specific value you deliver
 
 ### Review and Update Your Offer Regularly
@@ -238,7 +237,7 @@ As your business evolves, update your Offer:
 
 ## Next Steps
 
-1. **Connect a Social Account**: [Connecting X](connect-twitter.md) or [Connecting LinkedIn](connect-linkedin.md)
+1. **Configure your accounts**: Go to the Accounts page to enable inbound engagement detection, set your limits, and start the Engagement Engine
 2. **Start Autopilot**: Let AutoReach find and engage leads automatically
 3. **Review your Sequence**: Check the prompt, configuration, and tone examples in Advanced Settings
 
