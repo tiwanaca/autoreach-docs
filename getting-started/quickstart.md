@@ -119,6 +119,7 @@ Your outreach is now running on autopilot. Here's what to do:
 - **Check your Inbox** — Replies and conversations appear here in real-time
 - **Review the Buyers page** — See scored leads before they're enrolled (when auto-enroll is off)
 - **Monitor Autopilot** — Check the [Autopilot Dashboard](../autopilot/overview.md) for stats and activity
-- **Customize your Offer** — Add [tone examples](create-offer.md#tone-examples), upload [knowledge base documents](create-offer.md#knowledge-base), and refine your target audience
+- **Review your Sequence** — Go to your sequence's **Advanced Settings** and review the prompt, the configuration, and the tone examples. Tone examples define how your outreach sounds and can be customized per sequence.
+- **Customize your Offer** — Upload [knowledge base documents](create-offer.md#knowledge-base) and refine your target audience
 
 Need help? Email support@autoreach.tech.
