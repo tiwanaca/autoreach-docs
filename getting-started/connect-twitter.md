@@ -39,6 +39,18 @@ AutoReach automatically provisions a secure ISP residential static proxy for you
 **Do not use automatic replies on X.** We strongly advise against enabling auto-replies inside sequences to reply to tweets, and against turning on auto-reply in the Engagement Engine. Do not send replies from the application. Automated replies are the number one reason accounts get suspended on X.
 {% endhint %}
 
+## Inbound Engagement Detection
+
+AutoReach monitors your X account for inbound engagement:
+
+* **Replies** to your tweets
+* **Mentions** of your handle
+* **Retweets** and **quote tweets** of your content
+* **Likes** on your posts
+* **New followers**
+
+These are processed as buying signals. Someone engaging with your content may be a potential buyer. AutoReach can automatically create leads from high-intent engagers (replies, mentions, quote tweets) and update signals on existing leads.
+
 ## Account Health Monitoring
 
 AutoReach monitors your X account health and shows you warnings if something's wrong.
