@@ -164,7 +164,7 @@ AutoReach's Chrome extension provides:
 2. **Rotate Accounts** - spread activity across 3+ accounts if possible
 3. **Respect Daily Limits** - do not set limits higher than 20-30/day on X, 30-50/day on LinkedIn
 4. **Monitor Health** - check the Accounts dashboard weekly
-5. **Warmup New Accounts** - respect the 4-week warmup period on LinkedIn
+5. **Warm up new accounts with the Engagement Engine** - respect the 4-week ramp-up period on LinkedIn
 6. **Pause Proactively** - if you see warnings, pause before emergency pause triggers
 7. **Update Your Proxy** - replace proxies every 3-6 months to avoid IP reputation issues
 

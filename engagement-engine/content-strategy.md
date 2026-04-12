@@ -1,6 +1,6 @@
 # Content Strategy & Pillars
 
-Your Account Warmup content is organized around **5 content pillars** derived from your offer. This structure ensures your posts stay relevant to your niche while building a consistent, recognizable professional presence.
+Your Engagement Engine content is organized around **5 content pillars** derived from your offer. This structure ensures your posts stay relevant to your niche while building a consistent, recognizable professional presence.
 
 ## What Are Content Pillars?
 
@@ -48,7 +48,7 @@ AutoReach is aware of the current year when generating content. This ensures you
 
 ## Keyword-Based Engagement Targeting
 
-When your warmup engine engages with other posts (likes, replies, follows), it uses **keyword-based targeting** to find relevant content:
+When the Engagement Engine interacts with other posts (likes, replies, follows), it uses **keyword-based targeting** to find relevant content:
 
 - Only engages on posts matching your niche keywords
 - Skips posts about unrelated topics
@@ -62,7 +62,7 @@ This ensures your engagement looks natural and relevant, not spammy.
 AutoReach won't engage with accounts that have 100k+ followers:
 
 {% hint style="info" %}
-Engaging with mega-influencers looks spammy and isn't effective. Warmup focuses on mid-tier and emerging voices in your niche, which is where real influence and authentic engagement happens.
+Engaging with mega-influencers looks spammy and isn't effective. The Engagement Engine focuses on mid-tier and emerging voices in your niche, which is where real influence and authentic engagement happens.
 {% endhint %}
 
 - Avoids looking like you're chasing clout
@@ -73,7 +73,7 @@ Engaging with mega-influencers looks spammy and isn't effective. Warmup focuses 
 
 Your content strategy is automatically created when you:
 1. Enable **Autopilot** (recommended for hands-off setup)
-2. Or manually configure warmup with an associated offer/ICP
+2. Or manually configure the Engagement Engine with an associated offer/ICP
 
 AutoReach analyzes your offer, pain points, target audience, and search signals to generate:
 - 5 content pillars specific to your market

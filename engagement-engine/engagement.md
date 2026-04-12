@@ -1,6 +1,6 @@
 # Engagement Automation
 
-Engagement is the engine of Account Warmup. While your account posts content, it simultaneously engages with other relevant posts by liking, commenting, following, and building visibility in your niche. This dual approach accelerates account growth and generates passive lead discovery.
+Engagement is at the core of the Engagement Engine. While your account posts content, it simultaneously engages with other relevant posts by liking, commenting, following, and building visibility in your niche. This dual approach accelerates account growth and generates passive lead discovery.
 
 ## How Engagement Works
 
@@ -44,7 +44,7 @@ All engagement is keyword-based and selective, not indiscriminate.
 Engagement uses **keyword-based targeting** to find and engage with relevant content:
 
 - Define keywords related to your niche and offer
-- Warmup searches for posts, comments, and profiles matching those keywords
+- The Engagement Engine searches for posts, comments, and profiles matching those keywords
 - Only engages on relevant content
 - Ignores posts outside your niche
 
@@ -58,7 +58,7 @@ Engagement uses **keyword-based targeting** to find and engage with relevant con
 When a post contains any of these keywords, it becomes a candidate for engagement.
 
 {% hint style="info" %}
-Keyword-based targeting is the difference between strategic warmup and spam-like engagement. You are not just clicking everything. You are having niche-specific conversations.
+Keyword-based targeting is the difference between strategic engagement and spam-like engagement. You are not just clicking everything. You are having niche-specific conversations.
 {% endhint %}
 
 ## High Follower Filtering
@@ -91,7 +91,7 @@ Platforms detect automated behavior through action timing. AutoReach uses random
 
 ## Engagement as Lead Generation
 
-Beyond building warmup presence, engagement **generates passive lead discovery**:
+Beyond building your presence, engagement **generates passive lead discovery**:
 
 - When you like a post, the author often checks your profile
 - When you reply thoughtfully, people start following you
@@ -110,11 +110,11 @@ The Engagement Engine dashboard tracks your engagement activity:
 - **Follows**: new followers gained
 - **Activity Chart**: visual breakdown of engagement over time
 
-This gives you real-time visibility into what warmup is doing.
+This gives you real-time visibility into what the Engagement Engine is doing.
 
 ## Customizing Engagement Keywords
 
-When you set up or configure warmup, you define your **engagement keywords**:
+When you set up or configure the Engagement Engine, you define your **engagement keywords**:
 
 1. List 5-10 keywords relevant to your niche
 2. AutoReach scans for posts containing these keywords
@@ -126,10 +126,10 @@ Keywords are automatically derived from your offer and ICP, but you can customiz
 ## Engagement Doesn't Stop Outreach
 
 {% hint style="success" %}
-Engagement activity and outreach sequences are **independent**. Your warmup engine can be engaging with posts while your sequences are sending direct messages to leads. Both run simultaneously.
+Engagement activity and outreach sequences are **independent**. The Engagement Engine can be engaging with posts while your sequences are sending direct messages to leads. Both run simultaneously.
 {% endhint %}
 
-- Warmup engagement is continuous (10-minute cycles)
+- Engagement Engine activity is continuous (10-minute cycles)
 - Outreach sequences run on their own schedule
 - Both contribute to your account's visibility and growth
 - Engagement builds the presence; outreach converts leads

@@ -88,14 +88,14 @@ LinkedIn account security requires a dedicated proxy:
 - **Host, Port, Username, Password** - your proxy details
 - **Required** - LinkedIn accounts must always have a proxy configured
 
-### Warmup Phase Tracking
-New LinkedIn accounts go through a warmup phase:
+### Engagement Phase Tracking
+New LinkedIn accounts go through an engagement ramp-up phase:
 
 - **Week 1** - limited actions, profile views, and light engagement
 - **Week 2-3** - gradual increase in activity levels
 - **Week 4+** - full capacity operations
 
-AutoReach shows warmup progress on each LinkedIn account card. Do not rush this process. Accounts that respect the warmup pattern have 3-5x lower suspension rates.
+AutoReach shows engagement phase progress on each LinkedIn account card. Do not rush this process. Accounts that respect the ramp-up pattern have 3-5x lower suspension rates.
 
 ### Connection Limit Detection
 AutoReach monitors your weekly usage:
@@ -114,9 +114,9 @@ Each account card displays:
 - **Error Rate** - percentage of actions that failed in last 24h
 
 ### Engagement Engine Status (LinkedIn only)
-Shows warmup progress and daily engagement activity:
+Shows engagement phase progress and daily engagement activity:
 
-- **Warmup Week** - current phase (Week 1, 2, 3, or Complete)
+- **Engagement Week** - current phase (Week 1, 2, 3, or Complete)
 - **Daily Activity Chart** - last 7 days of engagement actions
 - **Inbound Engagement** - replies and connection acceptances tracked
 

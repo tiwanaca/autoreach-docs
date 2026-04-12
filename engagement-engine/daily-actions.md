@@ -1,10 +1,10 @@
 # Daily Action Allocation
 
-Account Warmup spreads your activity throughout the day in randomized patterns. This natural variation is what separates a healthy, human-like account from a bot-flagged account.
+The Engagement Engine spreads your activity throughout the day in randomized patterns. This natural variation is what separates a healthy, human-like account from a bot-flagged account.
 
 ## How Daily Actions Work
 
-Each day, warmup generates a random number of actions **within specific ranges**. The exact count changes every day, so your activity never looks scripted or repetitive.
+Each day, the Engagement Engine generates a random number of actions **within specific ranges**. The exact count changes every day, so your activity never looks scripted or repetitive.
 
 ## Twitter/X Daily Actions
 
@@ -32,7 +32,7 @@ Each day, warmup generates a random number of actions **within specific ranges**
 Every 24 hours, AutoReach randomly selects action counts within the ranges above:
 
 {% hint style="info" %}
-Instead of posting exactly 3 tweets every day, warmup might post 2 today, 4 tomorrow, then 3 the next day. This unpredictability is the hallmark of real human behavior.
+Instead of posting exactly 3 tweets every day, the Engagement Engine might post 2 today, 4 tomorrow, then 3 the next day. This unpredictability is the hallmark of real human behavior.
 {% endhint %}
 
 **Example daily schedule:**
@@ -43,15 +43,15 @@ Instead of posting exactly 3 tweets every day, warmup might post 2 today, 4 tomo
 
 ## Skip Days Simulate Real Life
 
-About 15% of the time (roughly 1 in 7 days), warmup will take a complete skip day:
+About 15% of the time (roughly 1 in 7 days), the Engagement Engine will take a complete skip day:
 
 - No posts, likes, follows, or engagement
 - This mimics real human behavior (everyone takes days off)
 - Makes your account look authentic and prevents algorithm flagging
-- Your account still runs sequences and completes outreach on skip days. Only warmup pauses.
+- Your account still runs sequences and completes outreach on skip days. Only the Engagement Engine pauses.
 
 {% hint style="warning" %}
-Skip days are **not** days when your outreach stops. Sequences continue as scheduled. Skip days only affect warmup content and engagement activity.
+Skip days are **not** days when your outreach stops. Sequences continue as scheduled. Skip days only affect Engagement Engine content and engagement activity.
 {% endhint %}
 
 ## Activity Window & Timing
@@ -68,7 +68,7 @@ This ensures your activity looks like it is coming from a real person working du
 ## No Manual Tuning Required
 
 You don't manually set these ranges. AutoReach automatically adjusts daily allocation based on:
-- Your warmup stage (early warmup is more aggressive)
+- Your engagement stage (early ramp-up is more aggressive)
 - Account age and follower count
 - Platform safety guidelines
 - Overall outreach campaign intensity

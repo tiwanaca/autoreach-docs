@@ -57,7 +57,7 @@ Build multi-step sequences with the visual flow editor. Combine DMs, likes, foll
 
 When leads reply, the AI Response Engine takes over. It detects the conversation stage - whether they just replied to your cold DM, are asking questions, raising objections, or are ready to book - and generates natural responses that follow your tone. You can jump in manually at any time.
 
-### Warm up your accounts
+### Build your presence with the Engagement Engine
 
 AutoReach posts tweets and LinkedIn content on your behalf, engages with relevant posts in your niche, and builds your presence over time with human-like timing and behavior. This keeps your accounts healthy and makes your outreach more effective.
 
@@ -78,6 +78,6 @@ Chrome-identical TLS fingerprints, human delay simulation with per-account perso
 | **Outreach & Sequences** | Building sequences, DM generation, scheduling, and A/B testing         |
 | **AI & Conversations** | The inbox, AI responses, tone examples, and conversation optimization     |
 | **Autopilot**          | One-click automation: what it does, how to enable it, and how to tune it  |
-| **Account Warmup**     | Content strategy, daily engagement, and account health                    |
+| **Engagement Engine**  | Content strategy, daily engagement, and account health                    |
 | **Meetings & CRM**     | Booking meetings, call briefs, and the Chrome extension pipeline          |
 | **Settings**           | AI model config, multi-account management, costs, and account safety      |

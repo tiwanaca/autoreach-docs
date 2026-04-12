@@ -93,7 +93,7 @@ Each search query finds the latest, most active prospects.
 
 - Monitors incoming DMs
 - Generates contextual replies based on conversation
-- Respects your reply limits and warm-up settings
+- Respects your reply limits and engagement settings
 - Learns from your tone examples to match your voice
 
 Your inbox gets responses without you typing them.

@@ -1,10 +1,10 @@
-# Approving Warmup Content
+# Approving Content
 
-Account Warmup generates all content automatically, but you maintain full control through the **approval queue**. Review, edit, or reject any piece of content before it posts to your account.
+The Engagement Engine generates all content automatically, but you maintain full control through the **approval queue**. Review, edit, or reject any piece of content before it posts to your account.
 
 ## The Approval Queue
 
-The Engagement Engine shows all pending warmup content awaiting your review:
+The Engagement Engine shows all pending content awaiting your review:
 
 - **Pending Tweets**: AI-generated tweets ready to post
 - **Pending Posts**: LinkedIn posts awaiting approval
@@ -73,7 +73,7 @@ The edited content posts at the scheduled time with your changes.
 
 ## Auto-Approval Mode
 
-Once you're comfortable with warmup's content quality, enable **auto-approval**:
+Once you're comfortable with the Engagement Engine's content quality, enable **auto-approval**:
 
 - All pending content automatically posts on schedule
 - No manual review needed
@@ -82,7 +82,7 @@ Once you're comfortable with warmup's content quality, enable **auto-approval**:
 
 To enable auto-approval:
 1. Open Engagement Engine settings
-2. Find "Content Approval" or "Auto-Approve Warmup"
+2. Find "Content Approval" or "Auto-Approve"
 3. Toggle **On**
 4. Confirm you want to enable auto-posting
 
@@ -99,7 +99,7 @@ You can disable auto-approval anytime to return to manual review.
 **Good candidates for auto-approval from day 1:**
 - Teams with clear brand voice guidelines
 - Accounts where consistency matters more than personalization
-- Busy managers who want set-and-forget warmup
+- Busy managers who want set-and-forget engagement
 
 ## Managing the Approval Queue
 
@@ -135,9 +135,9 @@ If multiple people manage the account:
 3. Post goes live as scheduled
 4. Activity log shows who approved each piece
 
-Assign one person as the "warmup approver" to maintain consistent tone.
+Assign one person as the "content approver" to maintain consistent tone.
 
 ## Next Steps
 
 - **[Content Generation](content-generation.md)**: Learn about the types of content generated
-- **[Engagement Engine Dashboard](overview.md)**: Return to the warmup overview
+- **[Engagement Engine Dashboard](overview.md)**: Return to the Engagement Engine overview

@@ -70,14 +70,14 @@
 * [Monitor Resurfacing](autopilot/monitor-resurfacing.md)
 * [Pausing & Disabling](autopilot/pausing-and-disabling.md)
 
-## Account Warmup
+## Engagement Engine
 
-* [Overview](warmup/overview.md)
-* [Content Strategy & Pillars](warmup/content-strategy.md)
-* [Daily Action Allocation](warmup/daily-actions.md)
-* [Tweet & Post Generation](warmup/content-generation.md)
-* [Engagement Automation](warmup/engagement.md)
-* [Approving Warmup Content](warmup/approvals.md)
+* [Overview](engagement-engine/overview.md)
+* [Content Strategy & Pillars](engagement-engine/content-strategy.md)
+* [Daily Action Allocation](engagement-engine/daily-actions.md)
+* [Tweet & Post Generation](engagement-engine/content-generation.md)
+* [Engagement Automation](engagement-engine/engagement.md)
+* [Approving Content](engagement-engine/approvals.md)
 
 ## Meetings & CRM
 

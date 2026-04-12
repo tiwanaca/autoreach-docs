@@ -89,7 +89,7 @@ If you see a bot detection warning, do not try to bypass it. Wait the full 7-day
 ## Best Practices
 
 * **One proxy per account**: Never share proxies between LinkedIn accounts.
-* **Start with warmup**: Let the Engagement Engine build activity history before launching sequences.
+* **Start with the Engagement Engine**: Let it build activity history before launching sequences.
 * **Keep connection requests conservative**: Stay well under the weekly limit, especially for new accounts.
 * **Use realistic activity windows**: Match the hours you'd normally be active on LinkedIn.
 * **Monitor the health dashboard**: Check your account status regularly in the Accounts page.

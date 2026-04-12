@@ -1,6 +1,6 @@
 # Tweet & Post Generation
 
-All content in your Account Warmup is AI-generated using your offer context, content pillars, and professional voice. The result is engaging, authentic-sounding content that builds your authority in your niche.
+All content in the Engagement Engine is AI-generated using your offer context, content pillars, and professional voice. The result is engaging, authentic-sounding content that builds your authority in your niche.
 
 ## Tweet Generation (X/Twitter)
 
@@ -42,7 +42,7 @@ LinkedIn posts are longer, narrative-driven, and designed for comments and share
 
 ## Engagement Replies
 
-When your warmup engine replies to other posts, it generates **short, contextual replies** that:
+When the Engagement Engine replies to other posts, it generates **short, contextual replies** that:
 
 - Add value to the original conversation
 - Reference the original post specifically (not generic)
@@ -97,7 +97,7 @@ All content generation happens automatically:
 ## Content Authenticity
 
 {% hint style="success" %}
-The goal is for your warmup content to be indistinguishable from content you'd write yourself. AI generation is tuned to sound like a real industry professional, not a chatbot.
+The goal is for your Engagement Engine content to be indistinguishable from content you'd write yourself. AI generation is tuned to sound like a real industry professional, not a chatbot.
 {% endhint %}
 
 - Content uses natural language and conversational tone
