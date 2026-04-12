@@ -55,8 +55,10 @@ This field supports longer descriptions. Include your value proposition, key fea
 
 Who you're trying to reach. List specific roles, titles, and the type of companies you target. Use the **Regenerate** button to have AI suggest a target audience based on your description.
 
+You can be as descriptive as you want. This is not just a list of titles. You can include who to target, who to avoid, and any other context that helps AutoReach understand your ideal buyer. For example, you can write "Avoid freelancers and solopreneurs" or "Only target companies with 50+ employees" or "Do not reach out to agencies."
+
 **Example**:
-> Owners, Directors, MDs, CROs, VP Sales, VP Business Development, VP-level leaders responsible for lead generation or pipeline growth, Sales Directors, Head of Revenue, Head of Demand Gen, SDR Directors, Sales Managers, and other senior leaders directly accountable for outbound pipeline at B2B SaaS companies and professional services firms
+> Owners, Directors, MDs, CROs, VP Sales, VP Business Development, VP-level leaders responsible for lead generation or pipeline growth, Sales Directors, Head of Revenue, Head of Demand Gen, SDR Directors, Sales Managers, and other senior leaders directly accountable for outbound pipeline at B2B SaaS companies and professional services firms. Avoid freelancers, solopreneurs, and companies with fewer than 10 employees.
 
 ### Pain Points You Solve
 
