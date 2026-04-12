@@ -19,45 +19,46 @@ All meeting integrations require a one-time setup. Once connected, bookings sync
 
 ### Calendly Integration
 
+{% hint style="warning" %}
+**Calendly requires a paid subscription** to use webhooks. The free plan does not support webhook integrations.
+{% endhint %}
+
 The Calendly connection uses webhook events to detect new bookings in real-time.
 
-**How it works:**
-1. AutoReach registers a secure webhook endpoint that receives Calendly events
-2. When someone books a meeting on your Calendly link, the `invitee.created` event fires
-3. AutoReach verifies the event signature using HMAC-SHA256 encryption for security
-4. The system extracts the attendee's email address and matches it to an existing lead
-5. A meeting record is created and linked to that lead automatically
-
 **Setup steps:**
-1. Go to your Calendly settings and locate the **Webhooks** section
-2. Add AutoReach's webhook URL (provided in Settings)
-3. Select the `invitee.created` event
-4. Save — you're ready to start tracking meetings
+1. Add your Calendly booking link in AutoReach's Meeting & Calendar settings
+2. Click **Next**
+3. When prompted for the webhook, follow the instructions to get the **auth token**
+4. Enable permissions for **all scopes**
+5. Save — AutoReach will now receive booking events automatically
 
-{% hint style="success" %}
-Calendly webhooks are encrypted with HMAC-SHA256. AutoReach verifies every signature to ensure security and prevent spoofed events.
-{% endhint %}
+AutoReach verifies every webhook event signature using HMAC-SHA256 encryption for security.
 
 ### Cal.com Integration
 
-Cal.com integrations use token-based authentication with booking URL endpoints.
+Cal.com is a free alternative — **no paid subscription required**. The webhook setup is simpler than Calendly.
 
 **Setup steps:**
-1. Generate an API token in your Cal.com account settings
-2. Paste the token in AutoReach's Meeting & Calendar settings
-3. Provide your Cal.com booking URL
-4. AutoReach will begin monitoring for new bookings
+1. In AutoReach's Meeting & Calendar settings, add your Cal.com booking URL
+2. AutoReach will generate a **webhook link** for you
+3. Copy that webhook link and paste it into your Cal.com webhook settings
+4. Save — you're ready to start tracking meetings
+
+### Calendar Form Field Requirement
+
+{% hint style="warning" %}
+**Required for meeting tracking**: If you use Calendly or Cal.com with a webhook, you must add **one extra form field as the first question** in your calendar event. AutoReach will auto-populate this field with the name of the person who booked the meeting. This is needed to track which lead booked the event.
+{% endhint %}
 
 ### Custom Booking URLs
 
-Already using a scheduling tool that isn't Calendly or Cal.com? No problem.
+You can use any booking URL (Acuity Scheduling, HubSpot, or your own scheduling page). With a custom calendar link, **no webhook setup is needed**.
 
-You can use any booking URL:
-- Your own custom scheduling page
-- Acuity Scheduling, HubSpot, or any other platform
-- The `{% raw %}{{ cal_link }}{% endraw %}` template variable automatically inserts your booking URL into your DMs
+The `{% raw %}{{ cal_link }}{% endraw %}` template variable automatically inserts your booking URL into your DMs, making it easy for leads to book meetings directly from your outreach messages.
 
-This way, leads can book meetings directly from your outreach messages.
+{% hint style="info" %}
+**Webhooks are not mandatory** but they are needed for AutoReach to automatically track when a meeting has been booked. Without a webhook, you'll need to update meeting status manually.
+{% endhint %}
 
 ## Meeting Tracking & Recording
 

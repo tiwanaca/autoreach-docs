@@ -20,7 +20,7 @@ AutoReach's AI uses this information to:
 
 ## Creating Your Offer
 
-Go to **Offers** → **Create Offer** and fill in the required fields.
+Go to **Offers** → **Create Offer**. The easiest way is to **add your website URL** — AutoReach will automatically extract your business details and pre-populate the offer fields. Review and modify what's needed, then save. You can also fill in all the details manually.
 
 ### Required Fields
 

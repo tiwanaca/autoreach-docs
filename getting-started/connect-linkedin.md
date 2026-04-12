@@ -3,36 +3,28 @@
 LinkedIn is one of the two core platforms AutoReach supports for outreach. Connecting your LinkedIn account lets AutoReach send connection requests, DMs, comments, likes, and profile views on your behalf.
 
 {% hint style="warning" %}
-LinkedIn is stricter about automation than X/Twitter. A dedicated residential proxy is **required** for every LinkedIn account you connect.
+**Important**: You can ONLY connect your LinkedIn account through the Chrome Extension. Make sure you've [installed the extension](chrome-extension.md) and activated your license key first.
 {% endhint %}
 
 ---
 
-## Authentication
+## Connecting via Chrome Extension
 
-LinkedIn accounts connect using two pieces of data from your browser session:
+1. Visit [linkedin.com](https://linkedin.com) and make sure you're logged in
+2. Click the **AutoReach extension icon** in your Chrome toolbar
+3. Enter your **first name** and **last name**
+4. Click **Connect Account**
 
-- **Browser cookies** — Full cookie string from your active LinkedIn session
-- **li\_at token** — LinkedIn's primary authentication token
-
-The easiest way to extract these is with the **AutoReach Chrome Extension**, which grabs both automatically. You can also extract them manually from your browser's DevTools (Application → Cookies → linkedin.com → copy the `li_at` value).
+The extension will automatically extract your session cookies and li_at token, and link your LinkedIn account to AutoReach. No manual cookie copying or DevTools required.
 
 ---
 
-## Proxy Configuration (Required)
+## Proxy Configuration
 
-Every LinkedIn account **must** have a dedicated proxy. AutoReach supports both HTTP and SOCKS5 proxies.
-
-| Field | Example |
-|---|---|
-| Protocol | HTTP or SOCKS5 |
-| Host | `isp.decodo.com` |
-| Port | `10003` |
-| Username | Your proxy username |
-| Password | Your proxy password |
+AutoReach automatically provisions a secure ISP residential static proxy for your account when you pick a location during onboarding. You don't need to configure or purchase a proxy separately.
 
 {% hint style="info" %}
-Use residential or ISP proxies for LinkedIn. Datacenter proxies are more likely to trigger detection. Each account should have its own dedicated proxy IP.
+Each LinkedIn account gets its own dedicated ISP residential static proxy. This ensures your activity appears to come from a real residential IP, which is critical for LinkedIn's stricter anti-automation detection.
 {% endhint %}
 
 ---

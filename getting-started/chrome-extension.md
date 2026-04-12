@@ -64,15 +64,15 @@ Manage your sales pipeline directly from the browser. As you browse LinkedIn and
 - **Meeting**: Call or meeting scheduled
 - **Won/Lost**: Deal closed (won) or opportunity over (lost)
 
-### 2. Cookie & Token Extraction
+### 2. Social Account Connection
 
-The extension makes it easy to authenticate your social accounts:
+The extension is the **only way** to connect your X and LinkedIn accounts to AutoReach:
 
-- **One-click cookie extraction**: Visit your X or LinkedIn account, click the extension, select "Extract Cookies" — done
-- **Automatic li_at token**: For LinkedIn, the extension automatically captures your session token
-- **No manual DevTools needed**: Skip the Developer Tools copy-paste process
+- **LinkedIn**: Visit linkedin.com, click the extension, enter your first and last name, and click Connect Account
+- **X/Twitter**: Visit x.com, click the extension, enter your name and a 4-digit PIN for DM Chat, and click Connect Account
+- **Automatic cookie extraction**: The extension handles all authentication automatically — no manual DevTools or cookie copying needed
 
-See [Connecting X](connect-twitter.md) and [Connecting LinkedIn](connect-linkedin.md) for details on using this feature.
+See [Connecting X](connect-twitter.md) and [Connecting LinkedIn](connect-linkedin.md) for details.
 
 ### 3. Profile Data Scraping
 
@@ -190,15 +190,14 @@ All data is stored locally in your browser. We do not log your browsing activity
 
 The prospect is now in your CRM and synced to your AutoReach account.
 
-### Extracting Credentials
+### Connecting a Social Account
 
-1. Visit your X or LinkedIn account (while logged in)
+1. Visit [linkedin.com](https://linkedin.com) or [x.com](https://x.com) while logged in
 2. Click the **AutoReach icon**
-3. Click **Extract Cookies** (X) or **Extract Cookies & Token** (LinkedIn)
-4. Authorize the extraction
-5. Go to AutoReach → **Accounts** and paste/save the credentials
+3. For **LinkedIn**: Enter your first name and last name, then click **Connect Account**
+4. For **X/Twitter**: Enter your name and a 4-digit PIN for DM Chat, then click **Connect Account**
 
-See [Connecting X](connect-twitter.md) and [Connecting LinkedIn](connect-linkedin.md) for details.
+The extension handles all cookie extraction and authentication automatically. See [Connecting X](connect-twitter.md) and [Connecting LinkedIn](connect-linkedin.md) for details.
 
 ### Viewing Your Analytics
 
@@ -231,15 +230,15 @@ The extension only works on:
 
 If you're on a different site, the extension will show limited features.
 
-### "Cookie Extraction Failed"
+### "Cookie Extraction Failed" / Session Expired
 
-Your session may have expired. Try:
+Your session may have expired. To reconnect:
 
-1. Refresh the page (Cmd+R or Ctrl+R)
-2. Wait 10 seconds
-3. Click **Extract Cookies** again
+1. Open the **AutoReach Chrome Extension**
+2. Click the **three dots (⋯)** next to the account
+3. Click **Reconnect**
 
-If it still fails, log out and log back in to your social account, then retry.
+Make sure you're logged into the social account in your browser before reconnecting.
 
 ### "Cyrillic Character Warning"
 
@@ -277,8 +276,8 @@ If detection isn't working:
 
 - Keep your extracted cookies private
 - Don't share your license key
-- Cookies expire over time (2–4 weeks) — re-extract as needed
-- If you log out of your social accounts, re-extract cookies
+- Cookies expire over time (2–4 weeks) — reconnect via the extension (three dots ⋯ → Reconnect)
+- If you log out of your social accounts, reconnect via the extension
 
 ### Reporting Issues
 

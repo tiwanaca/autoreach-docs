@@ -6,45 +6,29 @@ Enabling Autopilot is a single-click process that sets up your entire automation
 
 When you click "Enable Autopilot," a series of steps execute automatically:
 
-### Step 1: Creates Autopilot Configuration
-Initializes your Autopilot profile with settings tied to your Offer and connected accounts.
+### Step 1: Fetches and Scores Initial Leads
+AutoReach fetches **100 leads** from the database (populated during offer creation) and scores them against your Offer criteria using buyer intelligence scoring.
 
-### Step 2: Generates AI Content Strategy
-AutoReach analyzes your Offer to create:
-- **Tone profile** — Your brand voice (professional, conversational, technical, etc.)
-- **Content pillars** — Key themes to tweet about (5–7 pillars aligned with your ICP)
-- **Weekly themes** — Rotating content calendar to keep engagement fresh
+### Step 2: Starts a Role-Based LinkedIn Search
+Launches **1 search based on role** on LinkedIn to find prospects matching your ICP. This targets decision-makers at companies that fit your target audience.
 
-### Step 3: Creates Dual Sequences
-Sets up two automation sequences:
-- **X/Twitter sequence** — Custom workflow for Twitter/X leads
-- **LinkedIn sequence** — Custom workflow for LinkedIn leads
+### Step 3: Finds a Lookalike Account
+Identifies **1 lookalike** — an influencer or thought leader in your space — and starts a search on their followers to discover high-intent prospects.
 
-Each sequence is configured with appropriate platforms, timing, and engagement patterns.
+### Step 4: Starts an Intent Signal Search
+Launches a search for prospects showing **buying signals** — people actively posting about topics related to your offer.
 
-### Step 4: Generates Engagement Keywords
-Extracts keywords from your Offer description to power:
-- Auto-likes on relevant posts
-- Auto-replies to conversations
-- Follow suggestions
+### Step 5: Creates and Starts Your First Sequence
+Creates your first outreach sequence with the right workflow for your platform and **starts it immediately**. Leads that score high enough are enrolled automatically.
+
+### Step 6: Enables Auto-Enrollment and Buyer Expansion
+- **Auto-enroll buyers** is turned ON in settings — all ready buyers found by the system are automatically added to the sequence and will not appear on the Buyers page
+- **Buyer Expansion** is enabled on all searches — they will run every day to keep your pipeline full
 
 {% hint style="info" %}
-**Keywords power engagement.** Autopilot uses your Offer's keywords to identify which posts and conversations are most relevant to your ICP.
+**The Buyers page** shows buyers before they are added inside a sequence. When auto-enroll is ON (default with Autopilot), ready buyers go straight into the sequence instead.
 {% endhint %}
 
-### Step 5: Creates Lookalike Seed Accounts
-Seeds the follower extraction engine with influencer and thought leader accounts in your space. This allows Autopilot to:
-- Extract followers from seed accounts
-- Rotate to new seeds every 2 hours
-- Build a fresh pipeline without manual prospecting
-
-### Step 6: Sets Up Daily Recurring Searches
-Configures daily search queries based on your Offer's:
-- Search signals (keywords prospects post about)
-- Target locations
-- Industries and roles
-
-These searches run automatically every 24 hours.
 
 ## Timeline and Progress
 

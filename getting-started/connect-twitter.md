@@ -1,76 +1,40 @@
 # Connecting Your X/Twitter Account
 
-Connect your X (Twitter) account to AutoReach using cookie-based authentication. This method is faster and more reliable than traditional login flows.
+Connect your X (Twitter) account to AutoReach through the Chrome Extension. This is the only supported method for linking your X account.
 
-## Authentication Methods
+## Connecting via Chrome Extension
 
-AutoReach supports two ways to authenticate X accounts:
-
-### Method 1: Chrome Extension (Recommended)
-
-The AutoReach Chrome Extension can automatically extract your X cookies.
-
-1. Install the [AutoReach Chrome Extension](#) from the Chrome Web Store
-2. Visit [x.com](https://x.com) and log in to your X account
-3. In AutoReach, go to **Accounts** → **Add Account** → **X (Twitter)**
-4. Click **Extract via Chrome Extension**
-5. The extension will prompt you to authorize; click **Allow**
-6. Your cookies are extracted automatically
-
-### Method 2: Manual Cookie Extraction
-
-If the extension isn't available, you can manually provide cookies from your browser:
-
-1. Visit [x.com](https://x.com) and make sure you're logged in
-2. Open your browser's Developer Tools (F12 or Cmd+Option+I)
-3. Go to **Application** → **Cookies** → `x.com`
-4. Copy the `auth_token` cookie value
-5. In AutoReach, go to **Accounts** → **Add Account** → **X (Twitter)**
-6. Paste the cookie value in the **Cookie** field
-7. Click **Save**
+The AutoReach Chrome Extension handles authentication automatically by extracting your session cookies.
 
 {% hint style="warning" %}
-**Important**: Keep your cookies private. They act like your login credentials. Do not share them with untrusted sources.
+**Important**: You can ONLY connect your X account through the Chrome Extension. Make sure you've [installed the extension](chrome-extension.md) and activated your license key first.
 {% endhint %}
+
+### Steps
+
+1. Visit [x.com](https://x.com) and make sure you're logged in
+2. Click the **AutoReach extension icon** in your Chrome toolbar
+3. Enter your **name**
+4. Enter a **4-digit PIN** for X DM Chat
+5. Click **Connect Account**
+
+The extension will automatically extract your session cookies and link your X account to AutoReach. No manual cookie copying or DevTools required.
 
 ## Proxy Configuration
 
-Using a proxy is **highly recommended** to avoid IP-based detection and rate limiting from X's anti-bot systems.
+AutoReach automatically provisions a secure ISP residential static proxy for your account when you pick a location during onboarding. You don't need to configure or purchase a proxy separately — it's handled for you.
 
-### Why Use a Proxy?
+### How It Works
 
-- **IP rotation**: X monitors for unusual activity from single IPs
-- **Account safety**: Residential proxies reduce the risk of bot detection or account suspension
-- **Multi-account**: If you're running multiple X accounts, each should route through a different IP
-
-### Supported Proxy Types
-
-- **HTTP Proxies** (standard web proxies)
-- **SOCKS5 Proxies** (recommended for better performance)
-- **Residential Proxies** (best for avoiding detection)
-
-### Setting Up a Proxy
-
-1. In your X account settings, go to **Proxy Configuration**
-2. Select your proxy type (HTTP or SOCKS5)
-3. Enter:
-   - **Proxy Host**: The IP or domain of your proxy provider
-   - **Proxy Port**: The port number (e.g., 8080)
-   - **Username** (optional): If your proxy requires authentication
-   - **Password** (optional): If your proxy requires authentication
-4. Click **Test Proxy** to verify connection
-5. Click **Save**
+1. During onboarding, you select your **location**
+2. AutoReach provisions a dedicated ISP residential static proxy for that location
+3. The proxy is automatically assigned to your account
+4. All X API requests route through this proxy for safety
 
 {% hint style="info" %}
-**Tip**: We recommend residential proxy providers like Bright Data, Oxylabs, or Smartproxy. These rotate through real ISPs and are less likely to be detected by X's anti-bot measures.
+**Why ISP proxies?** ISP residential static proxies use real internet service provider IPs, making your activity indistinguishable from a normal user. This is the safest proxy type for social media automation.
 {% endhint %}
 
-### Proxy Providers We Recommend
-
-- **Bright Data**: Residential proxies with 72M+ IPs
-- **Oxylabs**: High-speed residential and datacenter proxies
-- **Smartproxy**: Affordable rotating proxies
-- **Rotating Proxies**: Use a different proxy for each account if possible
 
 ## Activity Window Setup
 
@@ -176,7 +140,7 @@ If all checks pass, you're ready to use this account in sequences.
 
 ### "Cookies Invalid"
 
-Your X session has expired. Re-authenticate using the Chrome Extension or manual cookie extraction.
+Your X session has expired. Open the Chrome Extension, click the **three dots (⋯)** next to the account, and click **Reconnect**.
 
 ### "Proxy Connection Failed"
 

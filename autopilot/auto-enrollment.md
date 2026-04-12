@@ -2,6 +2,11 @@
 
 Auto-Enrollment is the bridge between lead scoring and outreach sequences. It automatically moves leads from "scored" to "active outreach" without any manual intervention.
 
+{% hint style="warning" %}
+**When Autopilot is active**, auto-enroll is turned ON by default. This means all ready buyers are automatically added to sequences and will **not** appear on the Buyers page. The Buyers page only shows buyers before they are added to a sequence. If you want to review buyers before they are enrolled, you can disable auto-enroll in your settings.
+{% endhint %}
+
+
 ## How Auto-Enrollment Works
 
 **Every 5 minutes**, Autopilot runs its enrollment check:

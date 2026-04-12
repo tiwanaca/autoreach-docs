@@ -52,12 +52,13 @@ Before you can enable Autopilot, you need:
 
 Enabling Autopilot is instant, but the setup runs in the background:
 
-1. Creates your Autopilot configuration
-2. Generates an AI content strategy (tone, content pillars, weekly themes)
-3. Creates dual sequences (one for X, one for LinkedIn)
-4. Generates engagement keywords from your Offer
-5. Creates lookalike seed accounts for follower extraction
-6. Sets up daily recurring searches
+1. Fetches **100 leads** from the database and scores them against your offer
+2. Starts **1 role-based search** on LinkedIn to find matching prospects
+3. Finds **1 lookalike** account and starts a search on their followers
+4. Starts an **intent signal search** for prospects showing buying signals
+5. Creates your **first sequence** and starts it immediately
+6. Enables **auto-enroll buyers** — ready buyers go directly into the sequence (they won't appear on the Buyers page)
+7. Enables **Buyer Expansion** on all searches — searches run every day to keep the pipeline full
 
 The whole process takes just 1–2 minutes, and you'll see progress indicators as each component initializes.
 

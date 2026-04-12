@@ -2,6 +2,11 @@
 
 Buyer Expansion is how Autopilot discovers new prospects automatically. Every 24 hours, it mines your best-performing accounts to find more people like them—without requiring manual prospecting.
 
+{% hint style="info" %}
+**When Autopilot is enabled**, all searches are automatically set with Buyer Expansion turned ON. This means they will run every day to keep your pipeline full with fresh leads.
+{% endhint %}
+
+
 ## How Expansion Works
 
 When you enable Autopilot, it:
