@@ -1,10 +1,10 @@
 # Content Strategy & Pillars
 
-Your Engagement Engine content is organized around **5 content pillars** derived from your offer. This structure ensures your posts stay relevant to your niche while building a consistent, recognizable professional presence.
+Your Engagement Engine content is organized around **content pillars** derived from your offer. This structure ensures your posts stay relevant to your niche while building a consistent, recognizable professional presence.
 
 ## What Are Content Pillars?
 
-Content pillars are 5 core themes that represent different angles of your expertise and value proposition. Think of them as the main topics you should be known for.
+Content pillars are core themes (typically 3 to 5) that represent different angles of your expertise and value proposition. Think of them as the main topics you should be known for.
 
 AutoReach automatically derives these from your offer. For example, if you are selling sales automation software, your pillars might be:
 
@@ -20,19 +20,9 @@ Your specific pillars will differ based on your business and offer.
 Pillars help you build authority across multiple angles rather than being a one-note account. Variety keeps your audience engaged and attracts different types of followers.
 {% endhint %}
 
-## 13-Week Content Cycle
+## Rotating Content Cycle
 
-AutoReach generates **13 weeks of content** with a rotating weekly theme:
-
-- **Week 1**: Pillar 1 focused
-- **Week 2**: Pillar 2 focused
-- **Week 3**: Pillar 3 focused
-- **Week 4**: Pillar 4 focused
-- **Week 5**: Pillar 5 focused
-- **Week 6**: Pillar 1 focused (cycle repeats)
-- ... and so on through 13 weeks
-
-Within each week, all content (tweets, LinkedIn posts, engagement replies) aligns with that week's pillar. This creates a natural rotation that keeps your content fresh and relevant.
+AutoReach generates weeks of content with a rotating weekly theme, cycling through each pillar in order. Within each week, all content (posts, engagement replies) aligns with that week's pillar. This creates a natural rotation that keeps your content fresh and relevant.
 
 ## AI-Generated & Year-Aware
 
@@ -59,15 +49,15 @@ This ensures your engagement looks natural and relevant, not spammy.
 
 ## High Follower Filtering
 
-AutoReach won't engage with accounts that have 100k+ followers:
-
-{% hint style="info" %}
-Engaging with mega-influencers looks spammy and isn't effective. The Engagement Engine focuses on mid-tier and emerging voices in your niche, which is where real influence and authentic engagement happens.
-{% endhint %}
+AutoReach avoids engaging with mega-influencer accounts and instead focuses on mid-tier and emerging voices in your niche:
 
 - Avoids looking like you're chasing clout
 - Keeps engagement with accounts that are more likely to notice and appreciate your interaction
 - Maintains authentic, peer-level conversations
+
+{% hint style="info" %}
+Engaging with massive accounts is not effective. The Engagement Engine focuses on accounts where your interaction will actually be noticed and where real influence happens.
+{% endhint %}
 
 ## How Your Content Strategy Is Created
 
@@ -76,8 +66,8 @@ Your content strategy is automatically created when you:
 2. Or manually configure the Engagement Engine with an associated offer/ICP
 
 AutoReach analyzes your offer, pain points, target audience, and search signals to generate:
-- 5 content pillars specific to your market
-- 13 weeks of themed content
+- content pillars specific to your market
+- Weeks of rotating themed content
 - Engagement keywords for targeting relevant posts
 - AI prompts for generating authentic-sounding posts
 

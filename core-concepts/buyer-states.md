@@ -52,9 +52,9 @@ Every lead in AutoReach has a **buyer state** that represents their current stat
 
 ### 4. Disqualified
 
-**Condition:** Both fit_score < 15 AND intent_score < 15
+**Condition:** Very low fit and intent scores
 
-**What it means:** AutoReach has automatically removed this person from your database. They are so misaligned that there's no point tracking them further.
+**What it means:** AutoReach has automatically removed this person from your database. They are so misaligned that there is no point tracking them further.
 
 **Where it appears:** Not visible in normal UI (archived/deleted)
 
@@ -76,7 +76,7 @@ Every lead in AutoReach has a **buyer state** that represents their current stat
 
 **Outreach eligibility:** Not eligible until scoring completes. Wait for state transition.
 
-**AutoReach behavior:** Background enrichment pipeline running (x_find, x_enrichment, linkedin_find, linkedin_enrichment, scoring)
+**AutoReach behavior:** Background enrichment and scoring in progress
 
 **Next action:** Wait for enrichment. You'll see their state update within minutes to hours depending on the source.
 
@@ -90,7 +90,7 @@ Beyond the five automatic states, you can set a lead to **Manual Outreach** rega
 
 **Behavior:** Treated as **active** for outreach purposes, even if their score is 15
 
-**Example:** You want to reach the founder of a competitor (fit_score = 0) to explore a potential partnership. Set to Manual Outreach to override disqualification.
+**Example:** You want to reach the founder of a competitor to explore a potential partnership. Set to Manual Outreach to override disqualification.
 
 ## State Transitions
 
@@ -98,26 +98,13 @@ Leads move between states based on:
 
 ### Automatic Score-Based Transitions
 
-```
-not_scored
-  ↓ (enrichment completes, initial score calculated)
-  ├→ active (score >= 60)
-  ├→ monitor (30-59)
-  ├→ poor_fit (< 30)
-  └→ disqualified (fit < 15 AND intent < 15)
-```
+Once enrichment completes and the initial score is calculated, the lead is placed into the appropriate state based on their buyer score. Higher scores go to Active, moderate scores to Monitor, low scores to Poor Fit, and very low fit and intent leads are Disqualified.
 
-### Score Movement Within States
+### Score Movement Between States
 
-```
-poor_fit (< 30)
-  ↑ (new signal detected, intent jumps)
-  └→ monitor (30-59)
-      ↑ (timing signal + engagement)
-      └→ active (>= 60)
-```
+Leads can move up or down as new signals appear. For example, a Poor Fit lead could be promoted to Monitor or Active if they change jobs to your target industry, start posting about relevant pain points, or show new timing signals like company funding.
 
-Example: A lead was poor_fit (score 28) because they worked in a tangential industry with no signals. Three weeks later, they post "just joined Acme Corp as Director of Sales" (your target industry, job change signal). AutoReach rescores them to 62 and promotes to active.
+**Example:** A lead scored low because they worked in a tangential industry with no signals. Three weeks later, they post "just joined Acme Corp as Director of Sales" (your target industry + job change signal). AutoReach rescores them and promotes them to Active.
 
 ### Manual Overrides
 

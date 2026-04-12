@@ -1,6 +1,6 @@
 # Account-Level Signal Aggregation
 
-Account-Level Signal Aggregation combines buying signals from multiple leads at the same company to create an "account heat score": a single indicator of company-wide purchase intent.
+Account-Level Signal Aggregation combines buying signals from multiple leads at the same company to create an account heat score: a single indicator of company-wide purchase intent.
 
 ## How It Works
 
@@ -8,171 +8,75 @@ When AutoReach detects multiple leads from the same company:
 
 1. Collects all buying signals from each lead
 2. Weighs signals by strength and recency
-3. Applies a diversity multiplier (more contacts = higher score)
+3. Applies a boost when more contacts from the same company are showing signals
 4. Produces an account heat score (0-100)
 
 This surfaces when an entire company is actively evaluating solutions, even if individual lead signals are light.
 
-## Signal Strength Points
+Recent signals are weighted more heavily than older ones, so accounts with fresh activity score higher than those with only historical signals.
 
-Each buying signal contributes points based on its strength:
+When more contacts from the same company show signals, the account score increases beyond what any single lead would contribute on their own. Wider signal distribution across a team is a stronger indicator than concentrated signals from one person.
 
-| Signal Strength | Points |
-| --------------- | ------ |
-| **High**        | +10    |
-| **Medium**      | +5     |
-| **Low**         | +2     |
+Signals from better-fit leads contribute more to the account score. Poor-fit contacts have less influence, which keeps account heat focused on the accounts most relevant to your ICP.
 
-Signal strength depends on the signal type and recency. Recent signals are weighted more heavily than older ones.
+## Account Heat Categories
 
-## Diversity Multiplier
+Account heat is categorized into three levels:
 
-The more contacts from the same company showing signals, the stronger the account-level intent:
+**Hot accounts** show strong, multi-threaded signals across the company. Multiple high-fit leads are active simultaneously, suggesting the buying group is engaged. These accounts warrant urgent, coordinated outreach.
 
-| Contacts with Signals | Multiplier       |
-| --------------------- | ---------------- |
-| 1 person              | 1.0x (no boost)  |
-| 2 people              | 1.3x             |
-| 3 people              | 1.6x             |
-| 4+ people             | 2.0x (capped)    |
+**Warm accounts** show consistent signals from diverse team members, suggesting a buying cycle is likely underway. Treat these as a priority.
 
-**Example:**
-- 1 contact with signals totaling 15 points = 15 x 1.0 = 15 heat score
-- 3 contacts with signals totaling 15 points = 15 x 1.6 = 24 heat score
-- Same total signals, but wider distribution = stronger account signal
+**Cool accounts** show light or isolated signals. A standard outreach cadence applies.
 
-## Heat Score Formula
-
-```
-Heat Score = (Signal Strength Sum + Recency Bonus) x Diversity Multiplier
-Capped at 100
-```
-
-### Recency Bonus
-- **+5 points** for each signal from the last 7 days
-- Older signals decay but still count (just less)
-
-**Example:**
-```
-3 contacts from Acme Corp:
-- Contact A: posted about tool searching (Medium, 2 days ago) = 5 + 5 = 10 points
-- Contact B: engaged with competitor posts (Medium, 3 days ago) = 5 + 5 = 10 points
-- Contact C: mentioned hiring (Low, 12 days ago) = 2 + 0 = 2 points
-Total: 22 points x 1.6 diversity = 35 heat score
-```
-
-## Fit Gate
-
-Not all signals are weighted equally. Signals only boost account heat if they come from leads with sufficient fit:
-
-- **Fit >= 20** - signal counts at full strength
-- **Fit 20-59** - signal strength is downgraded (50% weight)
-- **Fit < 20** - signal does not count toward account heat
-
-This prevents "noise" signals from poor-fit contacts from inflating your account score.
-
-## Heat Score Boosters
-
-Account heat scores also receive direct boosts based on detected patterns:
-
-### Heat >= 70 (Very Hot Account)
-- **Boost** - +10 to buyer score for all contacts at this company
-- **Meaning** - multiple signals from multiple high-fit leads
-- **Action** - urgent outreach; company is actively evaluating
-
-### Heat >= 50 (Warm Account)
-- **Boost** - +5 to buyer score for all contacts at this company
-- **Meaning** - consistent signals from diverse team members
-- **Action** - priority outreach; buying cycle likely underway
-
-### Heat < 50 (Cool Account)
-- **Boost** - none
-- **Meaning** - light or isolated signals
-- **Action** - standard outreach cadence
+Individual lead scores also reflect the company's overall heat level, so leads at hot accounts are surfaced more prominently in your pipeline.
 
 ## Heat Trend
 
-AutoReach tracks how account heat is evolving:
+AutoReach tracks how account heat is evolving over time:
 
-| Trend       | Meaning                                             |
-| ----------- | --------------------------------------------------- |
-| **Rising**  | Heat score increasing day-over-day (3-day average)  |
-| **Stable**  | Heat score flat (consistent signals)                |
-| **Cooling** | Heat score decreasing (fewer recent signals)        |
+| Trend       | Meaning                                            |
+| ----------- | -------------------------------------------------- |
+| **Rising**  | Heat score increasing day-over-day                 |
+| **Stable**  | Heat score flat (consistent signals)               |
+| **Cooling** | Heat score decreasing (fewer recent signals)       |
 
 Use trends to prioritize:
 - **Rising** - urgency is increasing; reach out now
 - **Stable** - sustained interest; normal outreach
-- **Cooling** - interest declining; save for later
+- **Cooling** - interest declining; deprioritize for now
 
-## Complete List of Account Signal Types
+## Signal Types Aggregated
 
-AutoReach aggregates these signal types across team members:
+AutoReach aggregates the following categories of signals across all contacts at a company:
 
-| Signal Category             | Signal Types                                                                              |
-| --------------------------- | ----------------------------------------------------------------------------------------- |
-| **Competitive Behavior**    | competitor_engagement, engagement_pattern, orbit_cluster, switching                       |
-| **Organizational Activity** | hiring, tool_mention, alternative_search                                                  |
-| **Direct Intent**           | asked_recommendation, complained, custom_intent                                           |
-| **Business Events**         | funding, product_launch, mergers_acquisitions, geographic_expansion, ipo_filing            |
-| **Economic Pressure**       | cost_cutting                                                                              |
-| **Your Content**            | own_post_reply, own_post_repeat_engagement, own_post_engagement                           |
+**Competitive behavior** - engagement with competitor accounts, patterns of category research, or signals that a contact is evaluating alternatives or considering a switch.
 
-### Signal Type Definitions
+**Organizational activity** - hiring signals, mentions of tools or technologies, and searches for alternative solutions.
 
-- **Competitor Engagement** - lead engages with competitor accounts
-- **Engagement Pattern** - consistent pattern of tool/category engagement
-- **Orbit Cluster** - detected cluster of related engagement targets
-- **Hiring** - company posting open roles (signals growth/scaling)
-- **Tool Mention** - company mentions using a specific tool
-- **Switching** - signals intent to switch providers
-- **Alternative Search** - searching for alternatives to current solution
-- **Asked Recommendation** - explicitly asked audience for recommendations
-- **Funding** - company raised funding (signals scale/acceleration)
-- **Pain Match** - expressed problem matching your ICP pain points
-- **Product Launch** - company launched new product (signals scaling)
-- **Mergers & Acquisitions** - M&A activity (signals integration needs)
-- **Geographic Expansion** - company expanding to new region (signals growth)
-- **Cost Cutting** - company signaling budget constraints
-- **IPO Filing** - company filing for IPO (signals scaling, integration, expansion)
-- **Complained** - team member complained about problem your solution solves
-- **Custom Intent** - custom signals you defined in your ICP
-- **Own Post Reply** - lead replied to your posted content
-- **Own Post Repeat Engagement** - lead engaged multiple times with your content
-- **Own Post Engagement** - lead engaged once with your content
+**Direct intent** - contacts who explicitly asked their network for recommendations, complained about a problem your solution addresses, or matched a custom intent signal you defined in your ICP.
 
-## Lead Profile Display
+**Business events** - funding rounds, product launches, mergers and acquisitions, geographic expansion, or IPO filings. These events often signal growth, scaling needs, or new integration requirements.
 
-When you view a lead's profile, you see company heat if multiple contacts exist:
+**Economic pressure** - signals that a company is operating under budget constraints, which can indicate urgency around cost-effective solutions.
 
-```
-LEAD PROFILE
-Name: John Smith | Company: Acme Corp
-
-COMPANY HEAT: 67 (Warm) Rising
-+-- Other Contacts: 2
-+-- Recent Signals: 5 (last 7 days)
-+-- Signals at Company: competitor_engagement, hiring, complained
-+-- Buyer Score Boost: +5
-```
+**Your content** - contacts who engaged with your posts, replied to your content, or engaged multiple times across your activity.
 
 ## Using Account Heat in Strategy
 
 ### Prioritization
-- **Account Heat >= 70** - top tier; reach out to all relevant contacts
-- **Account Heat 50-69** - second tier; target decision-makers
-- **Account Heat < 50** - standard approach; patience is fine
+
+Account heat helps you rank companies, not just individual leads. Hot accounts should receive attention across the buying group, not just from a single contact. Warm accounts are worth targeting decision-makers specifically. Cool accounts are appropriate for standard, lower-frequency outreach.
 
 ### Multi-Threading
-Account heat justifies multi-threading (reaching multiple contacts):
-- High heat (>= 70) = reach 2-3 contacts simultaneously
-- Medium heat (50-69) = reach 2 contacts with slight delays
-- Low heat (< 50) = single contact first, expand later
+
+High account heat is a reliable indicator that reaching multiple contacts at the same company is warranted. When signals are distributed across several team members, engaging more than one person simultaneously increases your chances of reaching someone with active authority or urgency. Start broader at hotter accounts and narrower at cooler ones.
 
 ### Cadence Adjustment
-- **Rising heat** - increase frequency (every 3-4 days)
-- **Stable heat** - normal cadence (every 5-7 days)
-- **Cooling heat** - extend spacing (every 10+ days)
+
+- **Rising heat** - increase frequency
+- **Stable heat** - maintain normal cadence
+- **Cooling heat** - extend spacing or deprioritize
 
 {% hint style="tip" %}
 Account heat is your most reliable indicator of buying group alignment. When multiple team members show signals, your probability of closing a deal increases significantly.
@@ -182,12 +86,12 @@ Account heat is your most reliable indicator of buying group alignment. When mul
 
 Account heat requires:
 - **Multiple contacts** from the same company (heat does not apply to single contacts)
-- **Fit qualification** (only leads with fit >= 20 count)
+- **Qualified leads** (only leads with sufficient fit contribute to the score)
 - **Recent signals** (older signals decay over time)
 
-If your leads are highly distributed across companies, account heat provides less value. Use it where you have density (3+ contacts per target company).
+If your leads are highly distributed across companies, account heat provides less value. It is most useful where you have density across target accounts.
 
 ## Next Steps
 
 - **[Interaction Orbit](interaction-orbit.md)**: Detect dark funnel buying behavior through engagement patterns
-- **[Buyer Intelligence & Scoring](../core-concepts/buyer-scoring.md)**: Understand how account heat boosts individual lead scores
+- **[Buyer Intelligence & Scoring](../core-concepts/buyer-scoring.md)**: Understand how account heat influences individual lead scores

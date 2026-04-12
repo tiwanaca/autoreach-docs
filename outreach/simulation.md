@@ -224,44 +224,11 @@ Try different replies to stress-test your AI:
 
 ## Research Integration
 
-The simulator uses **enrichment context** to make DMs smarter:
-
-### Lead Profile Data
-
-- Company, role, location, followers
-- Tech stack, funding stage, company size
-- Recent posts and engagement
-
-### Recent Social Activity
-
-- Last 5-10 posts (X or LinkedIn)
-- Topics they're discussing
-- Industry and role-specific signals
-
-### Knowledge Base Context
-
-- Your company info and value propositions
-- Past successful messages (from sent conversations)
-- Tone examples you've approved
-
-This context helps generate messages that feel specific and informed.
+AutoReach uses lead profile data, recent activity, and your knowledge base to personalize messages. The more enrichment data available for a lead, the more specific and informed their simulated message will be.
 
 {% hint style="info" %}
 The more enrichment data you have on a lead, the more personalized their simulated message will be.
 {% endhint %}
-
-## RAG (Retrieval-Augmented Generation)
-
-The simulator uses **RAG (Retrieval-Augmented Generation)** to fetch relevant context:
-
-1. **Lead query:** Alice, VP at Stripe, interested in developer productivity
-2. **Retrieval:** Looks up:
-   - Similar high-value prospects in your past conversations
-   - Successful messages sent to VPs at fintech companies
-   - Messages that mentioned "developer productivity"
-3. **Generation:** Creates a new DM informed by successful patterns
-
-This means your simulator gets smarter over time as you accumulate more conversation data.
 
 ## Sequence Settings Panel
 

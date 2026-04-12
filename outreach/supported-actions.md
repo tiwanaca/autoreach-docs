@@ -1,6 +1,6 @@
 # Supported Actions by Platform
 
-AutoReach supports a range of actions across X (Twitter) and LinkedIn. This reference shows what is available on each platform and how each action works.
+AutoReach supports a range of actions across X and LinkedIn. This reference shows what is available on each platform and how each action works.
 
 ## Actions Reference Table
 
@@ -191,7 +191,7 @@ Every action in a sequence moves through these states:
 | **Completed**   | Successfully executed                                                            |
 | **Failed**      | Action could not be completed (e.g., LinkedIn rejected connection request)       |
 | **Skipped**     | Action was bypassed (e.g., rate limit reached; will retry tomorrow)              |
-| **Deferred**    | Special state for rate-limited connection requests; resumes next Monday           |
+| **Deferred**    | Special state for rate-limited connection requests; resumes next Monday          |
 
 {% hint style="info" %}
 You can view the status of each action for each lead in the sequence details view. Failed actions can be retried manually.
@@ -199,7 +199,7 @@ You can view the status of each action for each lead in the sequence details vie
 
 ---
 
-## Rate Limiting & Anti-Burst Protection
+## Rate Limiting and Anti-Burst Protection
 
 AutoReach respects platform limits to keep your accounts healthy.
 
@@ -210,13 +210,14 @@ AutoReach respects platform limits to keep your accounts healthy.
 
 ### Connection Request Limits (LinkedIn)
 
-- **Free/Premium accounts:** 100 requests/week
+- **Free accounts:** 100 requests/week
+- **Premium accounts:** 150 requests/week
 - **Sales Navigator:** 200 requests/week
-- **Effect:** Requests hitting limit go into **Deferred** state and auto-resume Monday morning
+- **Effect:** Requests hitting the limit go into **Deferred** state and auto-resume Monday morning
 
 ### Anti-Burst Protection
 
-When you restart a paused sequence, AutoReach spaces out re-activated actions by **15-25 minutes** to avoid sudden spikes that trigger platform anti-spam filters.
+When you restart a paused sequence, AutoReach spaces out re-activated actions gradually to avoid sudden spikes that trigger platform anti-spam filters.
 
 {% hint style="warning" %}
 Platform limits are enforced per account, not per sequence. If you run multiple sequences, they share the same daily limits. Plan accordingly.

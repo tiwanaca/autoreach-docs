@@ -36,14 +36,14 @@ If a variable has no data for a lead, the entire phrase containing it is gracefu
 
 ## Lead Information Variables
 
-These variables pull from the lead's profile and enrichment data:
+These variables pull from the lead's profile and enrichment data. AutoReach automatically populates variables from lead profiles and enrichment data.
 
 ### Basic Identity
 
 - `{{name}}` - Full name
 - `{{first_name}}` - First name only
 - `{{last_name}}` - Last name only
-- `{{username}}` - X/Twitter or LinkedIn username
+- `{{username}}` - X or LinkedIn username
 - `{{email}}` - Email address (if found)
 
 ### Professional Profile
@@ -54,14 +54,14 @@ These variables pull from the lead's profile and enrichment data:
 - `{{company_size}}` - Company size bracket (e.g., "50-200 employees", "1000+")
 - `{{industry}}` - Primary industry (e.g., "SaaS", "FinTech", "Insurance")
 - `{{location}}` - Geographic location
-- `{{bio}}` - Twitter/LinkedIn bio
+- `{{bio}}` - X or LinkedIn bio
 
 ### Enrichment & Intelligence
 
 - `{{pain_point}}` - Inferred challenge/pain point (e.g., "customer retention", "developer productivity")
 - `{{funding_stage}}` - Company funding stage (e.g., "Series B", "Late Stage")
 - `{{tech_stack}}` - Key technologies used by company
-- `{{followers}}` - Number of followers on X/LinkedIn
+- `{{followers}}` - Number of followers on X or LinkedIn
 - `{{podcasts}}` - Podcasts the lead hosts or appears on
 
 ### Contact & Web
@@ -78,27 +78,9 @@ These reference your own profile and business info:
 - `{{company_name}}` - Your company name
 - `{{offer_name}}` - The name of the offer/product being pitched
 
-## Standard Variables (Legacy)
-
-For compatibility with older templates, these standard variables also work:
-
-- `{first_name}` - First name (curly braces, not double)
-- `{company}` - Company
-- `{role}` - Job title
-- `{bio}` - Bio/description
-- `{cal_link}` - Calendar link (e.g., Calendly)
-- `{website_link}` - Your website
-
 ## How Variables Get Populated
 
-AutoReach populates variables from multiple sources in order of priority:
-
-1. **Lead Enrichment Data** - First-party data from your lead source (LinkedIn scrape, API imports, etc.)
-2. **Public Profile** - Data pulled from X/LinkedIn profiles
-3. **Company Intelligence** - Business databases (Clearbit, G2, etc.)
-4. **Knowledge Base** - Custom context you've provided about your leads
-
-If a variable has no data, it's handled gracefully:
+AutoReach automatically populates variables from lead profiles and enrichment data. If a variable has no data, it's handled gracefully:
 
 | Scenario                              | Result                                                                                                     |
 | ------------------------------------- | ---------------------------------------------------------------------------------------------------------- |

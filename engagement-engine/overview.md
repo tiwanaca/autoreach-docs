@@ -14,8 +14,8 @@ Think of it as building credibility before asking for anything. When a lead rece
 
 ## How the Engagement Engine Works
 
-The Engagement Engine operates on **10-minute engagement cycles**, continuously:
-1. Posting tweets or LinkedIn content
+The Engagement Engine runs continuously throughout the day:
+1. Posting content on X and LinkedIn
 2. Liking and replying to relevant posts
 3. Following relevant accounts
 4. Building your follower count and engagement metrics
@@ -25,7 +25,7 @@ All activity is randomized and spread throughout the day to mimic natural human 
 ## Available Platforms
 
 The Engagement Engine works on both:
-- **X/Twitter**: tweets, likes, follows, and replies
+- **X**: posts, likes, follows, and replies
 - **LinkedIn**: posts, comments, profile views, and connection requests
 
 You can run the Engagement Engine on multiple accounts simultaneously.

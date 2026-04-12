@@ -1,6 +1,6 @@
 # Inbox & Real-Time Messaging
 
-The Inbox is your unified command center for all conversations across X/Twitter and LinkedIn. Every DM, reply, and engagement flows through here in real time, so you never miss a prospect.
+The Inbox is your unified command center for all conversations across X and LinkedIn. Every DM, reply, and engagement flows through here in real time, so you never miss a prospect.
 
 ## Unified Conversation View
 
@@ -17,28 +17,7 @@ Search and filter by lead name, platform, or conversation status to quickly find
 
 ## Real-Time Message Detection
 
-AutoReach detects new messages as they arrive using platform-optimized methods.
-
-### X/Twitter
-
-Uses **WebSocket connections** (the same real-time protocol X's web UI uses) for instant message detection. Your conversations appear in the Inbox within milliseconds of arrival.
-
-### LinkedIn
-
-Uses **adaptive polling** with intervals between 1-15 minutes. Message detection depends on your account activity and LinkedIn's rate limits.
-
-{% hint style="info" %}
-**Encrypted DM Support**: AutoReach supports encrypted DMs on X/Twitter via identity seed encryption. Your most sensitive conversations stay secure end-to-end.
-{% endhint %}
-
-## Message Deduplication
-
-AutoReach prevents duplicate messages from being processed twice:
-
-- **X messages** are tracked via `twitter_message_id`
-- **LinkedIn messages** are tracked via `linkedin_message_urn`
-
-Each message is logged exactly once, even if you're running multiple sequences or devices.
+AutoReach detects new messages in real time across both X and LinkedIn, so conversations appear in your Inbox as they happen.
 
 ## AI Status Indicators
 

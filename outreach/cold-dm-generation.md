@@ -7,7 +7,7 @@ AutoReach's Cold DM Generation feature creates **personalized, compelling first 
 When you request a DM generation:
 
 1. You provide basic information about your offer and target
-2. AutoReach analyzes the lead's profile, recent activity, and enrichment data
+2. AutoReach analyzes the lead's profile, recent activity, and all available lead data
 3. AI generates **2 unique DM variants** personalized to that specific lead
 4. You preview both, edit if needed, and approve for sending
 
@@ -109,69 +109,19 @@ AutoReach enforces strict rules on all generated DMs to keep them authentic and 
 - **No emojis** - Professional tone
 - **No em dashes** - Use commas or periods instead
 
-### Banned Openers
+### Openers
 
-These overused openings are forbidden:
+AutoReach avoids overused openers that experienced professionals immediately recognize as automated outreach.
 
-- "Saw you..."
-- "Noticed you..."
-- "I noticed..."
-- "Since you..."
-- "Looks like you..."
+### Phrases
 
-Why? They are overused, robotic, and immediately flagged by experienced professionals.
-
-### Banned Phrases
-
-These buzzwords are forbidden:
-
-- "I'd love to..."
-- "Would love to..."
-- "leverage" (overused in SaaS)
-- "scale" (overused)
-- "optimize" (overused)
-
-Why? They signal automated outreach and destroy credibility.
-
-### Formula: "If X, Then Y"
-
-The most effective cold DMs use this natural framing:
-
-```
-[Context about lead] + [if/then statement] = [Soft ask]
-```
-
-**Example:**
-
-```
-If you're dealing with retention issues like most SaaS companies,
-we've built a framework that helped [Company] reduce churn by 30%.
-Worth 15 min to explore?
-```
-
-**Why it works:** It feels conversational, acknowledges their challenge, and provides a concrete benefit.
+AutoReach avoids buzzwords and cliches that signal automated outreach and destroy credibility.
 
 ### Personalization Rules
 
 - Reference specific data: company, role, recent post, or activity
 - Avoid generic compliments ("great post!"; use specific insight instead)
 - Make the DM feel one-to-one, even though it's generated
-
-## API Rate Limits
-
-**Unauthenticated users:** 10 requests/hour
-
-If you're building a custom integration, you'll hit this limit. Contact support to request higher limits for authenticated API use.
-
-## Generation Inputs
-
-Behind the scenes, DM generation uses:
-
-- **Lead Profile** - Name, title, company, location, followers
-- **Lead Activity** - Recent posts, comments, engagement patterns
-- **Enrichment Data** - Company info, funding stage, tech stack, funding, growth signals
-- **Knowledge Base** - Your company context, value props, successful templates from past campaigns
-- **Your Request** - Offer, target, goal, style, optional tweet context
 
 ## Example: Full DM Generation
 
@@ -221,12 +171,11 @@ Open to a quick conversation about whether this applies to you?
 
 1. **Be specific** - Reference their company, role, or recent activity
 2. **Lead with their benefit** - Not your product features
-3. **Use "if/then" framing** - Feels natural and conversational
-4. **Ask a real question** - Not a fake call-to-action
-5. **Keep it short** - 3 sentences max
-6. **Avoid flattery** - "Impressed by your company" feels hollow; instead use fact-based observation
-7. **Test different goals** - Some leads respond to value/education; others want a direct ask
-8. **Use their language** - If they talk about "DevOps," use that term; don't say "infrastructure automation"
+3. **Ask a real question** - Not a fake call-to-action
+4. **Keep it short** - 3 sentences max
+5. **Avoid flattery** - "Impressed by your company" feels hollow; instead use fact-based observation
+6. **Test different goals** - Some leads respond to value/education; others want a direct ask
+7. **Use their language** - If they talk about "DevOps," use that term; don't say "infrastructure automation"
 
 ---
 
@@ -243,11 +192,6 @@ Open to a quick conversation about whether this applies to you?
 - Provide more context in Tweet Context field
 - Specify the Goal more clearly (book_call vs. provide_value)
 - Add more detail to the Target field
-
-### "I keep hitting rate limits"
-
-- Contact support to request API rate limit increase
-- If using integrations, consider batching requests or caching results
 
 ---
 

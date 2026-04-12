@@ -4,7 +4,7 @@ Engagement is at the core of the Engagement Engine. While your account posts con
 
 ## How Engagement Works
 
-Engagement automation runs in **10-minute cycles**:
+Engagement automation runs continuously throughout the day:
 
 1. **Scan**: identify posts in your niche matching your engagement keywords
 2. **Filter**: apply quality filters (relevance, follower count, timing)
@@ -16,26 +16,22 @@ All engagement is keyword-based and selective, not indiscriminate.
 ## Types of Engagement
 
 ### Auto-Likes
-- Likes on relevant posts in your niche
-- 2-8 per day on Twitter, 1-5 per day on LinkedIn
+- Likes on relevant posts in your niche on X and LinkedIn
 - Targets posts matching your engagement keywords
 - Helps posts reach more people and shows support
 
 ### Auto-Replies
-- Contextual replies to relevant posts
-- 2-8 per day on Twitter, 1-3 per day on LinkedIn (comments)
+- Contextual replies to relevant posts on X and LinkedIn
 - References the original post specifically
 - Generates conversations and visibility
 
 ### Auto-Follows
-- Follows on relevant accounts in your niche
-- 1-5 per day on Twitter, 0-2 connection requests per day on LinkedIn
+- Follows on relevant accounts in your niche on X and LinkedIn
 - Accounts are filtered by relevance and follower count
 - Builds your follower network naturally
 
 ### LinkedIn Profile Views
 - Views of relevant profiles for visibility
-- 1-3 per day on LinkedIn
 - Passive visibility technique that often generates inbound interest
 - Accounts with recently viewed profiles often check you out in return
 
@@ -63,12 +59,12 @@ Keyword-based targeting is the difference between strategic engagement and spam-
 
 ## High Follower Filtering
 
-AutoReach filters out accounts with 100k+ followers:
+AutoReach avoids mega-influencer accounts and focuses on mid-tier and emerging voices in your niche.
 
 **Why?**
 - Engaging with mega-influencers looks spammy and inauthentic
-- Your like/reply won't be noticed among thousands
-- It signals you're chasing clout rather than building genuine relationships
+- Your like or reply will not be noticed among thousands
+- It signals you are chasing clout rather than building genuine relationships
 - Mid-tier and emerging voices in your niche are where real influence happens
 
 This keeps your engagement focused on accounts that are:
@@ -104,7 +100,7 @@ The benefit: by the time you start outreach sequences, your target accounts have
 
 The Engagement Engine dashboard tracks your engagement activity:
 
-- **Tweets Posted**: daily and cumulative count
+- **Posts Posted**: daily and cumulative count
 - **Likes Given**: per day and total
 - **Replies Sent**: engagement replies by day
 - **Follows**: new followers gained
@@ -129,7 +125,7 @@ Keywords are automatically derived from your offer and ICP, but you can customiz
 Engagement activity and outreach sequences are **independent**. The Engagement Engine can be engaging with posts while your sequences are sending direct messages to leads. Both run simultaneously.
 {% endhint %}
 
-- Engagement Engine activity is continuous (10-minute cycles)
+- Engagement runs continuously throughout the day
 - Outreach sequences run on their own schedule
 - Both contribute to your account's visibility and growth
 - Engagement builds the presence; outreach converts leads

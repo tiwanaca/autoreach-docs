@@ -8,27 +8,15 @@ Auto-Enrollment is the bridge between lead scoring and outreach sequences. It au
 
 ## How Auto-Enrollment Works
 
-**Every 5 minutes**, Autopilot runs its enrollment check:
+Autopilot continuously checks for newly scored leads and enrolls them automatically:
 
-1. Queries all leads with `buyer_score >= 60` in your Offer
-2. Identifies leads that aren't already enrolled in a sequence
-3. Selects the appropriate sequence (X/Twitter or LinkedIn) based on the lead's platform
+1. Identifies leads that reach your active buyer threshold in your Offer
+2. Skips leads that are already enrolled in a sequence
+3. Selects the appropriate sequence (X or LinkedIn) based on the lead's platform
 4. Enrolls them with their next action scheduled
 5. Respects your daily send limits to avoid over-sending
 
 The whole process is automatic and instantaneous.
-
-## Buyer Score Threshold
-
-Only leads with **buyer_score >= 60** are enrolled. This threshold represents "active" buyer intent:
-
-| Tier                   | Score Range | Action                              |
-| ---------------------- | ----------- | ----------------------------------- |
-| Monitor resurfacing    | 0-29        | Check again in 21 days              |
-| Monitoring tier        | 30-39       | Check again in 14 days              |
-| Monitoring tier        | 40-49       | Check again in 10 days              |
-| Warm tier              | 50-59       | Not yet enrolled, check in 5 days   |
-| **Active tier**        | **60+**     | **Auto-enroll immediately**         |
 
 {% hint style="info" %}
 **What creates a high score?** Buying signals like recent headline changes, posting about your space, following competitors, and matching your ICP criteria all boost the score.
@@ -38,7 +26,7 @@ Only leads with **buyer_score >= 60** are enrolled. This threshold represents "a
 
 Auto-Enrollment automatically picks the right sequence:
 
-- **X/Twitter leads** are enrolled into your X sequence
+- **X leads** are enrolled into your X sequence
 - **LinkedIn leads** are enrolled into your LinkedIn sequence
 
 This ensures the messaging, timing, and engagement match the platform behavior.
@@ -98,7 +86,7 @@ You can pause, remove, or manually adjust any lead's progress.
 
 Once a lead completes a sequence, they won't be re-enrolled automatically. However:
 
-- If a lead's score drops below 60 and later rises back to 60+, they can be re-enrolled in a different sequence
+- If a lead's score drops and later rises back to your active buyer threshold, they can be re-enrolled in a different sequence
 - Manually unenrolling a lead resets them for future auto-enrollment
 
 ## Enrollment Notifications

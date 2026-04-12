@@ -1,89 +1,64 @@
 # The Enrichment Pipeline
 
-The enrichment pipeline is the backbone of AutoReach's lead intelligence system. It takes raw lead data and progressively enriches it with profile information, activity signals, and scoring intelligence.
+The enrichment pipeline transforms raw leads into rich, actionable profiles. Starting with just a name and company, AutoReach progressively layers on social profiles, work history, recent activity, and location data to build a complete picture of every lead.
 
-## Pipeline Architecture
+## How Enrichment Works
 
-The enrichment process flows through 7 sequential steps:
+The pipeline runs through several stages, each adding a new layer of intelligence to your leads:
 
-```
-x_find → x_enrichment → linkedin_find → linkedin_enrichment 
-  → activity_fetch → location_enrichment → scoring
-```
+### Profile Discovery
 
-Each step builds on the previous one, creating a comprehensive profile of every lead.
+AutoReach searches for your leads across X and LinkedIn, matching them to verified social profiles. This gives you direct channels for outreach and unlocks the data needed for later stages.
 
-### Step-by-Step Breakdown
+### Profile Enrichment
 
-**1. X Find** - Locates X/Twitter profiles for the lead
-**2. X Enrichment** - Extracts profile data and DM eligibility from X
-**3. LinkedIn Find** - Locates LinkedIn profiles for the lead
-**4. LinkedIn Enrichment** - Extracts work history, skills, network stats
-**5. Activity Fetch** - Retrieves recent tweets, posts, and engagement signals
-**6. Location Enrichment** - Geocodes and validates location data
-**7. Scoring** - Calculates buyer intent, fit, and engagement scores
+Once profiles are found, AutoReach pulls structured data from each platform:
 
-## Source Priority & Processing Order
+- **X**: Bio, follower count, engagement metrics, DM eligibility
+- **LinkedIn**: Job title, company, work history, skills, education, network size
 
-AutoReach applies a "fast lane" system based on lead source. Leads from intent sources get processed faster and are prioritized for deep analysis.
+### Activity Enrichment
 
-{% hint style="info" %}
-**Source Priority Multipliers:**
-- **Intent Search (1.4x)** - Fastest lane. Leads actively posting about your solution
-- **Manual Import (1.0x)** - Standard processing speed
-- **CSV Import (0.6x)** - Slower lane. Lower priority, batched with other CSV leads
-{% endhint %}
+Recent posts, replies, and engagement are collected from each lead's social accounts. This activity data serves two purposes: it reveals what your leads are currently thinking about, and it gives AI the context it needs to write relevant, personalized messages.
 
-This means if an intent lead takes 10 minutes to fully enrich, a CSV lead might take ~17 minutes. Intent leads get proportionally more computational resources for deep analysis.
+### Location Enrichment
 
-## Processing Configuration
+Location data from social profiles is validated and standardized, giving you accurate geographic information for each lead.
 
-The pipeline is configured for optimal speed and accuracy:
+### Scoring
 
-| Setting | Value | Purpose |
-|---------|-------|---------|
-| Batch Size | 25 leads | Process leads in groups for efficiency |
-| Parallel Deep Analyses | 5 | Maximum concurrent AI analysis jobs |
-| Timeout | 60 seconds | Max time per enrichment step |
-| Retries | 3 | Automatic retry on failure |
-| Backoff Strategy | Exponential | Wait 2s → 4s → 8s between retries |
+With all enrichment data in hand, the scoring engine evaluates each lead across three dimensions:
 
-### What These Settings Mean
+- **Fit**: How closely does this lead match your ideal customer profile?
+- **Intent**: Are they showing signals that suggest interest in your type of solution?
+- **Timing**: How recently have they been active and engaged?
 
-- **Batch Size**: Leads are processed in groups of 25. Smaller batches are faster but less efficient.
-- **Parallel Analyses**: AutoReach can run up to 5 deep analyses (like buyer signal extraction) at the same time.
-- **Timeout**: If a single enrichment step takes longer than 60 seconds, it times out and triggers a retry.
-- **Exponential Backoff**: If a step fails, AutoReach waits 2 seconds before retry 1, 4 seconds before retry 2, and 8 seconds before retry 3.
+Each lead receives a composite buyer readiness score from 0 to 100.
 
-## Pipeline Recovery
+## Intent-Based Prioritization
 
-The enrichment pipeline is designed to be resilient. If processing stalls:
+Not all leads are created equal. Leads sourced from intent signals (people actively posting about problems your product solves) are fast-tracked through the pipeline. These high-priority leads are enriched and scored ahead of standard imports, so you can act on the strongest opportunities first.
+
+## Resilient Processing
+
+The enrichment pipeline is built to handle interruptions gracefully.
 
 {% hint style="success" %}
-**Automatic Recovery:** The system automatically resumes stalled enrichment jobs. You don't need to manually restart anything. Check the **Activity Log** to monitor enrichment progress.
+**Automatic Recovery**: If processing stalls or a step fails, the system automatically detects and resumes enrichment. No manual intervention is needed. You can monitor progress in the **Activity Log**.
 {% endhint %}
 
-Failed steps are automatically retried up to 3 times with exponential backoff. If all retries fail, the lead moves to the next available step or is marked for manual review.
+Failed steps are automatically retried before moving on. If a particular data source is temporarily unavailable, the pipeline continues with the remaining steps and fills in gaps when possible.
 
-## From Enrichment to Scoring to Outreach
+## From Enrichment to Outreach
 
-Once enrichment completes, the collected data flows into two key systems:
+Enriched data powers two core systems:
 
-**1. Buyer Scoring** - The enrichment data powers the buyer intelligence engine:
-- Does the lead match your ICP?
-- Are they showing intent signals?
-- What's their buyer readiness score (0-100)?
+**Buyer Scoring** uses the full profile, activity history, and company context to calculate how likely a lead is to convert. Leads with richer enrichment data receive more accurate scores.
 
-**2. DM Generation** - AI uses enriched profile data to personalize outreach:
-- Recent tweets and activities
-- Work history and expertise
-- Company context
-- Shared interests or connections
-
-The better the enrichment, the better the scoring and the more relevant your outreach.
+**Personalized Outreach** draws on enriched profiles to generate relevant messages. AI references recent posts, shared interests, role context, and company details to craft outreach that feels personal rather than templated.
 
 {% hint style="warning" %}
-**Enrichment Quality Matters:** Leads with incomplete enrichment (missing LinkedIn profile, no recent activity) will receive lower scoring and less personalized outreach. Encourage leads to have complete profiles on X/LinkedIn for best results.
+**Enrichment Quality Matters**: Leads with incomplete social profiles or limited recent activity will receive lower scores and less personalized messaging. The more data available on a lead's public profiles, the better AutoReach can serve you.
 {% endhint %}
 
 ## Next Steps

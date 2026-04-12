@@ -1,6 +1,6 @@
 # Multi-Account Management
 
-Manage multiple X/Twitter and LinkedIn accounts from a single AutoReach dashboard. Each account operates independently with its own activity tracking, limits, and health status.
+Manage multiple X and LinkedIn accounts from a single AutoReach dashboard. Each account operates independently with its own activity tracking, limits, and health status.
 
 ## Accessing Your Accounts
 
@@ -15,10 +15,10 @@ Each account shows one of these statuses:
 - **Expired** - authentication has expired (re-connect required)
 - **Suspended** - account has been flagged for review or violates platform rules
 
-## Twitter/X Accounts
+## X Accounts
 
 ### Authentication
-Twitter accounts use cookie-based authentication. AutoReach stores your session cookies securely and refreshes them automatically.
+X accounts connect securely through the AutoReach Chrome Extension, which handles authentication automatically.
 
 ### Daily Limits
 Configure how many actions your account can take per day:
@@ -28,81 +28,40 @@ Configure how many actions your account can take per day:
 - **Automatic Daily Reset** - count resets at 00:00 UTC
 
 {% hint style="info" %}
-Twitter has soft rate limits on DMs. Starting with 20/day and increasing slowly (5-10/day per week) helps avoid detection. Aggressive limits often trigger temporary blocks.
+Starting with 20 DMs/day and increasing gradually over time helps maintain good account health. Aggressive limits can trigger temporary blocks.
 {% endhint %}
 
 ### Proxy Configuration
-Each Twitter account can route traffic through a dedicated proxy:
+Each X account can route traffic through a dedicated proxy. Using dedicated proxies is recommended for best results.
 
-- **Proxy Type** - HTTP or SOCKS5
-- **Host, Port, Username, Password** - your proxy credentials
-- **Per-Account Routing** - each account uses its own proxy independently
-
-### User-Agent Persistence
-AutoReach rotates your account's user-agent string every 14-30 days:
-
-- Maintains 40+ diverse user agent signatures (Chrome, Firefox, Safari, Edge)
-- Per-account consistency between rotations (same device fingerprint)
-- Auto-rotation timing is randomized per account to avoid patterns
-
-### Trust Score
-A proprietary metric (0-100) indicating platform trust:
-
-- **90-100** - new accounts or excellent standing
-- **70-89** - normal operating range
-- **50-69** - minor rate limits detected
-- **< 50** - account showing suspicious activity; consider pausing
-
-### Health Tracking
-24-hour rolling error window shows:
-
-- **Rate Limits Triggered** - soft blocks (usually 15-60 min)
-- **Bot Detection Flags** - unusual pattern warnings
-- **Connection Errors** - network or auth issues
-- **Action Abandonment Rate** - percentage of scheduled actions that failed
+### Account Health
+AutoReach monitors the health of each X account and surfaces warnings when issues are detected. Check the Accounts page regularly and reduce daily limits or pause an account if you notice elevated error rates.
 
 ## LinkedIn Accounts
 
 ### Authentication
-LinkedIn accounts require two credentials:
-
-- **Cookies** - your session cookies (refreshed automatically)
-- **li_at Token** - critical authentication token for API operations
-- **Secure Storage** - both stored encrypted and never shared
+LinkedIn accounts connect securely through the AutoReach Chrome Extension, which handles authentication automatically.
 
 ### Connection Limits
-LinkedIn imposes connection request limits. Configure based on your account type:
+LinkedIn imposes weekly connection request limits. AutoReach tracks your usage based on your account type:
 
-- **Free/Premium Account** - 100 connections/week default
-- **Sales Navigator Account** - 200 connections/week default
+- **Free Account** - 100 connections/week
+- **Premium Account** - 150 connections/week
+- **Sales Navigator Account** - 200 connections/week
 - **Per-Account Tracking** - counts reset every Sunday at 00:00 UTC
 
 {% hint style="warning" %}
-LinkedIn actively monitors for bot behavior. Connecting faster than 20-30/day significantly increases suspension risk. AutoReach paces actions conservatively by default.
+LinkedIn actively monitors for bot behavior. AutoReach paces actions conservatively by default to protect your account.
 {% endhint %}
 
 ### Proxy Configuration
-LinkedIn account security requires a dedicated proxy:
-
-- **HTTP or SOCKS5** - choose your proxy protocol
-- **Host, Port, Username, Password** - your proxy details
-- **Required** - LinkedIn accounts must always have a proxy configured
+A dedicated proxy is strongly recommended for LinkedIn accounts. Using a proxy helps protect your account and keeps your activity consistent.
 
 ### Engagement Phase Tracking
-New LinkedIn accounts go through an engagement ramp-up phase:
+New LinkedIn accounts go through a gradual ramp-up phase before reaching full capacity. AutoReach tracks this automatically and shows progress on each account card. Allow the ramp-up to complete naturally for the best long-term account health.
 
-- **Week 1** - limited actions, profile views, and light engagement
-- **Week 2-3** - gradual increase in activity levels
-- **Week 4+** - full capacity operations
-
-AutoReach shows engagement phase progress on each LinkedIn account card. Do not rush this process. Accounts that respect the ramp-up pattern have 3-5x lower suspension rates.
-
-### Connection Limit Detection
-AutoReach monitors your weekly usage:
-
-- **Soft Limit (80%)** - warning issued, slightly slower pacing applied
-- **Hard Limit (100%)** - no more connections this week
-- **Auto-Recovery** - limit resets automatically on Sunday
+### Connection Limit Monitoring
+AutoReach monitors your weekly connection usage and automatically slows down activity as you approach your limit. Limits reset automatically each Sunday.
 
 ## Account Health Dashboard
 
@@ -116,7 +75,7 @@ Each account card displays:
 ### Engagement Engine Status (LinkedIn only)
 Shows engagement phase progress and daily engagement activity:
 
-- **Engagement Week** - current phase (Week 1, 2, 3, or Complete)
+- **Engagement Phase** - current ramp-up progress
 - **Daily Activity Chart** - last 7 days of engagement actions
 - **Inbound Engagement** - replies and connection acceptances tracked
 
@@ -132,7 +91,7 @@ Click the "Remove" option on an account card. This:
 
 - Disconnects AutoReach from that account
 - Cancels all pending actions for that account
-- Does not modify the actual Twitter/LinkedIn account
+- Does not modify the actual X or LinkedIn account
 
 ## Activity Window Configuration
 
@@ -143,18 +102,17 @@ Set times when your accounts should be most active:
 - **Time Zone** - configured per account or globally in settings
 
 {% hint style="tip" %}
-Set your activity window to match when you or your team are typically online. This creates more natural-looking patterns and helps avoid detection systems.
+Set your activity window to match when you or your team are typically online. This creates more natural-looking patterns and improves account health.
 {% endhint %}
 
 ## Monitoring Account Health
 
 Check the **Accounts** page regularly:
 
-- **Trust Score < 70?** Reduce daily limits or pause for 24h
-- **Error Rate > 10%?** Check your proxy, auth tokens, or reach out to support
+- **High Error Rate?** Check your proxy configuration, re-authenticate via the Chrome Extension, or reach out to support
 - **Multiple Suspensions?** Consider adding more accounts to spread activity load
 
-AutoReach automatically pauses accounts showing severe health issues (like IP blocks), but lighter issues (rate limits, bot detection) are surfaced as warnings for you to decide.
+AutoReach automatically pauses accounts showing severe health issues such as IP blocks. Lighter issues are surfaced as warnings for you to review and act on.
 
 ## Next Steps
 

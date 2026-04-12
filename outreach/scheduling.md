@@ -1,6 +1,6 @@
 # Scheduling & Send Limits
 
-AutoReach respects platform limits and maintains human-like behavior to keep your accounts healthy. This page explains how scheduling, rate limiting, and activity windows work.
+AutoReach respects platform limits and maintains safe, natural-looking behavior to keep your accounts healthy. This page explains how scheduling, rate limiting, and activity windows work.
 
 ## Activity Window
 
@@ -68,7 +68,8 @@ LinkedIn enforces hard weekly connection request limits:
 
 | Account Type    | Weekly Limit       |
 | --------------- | ------------------ |
-| Free/Premium    | 100 requests/week  |
+| Free            | 100 requests/week  |
+| Premium         | 150 requests/week  |
 | Sales Navigator | 200 requests/week  |
 
 - **Reset:** Every Monday at 12:01am PT
@@ -96,14 +97,14 @@ On a given day:
 
 ## Anti-Burst Protection
 
-When you **resume a paused sequence** or restart a stopped sequence, AutoReach spaces out re-activated actions by **15-25 minutes** to avoid sudden spikes.
+When you **resume a paused sequence** or restart a stopped sequence, AutoReach automatically spaces out re-activated actions gradually to avoid sudden spikes.
 
 ### Example
 
 Your "Tech CTOs" sequence was paused for 3 days with 500 pending DMs.
 
 - **Without anti-burst:** All 500 DMs would fire in the first hour, causing the platform to flag your account as spam
-- **With anti-burst:** DMs fire in batches of 5-10 every 15 minutes, which looks natural
+- **With anti-burst:** DMs are spread out gradually throughout the day, which looks natural
 
 This protection activates automatically; you don't need to configure it.
 
@@ -120,7 +121,7 @@ When a LinkedIn connection request hits the weekly limit, it enters **Deferred**
 ### What Happens
 
 1. Action attempts to execute
-2. LinkedIn says "You've hit your 100 connection requests this week"
+2. LinkedIn says "You've hit your connection request limit this week"
 3. AutoReach moves the action to **Deferred** state
 4. The lead stays in the sequence
 5. The action is automatically **retried the following Monday** when limits reset
@@ -135,7 +136,7 @@ When a LinkedIn connection request hits the weekly limit, it enters **Deferred**
 
 **Wednesday:**
 
-- You have 5 pending connection requests on a Free/Premium LinkedIn account
+- You have 5 pending connection requests on a Free LinkedIn account
 - You've already sent 100 requests this week
 - 3 requests execute successfully; 2 hit the limit and go to **Deferred**
 
@@ -144,49 +145,6 @@ When a LinkedIn connection request hits the weekly limit, it enters **Deferred**
 - Weekly limits reset
 - The 2 deferred requests auto-execute
 - No action needed from you
-
----
-
-## Human-Like Behavior Simulation
-
-AutoReach simulates realistic human behavior to avoid detection and maintain authenticity.
-
-### Reading Speed
-
-When you enable AI auto-replies, AutoReach simulates reading time:
-
-- **Speed:** 200-300 words per minute (realistic human reading)
-- **Effect:** If a lead sends a 150-word reply, AutoReach waits 30-45 seconds before typing a response
-- **Randomness:** Adds variance so timing doesn't feel mechanical
-
-### Typing Speed
-
-AI responses are "typed" at a human pace:
-
-- **Speed:** 40-60 words per minute
-- **Effect:** A 200-word response takes 3-5 minutes to "type"
-- **Benefit:** Looks like a real human writing in real-time
-
-### Time-of-Day Multiplier
-
-Response speed varies based on time of day:
-
-- **9am-12pm:** Fast responses (people are energized)
-- **2pm-4pm:** Slower (post-lunch)
-- **6pm-8pm:** Medium (evening, winding down)
-- **Night:** Very slow or no response
-
-### Probability of Abandonment
-
-There's a **4% chance** that a partial response is abandoned mid-flow:
-
-- Lead types 2 sentences, gets distracted, leaves the conversation
-- AutoReach simulates this by sending partial responses or delaying further
-- Adds realism without feeling robotic
-
-### Distribution
-
-All timing randomness follows a **log-normal distribution**: some responses fast, some slow, with a natural bell curve rather than uniform randomness.
 
 ---
 
@@ -215,9 +173,9 @@ For warm leads or high-value prospects, set this to 0 and handle replies manuall
 
 ## Stale Action Cleanup
 
-AutoReach automatically **skips actions that are more than 3 days old**:
+AutoReach automatically skips actions that are significantly outdated:
 
-- **Reason:** A pending DM from 5 days ago feels out of context
+- **Reason:** A pending DM from several days ago feels out of context
 - **Effect:** The action is marked **Skipped**; the lead moves to the next step
 - **Benefit:** Prevents awkward delayed messages that confuse leads
 
@@ -260,13 +218,13 @@ Sequence paused with 1000 pending actions (Friday 5pm)
 Resumed on Monday 9am
 
 Monday 9am-12pm:
-  - Batches of 5-10 actions fire every 15 min (anti-burst)
+  - Actions are spread out gradually (anti-burst)
   - ~50 actions execute (spread across 3 hours)
   - Remaining actions queue for next day
 ```
 
 - Without anti-burst: All 1000 would fire in first hour, triggering a spam flag
-- With anti-burst: ~50/hour, which looks natural
+- With anti-burst: Actions are spread naturally throughout the day
 
 ---
 
@@ -275,7 +233,7 @@ Monday 9am-12pm:
 1. **Set Activity Window to your actual work hours** - Keeps messaging patterns realistic
 2. **Leave buffer in daily limits** - If limit is 50, aim for 30-40 daily. Avoid hitting limits daily.
 3. **Stagger sequence starts** - Don't launch 5 sequences on the same day; space them out
-4. **Monitor limits on LinkedIn** - 100/week fills up fast; track weekly progress
+4. **Monitor limits on LinkedIn** - Weekly connection limits fill up fast; track weekly progress
 5. **Resume paused sequences carefully** - If 1000+ pending actions, lower daily limit temporarily
 6. **Test with small batches first** - Launch with 50 leads before scaling to 1000
 7. **Respect weekends** - Consider disabling sequences Friday afternoon if you want human-like behavior
@@ -296,7 +254,7 @@ Monday 9am-12pm:
 
 ### "Connection requests went into Deferred state"
 
-**Cause:** Hit LinkedIn's weekly connection limit (100 for Free/Premium).
+**Cause:** Hit LinkedIn's weekly connection limit.
 
 **Solution:**
 

@@ -32,7 +32,7 @@ The Calendly connection uses webhook events to detect new bookings in real-time.
 4. Enable permissions for **all scopes**
 5. Save. AutoReach will now receive booking events automatically
 
-AutoReach verifies every webhook event signature using HMAC-SHA256 encryption for security.
+AutoReach verifies every webhook event for security.
 
 ### Cal.com Integration
 
@@ -74,7 +74,7 @@ When a lead books a meeting through your integration:
 
 1. The lead's status in the sequence automatically updates to **"meeting"**
 2. The meeting is recorded in the lead's conversation thread
-3. A `meeting.booked` webhook event is triggered for downstream integrations
+3. Any connected integrations are notified of the booking
 4. Meeting count is updated in sequence statistics
 
 {% hint style="tip" %}

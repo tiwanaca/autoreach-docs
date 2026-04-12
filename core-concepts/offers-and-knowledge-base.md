@@ -20,25 +20,27 @@ When you create an offer, you define:
 
 ### Core Definition
 
-- **Name:** What you're calling this offer
-- **Description:** Detailed description of what you're selling and why
+- **Name:** What you are calling this offer
+- **Description:** Detailed description of what you are selling and why
+- **Website:** Your website URL (used by AI to auto-populate fields)
 
 ### Target Audience
 
-- **Target audience:** ICP definition (e.g., "CTOs at B2B SaaS companies with 50-500 employees")
-- **Preferred locations:** Geographic focus (e.g., "North America, Western Europe")
-- **Industry:** Target industries (financial services, healthcare, etc.)
+- **Target audience:** Free-form ICP definition. You can include who to target, who to avoid, and any context that helps AutoReach understand your ideal buyer.
+- **Locations:** Geographic focus with an option to filter by **lead location** or **company HQ location**
+- **Target industries:** LinkedIn industries used to filter people searches
+- **Target language:** The language for your outreach messages (e.g., English, Spanish, Italian)
 
 ### Market Positioning
 
-- **Pain points:** 3-5 problems your offer solves
-- **Competitors:** 3-6 competing products/companies
-- **Search signals:** Natural language phrases your buyers post (e.g., "I need better customer data integration")
-- **Signal likelihood:** How likely your target buyers post about this on social (high/medium/low)
+- **Pain points:** Problems your offer solves (used for intent matching and message personalization)
+- **Known competitors:** Companies or tools that compete with you (helps detect leads engaging with competitors)
+- **Search signals:** Natural language phrases your buyers post on social media (e.g., "I need better customer data integration")
+- **Signal likelihood:** How likely your target buyers post about this on social media (high/medium/low). This adjusts how heavily intent signals are weighted in scoring.
 
 ### Value
 
-- **Average deal value:** Expected contract size ($)
+- **Deal value:** Expected contract size ($). Used to estimate pipeline value.
 
 ## How Offers Power Everything
 
@@ -64,10 +66,10 @@ More specific search signals = more targeted discovery.
 
 Your offer's **target audience** and **pain points** guide the buyer intelligence system:
 
-- People matching your target industry - Higher fit
-- People posting about your pain points - Higher intent
-- People in preferred locations - Fit adjustment
-- People at competitor companies - Fit = 0
+- People matching your target industry get higher fit scores
+- People posting about your pain points get higher intent scores
+- People in your preferred locations get a fit boost
+- People at competitor companies are automatically disqualified
 
 ### 3. DM Personalization
 
@@ -89,11 +91,11 @@ When leads reply, AutoReach's conversation AI uses your offer to:
 
 ### 5. Signal Likelihood Weighting
 
-Your **signal likelihood** setting (high/medium/low) adjusts how heavily intent signals are weighted in scoring:
+Your **signal likelihood** setting adjusts how the three scoring dimensions (fit, intent, timing) are weighted:
 
-- **High likelihood** - "Workflow automation" is frequently discussed; weight intent 50%
-- **Medium likelihood** - "Compliance auditing" sometimes discussed; weight intent 30%
-- **Low likelihood** - "Specialized technical consulting" rarely discussed; weight intent 20%
+- **High likelihood:** Your buyers frequently post about their needs on social media. Intent signals carry more weight.
+- **Medium likelihood** (default): Your buyers sometimes post about their needs. Balanced weighting.
+- **Low likelihood:** Your buyers rarely post about their needs. Fit becomes the dominant factor.
 
 {% hint style="info" %}
 **Pro Tip:** Spend time defining your offer well. A great offer definition is a force multiplier that makes every downstream feature smarter.
@@ -115,82 +117,24 @@ The **Knowledge Base** lets you upload your strategic docs, case studies, pricin
 - TXT
 - Markdown
 
-### How It Works: RAG Pipeline
+### How It Works
 
-Your knowledge base documents flow through a Retrieval-Augmented Generation (RAG) pipeline:
+When you upload documents, AutoReach processes and indexes them so the AI can retrieve the most relevant sections when generating responses. When a prospect replies to your outreach, AutoReach searches your knowledge base for context that matches the conversation and uses it to generate accurate, on-brand responses.
 
-```
-1. Upload Document
-   ↓
-2. Chunking
-   Your document is split into overlapping chunks (~500 tokens each)
-   ↓
-3. Embedding
-   Each chunk is converted to a vector using OpenAI's text-embedding-3-small
-   ↓
-4. Storage
-   Embeddings stored in pgvector database for fast retrieval
-   ↓
-5. Retrieval
-   When AI needs context, it searches for relevant chunks
-   ↓
-6. Response Generation
-   Most relevant chunks are passed to Claude for response generation
-```
-
-### Retrieval Limits
-
-AutoReach has strict token budgets to keep AI responses fast:
-
-| Context Type             | Token Budget  |
-|--------------------------|---------------|
-| Knowledge base documents | 600 tokens    |
-| Tone examples            | 500 tokens    |
-| **Total context**        | **1100 tokens** |
-
-This means if you upload 50 pages of documentation, AutoReach will intelligently retrieve only the most relevant 600 tokens of that content when generating a reply.
+Even if you upload many pages of documentation, AutoReach intelligently retrieves only the most relevant content for each conversation.
 
 {% hint style="warning" %}
-**Quality Over Quantity:** Don't dump your entire playbook into the knowledge base. Upload your best docs: pricing, qualification criteria, case studies, objection handling, key talking points.
+**Quality Over Quantity:** Upload your best docs: case studies, pricing, qualification criteria, objection handling, and key talking points. A few high-quality documents will perform better than a large volume of generic content.
 {% endhint %}
 
 ## Tone Examples
 
-**Tone examples** are conversation samples that define your outreach voice. They show AutoReach how you talk to prospects:
+**Tone examples** are conversation samples that define your outreach voice. They are configured **per sequence** in the sequence's Advanced Settings, not at the offer level.
 
-```
-Example 1:
-Me: "Hey Sarah, how's your hiring going?"
-Prospect: "Pretty good, we're scaling the team"
-Me: "Cool! Any particular areas you're struggling to hire for?"
-Prospect: "Yeah, finding good product managers is tough"
-Me: "I can help with that. Mind if I send you 5 PMs I know? No strings."
-
-Example 2:
-Me: "I just saw you got funding. Congrats!"
-Prospect: "Thanks, raising Series B for marketing automation"
-Me: "That's huge. What are you prioritizing first?"
-```
-
-### Auto-Generated Tones
-
-AutoReach generates **21 tone example templates** automatically when you create an offer. These cover different conversation stages:
-
-- **Opening:** How you start conversations
-- **Value prop:** How you pitch
-- **Objection handling:** How you respond to "not interested"
-- **Social proof:** How you use case studies
-- **Closing:** How you ask for meetings
-- ...and more
-
-You can edit, remove, or add custom tone examples to fine-tune how AI responds.
-
-### Tone Example Token Budget
-
-Tone examples get 500 tokens of the 1,100-token total context budget. If you have 30 tone examples, AutoReach will intelligently retrieve the most relevant 2-3 examples for each situation.
+Tone examples show AutoReach how you talk to prospects. They cover different conversation stages like openings, value propositions, objection handling, social proof, and closing. AutoReach auto-generates tone examples when you create a sequence, and you can edit, remove, or add custom examples to fine-tune how AI responds.
 
 {% hint style="info" %}
-**Pro Tip:** Edit your auto-generated tone examples to match your actual voice. AI learns from examples. If your samples sound corporate but you're naturally casual, your AI replies won't match.
+**Pro Tip:** Review and edit your tone examples in your sequence's Advanced Settings. If your samples sound corporate but you are naturally casual, your AI replies will not match your real voice.
 {% endhint %}
 
 ## Conversation Analyzer
@@ -207,34 +151,12 @@ The **Conversation Analyzer** is an AI system that reviews your outreach convers
    - Pain point focus (emphasize a specific pain point more)
    - Personalization (use more/less personalization)
 
-### Running an Analysis
+### How to Use It
 
-Access via your offer dashboard:
-
-```
-1. Click "Analyze Conversations"
-2. Analyzer reviews last 30 days of conversations
-3. Returns 5-10 suggestions per category
-4. You can accept or reject suggestions
-5. Accepted changes update your tone examples and DM prompts
-```
-
-### Example Output
-
-```
-SUGGESTION 1: Increase casual tone
-Impact: +12% reply rate in test conversations
-Apply to: DM opening template
-Confidence: High
-
-SUGGESTION 2: Lead with social proof instead of pain point
-Impact: +8% reply rate
-Apply to: Objection handling tone examples
-Confidence: Medium
-```
+Access the Conversation Analyzer from your sequence. It reviews your recent conversations and returns actionable suggestions. You can accept or dismiss each suggestion.
 
 {% hint style="info" %}
-**Run Monthly:** Conversation Analyzer works best with sufficient data. Run monthly to see patterns emerge. With small sample sizes (< 20 conversations), suggestions are less reliable.
+**Run Monthly:** The Conversation Analyzer works best with sufficient data. Run it monthly to see patterns emerge.
 {% endhint %}
 
 ## Managing Multiple Offers
@@ -244,7 +166,6 @@ You can create multiple offers in AutoReach. Each offer:
 - Has its own lead pipeline
 - Can run independent sequences
 - Has a separate knowledge base
-- Gets its own tone examples
 - Has isolated scoring logic
 
 **Common setup:**

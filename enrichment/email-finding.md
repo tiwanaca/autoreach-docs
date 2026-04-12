@@ -1,30 +1,27 @@
 # Email Finding
 
-Email finding automatically discovers work email addresses for your leads using Findymail API integration. This is especially useful when you have an X/Twitter handle or LinkedIn profile but need to add email-based outreach to your workflow.
+Email finding automatically discovers work email addresses for your leads. When you have an X handle or LinkedIn profile for a prospect, AutoReach can look up their professional email to enable multi-channel outreach.
 
 ## How It Works
 
-### Findymail Integration
+AutoReach integrates with a third-party email discovery service to find work emails for your leads. The process is straightforward:
 
-AutoReach integrates with **Findymail**, a dedicated email discovery service. The flow works as follows:
-
-1. You provide a LinkedIn profile URL or X/Twitter handle
-2. AutoReach queries Findymail's API with the profile information
-3. Findymail searches their database and web sources to find matching email addresses
-4. Results are validated and returned to AutoReach
-5. High-confidence emails are automatically populated on the lead profile
+1. You provide a LinkedIn profile URL or X handle for a lead
+2. AutoReach queries the email discovery service with the profile information
+3. Results are validated and filtered before being added to the lead profile
+4. Verified emails are automatically populated on the lead record
 
 {% hint style="info" %}
-**Your Own API Key:** Email finding requires your own Findymail API key. AutoReach does not provide one. You will need to sign up for Findymail separately and add your credentials to AutoReach.
+**Your Own API Key Required:** Email finding requires your own API key for the third-party email discovery service. AutoReach does not provide one. Sign up for the service separately and add your credentials in AutoReach.
 {% endhint %}
 
-### Setting Up Your Findymail API Key
+## Setup
 
 To enable email discovery:
 
 1. Go to **Settings > AI & Models**
 2. Find the **Email Finding** section
-3. Paste your Findymail API key in the field
+3. Paste your API key in the field
 4. Click **Test Connection** to verify it works
 5. Save
 
@@ -32,107 +29,58 @@ Once configured, email finding automatically runs on all new leads.
 
 ## Email Validation
 
-Discovered emails vary in reliability. AutoReach validates every email found:
+Every discovered email goes through validation before it is added to a lead profile:
 
-### Format Validation
+- **Format validation** ensures emails match standard formatting (valid domain, no unusual characters)
+- **Generic address filtering** automatically excludes non-personal addresses like company inboxes, support departments, and generic contact emails
+- **Deduplication** prevents the same email from being added to multiple leads incorrectly
 
-Strict regex patterns ensure emails match standard format:
-- Must contain `@` symbol
-- Must have a valid domain extension (.com, .io, .co.uk, etc.)
-- Must not have unusual characters or spaces
-
-### Generic Email Filtering
-
-AutoReach automatically **excludes** generic email addresses:
-
-- `info@` - Generic company inbox
-- `contact@` - Generic contact form
-- `support@` - Support department
-- `sales@` - Generic sales email
-- `hello@` - Generic greeting inbox
-
-These low-confidence emails are filtered to keep your list focused on real people.
-
-### Source Tracking
-
-Every discovered email is tagged with its source for transparency:
-
-| Source | Description |
-|--------|-------------|
-| **findymail** | Found via Findymail API lookup |
-| **direct_search** | Discovered through direct web search |
-| **pattern_detection** | Inferred from company domain patterns |
-| **web_search** | Found on public web pages and directories |
-
-You can view the source of each email on the lead profile to make your own judgment about confidence.
-
-## Cost & Credit Usage
-
-### Credit Consumption
-
-Email finding uses your **Findymail API credits**, not AutoReach credits.
-
-{% hint style="warning" %}
-**Important:** Email discovery costs Findymail credits, which you manage separately from your AutoReach subscription. Make sure your Findymail account has sufficient credits to support your enrichment volume.
-{% endhint %}
-
-Each email lookup consumes:
-- **1 Findymail credit** for a successful discovery
-- **0 credits** if no email is found (no charge for attempts)
-
-Monitor your Findymail dashboard to track credit usage.
-
-### Cost Optimization
-
-To use email credits efficiently:
-
-- **Only enable for leads you'll actually contact** - Don't enrich every lead if you only plan to DM a few
-- **Prioritize high-ICP leads** - Focus email discovery on your best-fit prospects
-- **Use with intent data** - Combine email discovery with intent signals for best ROI
-- **Batch enrichment** - Process leads in cohorts rather than one-by-one
+This filtering keeps your lead list focused on real, reachable people.
 
 ## When Email Finding Runs
 
 Email finding automatically triggers when:
 
 - A new lead is added to AutoReach
-- Your Findymail API key is configured
-- The lead has a LinkedIn profile URL or X/Twitter handle
-- No email is already populated on the profile
+- Your API key is configured and active
+- The lead has a LinkedIn profile URL or X handle
+- No email is already populated on the lead profile
 
-It does NOT re-run on already-enriched leads unless manually refreshed.
+It does not re-run on already-enriched leads unless manually refreshed.
+
+## Cost and Credit Usage
+
+Email discovery uses credits from your **third-party email service account**, not from AutoReach. You manage and purchase those credits separately through the email discovery provider.
+
+{% hint style="warning" %}
+Make sure your email discovery account has sufficient credits to support your enrichment volume. If credits are depleted, email finding will stop working until you add more.
+{% endhint %}
+
+To use credits efficiently:
+
+- **Only enable for leads you plan to contact** rather than enriching every lead
+- **Prioritize high-ICP leads** to focus discovery on your best-fit prospects
+- **Combine with intent signals** for the best return on your credits
 
 ## Best Practices
-
-### Set Realistic Expectations
-
-Not all leads have discoverable emails. Success rates vary by:
-- **Company size** - Larger companies have more online presence and are easier to find
-- **Geographic region** - US/UK/Western Europe have better coverage
-- **Industry** - Tech/SaaS has higher success rates than other sectors
-
-Expect 30-70% discovery success rates depending on your lead list.
 
 ### Quality Over Quantity
 
 {% hint style="success" %}
-**Pro Tip:** Combine email discovery with your ICP targeting. High-ICP leads with discovered emails are more likely to respond to cold outreach. Don't just blast emails to every discovered address.
+**Pro Tip:** Combine email discovery with your ICP targeting. High-ICP leads with discovered emails are more likely to respond to outreach. Avoid blasting emails to every discovered address.
 {% endhint %}
 
-### Verify When Uncertain
+### Set Realistic Expectations
 
-If you're uncertain about an email address:
-
-1. Check the **source** - Findymail direct API results are more reliable than pattern detection
-2. Test small volumes - Send to 5-10 leads first and monitor bounce rates
-3. Use list validation tools - Third-party tools like ZeroBounce can pre-validate your list
+Not all leads have discoverable emails. Success rates vary by company size, geographic region, and industry. Tech and SaaS companies tend to have better coverage than other sectors.
 
 ### Monitor Bounce Rates
 
-If you're using email in your outreach sequences:
+If you are using email in your outreach sequences:
+
 - Track bounce and invalid email rates in your **Activity Log**
-- If bounce rate exceeds 5%, review the source of discovered emails
-- Consider filtering out low-confidence sources (pattern_detection, web_search)
+- If bounce rates climb above acceptable levels, pause and review your lead sources
+- Test with small volumes first (5 to 10 leads) before scaling up
 
 ## Troubleshooting
 
@@ -140,27 +88,29 @@ If you're using email in your outreach sequences:
 
 **Check your API key:**
 1. Go to **Settings > AI & Models**
-2. Verify your Findymail API key is entered correctly
-3. Click **Test Connection** and look for success message
+2. Verify your API key is entered correctly
+3. Click **Test Connection** and look for a success message
 
 **Check your credit balance:**
-1. Log in to your Findymail dashboard
+1. Log in to your email discovery service dashboard
 2. Verify you have remaining API credits
-3. If depleted, purchase more credits through Findymail
+3. If depleted, purchase more credits through the provider
 
 ### No Emails Found
 
-This is normal and expected. Not every lead has a discoverable email:
-- Try manually searching LinkedIn/company website as backup
+This is normal and expected. Not every lead has a discoverable email.
+
+- Try manually searching LinkedIn or the company website as a backup
 - Add emails manually from your own research
-- Consider whether the lead is a better fit for X/LinkedIn-only outreach
+- Consider whether the lead is a better fit for X or LinkedIn-only outreach
 
-### Too Many Generic Emails
+### Generic Emails Appearing
 
-If you're seeing info@, contact@, etc. in results:
-- Verify your Findymail API key configuration
-- Generic email filtering should auto-exclude these
-- If they're still appearing, manually remove them from the lead profile
+If you are seeing non-personal addresses in results:
+
+- Verify your API key configuration is correct
+- Generic email filtering should exclude these automatically
+- If they persist, manually remove them from the lead profile
 
 ## Next Steps
 

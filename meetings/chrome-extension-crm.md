@@ -6,10 +6,11 @@ The AutoReach Chrome Extension brings your entire CRM pipeline directly into you
 
 Your leads move through a clean, visual pipeline right in the extension:
 
-**new > requested > accepted > contacted > replied > meeting > won/lost**
+**new > on hold > requested > accepted > contacted > replied > meeting > won/lost**
 
 Each stage represents a moment in the lead journey:
 - **new** - freshly added to AutoReach
+- **on hold** - lead is paused or waiting for action
 - **requested** - connection request or first message sent
 - **accepted** - connection accepted or first reply received
 - **contacted** - ongoing conversation started
@@ -48,13 +49,13 @@ The extension monitors your LinkedIn account in real-time for connection accepta
 
 **How it works:**
 - When someone accepts your connection request, the extension detects it automatically
-- The system uses fuzzy name matching to link the connection to the corresponding lead in AutoReach
+- The system automatically links the connection to the corresponding lead in AutoReach
 - The lead's status updates to **"accepted"** in your pipeline
 
 This means you do not have to manually track who has accepted. It is all automatic.
 
 {% hint style="success" %}
-Fuzzy matching is smart enough to handle common name variations, misspellings, and nickname differences, so connections are linked accurately even if the name is not exact.
+AutoReach is smart enough to handle common name variations and differences, so connections are linked accurately even if the name is not an exact match.
 {% endhint %}
 
 ## Security: Cyrillic Character Detection
@@ -108,26 +109,18 @@ This keeps relevant context visible while you are actually in the conversation.
 The messaging overlay is lightweight and does not interfere with normal LinkedIn/X messaging. You can minimize or close it anytime.
 {% endhint %}
 
-## Account Authentication & Cookie Extraction
+## Connecting Your Accounts
 
-To connect your LinkedIn and X accounts to AutoReach, the extension securely extracts authentication cookies from your browser.
+To connect your LinkedIn and X accounts to AutoReach, use the Chrome Extension:
 
-**How this works:**
-- You authorize the extension to access your account cookies
-- The extension extracts the authentication tokens needed to send messages on your behalf
-- AutoReach stores these tokens securely and uses them to authenticate API calls
-- Your actual password is never shared or stored
-
-{% hint style="success" %}
-Cookie-based authentication is more secure than password authentication because it avoids storing passwords in the cloud. You can revoke access anytime in the extension settings.
-{% endhint %}
-
-**To connect an account:**
 1. Click the **Connect Account** button in the extension
 2. Select LinkedIn or X
 3. Review the permissions and click **Authorize**
-4. The extension extracts your authentication cookies securely
-5. You are connected. The extension can now send messages and track activity
+4. You are connected. The extension can now send messages and track activity
+
+{% hint style="success" %}
+Your actual password is never shared or stored. You can revoke access anytime in the extension settings.
+{% endhint %}
 
 ## Bridging Browser and Outreach
 

@@ -15,7 +15,7 @@ LinkedIn People Search lets you directly query LinkedIn's search API with precis
 
 **Geographic Location**
 - Filter by country, region, or city
-- Respects your offer's preferred_locations setting
+- Respects your offer's location settings
 - Enables location-specific targeting
 
 **Industry**
@@ -43,7 +43,7 @@ LinkedIn People Search lets you directly query LinkedIn's search API with precis
 Our system handles large search queries efficiently:
 
 - **Initial Query:** Submits your filter criteria to LinkedIn
-- **Pagination:** Automatically fetches multiple pages (200 pages × 10 results = up to 2,000 people per search)
+- **Pagination:** Automatically fetches multiple pages of results
 - **Background Processing:** Continues searching while you work
 - **Real-time Updates:** See prospect count as results stream in
 
@@ -51,40 +51,13 @@ Our system handles large search queries efficiently:
 LinkedIn People Search can return up to 2,000 results. For larger searches, consider running multiple searches with refined filters.
 {% endhint %}
 
-## Anti-Detection Delays
+## Account Safety
 
-To maintain account safety and avoid triggering LinkedIn's anti-bot systems:
-
-- **8-12 second delays** between page requests
-- **Gradual request patterns** that mimic human behavior
-- **Automatic backoff** on rate limit detection
-- **Session management** to prevent IP-based blocks
-
-These delays are essential for account health. Never disable or override them.
-
-{% hint style="warning" %}
-LinkedIn aggressively detects and restricts automated profile scraping. AutoReach's anti-detection measures keep your account safe. Violating these patterns risks account restrictions or bans.
-{% endhint %}
+AutoReach includes built-in safety measures to protect your LinkedIn account during searches. Requests are spaced out naturally and rate limits are respected automatically. You do not need to configure anything.
 
 ## Search Limits
 
-**Maximum results per search:** 2,000 people
-- 200 pages of results
-- 10 people per page
-- Use filters to narrow scope for more relevant results
-
-**Rate limits:**
-- Searches queue automatically
-- Processing happens in background
-- Concurrent searches are rate-limited to maintain safety
-
-## Automatic Search Recovery
-
-If AutoReach's server restarts during an active search:
-- In-progress searches automatically resume
-- Already-processed results are preserved
-- No need to restart manually
-- Seamless continuation without losing data
+Each search can return up to 2,000 results. Use filters to narrow scope for more relevant results. Searches run in the background while you work, and if a search is interrupted, it automatically resumes where it left off.
 
 ## Building Effective Filter Combinations
 
@@ -162,6 +135,6 @@ If AutoReach's server restarts during an active search:
 
 LinkedIn People Search works best when combined with:
 
-- **[Cross-Platform Matching](cross-platform-matching.md):** Find X/Twitter profiles for your LinkedIn search results
+- **[Cross-Platform Matching](cross-platform-matching.md):** Find X profiles for your LinkedIn search results
 - **[Lookalike Audiences](lookalike-audiences.md):** Identify relevant influencers in your target market, then find similar people
 - **[Content Search](linkedin-content-search.md):** Start with content searches to identify roles, then use People Search to scale that profile type

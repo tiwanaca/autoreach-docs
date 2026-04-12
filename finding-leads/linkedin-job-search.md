@@ -138,7 +138,7 @@ Job Search pairs well with:
 
 - **[Lookalike Audiences](lookalike-audiences.md):** Identify companies similar to those actively hiring in your space
 
-- **[Cross-Platform Matching](cross-platform-matching.md):** Find X/Twitter profiles for job-found decision-makers
+- **[Cross-Platform Matching](cross-platform-matching.md):** Find X profiles for job-found decision-makers
 
 ## Troubleshooting
 

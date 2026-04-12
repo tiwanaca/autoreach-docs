@@ -1,44 +1,41 @@
 # Autopilot Overview
 
-Autopilot is AutoReach's one-click "set it and forget it" automation that orchestrates your entire outreach lifecycle. Once enabled, Autopilot takes over lead discovery, enrichment, scoring, sequence enrollment, content generation, engagement, AI responses, buyer expansion, and lead resurfacing, all without manual intervention.
+Autopilot is a quick-start assistant that automatically configures your searches, sequences, and outreach settings based on your Offer. Instead of building everything from scratch, Autopilot sets it all up for you in minutes. You can still create and manage searches and sequences manually at any time.
 
-## What Autopilot Manages
+## What Autopilot Sets Up
 
-When you enable Autopilot, it automatically handles:
+When you enable Autopilot, it automatically configures:
 
-- **Lead discovery**: Runs daily searches based on your Offer criteria
-- **Lead enrichment**: Gathers profile data and social signals
-- **Buyer scoring**: Real-time scoring to identify "active" prospects (score >= 60)
-- **Sequence enrollment**: Automatically enrolls scored leads into the right sequence
-- **Content generation**: Creates AI-powered tweets and engagement responses
-- **Engagement**: Auto-likes, replies, and follows on relevant content
-- **AI responses**: Handles incoming messages across X/Twitter and LinkedIn
+- **Lead discovery**: Creates searches based on your Offer criteria so they run on a recurring schedule
+- **Lead enrichment**: Gathers profile data and social signals for discovered leads
+- **Buyer scoring**: Evaluates leads against your Offer to surface the most relevant prospects
+- **Sequence enrollment**: Enrolls qualified leads into a sequence automatically
+- **AI responses**: Handles incoming messages across X and LinkedIn
 - **Buyer expansion**: Discovers new prospects from existing high-intent accounts
-- **Monitor resurfacing**: Re-checks lower-scored leads for new buying signals
+- **Lead resurfacing**: Re-checks lower-priority leads for new buying signals
 
 ## Your Autopilot Dashboard
 
 At a glance, see:
 
 - **Active since**: When Autopilot was last enabled
-- **Number of searches**: Daily recurring searches running
+- **Number of searches**: Recurring searches currently running
 - **Active sequences**: How many sequences are currently enrolling leads
 - **Active leads count**: Total leads currently in your sequences
 
-## Why Autopilot?
+## Why Use Autopilot?
 
-Autopilot is the fastest way to go from zero to fully running B2B outreach. Instead of manually:
+Autopilot is the fastest way to go from zero to a fully configured outreach setup. Instead of manually:
 
 1. Creating searches
 2. Setting up sequences
-3. Writing content
-4. Managing engagement
-5. Scoring leads
+3. Configuring scoring
+4. Setting up enrollment rules
 
-...you enable Autopilot and it does all of it. Your only job is reviewing results in your Inbox and responding to opportunities.
+...you enable Autopilot and it handles the initial configuration for you. Once everything is running, your only job is reviewing results in your Inbox and responding to opportunities.
 
 {% hint style="info" %}
-**Autopilot creates and manages everything automatically.** You're not limited to predefined workflows. Autopilot generates your content strategy, creates sequences, and continuously optimizes based on your Offer.
+**Autopilot is optional.** Everything it configures can also be set up manually. Autopilot just saves time by doing the initial setup automatically based on your Offer.
 {% endhint %}
 
 ## Prerequisites
@@ -46,27 +43,27 @@ Autopilot is the fastest way to go from zero to fully running B2B outreach. Inst
 Before you can enable Autopilot, you need:
 
 - **At least one Offer created**: Your ideal customer profile and value proposition
-- **At least one social account connected**: X/Twitter and/or LinkedIn account authorized
+- **At least one social account connected**: X and/or LinkedIn account authorized
 
 ## What Happens When You Enable Autopilot?
 
 Enabling Autopilot is instant, but the setup runs in the background:
 
-1. Fetches **100 leads** from the database and scores them against your offer
-2. Starts **1 role-based search** on LinkedIn to find matching prospects
-3. Finds **1 lookalike** account and starts a search on their followers
-4. Starts an **intent signal search** for prospects showing buying signals
-5. Creates your **first sequence** and starts it immediately
-6. Enables **auto-enroll buyers** so ready buyers go directly into the sequence (they won't appear on the Buyers page)
-7. Enables **Buyer Expansion** on all searches so they run every day to keep the pipeline full
+1. Scores existing leads from the database against your Offer
+2. Starts a role-based search on LinkedIn to find matching prospects
+3. Finds a lookalike account and starts a search on their followers
+4. Starts an intent signal search for prospects showing buying signals
+5. Creates your first sequence and starts it immediately
+6. Enables auto-enroll so ready buyers go directly into the sequence
+7. Enables Buyer Expansion on all searches so they run on a daily schedule to keep the pipeline full
 
-The whole process takes just 1-2 minutes, and you'll see progress indicators as each component initializes.
+The whole process takes just 1-2 minutes, and you will see progress indicators as each component initializes.
 
 {% hint style="success" %}
-**Ready to go?** Once Autopilot is active, your outreach runs 24/7. Check the Autopilot dashboard to monitor leads, view activity, and adjust settings as needed.
+**Ready to go?** Once Autopilot finishes setup, your outreach runs continuously. Check the Autopilot dashboard to monitor leads, view activity, and adjust settings as needed.
 {% endhint %}
 
 ## Next Steps
 
-- **[Enabling Autopilot](enabling.md)**: Walk through the one-click enable process step by step
-- **[What Autopilot Does](what-it-does.md)**: See every operation Autopilot manages around the clock
+- **[Enabling Autopilot](enabling.md)**: Walk through the enable process step by step
+- **[What Autopilot Does](what-it-does.md)**: See every operation Autopilot manages after setup

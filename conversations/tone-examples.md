@@ -16,56 +16,23 @@ The AI uses these examples to match your voice, word choice, sentence length, an
 
 ## How They're Generated
 
-When you create an offer, AutoReach auto-generates **21 tone examples** via two parallel AI calls:
+When you create an offer, AutoReach automatically generates a set of tone examples covering different conversation stages and scenarios.
 
-- **11 conversation-building examples** (discovery, value prop, objections, etc.)
-- **10 closing examples** (soft close, graceful exit, follow-up)
-
-These examples capture different tones and scenarios so the AI has a diverse range to learn from.
-
-### Deduplication
-
-AutoReach automatically removes redundant or overly similar examples using **Jaccard similarity**. If two examples are more than **85% similar**, the weaker one is removed. This keeps your tone library focused and non-repetitive.
-
-{% hint style="info" %}
-**Jaccard Similarity**: A measure of how much two pieces of text overlap. Similarity above 0.85 means the examples are almost identical, so removing one saves the AI from learning the same pattern twice.
-{% endhint %}
+These examples capture different tones and situations so the AI has a diverse range to learn from. AutoReach also automatically removes redundant examples to keep your tone library focused and non-repetitive.
 
 ## Anti-Pattern Detection
 
-During generation, AutoReach actively removes examples that contain:
-
-- Overused phrases like "Worth a quick look?"
-- Formal language ("I would", instead of "I'd")
-- Bullet points and markdown (breaks DM flow)
-- Em dashes and semicolons
-- Over-explaining or giving away too much value
-
-This ensures your tone library contains only high-quality, authentic examples.
+During generation, AutoReach filters out overused phrases and formal language that would make messages sound generic or robotic. This ensures your tone library contains only high-quality, authentic examples.
 
 ## Contraction Enforcement
 
-All examples are normalized to **use contractions**:
+All examples are normalized to use contractions:
 
 - "I'm" instead of "I am"
 - "You're" instead of "You are"
 - "They've" instead of "They have"
 
 Contractions feel natural and conversational. Without them, the AI sounds robotic.
-
-## How Tone Examples Are Retrieved
-
-When the AI generates a response for a conversation, it:
-
-1. **Detects the conversation stage** (Discovery, Objections, Soft Close, etc.)
-2. **Finds similar tone examples** for that stage using **cosine similarity**
-3. **Sets a similarity threshold** of 0.5 (on a scale of 0 to 1)
-
-Only examples above the 0.5 threshold are used to inform the response. This keeps the AI focused on examples that match the current conversation stage and tone.
-
-{% hint style="tip" %}
-**Why 0.5 Threshold?**: A threshold of 0.5 means the AI looks for examples that are moderately similar to the current conversation. Too high (e.g., 0.9) and it would only find near-identical examples. Too low (e.g., 0.2) and it would pull in examples from the wrong stage.
-{% endhint %}
 
 ## Reviewing and Editing Tone Examples
 
@@ -98,7 +65,7 @@ Add custom examples when:
 
 Delete examples when:
 
-- They contain anti-patterns (phrases you don't actually use)
+- They contain phrases you don't actually use
 - They don't match your voice
 - They're redundant with other examples
 - They're too long or too short compared to your actual style
@@ -108,6 +75,8 @@ Delete examples when:
 {% endhint %}
 
 ## Matching Tone, Length, and Energy
+
+When the AI generates a response, it automatically finds the most relevant tone examples for the current conversation stage and uses them to inform the reply.
 
 The AI uses your tone examples to:
 

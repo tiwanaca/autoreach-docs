@@ -1,6 +1,6 @@
 # Outreach & Sequences Overview
 
-Outreach & Sequences is the heart of AutoReach. It is where you design, launch, and manage multi-step campaigns that automate your engagement across X (Twitter) and LinkedIn.
+Outreach & Sequences is the heart of AutoReach. It is where you design, launch, and manage multi-step campaigns that automate your engagement across X and LinkedIn.
 
 ## What is a Sequence?
 

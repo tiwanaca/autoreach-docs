@@ -4,7 +4,7 @@ Monitor Resurfacing is how Autopilot gives low-score leads a second chance. Inst
 
 ## Why Resurfacing Matters
 
-A lead with a score of 45 today might have a score of 75 next month when:
+A lead with a score of 45 today might score much higher next month when:
 
 - They post about your space
 - They change jobs (headline updates)
@@ -15,19 +15,10 @@ Without resurfacing, you'd miss them forever. With it, Autopilot catches the exa
 
 ## Tiered Check Frequency
 
-Autopilot doesn't check all low-score leads equally. Instead, it uses a tiered approach:
-
-| Tier       | Score Range | Re-check Frequency | Rationale                        |
-| ---------- | ----------- | ------------------- | -------------------------------- |
-| **Tier 1** | 50-59       | Every 5 days        | Warm prospects, may convert soon |
-| **Tier 2** | 40-49       | Every 10 days       | Medium interest, worth monitoring |
-| **Tier 3** | 30-39       | Every 14 days       | Some signals, but not urgent     |
-| **Tier 4** | 0-29        | Every 21 days       | Very low intent, occasional checks |
-
-This means your warmest prospects (Tier 1) get checked most frequently, while colder prospects are checked less often. This saves system resources while keeping them on your radar.
+Autopilot uses a tiered approach to re-checking leads, where warmer leads are checked more frequently and colder leads are checked less often. This ensures your most promising prospects get the most attention while still keeping the full pipeline on your radar.
 
 {% hint style="info" %}
-**Smarter than batch scoring.** Resurfacing prioritizes warm leads, so you catch conversions faster while still monitoring the full pipeline.
+**Smarter than batch scoring.** Resurfacing prioritizes warm leads, so you catch conversions faster while still monitoring your entire pipeline.
 {% endhint %}
 
 ## What Resurfacing Checks For
@@ -37,14 +28,12 @@ When Autopilot re-checks a lead, it looks for:
 ### LinkedIn Headline Changes
 
 - **Job change detection**: If someone's headline changed (new company, new role)
-- **Tenure reset**: Their "time in role" resets, indicating a transition
-- **Score boost**: Job changes trigger a **+25 point scoring boost**
+- **Tenure reset**: Their time in role resets, indicating a transition
 
 This is one of the highest-signal events. A job change often means new problems and new buying intent.
 
 ### Company Job Data Refresh
 
-- **Stale data detection**: If company data hasn't been updated in 7+ days
 - **Job board updates**: Recent hiring at their company
 - **Growth indicators**: Company is scaling (hiring signals)
 
@@ -60,40 +49,12 @@ This is one of the highest-signal events. A job change often means new problems 
 - **Industry signals**: Mentions, tags, and associations
 - **Profile completeness**: More complete profiles often indicate active job search
 
-## Resurfacing Budget and Pace
-
-Autopilot budgets its resurfacing work to avoid overloading the system:
-
-- **Time per lead:** 20 minutes maximum per user per window
-- **Daily volume:** 40-60 leads/window, approximately **120-180 leads/day** per user
-
-This means you can rescan your entire pipeline every 2-3 days without performance issues.
-
-## Prioritization Logic
-
-Leads are checked in priority order:
-
-1. **Tier 1 (score 50-59)**: Checked first
-2. **Overdue leads**: Any lead past its re-check window gets a priority boost
-3. **Tier 2 (score 40-49)**: Checked after Tier 1
-4. **Tier 3 and 4**: Checked as capacity allows
-
-A Tier 4 lead that hasn't been checked in 25 days gets boosted in priority, ensuring nothing falls through the cracks.
-
 ## Score Improvement and Upgrade
 
-When resurfacing finds positive signals, a lead's score can increase dramatically:
-
-| Signal            | Score Impact   |
-| ----------------- | -------------- |
-| New headline      | +25 points     |
-| Relevant activity | +5-10 points   |
-| Matching new role | +15-20 points  |
-
-Example: A lead at score 45 (Tier 2) posts about your space (+10) and changes jobs (+25) in the same window. New score: 80. They are automatically **upgraded to "active" and moved into sequences.**
+When resurfacing finds positive signals, a lead's score can increase enough to trigger activation. For example, a lead who posts about your space and changes jobs in the same window could jump from a low score directly into active outreach territory. They are automatically upgraded to "active" and moved into sequences.
 
 {% hint style="success" %}
-**Automatic upgrades.** When a lead hits 60+ during resurfacing, they're immediately notified and enrolled. There is no waiting for the next 5-minute auto-enrollment check.
+**Automatic upgrades.** When a lead hits the activation threshold during resurfacing, they are immediately enrolled. There is no waiting for the next auto-enrollment check.
 {% endhint %}
 
 ## The Resurfacing Notification
@@ -104,20 +65,24 @@ When a lead scores high enough to activate during resurfacing:
 2. **They're auto-enrolled**: Moved into the appropriate sequence
 3. **Activity logged**: You can see the exact signals that triggered activation
 
-Example notification: "Sarah Chen upgraded to Active (score 65). Headline change: VP to Director of Operations. Auto-enrolled in LinkedIn sequence."
+Example notification: "Sarah Chen upgraded to Active. Headline change: VP to Director of Operations. Auto-enrolled in LinkedIn sequence."
 
 ## How Resurfacing Feeds Your Pipeline
 
 ```
-Lead scores 35 (Tier 4)
+Lead enters monitoring pool
          |
-Re-checked every 21 days
+Tiered re-check schedule begins (warmer leads checked more often)
          |
-Posts about your keywords (+10 points -> score 45, Tier 2)
+Activity signals detected (posts about your keywords)
          |
-Re-checked every 10 days
+Score increases, lead moves to a warmer tier
          |
-Changes jobs (+25 points -> score 70, Active!)
+Re-checked more frequently
+         |
+Job change detected
+         |
+Score crosses activation threshold
          |
 Auto-upgraded and enrolled into sequence
          |
@@ -133,7 +98,7 @@ Check resurfacing stats:
 1. Go to **Autopilot Dashboard > Monitor**
 2. View:
    - Total leads in monitoring (all tiers)
-   - Breakdown by tier (Tier 1, 2, 3, 4)
+   - Breakdown by tier
    - Leads upgraded to active (last 7 days)
    - Next resurfacing window (when tier checks run)
 3. Check **Activity Log** to see recent resurfacing discoveries
@@ -155,20 +120,20 @@ Many deals are missed because timing is wrong. A lead at score 40 six months ago
 
 Resurfacing solves this by:
 
-- Reducing sales cycle friction (reaching at the right time)
+- Reducing sales cycle friction (reaching out at the right time)
 - Increasing close rates (higher intent at contact time)
 - Maximizing lead value (getting second, third, or tenth chances)
 
 ## Common Questions
 
 **Q: Why don't you check all leads every day?**
-A: Cost and noise. Checking low-score leads daily wastes resources. Tiered frequency balances coverage with efficiency.
+A: Tiered frequency balances coverage with efficiency. Checking very low-score leads daily creates noise without meaningful benefit, so Autopilot focuses more attention on warmer prospects.
 
 **Q: How accurate are score changes?**
-A: LinkedIn headline changes are 100% accurate (we detect them). Other signals are probabilistic but high-confidence.
+A: Signals like job changes are high-confidence. Other signals are probabilistic but still reliable enough to act on when they align.
 
 **Q: What if someone's score keeps bouncing around?**
-A: Normal. Activity goes up and down. We wait for sustained signal before auto-enrolling.
+A: Normal. Activity goes up and down. Autopilot waits for sustained signal before auto-enrolling.
 
 **Q: Can I manually upgrade a lead?**
 A: Yes. You can manually enroll any lead into a sequence anytime, regardless of score.

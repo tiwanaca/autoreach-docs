@@ -1,175 +1,104 @@
-# RAG Lead Pool (Instant Matching)
+# Lead Pool (Instant Matching)
 
-Instantly match new prospects against your database of previously enriched leads using vector search. Get qualified prospects without additional enrichment costs.
+Instantly discover qualified prospects from your existing database of enriched leads. When you update your offer or complete a search, AutoReach uses AI to match your ideal customer profile against leads you have already gathered, delivering results in seconds with no additional cost.
 
-## How It Works
+## What Is the Lead Pool?
 
-The Lead Pool uses semantic vector search to instantly identify prospects matching your ICP:
+The Lead Pool is a searchable database of every lead you have previously enriched through AutoReach. Each lead's profile, including their headline, bio, industry, company, location, skills, and career history, is indexed so that AI-powered semantic search can find the best matches for your current offer.
 
-### 1. Offer Vector Embedding
+Unlike keyword-based filtering, semantic matching understands the meaning behind your offer description. A lead whose profile is conceptually aligned with your pain points and target audience will surface even if they do not share exact keywords with your search criteria.
 
-When you create or update an offer, AutoReach:
-- Builds a comprehensive profile from your offer description
-- Includes pain points, target audience, and search signals
-- Converts this profile into a 1536-dimensional vector using **OpenAI text-embedding-3-small**
-- Stores the embedding for comparison against lead profiles
+## Key Benefits
 
-### 2. Vector Database Storage
+- **Instant results.** Matching completes in seconds rather than minutes or hours.
+- **Zero additional API cost.** Leads are already enriched, so no new platform calls are needed.
+- **Unlimited searches.** Update your offer or run new searches as often as you like without incurring extra charges.
+- **Automatic discovery.** Matching runs in the background whenever relevant events occur.
 
-All previously enriched leads have their profiles stored as vectors in **pgvector**:
-- **Fast lookup:** Queries return matching leads instantly
-- **Semantic matching:** Finds conceptually similar prospects, not just keyword matches
-- **Scalable:** Works efficiently with millions of leads
+## When Does It Trigger?
 
-### 3. Lead Profile Vectors
+Lead Pool matching fires automatically in two primary scenarios:
 
-Each lead's profile vector is built from:
+| Trigger | Description |
+|---------|-------------|
+| **Offer update** | You save changes to your offer description, pain points, or target audience. |
+| **Search complete** | Any lead search finishes (X post search, LinkedIn content, people, or job search). |
 
-- **Headline:** Current job title and role
-- **Bio:** Twitter/X bio or LinkedIn headline
-- **Industry:** Company industry classification
-- **Company:** Company name and type
-- **Location:** Geographic location
-- **Skills:** Professional skills and competencies
-- **Summary:** Generated profile summary
-- **Education:** Educational background and relevant degrees
-- **Notable Roles:** Previous significant job titles
+You can also trigger matching manually from the Lead Pool section of the dashboard.
 
-This rich profile ensures accurate semantic matching.
-
-### 4. Vector Search and Similarity Matching
-
-The matching process:
-1. Embeds your offer description into vector space
-2. Performs **cosine similarity** search against all lead vectors
-3. Returns leads ranked by match similarity
-4. Automatically clones top matches into your lead database
-5. Queues matched prospects for buyer intent scoring
-
-## Trigger Sources
-
-Lead Pool matching is automatically triggered by:
-
-| Trigger | When It Fires |
-|---------|---------------|
-| **offer_update** | You update your offer description or pain points |
-| **search_complete** | After any lead search completes (Tweet, Content, People, Job) |
-| **target_user_extraction** | When leads are extracted from a search result set |
-| **manual** | You manually trigger pool matching |
-
-## Cost Efficiency
-
-Unlike other discovery methods that require API calls and enrichment:
-
-- **No platform API calls** for profile scraping
-- **No enrichment costs** (leads already enriched)
-- **Instant results** (vector search is millisecond-fast)
-- **Unlimited matching** (search as many times as you want)
-
-This makes Lead Pool ideal for rapidly scaling once you have an enriched lead database.
-
-## Vector Search Tuning
-
-Our search parameters are tuned for B2B SaaS precision:
-
-- **Embedding model:** OpenAI text-embedding-3-small (proven B2B accuracy)
-- **Vector dimensions:** 1536 (balanced precision/performance)
-- **Similarity metric:** Cosine similarity (standard for semantic search)
-- **Minimum threshold:** Configurable similarity cutoff (default: top 500 matches)
-
-## Getting Started with Lead Pool
+## Getting Started
 
 ### Prerequisites
-You need an enriched lead database. Build this through:
-- [Tweet Search](tweet-search.md)
+
+You need an existing base of enriched leads. Build one through any discovery method:
+
+- [X Post Search](tweet-search.md)
 - [LinkedIn Content Search](linkedin-content-search.md)
 - [LinkedIn People Search](linkedin-people-search.md)
 - [Lookalike Audiences](lookalike-audiences.md)
 
 ### Initial Setup
-1. Create your offer with clear pain points and target audience
-2. Run your first discovery search (any method above)
-3. AutoReach automatically enqueues leads for enrichment
-4. Lead Pool automatically starts matching once enrichment completes
+
+1. **Create your offer** with clear pain points, target audience, and search signals.
+2. **Run your first discovery search** using any method above.
+3. **Wait for enrichment to complete.** This typically takes around 30 minutes after your first search.
+4. **Lead Pool activates automatically** once enriched leads are available.
 
 ### Continuous Scaling
-After initial enrichment:
-- Each new offer update triggers fresh Lead Pool matching
-- Each new search automatically gets pool-matched
-- You continuously discover matches without additional platform API costs
 
-## Example Workflow
+After your initial enrichment is complete:
 
-**Scenario:** You run an HR analytics platform and have enriched 50,000 HR professionals from your initial searches.
-
-**Now you want to scale:**
-1. A new VP of People Operations takes a job at TechCorp
-2. They get added to the lead pool (from LinkedIn or Tweet Search)
-3. Enrichment completes
-4. Lead Pool matches them against your 50,000 existing leads
-5. Semantic search identifies them as highly similar to other successful prospects
-6. They're automatically added to your outreach queue with high ICP score
-
-**Result:** You found a new prospect instantly, at zero API cost, without any new search work.
+- Every offer update triggers a fresh round of matching.
+- Every completed search triggers matching against newly enriched leads.
+- Your pool grows with every search, making future matching more powerful.
 
 ## Best Practices
 
-1. **Build your initial lead database first:** Lead Pool is most powerful with an enriched database of 10,000+ leads.
+1. **Build your database first.** Lead Pool is most effective with 10,000 or more enriched leads. Start with discovery searches before relying on pool matching.
 
-2. **Refine your offer description:** More detailed pain points and target audience = better vector matches.
+2. **Write detailed offer descriptions.** The more specific your pain points, target audience, and value proposition, the more accurate your matches will be.
 
-3. **Use search signals:** Natural language search signals improve semantic matching significantly.
+3. **Use natural-language search signals.** Descriptive phrases improve semantic matching far more than short keyword lists.
 
-4. **Monitor match quality:** Track response rates from Lead Pool matches. They should be competitive with other discovery methods.
+4. **Monitor match quality.** Track response rates from Lead Pool matches and compare them to other discovery methods.
 
-5. **Update your offer periodically:** When your offer or target market evolves, update it to trigger fresh Lead Pool matching.
+5. **Refresh your offer periodically.** When your product, positioning, or target market shifts, update your offer to trigger a new round of matching.
 
-6. **Combine with other methods:** Use Lead Pool for scaling while continuing to do content/Twitter searches for fresh signal discovery.
+6. **Combine with other methods.** Use Lead Pool for rapid scaling while continuing X and LinkedIn searches for fresh intent signals.
 
-7. **Review filtering:** Set similarity thresholds appropriately. Higher thresholds yield fewer but higher-quality matches.
+## Lead Pool vs. Other Discovery Methods
 
-## Lead Pool vs. Other Methods
-
-| Method | Initial Setup | Cost Per Search | Speed | Best For |
-|--------|---------------|-----------------|-------|----------|
-| **Lead Pool** | Requires enriched leads | Zero API cost | Instant | Rapid scaling with existing DB |
-| **Tweet Search** | None | Low API cost | Fast | Fresh intent signals |
-| **Content Search** | None | Low API cost | Medium | Engaged professionals |
-| **People Search** | None | Low API cost | Medium | Systematic targeting |
-| **Lookalike** | None | Low API cost | Medium | Audience-based scaling |
+| Method | Requires Existing Leads | Cost Per Search | Speed | Best For |
+|--------|------------------------|-----------------|-------|----------|
+| **Lead Pool** | Yes | Free | Instant | Rapid scaling from your existing database |
+| **X Post Search** | No | Low | Fast | Fresh intent signals from recent posts |
+| **LinkedIn Content Search** | No | Low | Medium | Finding engaged professionals by topic |
+| **LinkedIn People Search** | No | Low | Medium | Systematic targeting by role and company |
+| **Lookalike Audiences** | No | Low | Medium | Expanding from a seed audience |
 
 ## Troubleshooting
 
-**Not getting Lead Pool matches?**
-- Verify you have an enriched lead database with 1,000+ prospects
-- Check that enrichment pipeline has completed
-- Try updating your offer to trigger new matching
+**Not getting any matches?**
+- Confirm that you have at least 1,000 enriched leads in your database.
+- Check that the enrichment pipeline has finished processing. Look for completed status in your recent searches.
+- Try updating your offer description to trigger a fresh matching run.
 
 **Match quality seems low?**
-- Review your offer description, as it may be too generic
-- Add more specific pain points and search signals
-- Check if your target audience characteristics match your database
+- Review your offer description. Vague or overly broad descriptions produce weaker matches.
+- Add more specific pain points and audience characteristics.
+- Ensure your enriched database contains leads relevant to your current target market.
 
-**Getting many irrelevant matches?**
-- Tighten your ICP definition (pain points, audience, search signals)
-- Lower the similarity threshold to only get high-confidence matches
-- Combine with content search for fresh, high-intent signals
+**Getting too many irrelevant matches?**
+- Tighten your ICP definition with more precise pain points and audience details.
+- Use Lead Pool alongside content or post searches to prioritize leads with recent intent signals.
 
 **How long until I can use Lead Pool?**
-- Usually 30 minutes after your first lead discovery search
-- Depends on enrichment pipeline speed
-- Automatic triggers fire once enrichment completes
+- Typically about 30 minutes after your first discovery search completes and enrichment finishes.
+- Matching triggers automatically once enrichment is done.
 
-## Advanced Strategies
+## Next Steps
 
-**Offer Variation Testing:**
-- Create variation offers with different pain point emphasis
-- Each triggers fresh Lead Pool matching
-- Compare which offer variation finds highest-quality matches
-- Optimize your messaging based on what matches best
-
-**Lead Pool + Lookalike Hybrid:**
-- Use Lookalike Audiences to find new seed accounts
-- These prospects get enriched and added to your database
-- Lead Pool then finds similar prospects across your full database
-- Combines audience discovery with semantic matching for rapid scaling
+- [Create or refine your offer](../getting-started/create-offer.md) to improve match accuracy.
+- [Run an X Post Search](tweet-search.md) to start building your enriched lead database.
+- [Set up a LinkedIn People Search](linkedin-people-search.md) for systematic lead generation.
+- [Explore Lookalike Audiences](lookalike-audiences.md) to expand from your best-performing leads.

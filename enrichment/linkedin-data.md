@@ -83,14 +83,6 @@ Highly relevant for technical hiring and B2B targeting.
 
 Network size can indicate influence and engagement level.
 
-## How LinkedIn Data is Accessed
-
-{% hint style="info" %}
-**Authentication:** LinkedIn data is accessed using a cookie-based session + `li_at` token. This token is configured in your AutoReach workspace settings under **Settings > Accounts > LinkedIn**.
-{% endhint %}
-
-The `li_at` token is a private authentication token that authorizes AutoReach to make API requests to LinkedIn on your behalf. It is sensitive: treat it like a password and never share it.
-
 ## Data Quality & Completeness
 
 LinkedIn profiles vary in completeness:
@@ -101,9 +93,6 @@ LinkedIn profiles vary in completeness:
 
 AutoReach handles incomplete profiles gracefully. Missing fields simply will not be populated, and scoring algorithms account for incomplete data.
 
-{% hint style="warning" %}
-**Privacy Consideration:** Be respectful of LinkedIn's Terms of Service. AutoReach extracts profile data for legitimate outreach and lead qualification purposes. Avoid bulk scraping of profiles that weren't added to your workspace through proper channels.
-{% endhint %}
 
 ## Using LinkedIn Data for Outreach
 
@@ -118,5 +107,5 @@ The richer the LinkedIn profile, the more personalized your AI-generated outreac
 
 ## Next Steps
 
-- **[X/Twitter Profile Data](twitter-data.md)**: See what data is extracted from X profiles
+- **[X Profile Data](twitter-data.md)**: See what data is extracted from X profiles
 - **[Web Enrichment](web-enrichment.md)**: Discover how company-level data is gathered from the web

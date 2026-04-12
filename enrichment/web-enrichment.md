@@ -1,12 +1,10 @@
 # Web Enrichment
 
-Web enrichment searches the public web to gather additional company context, contact information, and professional intelligence about your leads.
+Web enrichment searches the public web to gather additional context about your leads, giving you the information you need to write outreach that feels personal and relevant.
 
 ## What Web Enrichment Gathers
 
 ### Company Information
-
-Enrichment searches for and extracts company details:
 
 - **Company Size** - Number of employees
 - **Industry** - Primary industry classification
@@ -18,13 +16,9 @@ Enrichment searches for and extracts company details:
 - **Headquarters Location** - Primary office location
 - **Official Website** - Company domain
 
-This context is valuable for understanding the lead's company scale and maturity.
+### Social Profiles and Web Presence
 
-### Social Profiles & Web Presence
-
-AutoReach searches for professional social profiles:
-
-- **Twitter/X Account** - Company X handle
+- **X Account** - Company or personal X handle
 - **GitHub Account** - Engineering team code repository
 - **YouTube Channel** - Video content and company branding
 - **Medium Publication** - Company blog
@@ -34,102 +28,76 @@ AutoReach searches for professional social profiles:
 
 ### Contact Information
 
-Additional ways to reach the lead:
-
 - **Phone Number** - Verified phone contact
 - **Additional Email Addresses** - Work or personal emails beyond primary
 - **Calendly Link** - Scheduling page for easy meeting booking
 - **Newsletter Subscription** - Email list signup pages
 
-### News & Press
+### News and Press
 
 Recent news about the lead or their company:
 
 - **News Title** - Headline of the article
-- **Publication Source** - Where it was published (TechCrunch, Forbes, company blog)
+- **Publication Source** - Where it was published (TechCrunch, Forbes, company blog, etc.)
 - **URL** - Link to the full article
 - **Publication Date** - When the news was published
 - **Summary** - Brief description of the news content
 
-News signals are powerful for outreach timing. Someone who just got funded or hired is especially receptive.
+News signals are especially useful for outreach timing. A lead who just closed a funding round or made a key hire is often more receptive to outreach.
 
-### Insights & Achievements
+### Insights and Achievements
 
-Professional achievements and speaking/publishing activity:
+Professional accomplishments and public-facing activity:
 
-- **Speaking Engagements** - Conferences and events they've spoken at
-- **Publications** - Articles, whitepapers, or research they've authored
+- **Speaking Engagements** - Conferences and events they have spoken at
+- **Publications** - Articles, whitepapers, or research they have authored
 - **Podcast Appearances** - Interviews and podcast guest slots
 - **Awards** - Professional recognition and accolades
 - **Patents** - Issued patents in their field
 
-These signals indicate expertise and influence in their space.
+These signals indicate expertise and influence in their space, and make strong personalization hooks.
 
-## Confidence Scoring
+## How Web Enrichment Improves Outreach
 
-All web-enriched data includes a **confidence score** (0.0 to 1.0):
+Enriched data powers more specific, relevant messaging. For example:
 
-- **0.9-1.0** - High confidence, multiple sources confirm
-- **0.7-0.9** - Medium-high confidence, primary source found
-- **0.5-0.7** - Medium confidence, inferred or single source
-- **Below 0.5** - Low confidence, data may be inaccurate
+- **Recent news** - "Congrats on the Series B funding!"
+- **Speaking expertise** - "I caught your keynote at SaaStr and wanted to connect."
+- **Technology alignment** - "I see your team is building on AWS and React..."
+- **Investor context** - "With Sequoia backing you, it sounds like you are scaling quickly."
 
-AutoReach uses confidence scores to filter and prioritize data. Only high-confidence data is used for scoring and outreach personalization.
+Leads that receive personalized outreach based on real context respond at significantly higher rates than those who receive generic messages.
 
-## Cost & Requirements
+## When Web Enrichment Runs
 
-### Pricing
+Web enrichment runs automatically when new leads are added to your workspace. You can also manually trigger it from a lead's profile card.
 
-Web enrichment costs approximately **$0.08 per lead** from AutoReach's credit pool.
+### Enabling and Disabling
 
-{% hint style="info" %}
-**Credit Usage:** Web enrichment costs are deducted from your AutoReach subscription's monthly credit allowance. See your billing dashboard for credit balance.
-{% endhint %}
-
-### Lead Requirements
-
-Web enrichment requires at least one of:
-
-- **Complete LinkedIn Profile** - URL-accessible LinkedIn profile page
-- **Meaningful Bio** - A bio or description longer than 20 characters
-
-Leads without either will skip web enrichment to save credits.
-
-### What Triggers Web Enrichment
-
-Web enrichment automatically runs on newly added leads if:
-- Your workspace has available credits
-- The lead meets the requirements above
-- Web enrichment is enabled in your workspace settings
-
-You can also manually trigger web enrichment from a lead's profile card.
-
-## Using Web Enrichment in Outreach
-
-Web-enriched data powers more specific outreach:
-
-- **Recent News Reference** - "Congrats on the Series B funding!"
-- **Speaking Expertise** - "I loved your keynote at SaaStr..."
-- **Technology Alignment** - "I see you're building on AWS and React..."
-- **Investor Context** - "With Sequoia backing you, you're obviously scaling fast..."
-
-More data leads to stronger personalization and higher response rates.
-
-{% hint style="warning" %}
-**API Rate Limits:** Web enrichment uses external APIs to search and scrape company data. If you have very large workspaces (1000+ leads), enrichment may be slower due to API rate limits. AutoReach queues requests fairly across all customers.
-{% endhint %}
-
-## Enabling & Disabling Web Enrichment
-
-Web enrichment is enabled by default. To disable it (to preserve credits):
+Web enrichment is enabled by default. To disable it:
 
 1. Go to **Settings > Enrichment**
 2. Toggle off **Enable Web Enrichment**
 3. Save
 
-You can re-enable it anytime. Leads already enriched won't be re-processed unless manually refreshed.
+You can re-enable it at any time. Leads that have already been enriched will not be re-processed unless you manually refresh them.
+
+## Best Practices
+
+- **Let enrichment complete before launching outreach.** Enriched leads produce better messages. Give the system time to gather context before starting sequences.
+- **Review enriched data on high-priority leads.** Spot-check the company info, news, and achievements for your top prospects to ensure your outreach references accurate details.
+- **Combine with other enrichment types.** Web enrichment works best alongside profile enrichment and email finding. Together, they give AutoReach a complete picture of each lead.
+- **Use news and achievements as conversation starters.** References to recent events or accomplishments feel genuine and create natural openings.
+
+## Troubleshooting
+
+| Issue | What to do |
+|---|---|
+| A lead was not enriched | Confirm that web enrichment is enabled in **Settings > Enrichment** and that the lead has a LinkedIn profile or a meaningful bio on their profile card. |
+| Enrichment data looks incomplete | Some leads have limited public information available. You can manually trigger a re-enrichment from the lead's profile card to retry. |
+| Enrichment is running slowly | Large batches of new leads are processed in order. Enrichment will complete in the background without any action needed. |
 
 ## Next Steps
 
-- **[Email Finding](email-finding.md)**: Discover work email addresses for your enriched leads
-- **[Website Finding](website-finding.md)**: Find professional and company websites for deeper personalization
+- **[Email Finding](email-finding.md)** - Discover work email addresses for your enriched leads
+- **[Website Finding](website-finding.md)** - Find professional and company websites for deeper personalization

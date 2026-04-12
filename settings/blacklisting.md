@@ -1,6 +1,6 @@
 # Blacklisting Accounts
 
-Blacklist specific X/Twitter and LinkedIn accounts to prevent AutoReach from discovering, enriching, or engaging with them. This is useful for protecting competitors, existing customers, and personal contacts.
+Blacklist specific X and LinkedIn accounts to prevent AutoReach from discovering, enriching, or engaging with them. This is useful for protecting competitors, existing customers, and personal contacts.
 
 ## How Blacklisting Works
 
@@ -56,7 +56,7 @@ If a prospect replies asking not to be contacted, add them to the blacklist imme
 2. Click **Add Account**
 3. Enter either:
    - **Username** (e.g., `@elon`, `john.smith.acme`)
-   - **Profile URL** (e.g., `https://twitter.com/elon` or `https://linkedin.com/in/john-smith/`)
+   - **Profile URL** (e.g., `https://x.com/elon` or `https://linkedin.com/in/john-smith/`)
 4. Click **Add to Blacklist**
 
 ### Method 3: Bulk Import
@@ -74,7 +74,7 @@ AutoReach automatically handles username variations and profile URL formats. You
 Visit **Settings > Blacklist** to see all blacklisted accounts:
 
 - **Account Name** - display name or username
-- **Platform** - X/Twitter or LinkedIn
+- **Platform** - X or LinkedIn
 - **Date Added** - when the account was blacklisted
 - **Reason** - optional note you added (competitor, customer, personal, etc.)
 
@@ -111,7 +111,7 @@ Add a note when blacklisting to remember why later:
 Consider organizing your reasoning:
 
 ```
-COMPETITORS (fit=0 anyway, but saves costs)
+COMPETITORS (saves enrichment costs)
 - Salesforce
 - HubSpot
 
@@ -141,22 +141,7 @@ Review and update your blacklist quarterly:
 
 ## Impact on Enrichment Costs
 
-Blacklisting saves money by avoiding enrichment of accounts you will never contact:
-
-```
-Without Blacklist:
-- Run discovery on 500 leads
-- Discover 50 competitor accounts (wasted enrichment)
-- Enrich 500 leads at $0.15 each = $75 cost
-
-With Blacklist:
-- Blacklist 20 known competitors upfront
-- Run discovery, exclude competitors
-- Enrich 480 leads at $0.15 each = $72 cost
-- Saved: $3 + peace of mind
-```
-
-The savings grow with company size and competitive landscape.
+Blacklisting saves money by avoiding enrichment of accounts you will never contact. By excluding competitors and other irrelevant accounts upfront, you reduce wasted enrichment and keep your pipeline focused on real prospects.
 
 ## Automation & Blacklist
 
@@ -192,7 +177,7 @@ Maintain documentation of why accounts are blacklisted for compliance audits.
 
 ### "I Can't Find the Account to Blacklist"
 Ensure the account:
-- **Exists on Twitter/LinkedIn** (check manually first)
+- **Exists on X or LinkedIn** (check manually first)
 - **Is public** (private accounts may not be discoverable)
 - **Username is spelled correctly**
 

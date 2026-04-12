@@ -23,15 +23,11 @@ Lead explicitly asked for recommendations on a product/service category.
 
 **Example:** "Anyone have a good recommendation for customer data platforms? We're evaluating options."
 
-**Intent boost:** +20 points
-
 ### switching_from
 
-Lead mentioned they're switching away from a competitor.
+Lead mentioned they are switching away from a competitor. This is one of the strongest intent signals.
 
 **Example:** "Finally ditching Mailchimp for Klaviyo. Should've done this years ago."
-
-**Intent boost:** +25 points (strongest signal)
 
 ### looking_for_alternative
 
@@ -39,23 +35,17 @@ Lead is actively searching for an alternative to their current solution.
 
 **Example:** "Looking for an alternative to our current project management tool. What are people using now?"
 
-**Intent boost:** +20 points
-
 ### complained
 
-Lead complained about their current tool/process (pain point expressed).
+Lead complained about their current tool or process (pain point expressed).
 
 **Example:** "Our CRM is so slow. Takes 30 seconds just to load a contact. Killing our team's productivity."
 
-**Intent boost:** +15 points (pain expressed, but not yet looking)
-
 ### tool_mention
 
-Lead mentioned using or considering a competitor/similar tool.
+Lead mentioned using or considering a competitor or similar tool.
 
 **Example:** "Integrating with Zapier this week" or "Testing Stripe for payments"
-
-**Intent boost:** +10 points (light signal)
 
 ## Company-Level Signals
 
@@ -67,15 +57,11 @@ Company announced a new funding round.
 
 **Example:** "Proud to announce Series B funding: $25M led by Sequoia"
 
-**Timing boost:** +20 points (companies expand after funding)
-
 ### product_launch
 
 Company launched a new product or major feature.
 
 **Example:** "Today we're launching the beta of Product V2. Total redesign based on your feedback."
-
-**Timing boost:** +15 points
 
 ### mergers_acquisitions
 
@@ -83,15 +69,11 @@ Company acquired another company or was acquired.
 
 **Example:** "Big news: We've acquired TechStartup to expand our platform capabilities"
 
-**Timing boost:** +20 points (org changes often trigger buying)
-
 ### strategic_partnership
 
 Company announced a partnership with another company.
 
 **Example:** "Excited to partner with AWS to bring enterprise-grade security"
-
-**Timing boost:** +10 points
 
 ### cost_cutting
 
@@ -99,23 +81,17 @@ Company announced layoffs, consolidation, or cost reduction initiatives.
 
 **Example:** "Streamlining our tech stack to focus on core tools. Consolidating vendors."
 
-**Intent boost:** +15 points (cost pressure drives tool evaluation)
-
 ### ipo_filing
 
 Company filed for IPO or public markets.
 
 **Example:** "We're going public! S-1 filing effective today."
 
-**Timing boost:** +25 points (IPO companies scale rapidly and buy aggressively)
-
 ### geographic_expansion
 
 Company is expanding to a new geographic market.
 
 **Example:** "Excited to announce our expansion into APAC. Opening offices in Singapore and Sydney."
-
-**Timing boost:** +15 points (expansion requires new tools)
 
 ## Engagement Signals
 
@@ -127,23 +103,17 @@ Lead engaged with (liked, commented on) content from competitor companies.
 
 **Example:** Lead liked a post from your competitor about their product
 
-**Intent boost:** +10 points (researching alternatives)
-
 ### engagement_pattern
 
 Lead has high engagement on posts related to your category.
 
 **Example:** Consistently comments on automation/AI posts, high like ratio
 
-**Intent boost:** +8 points (active in your space)
-
 ### own_post_engagement
 
 Lead posted content about your space and got significant engagement (inbound signal).
 
 **Example:** Lead posted "Evaluating workflow tools" and got 50+ comments/engagement
-
-**Intent boost:** +12 points (publicly broadcasting their need)
 
 ## Hiring Signals
 
@@ -155,56 +125,36 @@ Company is actively hiring.
 
 **Example:** LinkedIn shows 5+ job openings, or lead posted "We're hiring!"
 
-**Timing boost:** +12 points
-
 ### hiring_roles
 
 Specific roles being hired for.
 
 **Example:** "Hiring: VP Sales, Sales Manager, Sales Dev Rep"
 
-**Intent boost:** +15 points (can indicate sales scaling, which needs tools)
-
 ### job_change_detected
 
-Lead recently changed jobs (career move).
-
-**Timing boost:** +20 points (new hires evaluate tools at new companies)
-
-**Impact:** Fit might shift if they changed to your target industry. Role might shift too.
+Lead recently changed jobs (career move). New hires often evaluate tools at new companies, making this a strong timing signal. Fit may also shift if they changed to your target industry.
 
 ### role_tenure_days
 
-How many days the lead has been in their current role.
-
-**Timing boost:** If < 90 days, +15 point timing boost (early tenure = evaluating tools)
+How long the lead has been in their current role. Early tenure is a positive timing signal.
 
 ### is_new_hire
 
-Flag indicating the lead just changed jobs in the last 90 days.
+Flag indicating the lead just changed jobs recently.
 
 **Example:** Started new job as "Director of Product" 45 days ago
 
 ## Custom Intent Signals
 
-Beyond AutoReach's built-in signals, your **Offer** can define custom intent signals specific to your product:
-
-**How it works:**
-
-1. In your offer definition, specify custom keywords/phrases
-2. AutoReach monitors for mentions of those phrases
-3. Each mention gets a strength level: high/medium/low
-4. Weighted accordingly in scoring
+Beyond built-in signals, your **Offer** can define custom intent signals specific to your product. In your offer definition, specify keywords and phrases that your buyers use. AutoReach monitors for mentions of those phrases and factors them into scoring.
 
 **Example for a staffing/recruitment offer:**
 
-```
-Custom signals:
-- "hiring freeze" (high strength = -10 to intent, companies aren't buying)
-- "hiring blitz" (high strength = +20 intent)
-- "talent acquisition is hard" (medium strength = +12 intent)
-- "recruiting pipeline weak" (medium strength = +10 intent)
-```
+- "hiring freeze" (negative signal)
+- "hiring blitz" (strong positive signal)
+- "talent acquisition is hard" (positive signal)
+- "recruiting pipeline weak" (positive signal)
 
 ## Offer Pain Match
 
@@ -218,9 +168,7 @@ If you defined pain points as:
 
 And a lead posted: "Our workflow is so manual, we're spending 20 hours/week on administrative tasks"
 
-**Signal:** pain_match_detected
-
-**Intent boost:** +15 points
+AutoReach detects this as a pain match signal and boosts the lead's intent score.
 
 ## Industry & Classification
 
@@ -228,69 +176,38 @@ These signals are classification data rather than intent signals, but they impac
 
 ### industry
 
-Lead's industry classification.
-
-**Impact:** Compared against your offer's target industries. Exact match = +10 fit, partial match = +5 fit, no match = -20 fit cap
+Lead's industry classification. Compared against your offer's target industries. A match increases fit, while a mismatch caps the fit score.
 
 ### is_competitor
 
-Lead works at a competing company.
-
-**Impact:** Automatic fit = 0 (disqualified)
+Lead works at a competing company. Automatically disqualified.
 
 ### is_internal_builder
 
-Lead is building a competing product.
-
-**Impact:** Automatic disqualification
+Lead is building a competing product. Automatically disqualified.
 
 ## Location & Geographic Signals
 
 ### location_match
 
-Lead's location matches your preferred locations.
-
-**Impact:** +5 fit if matched, -10 fit if excluded
+Lead's location matches your preferred locations. Matching locations increase fit, while excluded locations decrease it.
 
 ### timezone_alignment
 
-Lead's timezone overlaps with your sales hours.
-
-**Impact:** Used for scheduling; doesn't directly impact scoring
+Lead's timezone overlaps with your sales hours. Used for scheduling outreach at the right time.
 
 ## How Signals Affect Scoring
 
 Signals feed into the three scoring dimensions:
 
-```
-Fit Dimension:
-  ← industry_match
-  ← role_match
-  ← company_size_match
-  ← location_match
+- **Fit:** Industry match, role match, company size, location
+- **Intent:** Asking for recommendations, switching tools, complaints, pain point matches, competitor engagement, custom intent signals
+- **Timing:** Job changes, new hires, funding, IPO filings, product launches, hiring activity
 
-Intent Dimension:
-  ← asked_recommendation (+20)
-  ← switching_from (+25)
-  ← complained (+15)
-  ← custom_intent_signals (high/medium/low)
-  ← pain_match (+15)
-  ← competitor_engagement (+10)
-
-Timing Dimension:
-  ← job_change_detected (+20)
-  ← is_new_hire (+15)
-  ← funding (+20)
-  ← ipo_filing (+25)
-  ← product_launch (+15)
-  ← hiring (+12)
-  ← hiring_roles (+15)
-```
-
-The more signals a lead has, and the stronger those signals are, the higher their scores.
+The more signals a lead has, and the stronger those signals are, the higher their scores. Each signal contributes to the relevant dimension, and the composite buyer score reflects all three.
 
 {% hint style="info" %}
-**No Single Signal Wins:** Even switching_from (the strongest intent signal at +25) won't guarantee active status. An ideal lead needs fit, intent, AND timing signals together.
+**No Single Signal Wins:** Even the strongest intent signal will not guarantee active status on its own. An ideal lead needs fit, intent, AND timing signals together.
 {% endhint %}
 
 ## Signal Detection & Recency

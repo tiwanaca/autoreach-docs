@@ -4,7 +4,7 @@ Autopilot is always working. Here's a breakdown of the continuous operations it 
 
 ## Lookalike Rotation
 
-**Every 2 hours**, Autopilot refreshes your follower extraction seed accounts:
+Autopilot automatically refreshes your follower extraction seed accounts:
 
 - Monitors current seed accounts for follower exhaustion
 - Finds new influencer and thought leader accounts in your space
@@ -19,37 +19,15 @@ This means you never run out of new leads to reach. Autopilot automatically disc
 
 ## Auto-Enrollment
 
-**Every 5 minutes**, Autopilot checks for newly scored leads:
+Autopilot continuously checks for newly scored leads:
 
-- Identifies all leads with `buyer_score >= 60` (active state)
+- Identifies leads that meet your buyer score threshold
 - Automatically enrolls them into the appropriate sequence (X or LinkedIn)
 - Respects your daily send limits to avoid over-enrolling
 - Skips leads already in a sequence
 - Enrolls within your Activity Window
 
 See all enrolled leads in **Sequences > Leads**.
-
-## Daily Tweets
-
-**2-4 AI-generated tweets per day** based on your content strategy:
-
-- Tweets align with your content pillars and weekly themes
-- Posted at optimal engagement times
-- Rotate through topics to keep your feed fresh
-- Build authority in your space while prospects see them
-
-Your content strategy drives the tone, topics, and frequency.
-
-## Engagement
-
-**Every 10 minutes**, Autopilot performs targeted engagement:
-
-- Auto-likes on relevant posts (using your engagement keywords)
-- Auto-replies with thoughtful comments
-- Strategic follows on accounts matching your ICP
-- All activity respects platform rate limits
-
-This builds visibility and relationships with your target audience.
 
 ## Lead Scoring
 
@@ -58,12 +36,12 @@ This builds visibility and relationships with your target audience.
 - Analyzes social signals, headline changes, and activity patterns
 - Evaluates buyer intent based on your Offer's search signals
 - Updates scores continuously as new data arrives
-- Identifies when leads become "active" (score >= 60)
+- Identifies when leads become active buyers
 
 Higher scores mean more readiness to buy.
 
 {% hint style="success" %}
-**Scoring is continuous.** A lead might start at score 35, then jump to 65 when they post about your space. Autopilot catches that shift and enrolls them instantly.
+**Scoring is continuous.** A lead might start at a low score, then jump significantly when they post about your space. Autopilot catches that shift and enrolls them instantly.
 {% endhint %}
 
 ## Lead Pooling (On Expansion)
@@ -89,7 +67,7 @@ Each search query finds the latest, most active prospects.
 
 ## AI Responses
 
-**Real-time message handling** across X/Twitter and LinkedIn:
+**Real-time message handling** across X and LinkedIn:
 
 - Monitors incoming DMs
 - Generates contextual replies based on conversation
@@ -100,25 +78,14 @@ Your inbox gets responses without you typing them.
 
 ## Monitor Resurfacing
 
-**Tiered re-checking** of low-score leads for new buying signals:
+Autopilot periodically re-checks lower-scored leads for new buying signals, with higher-priority leads checked more frequently. Resurfacing checks:
 
-| Tier       | Score Range | Re-check Frequency |
-| ---------- | ----------- | ------------------ |
-| **Tier 1** | 50-59       | Every 5 days       |
-| **Tier 2** | 40-49       | Every 10 days      |
-| **Tier 3** | 30-39       | Every 14 days      |
-| **Tier 4** | 0-29        | Every 21 days      |
-
-Resurfacing checks:
-
-- LinkedIn headline changes (job changes trigger a 25-point boost)
-- Company job data refreshes (if > 7 days stale)
+- LinkedIn headline changes, including job changes
+- Company and job data freshness
 - New activity patterns
 - Updated social signals
 
-Budget: 40-60 leads per window, approximately 120-180 leads rescored daily per user.
-
-If a lead's score improves to >= 60, they are upgraded to "active" and you are notified. This is how Autopilot catches leads who weren't ready before but are now.
+If a lead's score improves to meet your buyer score threshold, they are upgraded to active and you are notified. This is how Autopilot catches leads who weren't ready before but are now.
 
 {% hint style="success" %}
 **Leads get second chances.** Monitor resurfacing ensures you don't miss prospects who become buyers later.
@@ -130,11 +97,10 @@ Here's how it all works together:
 
 1. **Searches** find new prospects
 2. **Scoring** evaluates their buyer intent
-3. **Auto-enrollment** puts active leads (score >= 60) into sequences
-4. **Sequences** execute (engagement, tweets, DMs)
+3. **Auto-enrollment** puts active leads into sequences
+4. **Sequences** execute outreach (DMs, follows, likes)
 5. **Resurfacing** re-checks inactive leads for new signals
 6. **Expansion** discovers more prospects from influencers
-7. **Engagement** builds relationships across the platform
 
 This cycle runs 24/7, turning your ICP into a continuous revenue pipeline.
 

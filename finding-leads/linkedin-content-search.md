@@ -93,7 +93,7 @@ Real-time progress helps you understand search effectiveness and identify if res
 
 5. **Leverage comments:** LinkedIn commenters are often highly engaged decision-makers. Do not overlook comment-based prospects.
 
-6. **Run recurring searches:** Like Twitter, set up daily LinkedIn content searches to capture new prospects continuously.
+6. **Run recurring searches:** Set up daily LinkedIn content searches to capture new prospects continuously.
 
 ## Example Workflow
 

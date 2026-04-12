@@ -38,15 +38,10 @@ Example: A prospect actively engages with 3 data warehousing companies, 2 BI too
 
 ### Cluster Scoring
 
-**New Cluster Boost** (last 30 days):
-- Lead engages with 2+ accounts in competitor/vendor clusters for first time
-- Signal: `intent_score >= 65` (high purchase intent)
-- Reasoning: Evaluating solutions they have not engaged with before
+AutoReach scores clusters based on two key patterns:
 
-**High Velocity Boost** (frequent engagement):
-- Lead engages 3+ times with offer-relevant clusters in last 30 days
-- Signal: `timing_score >= 70` (high readiness to buy)
-- Reasoning: Active, ongoing evaluation behavior
+- **New Cluster Activity**: When a lead begins engaging with competitor or vendor accounts for the first time, this signals they are actively evaluating solutions and boosts their intent score.
+- **High Velocity Engagement**: When a lead frequently engages with offer-relevant clusters, this signals strong readiness to buy and boosts their timing score.
 
 ## Orbit Score Interpretation
 
@@ -77,15 +72,7 @@ When interaction orbit data is available, it appears on the lead profile as:
 - **Cluster Velocity** - how frequently they are engaging (Rising, Stable, Cooling)
 - **Timing Signal** - whether AutoReach detected high-intent engagement patterns
 
-Example display:
-```
-ORBIT ACTIVITY (last 30 days)
-+-- Data Stack Cluster (Velocity: Rising)
-|   +-- Competitor: Snowflake (2 likes, 1 reply)
-|   +-- Vendor: dbt Labs (1 like, 2 replies)
-|   +-- Thought Leader: @data_eng_podcast (3 likes)
-+-- Recommendation Signal Detected (timing_score: 72)
-```
+You can see which accounts the lead engages with, which clusters have been detected, how engagement velocity is trending, and whether any high-intent timing signals have been identified.
 
 ## Using Orbit Data in Sequences
 
@@ -109,7 +96,7 @@ AutoReach only tracks public engagement:
 - Public profile follows (not private contacts)
 - Data aggregated at the lead level, never shared externally
 
-This is similar to what you would manually discover by viewing someone's Twitter or LinkedIn activity. AutoReach simply scales it.
+This is similar to what you would manually discover by viewing someone's X or LinkedIn activity. AutoReach simply scales it.
 
 ## When Orbit Data Is Unavailable
 

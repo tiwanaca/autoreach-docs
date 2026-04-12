@@ -2,28 +2,23 @@
 
 All content in the Engagement Engine is AI-generated using your offer context, content pillars, and professional voice. The result is engaging, authentic-sounding content that builds your authority in your niche.
 
-## Tweet Generation (X/Twitter)
+## Tweet Generation (X)
 
-AutoReach generates **2-4 short-form tweets daily** using:
+AutoReach regularly generates short-form posts for X using:
 
 - **Content Pillars**: each week focuses on one pillar (industry insights, tips, case studies, etc.)
 - **Current Trends**: AI has awareness of the current year and recent industry trends
 - **Your Voice**: generated content matches your professional tone
-- **Platform Norms**: tweets are concise, engaging, and optimized for retweets and replies
+- **Platform Norms**: posts are concise, engaging, and optimized for retweets and replies
 
-**Example tweet:**
+**Example post:**
 > "Just realized most sales teams spend 40% of their day on manual data entry. That's not a process problem, it's a tool problem. If your CRM requires manual input, it's creating busywork, not sales velocity. Better tools = better sales."
 
-Tweets aim to educate, spark conversation, or share quick insights relevant to your niche.
+Posts aim to educate, spark conversation, or share quick insights relevant to your niche.
 
 ## LinkedIn Post Generation
 
-AutoReach generates **1 long-form LinkedIn post daily** using a proven structure:
-
-1. **Hook**: a compelling first line that stops the scroll
-2. **Context**: 1-3 sentences explaining the problem
-3. **Body**: 3-5 sentences with the main insights or story
-4. **Takeaway**: a clear lesson or actionable insight
+AutoReach regularly generates long-form LinkedIn posts. LinkedIn posts are longer, narrative-driven, and designed for engagement, comments, and shares.
 
 **Example LinkedIn post:**
 > **I spent 3 months analyzing cold outreach patterns across 50 B2B companies.**
@@ -37,8 +32,6 @@ AutoReach generates **1 long-form LinkedIn post daily** using a proven structure
 > The lesson? Outreach without warmup is like cold calling with a fake name. You might get responses, but they'll be low-quality and defensive.
 >
 > **Build presence first, then reach out. The conversion rate difference is staggering.**
-
-LinkedIn posts are longer, narrative-driven, and designed for comments and shares.
 
 ## Engagement Replies
 
@@ -60,9 +53,9 @@ Replies are 1-3 sentences and feel like a natural continuation of the conversati
 
 When leads or followers engage with your posts, AutoReach can generate **natural replies to incoming engagement**:
 
-- Someone likes your tweet? Optionally auto-reply with a question or follow-up
+- Someone likes your post? Optionally auto-reply with a question or follow-up
 - Someone comments on your post? AutoReach can generate a thoughtful response
-- Someone replies to your tweet? Get an automatic, natural-sounding response
+- Someone replies to your post? Get an automatic, natural-sounding response
 
 {% hint style="info" %}
 Auto-responses help you stay engaged 24/7 without monitoring constantly. Replies feel human and maintain conversations even outside your work hours.
@@ -72,17 +65,15 @@ All auto-responses require your approval before posting (or can be set to auto-a
 
 ## LinkedIn Comments
 
-When engaging on LinkedIn, AutoReach generates **50-300 character professional comments** on relevant posts:
+When engaging on LinkedIn, AutoReach generates concise, professional comments on relevant posts:
 
-- Professional in tone (not casual like Twitter)
+- Professional in tone
 - Substantive (add insight, not just "great post")
 - Short enough to read in one glance
 - Relevant to the original post
 
 **Example comment:**
 > "This aligns with our findings. Companies that invest in account warmup see 3x higher reply rates on cold outreach. The trust-building phase is critical before asking for anything."
-
-LinkedIn comments are shorter than posts but more substantive than Twitter replies.
 
 ## How Content Is Generated
 
@@ -109,7 +100,7 @@ The goal is for your Engagement Engine content to be indistinguishable from cont
 
 You can edit any piece of content before it posts:
 
-- Review tweets, posts, and comments in the approval queue
+- Review posts and comments in the approval queue
 - Edit text if needed
 - Approve or reject
 - Rejected content is replaced with new AI-generated alternatives

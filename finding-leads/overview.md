@@ -4,12 +4,12 @@ AutoReach provides multiple intelligent lead discovery methods to help you find 
 
 ## Available Lead Discovery Methods
 
-### X/Twitter Tweet Search
-Find prospects from intent-signaling tweets. Our AI analyzes your offer description and generates targeted search queries to discover decision-makers discussing problems you solve.
+### X Post Search
+Find prospects from intent-signaling posts on X. AutoReach analyzes your offer and generates targeted search queries to discover decision-makers discussing problems you solve.
 
-**Best for:** Finding leads showing active buying signals and operational pain points on X.
+**Best for:** Finding leads showing active buying signals on X.
 
-[Learn more about Tweet Search →](tweet-search.md)
+[Learn more about X Post Search →](tweet-search.md)
 
 ### LinkedIn Content Search
 Discover decision-makers through LinkedIn posts and comments. Surface leads discussing hiring challenges, security concerns, growth goals, and solutions in your space.
@@ -39,8 +39,8 @@ Find followers of influencers and thought leaders whose audiences match your ICP
 
 [Learn more about Lookalike Audiences →](lookalike-audiences.md)
 
-### RAG Lead Pool (Instant Matching)
-Instantly match against your previously enriched leads using vector search. Get qualified prospects without additional enrichment costs.
+### Lead Pool (Instant Matching)
+Instantly match against your previously enriched leads. Get qualified prospects without additional enrichment costs.
 
 **Best for:** Quick scaling and cost-effective lead qualification.
 
@@ -64,7 +64,7 @@ Let AI generate targeted search queries tailored to your offer. Powers recurring
 
 | Method | Platform | Best For | Scale | Speed |
 |--------|----------|----------|-------|-------|
-| Tweet Search | X/Twitter | Intent signals | Medium | Fast |
+| X Post Search | X | Intent signals | Medium | Fast |
 | Content Search | LinkedIn | Engaged professionals | Medium | Medium |
 | People Search | LinkedIn | Systematic targeting | Large | Medium |
 | Job Search | LinkedIn | Hiring companies | Medium | Medium |
@@ -74,7 +74,7 @@ Let AI generate targeted search queries tailored to your offer. Powers recurring
 
 ## Quick Start
 
-1. **Starting with a new offer?** Begin with [Tweet Search](tweet-search.md) or [LinkedIn Content Search](linkedin-content-search.md) to find intent-driven prospects.
+1. **Starting with a new offer?** Begin with [X Post Search](tweet-search.md) or [LinkedIn Content Search](linkedin-content-search.md) to find intent-driven prospects.
 
 2. **Have specific role/location targets?** Use [LinkedIn People Search](linkedin-people-search.md) for precise filtering.
 
