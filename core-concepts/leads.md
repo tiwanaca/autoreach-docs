@@ -1,17 +1,17 @@
 # How Leads Work
 
-A **lead** in AutoReach is a unified profile of a potential buyer that combines data from both X/Twitter and LinkedIn. Unlike manual lists, leads are intelligent entities that get automatically discovered, enriched, scored, and tracked throughout the entire outreach lifecycle.
+A **lead** in AutoReach is a unified profile of a potential buyer that combines data from both X and LinkedIn. Unlike manual lists, leads are intelligent entities that get automatically discovered, enriched, scored, and tracked throughout the entire outreach lifecycle.
 
 ## What Is a Lead?
 
 A lead represents one person across one or both platforms. AutoReach automatically matches X profiles with LinkedIn profiles to create a unified view, giving you:
 
-- **Social presence** across both platforms
-- **Professional history** (education, experience, skills)
-- **Company and role** information
-- **Recent activity** and engagement patterns
-- **Intent and fit signals** extracted from content
-- **Buyer score** predicting purchase probability
+* **Social presence** across both platforms
+* **Professional history** (education, experience, skills)
+* **Company and role** information
+* **Recent activity** and engagement patterns
+* **Intent and fit signals** extracted from content
+* **Buyer score** predicting purchase probability
 
 Think of a lead as a 360-degree profile: not just a name and email, but a complete picture of who they are, what they do, and whether they're likely to buy.
 
@@ -29,9 +29,9 @@ Search for keywords on X using natural language. AutoReach finds tweets matching
 
 Powerful LinkedIn search across content, people, and job changes.
 
-- **Content search:** Find people posting about keywords (hiring, switching to competitor, etc.)
-- **People search:** Target by job title, company, location, skills, or custom fields
-- **Job search:** Find people who recently started a new role (first 6 months)
+* **Content search:** Find people posting about keywords (hiring, switching to competitor, etc.)
+* **People search:** Target by job title, company, location, skills, or custom fields
+* **Job search:** Find people who recently started a new role (first 6 months)
 
 ### 3. Lookalike Audiences
 
@@ -81,7 +81,7 @@ Lead enrichment happens asynchronously in the background. As each stage complete
 
 Every lead moves through a state machine that determines its buyer status and where it appears in the UI:
 
-### not_scored
+### not\_scored
 
 A newly added lead that hasn't completed enrichment or initial scoring yet. No Buyer Intelligence data is available.
 
@@ -93,15 +93,15 @@ A newly added lead that hasn't completed enrichment or initial scoring yet. No B
 
 **Buyer Score 30-59.** This lead has moderate fit or intent but isn't ready yet. Appears on the **All Leads** page. AutoReach continuously monitors for new signals that might trigger promotion to **active**.
 
-### poor_fit
+### poor\_fit
 
 **Buyer Score < 30.** This lead is a weak match for your offer. Tracked but deprioritized. Can still be enrolled in sequences manually if you want to experiment.
 
 ### disqualified
 
-**Both fit_score < 15 AND intent_score < 15.** AutoReach automatically removes these leads from your database (they are permanently disqualified as a bad fit).
+**Both fit\_score < 15 AND intent\_score < 15.** AutoReach automatically removes these leads from your database (they are permanently disqualified as a bad fit).
 
-### manual_outreach
+### manual\_outreach
 
 A lead you manually override for outreach regardless of their score. Useful for VIP leads, strategic accounts, or testing sequences on lower-scoring prospects.
 
@@ -109,7 +109,7 @@ A lead you manually override for outreach regardless of their score. Useful for 
 
 AutoReach's magic happens at the intersection of X and LinkedIn. When you add a lead from one platform, AutoReach automatically searches for their profile on the other.
 
-**Example:** You search for "moving from Salesforce to HubSpot" on LinkedIn and find Alice. AutoReach automatically finds Alice's X profile (@alice_tweets), looks up her recent tweets, checks for mentions of Salesforce/HubSpot, and uses that social activity as an additional intent signal.
+**Example:** You search for "moving from Salesforce to HubSpot" on LinkedIn and find Alice. AutoReach automatically finds Alice's X profile (@alice\_tweets), looks up her recent tweets, checks for mentions of Salesforce/HubSpot, and uses that social activity as an additional intent signal.
 
 This cross-platform matching makes lead enrichment far more accurate than single-platform data alone.
 
@@ -119,32 +119,32 @@ Each lead's profile includes:
 
 ### Basic Info
 
-- Name, headline, bio
-- X and LinkedIn URLs
-- Email (if found)
-- Location (city, state, country)
-- Company and job title
+* Name, headline, bio
+* X and LinkedIn URLs
+* Email (if found)
+* Location (city, state, country)
+* Company and job title
 
 ### Professional Background
 
-- Education (school, degree, field, dates)
-- Work experience (company, role, tenure, description)
-- Skills (extracted from profiles)
+* Education (school, degree, field, dates)
+* Work experience (company, role, tenure, description)
+* Skills (extracted from profiles)
 
 ### Social Activity
 
-- Tweet frequency and engagement
-- LinkedIn post activity
-- Follower/following counts
-- Recent interactions
+* Tweet frequency and engagement
+* LinkedIn post activity
+* Follower/following counts
+* Recent interactions
 
 ### Signals and Scoring
 
-- All detected intent signals
-- Company-level signals
-- Buyer state (active/monitor/poor_fit/disqualified)
-- Buyer score, fit score, intent score, timing score
-- Last activity date, last score date
+* All detected intent signals
+* Company-level signals
+* Buyer state (active/monitor/poor\_fit/disqualified)
+* Buyer score, fit score, intent score, timing score
+* Last activity date, last score date
 
 ## Lead Lifecycle in a Sequence
 
@@ -165,7 +165,7 @@ Once enrolled in a sequence, a lead's state evolves:
 {% endhint %}
 
 {% hint style="info" %}
-**Monitor Lower Scores:** Don't ignore poor_fit leads entirely. Re-scoring happens when new signals are detected. A lead could jump from 25 to 65 based on new social activity.
+**Monitor Lower Scores:** Don't ignore poor\_fit leads entirely. Re-scoring happens when new signals are detected. A lead could jump from 25 to 65 based on new social activity.
 {% endhint %}
 
 {% hint style="warning" %}
@@ -174,5 +174,5 @@ Once enrolled in a sequence, a lead's state evolves:
 
 ## Next Steps
 
-- **[Buyer Intelligence & Scoring](buyer-scoring.md)**: Learn how AutoReach scores leads across fit, intent, and timing
-- **[Finding Leads Overview](../finding-leads/overview.md)**: Explore all the ways to discover new leads
+* [**Buyer Intelligence & Scoring**](buyer-scoring.md): Learn how AutoReach scores leads across fit, intent, and timing
+* [**Finding Leads Overview**](../finding-leads/overview.md): Explore all the ways to discover new leads
