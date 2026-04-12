@@ -8,7 +8,6 @@ Think of an Offer as your "outreach profile." It contains:
 
 - **What you sell**: Your product or service description
 - **Who you're targeting**: Your ideal customer profile (ICP)
-- **What you want to achieve**: Book calls, start conversations, provide value, soft pitch
 - **Context about your business**: Pain points you solve, competitors, locations, industry focus
 
 AutoReach's AI uses this information to:
@@ -22,9 +21,11 @@ AutoReach's AI uses this information to:
 
 Go to **Offers** > **Create Offer**. The easiest way is to **add your website URL**. AutoReach will automatically extract your business details and pre-populate the offer fields. Review and modify what's needed, then save. You can also fill in all the details manually.
 
-### Required Fields
+Many fields include a **Regenerate** button that uses AI to generate or refine the content based on your website and description. The description field has an **Enhance** button to improve your text with AI.
 
-#### Name
+## Offer Fields
+
+### Name
 
 The name of your offer or product. Keep it short and clear.
 
@@ -32,81 +33,90 @@ The name of your offer or product. Keep it short and clear.
 - "SaaS Security Audits"
 - "Fractional CFO Services"
 - "AI Content Writing Tool"
-- "B2B Market Research"
 
-#### Description
+### Description
 
-What you do, in 10-300 characters. Be specific about the transformation or value you provide.
+A detailed description of what you do, what you offer, and your pricing. Be specific about the transformation or value you provide. You can use the **Enhance** button to improve your description with AI.
 
-**Good descriptions**:
-- "We help mid-market tech companies reduce security risk through automated vulnerability scanning."
-- "On-demand CFO services for early-stage startups. Financial planning, fundraising strategy, investor relations."
-- "AI writing assistant that generates blog posts, emails, and product copy 10x faster than manual writing."
+This field supports longer descriptions. Include your value proposition, key features, and pricing details so AutoReach's AI has full context for personalization.
+
+**Good descriptions include**:
+- What your product or service does
+- Key benefits and differentiators
+- Pricing structure and what's included
+- Any relevant details for outreach conversations
 
 **Avoid**:
 - Generic descriptions ("We're a software company")
 - Marketing fluff ("Industry-leading solution")
 - Jargon without context ("SaaS optimization platform")
 
-#### Target Audience
+### Target Audience
 
-Who you're trying to reach, in 10-400 characters. Describe the role, company size, industry, or pain point.
+Who you're trying to reach. List specific roles, titles, and the type of companies you target. Use the **Regenerate** button to have AI suggest a target audience based on your description.
 
-**Good target audiences**:
-- "CTOs and security leads at Series B-D tech companies (50-1000 employees)"
-- "Startup founders and early-stage employees managing financial operations"
-- "Marketing directors at B2B SaaS companies looking to scale content production"
-- "VP of Sales at enterprise software companies dealing with sales cycle delays"
+**Example**:
+> Owners, Directors, MDs, CROs, VP Sales, VP Business Development, VP-level leaders responsible for lead generation or pipeline growth, Sales Directors, Head of Revenue, Head of Demand Gen, SDR Directors, Sales Managers, and other senior leaders directly accountable for outbound pipeline at B2B SaaS companies and professional services firms
 
-#### Goal
+### Pain Points You Solve
 
-What you want to achieve with outreach. Choose one:
-
-- **`start_conversation`**: Your main goal is to get a response and open dialogue.
-- **`provide_value`**: You want to share useful insights, resources, or introductions.
-- **`soft_pitch`**: Introduce your solution gently without hard selling.
-- **`book_call`**: Schedule a meeting or call directly.
-
-Your goal influences how AutoReach personalizes DMs. For example:
-- `start_conversation` results in a friendly, low-pressure opener ("Quick question about...")
-- `book_call` results in a direct and specific ask ("Let's chat on Tuesday at 2pm")
-
-### Optional but Recommended Fields
-
-#### Pain Points
-
-A list of 3-5 pain points your Offer solves. Use short phrases (3-7 words each).
+A list of problems your offer fixes. These help AI match leads who mention these issues on social media and personalize messages accordingly. Use the **Regenerate** button to have AI suggest pain points.
 
 **Examples**:
-- "Security vulnerabilities going undetected"
-- "Spending 20+ hours on financial forecasting"
-- "Writing blog posts manually is too slow"
-- "Sales cycles are taking too long"
+- "Lead generation quality is inconsistent"
+- "Building sales funnels takes too long"
+- "Hard to identify high-intent buyers at scale"
+- "Outbound outreach timing is guesswork"
+- "Too much time spent on unqualified leads"
 
-Pain points help AutoReach find prospects who mention these issues on social media and personalize messages accordingly.
+### Known Competitors
 
-#### Competitors
-
-3-6 companies or products you compete with. This helps AutoReach understand your market position and identify target prospects.
+Companies or tools that compete with you. This helps AI detect leads who engage with competitors and understand your market position. Use the **Regenerate** button to have AI suggest competitors.
 
 **Examples**:
-- Slack (if you're a communication tool)
-- Stripe (if you're a payment processor)
-- HubSpot (if you're a CRM)
+- Common Room
+- 6sense
+- ZoomInfo Copilot
+- Clay
 
-#### Preferred Locations
+### Target Industries
 
-Geographic regions where you want to focus outreach. Use pipe-separated format:
+LinkedIn industries to filter people search. These are used in "By Role" and Lookalike searches to find prospects in specific sectors. Use the **Regenerate** button to have AI suggest industries.
 
-```
-San Francisco, CA | New York, NY | London, UK | Berlin, Germany
-```
+**Examples**:
+- Computer Software
+- Marketing and Advertising
+- Information Technology and Services
+- Management Consulting
+- Staffing and Recruiting
 
-AutoReach will prioritize leads from these locations. Leave blank for global targeting.
+### Deal Value
 
-#### Industry Focus
+The monetary value of your offer (e.g., $99). This helps AutoReach estimate pipeline value and prioritize leads accordingly.
 
-LinkedIn industry IDs for your target market. This helps AutoReach find prospects in specific sectors (e.g., Technology, Financial Services, Healthcare).
+### Locations
+
+Geographic regions where you want to focus outreach. You can choose to filter by **Lead** location or **Company HQ** location. Add countries or regions from the dropdown.
+
+**Examples**:
+- United States
+- Canada
+- Europe
+- Australia
+
+Leave blank for global targeting.
+
+### Target Language
+
+The language for your outreach messages (e.g., English). AutoReach will generate DMs and responses in this language.
+
+### Website
+
+Your website URL (e.g., https://yoursite.com). Used by the Enhance and Regenerate features to extract business details and auto-populate fields.
+
+### Active Toggle
+
+Toggle your offer on or off. Only active offers are used by Autopilot and sequences for lead scoring and outreach.
 
 ## Knowledge Base
 
@@ -146,7 +156,7 @@ When a prospect replies, AutoReach:
 
 1. **Searches your knowledge base** for relevant sections (e.g., if they ask about pricing, it finds your price sheet)
 2. **Includes the context** in the AI prompt
-3. **Generates a response** that's personalized and grounded in your actual strategy
+3. **Generates a response** that is personalized and grounded in your actual strategy
 
 **Example**:
 - Prospect asks: "How do you handle data security?"
@@ -154,55 +164,21 @@ When a prospect replies, AutoReach:
 - AI generates a response citing your specific approach
 - Response is sent automatically or queued for your review
 
-## Tone Examples
-
-Tone examples are conversation samples that teach AutoReach how you speak. They define your outreach voice and help the AI maintain consistency.
-
-### Why Tone Matters
-
-AutoReach generates 21 examples automatically:
-- 11 examples for **conversation-building** (friendly, curious, low-pressure)
-- 10 examples for **closing** (direct, specific, call-to-action)
-
-These examples help AutoReach's AI understand your style so it generates messages that sound like you.
-
-### Reviewing Tone Examples
-
-1. Go to your Offer > **Tone Examples**
-2. Review the 21 auto-generated examples
-3. Edit any that don't match your voice (click the example to edit)
-4. Add custom examples if you want to emphasize a specific style
-5. Click **Save**
-
-### Customizing Tone
-
-If the auto-generated examples don't feel right:
-
-1. Edit individual examples to better match your voice
-2. Add custom examples from your best past outreach
-3. Label them clearly (e.g., "Funny, irreverent opener" or "Enterprise closing line")
-
-The more examples you provide, the better AutoReach learns your voice.
-
-{% hint style="info" %}
-**Tip**: Use tone examples from your own past successful outreach. If you have 5-10 DMs that got great responses, add them as custom tone examples. AutoReach will learn from your winners.
-{% endhint %}
-
 ## How Your Offer Powers AutoReach
 
 ### 1. Lead Scoring
 
-When you add a lead to a sequence, AutoReach scores them based on:
+When a lead enters the system, AutoReach scores them based on:
 - Profile data (role, company, location)
 - Social signals (recent posts, engagement)
-- Match to your Offer's target audience
+- Match to your Offer's target audience and pain points
 
-High scores = more likely to convert.
+Higher scores mean a stronger fit with your ICP.
 
 ### 2. Keyword Generation
 
 AutoReach extracts keywords from your Offer and uses them to:
-- Search for relevant prospects on Twitter/LinkedIn
+- Search for relevant prospects on X and LinkedIn
 - Filter leads in Autopilot
 - Identify trending topics in your space
 
@@ -211,14 +187,14 @@ AutoReach extracts keywords from your Offer and uses them to:
 When sending DMs, AutoReach:
 - Looks up the prospect's profile and recent activity
 - References relevant pain points from your Offer
-- Crafts a personalized opener based on your tone examples
+- Crafts a personalized opener matching your outreach tone
 
 ### 4. AI Response Context
 
 When prospects reply, AutoReach:
 - Searches your knowledge base for context
-- Uses your tone examples to match your voice
-- Generates smart replies without losing your brand
+- Generates smart replies that stay on-brand
+- Maintains your outreach voice across conversations
 
 ## Best Practices
 
@@ -257,44 +233,11 @@ Real examples make your AI responses more credible.
 As your business evolves, update your Offer:
 - Quarterly: Review target audience and adjust based on who's converting
 - Quarterly: Add new case studies to your knowledge base
-- Monthly: Refine tone examples based on your best outreach
-
-## Example: Complete Offer Setup
-
-**Name**: SaaS Security Audits
-
-**Description**: Automated security assessments that identify vulnerabilities in your SaaS stack. Our framework checks 200+ integrations and compliance requirements in 2 hours.
-
-**Target Audience**: CTOs and Security leads at Series B-D tech companies (50-500 employees), managing cloud security and compliance.
-
-**Goal**: Book Call
-
-**Pain Points**:
-- Security gaps in third-party integrations
-- Compliance audits taking weeks
-- No visibility into vendor risk
-- Incident response preparation
-
-**Competitors**: Vanta, Secureframe, Drata
-
-**Preferred Locations**: San Francisco | New York | Boston | Seattle
-
-**Knowledge Base Documents**:
-1. Case Study: How Acme Corp reduced compliance audit time from 8 weeks to 2 weeks
-2. Security Framework: Our 5-step assessment methodology
-3. Compliance Checklist: SOC 2, ISO 27001, HIPAA requirements we check
-
-**Tone Examples**: (Auto-generated, reviewed for accuracy)
-- Friendly examples: "Just reviewed your security setup. 2 quick questions..."
-- Closing examples: "Let's run a 30-min security audit next Tuesday?"
-
-Now you're ready to use this Offer to build sequences, find leads, and automate outreach!
 
 ## Next Steps
 
 1. **Connect a Social Account**: [Connecting X](connect-twitter.md) or [Connecting LinkedIn](connect-linkedin.md)
-2. **Build a Sequence**: Create your first automation workflow
-3. **Add Leads**: Find prospects who match your Offer
-4. **Launch and Monitor**: Start outreach and track results
+2. **Start Autopilot**: Let AutoReach find and engage leads automatically
+3. **Review your Sequence**: Check the prompt, configuration, and tone examples in Advanced Settings
 
 See [Quickstart](quickstart.md) for the full setup flow.
