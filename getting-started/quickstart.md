@@ -123,4 +123,4 @@ Your outreach is now running on autopilot. Here's what to do:
 - **Review your Sequence**: Go to your sequence's **Advanced Settings** and review the prompt, the configuration, and the tone examples. Tone examples define how your outreach sounds and can be customized per sequence.
 - **Customize your Offer**: Upload [knowledge base documents](create-offer.md#knowledge-base) and refine your target audience.
 
-Need help? Email support@autoreach.tech.
+Need help? Email hello@autoreach.tech.

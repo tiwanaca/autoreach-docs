@@ -33,10 +33,11 @@ Each LinkedIn account gets its own dedicated ISP residential static proxy. This 
 
 LinkedIn enforces weekly limits on connection requests. AutoReach tracks these automatically:
 
-| Account Type    | Weekly Limit         |
-| --------------- | -------------------- |
-| Free / Premium  | 100 connections/week |
-| Sales Navigator | 200 connections/week |
+| Account Type    | Weekly Limit             |
+| --------------- | ------------------------ |
+| Free            | 100 connections/week     |
+| Premium         | 150 connections/week     |
+| Sales Navigator | 200 connections/week     |
 
 These limits reset weekly. AutoReach tracks your usage and pauses connection requests when you approach the limit. If a connection request gets rate-limited, it enters a **deferred state** and automatically resumes the following Monday.
 

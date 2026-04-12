@@ -4,23 +4,10 @@ The AutoReach Chrome Extension is the central tool for connecting your social ac
 
 ## Installation
 
-### From Chrome Web Store (Recommended)
-
-1. Visit the [AutoReach Chrome Extension](https://chromewebstore.google.com/detail/autoreach) page
+1. Visit the [AutoReach Chrome Extension](https://chromewebstore.google.com/detail/autoreach) page on the Chrome Web Store
 2. Click **Add to Chrome**
 3. In the popup, click **Add extension**
 4. The AutoReach icon will appear in your Chrome toolbar
-
-### Manual Installation
-
-If the extension is not on the Web Store yet:
-
-1. Download the extension file from your [AutoReach Settings](https://autoreach.tech/settings/integrations)
-2. Go to **chrome://extensions**
-3. Toggle on **Developer mode** (top right)
-4. Click **Load unpacked**
-5. Select the downloaded extension folder
-6. The AutoReach extension is now installed
 
 ## License Key Activation
 
@@ -337,7 +324,7 @@ If detection is not working, use the **Check Acceptances** button in the CRM to 
 - Keep your extracted cookies private
 - Cookies expire over time (2-4 weeks). Reconnect via the extension (three dots > Reconnect).
 
-Found a security issue? Email security@autoreach.tech.
+Found a security issue? Email hello@autoreach.tech.
 
 ## Next Steps
 
