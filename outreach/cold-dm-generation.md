@@ -13,7 +13,7 @@ The cold DM generator creates **2 unique DM variants** from a set of inputs. Thi
 | Offer | Yes | What you're offering (10–300 characters) |
 | Target | Yes | Who you're reaching (10–400 characters) |
 | Goal | Yes | Conversation objective |
-| Style | No | Short/punchy or conversational |
+| Keep it short and punchy | No | Checkbox — when enabled, generates shorter, punchier messages |
 | Recent Post | No | Recent post text for contextual reference |
 | Name | No | Lead name or username for personalization |
 

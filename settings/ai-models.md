@@ -11,7 +11,7 @@ Connect your AI providers by adding API keys in **Settings > AI & Models**:
 
 ## Model Categories
 
-AutoReach uses AI across **11 categories**. Each has independent primary and fallback model settings:
+AutoReach uses AI across **10 categories**. Each has independent primary and fallback model settings:
 
 | Category | Purpose |
 |---|---|
@@ -19,11 +19,10 @@ AutoReach uses AI across **11 categories**. Each has independent primary and fal
 | Buyer Scoring | Evaluating leads against your ICP |
 | Keyword Generation | Creating search queries for lead discovery |
 | Classification | Classifying content by topic, sentiment, and tone |
-| Web Search | General web search operations |
-| Web Search (Finding) | Cross-platform profile discovery |
-| Web Search (Enrichment) | Company data extraction from websites |
-| Web Search (Lookalike) | Finding influencers similar to target profiles |
-| Web Search (Research) | Deep analysis and exploration |
+| Profile Finding | Email, LinkedIn, X profile, and website discovery |
+| Web Enrichment | Company data extraction from websites |
+| Lookalike Search | Finding influencers similar to target profiles |
+| Research & Copilot | Follow-up research, copilot web search, topic research |
 | Lead Relevance | Scoring leads with detailed reasoning |
 | Call Briefs | Generating meeting preparation documents |
 
@@ -69,7 +68,7 @@ Since scoring and classification run on every lead while content writing only ru
 
 ## Settings UI
 
-The AI Configuration section in Settings shows all 11 categories with primary and fallback dropdowns. Changes take effect immediately and are validated on save.
+The AI Configuration section in Settings shows all 10 categories with primary and fallback dropdowns. Changes take effect immediately and are validated on save.
 
 ## Dynamic Cost Impact
 
