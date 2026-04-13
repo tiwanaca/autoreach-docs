@@ -1,42 +1,6 @@
 # Cold DM Generation
 
-AutoReach has two DM generation systems: a **standalone cold DM generator** for creating one-off personalized messages, and a **template-based personalizer** used by sequences to generate DMs at send-time. Both use AI with lead enrichment data, offer context, and knowledge base content to produce personalized messages.
-
-## Standalone Cold DM Generator
-
-The cold DM generator creates **2 unique DM variants** from a set of inputs. This is used for ad-hoc message generation, not for automated sequences.
-
-### Inputs
-
-| Input | Required | Description |
-|---|---|---|
-| Offer | Yes | What you're offering (10–300 characters) |
-| Target | Yes | Who you're reaching (10–400 characters) |
-| Goal | Yes | Conversation objective |
-| Keep it short and punchy | No | Checkbox — when enabled, generates shorter, punchier messages |
-| Recent tweet/post | No | Paste a recent tweet or post for contextual personalization |
-| Name | No | Lead name or username for personalization |
-
-### Goal Options
-
-| Goal | Description |
-|---|---|
-| Start Conversation | Open dialogue, no hard ask |
-| Provide Value First | Share something useful (article, intro, tool) |
-| Soft Pitch | Gentle suggestion to explore your offer |
-| Book a Call | Direct ask for a meeting |
-
-### How It Works
-
-1. Uses your configured AI model
-2. Builds context from goal instruction, tweet context, and name-based greeting rules
-3. Calls AI with a strict system prompt enforcing DM rules
-4. Parses response into 2 variants (split by blank lines)
-5. Cleans em dashes and removes numbering prefixes
-
-## Sequence DM Personalization
-
-When a `dm` step executes in a sequence, it uses the **message personalizer** — a different system from the standalone generator. The personalizer takes a template with `{{variable}}` placeholders and produces a fully personalized message.
+When a DM step executes in a sequence, AutoReach uses the **message personalizer** to generate a personalized message for each lead. It takes your DM template with `{{variable}}` placeholders, enriches it with lead data, and uses AI to produce a natural, personalized message.
 
 ### Template Variables
 
@@ -132,7 +96,7 @@ The DM Generation Prompt is optional — if not provided, the default system pro
 
 ## DM Generation Rules
 
-Both systems enforce strict rules on generated messages:
+AutoReach enforces strict rules on generated messages:
 
 **Structure:**
 - Maximum 3 short sentences with periods (not run-ons with commas)
@@ -171,7 +135,7 @@ Tracking value is the lead's LinkedIn identifier (prefixed) for LinkedIn leads o
 
 ## Negative Content Checking
 
-Before replying to a lead's post, the system checks for sensitive content. This is a **fail-open** design — if the check fails, the message proceeds.
+Before replying to a lead's post, the system checks for sensitive content. If the check cannot be completed, the message proceeds rather than blocking.
 
 **Skipped topics:** Death, obituaries, serious illness, natural disasters, violence, terrorism, suicide, personal tragedies.
 
@@ -181,7 +145,7 @@ Before replying to a lead's post, the system checks for sensitive content. This 
 
 DM generation supports 6 languages: English (en), Italian (it), Spanish (es), French (fr), German (de), Portuguese (pt).
 
-Set via the offer's `language` field. For non-English offers, the system prompt includes: `"CRITICAL: Write ALL messages in [language]. You are a native [language] speaker..."`. All generation output (keywords, messages, templates) follows the language instruction.
+Set via the language option in your offer settings. For non-English offers, all AI output (keywords, messages, templates) is generated in the selected language.
 
 ## Next Steps
 
