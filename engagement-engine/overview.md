@@ -13,12 +13,11 @@ The Engagement Engine automatically:
 
 ## How It Works
 
-The warmup scheduler runs every **10 minutes**. Each cycle it:
+The system processes actions in regular cycles. Each cycle it:
 
-1. Expires stale approvals and engagements (48-hour timeout)
-2. Increments warmup day counters
-3. Resets error counts
-4. Processes tweets, engagement, auto-responses, and LinkedIn actions in parallel
+1. Expires stale approvals and engagements
+2. Updates internal counters and resets error states
+3. Processes tweets, engagement, auto-responses, and LinkedIn actions in parallel
 
 All actions are distributed into sessions within your activity window with randomized delays between actions.
 

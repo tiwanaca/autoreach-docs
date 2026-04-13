@@ -119,17 +119,17 @@ LinkedIn searches always generate queries server-side. You cannot provide custom
 When daily recurring searches are enabled, keywords are **regenerated fresh** on each run (not reused):
 
 **X recurring regeneration:**
-- Calls `regenerateKeywords()` with the previous keywords and query
+- Regenerates keywords using the previous keywords and query as reference
 - The AI prompt includes a "KEYWORD ROTATION" block listing all previous keywords, instructing it to avoid repeating them
 - Falls back to existing keywords if regeneration fails
 - The search record's keywords and query are updated automatically
 
 **LinkedIn recurring regeneration:**
-- Calls `regenerateLinkedInQueries()` with previous queries
+- Regenerates LinkedIn queries using previous queries as reference
 - Same rotation pattern: prompt includes previous queries, instructs different angles
 - Result is filtered by the search's configured intent categories
 - Niche jargon queries (up to 5) are appended after regeneration
-- Falls back to `generateLinkedInKeywords()` on error
+- Falls back to generating fresh LinkedIn keywords on error
 
 The recurring search scheduler runs every hour. Searches re-trigger only when last run was 24+ hours ago.
 

@@ -4,7 +4,7 @@ While your account posts content, the Engagement Engine simultaneously interacts
 
 ## How Engagement Works
 
-The warmup scheduler processes engagement actions every 10 minutes:
+AutoReach processes engagement actions in regular cycles:
 
 1. **Scan**: Find posts matching your engagement keywords
 2. **Filter**: Apply relevance and follower count filters

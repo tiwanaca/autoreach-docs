@@ -98,7 +98,7 @@ When your offer has competitors configured, LinkedIn Job Search is also used to 
 4. Decision-makers at these companies are extracted and tagged as a competitor's customer with elevated priority
 5. Capped at 5 competitors searched, 15 companies per competitor
 
-This runs automatically as part of the content search pipeline when hiring_signals is enabled and competitors are defined.
+This runs automatically as part of the content search pipeline when **Hiring Signals** is enabled and competitors are defined.
 
 ## Search Parameters
 
@@ -116,7 +116,7 @@ These are configured via the LinkedIn content search settings alongside the hiri
 
 2. **Use recent time filters.** Fresh postings (24h or 1 week) indicate active hiring and receptive decision-makers.
 
-3. **Combine with other intent categories.** Run hiring_signals alongside pain_points or solution_seeking in a single content search to maximize coverage.
+3. **Combine with other intent categories.** Run **Hiring Signals** alongside **Pain Points** or **Solution Seeking** in a single content search to maximize coverage.
 
 4. **Monitor company profiles.** The resolved company data (industry, staff count, funding) helps validate whether a company is in your ICP before outreach.
 

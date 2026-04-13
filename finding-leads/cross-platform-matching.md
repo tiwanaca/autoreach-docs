@@ -41,11 +41,11 @@ Cross-platform matching runs as a separate step in the enrichment pipeline. The 
 
 LinkedIn and X profile enrichment run **in parallel** for leads that have URLs on both platforms. Enrichment failure on one platform does not block the other.
 
-**Skip logic:** If the lead already has a profile URL or a previous search timestamp for the other platform, the finder worker skips the search entirely.
+**Skip logic:** If the lead already has a profile URL or a previous search timestamp for the other platform, AutoReach skips the search entirely.
 
 ## AI Provider and Cost
 
-Both finders use **OpenAI web search** (`web_search_preview` tool). This is the primary cost of cross-platform matching — one web search call per lead per missing platform.
+Both finders use **OpenAI web search**. This is the primary cost of cross-platform matching — one web search call per lead per missing platform.
 
 Each search takes approximately 5-10 seconds per lead. There is no explicit per-call cost tracking for OpenAI web search calls.
 
@@ -81,7 +81,7 @@ Cross-platform matching is **not a standalone discovery method**. You cannot tri
 This is expected. Not every professional maintains an active X account. Since X blocks direct crawling, the finder relies on mentions of handles on external sites — handles that only appear on X itself cannot be found. Leads with more distinctive names and clear company affiliations tend to match more reliably.
 
 **A match looks incorrect?**
-Low-confidence matches (below 0.35) are filtered out automatically, but occasional false positives can occur with very common names. You can manually update the lead record to correct a bad match.
+Low-confidence matches are filtered out automatically, but occasional false positives can occur with very common names. You can manually update the lead record to correct a bad match.
 
 **Both profiles exist but no match was made?**
 The system requires a minimum confidence score before linking profiles. If the available signals were not sufficient (e.g., common name, no company overlap, handle doesn't contain the name), it skips the link rather than risk a false positive. You can always add the profile manually.

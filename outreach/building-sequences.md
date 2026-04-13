@@ -1,6 +1,6 @@
 # Building Sequences (Flow Editor)
 
-The flow editor is a visual sequence builder powered by React Flow (`@xyflow/react`). You design sequences as connected nodes on a canvas, configure each step's action and timing, then save and start the sequence.
+The flow editor is a visual sequence builder. You design sequences as connected nodes on a canvas, configure each step's action and timing, then save and start the sequence.
 
 ## Creating a New Sequence
 
@@ -11,7 +11,7 @@ The flow editor is a visual sequence builder powered by React Flow (`@xyflow/rea
 5. Select platform accounts — at least one of Twitter or LinkedIn is required
 6. Click **Create**
 
-The sequence is created in `draft` status and opens in the flow editor with a default template applied based on the selected platform(s).
+The sequence is created in Draft status and opens in the flow editor with a default template applied based on the selected platform(s).
 
 Once set, platform accounts **cannot be changed** on a sequence — this prevents workflow disruption mid-execution.
 

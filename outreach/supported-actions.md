@@ -80,7 +80,7 @@ Follows the lead's account on X. LinkedIn uses Connection Request instead.
 
 Sends a direct message to the lead. The message template is personalized using lead data and AI.
 
-**Platform routing:** Each DM step specifies a `platform` in its config. The system validates the lead has the required profile data for that platform before sending.
+**Platform routing:** Each DM step is configured for a specific platform. The system validates the lead has the required profile data for that platform before sending.
 
 **Message personalization:**
 - Template variables are replaced with lead data: `{{name}}`, `{{first_name}}`, `{{bio}}`, `{{company}}`, `{{company_size}}`, `{{location}}`, `{{followers}}`, etc.

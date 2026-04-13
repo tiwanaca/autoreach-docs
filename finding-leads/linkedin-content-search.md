@@ -31,7 +31,7 @@ AutoReach searches LinkedIn's content feed to find posts matching your queries. 
 3. Post activity URNs are extracted from the response stream
 4. Pagination continues until the configured posts per intent limit is reached, or a maximum of 15 pages per query
 
-Delays between pages (2.5s) and between queries (4s) are applied to respect rate limits.
+Delays are applied between requests to respect rate limits.
 
 ### 3. Post Detail Enrichment
 
@@ -77,7 +77,7 @@ Before running a search, use the cost estimation feature to preview estimated co
 
 ## Progress Tracking
 
-While a content search runs, progress is tracked and updated to the database every 5 seconds. You can monitor:
+While a content search runs, progress is tracked and updated in real time. You can monitor:
 
 - **Posts found:** Total LinkedIn posts matching your queries
 - **Comments fetched:** Total comments retrieved

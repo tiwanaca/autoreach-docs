@@ -15,7 +15,7 @@ AutoReach integrates with Calendly and Cal.com to automatically detect when lead
 3. Enable **all scopes** for permissions
 4. Save — AutoReach will receive booking events automatically
 
-AutoReach verifies every webhook event using HMAC-SHA256 signature validation (via `calendly-webhook-signature` and `calendly-webhook-signature-timestamp` headers).
+AutoReach verifies every webhook event using HMAC-SHA256 signature validation.
 
 ## Cal.com Setup
 
@@ -28,7 +28,7 @@ AutoReach verifies every webhook event using HMAC-SHA256 signature validation (v
 
 When a booking webhook fires, AutoReach matches the attendee to a lead using this strategy:
 
-1. **LinkedIn public identifier** — if the booking came from a LinkedIn lead (identified by `li:` prefix in tracking parameter)
+1. **LinkedIn public identifier** — if the booking came from a LinkedIn lead (identified by a platform prefix in the tracking parameter)
 2. **Username** — match by platform username
 3. **Email** — match by attendee email address
 
@@ -52,7 +52,7 @@ The `{{booking_link}}` template variable injects your calendar URL with lead-spe
 Book a time that works: {{booking_link}}
 ```
 
-This becomes: `https://calendly.com/you?a1=li:john-doe` (Calendly) or `https://cal.com/you?x_username=johndoe` (Cal.com).
+This becomes: `https://calendly.com/you?a1=john-doe` (Calendly) or `https://cal.com/you?x_username=johndoe` (Cal.com).
 
 ## Custom Booking URLs
 

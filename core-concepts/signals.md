@@ -35,13 +35,13 @@ Lead is actively searching for an alternative to their current solution.
 
 **Example:** "Looking for an alternative to our current project management tool. What are people using now?"
 
-### complained
+### Complained About Current Tool
 
 Lead complained about their current tool or process (pain point expressed).
 
 **Example:** "Our CRM is so slow. Takes 30 seconds just to load a contact. Killing our team's productivity."
 
-### tool_mention
+### Tool Mention
 
 Lead mentioned using or considering a competitor or similar tool.
 
@@ -51,49 +51,49 @@ Lead mentioned using or considering a competitor or similar tool.
 
 These signals indicate something major is happening at the company level:
 
-### funding
+### Funding
 
 Company announced a new funding round.
 
 **Example:** "Proud to announce Series B funding: $25M led by Sequoia"
 
-### product_launch
+### Product Launch
 
 Company launched a new product or major feature.
 
 **Example:** "Today we're launching the beta of Product V2. Total redesign based on your feedback."
 
-### mergers_acquisitions
+### Mergers and Acquisitions
 
 Company acquired another company or was acquired.
 
 **Example:** "Big news: We've acquired TechStartup to expand our platform capabilities"
 
-### strategic_partnership
+### Strategic Partnership
 
 Company announced a partnership with another company.
 
 **Example:** "Excited to partner with AWS to bring enterprise-grade security"
 
-### major_customer_announcement
+### Major Customer Announcement
 
 Company announced a major customer win or case study.
 
 **Example:** "Thrilled to share that Fortune 500 Company X is now using our platform"
 
-### cost_cutting
+### Cost Cutting
 
 Company announced layoffs, consolidation, or cost reduction initiatives.
 
 **Example:** "Streamlining our tech stack to focus on core tools. Consolidating vendors."
 
-### ipo_filing
+### IPO Filing
 
 Company filed for IPO or public markets.
 
 **Example:** "We're going public! S-1 filing effective today."
 
-### geographic_expansion
+### Geographic Expansion
 
 Company is expanding to a new geographic market.
 
@@ -109,23 +109,23 @@ Lead engaged with (liked, commented on) content from competitor companies.
 
 **Example:** Lead liked a post from your competitor about their product
 
-### engagement_pattern
+### Engagement Pattern
 
 Lead has high engagement on posts related to your category.
 
 **Example:** Consistently comments on automation/AI posts, high like ratio
 
-### own_post_engagement
+### Own Post Engagement
 
 Lead engaged with YOUR posts (liked, commented, replied). This is an inbound signal — they came to you. AutoReach tracks three levels of engagement:
 
-- **own_post_reply** (high strength) — Lead replied to or commented on your post
-- **own_post_repeat_engagement** (high strength) — Lead engaged with 2+ of your posts
-- **own_post_engagement** (medium strength) — Lead engaged with one of your posts
+- **Own Post Reply** (high strength) — Lead replied to or commented on your post
+- **Own Post Repeat Engagement** (high strength) — Lead engaged with 2+ of your posts
+- **Own Post Engagement** (medium strength) — Lead engaged with one of your posts
 
 **Example:** A lead replied to your thread about sales automation best practices
 
-### competitor_customer
+### Competitor Customer
 
 Lead is a confirmed user of a competing product. Detected via LinkedIn job search matching companies that use competitor tools. These leads get an intent floor of 50 because they already have budget for the category and understand the problem.
 
@@ -145,13 +145,13 @@ AutoReach tracks a lead's engagement orbit — the accounts they interact with o
 
 These indicate growth and scaling:
 
-### hiring
+### Hiring Activity
 
 Company is actively hiring.
 
 **Example:** LinkedIn shows 5+ job openings, or lead posted "We're hiring!"
 
-### hiring_roles
+### Hiring Roles
 
 Specific roles being hired for.
 
@@ -200,7 +200,7 @@ AutoReach detects this as a pain match signal and boosts the lead's intent score
 
 These signals are classification data rather than intent signals, but they impact scoring:
 
-### industry
+### Industry Classification
 
 Lead's industry classification. Compared against your offer's target industries. A match increases fit, while a mismatch caps the fit score.
 

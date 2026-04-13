@@ -12,7 +12,7 @@ Unlike keyword-based filtering, semantic matching understands the meaning behind
 
 ### 1. Profile Embedding
 
-When any lead completes the enrichment pipeline (reaches `ready` status), their profile is embedded and stored. The embedding captures the lead's professional identity as a vector representation.
+When any lead completes the enrichment pipeline (completes enrichment), their profile is embedded and stored. The embedding captures the lead's professional identity as a vector representation.
 
 **What gets embedded per lead:**
 - Headline / role
@@ -136,7 +136,7 @@ You need an existing base of enriched leads in the global pool. Build one throug
 **Match quality seems low?**
 - Review your target audience definition. Vague or overly broad descriptions produce weaker matches.
 - Add more specific search signals.
-- Remember: the ICP embedding uses target_audience, industries, locations, and search_signals — not your offer description or pain points.
+- Remember: the ICP embedding uses your target audience, industries, locations, and search signals — not your offer description or pain points.
 
 **Getting too many irrelevant matches?**
 - Tighten your target audience and preferred locations.

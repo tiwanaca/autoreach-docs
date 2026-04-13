@@ -35,7 +35,7 @@ Click **Discard** to permanently remove the content. The item is deleted and no 
 
 ## Auto-Approval
 
-Toggle **auto-approval** in your warmup strategy settings. When enabled:
+Toggle **auto-approval** in your Engagement Engine settings. When enabled:
 
 - Generated content goes directly to "Pending" status (skips the approval queue)
 - Content posts automatically at scheduled times without manual review
@@ -45,7 +45,7 @@ When disabled, all content requires manual review before posting.
 
 ## Approval Expiry
 
-Pending approvals expire after **48 hours**. The warmup scheduler checks for stale approvals every cycle (10 minutes) and marks expired items as "Skipped".
+Pending approvals expire after **48 hours**. Stale approvals are automatically expired and marked as "Skipped".
 
 This prevents a backlog of outdated content from accumulating if you don't review the queue regularly.
 

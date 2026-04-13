@@ -120,7 +120,7 @@ Yes. Toggle AI off for any individual conversation using the AI ON/OFF switch in
 
 ### How do follow-ups work when a lead goes silent?
 
-Enable conversation follow-ups in your sequence settings. You configure how many days to wait before following up (default 3) and how many follow-ups to send (default 2). The follow-up scheduler checks every 10 minutes for stale conversations and generates a fresh-angle message to re-engage the lead. See [Manual Controls](conversations/manual-controls.md).
+Enable conversation follow-ups in your sequence settings. You configure how many days to wait before following up (default 3) and how many follow-ups to send (default 2). AutoReach periodically checks for stale conversations and generates a fresh-angle message to re-engage the lead. See [Manual Controls](conversations/manual-controls.md).
 
 ---
 
@@ -132,7 +132,7 @@ The Engagement Engine builds a credible social presence on your accounts by auto
 
 ### Do I need to approve everything the Engagement Engine posts?
 
-By default, yes. All generated content enters an approval queue where you can approve, reject, or edit it. You can enable auto-approval in your warmup strategy settings to skip manual review and let content post automatically. Pending approvals expire if not reviewed within a set period. See [Approving Content](engagement-engine/approvals.md).
+By default, yes. All generated content enters an approval queue where you can approve, reject, or edit it. You can enable auto-approval in your Engagement Engine settings to skip manual review and let content post automatically. Pending approvals expire if not reviewed within a set period. See [Approving Content](engagement-engine/approvals.md).
 
 ---
 
@@ -168,7 +168,7 @@ AutoReach itself has a subscription fee. On top of that, you pay for AI API usag
 
 ### How do I reduce my AI costs?
 
-Three strategies: disable web enrichment for leads that don't need it (it's the most expensive per-lead operation), use lower-cost models for high-volume categories like classification and keyword generation in your AI Model settings, and choose efficient fallback models since they contribute 15% of blended cost. You can also run smaller, more targeted searches rather than broad ones to reduce the number of leads entering the pipeline. See [Pipeline Cost Estimation](settings/cost-estimation.md) and [AI Model Configuration](settings/ai-models.md).
+Three strategies: disable web enrichment for leads that don't need it (it's the most expensive per-lead operation), use lower-cost models for high-volume categories like classification and keyword generation in your AI Model settings, and choose efficient fallback models since fallback models also contribute to your overall cost. You can also run smaller, more targeted searches rather than broad ones to reduce the number of leads entering the pipeline. See [Pipeline Cost Estimation](settings/cost-estimation.md) and [AI Model Configuration](settings/ai-models.md).
 
 ### How do I set up webhooks for meeting tracking?
 

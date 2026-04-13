@@ -6,7 +6,7 @@ The AutoReach Chrome Extension brings your CRM pipeline into your browser. It wo
 
 Leads move through a visual pipeline:
 
-**new → on_hold → requested → accepted → contacted → replied → meeting → won / lost**
+**New → On Hold → Requested → Accepted → Contacted → Replied → Meeting → Won / Lost**
 
 | Stage | Description |
 |---|---|
@@ -40,7 +40,7 @@ The extension handles connecting your LinkedIn and X accounts to AutoReach:
 
 When you send a connection request through AutoReach, the extension captures the **invitation URN** via an interceptor script that monitors LinkedIn network requests. This allows the system to track the connection status and support auto-withdrawal.
 
-The lead moves to `requested` stage and the connection request is tracked for lifecycle management.
+The lead moves to the Requested stage and the connection request is tracked for lifecycle management.
 
 ## Name Normalization
 

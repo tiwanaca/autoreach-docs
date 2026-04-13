@@ -62,7 +62,7 @@ All extracted prospects are converted to leads and queued for enrichment. An ICP
 
 You can enable any search to run automatically on a recurring schedule. The recurring search scheduler runs every hour and triggers searches that were last run more than 24 hours ago.
 
-Each recurring run **regenerates fresh keywords** based on your offer, using the previous keywords as a reference to force variation. If keyword regeneration fails, the existing keywords are used as a fallback. Searches stuck in `running` for 2+ hours or `analyzing` for 3+ hours are automatically recovered.
+Each recurring run **regenerates fresh keywords** based on your offer, using the previous keywords as a reference to force variation. If keyword regeneration fails, the existing keywords are used as a fallback. Stalled searches are automatically detected and recovered.
 
 ### 5. Cost Estimation
 

@@ -111,7 +111,7 @@ For commenter-sourced leads, context includes both the original post and their r
 
 ### Knowledge Base Integration (RAG)
 
-When AI personalization runs, the system injects relevant context from your knowledge base (600 tokens) and tone examples (500 tokens) via semantic search. See [Knowledge Base](../conversations/knowledge-base.md) for how to upload and manage documents, and [Tone Examples](../conversations/tone-examples.md) for conversation samples.
+When AI personalization runs, the system injects relevant context from your knowledge base and tone examples via semantic search. See [Knowledge Base](../conversations/knowledge-base.md) for how to upload and manage documents, and [Tone Examples](../conversations/tone-examples.md) for conversation samples.
 
 ### Tone Control
 
