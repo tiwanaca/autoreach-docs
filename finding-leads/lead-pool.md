@@ -60,7 +60,6 @@ Lead Pool matching fires automatically in several scenarios:
 | **offer_update** | You create a new offer |
 | **search_complete** | Any search finishes: X tweet search, LinkedIn content search, LinkedIn seed search, or link extraction |
 | **target_user_extraction** | A follower extraction is started |
-| **manual** | You trigger a manual pool match from the Leads page |
 
 Note: Updating an existing offer re-embeds the ICP but does not automatically trigger a pool match job — only offer creation does.
 
@@ -111,7 +110,6 @@ You need an existing base of enriched leads in the global pool. Build one throug
 
 - Every new search triggers pool matching against the growing pool of enriched leads.
 - Your pool grows with every user's enrichment, making future matching more powerful.
-- You can manually trigger matching at any time from the Leads page.
 
 ## Best Practices
 
@@ -123,7 +121,7 @@ You need an existing base of enriched leads in the global pool. Build one throug
 
 4. **Monitor match quality.** Track response rates from Lead Pool matches and compare them to other discovery methods.
 
-5. **Refresh your offer periodically.** When your target market shifts, update your offer fields to change the ICP embedding. Manually trigger a pool match after updating.
+5. **Refresh your offer periodically.** When your target market shifts, update your offer fields to change the ICP embedding. Creating a new offer triggers a fresh pool match automatically.
 
 6. **Combine with other methods.** Use Lead Pool for rapid scaling while continuing X and LinkedIn searches for fresh intent signals.
 
@@ -132,7 +130,7 @@ You need an existing base of enriched leads in the global pool. Build one throug
 **Not getting any matches?**
 - Confirm that enriched leads exist in the pool (from your own or other users' searches).
 - Check that the enrichment pipeline has finished processing for recent searches.
-- Try triggering a manual pool match from the Leads page.
+- Try creating a new offer or running a search to trigger a pool match.
 - Review your offer's target audience, industries, and locations — these drive the ICP embedding.
 
 **Match quality seems low?**

@@ -241,17 +241,13 @@ View Profile → Connection Request (1 day) → Condition: Accepted? (retry 3d �
 
 To reuse an existing sequence design, click **Duplicate** from the sequence menu. You will be asked to provide a new name and select which accounts to use (X, LinkedIn, or both). The duplicate copies all steps, flow layout, AI prompts, and settings -- but starts with no enrolled leads, so you can use it for a different audience or offer.
 
-### Rescheduling Pending Actions
-
-If you change step delays or daily limits on an active sequence, you can recalculate the timing of all pending actions by clicking **Reschedule** in the sequence menu. This cancels all currently scheduled actions and recreates them with the updated timing. Only available for active sequences.
-
 ### Viewing the Lead Timeline
 
 Click on any lead within a sequence to see their individual action timeline. The timeline shows every step that has been completed, is currently pending, or has failed -- along with scheduled times, execution timestamps, and any error details. This is useful for understanding exactly where a specific lead is in the sequence flow.
 
 ### Retrying Failed Actions
 
-When an action fails (due to rate limits, network errors, or platform issues), you can retry it by clicking the retry button on the failed action in the lead timeline. For bulk retries, select multiple leads and use **Bulk Retry** to reset all failed actions for those leads at once. Retried actions are rescheduled and re-enter the execution queue.
+When an action fails (due to rate limits, network errors, or platform issues), you can retry it by clicking the retry button on the failed action in the lead timeline. Retried actions are rescheduled and re-enter the execution queue.
 
 ## Next Steps
 

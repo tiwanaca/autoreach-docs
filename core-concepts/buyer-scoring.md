@@ -129,10 +129,6 @@ If someone you think should score high is coming in low, check:
 
 Request a **Deep Analysis** rescore and review the scoring breakdown in the Buyer Intelligence dashboard to see exactly why they scored where they did.
 
-## Score Feedback
-
-If you disagree with how a lead was scored, you can provide feedback directly from the Buyers page. Mark a lead as "should be a buyer" or "should not be a buyer" to flag scoring gaps. When you have flagged several leads, AutoReach analyzes the patterns in your feedback -- looking at what the flagged leads have in common and where the scoring model missed. You can then apply the AI's suggestions to refine your offer definition (target audience, pain points, industries), and rescore the affected leads. Over time, this feedback loop tightens the alignment between your scoring model and your real-world buyer profile.
-
 ## Next Steps
 
 - **[Buyer States](buyer-states.md)**: Understand how scores translate into lead states and pipeline visibility

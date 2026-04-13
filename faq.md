@@ -168,7 +168,7 @@ AutoReach itself has a subscription fee. On top of that, you pay for AI API usag
 
 ### How do I reduce my AI costs?
 
-Four strategies: disable web enrichment (the most expensive per-lead operation), use lower-cost models for high-volume categories like classification and keyword generation, apply keyword filters before enrichment to reduce the number of leads entering the pipeline, and choose efficient fallback models since they contribute 15% of blended cost. See [Pipeline Cost Estimation](settings/cost-estimation.md) and [AI Model Configuration](settings/ai-models.md).
+Three strategies: disable web enrichment for leads that don't need it (it's the most expensive per-lead operation), use lower-cost models for high-volume categories like classification and keyword generation in your AI Model settings, and choose efficient fallback models since they contribute 15% of blended cost. You can also run smaller, more targeted searches rather than broad ones to reduce the number of leads entering the pipeline. See [Pipeline Cost Estimation](settings/cost-estimation.md) and [AI Model Configuration](settings/ai-models.md).
 
 ### How do I set up webhooks for meeting tracking?
 

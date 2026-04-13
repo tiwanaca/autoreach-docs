@@ -104,7 +104,7 @@ Do not attempt to bypass the pause. AutoReach will automatically resume activity
 
 **Likely Cause:** The actions are scheduled for a future time based on the delays configured in your flow.
 
-**Fix:** Check the scheduled time on each pending action. If the timing looks correct, just wait. If you want to change the timing, use the **Reschedule** option in the sequence menu to recalculate all pending action times based on current settings.
+**Fix:** Check the scheduled time on each pending action in the lead timeline. If the timing looks correct, just wait — actions execute at their scheduled time within your activity window. If the delays are wrong, pause the sequence, adjust step delays in the flow editor, then resume.
 
 ---
 
