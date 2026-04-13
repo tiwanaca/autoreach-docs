@@ -21,7 +21,13 @@ AutoReach's AI uses this information to:
 
 Go to **Offers** > **Create Offer**. The easiest way is to **add your website URL**. AutoReach will automatically extract your business details and pre-populate the offer fields. Review and modify what's needed, then save. You can also fill in all the details manually.
 
-Many fields include a **Regenerate** button that uses AI to generate or refine the content based on your website and description. The description field has an **Enhance** button to improve your text with AI.
+### AI-Assisted Offer Creation
+
+When you paste your website URL, AutoReach's AI visits your site and extracts key details -- your product description, target audience, pain points you solve, competitors, and relevant industries. This saves you from filling in every field manually. After extraction, review each field and adjust anything that does not match your positioning.
+
+Most fields also include a **Regenerate** button. Clicking it uses AI to generate or refine that specific field based on your website and description. For example, if the auto-detected pain points are too generic, click Regenerate to get a fresh set. The description field has a separate **Enhance** button that rewrites your text to be clearer and more specific. You can regenerate individual fields as many times as you like without affecting the others.
+
+> **Tip:** Start by pasting your URL and letting the AI do the first pass. Then spend a few minutes reviewing and tweaking -- this produces better results than writing everything from scratch.
 
 ## Offer Fields
 

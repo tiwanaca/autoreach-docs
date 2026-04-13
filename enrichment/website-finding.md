@@ -75,10 +75,7 @@ URLs without a protocol are auto-prepended with `https://`.
 
 Website finding does **not run automatically** when leads are added. It must be triggered explicitly:
 
-| Trigger | Description |
-|---|---|
-| `POST /api/enrich` with `website: true` | Manual enrichment -- select leads and enable website finding |
-| `POST /api/enrich/re-enrich-skipped` | Retry failed or skipped leads |
+To run website finding, select leads from the Leads page and enable the website finding option when triggering enrichment. You can also retry failed or skipped leads from the same interface.
 
 ## Cost
 

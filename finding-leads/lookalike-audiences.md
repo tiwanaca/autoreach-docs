@@ -10,7 +10,7 @@ Lookalike Audience Discovery follows three steps:
 
 AutoReach uses **OpenAI web search** (not just LLM knowledge) to find accounts whose audiences overlap with your target market. Based on your offer, it generates search queries, verifies candidates against live APIs, and returns a curated list of seed accounts.
 
-Discovery works on both X and LinkedIn from the same endpoint — the `channel` parameter switches behavior.
+Discovery works on both X and LinkedIn from the same interface — the channel selection switches behavior.
 
 **What it searches for:**
 
@@ -21,7 +21,7 @@ The AI searches across five audience categories:
 - **Thought leaders** — executives, analysts, and domain experts
 - **Vertical-specific** — niche accounts specific to your industry
 
-Each account is classified by type: `publication`, `association`, `vendor`, `analyst`, `executive`, or `community`.
+Each account is classified by type: publication, association, vendor, analyst, executive, or community.
 
 **How candidates are found:**
 - For X: the AI web-searches for `[name] twitter handle` or `x.com/[handle]`
@@ -31,7 +31,7 @@ Each account is classified by type: `publication`, `association`, `vendor`, `ana
 **Verification and filtering:**
 When a platform account ID is provided, each candidate is verified against the live API (X or LinkedIn). Accounts with fewer than 1,000 followers are discarded. Accounts not found on the platform are also discarded. Without an account ID, AI-suggested names are returned unverified.
 
-**Quantity:** The AI is asked for `maxResults × 2` candidates as a buffer (default `maxResults` is 10, so 20 candidates are requested). After verification and deduplication, up to `maxResults` are returned.
+**Quantity:** The AI searches for roughly double your requested number of candidates as a buffer (default is 10, so around 20 candidates are evaluated). After verification and deduplication, up to the requested number are returned.
 
 **Location filtering:** If your offer specifies preferred locations, this is passed to the AI prompt as a "LOCATION FOCUS" instruction to prioritize accounts with audiences in your target regions.
 
@@ -39,44 +39,40 @@ When a platform account ID is provided, each candidate is verified against the l
 
 Once seed accounts are saved, their followers are extracted through the standard extraction pipelines:
 
-- **X seeds:** A target user is created with `extraction_type='followers'`, feeding into the follower extraction pipeline. Under Autopilot, a default goal of 200 followers is set with enrichment and deep analysis enabled.
-- **LinkedIn seeds:** A LinkedIn seed search is created with a `follower_of_urn` filter, feeding into the LinkedIn People Search pipeline. Under Autopilot, `buyer_expansion` is enabled for daily role-rotation extraction.
+- **X seeds:** A target user is created for follower extraction, feeding into the follower extraction pipeline. Under Autopilot, a default goal of 200 followers is set with enrichment and deep analysis enabled.
+- **LinkedIn seeds:** A LinkedIn seed search is created with a follower filter, feeding into the LinkedIn People Search pipeline. Under Autopilot, buyer expansion is enabled for daily role-rotation extraction.
 
-In the **manual flow**, you discover seeds via the search endpoint, save them to your library, then separately trigger extraction. Under **Autopilot**, extraction is fully automatic after discovery.
+In the **manual flow**, you discover seeds from the Lookalike Audiences page, save them to your library, then separately trigger extraction. Under **Autopilot**, extraction is fully automatic after discovery.
 
 ### 3. Score and Add Leads
 
 Every extracted follower goes through the standard enrichment and scoring pipeline. There is no special filtering step in the lookalike service itself — all extracted followers are added as leads and scored by buyer intelligence like any other source. Low-scoring leads will land in Poor Fit or Disqualified states based on their scores.
 
-## Search Parameters
+## Search Options
 
-| Parameter | Default | Description |
-|---|---|---|
-| `offer_id` | — | Your offer (provides ICP context, location, competitors) |
-| `channel` | — | `'x'` or `'linkedin'` |
-| `max_results` | 10 | Max seed accounts to return |
-| `twitter_account_id` | — | Required for X (enables live verification) |
-| `linkedin_account_id` | — | Required for LinkedIn (enables live verification) |
-| `x_profile_url` | — | For profile-based discovery (find accounts similar to this person) |
-| `linkedin_profile_url` | — | For profile-based discovery (find accounts similar to this person) |
+When starting a lookalike search, you configure:
+
+- **Offer** -- select the offer that provides ICP context, location, and competitors
+- **Channel** -- choose X or LinkedIn
+- **Max results** -- how many seed accounts to return (default: 10)
+- **Platform account** -- select your connected X or LinkedIn account (required for live verification)
+- **Profile URL** (optional) -- enter a profile URL for profile-based discovery instead of offer-based
 
 **Two discovery modes:**
-- **Offer-based:** Provide `offer_id` — finds seeds matching your offer's ICP, domain, and audience
-- **Profile-based:** Provide a profile URL — finds accounts similar to a specific person
+- **Offer-based:** Select an offer -- finds seeds matching your offer's ICP, domain, and audience
+- **Profile-based:** Enter a profile URL -- finds accounts similar to a specific person
 
 These modes are mutually exclusive.
 
-## API Endpoints
+## Available Actions
 
-| Endpoint | Description |
-|---|---|
-| `POST /api/lookalikes/estimate-cost` | Pre-flight cost estimate |
-| `POST /api/lookalikes/search` | Discover seed accounts (returns SSE stream with progress + result events) |
-| `POST /api/lookalikes` | Save one or more discovered accounts to your library |
-| `GET /api/lookalikes` | List saved accounts with pagination and filtering |
-| `GET /api/lookalikes/:id` | Get a single saved account |
-| `DELETE /api/lookalikes/:id` | Delete a saved account |
-| `POST /api/lookalikes/bulk-delete` | Delete multiple saved accounts |
+From the Lookalike Audiences page, you can:
+
+- **Estimate cost** -- preview the estimated cost before running a search
+- **Search for seeds** -- discover seed accounts with real-time progress updates
+- **Save accounts** -- save one or more discovered accounts to your library
+- **Browse saved accounts** -- view your saved accounts with pagination and filtering
+- **Delete accounts** -- remove individual or multiple saved accounts
 
 ## Automatic Rotation Under Autopilot
 
@@ -92,7 +88,7 @@ This means Autopilot actively discovers fresh seed accounts — it does not just
 
 ## Cost Estimation
 
-Call `POST /api/lookalikes/estimate-cost` before running a search to preview estimated costs for the web search AI calls.
+Before running a search, use the cost estimation feature to preview estimated costs for the web search AI calls.
 
 ## Best Practices
 

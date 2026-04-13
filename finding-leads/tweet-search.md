@@ -9,7 +9,7 @@ Find high-intent prospects by searching X for tweets that match your offer. Auto
 When you start a search, you can either:
 
 - **Let AI generate queries:** Provide your offer and AutoReach generates 15-25 targeted keywords (short 2-4 word phrases in first-person conversational style) plus structured **intent clusters** — groups of queries organized by intent type. The AI selects 3-6 intent categories most relevant to your offer, with 2-6 queries per cluster. Competitor-specific keywords are generated and merged separately.
-- **Provide your own keywords:** Pass `keywords` and `search_query` directly to skip AI generation entirely.
+- **Provide your own keywords:** Enter your own keywords and search query directly to skip AI generation entirely.
 
 #### Intent Categories
 
@@ -41,22 +41,22 @@ Search results are deduplicated at two levels: per-search (in-memory Set) and gl
 
 | Parameter | Default | Description |
 |---|---|---|
-| `max_tweets` | 100 | Total tweets to collect across all query groups |
-| `days_back` | 60 | How far back to search |
-| `include_replies` | true | Extract commenters from matching tweets |
-| `max_replies` | 100 | Max replies to check per tweet |
-| `exclusions` | `['giveaway', 'retweet', 'airdrop']` | Terms to exclude from results |
-| `daily_recurring` | false | Enable automatic daily re-runs |
-| `pipeline_actions` | — | Options for `enrich` and `deepAnalysis` |
+| Max tweets | 100 | Total tweets to collect across all query groups |
+| Days back | 60 | How far back to search |
+| Include replies | enabled | Extract commenters from matching tweets |
+| Max replies | 100 | Max replies to check per tweet |
+| Exclusions | giveaway, retweet, airdrop | Terms to exclude from results |
+| Daily recurring | disabled | Enable automatic daily re-runs |
+| Enrichment options | -- | Whether to run enrichment and deep analysis on discovered leads |
 
 ### 3. Lead Extraction
 
 AutoReach pulls leads from two sources within each matching tweet:
 
 - **Tweet authors:** People posting directly about relevant topics, challenges, or needs
-- **Commenters:** Professionals engaging in the conversation (when `include_replies` is enabled). Replies are fetched for tweets with `reply_count > 0`, up to `max_replies` per tweet.
+- **Commenters:** Professionals engaging in the conversation (when reply extraction is enabled). Replies are fetched for tweets with replies, up to the configured max replies per tweet.
 
-All extracted prospects are converted to leads and queued for enrichment. An ICP matching step runs if your offer has a `target_audience` defined — ICP matches get a higher priority score (70 vs 50 for non-matches), but all prospects are added regardless. Scoring happens downstream during the enrichment pipeline.
+All extracted prospects are converted to leads and queued for enrichment. An ICP matching step runs if your offer has a target audience defined -- ICP matches get a higher priority score, but all prospects are added regardless. Scoring happens downstream during the enrichment pipeline.
 
 ### 4. Recurring Daily Searches
 
@@ -66,7 +66,7 @@ Each recurring run **regenerates fresh keywords** based on your offer, using the
 
 ### 5. Cost Estimation
 
-Before running a search, you can call the cost estimation endpoint (`POST /api/tweet-search/estimate-cost`) with your `offer_id` and `max_tweets` to preview the estimated AI and API costs.
+Before running a search, you can use the cost estimation feature to preview the estimated AI and API costs based on your selected offer and maximum tweet count.
 
 ## Best Practices for Keyword Selection
 
@@ -105,8 +105,8 @@ Intent clusters:
 
 **Not finding enough prospects?**
 - Broaden your search terms or include common synonyms
-- Increase `max_tweets` to collect more results
-- Increase `days_back` to search further into the past
+- Increase the max tweets setting to collect more results
+- Increase the days back setting to search further into the past
 - Check whether your target audience actively discusses these topics on X
 
 **Seeing duplicate prospects across searches?**

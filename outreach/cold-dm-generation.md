@@ -112,23 +112,13 @@ For commenter-sourced leads, context includes both the original post and their r
 
 ### Knowledge Base Integration (RAG)
 
-When AI personalization runs, the system injects relevant context via RAG:
-
-| Source | Token Budget | Description |
-|---|---|---|
-| Knowledge base | 600 tokens | Semantic search on stored documents/FAQs |
-| Tone examples | 500 tokens | Semantic search on prior conversation examples |
-| **Total** | **1,100 tokens** | Injected as `## KNOWLEDGE BASE CONTEXT` and `## TONE EXAMPLES` sections |
-
-Knowledge base documents are stored as vector embeddings and retrieved via semantic search.
+When AI personalization runs, the system injects relevant context from your knowledge base (600 tokens) and tone examples (500 tokens) via semantic search. See [Knowledge Base](../conversations/knowledge-base.md) for how to upload and manage documents, and [Tone Examples](../conversations/tone-examples.md) for conversation samples.
 
 ### Tone Control
 
-**Tone examples** are stored per-sequence with stage classification (opener_reply, discovery, objection_handling, soft_close, etc.). Each example contains a labeled conversation snippet. The system retrieves the most relevant examples via semantic search and injects them into the AI prompt.
+Tone examples and a tone summary are retrieved via semantic search and injected into the AI prompt to match your voice. See [Tone Examples](../conversations/tone-examples.md) for how to manage and customize them.
 
-**Tone summary** — a 150–250 word style guide extracted from tone examples by AI. Analyzes vocabulary, brevity, value-led approach, curiosity gaps, and anti-patterns (e.g., "Worth X?", non-contractions, filler openings).
-
-**Important rules** — hard constraints extracted from your AI prompt's "Important Rules" section. If not explicitly defined, the system extracts constraints automatically using a lightweight AI model.
+**Important rules** -- hard constraints extracted from your AI prompt's "Important Rules" section. If not explicitly defined, the system extracts constraints automatically.
 
 ### Custom Prompts
 
@@ -197,6 +187,6 @@ Set via the offer's `language` field. For non-English offers, the system prompt 
 ## Next Steps
 
 - **[Template Variables](template-variables.md)**: Full reference for all personalization variables
-- **[Simulation & A/B Testing](simulation.md)**: Preview DMs with real leads before sending
+- **[Simulation](simulation.md)**: Preview DMs with real leads before sending
 - **[Building Sequences](building-sequences.md)**: Integrate DM generation into multi-step campaigns
 - **[Supported Actions](supported-actions.md)**: When to use DM vs. other engagement types

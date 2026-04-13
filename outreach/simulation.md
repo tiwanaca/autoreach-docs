@@ -1,72 +1,40 @@
-# Simulation & A/B Testing
+# Conversation Simulator
 
-Before launching a sequence to hundreds of leads, test your messaging with the **Conversation Simulator**. Preview personalized DMs, see variable substitution in real-time, and experiment with follow-ups, all without sending anything live.
+Before launching a sequence to hundreds of leads, test your messaging with the Conversation Simulator. Preview personalized DMs, see variable substitution in real-time, and experiment with follow-ups -- all without sending anything live.
 
-## What is Simulation?
+For strategies on comparing message variants, see [A/B Testing](ab-testing.md).
 
-The **Conversation Simulator** is a three-step wizard that lets you:
+## What Is Simulation?
 
-1. **Select a sequence** - Pick any active or draft sequence
-2. **Choose a lead** - Pick a real lead from your database
-3. **Generate and preview DMs** - See 2 personalized variants with actual lead data
+The Conversation Simulator is a three-step wizard that lets you:
 
-You can then:
+1. **Select a sequence** -- pick any active, paused, or draft sequence
+2. **Choose a lead** -- pick a real lead from your database
+3. **Generate and preview DMs** -- see 2 personalized variants with actual lead data
 
-- Compare variants (side-by-side)
-- Edit either variant
-- Reply as the lead and see how AI responds
-- Preview the full conversation flow
-
-All in a safe preview environment. Nothing is sent.
+You can then compare variants side-by-side, edit either variant, reply as the lead to see how AI responds, and preview the full conversation flow. Nothing is sent.
 
 ## Starting the Simulator
 
-### Option 1: From Sequence Builder
+**From Sequence Builder:** Open a sequence in edit mode and click the **Simulate** button.
 
-1. Open a sequence in edit mode
-2. Click **Simulate** button (top right or in-flow)
-3. Follow the 3-step wizard
+**From Sequences List:** Go to **Outreach > Sequences** and click the **Simulate** icon next to any sequence.
 
-### Option 2: From Sequences List
+## Step 1: Select Sequence
 
-1. Go to **Outreach** > **Sequences**
-2. Click the **Simulate** icon next to any sequence
-3. Start the wizard
+Choose which sequence to simulate. Active, paused, and draft sequences are all available.
 
-## Step-by-Step: Running a Simulation
+## Step 2: Choose Lead
 
-### Step 1: Select Sequence
+Search or browse leads to simulate with. You can search by name, username, company, or email.
 
-Choose which sequence to simulate:
+> **Tip:** Pick diverse leads -- simulate with 3-5 leads across different roles, industries, and company sizes. Include at least one lead with minimal enrichment data to ensure messages still read well when data is sparse.
 
-- **Active sequences** (running now)
-- **Paused sequences** (can simulate, won't send)
-- **Draft sequences** (test before launching)
+Once selected, you see the lead's profile: name, role, company, followers, recent activity, and other enrichment data.
 
-Pick the sequence you want to preview.
+## Step 3: Generate DM
 
-### Step 2: Choose Lead
-
-Search or browse leads to simulate with:
-
-**Search by:**
-
-- Name (e.g., "Alice")
-- Username (e.g., "@alice_eng")
-- Company (e.g., "Stripe")
-- Email
-
-**Tips:**
-
-- **Pick diverse leads** - Simulate with 3-5 leads with different roles/companies
-- **Test edge cases** - Include a lead with minimal enrichment data (no company, bio, etc.)
-- **Use high-value leads** - If you're reaching VPs, simulate with a VP to see how the DM feels
-
-Once selected, you see the lead's profile: name, role, company, followers, recent activity, etc.
-
-### Step 3: Generate DM
-
-AutoReach generates **2 DM variants** personalized to the selected lead:
+AutoReach generates 2 DM variants personalized to the selected lead. For example:
 
 **Variant 1:**
 
@@ -77,8 +45,6 @@ I came across your profile and saw you're leading engineering at Stripe.
 We help companies like Stripe improve developer productivity.
 
 Worth a quick chat?
-
-- {{user_name}}
 ```
 
 **Variant 2:**
@@ -95,310 +61,49 @@ Open to a 15-min conversation?
 
 ## Previewing Variants
 
-### Side-by-Side Comparison
+The simulator shows both variants side-by-side so you can compare tone, check personalization, spot cliches, and evaluate length.
 
-The simulator shows both variants so you can:
+**Variable tooltips:** Hover over any variable (like `{{company}}`) to see the variable name, the actual value pulled for this lead, and the data source.
 
-- **Compare tone** - Is one too salesy? Too casual?
-- **Check personalization** - Are variables substituted correctly?
-- **Spot cliches** - Does either feel robotic or overused?
-- **Evaluate length** - Which length gets better response rates for this audience?
-
-### Variable Substitution Display
-
-Hover over any variable (like `{{company}}`) to see:
-
-- The variable name
-- The actual value pulled for this lead
-- The data source (enrichment, profile, etc.)
-
-**Example:**
-
-```
-{{company}} = Stripe (from LinkedIn profile)
-{{role}} = VP Engineering (from enrichment data)
-{{pain_point}} = developer productivity (inferred from recent posts)
-```
-
-### Check for Missing Data
-
-If a variable has no data, you'll see a warning:
-
-```
-Warning: {{tech_stack}} has no data for this lead.
-```
-
-The full phrase containing the variable is omitted in the final message.
-
-> **Tip:** Test simulations with a few leads who have incomplete data to ensure messages still read well.
+**Missing data warnings:** If a variable has no data for the selected lead, you see a warning. The phrase containing that variable is omitted in the final message.
 
 ## Editing Variants
 
-Don't like either variant? **Edit them directly.**
-
-Click **Edit** on either variant and modify:
-
-- Reword sentences
-- Change tone
-- Adjust the ask
-- Remove cliches
-
-Changes are preview-only and do not update your sequence template. Use these edits to inform your actual template in the Sequence Settings.
+Click **Edit** on either variant to reword sentences, change tone, adjust the ask, or remove cliches. Changes are preview-only and do not update your sequence template.
 
 ## Testing AI Responses
 
-After previewing the DM, test how AI responds to replies:
+After previewing the DM, test how AI responds to different replies:
 
-### Step 1: Type a Lead Reply
+1. In the "Lead Reply" field, type a message as if you are the lead
+2. AutoReach generates an AI response based on the lead's reply, your DM style, your knowledge base, and sequence AI settings
+3. Try different reply types to stress-test your AI:
+   - **Positive reply** ("This looks great!") -- does AI offer next steps?
+   - **Objection** ("Too expensive.") -- does AI handle it gracefully?
+   - **Question** ("How is this different from X?") -- does AI provide a credible comparison?
+   - **Silence** (no reply after 3 days) -- does the sequence move to follow-up?
 
-In the "Lead Reply" field, type a message as if you're the lead:
-
-**Example replies:**
-
-```
-"Looks interesting, but we're not hiring right now."
-
-"This is perfect! When are you free?"
-
-"I'm not sure what you're offering. Can you explain more?"
-```
-
-### Step 2: See AI Response
-
-AutoReach generates an AI response based on:
-
-- The lead's reply
-- Your DM style
-- Your knowledge base
-- Sequence AI settings
-
-**Example:**
-
-**Your DM:**
-
-```
-Hi Alice,
-
-I saw you're leading engineering at Stripe.
-We help companies improve developer productivity.
-
-Worth a quick chat?
-```
-
-**Lead replies:**
-
-```
-"What exactly do you do? Not clear from your message."
-```
-
-**AI responds:**
-
-```
-Great question! We help high-growth engineering teams reduce
-the time it takes to ship features, from weeks to days.
-
-We've worked with companies like Stripe to streamline developer workflows.
-Would a 15-min call to explore if we're a fit make sense?
-```
-
-> **Note:** This is a preview of what your AI would actually say if this sequence were live. Edit your AI prompt in **Sequence Settings** if the tone feels off.
-
-### Step 3: Iterate
-
-Try different replies to stress-test your AI:
-
-- **Positive reply:** "This looks great!"
-  - Does AI offer next steps (calendar link, call time)?
-- **Objection:** "Too expensive."
-  - Does AI handle the objection gracefully?
-- **Question:** "How is this different from X?"
-  - Does AI provide a credible comparison?
-- **Silence:** No reply after 3 days
-  - Does sequence move to follow-up or stop?
-
----
-
-## Research Integration
-
-AutoReach uses lead profile data, recent activity, and your knowledge base to personalize messages. The more enrichment data available for a lead, the more specific and informed their simulated message will be.
-
-> **Note:** The more enrichment data you have on a lead, the more personalized their simulated message will be.
+> **Tip:** If the AI tone feels off, edit your AI Prompt in Sequence Settings. See [Cold DM Generation](cold-dm-generation.md) for guidance on AI prompts.
 
 ## Sequence Settings Panel
 
 While simulating, you can edit your actual sequence settings:
 
-### DM Template
-
-Click **Edit Template** to modify the message template for your entire sequence. Changes apply to all future sends.
-
-### Insert Variable
-
-Use the **Insert Variable** dropdown to browse and insert variables into your template without memorizing syntax.
-
-### AI Prompt
-
-Adjust how AI responds in this sequence:
-
-- Tone (formal, casual, friendly)
-- Instruction (be helpful, book a call, provide value)
-- Max responses per conversation
-
-See [Cold DM Generation](cold-dm-generation.md) for more on AI prompts.
-
----
-
-## A/B Testing Strategy
-
-Use the simulator to test messaging variations **before sending**:
-
-### Test 1: Soft vs. Direct Ask
-
-**Variant A (Soft):**
-
-```
-Hi {{first_name}},
-
-Saw your post on {{topic}}. Would love to connect and learn
-how you're thinking about it.
-```
-
-**Variant B (Direct):**
-
-```
-{{first_name}},
-
-We help {{company_size}} companies improve {{pain_point}}.
-Interested in a quick conversation?
-```
-
-Simulate both with 3-5 different leads. Which feels more authentic for your audience?
-
-### Test 2: Long vs. Short
-
-**Variant A (Long):**
-
-```
-Hi {{first_name}},
-
-I've been following {{company}} for a while and really impressed
-by how you're building {{achievement}}.
-
-In my experience working with similar companies, one thing that often
-holds teams back is {{pain_point}}. We've built a framework to help with this.
-
-Would you be open to a 20-min conversation to explore?
-```
-
-**Variant B (Short):**
-
-```
-{{first_name}},
-
-Impressed by {{company}}'s progress. We help with {{pain_point}}.
-Worth a chat?
-```
-
-Simulate with your target audience. Short and punchy, or long and detailed?
-
-### Test 3: Reference vs. No Reference
-
-**Variant A (Reference):**
-
-```
-{{first_name}},
-
-Noticed your post about {{recent_topic}}. We've worked with
-{{example_company}} on the same challenge.
-
-Worth a conversation?
-```
-
-**Variant B (Generic):**
-
-```
-{{first_name}},
-
-We help companies like {{company}} improve {{pain_point}}.
-Interested?
-```
-
-Does referencing their specific activity/post get better simulated responses?
-
-### Test 4: Tone
-
-**Variant A (Professional):**
-
-```
-Dear {{first_name}},
-
-I would like to discuss how we can assist {{company}}
-in improving {{pain_point}}.
-```
-
-**Variant B (Casual):**
-
-```
-Hey {{first_name}},
-
-Been following {{company}}'s journey. Think we could help
-with {{pain_point}}.
-
-Worth exploring?
-```
-
----
-
-## Tips for Effective Simulation
-
-1. **Simulate with 5+ different leads** - Not just one. Different roles, industries, company sizes
-2. **Include edge cases** - Leads with minimal data; leads from unexpected companies
-3. **Test AI responses** - Reply as different lead personas (eager, skeptical, uninterested)
-4. **Edit and iterate** - Don't accept the first variant; try edits until it feels right
-5. **Take notes** - Document which messaging patterns resonate in your simulations
-6. **Compare to your past success** - If you've sent campaigns before, reference what worked
-7. **Get feedback** - Ask teammates to review simulated conversations
-8. **Re-simulate before scale** - Before launching to 1000 leads, simulate again
+- **Edit Template** -- modify the message template for the entire sequence
+- **Insert Variable** -- browse and insert variables without memorizing syntax
+- **AI Prompt** -- adjust tone, instructions, and max responses per conversation
 
 ## Common Issues
 
-### "Variables aren't substituting correctly"
+**Variables showing as blank:** Check that the lead has the relevant data in their profile. Use the variable hover tooltip to see what data is available. Try a different lead with more complete data. See [Template Variables](template-variables.md) for troubleshooting.
 
-**Problem:** `{{company}}` shows as blank in the simulation.
+**AI responses feel generic:** Check your AI Prompt in Sequence Settings. Provide more context in your knowledge base. Add tone examples to guide the AI voice.
 
-**Solution:**
-
-- Check that the lead has company data in their profile
-- Use the Variable Hover tooltip to see what data is available
-- Test with a different lead who has more complete data
-- See [Template Variables](template-variables.md) for troubleshooting
-
-### "AI responses feel generic"
-
-**Problem:** Lead replies and AI response is boring or off-topic.
-
-**Solution:**
-
-- Check your AI Prompt in Sequence Settings (is it specific?)
-- Provide more context in your knowledge base
-- Add tone examples in Sequence Settings to guide the AI
-- Try different lead replies to see if AI responds better to specific objections
-
-### "Simulation doesn't feel representative"
-
-**Problem:** You're testing with VPs but the simulator only shows ICs (individual contributors).
-
-**Solution:**
-
-- Manually search for VP-level leads in Step 2
-- Run multiple simulations with diverse leads
-- Check that your lead database is accurate and up-to-date
-
----
+**Simulation doesn't feel representative:** Search for leads that match your actual target audience in Step 2. Run multiple simulations with diverse leads.
 
 ## Next Steps
 
-- Learn [Building Sequences](building-sequences.md) to apply simulations to real campaigns
-- Explore [Template Variables](template-variables.md) to understand all available data
-- See [Cold DM Generation](cold-dm-generation.md) for AI generation best practices
-- Review [Supported Actions](supported-actions.md) to test other action types
+- **[A/B Testing](ab-testing.md)**: Strategies for comparing message variants
+- **[Building Sequences](building-sequences.md)**: Apply simulations to real campaigns
+- **[Template Variables](template-variables.md)**: All available personalization data
+- **[Cold DM Generation](cold-dm-generation.md)**: AI generation best practices

@@ -60,7 +60,7 @@ Lead Pool matching fires automatically in several scenarios:
 | **offer_update** | You create a new offer |
 | **search_complete** | Any search finishes: X tweet search, LinkedIn content search, LinkedIn seed search, or link extraction |
 | **target_user_extraction** | A follower extraction is started |
-| **manual** | You trigger matching via `POST /api/leads/pool-match` |
+| **manual** | You trigger a manual pool match from the Leads page |
 
 Note: Updating an existing offer re-embeds the ICP but does not automatically trigger a pool match job — only offer creation does.
 
@@ -77,9 +77,9 @@ The platform API cost (Twitter/LinkedIn calls) is zero because leads are already
 
 | Parameter | Default | Description |
 |---|---|---|
-| `maxCandidates` | 100 | Maximum matches to return per run |
-| `platforms` | — | Optional filter: `['twitter']`, `['linkedin']`, or both |
-| `similarity_threshold` | 0.25 | Minimum cosine similarity score |
+| Max candidates | 100 | Maximum matches to return per run |
+| Platforms | -- | Optional filter: X only, LinkedIn only, or both |
+| Similarity threshold | 0.25 | Minimum cosine similarity score |
 
 The worker does not pass platform filters by default — all platforms are matched unless explicitly filtered via the manual API endpoint.
 
@@ -87,7 +87,7 @@ The worker does not pass platform filters by default — all platforms are match
 
 In addition to cloning new leads from the pool, the matching process also calls `match_existing_leads_for_offer` to find leads the user already has that may match a different offer. These are rescored against the new offer without cloning.
 
-The total across cloned + rescored leads never exceeds the `maxCandidates` limit.
+The total across cloned + rescored leads never exceeds the max candidates limit.
 
 ## Getting Started
 
@@ -111,7 +111,7 @@ You need an existing base of enriched leads in the global pool. Build one throug
 
 - Every new search triggers pool matching against the growing pool of enriched leads.
 - Your pool grows with every user's enrichment, making future matching more powerful.
-- You can manually trigger matching at any time via the dashboard or API.
+- You can manually trigger matching at any time from the Leads page.
 
 ## Best Practices
 
@@ -132,7 +132,7 @@ You need an existing base of enriched leads in the global pool. Build one throug
 **Not getting any matches?**
 - Confirm that enriched leads exist in the pool (from your own or other users' searches).
 - Check that the enrichment pipeline has finished processing for recent searches.
-- Try triggering a manual pool match via `POST /api/leads/pool-match`.
+- Try triggering a manual pool match from the Leads page.
 - Review your offer's target audience, industries, and locations — these drive the ICP embedding.
 
 **Match quality seems low?**
@@ -143,7 +143,7 @@ You need an existing base of enriched leads in the global pool. Build one throug
 **Getting too many irrelevant matches?**
 - Tighten your target audience and preferred locations.
 - Use platform filtering to focus on X-only or LinkedIn-only leads.
-- Lower the `maxCandidates` limit.
+- Lower the max candidates limit.
 
 ## Next Steps
 

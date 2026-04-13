@@ -31,13 +31,7 @@ Crash recovery: A uniqueness constraint on each conversation and inbound message
 
 ## RAG Context
 
-Each response includes relevant context retrieved via semantic search:
-
-| Source | Token Budget | Description |
-|---|---|---|
-| Knowledge base | 600 tokens | Documents matching the conversation topic, scoped to the offer |
-| Tone examples | 500 tokens | Conversation examples matching the current stage and context |
-| **Total** | **1,100 tokens** | Injected into the system prompt |
+Each response includes relevant context retrieved via semantic search from your knowledge base (600 tokens) and tone examples (500 tokens). See [Knowledge Base](knowledge-base.md) for document management and [Tone Examples](tone-examples.md) for conversation samples.
 
 ## Stage-Specific Generation
 

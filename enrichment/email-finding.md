@@ -62,16 +62,17 @@ There is no SMTP verification, MX record check, or catch-all detection performed
 
 Email finding does **not run automatically** when leads are added. It must be triggered explicitly:
 
-| Trigger | Description |
-|---|---|
-| `POST /api/enrich` with `email: true` | Manual enrichment -- select leads and enable email finding |
-| `POST /api/enrich/re-enrich-skipped` | Retry failed or skipped leads |
+To run email finding, select leads from the Leads page and enable the email finding option when triggering enrichment. You can also retry failed or skipped leads from the same interface.
 
 It does not re-run on leads that already have an email unless manually refreshed.
 
 ## Setup
 
-Email finding requires your own Findymail API key. Add it in your AutoReach settings. Without a configured key, email finding jobs will skip.
+Email finding requires your own Findymail API key. Without a configured key, email finding jobs will skip.
+
+### Connecting Your Findymail API Key
+
+To enable email finding, go to **Settings > AI & Models** and enter your Findymail API key in the email discovery field. Once saved, AutoReach will use Findymail's database to look up verified work email addresses for your leads. Findymail typically achieves higher discovery rates than generic email guessing tools because it maintains a large database of verified business emails. If you do not have a Findymail account, you can sign up at findymail.com and add your key afterward.
 
 ## Cost
 

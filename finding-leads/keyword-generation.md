@@ -104,21 +104,13 @@ When you start a LinkedIn content search, you select which intent categories to 
 - Queries are professional/B2B-oriented phrases
 - Filtered by user-selected intent categories at search time
 
-## Preview Endpoints
+## Previewing Keywords
 
-You can preview generated keywords before running a search:
-
-| Endpoint | What It Returns |
-|---|---|
-| `POST /api/tweet-search/generate-keywords` | X keywords and search query |
-| `POST /api/tweet-search/generate-queries` | X intent clusters with operators |
-| `POST /api/linkedin-search/generate-keywords` | LinkedIn queries organized by intent |
-
-These are preview-only — they return results without starting a search.
+You can preview generated keywords before running a search. The keyword generator is available when configuring X tweet searches and LinkedIn content searches. Previewing lets you review the AI-generated keywords and queries without starting a search, so you can adjust your offer description or search signals if needed.
 
 ## Keyword Overrides
 
-For X searches, you can provide your own `keywords` and `search_query` at search start time to skip AI generation entirely. There is no endpoint to edit keywords on an already-saved search — overrides are applied at search creation only.
+For X searches, you can provide your own keywords and search query at search start time to skip AI generation entirely. There is no way to edit keywords on an already-saved search -- overrides are applied at search creation only.
 
 LinkedIn searches always generate queries server-side. You cannot provide custom queries directly.
 
@@ -130,12 +122,12 @@ When daily recurring searches are enabled, keywords are **regenerated fresh** on
 - Calls `regenerateKeywords()` with the previous keywords and query
 - The AI prompt includes a "KEYWORD ROTATION" block listing all previous keywords, instructing it to avoid repeating them
 - Falls back to existing keywords if regeneration fails
-- The search record's `generated_keywords` and `search_query` are updated in the database
+- The search record's keywords and query are updated automatically
 
 **LinkedIn recurring regeneration:**
 - Calls `regenerateLinkedInQueries()` with previous queries
 - Same rotation pattern: prompt includes previous queries, instructs different angles
-- Result is filtered by the search's configured `intent_categories`
+- Result is filtered by the search's configured intent categories
 - Niche jargon queries (up to 5) are appended after regeneration
 - Falls back to `generateLinkedInKeywords()` on error
 
@@ -189,7 +181,7 @@ The recurring search scheduler runs every hour. Searches re-trigger only when la
 
 **Not getting enough results?**
 - Broaden search terms or include synonym variations.
-- Increase `days_back` on the search to look further into the past.
+- Increase the days back setting on the search to look further into the past.
 - Verify that your target audience actively discusses these topics online.
 
 **Keywords seem too generic?**

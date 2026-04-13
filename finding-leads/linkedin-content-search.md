@@ -29,7 +29,7 @@ AutoReach searches LinkedIn's content feed to find posts matching your queries. 
 1. An initial search request goes to LinkedIn's content search endpoint
 2. Pagination fetches 3 results per page
 3. Post activity URNs are extracted from the response stream
-4. Pagination continues until `posts_per_intent` is reached, or a maximum of 15 pages per query
+4. Pagination continues until the configured posts per intent limit is reached, or a maximum of 15 pages per query
 
 Delays between pages (2.5s) and between queries (4s) are applied to respect rate limits.
 
@@ -39,13 +39,13 @@ For each discovered post URN, AutoReach fetches the full post details via Linked
 
 ### 4. Commenter Extraction
 
-When `include_commenters` is enabled (the default), AutoReach fetches comments on each discovered post via LinkedIn's API. For each commenter, the following data is extracted:
+When commenter extraction is enabled (the default), AutoReach fetches comments on each discovered post via LinkedIn's API. For each commenter, the following data is extracted:
 
 - Name, headline, profile URL, and profile image
 - Comment text, comment URN, and creation date
 - Parent post context (text, author, URL)
 
-Maximum comments per post is controlled by the `max_comments` parameter (default: 100).
+Maximum comments per post is controlled by the max comments setting (default: 100).
 
 > **Note:** LinkedIn commenters are often decision-makers actively engaging with relevant content, which is a strong buying signal.
 
@@ -61,19 +61,19 @@ You can enable any content search to run on a daily recurring schedule. The sche
 
 | Parameter | Default | Description |
 |---|---|---|
-| `intent_categories` | *(required)* | Which intent categories to search |
-| `posts_per_intent` | 25 | Max posts to collect per intent category |
-| `include_commenters` | true | Extract commenters from discovered posts |
-| `max_comments` | 100 | Max comments to fetch per post |
-| `days_back` | 30 | How far back to search |
-| `daily_recurring` | false | Enable automatic daily re-runs |
-| `pipeline_actions` | — | Options for `enrich` and `deepAnalysis` |
-| `max_jobs_per_role` | — | For hiring signals: max job postings per role |
-| `max_companies` | — | For hiring signals: max companies to process |
+| Intent categories | *(required)* | Which intent categories to search |
+| Posts per intent | 25 | Max posts to collect per intent category |
+| Include commenters | enabled | Extract commenters from discovered posts |
+| Max comments | 100 | Max comments to fetch per post |
+| Days back | 30 | How far back to search |
+| Daily recurring | disabled | Enable automatic daily re-runs |
+| Enrichment options | -- | Whether to run enrichment and deep analysis on discovered leads |
+| Max jobs per role | -- | For hiring signals: max job postings per role |
+| Max companies | -- | For hiring signals: max companies to process |
 
 ## Cost Estimation
 
-Before running a search, call the cost estimation endpoint (`POST /api/linkedin-search/estimate-cost`) with your `offer_id`, `intent_categories`, `posts_per_intent`, and `include_commenters` to preview estimated costs. Returns `min_cost`, `max_cost`, and a detailed breakdown.
+Before running a search, use the cost estimation feature to preview estimated costs. The estimate shows minimum and maximum costs with a detailed breakdown based on your selected intent categories, posts per intent, and commenter settings.
 
 ## Progress Tracking
 
@@ -94,7 +94,7 @@ While a content search runs, progress is tracked and updated to the database eve
 
 3. **Add search signals.** Define 5-8 natural language search signals based on real prospect conversations you've had. These get highest priority in query generation.
 
-4. **Keep commenters on.** LinkedIn commenters are often highly engaged decision-makers. Leave `include_commenters` enabled.
+4. **Keep commenters on.** LinkedIn commenters are often highly engaged decision-makers. Leave commenter extraction enabled.
 
 5. **Run recurring searches.** Set up daily LinkedIn content searches to capture new prospects continuously with fresh query rotation.
 
@@ -126,7 +126,7 @@ While a content search runs, progress is tracked and updated to the database eve
 
 **Not finding enough prospects?**
 - Add more intent categories
-- Increase `posts_per_intent` to collect more results
+- Increase posts per intent to collect more results
 - Include common pain point variations in your search signals
 - Check if your target audience is active on LinkedIn
 

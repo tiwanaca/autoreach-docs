@@ -13,6 +13,14 @@ Your Inbox displays all conversations in a single, paginated list. Each conversa
 - AI status indicator
 - Message count
 
+### Starring Conversations
+
+You can star important conversations to keep them easy to find. Click the star icon on any conversation to toggle it. Starred conversations can be used as a personal shortlist for high-priority leads or deals in progress.
+
+### Unread Indicators
+
+New inbound messages are tracked automatically. The Inbox shows an unread count so you can see at a glance how many conversations have new messages since you last checked. This count updates in real time as new messages arrive.
+
 ### Filtering
 
 Filter conversations by:
@@ -21,7 +29,7 @@ Filter conversations by:
 - **Platform** (X or LinkedIn)
 - **Search query** (lead name)
 
-An unread count endpoint tracks new inbound messages since a given timestamp.
+Combine filters to narrow your view -- for example, show only LinkedIn conversations with a "Replied" status to focus on warm leads on that platform.
 
 ## Real-Time Message Detection
 

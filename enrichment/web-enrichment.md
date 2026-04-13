@@ -120,12 +120,7 @@ Web enrichment data is only included in scoring context when confidence exceeds 
 
 Web enrichment is **not part of the standard pipeline** and does **not run automatically** when leads are added. It must be triggered explicitly.
 
-| Trigger | Endpoint | Description |
-|---|---|---|
-| Manual enrichment | `POST /api/enrich` | Select leads and set `web_enrich: true` |
-| Cost estimation | `POST /api/enrich/estimate` | Preview cost before enriching |
-| Re-enrich skipped | `POST /api/enrich/re-enrich-skipped` | Retry failed or skipped leads |
-| Status check | `GET /api/enrich/web-enrich/status` | Check progress of web enrichment jobs |
+You can trigger web enrichment manually from the Leads page by selecting leads and enabling the web enrichment option. You can also preview costs before enriching, retry failed or skipped leads, and check enrichment progress -- all from the same interface.
 
 ## Cost
 

@@ -92,23 +92,9 @@ If the limit is reached, the action is rescheduled for the next day at a random 
 
 ## Weekly Connection Limits (LinkedIn)
 
-LinkedIn connection requests have a separate weekly limit tracked per-account (not per-sequence).
+LinkedIn connection requests have a separate weekly limit tracked per-account (not per-sequence), resetting Monday 00:00 UTC. When the limit is reached, pending connection request actions are batch-deferred to the following Monday (spaced 15-25 minutes apart). Other action types continue normally and leads stay in their sequences.
 
-| Setting | Value |
-|---|---|
-| Default limit | 100 per week |
-| Per-account override | Configurable per LinkedIn account |
-| Reset | Monday 00:00 UTC |
-
-When the weekly limit is reached:
-
-1. The account is flagged as having reached its connection limit
-2. All pending connection request actions across sequences are **batch-deferred** to the following Monday
-3. Deferred actions are spaced 15–25 minutes apart on Monday (anti-burst)
-4. Other action types (DMs, likes, follows) continue normally
-5. Leads stay in their sequences — they are not removed
-
-The limit is per-account and configurable. There is no automatic tier detection — set the weekly connection limit to match your account type (Free ~100, Premium ~150, Sales Navigator ~200).
+Set the weekly connection limit on each LinkedIn account to match your account type. See [Supported Actions](supported-actions.md#connection-request) for the limits by account type and detailed deferral behavior.
 
 ## Human Delay Simulation
 

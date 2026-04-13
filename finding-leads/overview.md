@@ -135,6 +135,26 @@ The **buyer expansion scheduler** is a background autopilot that runs daily to c
 
 Cross-platform matching (finding X profiles for LinkedIn leads and vice versa) is **not a standalone discovery method**. It runs automatically during the enrichment pipeline when a lead enters from any source. See [Cross-Platform Matching](cross-platform-matching.md) for details on how it works.
 
+## Managing Your Leads
+
+Once leads are in your pipeline, AutoReach provides tools to organize, export, import, and clean up your lead data.
+
+### CSV Export
+
+Select leads from your pipeline and export them as a CSV file. You can export up to 50,000 leads at once. The export includes profile information, scores, contact details, source data, and enrichment results. Use filters to narrow down which leads to include before exporting.
+
+### CSV Import
+
+Upload a CSV file containing X handles, LinkedIn URLs, or email addresses to bulk-import leads. AutoReach previews the import before processing, showing you how many leads will be added and flagging any duplicates already in your pipeline. You can choose to skip duplicates or import them anyway. Imported leads are automatically queued for enrichment and scoring.
+
+### Bulk Delete
+
+Select multiple leads and delete them in bulk. This is useful for cleaning up low-quality leads, removing duplicates, or clearing out test data. Deleted leads are soft-deleted and no longer appear in your pipeline or sequences.
+
+### Lead Pool Matching
+
+The Lead Pool contains pre-enriched profiles that are shared across the platform. When you create or update an offer, AutoReach automatically checks the pool for leads that match your ICP using vector similarity. You can also trigger a manual pool match at any time. Matching leads are imported into your pipeline instantly with scores already calculated -- no waiting for enrichment.
+
 ## Choosing the Right Method
 
 | Method | Platform | Best For |

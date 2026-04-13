@@ -35,6 +35,38 @@ Each category can be customized with a primary and fallback model selection. The
 
 If the primary model fails (timeout, rate limit, API error), AutoReach automatically switches to the fallback model for that operation. This provides resilience without manual intervention.
 
+In practice, about 85% of requests succeed on the primary model, and about 15% fall back to the secondary model. You do not need to do anything when a fallback occurs -- the system handles it automatically and the output is still delivered. The only visible effect is that your cost reflects the blended rate of both models rather than just the primary.
+
+If both the primary and fallback models fail (rare, but possible during provider outages), the operation is retried later.
+
+## When to Change Model Settings
+
+**Good reasons to change models:**
+- You want to reduce costs by using a cheaper model for high-volume categories like scoring or classification
+- You want higher quality DMs or posts and are willing to pay more for a premium content writing model
+- You have API keys for only one provider and need all categories to use that provider's models
+
+**When to leave defaults alone:**
+- If you are just getting started, the defaults are a solid starting point
+- If your current output quality and costs are acceptable, there is no need to experiment
+- Web search categories are constrained to specific providers and generally should not be changed
+
+## Cost Implications
+
+Model pricing varies significantly. As a rough guide:
+
+- **Nano-class models** are the cheapest option -- ideal for scoring, classification, and keyword generation where volume is high
+- **Mid-tier models** (Sonnet-class) offer a good balance and work well as fallback models
+- **Premium models** (Opus-class) deliver the highest quality but cost considerably more per token -- reserve these for content writing if budget is a concern
+
+Since scoring and classification run on every lead while content writing only runs when sending messages, moving scoring to a cheaper model produces larger savings than optimizing content writing.
+
+## Recommended Configurations
+
+**Budget-conscious setup:** Use nano models for scoring, classification, and keyword generation. Use a mid-tier model for content writing. This minimizes per-lead costs while keeping message quality reasonable.
+
+**Quality-focused setup:** Use a premium model for content writing (DMs, posts, replies). Keep scoring and classification on nano or mid-tier models -- these tasks do not benefit as much from premium models. This gives you the best message quality without overspending on scoring.
+
 ## Settings UI
 
 The AI Configuration section in Settings shows all 11 categories with primary and fallback dropdowns. Changes take effect immediately and are validated on save.

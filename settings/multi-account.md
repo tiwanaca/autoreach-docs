@@ -32,19 +32,7 @@ LinkedIn accounts connect through the Chrome Extension, same as X.
 
 ### Connection Limits
 
-LinkedIn connection requests have a **weekly limit** tracked per-account:
-
-| Account Type | Default Weekly Limit |
-|---|---|
-| Free | 100 |
-| Premium | 150 |
-| Sales Navigator | 200 |
-
-Set the weekly connection limit on each LinkedIn account to match your account type.
-
-**Weekly reset**: Monday 00:00 UTC. The counter resets automatically at the start of each week.
-
-When the weekly limit is reached, pending connection request actions are deferred to **next Monday** at a random time between 09:00–12:59 UTC.
+LinkedIn connection requests have a weekly limit tracked per-account. Set the weekly connection limit on each LinkedIn account to match your account type (Free, Premium, or Sales Navigator). See [Supported Actions](../outreach/supported-actions.md#connection-request) for the full limits table and deferral behavior.
 
 ### Proxy Configuration
 

@@ -98,17 +98,7 @@ Outreach only executes during the configured activity window. Defaults to **09:0
 
 ## Daily Send Limits
 
-Configurable limits protect account health:
-
-| Limit | Default | Max |
-|---|---|---|
-| Combined daily actions | 20 | 100 |
-| LinkedIn daily actions | 20 | 100 |
-| X daily actions | 40 | 100 |
-
-Limits reset at midnight in the user's timezone. Counts are checked before each action. If a limit is reached, remaining actions are deferred to the next day.
-
-LinkedIn connection requests have separate weekly tracking.
+Each sequence has configurable daily action limits that protect account health. Limits reset at midnight in your timezone. If a limit is reached, remaining actions are deferred to the next day. See [Scheduling](scheduling.md) for the full limits table, enforcement details, and weekly connection limits.
 
 ## Conversation Follow-Ups
 
@@ -176,4 +166,5 @@ Metrics are updated automatically when lead statuses change. Step-level executio
 - **[Supported Actions by Platform](supported-actions.md)**: Detailed reference for each action type on X vs LinkedIn
 - **[Cold DM Generation](cold-dm-generation.md)**: How AI generates personalized first messages
 - **[Scheduling](scheduling.md)**: Activity windows, timing, and send cadence
-- **[Simulation & A/B Testing](simulation.md)**: Preview messages before sending
+- **[Simulation](simulation.md)**: Preview messages before sending
+- **[A/B Testing](ab-testing.md)**: Compare message variants

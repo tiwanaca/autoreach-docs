@@ -1,6 +1,10 @@
 # Table of contents
 
 * [Welcome](README.md)
+* [FAQ](faq.md)
+* [Glossary](glossary.md)
+* [Best Practices](best-practices.md)
+* [Troubleshooting](troubleshooting.md)
 
 ## Getting Started
 
@@ -9,6 +13,7 @@
 * [Connecting Your LinkedIn Account](getting-started/connect-linkedin.md)
 * [Creating Your First Offer](getting-started/create-offer.md)
 * [Installing the Chrome Extension](getting-started/chrome-extension.md)
+* [Getting Results (Day 2+)](getting-started/getting-results.md)
 
 ## Core Concepts
 
@@ -48,7 +53,8 @@
 * [Cold DM Generation](outreach/cold-dm-generation.md)
 * [Template Variables](outreach/template-variables.md)
 * [Scheduling & Send Limits](outreach/scheduling.md)
-* [Simulation & A/B Testing](outreach/simulation.md)
+* [Simulation & Message Preview](outreach/simulation.md)
+* [A/B Testing](outreach/ab-testing.md)
 
 ## AI & Conversations
 
@@ -94,3 +100,5 @@
 * [Interaction Orbit (Dark Funnel)](settings/interaction-orbit.md)
 * [Account-Level Signal Aggregation](settings/account-signals.md)
 * [Blacklisting Accounts](settings/blacklisting.md)
+* [Webhooks](settings/webhooks.md)
+* [Analytics & Reporting](settings/analytics.md)
