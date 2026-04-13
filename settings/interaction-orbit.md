@@ -1,118 +1,66 @@
 # Interaction Orbit (Dark Funnel)
 
-Interaction Orbit detects the "dark funnel": buying behavior your leads do not explicitly post about but reveal through who they engage with.
-
-## What Is the Dark Funnel?
-
-Most buying signals are explicit: posting about a problem, asking for recommendations, mentioning a competitor. But many buying conversations happen privately in comments, DMs, and direct interactions, never visible in a post.
-
-Interaction Orbit solves this by tracking **who your leads engage with** as a proxy for buying activity. If your lead is actively engaging with competitors, vendors in your space, and thought leaders, they are likely evaluating solutions.
+Interaction Orbit detects buying behavior that leads don't explicitly post about — revealed through who they engage with.
 
 ## How It Works
 
-AutoReach tracks engagement targets for each lead:
+AutoReach tracks **who each lead replies to** on social media. When a lead replies to posts from specific accounts, those accounts become "orbit targets." The system builds a map of engagement targets per platform and username, tracking interaction count and first/last seen dates.
 
-- **Likes, replies, comments** on posts
-- **Profile visits** and follow patterns
-- **Engagement frequency** over time
+Orbit snapshots are merged over time — the highest interaction count wins, and the earliest first-seen date is preserved.
 
-These targets are classified by relevance to your ICP, and patterns are detected in the last 30 days.
+## Target Classification
 
-## Target Classifications
+Each orbit target is classified into one of 5 categories:
 
-Each engagement target falls into one of these categories:
+| Classification | Description |
+|---|---|
+| Competitor | Directly selling in your space |
+| Adjacent Vendor | Related tools or services |
+| Thought Leader | Industry experts and analysts |
+| Peer | Same-level professionals |
+| Unknown | Unclassified |
 
-| Classification      | Signal Strength | Examples                             |
-| ------------------- | --------------- | ------------------------------------ |
-| **Competitor**      | High            | Directly selling in your space       |
-| **Adjacent Vendor** | Medium          | Related tools or services            |
-| **Thought Leader**  | Medium          | Industry experts, analysts           |
-| **Influencer**      | Low             | Popular but not category-specific    |
-| **Unknown**         | None            | Unclassified targets                 |
+Classification uses two passes:
+1. **String matching** — zero-cost check against your offer's competitor list
+2. **AI classification** — lightweight AI model classifies based on bio and headline enrichment data
 
 ## Cluster Detection
 
-AutoReach groups engagement targets into **clusters**: collections of related accounts your lead engages with together.
+Orbit targets are grouped into **clusters** — collections of related accounts a lead engages with together.
 
-Example: A prospect actively engages with 3 data warehousing companies, 2 BI tool accounts, and 4 data engineering thought leaders. This forms a "data stack evaluation" cluster.
+- **Cluster window**: 14 days
+- **Minimum cluster size**: 2 accounts
 
-### Cluster Scoring
+Example: A prospect replies to 3 data warehouse companies and 2 BI tool accounts within 14 days → forms a "data stack evaluation" cluster.
 
-AutoReach scores clusters based on two key patterns:
+### New Cluster Detection
 
-- **New Cluster Activity**: When a lead begins engaging with competitor or vendor accounts for the first time, this signals they are actively evaluating solutions and boosts their intent score.
-- **High Velocity Engagement**: When a lead frequently engages with offer-relevant clusters, this signals strong readiness to buy and boosts their timing score.
+When a cluster forms for the first time (within the last 14 days), it generates an orbit cluster signal that feeds into the buyer scoring system:
 
-## Orbit Score Interpretation
+- **Competitor clusters** → signal strength: `high`
+- **All other clusters** → signal strength: `medium`
 
-| Score                            | Meaning                              | Action                       |
-| -------------------------------- | ------------------------------------ | ---------------------------- |
-| **New Cluster + Offer Match**    | Actively evaluating alternatives     | High priority for outreach   |
-| **High Velocity + Relevant**     | Evaluating solutions actively        | Urgent. Timing is right      |
-| **Moderate Engagement**          | Interested but not actively evaluating | Normal outreach priority   |
-| **No Engagement**                | Not showing buying signals           | Lower priority               |
+New competitor clusters are flagged as "ACTIVE COMPETITOR EVALUATION" in the buyer scoring prompt, directly boosting the lead's intent score.
 
-## Dark Funnel Advantages
+## How Orbit Data Feeds Scoring
 
-### Reach Decision Makers Earlier
-Leads show intent before posting publicly about it. You can reach them while they are still exploring.
+Orbit signals flow into two systems:
 
-### Avoid the Crowded Explicit Signal
-When a prospect posts "Looking for a data warehouse," 50 vendors flood their inbox. Interaction Orbit finds them before that moment.
-
-### Detect Account-Level Urgency
-Multiple team members engaging with competitors signals company-wide evaluation. Interaction Orbit clusters this activity.
+1. **Account Signal Service** — orbit clusters contribute to the company-level heat score via the diversity multiplier
+2. **Buyer Intelligence** — the scoring prompt includes orbit data, flagging active competitor evaluations and high-velocity engagement patterns
 
 ## Lead Profile Integration
 
-When interaction orbit data is available, it appears on the lead profile as:
+When orbit data is available, the lead profile shows:
 
-- **Orbit Targets** - list of accounts this lead engages with
-- **Clusters Detected** - groups of related engagement targets
-- **Cluster Velocity** - how frequently they are engaging (Rising, Stable, Cooling)
-- **Timing Signal** - whether AutoReach detected high-intent engagement patterns
+- **Orbit targets** — accounts the lead engages with
+- **Clusters detected** — groups of related engagement targets
+- **Cluster velocity** — engagement frequency trend (Rising, Stable, Cooling)
 
-You can see which accounts the lead engages with, which clusters have been detected, how engagement velocity is trending, and whether any high-intent timing signals have been identified.
+## Privacy
 
-## Using Orbit Data in Sequences
-
-When enrolling leads, filter by orbit signals:
-
-- **Has Recent Cluster** - leads with new competitor/vendor engagement
-- **High Velocity** - leads actively evaluating solutions
-- **Offer-Relevant** - clusters matching your specific offering
-
-This creates a highly targeted audience of leads showing both fit **and** intent.
-
-{% hint style="tip" %}
-Orbit data typically surfaces intent 2-4 weeks before explicit signals appear. This is your competitive advantage to reach prospects early.
-{% endhint %}
-
-## Privacy & Ethics
-
-AutoReach only tracks public engagement:
-
-- Public likes and replies (not DMs or private conversations)
-- Public profile follows (not private contacts)
-- Data aggregated at the lead level, never shared externally
-
-This is similar to what you would manually discover by viewing someone's X or LinkedIn activity. AutoReach simply scales it.
-
-## When Orbit Data Is Unavailable
-
-Interaction Orbit requires:
-
-- **Active social media presence** - lead must have posted or engaged in last 30 days
-- **Trackable engagement** - platform allows viewing public engagement history
-- **Target classification data** - database of competitor/vendor/thought leader accounts
-
-If a lead lacks engagement history or accounts are private, Orbit data simply will not be available. AutoReach continues with other signals (explicit posts, profile data, fit scoring).
-
-{% hint style="info" %}
-Not all leads will have rich interaction orbit data. Focus on those who do. They are your highest-intent prospects.
-{% endhint %}
+Interaction Orbit only tracks **public engagement** — public replies, likes, and follows. Private DMs and conversations are never tracked. This is equivalent to what you'd manually discover by viewing someone's social activity.
 
 ## Next Steps
 
-- **[Account-Level Signal Aggregation](account-signals.md)**: See how signals from multiple leads at one company combine
-- **[Signal Detection](../core-concepts/signals.md)**: Review all the signal types that feed into scoring
+- **[Account Signals](account-signals.md)**: How orbit data feeds company-level heat scoring

@@ -1,221 +1,248 @@
 # Building Sequences (Flow Editor)
 
-Learn how to create and configure sequences using AutoReach's visual Flow Builder. In just a few clicks, you can design multi-step campaigns that automatically engage your leads.
+The flow editor is a visual sequence builder powered by React Flow (`@xyflow/react`). You design sequences as connected nodes on a canvas, configure each step's action and timing, then save and start the sequence.
 
 ## Creating a New Sequence
 
-1. Navigate to **Outreach** > **Sequences** in the main menu
-2. Click the **Create Sequence** button (top right)
-3. Enter a sequence name (e.g., "Tech CTOs - Value First")
-4. (Optional) Associate an offer/ICP to track performance by target audience
-5. Select your primary platform: X or LinkedIn
+1. Navigate to **Outreach > Sequences**
+2. Click **Create Sequence**
+3. Enter a sequence name
+4. (Optional) Associate an offer to track performance by target audience
+5. Select platform accounts — at least one of Twitter or LinkedIn is required
 6. Click **Create**
 
-Your new sequence opens in the **Flow Editor**, ready to build.
+The sequence is created in `draft` status and opens in the flow editor with a default template applied based on the selected platform(s).
 
-{% hint style="info" %}
-You can create sequences for both X and LinkedIn in the same account, or mixed sequences that use both platforms.
-{% endhint %}
+Once set, platform accounts **cannot be changed** on a sequence — this prevents workflow disruption mid-execution.
 
-## The Flow Builder Interface
+## Default Templates
 
-The Flow Builder displays your sequence as a series of connected cards:
+When a new sequence is created, a default flow template is applied based on the configured accounts:
 
+**X (Twitter) template:**
 ```
-[Start] --> [Like Post] --> [Wait 2 Days] --> [Follow] --> [Wait 1 Day] --> [Send DM]
-```
-
-- **Cards** represent actions or delays
-- **Arrows** show the sequence flow
-- **Connector nodes** (the small circles) are where you add new steps
-- **Drag to reorder** - grab the left side of any card to reorder steps
-
-## Adding Steps to Your Sequence
-
-### Method 1: Using the "+" Button
-
-1. Click the **"+" button** between cards (or at the end of the sequence)
-2. Select an action type from the menu:
-   - Like Post
-   - Reply/Comment
-   - Follow User
-   - Send DM
-   - Condition (branching)
-   - Remove Connection
-3. A new card appears; configure it (see below)
-
-### Method 2: Drag from the Action Library
-
-Drag action tiles from the right sidebar directly onto the flow.
-
-## Configuring Actions
-
-Click on any action card to open its **configuration panel**. Every action has these settings:
-
-### Platform
-
-Choose **X** or **LinkedIn** for this specific action. This lets you mix platforms within one sequence.
-
-{% hint style="info" %}
-Not all actions are available on all platforms. For example, "Remove Connection" only works on LinkedIn. See [Supported Actions by Platform](supported-actions.md) for details.
-{% endhint %}
-
-### Timing / Delay
-
-How long to wait before executing this action:
-
-- Enter a number and select the unit: **Days** or **Minutes**
-- Example: `2 Days` means wait 2 full days after the previous action completes
-- Example: `30 Minutes` means execute 30 minutes after the lead enters the sequence
-
-Leave blank or set to `0` for immediate execution.
-
-### Message Template (for DM, Reply, Comment)
-
-Write your message using **template variables** that AutoReach will personalize:
-
-```
-Hi {{first_name}},
-
-I came across your profile and saw you're working on {{company_name}}.
-We help teams like yours improve {{pain_point}}.
-
-Worth a quick chat?
-
-- {{user_name}}
+Like (immediate) → Follow (15min) → DM (1 day)
 ```
 
-Variables like `{{first_name}}`, `{{company_name}}`, etc. are replaced with real lead data at send time. See [Template Variables](template-variables.md) for the complete list.
-
-{% hint style="info" %}
-Use the **Insert Variable** dropdown in the config panel to browse available fields without memorizing syntax.
-{% endhint %}
-
-### Step Label (Optional)
-
-Give your action a friendly name (e.g., "Initial DM", "Follow-up if No Reply") to keep your flow readable.
-
-## Conditional Branching
-
-The **Condition** action lets you split your sequence based on lead behavior.
-
-### Example: Reply Detection
-
+**LinkedIn template:**
 ```
-[Send DM] --> [Condition: Did they reply?]
-                    |-- YES --> [Send Follow-up]
-                    |-- NO  --> [Send DM Again in 3 days]
+Connection Request (immediate) → Condition: Connection Accepted? (retry 3d × 3) → DM (if accepted)
 ```
 
-To set up a condition:
-
-1. Add a **Condition** step after an action
-2. Choose the condition type:
-   - **Has Replied** - Branch if the lead replied to a previous DM
-   - **Has Not Replied** - Branch if no reply after X days
-3. Configure the "YES" branch (right arrow) and "NO" branch (left arrow)
-4. Add different actions to each branch
-
-{% hint style="info" %}
-Conditions are checked at execution time. A lead can only move down one branch. Once they match a condition, they follow that path.
-{% endhint %}
-
-## Common Sequence Patterns
-
-### Soft Engagement (Good for Cold Outreach)
-
-Perfect for audiences with low trust. Builds familiarity before direct contact.
-
+**Combined X + LinkedIn template:**
 ```
-[Like Post] --> [Wait 1 Day] --> [Follow] --> [Wait 2 Days] --> [Send DM]
+View LinkedIn Profile → Like X (10min) → Like LinkedIn (10min) → Follow (1 day)
+→ Connection Request (10min) → Like X (1 day) → Condition (2 days)
+→ DM LinkedIn (if connected) / DM X (if not)
 ```
 
-**Why it works:** Liking and following feel natural and non-intrusive. By the time your DM lands, the lead has seen you twice.
+Templates can be modified after creation. Use the "Reset to Default" dialog to restore the original template.
 
-### Direct Value (For Warm Leads)
+## The Flow Editor Interface
 
-If you already have some engagement or a referral, go direct faster.
+The flow editor displays your sequence as nodes connected by edges on a canvas:
 
-```
-[Send DM] --> [Wait 2 Days] --> [Condition: Replied?]
-               |-- YES --> [Send Call Link]
-               |-- NO  --> [Follow + Send DM Again]
-```
+- **Nodes** represent actions (like, DM, follow, etc.) or logic (conditions)
+- **Edges** (arrows) show the execution flow between steps
+- **Handles** (small circles on nodes) are connection points — drag from a source handle to a target handle to create edges
+- **Drag nodes** to reposition them on the canvas
 
-### Nurture Loop (For Extended Follow-up)
+There is no explicit "Start" node — the entry point is the topmost node (lowest Y position on the canvas).
 
-For high-value targets, maintain engagement over time.
+### Adding Steps
 
-```
-[Send DM] --> [Wait 2 Days] --> [Reply if No Response]
-         --> [Wait 3 Days] --> [Like Recent Post]
-         --> [Wait 2 Days] --> [Send Value Content]
-```
+**Using the "+" button:** Click between nodes or at the end of the flow to open the step popover and select an action type.
+
+**Drag-to-connect:** Drag from a node's source handle and drop on empty canvas to open a creation menu where you select the new step type.
+
+### Deleting Steps
+
+Hover over a node to reveal the delete button. When a step is deleted, the chain is repaired — any step that pointed to the deleted step is automatically updated to point to the deleted step's next step, preserving flow continuity.
+
+### Saving
+
+Saving is **manual** — click the "Save Sequence" button. An "Unsaved changes" indicator appears when the flow has been modified. The save operation validates the flow structure before persisting.
+
+**What gets saved:**
+- **Visual layout** — node positions, edges, and viewport state for the flow editor
+- **Execution model** — action configurations, step order, and step connections
+
+These are separate storage systems. The visual representation and execution model are persisted independently.
+
+## Action Types
+
+| Action | Platforms | Description |
+|---|---|---|
+| `like` | X, LinkedIn | Like a lead's recent post |
+| `reply` | X, LinkedIn | Reply to a post (AI-generated from post content) |
+| `follow` | X | Follow the account |
+| `dm` | X, LinkedIn | Send a direct message |
+| `condition` | — | Branch based on lead status |
+| `connection_request` | LinkedIn | Send a connection request |
+| `view_profile` | LinkedIn | View the lead's LinkedIn profile |
+| `withdraw_connection` | LinkedIn | Withdraw a pending or accepted connection |
+
+## Configuring Steps
+
+Click any node to open its configuration panel on the right side.
+
+### Common Settings (All Action Types)
+
+| Setting | Description |
+|---|---|
+| Platform | X or LinkedIn (for actions that support both) |
+| Delay Days | Days to wait before executing (0 = immediate) |
+| Delay Minutes | Additional minutes (0–59) |
+| Label | Optional display name for the step |
+
+Total delay = `(delay_days × 24 hours) + delay_minutes`. Displayed on the node as "Delay: 1d 15m" or "Immediate" for zero delay.
+
+### DM Configuration
+
+| Setting | Description |
+|---|---|
+| `message_template` | Required — message text with `{{variable}}` placeholders |
+| `ai_prompt` | Optional — custom AI instructions for personalization |
+
+Use the variable picker to browse available placeholders. The AI personalizes the template for each lead using their profile data, recent activity, and offer context.
+
+### Reply Configuration
+
+| Setting | Description |
+|---|---|
+| `ai_prompt` | Optional — custom instructions for reply generation |
+
+Replies are AI-generated from the lead's most recent post content. If no `ai_prompt` is set, the sequence's `warmup_prompt` is used as default instructions.
+
+### Connection Request Configuration
+
+| Setting | Description |
+|---|---|
+| `connection_note` | Optional personalized note (max 300 characters, character count shown) |
+| `auto_withdraw_days` | Auto-withdraw if not accepted within N days (default 14, range 1–30) |
+
+The connection note supports `{{variable}}` placeholders for personalization.
+
+### Condition Configuration
+
+| Setting | Description |
+|---|---|
+| `condition_type` | What to evaluate (see table below) |
+| `retry_interval_days` | Days between rechecks |
+| `retry_max_attempts` | Max rechecks before falling to FALSE branch |
+
+**Condition types:**
+
+| Type | Description |
+|---|---|
+| `replied` | Lead replied to a previous message |
+| `followed_back` | Lead followed back (X only) |
+| `has_profile` | Lead has a filled-out profile on the target platform |
+| `connection_accepted` | LinkedIn connection request was accepted |
+
+Condition nodes have two outgoing branches: **TRUE** (left handle, green) and **FALSE** (right handle, red). Each branch can connect to a different next step. The condition is evaluated at the scheduled time — if false and retries remain, it rechecks after `retry_interval_days`. After exhausting retries, the FALSE branch executes.
+
+Example: "Recheck every 3 days, up to 3 times" = 9 days max before falling to the FALSE branch.
+
+## Flow Validation
+
+### Editor Validation (Before Save)
+
+- At least one node must exist
+- All action nodes must be reachable from the entry node (topmost)
+- No orphaned nodes
+- DM nodes must have a non-empty `message_template`
+- Condition nodes must have at least one branch edge (true or false)
+
+### Pre-Start Validation (Before Activation)
+
+- Sequence must not already be active
+- At least one configured account must exist and not be paused for health issues
+- At least one step must be configured
+- At least one pending or active lead must be enrolled
 
 ## Sequence Settings
 
-Once your flow is designed, configure overall sequence behavior:
-
-### Basics
-
-- **Name** - Displayed in the Sequences list
-- **Description** - Optional notes about your sequence goal
-- **Offer/ICP** - Link to an offer to track performance by target audience
+Beyond the flow itself, configure overall sequence behavior:
 
 ### Enrollment & Lead Filters
 
-- **Skip Already Contacted Leads** - Don't re-reach leads from other sequences
-- **Skip Negative Content** - Avoid leads with controversial/toxic posts
-- **Max Days Since Last Post** - Only reach leads with recent activity
+| Setting | Description |
+|---|---|
+| `skip_contacted_leads` | Don't re-reach leads contacted in other sequences |
+| `skip_negative_content` | Skip leads with controversial or toxic posts |
+| `skip_old_posts_days` | Only reach leads with activity within N days |
+| `prefer_original_posts` | Prefer original posts over reposts for engagement |
 
 ### Daily Limits
 
-- **Daily DM Limit** - Max DMs per day (prevents rate limiting)
-- **Daily Action Limit** - Max total actions per day across all step types
-- Platform-specific limits for X and LinkedIn
+| Setting | Default | Max |
+|---|---|---|
+| `daily_action_limit` | 20 | 100 |
+| `daily_action_limit_linkedin` | 20 | 100 |
+| `daily_action_limit_x` | 40 | 100 |
 
 ### AI & Responses
 
-- **Max AI Responses per Conversation** - How many auto-replies per lead (0 to disable AI)
-- **Enable/Disable AI by Default** - New conversations have AI on or off
+| Setting | Default | Description |
+|---|---|---|
+| `max_ai_responses_per_conversation` | 0 (unlimited) | Max auto-replies per lead (max 100) |
+| `ai_disabled_by_default` | false | New conversations start with AI off |
 
-See [Scheduling & Send Limits](scheduling.md) for details on how limits work.
+### Follow-Up
+
+| Setting | Default | Range |
+|---|---|---|
+| `conversation_followup_enabled` | false | — |
+| `conversation_followup_wait_days` | 3 | 1–30 |
+| `conversation_followup_max_count` | 2 | 1–10 |
+
+### AI Prompts
+
+| Setting | Description |
+|---|---|
+| `ai_prompt` | General AI instructions for message generation |
+| `dm_generation_prompt` | Specific prompt for cold DM generation |
+| `warmup_prompt` | Prompt for warmup engagement (likes, replies) |
 
 ## Starting, Pausing, and Stopping
 
-### Start
+| Action | Effect |
+|---|---|
+| **Start** | Sets status to `active`, triggers background scheduling of actions for enrolled leads |
+| **Pause** | Temporarily stops all pending actions without losing progress. Can be resumed. |
+| **Stop** | Permanently ends the sequence. Cannot be restarted — create a new sequence or duplicate. |
 
-Click **Start Sequence** to activate it. AutoReach begins enrolling leads and executing actions.
+## Common Sequence Patterns
 
-### Pause
+### Soft Engagement First
 
-Click **Pause** to temporarily stop all pending actions without losing progress. Resume whenever you're ready.
+```
+Like → Follow (1 day) → DM (2 days)
+```
 
-### Stop
+Builds familiarity before direct contact. The lead sees engagement before receiving a message.
 
-Click **Stop** to permanently end the sequence. Active leads are marked as completed; no further actions execute.
+### Direct with Conditional Follow-Up
 
-{% hint style="warning" %}
-Stopping a sequence is permanent. You cannot restart it. Instead, create a new sequence or duplicate this one.
-{% endhint %}
+```
+DM → Condition: Replied? (2 days)
+  → TRUE: Stop
+  → FALSE: Follow-Up DM
+```
 
-## Duplicating a Sequence
+### LinkedIn Connection-First
 
-Click the **Duplicate** button to copy an existing sequence. This is useful for A/B testing or reusing a template.
-
-## Tips for Building Effective Sequences
-
-1. **Start with soft engagement** - A Like + Follow before your DM gets 3x better reply rates
-2. **Use conditions wisely** - Route hot leads (those who replied) to direct calls; cold leads to nurture
-3. **Respect timing** - Don't overwhelm leads. Space actions 1-3 days apart for a natural feel
-4. **Test before launching** - Use the [Simulation tool](simulation.md) with real leads before sending to 1000+
-5. **Monitor metrics** - Check reply rate, meeting booked rate, and adjust messaging accordingly
-6. **Keep templates concise** - Short, personal messages outperform long sales pitches
-7. **Mix platforms** - Use a Comment on X, then follow up with a DM on LinkedIn for cross-platform reach
+```
+View Profile → Connection Request (1 day) → Condition: Accepted? (retry 3d × 3)
+  → TRUE: DM
+  → FALSE: End
+```
 
 ## Next Steps
 
-- Learn about all [Supported Actions](supported-actions.md)
-- Understand [Cold DM Generation](cold-dm-generation.md) for AI-powered message creation
-- Explore [Template Variables](template-variables.md) to personalize at scale
-- Use [Simulation & A/B Testing](simulation.md) to preview before sending
+- **[Supported Actions](supported-actions.md)**: Detailed reference for each action type
+- **[Cold DM Generation](cold-dm-generation.md)**: How AI generates personalized first messages
+- **[Template Variables](template-variables.md)**: All available personalization variables
+- **[Scheduling](scheduling.md)**: Activity windows, timing, and send cadence
+- **[Simulation & A/B Testing](simulation.md)**: Preview messages before sending

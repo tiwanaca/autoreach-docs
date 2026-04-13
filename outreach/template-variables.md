@@ -1,222 +1,184 @@
 # Template Variables
 
-Template variables allow you to personalize messages at scale. Instead of writing individual messages, you write once with placeholders that AutoReach fills in with real lead data at send time.
+Template variables let you write message templates with `{{placeholder}}` syntax that AutoReach fills in with real lead data at send-time. The system uses a two-pass approach: direct substitution for known variables, then AI inference for unknown placeholders.
 
-## Using Variables in Templates
+## How Variable Replacement Works
 
-When writing a message template, use double curly braces: `{{variable_name}}`
+### Two-Pass System
 
-AutoReach will replace each variable with actual data from the lead's profile:
+**Pass 1 — Direct Substitution:** 27 known variables are replaced with values from lead data. If a variable has no data, it's replaced with an empty string.
 
-**Your template:**
+**Pass 2 — AI Inference:** Any remaining `{{placeholders}}` (including custom ones you create) are sent to the AI model along with the lead's profile, enrichment data, and offer context. The AI either fills them with explicit information from the lead's data (2–5 words max) or removes the placeholder and surrounding incomplete text. The AI never invents or guesses information.
 
-```
-Hi {{first_name}},
+### Validation
 
-I saw you're working at {{company}} as a {{role}}.
-We help companies like {{company}} in {{industry}} improve {{pain_point}}.
+After both passes, a safety check scans for any unresolved `{{}}` placeholders. **Messages with unresolved variables are blocked** — they are never sent. The personalizer returns null, and the caller handles it gracefully.
 
-Worth a chat?
-```
+## Known Variables (Direct Substitution)
 
-**What a lead sees:**
+These 27 variables are replaced directly from lead data in the first pass.
 
-```
-Hi Alice,
+### Identity
 
-I saw you're working at Stripe as a VPE.
-We help companies like Stripe in FinTech improve developer productivity.
+| Variable | Source |
+|---|---|
+| `{{name}}` | Full name, falls back to username |
+| `{{first_name}}` | Extracted from full name |
+| `{{username}}` | Platform handle |
+| `{{bio}}` | Lead bio |
+| `{{location}}` | Lead location |
+| `{{email}}` | Lead email |
 
-Worth a chat?
-```
+### Network
 
-{% hint style="info" %}
-If a variable has no data for a lead, the entire phrase containing it is gracefully removed. For example, if we don't have {{company}}, the sentence "We help companies like {{company}}" is omitted.
-{% endhint %}
+| Variable | Source |
+|---|---|
+| `{{followers}}` | Follower count |
+| `{{following}}` | Following count |
 
-## Lead Information Variables
+### Profile Links
 
-These variables pull from the lead's profile and enrichment data. AutoReach automatically populates variables from lead profiles and enrichment data.
-
-### Basic Identity
-
-- `{{name}}` - Full name
-- `{{first_name}}` - First name only
-- `{{last_name}}` - Last name only
-- `{{username}}` - X or LinkedIn username
-- `{{email}}` - Email address (if found)
+| Variable | Source |
+|---|---|
+| `{{website}}` | Lead website URL |
+| `{{linkedin_url}}` | LinkedIn profile URL |
+| `{{x_profile_url}}` | X profile URL |
 
 ### Professional Profile
 
-- `{{role}}` - Job title (e.g., "VP Sales", "Head of Product")
-- `{{headline}}` - LinkedIn headline/current position
-- `{{company}}` - Current company name
-- `{{company_size}}` - Company size bracket (e.g., "50-200 employees", "1000+")
-- `{{industry}}` - Primary industry (e.g., "SaaS", "FinTech", "Insurance")
-- `{{location}}` - Geographic location
-- `{{bio}}` - X or LinkedIn bio
+| Variable | Source |
+|---|---|
+| `{{headline}}` | LinkedIn headline, falls back to bio |
+| `{{summary}}` | Profile summary (max 200 characters) |
+| `{{current_role}}` | Current job title from LinkedIn experience |
+| `{{skills}}` | Top 5 skills, comma-separated |
 
-### Enrichment & Intelligence
+### Company Data
 
-- `{{pain_point}}` - Inferred challenge/pain point (e.g., "customer retention", "developer productivity")
-- `{{funding_stage}}` - Company funding stage (e.g., "Series B", "Late Stage")
-- `{{tech_stack}}` - Key technologies used by company
-- `{{followers}}` - Number of followers on X or LinkedIn
-- `{{podcasts}}` - Podcasts the lead hosts or appears on
+| Variable | Source |
+|---|---|
+| `{{company_name}}` | Company name from enrichment or profile |
+| `{{company_size}}` | Employee count range (e.g., "51-200") |
+| `{{company_industry}}` | Company industry from enrichment or profile |
+| `{{funding_stage}}` | Company funding stage |
+| `{{tech_stack}}` | Top 5 technologies, comma-separated |
 
-### Contact & Web
+### Web Enrichment Insights
 
-- `{{website}}` - Company website URL
-- `{{linkedin_url}}` - LinkedIn profile URL
-- `{{enrichment_summary}}` - AI-generated brief profile summary
+| Variable | Source | Notes |
+|---|---|---|
+| `{{achievements}}` | Notable achievements | Filtered by recency + current company, first 2 items |
+| `{{speaking}}` | Speaking engagements | First 2 items |
+| `{{podcasts}}` | Podcast appearances | First 2 items |
+| `{{enrichment_summary}}` | Web enrichment summary | Max 150 characters |
 
-## Your Information Variables
+Achievements, speaking engagements, and podcasts are filtered to the lead's current company — data from previous employers is excluded.
 
-These reference your own profile and business info:
+### Sender & Booking
 
-- `{{user_name}}` - Your name (from account settings)
-- `{{company_name}}` - Your company name
-- `{{offer_name}}` - The name of the offer/product being pitched
+| Variable | Source |
+|---|---|
+| `{{user_name}}` | Sender's display name (passed as parameter) |
+| `{{booking_link}}` | Calendar URL with lead-specific tracking (see below) |
 
-## How Variables Get Populated
+## Special Variables (Fetched at Send-Time)
 
-AutoReach automatically populates variables from lead profiles and enrichment data. If a variable has no data, it's handled gracefully:
+These variables trigger data fetching when used in a template.
 
-| Scenario                              | Result                                                                                                     |
-| ------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
-| Single variable is empty              | Variable replaced with empty string; text flows naturally                                                  |
-| Phrase contains empty variable        | Entire phrase is omitted (e.g., "We help {{company}} in {{industry}}" omitted if {{industry}} is missing)  |
-| Multiple variables in one sentence    | If any is empty, sentence is removed                                                                       |
+### `{{post}}` / `{{tweet}}`
 
-{% hint style="info" %}
-Always test templates with a few different leads using the Simulator before sending to ensure variables populate correctly.
-{% endhint %}
+Both map to the same logic (`{{tweet}}` is a backwards-compatible alias). Fetches the lead's recent post content using this priority chain:
 
-## Example Templates
+1. **Stored X intent stream** — if lead was sourced from X search with original content
+2. **Stored LinkedIn intent stream** — if lead was sourced from LinkedIn search with original content
+3. **Live X tweet fetch** — fetches latest tweet from X (retries up to 8 times over 30 minutes)
+4. **Cached LinkedIn posts** — from enrichment cache
+5. **Live LinkedIn post fetch** — via LinkedIn API
+6. **Bio fallback** — instructs AI to use bio for personalization instead
 
-### Soft Pitch (Book a Call)
-
+For commenter-sourced leads, the context includes both the original post and the lead's reply:
 ```
-Hi {{first_name}},
-
-Saw your post about {{pain_point}}. Great insight.
-{{company}} is doing some interesting work there.
-
-I help {{company_size}} {{industry}} companies solve this exact problem.
-Would love to share what we've learned. 20 min?
-
-- {{user_name}}
+ORIGINAL POST: "[post text]"
+THEIR REPLY: "[reply text]"
 ```
 
-### Value First (Education)
+### `{{replied_post}}`
+
+References a post that was replied to in a **prior sequence step**. If a reply action executed earlier in the sequence, this variable provides the original post text and your reply text so the DM can reference prior engagement.
+
+If no prior reply happened (step was skipped), the AI is instructed not to claim engagement and uses a generic opener instead.
+
+## Custom Variables (AI-Inferred)
+
+Any `{{placeholder}}` that isn't in the 27 known variables is treated as a custom variable. The AI model attempts to fill it using explicit information from the lead's profile, enrichment data, and offer context.
+
+**Rules the AI follows:**
+1. Look for **explicit** information in the lead's bio, profile, or enrichment data
+2. If clearly stated: use it (2–5 words max)
+3. If **not** clearly stated: remove the placeholder and any surrounding text that would be incomplete without it
+4. Never invent, assume, or guess
+
+Common AI-inferred variables:
+
+| Variable | What AI looks for |
+|---|---|
+| `{{role}}` | Job title from bio, headline, or enrichment |
+| `{{company}}` | Company name from bio or enrichment |
+| `{{industry}}` | Industry from bio or enrichment |
+| `{{pain_point}}` | Relevant challenge based on offer + lead context |
+| `{{question}}` | Contextual question based on lead + offer |
+
+You can use any custom placeholder name — the system doesn't reject unknown variables.
+
+## Booking Link Tracking
+
+The `{{booking_link}}` variable injects your calendar URL with lead-specific tracking parameters:
+
+| Provider | Parameter | Value |
+|---|---|---|
+| Calendly | `a1` | Lead identifier |
+| Cal.com | `x_username` | Lead identifier |
+| Other | `a1` (fallback) | Lead identifier |
+
+The tracking value is the lead's LinkedIn identifier (prefixed) for LinkedIn leads or the X username for X leads.
+
+Example: `https://calendly.com/user` → `https://calendly.com/user?a1=li:john-smith-123`
+
+## Platform Behavior
+
+All 27 known variables work identically on both X and LinkedIn. There are no platform-specific variables.
+
+Platform differences affect the AI's tone and context, not variable availability:
+
+| Aspect | X | LinkedIn |
+|---|---|---|
+| Username prefix | `@username` | `username` (no prefix) |
+| Tone instruction | Casual and direct | Slightly more professional |
+| `{{post}}` label | "on X" | "on LinkedIn" |
+
+## Example Template
 
 ```
-{{first_name}},
+hey {{first_name}},
 
-I came across your profile and saw you're tackling {{pain_point}} at {{company}}.
+saw you're {{current_role}} at {{company_name}} which probably means {{pain_point}}
 
-I just published a framework that {{industry}} teams have found helpful.
-Thought you'd find it valuable: [link]
+I help with {{tech_stack}} teams — think {{enrichment_summary}}.
 
-No ask, just good stuff to learn from.
+quick 15-min review, no cost.
+
+interested?
+
+{{user_name}}
+{{booking_link}}
 ```
 
-### Introduction (Connecting)
+**Pass 1** replaces `{{first_name}}`, `{{current_role}}`, `{{company_name}}`, `{{tech_stack}}`, `{{enrichment_summary}}`, `{{user_name}}`, `{{booking_link}}` with lead data.
 
-```
-Hey {{first_name}},
-
-Quick ask: I'm building my network of {{role}}s in {{industry}}.
-
-Our {{user_name}} (CEO of {{company_name}}) would love to connect.
-She's in the same space and I think you'd both find it valuable.
-
-Open to an intro?
-```
-
-### Social Proof (Credibility)
-
-```
-{{first_name}},
-
-{{company}} just shipped something we help with at scale, helping
-{{company_size}} companies improve {{pain_point}}.
-
-One of your competitors, {{example_company}}, cut time-to-value by 40%.
-Curious if you'd benefit from the same approach?
-
-Worth a quick conversation?
-```
-
-## Tips for Effective Personalization
-
-1. **Use specific variables** - `{{role}}` and `{{pain_point}}` work better than generic compliments
-2. **Combine 2-3 variables max per message** - Too many looks spammy
-3. **Test edge cases** - Preview with leads missing data to ensure graceful fallback
-4. **Reference recent activity** - Paste a tweet or post in the Simulator context for more relevant mentions
-5. **Keep sentences short** - When variables are removed, longer sentences become awkward
-6. **Use Insert Variable UI** - Don't memorize syntax; use the dropdown in the Sequence Settings panel
-
-## Finding Available Variables
-
-In the Sequence Builder, click the **Insert Variable** button in the message template panel. A dropdown shows all available variables for the current lead, along with their current values.
-
-{% hint style="info" %}
-The Insert Variable dropdown is the easiest way to browse and select variables without memorizing syntax.
-{% endhint %}
-
-## Dynamic Content Based on Variables
-
-Some sequences use multiple templates and branch based on variable values. For example:
-
-```
-[Condition: Has {{tech_stack}} includes "Salesforce"?]
-  |-- YES --> Send DM about Salesforce integration
-  |-- NO  --> Send DM about generic CRM tools
-```
-
-This isn't supported in core AutoReach, but you can achieve similar effects by:
-
-1. Creating separate sequences for different target segments
-2. Using Offers/ICPs to pre-filter leads
-3. Manually crafting templates that gracefully handle missing data
-
-## Common Issues
-
-### Variable Not Populating
-
-**Problem:** You use `{{company}}` but it shows as blank.
-
-**Solution:**
-
-- Check that the lead has company data in their profile
-- Verify the variable name is spelled correctly (case-sensitive)
-- Use the Insert Variable dropdown to confirm available variables for this lead
-
-### Sentence Reads Awkwardly
-
-**Problem:** "We help {{company}} improve {{pain_point}}." renders as "We help  improve ." when data is missing.
-
-**Solution:**
-
-- Rewrite to include the variable within a larger phrase: "If you're working on {{pain_point}}, I'd love to chat."
-- This way, the entire sentence is omitted if the variable is empty
-
-### Too Many Variables
-
-**Problem:** Message looks spammy or robotic.
-
-**Solution:**
-
-- Limit to 1-2 variables per message
-- Prioritize {{first_name}} and one key data point ({{role}}, {{company}}, {{pain_point}})
-- Use rich context instead of multiple variables
-
----
+**Pass 2** sends `{{pain_point}}` to AI, which infers it from the lead's profile and offer context or removes it with surrounding text.
 
 ## Next Steps
 
-- See [Building Sequences](building-sequences.md) to write templates in the Flow Builder
-- Explore [Simulation & A/B Testing](simulation.md) to preview variable substitution with real leads
-- Learn [Cold DM Generation](cold-dm-generation.md) for AI-powered personalized messages
-- Review [Supported Actions](supported-actions.md) to understand which actions support templates
+- **[Cold DM Generation](cold-dm-generation.md)**: AI-powered message generation using these variables
+- **[Building Sequences](building-sequences.md)**: Write templates in the flow editor
+- **[Simulation & A/B Testing](simulation.md)**: Preview variable substitution with real leads

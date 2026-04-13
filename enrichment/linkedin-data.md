@@ -2,110 +2,215 @@
 
 LinkedIn enrichment extracts comprehensive professional profile data from LinkedIn profiles. This data powers buyer scoring, ICP matching, and AI-generated personalized outreach.
 
+## How It Works
+
+LinkedIn profile enrichment fetches comprehensive profile data in **two optimized API calls**:
+
+1. **Full profile request** -- returns experience, education, skills, languages, certifications, and company entities in one bundled response
+2. **Contact info request** -- returns email, phone numbers, websites, and linked Twitter handle
+
+### Rate Limit
+
+LinkedIn enrichment processes up to **5 profiles per minute** per LinkedIn account.
+
+### Account Selection
+
+Each enrichment job uses a LinkedIn account belonging to the lead's owner:
+
+1. **Primary:** The LinkedIn account specified in the job
+2. **Fallback:** If the primary account is paused or has invalid cookies, another active account for the same user is selected automatically
+3. **No account available:** The job is deferred and retried up to 4 times at 15-minute intervals (1 hour max)
+
+All API calls go through the LinkedIn account gateway, which enforces per-account rate limiting and daily budget caps.
+
 ## What Gets Extracted
 
 ### Basic Profile Information
 
-| Data | Description |
-|------|-------------|
-| Name | Full name of the profile owner |
+| Field | Description |
+|---|---|
+| Name | Full name |
 | Headline | Professional headline (e.g., "VP Sales @ Acme Corp") |
-| Location | Geographic location and/or remote status |
+| Summary | About/bio section text |
+| Location | Geographic location |
 | Industry | Primary industry classification |
-| Profile Summary | About/Bio section text |
-| Profile Pictures | URLs to profile and banner images |
+| Profile Image | Profile picture URL |
+| Background Image | Banner/cover image URL |
+| Profile URN | LinkedIn internal identifier |
+| Public Identifier | Vanity URL slug |
+| Bio | Built from headline + summary |
 
-The headline is especially valuable for outreach. It is often the first signal of seniority, role, and company.
+### Contact Information
+
+Extracted from the ContactInfo endpoint:
+
+| Field | Description |
+|---|---|
+| Email | Primary email (stored with confidence 1.0) |
+| Phone Numbers | Array of phone numbers |
+| Websites | Array of website URLs |
+| Twitter Handle | Linked Twitter/X handle |
+
+The first website is promoted to the lead's website URL if the lead doesn't already have one. Email is promoted to the lead's primary email with confidence 1.0 if not already set.
 
 ### Work Experience
 
-LinkedIn captures the complete employment history:
+Each position includes:
 
-- **Company Name** - Every company the profile has worked at
-- **Company Details** - Industry, size, headquarters, LinkedIn company page
-- **Job Title** - Each role held
-- **Employment Type** - Full-time, Part-time, Contract, etc.
-- **Start/End Dates** - When employment began and ended
-- **Location** - City/remote status for each role
-- **Job Description** - Text written in the position description
+| Field | Description |
+|---|---|
+| Title | Job title |
+| Company Name | Employer name |
+| Company URL | Company LinkedIn page URL |
+| Company Logo | Company logo image URL |
+| Company Size | Employee count range (e.g., start and end) |
+| Company Industries | Industry classifications |
+| Location | Position-specific location |
+| Start Date | Month and year |
+| End Date | Month and year, or null for current position |
+| Description | Position description text |
+| Employment Type | Full-time, Part-time, Contract, etc. |
 
-This work history is crucial for:
-- Understanding their expertise and career progression
-- Identifying decision-maker levels (director, VP, C-level)
-- Finding relevant shared connections or previous colleagues
-- Contextualizing their company and industry knowledge
+Positions are deduplicated by title, company, and year, and sorted newest-first.
+
+### Derived Role Data
+
+From the work history, the enrichment derives current role information:
+
+| Field | Description |
+|---|---|
+| Title | Current job title |
+| Company Name | Current employer |
+| Is Current | Whether the position is current |
+| Tenure (months) | Months in current role |
+| Tenure (days) | Days in current role (precision) |
+| Fetched At | When this data was collected (30-day staleness TTL) |
 
 ### Education
 
-Complete educational background:
+Each entry includes:
 
-- **School Name** - University, college, bootcamp, or certification provider
-- **Degree** - Bachelor's, Master's, PhD, Certificate, etc.
-- **Field of Study** - Major, concentration, or specialization
-- **Graduation Dates** - When the degree was completed
-- **Activities & Societies** - Clubs, organizations, sports, or leadership roles
+| Field | Description |
+|---|---|
+| School Name | University, college, or institution |
+| School Logo | School logo URL |
+| Degree | Bachelor's, Master's, PhD, etc. |
+| Field of Study | Major or specialization |
+| Start Date | Month and year |
+| End Date | Month and year |
+| Description | Additional details |
+| Activities | Activities and societies |
 
 ### Skills
 
-Professional skills with endorsement counts:
+Sorted by endorsement count (highest first):
 
-- **Skill Name** - Technical skills, tools, methodologies
-- **Endorsement Count** - How many connections have endorsed this skill
-- **Endorsement % vs Network** - How this compares to others with the same skill
-
-High-endorsement skills indicate deep expertise in that area.
+| Field | Description |
+|---|---|
+| Name | Skill name (e.g., "Python", "Machine Learning") |
+| Endorsement Count | Number of endorsements from connections |
 
 ### Languages
 
-Languages listed on the profile:
+| Field | Description |
+|---|---|
+| Name | Language name |
+| Proficiency | Level (e.g., Native or Bilingual, Professional Working, Limited Working, Elementary) |
 
-- **Language Name** - The language they speak
-- **Proficiency Level** - Elementary, Limited Working, Professional, Fluent, Native
+### Certifications
 
-Useful for multi-regional outreach and localization.
-
-### Certifications & Credentials
-
-Professional certifications that demonstrate expertise:
-
-- **Certification Name** - Official credential name
-- **Authority** - Issuing organization (e.g., AWS, Google, Salesforce)
-- **License Number** - Official credential ID
-- **Issue & Expiration Dates** - When the cert was earned and when it expires
-- **Credential URL** - Link to verify the certification
-
-Highly relevant for technical hiring and B2B targeting.
+| Field | Description |
+|---|---|
+| Name | Certification name |
+| Authority | Issuing organization (e.g., AWS, Google, Salesforce) |
+| License Number | Official credential ID |
+| Issue Date | Month and year |
+| Expiration Date | Month and year |
+| URL | Credential verification URL |
 
 ### Network Strength
 
-- **Connection Count** - Total LinkedIn connections (capped at 500+)
-- **Follower Count** - LinkedIn followers (different from connections)
+| Field | Description |
+|---|---|
+| Connection Count | Total LinkedIn connections |
+| Follower Count | LinkedIn followers |
 
-Network size can indicate influence and engagement level.
+### Company Data
 
-## Data Quality & Completeness
+The enrichment also fetches the full company profile for the lead's current employer:
 
-LinkedIn profiles vary in completeness:
+| Field | Description |
+|---|---|
+| Company ID | LinkedIn company ID |
+| Name | Company name |
+| Description | Company description |
+| Tagline | Company tagline |
+| Industry | Company industry |
+| Company Type | Type of organization |
+| Headquarters | HQ location |
+| Staff Count | Estimated employee count |
+| Staff Count Range | Range string (e.g., "1001-5000") |
+| Website | Company website URL |
+| Founded Year | Year founded |
+| Specialities | Array of specialties |
+| Logo URL | Company logo URL |
+| Follower Count | Company page followers |
+| Fetched At | When this data was collected (30-day staleness check) |
 
-- **Well-maintained profiles** have work history, skills, endorsements, and recent activity
-- **Sparse profiles** might be missing education, skills, or only have a headline
-- **Private profiles** restrict what data can be accessed
+The staff count is promoted to the lead's employee count field for lead filtering.
 
-AutoReach handles incomplete profiles gracefully. Missing fields simply will not be populated, and scoring algorithms account for incomplete data.
+**Company Jobs**: Open job postings at the company, each with title, location, and posting date. Used as a hiring signal.
 
+**Company Posts**: Recent company page posts with text, date, and URL. Used for signal detection.
 
-## Using LinkedIn Data for Outreach
+### Recent Activity
 
-AI message generation uses LinkedIn data to:
+When running as part of the pipeline, LinkedIn enrichment also fetches the lead's recent posts and engagement (if not already fetched):
 
-- **Identify expertise** - "I noticed you've been leading Sales teams for 8+ years..."
-- **Reference shared interests** - "We both went to Stanford..."
-- **Acknowledge achievements** - "Your work scaling GTM at TechCorp is impressive..."
-- **Find connection points** - "I see you've worked with AWS and Salesforce..."
+| Field | Description |
+|---|---|
+| Recent Posts | Array of structured post objects |
+| Posts Text | Concatenated text with date labels for AI consumption |
+| Fetch Timestamp | When posts were fetched |
+| Empty Flag | True if no posts found |
+| Interaction Orbit | Who the lead interacts with on social media |
+| Signal Date | Updated if a newer post is found |
 
-The richer the LinkedIn profile, the more personalized your AI-generated outreach can be.
+## Error Handling
+
+### Transient Errors (Deferred with Delay)
+
+| Error | Deferral | Max Attempts |
+|---|---|---|
+| Daily budget exhausted | Until midnight UTC | 2 |
+| No LinkedIn account available | 15 minutes | 4 (1 hour max) |
+| Heavy operation locked / gateway timeout | 2-5 minutes | 8 |
+| Account paused mid-request | 2-5 minutes | 8 |
+| Rate limit (429) | Exponential backoff | 3 |
+
+### Non-Transient Errors (Pipeline Advances)
+
+- No LinkedIn URL available
+- Invalid LinkedIn URL
+- Profile doesn't exist
+- Lead not found
+- Already enriched (skip)
+- Proxy required but not configured
+
+Non-transient errors are logged and the pipeline continues -- enrichment failure does not block scoring or other enrichment steps.
+
+### Critical Errors (Account Paused)
+
+Auth failures (401/403, expired sessions) and proxy connection failures trigger account health alerts and may pause the LinkedIn account.
+
+## Data Quality
+
+LinkedIn profiles vary in completeness. Missing fields are simply not populated -- scoring algorithms account for incomplete data. A lead with only a headline and current company still gets enriched and scored, just with less context for personalization.
+
+Company data and company posts are fetched on a best-effort basis. If either fails, the lead continues through the pipeline with profile-level data only.
 
 ## Next Steps
 
 - **[X Profile Data](twitter-data.md)**: See what data is extracted from X profiles
 - **[Web Enrichment](web-enrichment.md)**: Discover how company-level data is gathered from the web
+- **[Enrichment Pipeline](pipeline.md)**: See how LinkedIn enrichment fits into the full pipeline

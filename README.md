@@ -6,14 +6,9 @@ AutoReach finds your ideal buyers on X/Twitter and LinkedIn, scores them with AI
 
 ## Jump right in
 
-<table data-card-size="large" data-view="cards">
-<thead><tr><th></th><th></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead>
-<tbody>
-<tr><td><strong>Quickstart</strong></td><td>Connect your accounts, create your first offer, and launch outreach in minutes.</td><td><a href="getting-started/quickstart.md">quickstart.md</a></td></tr>
-<tr><td><strong>Core Concepts</strong></td><td>Understand how offers, leads, buyer scoring, and sequences work together.</td><td><a href="core-concepts/overview.md">overview.md</a></td></tr>
-<tr><td><strong>Autopilot</strong></td><td>One click to activate fully automated discovery, engagement, and responses.</td><td><a href="autopilot/overview.md">overview.md</a></td></tr>
-</tbody>
-</table>
+- **[Quickstart](getting-started/quickstart.md)** -- Connect your accounts, create your first offer, and launch outreach in minutes.
+- **[Core Concepts](core-concepts/overview.md)** -- Understand how offers, leads, buyer scoring, and sequences work together.
+- **[Autopilot](autopilot/overview.md)** -- One click to activate fully automated discovery, engagement, and responses.
 
 ---
 

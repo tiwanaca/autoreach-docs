@@ -1,138 +1,141 @@
 # LinkedIn Content Search
 
-Discover high-intent decision-makers through LinkedIn posts and comments. AutoReach surfaces professionals actively discussing problems, hiring challenges, and growth goals relevant to your offer.
+Discover high-intent decision-makers through LinkedIn posts and comments. AutoReach generates intent-organized search queries, searches LinkedIn's content feed, and extracts both post authors and commenters as leads.
 
 ## How It Works
 
 ### 1. Intent-Based Query Generation
 
-Our AI analyzes your offer and generates multi-intent search queries targeting:
+AutoReach's AI generates 10-15 search queries and 15-20 keywords based on your offer. You select which intent categories to search from:
 
-| Intent Category | Examples |
-|-----------------|----------|
-| **Pain Points** | Inefficient processes, operational challenges, cost concerns |
+| Intent Category | What It Finds |
+|-----------------|---------------|
+| **Pain Points** | Professionals discussing operational challenges, inefficiencies, and frustrations |
 | **Hiring Signals** | Recruiting efforts, team expansion, skill gaps |
-| **Solution Seeking** | Looking for tools, evaluating options, RFP processes |
+| **Solution Seeking** | People evaluating tools, comparing options, asking for recommendations |
 | **Buying Intent** | Budget allocation, purchase decisions, vendor selection |
 | **Growth Signals** | Revenue growth, market expansion, new initiatives |
-| **Niche Jargon** | Industry-specific terminology and challenges |
 
-These queries intelligently combine to surface relevant LinkedIn content across your target market.
+The AI may also generate queries for additional categories like competitor switching, cost pressure, compliance/regulatory, and tool evaluation, but only the categories you select are used.
+
+If you've defined **search signals** in your offer, these are given the highest priority in query generation — the AI is instructed to build queries around them. This is enforced at the prompt level.
+
+Queries are always generated server-side. Unlike X Tweet Search, you cannot provide your own queries directly.
 
 ### 2. Content Discovery
 
-AutoReach searches LinkedIn for:
-- **Posts** matching your intent queries
-- **Comments** on relevant posts from engaged professionals
-- **Hashtags** associated with your offer domain
+AutoReach searches LinkedIn's content feed to find posts matching your queries. For each query:
 
-{% hint style="info" %}
-LinkedIn comment extraction is powerful because commenters are often decision-makers actively engaging with relevant content, which is a strong buying signal.
-{% endhint %}
+1. An initial search request goes to LinkedIn's content search endpoint
+2. Pagination fetches 3 results per page
+3. Post activity URNs are extracted from the response stream
+4. Pagination continues until `posts_per_intent` is reached, or a maximum of 15 pages per query
 
-### 3. Multi-Page Pagination
+Delays between pages (2.5s) and between queries (4s) are applied to respect rate limits.
 
-Our system:
-- Fetches multiple pages of search results
-- Handles LinkedIn's pagination automatically
-- Respects rate limits with gradual delays
-- Stops when no new results are found
+### 3. Post Detail Enrichment
 
-### 4. Topic Filtering via AI
+For each discovered post URN, AutoReach fetches the full post details via LinkedIn's API, including the post text, author name, author profile, engagement metrics, and creation date.
 
-Not every LinkedIn post matching your keywords is relevant. Our AI:
-- Analyzes post content and comments for topical relevance
-- Filters out generic, off-topic, or clickbait posts
-- Focuses on substantive professional discussions
-- Improves match quality with each search
+### 4. Commenter Extraction
 
-### 5. Prospect Extraction
+When `include_commenters` is enabled (the default), AutoReach fetches comments on each discovered post via LinkedIn's API. For each commenter, the following data is extracted:
 
-We extract prospects from two sources:
+- Name, headline, profile URL, and profile image
+- Comment text, comment URN, and creation date
+- Parent post context (text, author, URL)
 
-**Post Authors:** Decision-makers posting about relevant topics, often senior professionals with buying authority.
+Maximum comments per post is controlled by the `max_comments` parameter (default: 100).
 
-**Commenters:** Engaged professionals discussing solutions, frequently stakeholders in purchasing decisions.
+> **Note:** LinkedIn commenters are often decision-makers actively engaging with relevant content, which is a strong buying signal.
 
-Each prospect is automatically scored against your ICP and enriched with professional data.
+### 5. ICP Matching
 
-## User-Provided Search Signals
+Extracted prospects are matched against your offer's target audience. This annotates each prospect with an ICP match reason but does not filter them out — all discovered prospects are added as leads. Scoring happens downstream during the enrichment pipeline.
 
-**Highest Priority:** Your custom search signals
+### 6. Recurring Daily Searches
 
-If you've defined search signals in your offer, these are given the highest priority in content discovery. Search signals are natural language phrases your prospects actually say:
+You can enable any content search to run on a daily recurring schedule. The scheduler runs hourly and triggers searches that were last run more than 24 hours ago. Each recurring run **regenerates fresh queries** to avoid repeating previous searches and capture new content. Unconverted prospects from the previous run are cleaned up before rerunning.
 
-Examples:
-- "Our team needs a better way to manage customer data"
-- "We're looking for a CRM that integrates with Salesforce"
-- "Tired of spreadsheets for project management"
+## Search Parameters
 
-{% hint style="info" %}
-Custom search signals outweigh AI-generated queries. If you've seen real prospects discussing your solution in specific ways, add those phrases as search signals for maximum relevance.
-{% endhint %}
+| Parameter | Default | Description |
+|---|---|---|
+| `intent_categories` | *(required)* | Which intent categories to search |
+| `posts_per_intent` | 25 | Max posts to collect per intent category |
+| `include_commenters` | true | Extract commenters from discovered posts |
+| `max_comments` | 100 | Max comments to fetch per post |
+| `days_back` | 30 | How far back to search |
+| `daily_recurring` | false | Enable automatic daily re-runs |
+| `pipeline_actions` | — | Options for `enrich` and `deepAnalysis` |
+| `max_jobs_per_role` | — | For hiring signals: max job postings per role |
+| `max_companies` | — | For hiring signals: max companies to process |
+
+## Cost Estimation
+
+Before running a search, call the cost estimation endpoint (`POST /api/linkedin-search/estimate-cost`) with your `offer_id`, `intent_categories`, `posts_per_intent`, and `include_commenters` to preview estimated costs. Returns `min_cost`, `max_cost`, and a detailed breakdown.
 
 ## Progress Tracking
 
-While a content search runs, you can monitor:
+While a content search runs, progress is tracked and updated to the database every 5 seconds. You can monitor:
 
-- **Posts Found:** Total LinkedIn posts matching your search queries
-- **Prospects Extracted:** Unique decision-makers identified from posts and comments
-- **ICP Matches:** Number of prospects that match your ideal customer profile
-
-Real-time progress helps you understand search effectiveness and identify if results are meeting expectations.
+- **Posts found:** Total LinkedIn posts matching your queries
+- **Comments fetched:** Total comments retrieved
+- **People found:** Unique prospects identified
+- **People after ICP match:** Prospects matching your ICP
+- **Current operation:** What phase the search is in
+- **Current query:** Which query is currently being searched
 
 ## Best Practices
 
-1. **Be specific:** More specific search terms yield higher-quality prospects than broad keywords.
+1. **Be specific.** More specific search terms yield higher-quality prospects than broad keywords.
 
-2. **Include pain points:** Search for the exact pain points your offer solves (from your offer description).
+2. **Include pain points.** Search for the exact pain points your offer solves (from your offer description).
 
-3. **Add search signals:** Define 5-8 natural language search signals based on real prospect conversations you've had.
+3. **Add search signals.** Define 5-8 natural language search signals based on real prospect conversations you've had. These get highest priority in query generation.
 
-4. **Monitor topic relevance:** Review the topics appearing in your top results. Adjust queries if you're seeing off-topic content.
+4. **Keep commenters on.** LinkedIn commenters are often highly engaged decision-makers. Leave `include_commenters` enabled.
 
-5. **Leverage comments:** LinkedIn commenters are often highly engaged decision-makers. Do not overlook comment-based prospects.
-
-6. **Run recurring searches:** Set up daily LinkedIn content searches to capture new prospects continuously.
+5. **Run recurring searches.** Set up daily LinkedIn content searches to capture new prospects continuously with fresh query rotation.
 
 ## Example Workflow
 
 **Offer:** "People analytics and HR software platform"
 
+**Selected intent categories:** Pain Points, Hiring Signals, Solution Seeking
+
 **AI-generated queries might include:**
 - "struggling with employee retention"
 - "need visibility into team performance"
-- "HR team working with spreadsheets"
 - "talent management challenges"
 - "hiring pipeline needs improvement"
 
-**Search signals you might add:**
+**Search signals you add:**
 - "manual HR processes slowing us down"
 - "need better visibility into talent"
 - "looking for people analytics solution"
 
-**Result:** Content search finds posts discussing HR challenges, hiring, and performance management, extracting CHRO, VP of People, and Talent Acquisition leaders discussing your exact problem space.
+**Result:** Content search finds posts discussing HR challenges, hiring, and performance management. Post authors and commenters are extracted — CHROs, VPs of People, and Talent Acquisition leaders discussing your exact problem space. All are added as leads and queued for enrichment and scoring.
 
 ## Troubleshooting
 
 **Seeing too many generic results?**
-- Narrow your search terms to be more specific
-- Add more topic filters and exclusion terms
-- Review generated queries and customize if needed
+- Narrow your intent categories — fewer categories means more focused queries
+- Add specific search signals to steer query generation
+- Review your offer description for clarity
 
 **Not finding enough prospects?**
-- Broaden your intent categories
-- Include common pain point variations
+- Add more intent categories
+- Increase `posts_per_intent` to collect more results
+- Include common pain point variations in your search signals
 - Check if your target audience is active on LinkedIn
 
 **Getting low ICP match rates?**
 - Verify your offer's target audience and pain points are well-defined
 - Ensure search signals match your actual buyer personas
-- Consider whether LinkedIn is where your buyers congregate
 
 **High duplicate rate across searches?**
-- This is normal. The same prospect may comment on multiple relevant posts
-- ICP matching automatically deduplicates before adding to your lead database
+- This is normal. The same prospect may comment on multiple relevant posts. Deduplication happens before leads are added to your database.
 
 ## Next Steps
 

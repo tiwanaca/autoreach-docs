@@ -2,9 +2,7 @@
 
 LinkedIn is one of the two core platforms AutoReach supports for outreach. Connecting your LinkedIn account lets AutoReach send connection requests, DMs, comments, likes, and profile views on your behalf.
 
-{% hint style="warning" %}
-**Important**: You can ONLY connect your LinkedIn account through the Chrome Extension. Make sure you've [installed the extension](chrome-extension.md) and activated your license key first.
-{% endhint %}
+> **Important:** You can ONLY connect your LinkedIn account through the Chrome Extension. Make sure you've [installed the extension](chrome-extension.md) and activated your license key first.
 
 ***
 
@@ -23,9 +21,7 @@ The extension will automatically extract your session cookies and li\_at token, 
 
 AutoReach automatically provisions a secure ISP residential static proxy for your account when you pick a location during onboarding. You don't need to configure or purchase a proxy separately.
 
-{% hint style="info" %}
-Each LinkedIn account gets its own dedicated ISP residential static proxy. This ensures your activity appears to come from a real residential IP, which is critical for LinkedIn's stricter anti-automation detection.
-{% endhint %}
+> **Note:** Each LinkedIn account gets its own dedicated ISP residential static proxy. This ensures your activity appears to come from a real residential IP, which is critical for LinkedIn's stricter anti-automation detection.
 
 ***
 
@@ -81,9 +77,7 @@ AutoReach continuously monitors your LinkedIn account health. If issues arise:
 | Proxy error   | 24 hours | Auto-recovery attempted                  |
 | IP blocked    | 24 hours | Full activity stop                       |
 
-{% hint style="warning" %}
-If you see a bot detection warning, do not try to bypass it. Wait the full 7-day cooldown and let AutoReach gradually resume activity.
-{% endhint %}
+> **Warning:** If you see a bot detection warning, do not try to bypass it. Wait the full 7-day cooldown and let AutoReach gradually resume activity.
 
 ***
 

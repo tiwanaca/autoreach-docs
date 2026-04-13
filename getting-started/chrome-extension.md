@@ -17,9 +17,7 @@ After installation, activate your license key:
 2. Paste your **License Key** (generated during onboarding or found at [autoreach.tech/settings/integrations](https://autoreach.tech/settings/integrations))
 3. Click **Activate**
 
-{% hint style="warning" %}
-**Important**: Keep your license key private. Never share it with others or post it online.
-{% endhint %}
+> **Important:** Keep your license key private. Never share it with others or post it online.
 
 ## Platform Modes
 

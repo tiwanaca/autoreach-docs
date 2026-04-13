@@ -1,139 +1,206 @@
 # Keyword Generation
 
-AutoReach uses AI to generate targeted search queries from your offer description. These keywords power automated daily searches across X and LinkedIn, keeping your prospect pipeline full without manual effort.
+AutoReach uses AI to generate targeted search queries from your offer definition. Keywords power both one-time and recurring daily searches across X and LinkedIn, keeping your prospect pipeline full without manual effort.
 
 ## How It Works
 
-When you create an offer or start a search, AutoReach analyzes your offer and generates 10-20 search queries per platform. Each set of keywords is optimized for the platform it targets, using the right format, terminology, and search syntax.
+Keyword generation is a multi-layered system. For X, it produces simple keywords, structured intent query clusters, competitor keywords, and niche jargon. For LinkedIn, it produces search queries organized by intent category. Each layer is optimized for the platform's search capabilities.
 
 ### Where Keywords Come From
 
 AutoReach derives keywords from multiple elements of your offer:
 
-- **Pain points** described in your offer
 - **Target audience** details like titles, roles, and industries
+- **Pain points** described in your offer
 - **Search signals** you provide as natural language phrases
-- **Competitor keywords** referencing tools and solutions in your space
+- **Competitors** — competitor-specific keywords are generated and merged separately
+- **Industry jargon** — niche terminology, insider terms, and community names
 
-The AI also pulls from your offer's unique terminology, industry jargon, and common problem statements in your market.
+## X Keyword Generation
 
-## Platform-Optimized Keywords
+X keyword generation has four components:
 
-### X Keywords
+### Simple Keywords (`generateKeywords`)
 
-X keywords use native search operators for precision:
+Generates **15-25 keywords** (capped at 25), plus a 6-8 term OR-joined search query string. Keywords are short conversational phrases:
 
-- **AND:** Combine terms (e.g., `"sales" AND "automation"`)
-- **OR:** Alternative terms (e.g., `"CRM" OR "Salesforce"`)
-- **-exclude:** Remove false positives (e.g., `-crypto`, `-NFT`)
+- 2-3 words ideal, 4 words max
+- First-person conversational style ("my X keeps breaking", "need a better X")
+- Two-word phrases are auto-quoted for exact matching; 3+ word phrases are left unquoted to avoid over-restricting results
 
-Example queries for a B2B Sales Automation Platform:
-- `"sales process" AND "manual" -NFT`
-- `"pipeline management" OR "forecast accuracy"`
-- `"sales operations" AND "struggling"`
-- `"CRM automation" -crypto`
+The AI draws from up to 8 categories: conversational first-person, pain points, solution-seeking, hiring/growth signals, tool evaluation, company growth signals, competitor alternatives, and professional identity. Categories 4-8 are conditional — skipped if they don't fit the offer.
 
-X keywords tend to be shorter (2-3 words), use intent-oriented language like "struggling" or "frustrated," and leverage search operators to filter noise.
+### Intent Query Clusters (`generateIntentQueries`)
 
-### LinkedIn Keywords
+A separate AI call that generates **full Twitter search queries with operators** (`OR`, `"quoted phrases"`, `-exclusions`, `min_faves:2`). This is where search operators actually live — simple keywords do not contain operators.
 
-LinkedIn keywords are optimized for professional, B2B conversation:
+The AI selects 3-6 relevant intent categories and generates 2-6 queries per cluster:
 
-Example queries for Sales Operations:
-- "sales pipeline"
-- "forecast accuracy"
-- "revenue operations"
-- "sales process optimization"
+| Intent Category | What It Targets |
+|---|---|
+| `operational_pain` | Day-to-day frustrations and inefficiencies |
+| `budget_pressure` | Cost concerns and budget constraints |
+| `hiring_scaling` | Growth challenges and team scaling |
+| `buying_evaluation` | Actively comparing or evaluating solutions |
+| `competitor_switch` | Switching away from or frustrated with competitors |
+| `growth_signals` | Expansion, new markets, scaling needs |
+| `security_compliance` | Regulatory, security, or compliance concerns |
+| `vertical_specific` | Industry-specific pain points |
+| `professional_identity` | Role-based challenges and aspirations |
 
-LinkedIn keywords are slightly longer (2-4 words), use professional terminology, and include role-relevant language. They power post search, people search, and comment extraction on LinkedIn.
+### Competitor Keywords (`generateCompetitorKeywords`)
 
-## Adding and Editing Keywords
+A **synchronous function** (no AI call). For each competitor, generates 10 keyword variants:
+- "switching from [competitor]"
+- "[competitor] alternative"
+- "replacing [competitor]"
+- etc.
 
-AutoReach generates keywords automatically, but you have full control:
+Plus a 5-clause OR search query with fully quoted phrases. The top 3 keywords per competitor are injected into the main keyword array.
 
-- **Edit** any AI-generated keyword to better match your market
-- **Add** your own keywords based on terms you have validated
-- **Remove** keywords that generate irrelevant results
-- **Supplement** AI suggestions with niche terminology the AI may have missed
+### Niche Jargon (`generateNicheJargon`)
 
-Your market knowledge combined with AI generation produces the best results.
+A separate AI call that generates insider terminology:
+- **Insider terms** — tools, certifications, acronyms, conferences (5-10 items)
+- **Headline keywords** — job titles (5-8)
+- **Community names** — newsletters, Slack groups, communities (3-5)
+- **Twitter search queries** — ready-to-use OR queries with operators (5-8)
+- **LinkedIn title searches** — title filter terms for LinkedIn People Search (5-8)
 
-## Recurring Daily Searches
+## LinkedIn Keyword Generation
 
-Keywords power automated daily searches that run without intervention:
+LinkedIn generates **up to 20 keywords** plus **10-15 search queries** organized by intent.
 
-1. **Initial search** generates keywords from your offer
-2. **Daily re-execution** queries the same keywords automatically
-3. **Incremental discovery** finds new prospects who posted since the last search
-4. **Automatic enrichment** scores new finds against your ICP
-5. **Continuous pipeline** keeps prospect flow consistent day over day
+### Search Query Format
 
-Set it once, and AutoReach searches every day on your behalf.
+LinkedIn queries are short natural phrases (3-5 words) without search operators — LinkedIn's content search doesn't support them. Each query is a `SearchQuery` object with:
+- `query` — the search text
+- `intent` — the intent category it belongs to
+- `description` — what the query is designed to surface
+
+### LinkedIn Intent Categories
+
+The AI generates queries across these intents (2-3 queries per category):
+
+| Intent | Description |
+|---|---|
+| `pain_points` | Operational challenges and frustrations |
+| `hiring_signals` | Recruiting, team expansion, skill gaps |
+| `solution_seeking` | Evaluating tools, asking for recommendations |
+| `buying_intent` | Budget allocation, vendor selection |
+| `growth_signals` | Revenue growth, market expansion |
+| `professional_identity` | Role-based challenges |
+| `competitor_switching` | Moving away from competitors |
+| `cost_pressure` | Cost reduction, budget constraints |
+| `compliance_regulatory` | Regulatory and compliance needs |
+| `tool_evaluation` | Comparing or testing tools |
+
+When you start a LinkedIn content search, you select which intent categories to include. Only queries matching your selected categories are used.
+
+### Key Differences from X
+
+- No search operators (LinkedIn doesn't support them)
+- No competitor keyword injection
+- Queries are professional/B2B-oriented phrases
+- Filtered by user-selected intent categories at search time
+
+## Preview Endpoints
+
+You can preview generated keywords before running a search:
+
+| Endpoint | What It Returns |
+|---|---|
+| `POST /api/tweet-search/generate-keywords` | X keywords and search query |
+| `POST /api/tweet-search/generate-queries` | X intent clusters with operators |
+| `POST /api/linkedin-search/generate-keywords` | LinkedIn queries organized by intent |
+
+These are preview-only — they return results without starting a search.
+
+## Keyword Overrides
+
+For X searches, you can provide your own `keywords` and `search_query` at search start time to skip AI generation entirely. There is no endpoint to edit keywords on an already-saved search — overrides are applied at search creation only.
+
+LinkedIn searches always generate queries server-side. You cannot provide custom queries directly.
+
+## Recurring Keyword Regeneration
+
+When daily recurring searches are enabled, keywords are **regenerated fresh** on each run (not reused):
+
+**X recurring regeneration:**
+- Calls `regenerateKeywords()` with the previous keywords and query
+- The AI prompt includes a "KEYWORD ROTATION" block listing all previous keywords, instructing it to avoid repeating them
+- Falls back to existing keywords if regeneration fails
+- The search record's `generated_keywords` and `search_query` are updated in the database
+
+**LinkedIn recurring regeneration:**
+- Calls `regenerateLinkedInQueries()` with previous queries
+- Same rotation pattern: prompt includes previous queries, instructs different angles
+- Result is filtered by the search's configured `intent_categories`
+- Niche jargon queries (up to 5) are appended after regeneration
+- Falls back to `generateLinkedInKeywords()` on error
+
+The recurring search scheduler runs every hour. Searches re-trigger only when last run was 24+ hours ago.
 
 ## Best Practices
 
-1. **Review AI-generated keywords.** AutoReach generates solid starting points, but you know your market best. Customize where it makes sense.
+1. **Review AI-generated keywords.** AutoReach generates solid starting points, but you know your market best. Override where it makes sense.
 
-2. **Include industry jargon.** Technical terminology specific to your vertical surfaces higher-quality prospects.
+2. **Include industry jargon in your offer.** Niche terminology in your offer description, pain points, and search signals produces better AI-generated keywords.
 
-3. **Vary intent signals.** Mix pain-focused keywords ("struggling with"), growth-focused ("scaling"), and evaluation-focused ("comparing") to cover different buyer stages.
+3. **Vary intent signals.** Mix pain-focused ("struggling with"), growth-focused ("scaling"), and evaluation-focused ("comparing") to cover different buyer stages.
 
-4. **Test and iterate.** If certain keywords bring in low-quality prospects, disable them and try variations.
+4. **Let recurring searches regenerate.** Keyword rotation prevents stale results and captures different prospect segments over time.
 
-5. **Monitor recurring searches.** Check quality and volume regularly. Adjust keywords if the results drift from your ICP.
-
-6. **Update keywords when your offer changes.** Regenerate keywords after refining your offer description to stay aligned.
-
-7. **Combine with other discovery methods.** Keywords complement content search, people search, and lookalike audiences. Use them together for broader coverage.
+5. **Combine with other discovery methods.** Keywords complement people search, lookalike audiences, and lead pool matching. Use them together for broader coverage.
 
 ## Example Workflow
 
 **Your Offer:** "Financial planning and analysis (FP&A) software for growing SaaS companies"
 
-**AI-Generated Keywords:**
+**X Simple Keywords (15-25):**
+- "financial planning SaaS"
+- "FP&A forecasting"
+- "budget cycle manual"
+- "revenue forecast inaccurate"
 
-**X:**
-1. `"financial planning" AND "SaaS" -crypto`
-2. `"FP&A" AND "forecasting" -sports`
-3. `"headcount planning" AND "growing"`
-4. `"budget cycle" OR "budgeting process"`
-5. `"revenue forecasting" AND "inaccurate"`
-6. `"financial model" AND "spreadsheet"`
+**X Intent Clusters:**
+- **operational_pain:** `"spreadsheet" OR "manual" "financial model" min_faves:2 -crypto`
+- **buying_evaluation:** `"FP&A tool" OR "forecasting software" "evaluating" min_faves:2`
+- **budget_pressure:** `"budget process" OR "budget cycle" "too slow" min_faves:2`
 
-**LinkedIn:**
-1. Financial planning and analysis
-2. FP&A forecasting
-3. Headcount planning
-4. Budget forecasting
-5. Financial modeling SaaS
-6. Revenue operations
+**X Competitor Keywords:**
+- "switching from Anaplan"
+- "Adaptive Insights alternative"
 
-**Result:** 12 total queries across both platforms, running daily to surface CFOs, FP&A leaders, and finance operators discussing relevant topics.
+**LinkedIn Queries:**
+- (pain_points) "financial planning manual process"
+- (solution_seeking) "FP&A software recommendation"
+- (growth_signals) "scaling finance team"
+- (hiring_signals) "hiring FP&A analyst"
+
+**Result:** Multi-layered queries across both platforms, running daily with fresh keyword rotation to surface CFOs, FP&A leaders, and finance operators.
 
 ## Troubleshooting
 
 **Getting too many irrelevant results?**
-- Your keywords may be too broad. Make them more specific.
-- Add exclusion terms to filter out common false positives.
-- Include more niche, vertical-specific terminology.
+- Your keywords may be too broad. Override with more specific terms.
+- Add exclusion terms to the search (default exclusions are minimal: `giveaway`, `retweet`, `airdrop`).
+- Focus on intent clusters rather than simple keywords for better precision.
 
 **Not getting enough results?**
-- Your keywords may be too narrow. Broaden slightly while keeping them relevant.
-- Add synonym variations for key terms.
+- Broaden search terms or include synonym variations.
+- Increase `days_back` on the search to look further into the past.
 - Verify that your target audience actively discusses these topics online.
 
 **Keywords seem too generic?**
-- Generic keywords still surface real prospects. Relevance matters more than cleverness.
-- Combine generic and niche keywords for balanced coverage.
+- The niche jargon generator adds insider terminology. Make sure your offer includes enough domain context for it to work with.
+- Override with your own validated keywords at search start.
 
-**How many keywords should I have?**
-- AutoReach generates 10-20 per platform, which is a solid starting point.
-- Start with the defaults, monitor quality, and adjust from there.
-
-**Can I edit AI-generated keywords?**
-- Yes. AutoReach suggestions are starting points. Add, remove, or refine based on your experience and past campaign results.
+**How many keywords are generated?**
+- X: 15-25 simple keywords + 3-6 intent clusters (2-6 queries each) + competitor keywords + niche jargon
+- LinkedIn: up to 20 keywords + 10-15 search queries
 
 ## Next Steps
 
-- **[X Post Search](tweet-search.md)**: Use your generated keywords to find high-intent prospects on X
+- **[X Tweet Search](tweet-search.md)**: Use your generated keywords to find high-intent prospects on X
 - **[LinkedIn Content Search](linkedin-content-search.md)**: Apply keywords to discover decision-makers on LinkedIn

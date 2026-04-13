@@ -130,9 +130,7 @@ Warning: {{tech_stack}} has no data for this lead.
 
 The full phrase containing the variable is omitted in the final message.
 
-{% hint style="info" %}
-Test simulations with a few leads who have incomplete data to ensure messages still read well.
-{% endhint %}
+> **Tip:** Test simulations with a few leads who have incomplete data to ensure messages still read well.
 
 ## Editing Variants
 
@@ -203,9 +201,7 @@ We've worked with companies like Stripe to streamline developer workflows.
 Would a 15-min call to explore if we're a fit make sense?
 ```
 
-{% hint style="info" %}
-This is a preview of what your AI would actually say if this sequence were live. Edit your AI prompt in **Sequence Settings** if the tone feels off.
-{% endhint %}
+> **Note:** This is a preview of what your AI would actually say if this sequence were live. Edit your AI prompt in **Sequence Settings** if the tone feels off.
 
 ### Step 3: Iterate
 
@@ -226,9 +222,7 @@ Try different replies to stress-test your AI:
 
 AutoReach uses lead profile data, recent activity, and your knowledge base to personalize messages. The more enrichment data available for a lead, the more specific and informed their simulated message will be.
 
-{% hint style="info" %}
-The more enrichment data you have on a lead, the more personalized their simulated message will be.
-{% endhint %}
+> **Note:** The more enrichment data you have on a lead, the more personalized their simulated message will be.
 
 ## Sequence Settings Panel
 

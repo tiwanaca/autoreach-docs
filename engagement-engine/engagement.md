@@ -1,137 +1,62 @@
 # Engagement Automation
 
-Engagement is at the core of the Engagement Engine. While your account posts content, it simultaneously engages with other relevant posts by liking, commenting, following, and building visibility in your niche. This dual approach accelerates account growth and generates passive lead discovery.
+While your account posts content, the Engagement Engine simultaneously interacts with relevant posts in your niche — liking, replying, following, and viewing profiles to build visibility.
 
 ## How Engagement Works
 
-Engagement automation runs continuously throughout the day:
+The warmup scheduler processes engagement actions every 10 minutes:
 
-1. **Scan**: identify posts in your niche matching your engagement keywords
-2. **Filter**: apply quality filters (relevance, follower count, timing)
-3. **Engage**: like, reply, follow, or view profiles based on daily allocation
-4. **Delay**: use randomized human-like delays between actions
+1. **Scan**: Find posts matching your engagement keywords
+2. **Filter**: Apply relevance and follower count filters
+3. **Execute**: Perform likes, replies, follows, or profile views based on daily allocation
+4. **Delay**: Randomized human-like delays between actions (2–5 seconds)
 
-All engagement is keyword-based and selective, not indiscriminate.
+## Engagement Types
 
-## Types of Engagement
+### Likes
 
-### Auto-Likes
-- Likes on relevant posts in your niche on X and LinkedIn
-- Targets posts matching your engagement keywords
-- Helps posts reach more people and shows support
+- Target posts matching your niche keywords on X and LinkedIn
+- X: 2–8 per day | LinkedIn: 1–5 per day
 
-### Auto-Replies
-- Contextual replies to relevant posts on X and LinkedIn
-- References the original post specifically
-- Generates conversations and visibility
+### Replies / Comments
 
-### Auto-Follows
-- Follows on relevant accounts in your niche on X and LinkedIn
-- Accounts are filtered by relevance and follower count
-- Builds your follower network naturally
+- AI-generated contextual responses that reference the original post
+- Add value to the conversation, not generic responses
+- X: 2–8 replies per day (20% skip chance) | LinkedIn: 1–3 comments per day
 
-### LinkedIn Profile Views
-- Views of relevant profiles for visibility
-- Passive visibility technique that often generates inbound interest
-- Accounts with recently viewed profiles often check you out in return
+### Follows / Connection Requests
+
+- Follow relevant accounts in your niche
+- X: 1–5 follows per day | LinkedIn: 0–2 connection requests per day
+
+### Profile Views (LinkedIn Only)
+
+- Views relevant LinkedIn profiles to trigger "who viewed your profile" notifications
+- 1–3 per day
+- Often generates inbound profile visits in return
 
 ## Keyword-Based Targeting
 
-Engagement uses **keyword-based targeting** to find and engage with relevant content:
-
-- Define keywords related to your niche and offer
-- The Engagement Engine searches for posts, comments, and profiles matching those keywords
-- Only engages on relevant content
-- Ignores posts outside your niche
-
-**Example keywords for sales automation:**
-- "sales outreach"
-- "cold email"
-- "lead generation"
-- "sales process"
-- "automation workflow"
-
-When a post contains any of these keywords, it becomes a candidate for engagement.
-
-{% hint style="info" %}
-Keyword-based targeting is the difference between strategic engagement and spam-like engagement. You are not just clicking everything. You are having niche-specific conversations.
-{% endhint %}
+Engagement uses keywords derived from your offer and content pillars to find relevant content. Only posts matching your niche keywords are candidates for engagement. This keeps interactions focused and relevant rather than indiscriminate.
 
 ## High Follower Filtering
 
-AutoReach avoids mega-influencer accounts and focuses on mid-tier and emerging voices in your niche.
+On X, accounts with more than 100,000 followers are skipped. Engaging with mega-influencer accounts is ineffective — your interaction won't be noticed among thousands, and it signals clout-chasing rather than genuine engagement.
 
-**Why?**
-- Engaging with mega-influencers looks spammy and inauthentic
-- Your like or reply will not be noticed among thousands
-- It signals you are chasing clout rather than building genuine relationships
-- Mid-tier and emerging voices in your niche are where real influence happens
+The Engagement Engine focuses on mid-tier and emerging voices where your interaction is likely to be noticed and reciprocated.
 
-This keeps your engagement focused on accounts that are:
-- Likely to notice your engagement
-- In your true peer group
-- More likely to follow you back or start a conversation
+## Per-Action Randomization
 
-## Human-Like Timing
+Each individual action has built-in randomization during execution:
 
-All engagement uses **randomized delays and human-like timing**:
+- **3% random skip rate**: Any action has a 3% chance of being skipped entirely
+- **4% give-up rate**: Chance to abandon an action mid-execution, simulating natural distraction
 
-- Delays between actions (a few seconds to a few minutes)
-- Engagement spread throughout your Activity Window
-- No sudden bursts of activity (which look automated)
-- Natural pacing that mimics real human behavior
+## Engagement and Outreach Are Independent
 
-{% hint style="warning" %}
-Platforms detect automated behavior through action timing. AutoReach uses randomization to stay under the radar while maintaining consistent activity.
-{% endhint %}
-
-## Engagement as Lead Generation
-
-Beyond building your presence, engagement **generates passive lead discovery**:
-
-- When you like a post, the author often checks your profile
-- When you reply thoughtfully, people start following you
-- When you follow someone, they often follow back
-- This creates organic inbound interest before you reach out
-
-The benefit: by the time you start outreach sequences, your target accounts have often already seen and engaged with your content. They recognize your name.
-
-## The Engagement Engine Dashboard
-
-The Engagement Engine dashboard tracks your engagement activity:
-
-- **Posts Posted**: daily and cumulative count
-- **Likes Given**: per day and total
-- **Replies Sent**: engagement replies by day
-- **Follows**: new followers gained
-- **Activity Chart**: visual breakdown of engagement over time
-
-This gives you real-time visibility into what the Engagement Engine is doing.
-
-## Customizing Engagement Keywords
-
-When you set up or configure the Engagement Engine, you define your **engagement keywords**:
-
-1. List 5-10 keywords relevant to your niche
-2. AutoReach scans for posts containing these keywords
-3. Engagement is targeted only to relevant content
-4. You can adjust keywords anytime to refocus engagement
-
-Keywords are automatically derived from your offer and ICP, but you can customize them.
-
-## Engagement Doesn't Stop Outreach
-
-{% hint style="success" %}
-Engagement activity and outreach sequences are **independent**. The Engagement Engine can be engaging with posts while your sequences are sending direct messages to leads. Both run simultaneously.
-{% endhint %}
-
-- Engagement runs continuously throughout the day
-- Outreach sequences run on their own schedule
-- Both contribute to your account's visibility and growth
-- Engagement builds the presence; outreach converts leads
+Engagement Engine activity and outreach sequences run simultaneously and independently. The Engagement Engine builds your account presence while sequences handle direct lead outreach. Neither blocks the other.
 
 ## Next Steps
 
-- **[Daily Action Allocation](daily-actions.md)**: See the breakdown of daily engagement actions
-- **[Content Strategy & Pillars](content-strategy.md)**: Learn how pillars guide your engagement keywords
-- **[Autopilot Overview](../autopilot/overview.md)**: Set up Autopilot to automate engagement alongside lead discovery and outreach
+- **[Daily Action Allocation](daily-actions.md)**: Full breakdown of daily activity ranges
+- **[Content Strategy & Pillars](content-strategy.md)**: How pillars guide engagement targeting

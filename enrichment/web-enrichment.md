@@ -1,103 +1,148 @@
 # Web Enrichment
 
-Web enrichment searches the public web to gather additional context about your leads, giving you the information you need to write outreach that feels personal and relevant.
+Web enrichment uses AI-powered web search to gather additional context about leads -- company details, social profiles, contact information, recent news, and professional achievements. It is a **separate, optional process** that is not part of the standard enrichment pipeline.
 
-## What Web Enrichment Gathers
+## How It Works
+
+Web enrichment runs in **three sequential search phases**, each making a separate AI web search call. The AI model is resolved via the user's web search model configuration.
+
+### Phase 1: Identity & Company
+
+Searches for the lead's current company and role. Extracts company name, website, size, industry, funding details, tech stack, founding year, and headquarters.
+
+### Phase 2: Social & Contact
+
+Searches for additional social profiles (GitHub, YouTube, Medium, Substack, personal website) and contact information (phone, additional emails, Calendly link). Uses the company name discovered in Phase 1 to improve search accuracy.
+
+### Phase 3: Activity & Insights
+
+Searches for recent news mentions, speaking engagements, publications, podcast appearances, and achievements. **Filtered to the last 6 months only** -- news items without dates or older than 6 months are removed post-processing.
+
+Each phase returns a confidence level (HIGH, MEDIUM, LOW, or NONE) and a list of sources.
+
+### Rate Limit
+
+Web enrichment processes up to **5 leads per minute**.
+
+### Preconditions
+
+A lead must have **at least one** of:
+- A LinkedIn profile URL
+- A website URL
+- A bio longer than 20 characters
+
+Leads without any of these are skipped.
+
+## What Gets Extracted
 
 ### Company Information
 
-- **Company Size** - Number of employees
-- **Industry** - Primary industry classification
-- **Funding Stage** - Seed, Series A, B, C, etc.
-- **Funding Amount** - Total raised to date
-- **Investors** - Known VCs and angel investors
-- **Technologies** - Tech stack and tools used
-- **Founded Year** - When the company was established
-- **Headquarters Location** - Primary office location
-- **Official Website** - Company domain
+| Field | Description |
+|---|---|
+| Company Name | Company name |
+| Company Website | Company domain URL |
+| Company Size | Employee range ("1-10", "11-50", "51-200", "201-500", "500+") |
+| Industry | Primary industry classification |
+| Description | Brief company description |
+| Founded Year | Founding year |
+| Headquarters | Primary office location |
+| Funding Stage | Funding stage (Seed, Series A, B, C, etc.) |
+| Funding Amount | Total raised to date |
+| Investors | Array of known investor names |
+| Technologies | Array of tech stack tools and frameworks |
 
-### Social Profiles and Web Presence
+If the lead does not already have an employee count value, the company size is promoted for filtering.
 
-- **X Account** - Company or personal X handle
-- **GitHub Account** - Engineering team code repository
-- **YouTube Channel** - Video content and company branding
-- **Medium Publication** - Company blog
-- **Substack Newsletter** - Content newsletter
-- **Personal Websites** - Portfolios, consulting sites, or blogs
-- **Company LinkedIn Page** - Official company presence
+### Social Profiles
+
+| Field | Description |
+|---|---|
+| Twitter | X/Twitter profile URL |
+| GitHub | GitHub profile |
+| YouTube | YouTube channel |
+| Medium | Medium blog |
+| Substack | Substack newsletter |
+| Personal Website | Portfolio, consulting site, or blog |
+| Other | Array of other platform profiles |
 
 ### Contact Information
 
-- **Phone Number** - Verified phone contact
-- **Additional Email Addresses** - Work or personal emails beyond primary
-- **Calendly Link** - Scheduling page for easy meeting booking
-- **Newsletter Subscription** - Email list signup pages
-
-### News and Press
-
-Recent news about the lead or their company:
-
-- **News Title** - Headline of the article
-- **Publication Source** - Where it was published (TechCrunch, Forbes, company blog, etc.)
-- **URL** - Link to the full article
-- **Publication Date** - When the news was published
-- **Summary** - Brief description of the news content
-
-News signals are especially useful for outreach timing. A lead who just closed a funding round or made a key hire is often more receptive to outreach.
-
-### Insights and Achievements
-
-Professional accomplishments and public-facing activity:
-
-- **Speaking Engagements** - Conferences and events they have spoken at
-- **Publications** - Articles, whitepapers, or research they have authored
-- **Podcast Appearances** - Interviews and podcast guest slots
-- **Awards** - Professional recognition and accolades
-- **Patents** - Issued patents in their field
-
-These signals indicate expertise and influence in their space, and make strong personalization hooks.
-
-## How Web Enrichment Improves Outreach
-
-Enriched data powers more specific, relevant messaging. For example:
-
-- **Recent news** - "Congrats on the Series B funding!"
-- **Speaking expertise** - "I caught your keynote at SaaStr and wanted to connect."
-- **Technology alignment** - "I see your team is building on AWS and React..."
-- **Investor context** - "With Sequoia backing you, it sounds like you are scaling quickly."
-
-Leads that receive personalized outreach based on real context respond at significantly higher rates than those who receive generic messages.
-
-## When Web Enrichment Runs
-
-Web enrichment runs automatically when new leads are added to your workspace. You can also manually trigger it from a lead's profile card.
-
-### Enabling and Disabling
-
-Web enrichment is enabled by default. To disable it:
-
-1. Go to **Settings > Enrichment**
-2. Toggle off **Enable Web Enrichment**
-3. Save
-
-You can re-enable it at any time. Leads that have already been enriched will not be re-processed unless you manually refresh them.
-
-## Best Practices
-
-- **Let enrichment complete before launching outreach.** Enriched leads produce better messages. Give the system time to gather context before starting sequences.
-- **Review enriched data on high-priority leads.** Spot-check the company info, news, and achievements for your top prospects to ensure your outreach references accurate details.
-- **Combine with other enrichment types.** Web enrichment works best alongside profile enrichment and email finding. Together, they give AutoReach a complete picture of each lead.
-- **Use news and achievements as conversation starters.** References to recent events or accomplishments feel genuine and create natural openings.
-
-## Troubleshooting
-
-| Issue | What to do |
+| Field | Description |
 |---|---|
-| A lead was not enriched | Confirm that web enrichment is enabled in **Settings > Enrichment** and that the lead has a LinkedIn profile or a meaningful bio on their profile card. |
-| Enrichment data looks incomplete | Some leads have limited public information available. You can manually trigger a re-enrichment from the lead's profile card to retry. |
-| Enrichment is running slowly | Large batches of new leads are processed in order. Enrichment will complete in the background without any action needed. |
+| Phone | Phone number |
+| Additional Emails | Array of work or personal emails beyond primary |
+| Calendly | Scheduling page URL |
+
+### News Mentions
+
+Array of recent news items (last 6 months only):
+
+| Field | Description |
+|---|---|
+| Title | Headline |
+| Source | Publication name |
+| URL | Link to the article |
+| Date | Publication date (YYYY-MM-DD, required) |
+| Summary | Brief description |
+
+### Insights
+
+| Field | Description |
+|---|---|
+| Notable Achievements | Array of professional accomplishments |
+| Speaking Engagements | Conferences and events |
+| Publications | Articles, whitepapers, or research authored |
+| Podcast Appearances | Interviews and podcast guest slots |
+
+### Confidence & Sources
+
+| Field | Description |
+|---|---|
+| Enrichment Confidence | Numeric score 0-0.95 indicating data reliability |
+| Enrichment Sources | Deduplicated list of web sources used |
+| Enrichment Summary | AI-generated overview of the lead |
+
+## Enrichment Confidence
+
+Confidence is a weighted average across the three search phases:
+
+| Phase | Weight | Description |
+|---|---|---|
+| Phase 1 (Company) | 50% | Most critical -- identity and company data |
+| Phase 2 (Social/Contact) | 25% | Supporting profiles and contact info |
+| Phase 3 (Activity/Insights) | 25% | Recent news and achievements |
+
+Each phase returns a confidence level mapped to a score: HIGH = 0.9, MEDIUM = 0.65, LOW = 0.4, NONE = 0. The weighted average is capped at 0.95.
+
+Web enrichment data is only included in scoring context when confidence exceeds 0.3.
+
+## How It's Triggered
+
+Web enrichment is **not part of the standard pipeline** and does **not run automatically** when leads are added. It must be triggered explicitly.
+
+| Trigger | Endpoint | Description |
+|---|---|---|
+| Manual enrichment | `POST /api/enrich` | Select leads and set `web_enrich: true` |
+| Cost estimation | `POST /api/enrich/estimate` | Preview cost before enriching |
+| Re-enrich skipped | `POST /api/enrich/re-enrich-skipped` | Retry failed or skipped leads |
+| Status check | `GET /api/enrich/web-enrich/status` | Check progress of web enrichment jobs |
+
+## Cost
+
+Web enrichment costs approximately **$0.08 per lead** (3 web search calls). Cost estimation is available via the estimate endpoint before committing to enrichment.
+
+## Error Handling
+
+| Error | Behavior |
+|---|---|
+| Rate limit (429) | Retried with exponential backoff (30s base), up to 3 attempts |
+| Other API/parsing errors | Marked as enriched with error recorded |
+| Lead not found | Job completes silently |
+| Already enriched | Job skips |
+| No eligible data | Marked as enriched with error message |
 
 ## Next Steps
 
-- **[Email Finding](email-finding.md)** - Discover work email addresses for your enriched leads
-- **[Website Finding](website-finding.md)** - Find professional and company websites for deeper personalization
+- **[Email Finding](email-finding.md)**: Discover work email addresses for your enriched leads
+- **[Website Finding](website-finding.md)**: Find professional and company websites for deeper personalization
+- **[Enrichment Pipeline](pipeline.md)**: See how the standard enrichment pipeline works

@@ -1,114 +1,56 @@
-# Tweet & Post Generation
+# Content Generation
 
-All content in the Engagement Engine is AI-generated using your offer context, content pillars, and professional voice. The result is engaging, authentic-sounding content that builds your authority in your niche.
+All Engagement Engine content is AI-generated using your offer context, content pillars, and the current week's theme.
 
-## Tweet Generation (X)
+## Generation Flow
 
-AutoReach regularly generates short-form posts for X using:
+1. **Input**: Offer, ICP, pain points, weekly pillar, current date
+2. **AI generation**: Claude (primary) with OpenAI fallback generates content
+3. **Post-processing**: Em dashes are replaced with hyphens, formatting is cleaned
+4. **Approval routing**: Content enters the approval queue as `pending_approval`, or goes directly to `pending` (auto-posts) if auto-approval is enabled
 
-- **Content Pillars**: each week focuses on one pillar (industry insights, tips, case studies, etc.)
-- **Current Trends**: AI has awareness of the current year and recent industry trends
-- **Your Voice**: generated content matches your professional tone
-- **Platform Norms**: posts are concise, engaging, and optimized for retweets and replies
+## X Tweets
 
-**Example post:**
-> "Just realized most sales teams spend 40% of their day on manual data entry. That's not a process problem, it's a tool problem. If your CRM requires manual input, it's creating busywork, not sales velocity. Better tools = better sales."
+Tweets are short-form content generated daily based on the current week's pillar:
 
-Posts aim to educate, spark conversation, or share quick insights relevant to your niche.
+- Concise and engaging, optimized for the X platform
+- References current year and recent trends (year-awareness is injected into every prompt)
+- Matches your professional voice and tone
+- 2–4 tweets generated per day (with 15% chance of 0 tweets)
 
-## LinkedIn Post Generation
+## LinkedIn Posts
 
-AutoReach regularly generates long-form LinkedIn posts. LinkedIn posts are longer, narrative-driven, and designed for engagement, comments, and shares.
+LinkedIn posts are longer, narrative-driven content:
 
-**Example LinkedIn post:**
-> **I spent 3 months analyzing cold outreach patterns across 50 B2B companies.**
->
-> Most of them failed in the first week.
->
-> They were sending generic messages to cold lists. No personalization. No targeting. Just volume.
->
-> The teams that succeeded did something different: they warmed up their accounts first. They built genuine engagement history. When leads received their messages, they saw an active profile with real followers and thoughtful posts. Trust existed before the pitch.
->
-> The lesson? Outreach without warmup is like cold calling with a fake name. You might get responses, but they'll be low-quality and defensive.
->
-> **Build presence first, then reach out. The conversion rate difference is staggering.**
+- One post per day (with 20% chance of 0 posts)
+- Professional tone suited to the LinkedIn platform
+- Designed for engagement, comments, and shares
 
 ## Engagement Replies
 
-When the Engagement Engine replies to other posts, it generates **short, contextual replies** that:
+When the Engagement Engine replies to or comments on other posts, it generates contextual responses:
 
-- Add value to the original conversation
-- Reference the original post specifically (not generic)
-- Match your professional voice
-- Keep the conversation going naturally
+- References the original post specifically
+- Adds value to the conversation (not generic responses like "great post")
+- Matches your professional voice
+- 1–3 sentences, concise and conversational
 
-**Example engagement reply:**
-> Original post: "Anyone else using AI for customer research?"
->
-> Your reply: "We've been using it to analyze support tickets. It uncovers patterns in customer pain points that manual review misses. Game changer for prioritizing product improvements."
+## Year Awareness
 
-Replies are 1-3 sentences and feel like a natural continuation of the conversation.
+All content generation prompts include current date and year context. This ensures posts reference recent trends and don't contain outdated year references.
 
-## Auto-Responses
+## Editing and Customization
 
-When leads or followers engage with your posts, AutoReach can generate **natural replies to incoming engagement**:
+You can edit any piece of generated content before it posts:
 
-- Someone likes your post? Optionally auto-reply with a question or follow-up
-- Someone comments on your post? AutoReach can generate a thoughtful response
-- Someone replies to your post? Get an automatic, natural-sounding response
+1. Open the approval queue
+2. Edit the text as needed
+3. Approve the edited version
 
-{% hint style="info" %}
-Auto-responses help you stay engaged 24/7 without monitoring constantly. Replies feel human and maintain conversations even outside your work hours.
-{% endhint %}
-
-All auto-responses require your approval before posting (or can be set to auto-approve once you trust the quality).
-
-## LinkedIn Comments
-
-When engaging on LinkedIn, AutoReach generates concise, professional comments on relevant posts:
-
-- Professional in tone
-- Substantive (add insight, not just "great post")
-- Short enough to read in one glance
-- Relevant to the original post
-
-**Example comment:**
-> "This aligns with our findings. Companies that invest in account warmup see 3x higher reply rates on cold outreach. The trust-building phase is critical before asking for anything."
-
-## How Content Is Generated
-
-All content generation happens automatically:
-
-1. **Input**: your offer, ICP, pain points, industry, and content pillars
-2. **Processing**: AI analyzes the current week's pillar and relevant niche context
-3. **Generation**: natural, authentic-sounding content is created
-4. **Quality Check**: content is reviewed for relevance and tone
-5. **Approval Queue**: content awaits your review (or auto-posts if enabled)
-
-## Content Authenticity
-
-{% hint style="success" %}
-The goal is for your Engagement Engine content to be indistinguishable from content you'd write yourself. AI generation is tuned to sound like a real industry professional, not a chatbot.
-{% endhint %}
-
-- Content uses natural language and conversational tone
-- References current trends and year-appropriate context
-- Avoids buzzwords and robotic phrases
-- Matches your professional voice and perspective
-
-## Editing Before Posting
-
-You can edit any piece of content before it posts:
-
-- Review posts and comments in the approval queue
-- Edit text if needed
-- Approve or reject
-- Rejected content is replaced with new AI-generated alternatives
-
-See [Approvals](approvals.md) for details on managing the approval queue.
+See **[Approvals](approvals.md)** for the full approval workflow.
 
 ## Next Steps
 
-- **[Daily Action Allocation](daily-actions.md)**: See how often content is posted
-- **[Engagement Automation](engagement.md)**: Learn how engagement replies are targeted
 - **[Approvals](approvals.md)**: Review and manage content before posting
+- **[Content Strategy & Pillars](content-strategy.md)**: How content themes are organized
+- **[Daily Action Allocation](daily-actions.md)**: How often content is posted

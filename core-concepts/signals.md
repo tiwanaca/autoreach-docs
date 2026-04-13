@@ -75,6 +75,12 @@ Company announced a partnership with another company.
 
 **Example:** "Excited to partner with AWS to bring enterprise-grade security"
 
+### major_customer_announcement
+
+Company announced a major customer win or case study.
+
+**Example:** "Thrilled to share that Fortune 500 Company X is now using our platform"
+
 ### cost_cutting
 
 Company announced layoffs, consolidation, or cost reduction initiatives.
@@ -111,9 +117,29 @@ Lead has high engagement on posts related to your category.
 
 ### own_post_engagement
 
-Lead posted content about your space and got significant engagement (inbound signal).
+Lead engaged with YOUR posts (liked, commented, replied). This is an inbound signal — they came to you. AutoReach tracks three levels of engagement:
 
-**Example:** Lead posted "Evaluating workflow tools" and got 50+ comments/engagement
+- **own_post_reply** (high strength) — Lead replied to or commented on your post
+- **own_post_repeat_engagement** (high strength) — Lead engaged with 2+ of your posts
+- **own_post_engagement** (medium strength) — Lead engaged with one of your posts
+
+**Example:** A lead replied to your thread about sales automation best practices
+
+### competitor_customer
+
+Lead is a confirmed user of a competing product. Detected via LinkedIn job search matching companies that use competitor tools. These leads get an intent floor of 50 because they already have budget for the category and understand the problem.
+
+**Example:** Lead's company is listed as a customer of a competitor on their website
+
+### orbit_cluster (Interaction Orbit)
+
+AutoReach tracks a lead's engagement orbit — the accounts they interact with on social media. When a lead suddenly starts engaging with multiple competitor or adjacent vendor accounts in a short time window, it signals active evaluation.
+
+- **New competitor cluster** (2+ competitor accounts engaged recently) → intent floor 65
+- **New vendor cluster** (2+ adjacent vendor accounts engaged recently) → intent floor 65
+- **High orbit velocity + offer-relevant cluster** → timing floor 70
+
+**Example:** A lead liked posts from three competing CRM vendors in the same week — they're evaluating options
 
 ## Hiring Signals
 
@@ -141,7 +167,7 @@ How long the lead has been in their current role. Early tenure is a positive tim
 
 ### is_new_hire
 
-Flag indicating the lead just changed jobs recently.
+Flag indicating the lead started their current role within the last 180 days (6 months). Derived from `role_tenure_days`.
 
 **Example:** Started new job as "Director of Product" 45 days ago
 
@@ -180,44 +206,34 @@ Lead's industry classification. Compared against your offer's target industries.
 
 ### is_competitor
 
-Lead works at a competing company. Automatically disqualified.
-
-### is_internal_builder
-
-Lead is building a competing product. Automatically disqualified.
+Lead works at a competing company. Scored as **Poor Fit** with all scores zeroed out. Despite the scoring reason label saying "disqualified," the actual buyer state is Poor Fit, not Disqualified.
 
 ## Location & Geographic Signals
 
 ### location_match
 
-Lead's location matches your preferred locations. Matching locations increase fit, while excluded locations decrease it.
-
-### timezone_alignment
-
-Lead's timezone overlaps with your sales hours. Used for scheduling outreach at the right time.
+Lead's location matches your preferred locations. The check method depends on your offer's **location filter type**: when set to "lead," it matches the lead's own location; when set to "company_hq," it matches the company's headquarters location. A mismatch results in a Poor Fit score.
 
 ## How Signals Affect Scoring
 
 Signals feed into the three scoring dimensions:
 
 - **Fit:** Industry match, role match, company size, location
-- **Intent:** Asking for recommendations, switching tools, complaints, pain point matches, competitor engagement, custom intent signals
-- **Timing:** Job changes, new hires, funding, IPO filings, product launches, hiring activity
+- **Intent:** Asking for recommendations, switching tools, complaints, pain point matches, competitor engagement, competitor customer status, interaction orbit clusters, custom intent signals
+- **Timing:** Job changes, new hires, funding, IPO filings, product launches, hiring activity, high orbit velocity
 
 The more signals a lead has, and the stronger those signals are, the higher their scores. Each signal contributes to the relevant dimension, and the composite buyer score reflects all three.
 
-{% hint style="info" %}
-**No Single Signal Wins:** Even the strongest intent signal will not guarantee active status on its own. An ideal lead needs fit, intent, AND timing signals together.
-{% endhint %}
+> **Note:** Even the strongest intent signal will not guarantee active status on its own. An ideal lead needs fit, intent, AND timing signals together.
 
 ## Signal Detection & Recency
 
-AutoReach continuously monitors for new signals:
+AutoReach monitors for new signals through the **resurfacing scheduler**, which checks leads on a tiered cycle (every 5-21 days depending on current score). Before rescoring, it checks for LinkedIn headline changes (job change detection) and refreshes company hiring signals if stale.
 
-- **Activity fetches** run daily to check for new posts, engagement, job changes
-- **New signals** detected in the last 7 days boost a lead's score
-- **Old signals** (> 30 days) decay slightly in weight
-- **Job changes** are weighted heavily regardless of age (can be a few weeks old)
+Signal recency is handled at two levels:
+
+- **Account-level heat score:** Signals from the last 7 days contribute a recency bonus to the company heat score. Heat history is retained for 30 days.
+- **Individual lead scoring:** The LLM evaluates timing based on signal age — signals within 90 days score higher, very old or absent signals score lower. There is no deterministic decay formula; the LLM interprets recency contextually.
 
 A lead could be at monitor (40 score), and then:
 
@@ -230,28 +246,20 @@ A lead could be at monitor (40 score), and then:
 
 In the lead profile, you can see:
 
-- All detected signals (with dates)
-- Signal strength (high/medium/low)
-- Which signals contributed most to their score
+- All detected signals as boolean flags in the lead's raw_signals data
+- Intent strength (high/medium/low/none) — an overall LLM-assessed rating of buying intent
+- Account-level signals with individual strength ratings (high/medium/low) and dates
 - Raw activity (posts, comments, job changes)
 
 ## Best Practices
 
-{% hint style="info" %}
-**Focus on Timing:** Leads with recent job changes (< 60 days) or recent company signals (funding, hiring, expansion) are hottest. They're actively evaluating.
-{% endhint %}
+> **Tip:** Leads with recent job changes (< 60 days) or recent company signals (funding, hiring, expansion) are hottest. They're actively evaluating.
 
-{% hint style="info" %}
-**Intent is Predictive:** A lead asking "looking for recommendations" is 2-3x more likely to reply than someone with no intent signal. Weight intent signals heavily in your mental model.
-{% endhint %}
+> **Tip:** A lead asking "looking for recommendations" is 2-3x more likely to reply than someone with no intent signal. Weight intent signals heavily in your mental model.
 
-{% hint style="warning" %}
-**Don't Over-Weight Single Signals:** A lead with one strong signal but poor fit is still a poor prospect. Signals work together.
-{% endhint %}
+> **Warning:** A lead with one strong signal but poor fit is still a poor prospect. Signals work together.
 
-{% hint style="info" %}
-**Custom Signals are Powerful:** If you notice a certain phrase or pattern in conversations with buyers, add it as a custom signal. AutoReach will find more people with that pattern.
-{% endhint %}
+> **Tip:** If you notice a certain phrase or pattern in conversations with buyers, add it as a custom signal. AutoReach will find more people with that pattern.
 
 ## Next Steps
 

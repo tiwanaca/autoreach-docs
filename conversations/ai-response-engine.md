@@ -1,61 +1,88 @@
 # AI Response Engine
 
-The AI Response Engine powers AutoReach's conversational outreach. It analyzes incoming messages, understands context, and generates personalized responses that feel human and move deals forward.
+The AI Response Engine generates contextual, stage-aware replies to incoming messages across X and LinkedIn.
 
-## Anti-Consulting Rules
+## Response Flow
 
-One of the biggest mistakes in B2B outreach is giving away too much value too early. AutoReach prevents this with built-in guardrails:
+When a new inbound message is detected:
 
-- Don't over-explain your solution before qualifying the prospect
-- Don't answer every technical question in detail (save it for the call)
-- Don't act like a free consultant
-- Redirect curiosity to conversations: *"This is exactly what we'd dig into on a quick call"*
+1. **Stage classification**: The conversation stage is identified (opener_reply, discovery, etc.)
+2. **Objection check**: Message is checked for negative/sensitive content
+3. **RAG context**: Knowledge base and tone examples are retrieved via semantic search
+4. **System prompt assembly**: A multi-layer prompt is built with stage instructions, RAG context, tone examples, offer context, and conversation history
+5. **AI generation**: The content AI model generates a response
+6. **Human delay simulation**: A typing/composition delay is applied before sending
+7. **Message delivery**: Sent via the appropriate platform API
+8. **Database save**: Message saved and AI response count incremented
 
-{% hint style="warning" %}
-**When to Break the Rules**: If a prospect is genuinely ready to evaluate (they're asking detailed questions about your product), it's okay to share more value. The AI detects this via conversation stage and adjusts accordingly.
-{% endhint %}
+## Scheduling Architecture
 
-## Response Validation
+The AI response system uses background scheduling, not WebSocket-based generation:
 
-Before any message is scheduled to send, AutoReach validates:
+| Scheduler | Interval | Purpose |
+|---|---|---|
+| AI response scheduler | Every 60 seconds | Polls for due responses |
+| Follow-up scheduler | Every 10 minutes | Detects stale conversations where the lead went silent |
+| AI response worker | Concurrency 2 | Processes individual response jobs |
 
-- **Length**: Does it match the conversation stage guidelines?
-- **Formatting**: No markdown, bullets, or overly formatted text in DMs
-- **Tone match**: Does the response align with your provided tone examples?
+Rate limiting: Maximum **20 AI responses per 60 seconds** at the worker level.
 
-Responses that fail validation are flagged for manual review before sending.
+Crash recovery: A uniqueness constraint on each conversation and inbound message prevents duplicate responses after crashes or retries.
+
+## RAG Context
+
+Each response includes relevant context retrieved via semantic search:
+
+| Source | Token Budget | Description |
+|---|---|---|
+| Knowledge base | 600 tokens | Documents matching the conversation topic, scoped to the offer |
+| Tone examples | 500 tokens | Conversation examples matching the current stage and context |
+| **Total** | **1,100 tokens** | Injected into the system prompt |
 
 ## Stage-Specific Generation
 
-The AI adapts response style based on where you are in the conversation:
+The AI adapts response style based on the detected conversation stage:
 
 - **Opener Reply**: Light acknowledgment, no pitch
 - **Discovery**: Inquisitive, learning-focused
 - **Value Prop**: Confident but consultative
-- **Objections**: Direct, empathetic addressing
+- **Objection Handling**: Direct, empathetic
 - **Soft Close**: Natural next-step suggestion
-- **Graceful Exit**: Respectful, door-left-open
 - **Follow Up**: Fresh angle, minimal pressure
+- **Graceful Exit**: Respectful, door left open
 
-See [Conversation Stages](conversation-stages.md) for the full stage breakdown.
+## Anti-Consulting Rules
 
-## Performance Monitoring
+Built-in guardrails prevent giving away too much value before qualifying:
 
-The [Conversation Analyzer](conversation-analyzer.md) reviews your AI-generated conversations and suggests improvements:
+- Don't over-explain your solution before qualifying the prospect
+- Don't answer every technical question in full detail
+- Redirect curiosity to conversations: "This is exactly what we'd dig into on a quick call"
 
-- Are responses matching your tone?
-- Are they hitting the length targets?
-- Are they moving deals forward or stalling?
-- Should you adjust the prompt or tone examples?
+The AI detects when a prospect is genuinely evaluating (via stage detection) and adjusts accordingly.
 
-Run regular analyses to continuously improve your AI's performance.
+## Max AI Responses Per Conversation
 
-{% hint style="tip" %}
-**Pro Tip**: After your first 20 conversations, run the Conversation Analyzer. You'll get specific feedback on whether to adjust your tone examples, prompts, or knowledge base.
-{% endhint %}
+The "Max AI responses per conversation" setting on each sequence limits how many AI replies are sent in a single conversation:
+
+- Value 0 = unlimited responses
+- When the count is reached, AI is disabled on that conversation
+- Also checked before queuing follow-up messages
+
+## Conversation Follow-Ups
+
+When a lead goes silent, the follow-up scheduler can automatically re-engage:
+
+| Setting | Default | Range |
+|---|---|---|
+| Conversation follow-up enabled | false | — |
+| Follow-up wait days | 3 | 1–30 |
+| Max follow-up count | 2 | 1–10 |
+
+The follow-up scheduler runs every 10 minutes, checking for conversations where the lead hasn't responded within the configured wait period. Follow-up messages are generated with a fresh angle and queued for delivery.
 
 ## Next Steps
 
-- Review how conversation stages shape responses in [Conversation Stages](conversation-stages.md)
-- Customize your AI's voice with [Tone Examples & Customization](tone-examples.md)
-- Optimize with the [Conversation Analyzer](conversation-analyzer.md)
+- **[Conversation Stages](conversation-stages.md)**: How stages are detected and classified
+- **[Tone Examples](tone-examples.md)**: Customize the AI's voice
+- **[Knowledge Base](knowledge-base.md)**: Add context for smarter responses

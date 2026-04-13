@@ -1,75 +1,61 @@
 # Enabling Autopilot
 
-Enabling Autopilot is a single-click process that configures your searches, sequences, and outreach settings automatically.
+Enabling Autopilot is a one-click process. The setup runs in the background and completes in 1–2 minutes.
 
-## The Enable Workflow
+## Prerequisites
 
-When you click "Enable Autopilot," a series of steps execute automatically:
+- At least one **Offer** created with your ICP and value proposition
+- At least one **social account** connected (X and/or LinkedIn)
+- No existing active Autopilot config for the same Offer
 
-### Step 1: Score Your Existing Leads
+## The Enable Flow
 
-AutoReach scores your existing leads against your Offer criteria to identify prospects that are ready for outreach.
+When you click "Enable Autopilot," the following steps execute:
 
-### Step 2: Start Lead Discovery Searches
+### Step 1: Create Configuration
 
-Autopilot launches searches on LinkedIn to find prospects matching your ICP, including role-based searches targeting decision-makers at companies that fit your target audience.
+An `autopilot_config` record is created immediately with `active` status. Any prior disabled config for the same Offer is removed first. The UI returns immediately while setup continues in the background.
 
-### Step 3: Find Lookalike Accounts
+### Step 2: Generate AI Content
 
-Identifies influencers and thought leaders in your space and starts discovering their followers as new high-intent prospects.
+Autopilot generates a shared campaign prompt and tone examples for your Offer. This content is reused across all sequences created in the next step.
 
-### Step 4: Start an Intent Signal Search
+### Step 3: Create Sequences (Per Platform)
 
-Launches a search for prospects showing buying signals, people actively posting about topics related to your offer.
+For each connected platform (X, then LinkedIn), Autopilot:
 
-### Step 5: Create and Start Your First Sequence
+1. Creates a sequence with AI-generated steps, tone examples, and `auto_enroll_active_leads` enabled
+2. Generates keywords from your Offer
+3. Creates a recurring search (`tweet_search` or `linkedin_search`) with `daily_recurring` enabled
+4. Finds a lookalike influencer account via AI search
+5. Creates a seed extraction source — `target_user` for X (200 followers to extract) or `linkedin_seed_search` with buyer expansion enabled for LinkedIn
 
-Creates your first outreach sequence with the right workflow for your platform and starts it immediately. Leads that score high enough are enrolled automatically.
+Platforms are processed sequentially to avoid AI rate limits.
 
-### Step 6: Enable Auto-Enrollment and Buyer Expansion
+### Step 4: Track Resources
 
-- **Auto-enroll buyers** is turned ON in settings. All ready buyers found by the system are automatically added to the sequence and will not appear on the Buyers page.
-- **Buyer Expansion** is enabled on all searches so they run daily to keep your pipeline full.
+All created resource IDs (sequences, searches, target users, lookalike accounts, seed searches) are saved to the config's `created_resources` field for lifecycle management.
 
-{% hint style="info" %}
-**The Buyers page** shows buyers before they are added inside a sequence. When auto-enroll is ON (default with Autopilot), ready buyers go straight into the sequence instead.
-{% endhint %}
+### Step 5: Background Loops Begin
 
-## Timeline and Progress
-
-The entire setup process takes **1-2 minutes** and runs in the background.
-
-{% hint style="success" %}
-**You don't have to wait.** Enabling Autopilot returns immediately. You can navigate away, and the setup continues in the background. Progress indicators on the dashboard show you when each component is ready.
-{% endhint %}
+Once setup completes, the three Autopilot loops (lookalike rotation, auto-enrollment, signal search) begin processing the new config on their regular intervals.
 
 ## What to Expect After Enabling
 
-Once Autopilot is active, you'll see:
+- **Searches begin immediately**: Your first recurring searches start running
+- **Follower extraction starts**: Seed accounts begin extracting followers
+- **First leads appear**: Typically within the first few hours as searches and extraction run
+- **Auto-enrollment activates**: Leads scoring 60+ are enrolled into sequences automatically
 
-- **Autopilot dashboard updates**: Active leads, daily searches, and sequence stats
-- **Searches beginning**: Initial lead discovery running
-- **Sequences created**: Your first outreach sequence is live and ready to enroll leads
+## Re-enabling After Disable
 
-## Monitoring Setup Progress
+If you previously disabled Autopilot and re-enable it:
 
-Check the **Autopilot dashboard** to see:
-
-- Real-time stats on active leads and sequences
-- Search and expansion status
-- Activity logs
-
-{% hint style="warning" %}
-**First leads may take time.** Discovery, enrichment, and scoring are fast, but your first enrolled leads typically appear within the first 24 hours as searches and scoring accumulate results.
-{% endhint %}
+- New sequences, searches, and lookalike accounts are created fresh
+- Existing leads in the database are preserved and can be re-scored
+- Previous automation infrastructure is not restored — Autopilot starts fresh
 
 ## Next Steps
 
-After enabling Autopilot:
-
-1. Check your **sequences** to see the workflows created
-2. Monitor the **Activity log** to watch leads flow through the system
-3. Set up the **[Engagement Engine](../engagement-engine/overview.md)** to build your account presence
-4. Respond to opportunities in your **Inbox**
-
-You're now running full B2B outreach automation. Autopilot handles the heavy lifting while you focus on closing deals.
+- **[What Autopilot Does](what-it-does.md)**: See the continuous operations that begin after setup
+- **[Pausing and Disabling](pausing-and-disabling.md)**: How to stop and resume Autopilot

@@ -1,67 +1,118 @@
-# X Post Search
+# X Tweet Search
 
-Find high-intent prospects by searching X for posts that match your offer. AutoReach uses AI to generate targeted search queries, then extracts both post authors and commenters as potential leads.
+Find high-intent prospects by searching X for tweets that match your offer. AutoReach uses AI to generate targeted search queries organized by intent category, then extracts both tweet authors and commenters as leads.
 
 ## How It Works
 
-### 1. AI-Generated Search Queries
+### 1. Query Generation
 
-When you create a new search, you provide your offer description, target audience, and the pain points you solve. AutoReach's AI analyzes this information and generates a set of focused search queries using X's native search operators.
+When you start a search, you can either:
 
-The queries are designed to surface posts where people are actively discussing problems your product or service addresses.
+- **Let AI generate queries:** Provide your offer and AutoReach generates 15-25 targeted keywords (short 2-4 word phrases in first-person conversational style) plus structured **intent clusters** — groups of queries organized by intent type. The AI selects 3-6 intent categories most relevant to your offer, with 2-6 queries per cluster. Competitor-specific keywords are generated and merged separately.
+- **Provide your own keywords:** Pass `keywords` and `search_query` directly to skip AI generation entirely.
 
-### 2. Lead Extraction
+#### Intent Categories
 
-AutoReach pulls prospects from two sources within each matching post:
+The AI organizes queries across these intent types (selecting the most relevant for your offer):
 
-- **Post authors**: People posting directly about relevant topics, challenges, or needs.
-- **Commenters**: Professionals engaging in the conversation. Commenters are often decision-makers or stakeholders evaluating solutions.
+- **operational_pain** — day-to-day frustrations and inefficiencies
+- **budget_pressure** — cost concerns and budget constraints
+- **hiring_scaling** — growth challenges and team scaling
+- **buying_evaluation** — actively comparing or evaluating solutions
+- **competitor_switch** — switching away from or frustrated with competitors
+- **growth_signals** — expansion, new markets, scaling needs
+- **security_compliance** — regulatory, security, or compliance concerns
+- **niche_jargon** — insider terminology specific to your vertical
+- **vertical_specific** — industry-specific pain points
 
-Each extracted prospect is scored against your ICP. Only qualified matches are added to your lead database, along with enriched profile and company data.
+An additional `generateNicheJargon()` call adds insider-term-based query groups to catch leads using specialized language.
 
-### 3. Recurring Daily Searches
+### 2. Search Execution
 
-You can set any search to run automatically on a daily schedule. Recurring searches re-run the same queries each day to capture fresh posts from new prospects entering your market. This keeps your pipeline supplied with timely, intent-driven leads without manual effort.
+AutoReach searches X via X's API. For each query group:
+
+1. **Combined OR query** — up to 7 keywords combined with OR operators, searched in both `Top` and `Latest` modes
+2. **Individual term searches** — each keyword is also searched individually in `Latest` mode to catch results missed by the combined query
+3. **Search operators applied** — exact phrase matching for 2-word terms, minus exclusions, `min_faves:2` engagement filter
+
+Search results are deduplicated at two levels: per-search (in-memory Set) and globally across all user searches (database check). Link-only tweets are filtered out.
+
+#### Search Parameters
+
+| Parameter | Default | Description |
+|---|---|---|
+| `max_tweets` | 100 | Total tweets to collect across all query groups |
+| `days_back` | 60 | How far back to search |
+| `include_replies` | true | Extract commenters from matching tweets |
+| `max_replies` | 100 | Max replies to check per tweet |
+| `exclusions` | `['giveaway', 'retweet', 'airdrop']` | Terms to exclude from results |
+| `daily_recurring` | false | Enable automatic daily re-runs |
+| `pipeline_actions` | — | Options for `enrich` and `deepAnalysis` |
+
+### 3. Lead Extraction
+
+AutoReach pulls leads from two sources within each matching tweet:
+
+- **Tweet authors:** People posting directly about relevant topics, challenges, or needs
+- **Commenters:** Professionals engaging in the conversation (when `include_replies` is enabled). Replies are fetched for tweets with `reply_count > 0`, up to `max_replies` per tweet.
+
+All extracted prospects are converted to leads and queued for enrichment. An ICP matching step runs if your offer has a `target_audience` defined — ICP matches get a higher priority score (70 vs 50 for non-matches), but all prospects are added regardless. Scoring happens downstream during the enrichment pipeline.
+
+### 4. Recurring Daily Searches
+
+You can enable any search to run automatically on a recurring schedule. The recurring search scheduler runs every hour and triggers searches that were last run more than 24 hours ago.
+
+Each recurring run **regenerates fresh keywords** based on your offer, using the previous keywords as a reference to force variation. If keyword regeneration fails, the existing keywords are used as a fallback. Searches stuck in `running` for 2+ hours or `analyzing` for 3+ hours are automatically recovered.
+
+### 5. Cost Estimation
+
+Before running a search, you can call the cost estimation endpoint (`POST /api/tweet-search/estimate-cost`) with your `offer_id` and `max_tweets` to preview the estimated AI and API costs.
 
 ## Best Practices for Keyword Selection
 
-The quality of your search results depends heavily on the keywords and phrases in your queries. A few guidelines:
+The quality of your search results depends heavily on the keywords and phrases in your queries:
 
-- **Be specific.** Multi-word phrases like "API rate limiting frustration" or "AWS cost optimization" will produce far better results than single generic words like "API" or "cloud."
+- **Be specific.** Multi-word phrases like "API rate limiting frustration" or "AWS cost optimization" produce far better results than single generic words like "API" or "cloud."
 - **Use your audience's language.** Include industry jargon, product names, and terminology your target buyers actually use when discussing their problems.
 - **Start broad, then refine.** Run an initial search with a range of terms, review the results, and narrow your queries based on what performs well.
 - **Experiment with variations.** Different keyword combinations surface different prospect segments. Test multiple approaches to find the best fit for your offer.
-- **Review exclusion terms.** AutoReach filters out common non-commercial content by default. You can customize your exclusion list in the search settings to avoid blocking legitimate prospects or to filter out additional noise.
+- **Customize exclusion terms.** The default exclusions are minimal (`giveaway`, `retweet`, `airdrop`). Add terms relevant to your space to filter out noise, or clear the list entirely if defaults are too aggressive.
 
 ## Example Workflow
 
 **Offer:** B2B SaaS sales automation platform
 
 **AI-generated queries might include:**
+
+Keywords:
 - "manual sales process too slow"
 - "need sales pipeline visibility"
-- "sales team needs automation"
 - "CRM data quality issues"
-- "struggling with sales forecasting"
-- "team spends too much time on admin"
 
-**Result:** Each query surfaces relevant posts from CTOs, VPs of Sales, and Operations Managers who are actively discussing the problems your platform solves. Qualified matches are added to your leads and ready for enrichment and outreach.
+Intent clusters:
+- **operational_pain:** "my team spends hours on data entry", "sales admin is killing productivity"
+- **buying_evaluation:** "evaluating sales tools", "comparing CRM platforms"
+- **competitor_switch:** "moving away from Salesforce", "HubSpot isn't scaling"
+
+**Result:** Each query surfaces relevant tweets from CTOs, VPs of Sales, and Operations Managers. Both tweet authors and commenters are extracted, converted to leads, and queued for enrichment and scoring.
 
 ## Troubleshooting
 
 **Getting too many irrelevant results?**
-- Review your offer description for clarity and specificity.
-- Add more exclusion terms to filter out common false positives.
-- Use more niche, multi-word search phrases.
+- Review your offer description for clarity and specificity
+- Add more exclusion terms to filter out common false positives
+- Use more niche, multi-word search phrases
 
 **Not finding enough prospects?**
-- Broaden your search terms or include common synonyms.
-- Check whether your target audience actively discusses these topics on X.
+- Broaden your search terms or include common synonyms
+- Increase `max_tweets` to collect more results
+- Increase `days_back` to search further into the past
+- Check whether your target audience actively discusses these topics on X
 
 **Seeing duplicate prospects across searches?**
-- This is expected. AutoReach deduplicates prospects before adding them to your database, so the same person appearing in multiple searches will not create duplicate leads.
+- This is expected. AutoReach deduplicates prospects at both the per-search and global level, so the same person appearing in multiple searches will not create duplicate leads.
 
 ## Next Steps
 
-- **[Enrichment Pipeline](../enrichment/pipeline.md)**: Learn how discovered leads get enriched with profile and company data.
-- **[Building Sequences](../outreach/building-sequences.md)**: Set up outreach sequences for your newly discovered leads.
+- **[Enrichment Pipeline](../enrichment/pipeline.md)**: Learn how discovered leads get enriched with profile and company data
+- **[Building Sequences](../outreach/building-sequences.md)**: Set up outreach sequences for your newly discovered leads

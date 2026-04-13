@@ -1,95 +1,179 @@
 # Outreach & Sequences Overview
 
-Outreach & Sequences is the heart of AutoReach. It is where you design, launch, and manage multi-step campaigns that automate your engagement across X and LinkedIn.
+Sequences are automated multi-step campaigns that execute engagement actions across X and LinkedIn. Each sequence walks leads through a configured flow of actions — likes, follows, DMs, replies, connection requests — with AI-personalized messaging and anti-detection timing.
 
-## What is a Sequence?
+## What Is a Sequence?
 
-A **sequence** is an automated campaign that guides leads through a series of actions designed to build relationships and drive results. Instead of manually reaching out to each lead one by one, sequences let you orchestrate engagement at scale while keeping everything personal.
+A sequence is a series of steps that execute automatically against enrolled leads. Each step performs an action (like a post, send a DM, follow the account) with configurable delays between steps. Sequences support branching logic via condition steps that route leads based on whether they replied.
 
 A typical sequence might look like:
 
-- Day 1: Like their recent post
-- Day 2: Follow them
-- Day 3: Send a personalized DM
-- Day 5: If they replied, send a follow-up. If not, try again.
+1. Day 1: Like their recent post
+2. Day 2: Follow them
+3. Day 3: Send a personalized DM
+4. Day 5: Condition — if replied, stop. If not, send a follow-up DM.
 
-{% hint style="info" %}
-Sequences run automatically on a schedule you define, respecting your Activity Window and daily send limits.
-{% endhint %}
+### Sequence Statuses
 
-## How Sequences Work
+| Status | Description |
+|---|---|
+| Draft | Initial state — can be configured and edited |
+| Active | Running — actions are scheduled and executing |
+| Paused | Temporarily stopped (can be resumed) |
+| Stopped | Permanently stopped |
 
-### Visual Flow Builder
+### Platform Support
 
-Design sequences using the intuitive **Flow Builder**: drag-and-drop cards connected by flows to visualize your entire campaign strategy. No coding required.
+Each sequence is assigned a platform (X or LinkedIn) and can reference both an X account and a LinkedIn account simultaneously. Individual steps specify which platform they target, enabling dual-platform sequences where some steps execute on X and others on LinkedIn.
 
-### Supported Actions
+## Supported Actions
 
-Each step in a sequence performs one of these actions:
+Each step in a sequence performs one of these action types:
 
-- **Like Post** - Like a lead's recent post (soft engagement)
-- **Reply/Comment** - Reply to a post with a personalized message
-- **Follow/Connect** - Follow on X or send a connection request on LinkedIn
-- **Send DM** - Send a direct message (AI-personalized)
-- **Condition** - Branch your sequence: "If they replied, do X; if not, do Y"
-- **Remove Connection** - Clean up non-responders (LinkedIn only)
+| Action | Platforms | Description |
+|---|---|---|
+| DM | X, LinkedIn | Send a direct message (AI-personalized) |
+| Like | X, LinkedIn | Like/react to a lead's recent post |
+| Reply | X, LinkedIn | Reply to a post with a personalized message |
+| Comment | LinkedIn | Comment on a LinkedIn post |
+| Follow | X | Follow the account |
+| Connection Request | LinkedIn | Send a LinkedIn connection request |
+| View Profile | LinkedIn | View the lead's LinkedIn profile |
+| Wait | — | Delay/pause before the next step |
+| Condition | — | Branch based on lead status (replied vs. not replied) |
 
-### Personalization with AI
+Each step has a defined order, platform-specific settings, positioning data for the visual flow editor, and a reference to the next step for linear flow progression.
 
-Every message sent through a sequence is **personalized** using:
+## AI Message Personalization
 
-- Lead's profile data (name, role, company, location)
-- Enrichment intelligence (tech stack, funding, recent activity)
-- Your knowledge base and context
-- Lead behavior within the sequence
+Every message sent through a sequence is personalized using the lead's enriched data. The system supports two layers:
 
-This means each lead receives a message that feels one-to-one, even though you're reaching thousands.
+**Direct substitution** — template variables replaced with lead data:
+- `{{name}}`, `{{first_name}}`, `{{username}}`, `{{bio}}`, `{{location}}`, `{{followers}}`
 
-{% hint style="info" %}
-No two leads get identical messages. AutoReach dynamically inserts variables like {{name}}, {{company}}, {{role}} and more into your templates.
-{% endhint %}
+**AI-inferred placeholders** — filled by the AI model from lead context:
+- `{{role}}`, `{{company}}`, `{{industry}}`, `{{pain_point}}`, and any custom placeholder
 
-## Key Configuration
+The AI draws on the lead's profile data, recent activity, enrichment intelligence (tech stack, funding, company context), the offer's knowledge base (RAG), and tone examples configured on the sequence.
 
-Each sequence step is fully configurable:
+## Sequence Execution
 
-- **Platform** - Choose X or LinkedIn for each action
-- **Timing** - Delay before executing (days or minutes)
-- **Message Template** - Write your message once, AutoReach personalizes it for each lead
-- **Conditions** - Optional branching logic to route leads based on responses
+### Scheduling
+
+The scheduler creates action records and the action worker processes them at concurrency 1 to avoid rate limit issues.
+
+**Lead selection order:** Leads are picked by buyer priority — purchase probability descending, signal date descending, explicit signal flag descending.
+
+**Step progression:** The worker walks the flow graph following each step's connection to the next. Condition steps evaluate lead status and branch accordingly. After each action completes, the next step is queued with the configured delay.
+
+### Anti-Detection Timing
+
+Sequence execution simulates human behavior to avoid platform detection:
+
+| Mechanism | Details |
+|---|---|
+| Global action spacing | 5-minute minimum between actions |
+| Time slot weighting | Variable probability by hour (lunch peak 1.3x, early morning 0.6x) |
+| Session clustering | Actions grouped into human-like bursts |
+| Daily variance | ±20% variance on daily limits |
+| Day-of-week variance | Weekends 0.6–0.7x multiplier, weekdays 0.9–1.0x |
+| Read/typing simulation | Simulated delays before likes and messages |
+
+### Activity Window
+
+Outreach only executes during the configured activity window. Defaults to **09:00–21:00** in the user's timezone. Actions outside the window are deferred to the next open slot.
+
+## Lead Statuses in a Sequence
+
+| Status | Description |
+|---|---|
+| Pending | Enrolled but not yet contacted |
+| Active | First action executed, progressing through steps |
+| Paused | Temporarily paused (sequence paused or manual) |
+| Replied | Lead has replied to at least one message |
+| Meeting Booked | Meeting scheduled |
+| Completed | Sequence flow completed for this lead |
+| Failed | Action execution failed |
+| Removed | Manually removed from sequence |
 
 ## Daily Send Limits
 
-To keep your accounts healthy and reduce the risk of platform limits, AutoReach enforces configurable **daily send limits** for DMs and other actions. Your limits scale based on your account age, history, and platform.
+Configurable limits protect account health:
 
-{% hint style="warning" %}
-Exceeding daily limits can trigger platform anti-spam measures. AutoReach queues excess actions for the next day automatically.
-{% endhint %}
+| Limit | Default | Max |
+|---|---|---|
+| Combined daily actions | 20 | 100 |
+| LinkedIn daily actions | 20 | 100 |
+| X daily actions | 40 | 100 |
 
-## Activity Window
+Limits reset at midnight in the user's timezone. Counts are checked before each action. If a limit is reached, remaining actions are deferred to the next day.
 
-Outreach only happens during your configured **Activity Window**. For example, 9am-9pm in your timezone. This ensures messages are sent at natural, human hours.
+LinkedIn connection requests have separate weekly tracking.
 
-Your enrichment pipeline can run 24/7 if you enable **24/7 Pipeline Mode**, preparing leads while you sleep, ready for outreach during your window.
+## Conversation Follow-Ups
 
-## Track Your Results
+Sequences support automatic follow-ups for stale conversations:
 
-Sequences report on key metrics:
+| Setting | Default | Range |
+|---|---|---|
+| Conversation follow-up enabled | false | — |
+| Follow-up wait days | 3 | 1–30 |
+| Max follow-up count | 2 | 1–10 |
 
-| Metric           | What It Measures                                  |
-| ---------------- | ------------------------------------------------- |
-| Leads Added      | Total leads enrolled in the sequence              |
-| Leads Contacted  | Leads that received at least one action           |
-| Leads Replied    | Leads that messaged you back                      |
-| Meetings Booked  | Leads that scheduled a call (if integrated)       |
+The system finds conversations with no recent activity and schedules follow-up messages automatically.
 
-Use these metrics to optimize your sequence strategy and identify what messaging and cadence work best.
+## Adding Leads to Sequences
+
+You can add up to 50 leads per request to a sequence.
+
+**Validation before enrollment:**
+- Lead must have platform data matching the sequence (X profile for X sequences, LinkedIn for LinkedIn sequences)
+- Lead must not already be enrolled in this sequence
+- Lead must not be blacklisted
+- If "Skip contacted leads" is enabled: lead must have no previous contact history
+- For X sequences: lead must be able to receive DMs
+
+Leads failing validation are skipped with a reason. If the sequence is active, scheduling begins immediately for new leads.
+
+## Reply Detection and Opt-Out
+
+**Reply detection** is passive — incoming messages in a conversation update the lead's status to "Replied" and increment the sequence's reply counter.
+
+**Opt-out handling** uses a blacklist system:
+- Blacklist accounts manually from Settings
+- Blacklisted leads are automatically removed from all sequences
+- Blacklisted accounts cannot be re-enrolled
+- The system does not auto-blacklist based on replies — opt-out decisions are left to the user
+
+## Sequence Metrics
+
+| Metric | Description |
+|---|---|
+| Leads Added | Total leads enrolled |
+| Leads Contacted | Leads that received at least one action |
+| Leads Replied | Leads with status "Replied" or "Meeting Booked" |
+| Meetings Booked | Leads with a meeting scheduled |
+
+Metrics are updated automatically when lead statuses change. Step-level execution stats are available via the activity log, which tracks every action with status, timestamps, and execution data.
+
+## Key Sequence Settings
+
+| Setting | Description |
+|---|---|
+| AI Prompt | Custom AI instructions for message generation |
+| DM Generation Prompt | Specific prompt for cold DM generation |
+| Warmup Prompt | Prompt for warmup engagement |
+| Skip Contacted Leads | Skip leads with prior contact history |
+| Skip Negative Content | Skip leads with negative content |
+| Skip Old Posts (days) | Skip leads whose recent posts are older than N days |
+| Prefer Original Posts | Prefer original posts over reposts for engagement |
+| AI Disabled by Default | Disable AI auto-responses for conversations |
+| Max AI Responses per Conversation | Cap on AI responses per conversation (default 0 = unlimited) |
 
 ## Next Steps
 
-Ready to build your first sequence?
-
-1. Start with **[Building Sequences (Flow Editor)](building-sequences.md)** to learn the interface
-2. Explore **[Supported Actions by Platform](supported-actions.md)** to understand what's possible on X vs LinkedIn
-3. Learn about **[Cold DM Generation](cold-dm-generation.md)** to create compelling first messages
-4. Use **[Simulation & A/B Testing](simulation.md)** to preview before sending
+- **[Building Sequences (Flow Editor)](building-sequences.md)**: Learn the sequence builder interface
+- **[Supported Actions by Platform](supported-actions.md)**: Detailed reference for each action type on X vs LinkedIn
+- **[Cold DM Generation](cold-dm-generation.md)**: How AI generates personalized first messages
+- **[Scheduling](scheduling.md)**: Activity windows, timing, and send cadence
+- **[Simulation & A/B Testing](simulation.md)**: Preview messages before sending

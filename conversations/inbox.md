@@ -1,59 +1,54 @@
-# Inbox & Real-Time Messaging
+# Inbox
 
-The Inbox is your unified command center for all conversations across X and LinkedIn. Every DM, reply, and engagement flows through here in real time, so you never miss a prospect.
+The Inbox is your unified view of all conversations across X and LinkedIn. Every DM and reply flows through here, with real-time message detection and AI status indicators.
 
-## Unified Conversation View
+## Conversation List
 
-Your Inbox displays all conversations from both X and LinkedIn in a single, chronologically sorted list. Each conversation shows:
+Your Inbox displays all conversations in a single, paginated list. Each conversation shows:
 
-- **Lead name** and profile picture
-- **Platform badge** (X or LinkedIn)
-- **Last message** preview
-- **Timestamp** of most recent activity
-- **AI status** indicator (see below)
-- **Message count** for context
+- Lead name and profile
+- Platform (X or LinkedIn)
+- Last message preview
+- Timestamp of most recent activity
+- AI status indicator
+- Message count
 
-Search and filter by lead name, platform, or conversation status to quickly find what you need.
+### Filtering
+
+Filter conversations by:
+- **Status** (Active, Replied, Meeting Booked, etc.)
+- **Sequence** (specific sequence)
+- **Platform** (X or LinkedIn)
+- **Search query** (lead name)
+
+An unread count endpoint tracks new inbound messages since a given timestamp.
 
 ## Real-Time Message Detection
 
-AutoReach detects new messages in real time across both X and LinkedIn, so conversations appear in your Inbox as they happen.
+New messages on X are detected in real time via Twitter's native DM WebSocket connection (binary Thrift protocol). This means conversations appear in your Inbox as they happen without polling delays.
 
 ## AI Status Indicators
 
-Look for these visual cues in your conversation list:
-
-- **Green bubbles**: AI-generated responses (either pending or already sent)
-- **Regular text**: Your manual messages or incoming lead messages
-- **AI ON toggle** (top of conversation): AI is enabled for that conversation and can reply automatically
+- **AI ON toggle**: Visible at the top of each conversation — indicates whether AI can auto-reply
+- **Green indicators**: AI-generated responses (pending or sent)
 
 ## AI Control Per Conversation
 
-At the top of any conversation thread, you'll see an **AI ON/OFF toggle**. Toggle it to:
+Toggle AI on or off for individual conversations:
 
-- **Enable AI** - AutoReach will generate and send responses using your configured prompts and tone examples
-- **Disable AI** - Only your manual messages will be sent; AI responses are blocked for this conversation
+- **AI ON**: AI generates and sends responses automatically based on your prompts and tone examples
+- **AI OFF**: Only your manual messages are sent
 
-This gives you fine-grained control even within an active sequence.
+The toggle applies to that single conversation only, not the entire sequence.
 
-## Pre-Call Preparation
+## Call Briefs
 
-Before an important conversation, click the **Call Brief button** to generate a context summary. AutoReach extracts:
+Click the **Call Brief** button in any conversation to generate a pre-call preparation document. The brief pulls data from the lead's profile, conversation history, and buyer intelligence to give you talking points before a meeting.
 
-- Prospect's pain points (from conversation history)
-- Their company and role signals
-- Key topics they've mentioned
-- Recommended talking points
-- Recent objections and how you addressed them
-
-Use this 2-minute brief to walk into calls fully prepared.
-
-{% hint style="tip" %}
-**Conversation Count**: You'll see your total message count at the top of your Inbox (e.g., "567 conversations"). This includes all X and LinkedIn DMs tracked by AutoReach.
-{% endhint %}
+See **[Call Briefs](../meetings/call-briefs.md)** for details.
 
 ## Next Steps
 
-- Learn how AI generates responses in the [AI Response Engine](ai-response-engine.md)
-- Customize AI behavior with [Tone Examples](tone-examples.md)
-- Build your [Knowledge Base](knowledge-base.md) for smarter responses
+- **[AI Response Engine](ai-response-engine.md)**: How AI generates responses
+- **[Manual Controls](manual-controls.md)**: Send manual messages, toggle AI, manage conversations
+- **[Tone Examples](tone-examples.md)**: Customize the AI's voice

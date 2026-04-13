@@ -6,9 +6,7 @@ Connect your X (Twitter) account to AutoReach through the Chrome Extension. This
 
 The AutoReach Chrome Extension handles authentication automatically by extracting your session cookies.
 
-{% hint style="warning" %}
-**Important**: You can ONLY connect your X account through the Chrome Extension. Make sure you've [installed the extension](chrome-extension.md) and activated your license key first.
-{% endhint %}
+> **Important:** You can ONLY connect your X account through the Chrome Extension. Make sure you've [installed the extension](chrome-extension.md) and activated your license key first.
 
 ### Steps
 
@@ -31,13 +29,9 @@ AutoReach automatically provisions a secure ISP residential static proxy for you
 3. The proxy is automatically assigned to your account
 4. All X API requests route through this proxy for safety
 
-{% hint style="info" %}
-**Why ISP proxies?** ISP residential static proxies use real internet service provider IPs, making your activity indistinguishable from a normal user. This is the safest proxy type for social media automation.
-{% endhint %}
+> **Note:** ISP residential static proxies use real internet service provider IPs, making your activity indistinguishable from a normal user. This is the safest proxy type for social media automation.
 
-{% hint style="warning" %}
-**Do not use automatic replies on X.** We strongly advise against enabling auto-replies inside sequences to reply to tweets, and against turning on auto-reply in the Engagement Engine. Do not send replies from the application. Automated replies are the number one reason accounts get suspended on X.
-{% endhint %}
+> **Warning:** Do not use automatic replies on X. We strongly advise against enabling auto-replies inside sequences to reply to tweets, and against turning on auto-reply in the Engagement Engine. Do not send replies from the application. Automated replies are the number one reason accounts get suspended on X.
 
 ## Inbound Engagement Detection
 
@@ -91,15 +85,13 @@ If X detects bot-like behavior:
 * This cooldown lasts **7 days**
 * After 7 days, your account returns to **Healthy** status
 
-{% hint style="warning" %}
-**Prevention Tips**:
-
-1. Use a residential proxy to avoid IP-based detection
-2. Set realistic daily DM limits (start with 15-20)
-3. Space out your sequences with wait periods (never run continuous actions)
-4. Don't engage with spam, adult, or hateful content
-5. Monitor your account health weekly
-{% endhint %}
+> **Warning:** Prevention tips:
+>
+> 1. Use a residential proxy to avoid IP-based detection
+> 2. Set realistic daily DM limits (start with 15-20)
+> 3. Space out your sequences with wait periods (never run continuous actions)
+> 4. Don't engage with spam, adult, or hateful content
+> 5. Monitor your account health weekly
 
 ## Troubleshooting
 

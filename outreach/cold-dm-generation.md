@@ -1,203 +1,202 @@
 # Cold DM Generation
 
-AutoReach's Cold DM Generation feature creates **personalized, compelling first messages** tailored to each lead. Instead of writing one generic template, you describe your offer once, and AI generates unique variants for every lead.
+AutoReach has two DM generation systems: a **standalone cold DM generator** for creating one-off personalized messages, and a **template-based personalizer** used by sequences to generate DMs at send-time. Both use AI with lead enrichment data, offer context, and knowledge base content to produce personalized messages.
 
-## How It Works
+## Standalone Cold DM Generator
 
-When you request a DM generation:
+The cold DM generator creates **2 unique DM variants** from a set of inputs. This is used for ad-hoc message generation, not for automated sequences.
 
-1. You provide basic information about your offer and target
-2. AutoReach analyzes the lead's profile, recent activity, and all available lead data
-3. AI generates **2 unique DM variants** personalized to that specific lead
-4. You preview both, edit if needed, and approve for sending
+### Inputs
 
-Each variant uses different framing and tone while following strict rules to feel authentic.
+| Input | Required | Description |
+|---|---|---|
+| Offer | Yes | What you're offering (10–300 characters) |
+| Target | Yes | Who you're reaching (10–400 characters) |
+| Goal | Yes | Conversation objective |
+| Style | No | Short/punchy or conversational |
+| Recent Post | No | Recent post text for contextual reference |
+| Name | No | Lead name or username for personalization |
 
-{% hint style="info" %}
-DMs are generated at send-time, not template-time. This means every lead gets a message crafted specifically for them.
-{% endhint %}
+### Goal Options
 
-## Configuring DM Generation
+| Goal | Description |
+|---|---|
+| Start Conversation | Open dialogue, no hard ask |
+| Provide Value | Share something useful (article, intro, tool) |
+| Soft Pitch | Gentle suggestion to explore your offer |
+| Book Call | Direct ask for a meeting |
 
-When you add a "Send DM" step to your sequence or request ad-hoc generation, you'll configure:
+### How It Works
 
-### Offer (Required)
+1. Selects AI provider — authenticated users get their configured content provider (Claude primary, OpenAI fallback); unauthenticated users get the server's default key
+2. Builds context from goal instruction, tweet context, and name-based greeting rules
+3. Calls AI with a strict system prompt enforcing DM rules
+4. Parses response into 2 variants (split by blank lines)
+5. Cleans em dashes and removes numbering prefixes
+6. Returns variants array with `id` and `message` fields
 
-**Length:** 10-300 characters
+## Sequence DM Personalization
 
-Describe what you're offering in plain language. Be specific; don't be vague.
+When a `dm` step executes in a sequence, it uses the **message personalizer** — a different system from the standalone generator. The personalizer takes a template with `{{variable}}` placeholders and produces a fully personalized message.
 
-**Good examples:**
+### Template Variables
 
-- "Help B2B SaaS companies reduce sales cycle by 40%"
-- "Free audit of your data infrastructure"
-- "Introduction to our VP of Sales if we're a fit"
-- "Framework for hiring ML engineers in Southeast Asia"
+**Direct substitution** (replaced from lead data):
 
-**Bad examples:**
+| Variable | Source |
+|---|---|
+| `{{name}}` | Lead's full name |
+| `{{first_name}}` | Parsed first name |
+| `{{username}}` | Platform handle |
+| `{{bio}}` | Lead bio |
+| `{{location}}` | Lead location |
+| `{{followers}}` | Follower count |
+| `{{following}}` | Following count |
+| `{{email}}` | Lead email |
+| `{{website}}` | Lead website URL |
+| `{{linkedin_url}}` | LinkedIn profile URL |
+| `{{x_profile_url}}` | X profile URL |
+| `{{company_name}}` | Company name |
+| `{{company_size}}` | Employee count |
+| `{{company_industry}}` | Company industry |
+| `{{funding_stage}}` | Funding stage |
+| `{{tech_stack}}` | Technology stack |
+| `{{headline}}` | LinkedIn headline |
+| `{{summary}}` | LinkedIn summary |
+| `{{current_role}}` | Current job title |
+| `{{skills}}` | LinkedIn skills |
+| `{{achievements}}` | Notable achievements |
+| `{{speaking}}` | Speaking engagements |
+| `{{podcasts}}` | Podcast appearances |
+| `{{enrichment_summary}}` | Web enrichment summary |
+| `{{user_name}}` | Your name (sender) |
+| `{{booking_link}}` | Calendar booking URL with tracking |
 
-- "Our platform" (too vague)
-- "Solutions" (meaningless)
-- "Let's connect" (not an offer)
+**Special variables** (fetched at send-time):
 
-### Target (Required)
+| Variable | Description |
+|---|---|
+| `{{post}}` | Lead's recent post (unified: X or LinkedIn) |
+| `{{tweet}}` | Backwards-compatible alias for `{{post}}` |
+| `{{replied_post}}` | Post text from a prior reply action in the sequence |
 
-**Length:** 10-400 characters
+**AI-inferred variables** (filled by AI from context):
 
-Describe the ideal person you're reaching. Be specific about role, industry, company size, or challenge.
+| Variable | Description |
+|---|---|
+| `{{role}}` | Inferred from bio and enrichment |
+| `{{company}}` | Inferred company name |
+| `{{industry}}` | Inferred industry |
+| `{{pain_point}}` | Inferred pain point based on offer context |
+| `{{question}}` | AI-generated question |
+| Any custom `{{placeholder}}` | AI infers from available lead data |
 
-**Good examples:**
+### Post/Tweet Fetching Priority
 
-- "CTOs at Series B SaaS companies scaling from 50 to 200 people"
-- "VP Sales at enterprise software companies"
-- "Founders solving customer retention problems"
-- "Data engineers working with Snowflake and struggling with data quality"
+When `{{post}}` or `{{tweet}}` is used, the system fetches content in this order:
 
-**Bad examples:**
+1. Stored X intent stream content (if lead was sourced from X search with original content)
+2. Stored LinkedIn intent stream content (if lead was sourced from LinkedIn search with original content)
+3. Live fetch of latest tweet from X (if a Twitter account is connected; retries up to 8 times over 30 minutes)
+4. Fallback: instructs AI to use bio for personalization instead
 
-- "Business professionals" (too broad)
-- "Anyone interested in AI" (not specific)
+For commenter-sourced leads, context includes both the original post and their reply: `"ORIGINAL POST: '...' \nTHEIR REPLY: '...'"`.
 
-### Goal (Required)
+### Personalization Flow
 
-What is the conversation's objective? Choose one:
+1. **First pass** — replaces all known variables with lead data
+2. **Post fetch** — fetches `{{post}}`/`{{tweet}}` content if referenced
+3. **RAG context** — builds knowledge base + tone context (see below)
+4. **AI pass** — sends remaining unknown placeholders to AI for intelligent inference, along with lead bio, enrichment data, offer context, and website content
+5. **Returns** personalized message, word count, variables used, and token count
 
-- **start_conversation** - Open dialogue; no hard ask yet
-- **provide_value** - Share something useful (article, intro, tool)
-- **soft_pitch** - Gentle suggestion to explore your offer
-- **book_call** - Direct ask for a meeting
+### Knowledge Base Integration (RAG)
 
-### Style (Optional)
+When AI personalization runs, the system injects relevant context via RAG:
 
-Tone and length preference:
+| Source | Token Budget | Description |
+|---|---|---|
+| Knowledge base | 600 tokens | Semantic search on stored documents/FAQs |
+| Tone examples | 500 tokens | Semantic search on prior conversation examples |
+| **Total** | **1,100 tokens** | Injected as `## KNOWLEDGE BASE CONTEXT` and `## TONE EXAMPLES` sections |
 
-- **short/punchy** - Brief, snappy, direct (great for busy executives)
-- **conversational** - Longer, friendly, storytelling approach (great for founders)
+Knowledge base documents are stored as vector embeddings and retrieved via semantic search.
 
-Default: Auto-detect based on lead's activity.
+### Tone Control
 
-### Tweet Context (Optional)
+**Tone examples** are stored per-sequence with stage classification (opener_reply, discovery, objection_handling, soft_close, etc.). Each example contains a labeled conversation snippet. The system retrieves the most relevant examples via semantic search and injects them into the AI prompt.
 
-If the lead has a recent viral post or announcement, paste the text here. AI will reference it naturally in the DM.
+**Tone summary** — a 150–250 word style guide extracted from tone examples by AI. Analyzes vocabulary, brevity, value-led approach, curiosity gaps, and anti-patterns (e.g., "Worth X?", non-contractions, filler openings).
 
-**Example:**
+**Important rules** — hard constraints extracted from your AI prompt's "Important Rules" section. If not explicitly defined, the system extracts constraints automatically using a lightweight AI model.
 
-```
-"Just announced we're expanding into APAC! So excited to build
-out our team there and bring our product to new markets."
-```
+### Custom Prompts
 
-AI might then write:
+Sequences have two separate prompt fields for DM control:
 
-```
-Congrats on the APAC expansion! We've helped other SaaS companies
-scale internationally while keeping sales cycles short. Worth a chat?
-```
+| Field | Purpose |
+|---|---|
+| DM Generation Prompt | Overrides the system prompt for message personalization only |
+| AI Prompt | Controls AI conversation replies across all stages |
 
-### Lead Name (Optional)
-
-If you want to specify which lead this is for, enter their name or username. Used for personalization.
+The DM Generation Prompt is optional — if not provided, the default system prompt is used. It allows DM-specific instructions separate from general conversation AI behavior.
 
 ## DM Generation Rules
 
-AutoReach enforces strict rules on all generated DMs to keep them authentic and effective:
+Both systems enforce strict rules on generated messages:
 
-### Structure
+**Structure:**
+- Maximum 3 short sentences with periods (not run-ons with commas)
+- Must end with exactly one question
+- No emojis, no em dashes (use commas or periods)
+- Simple, natural language
 
-- **Max 3 SHORT sentences** - Get to the point
-- **End with exactly ONE question** - Creates a natural call-to-action
-- **No emojis** - Professional tone
-- **No em dashes** - Use commas or periods instead
+**Banned openers:** "Saw you...", "Noticed you...", "I noticed...", "Since you...", "Looks like you..."
 
-### Openers
+**Banned phrases:** "I'd love to...", "Would love to...", hype words (leverage, scale, optimize), run-on sentences
 
-AutoReach avoids overused openers that experienced professionals immediately recognize as automated outreach.
+**Personalization:** Reference specific data (company, role, recent post) — no generic compliments ("great post!").
 
-### Phrases
+## Character Limits
 
-AutoReach avoids buzzwords and cliches that signal automated outreach and destroy credibility.
+| Platform | DM Limit | Generated Template |
+|---|---|---|
+| X | 10,000 characters | 50–100 words (validated, retries once if out of range) |
+| LinkedIn | 10,000 characters | 50–100 words |
 
-### Personalization Rules
+## Template Generation
 
-- Reference specific data: company, role, recent post, or activity
-- Avoid generic compliments ("great post!"; use specific insight instead)
-- Make the DM feel one-to-one, even though it's generated
+AutoReach can generate DM templates for you using AI. The generated template follows a specific structure with `{{variable}}` placeholders, enforces 50–100 word count (retries if invalid), and returns the template text, variables used, and token count. You can provide campaign name, tone preference (professional/casual/friendly), and length options.
 
-## Example: Full DM Generation
+## Booking URL Injection
 
-**You provide:**
+The `{{booking_link}}` variable injects the user's calendar URL with lead-specific tracking:
 
-- Offer: "Help Series A startups improve developer productivity by 30%"
-- Target: "Engineering leaders at Series A startups in DevOps space"
-- Goal: book_call
-- Style: conversational
-- Lead: @alice_eng (VPE at DataPlatformCo)
+| Provider | Tracking Parameter | Value |
+|---|---|---|
+| Calendly | `a1` | Lead identifier |
+| Cal.com | `x_username` | Lead identifier |
+| Other | `a1` (fallback) | Lead identifier |
 
-**AutoReach generates Variant 1:**
+Tracking value is the lead's LinkedIn identifier (prefixed) for LinkedIn leads or the X username for X leads.
 
-```
-Hey Alice, I've been following DataPlatformCo's growth and
-impressed by how you're scaling the eng team.
+## Negative Content Checking
 
-A lot of VPEs we work with are hitting the same wall, where dev productivity
-suffers as the team grows. We've helped teams like [Example] fix this
-in 30 days.
+Before replying to a lead's post, the system checks for sensitive content. This is a **fail-open** design — if the check fails, the message proceeds.
 
-Would a quick 15-min chat help you see if we're a fit?
-```
+**Skipped topics:** Death, obituaries, serious illness, natural disasters, violence, terrorism, suicide, personal tragedies.
 
-**AutoReach generates Variant 2:**
+**Allowed topics:** Work complaints, business failures, layoffs, market downturns, sarcasm, controversial opinions, career setbacks.
 
-```
-Alice, congrats on DataPlatformCo's recent funding round.
-Series A is a great inflection point for scaling teams.
+## Multi-Language Support
 
-One thing we've seen: when teams go from 5 engineers to 15+,
-developer velocity drops if you don't fix workflows early.
-We've built a system that prevents this.
+DM generation supports 6 languages: English (en), Italian (it), Spanish (es), French (fr), German (de), Portuguese (pt).
 
-Open to a quick conversation about whether this applies to you?
-```
-
-**You:**
-
-- Review both variants
-- Pick one or edit it
-- Approve for sending
-
----
-
-## Tips for High Reply Rates
-
-1. **Be specific** - Reference their company, role, or recent activity
-2. **Lead with their benefit** - Not your product features
-3. **Ask a real question** - Not a fake call-to-action
-4. **Keep it short** - 3 sentences max
-5. **Avoid flattery** - "Impressed by your company" feels hollow; instead use fact-based observation
-6. **Test different goals** - Some leads respond to value/education; others want a direct ask
-7. **Use their language** - If they talk about "DevOps," use that term; don't say "infrastructure automation"
-
----
-
-## Troubleshooting
-
-### "Generation failed"
-
-- Check that Offer and Target are specific (not vague)
-- Ensure Lead has sufficient enrichment data (name, company, title)
-- Try again in a few seconds
-
-### "Generated DMs feel generic"
-
-- Provide more context in Tweet Context field
-- Specify the Goal more clearly (book_call vs. provide_value)
-- Add more detail to the Target field
-
----
+Set via the offer's `language` field. For non-English offers, the system prompt includes: `"CRITICAL: Write ALL messages in [language]. You are a native [language] speaker..."`. All generation output (keywords, messages, templates) follows the language instruction.
 
 ## Next Steps
 
-- Learn about [Template Variables](template-variables.md) for manual DM customization
-- Explore [Simulation & A/B Testing](simulation.md) to preview DMs with real leads
-- See [Building Sequences](building-sequences.md) to integrate DM generation into campaigns
-- Review [Supported Actions](supported-actions.md) for when to use DM vs. other engagement types
+- **[Template Variables](template-variables.md)**: Full reference for all personalization variables
+- **[Simulation & A/B Testing](simulation.md)**: Preview DMs with real leads before sending
+- **[Building Sequences](building-sequences.md)**: Integrate DM generation into multi-step campaigns
+- **[Supported Actions](supported-actions.md)**: When to use DM vs. other engagement types

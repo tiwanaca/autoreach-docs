@@ -1,111 +1,89 @@
 # What Autopilot Does
 
-Autopilot is always working. Here's a breakdown of the continuous operations it manages 24/7.
+Once enabled, Autopilot runs five continuous operations in the background. Here's what each one does.
 
 ## Lookalike Rotation
 
-Autopilot automatically refreshes your follower extraction seed accounts:
+Autopilot keeps your lead discovery fresh by rotating seed accounts automatically.
 
-- Monitors current seed accounts for follower exhaustion
-- Finds new influencer and thought leader accounts in your space
-- Rotates to fresh seeds before current ones deplete
-- Ensures a continuous pipeline of high-intent prospects
+**How it works:**
 
-This means you never run out of new leads to reach. Autopilot automatically discovers new sources.
+1. Checks every 2 hours whether the current extraction source is exhausted
+2. For X: checks if the target user's status is `failed`, `exhausted`, or all available followers have been extracted
+3. For LinkedIn: checks if the seed search is marked exhausted and the role expansion queue is empty
+4. When exhausted, searches for a new influencer account in your space using AI
+5. Creates a new seed account and begins extracting followers
+6. Tracks previously used accounts to avoid repeats
 
-{% hint style="info" %}
-**Why lookalikes?** Followers of industry influencers are pre-validated as interested in your space, making them higher-intent than cold database searches.
-{% endhint %}
+If Autopilot can't find a new seed after 3 consecutive attempts (all candidates already used), it sends a notification so you can add new accounts manually.
 
 ## Auto-Enrollment
 
-Autopilot continuously checks for newly scored leads:
+Autopilot checks every 5 minutes for newly scored leads ready for outreach.
 
-- Identifies leads that meet your buyer score threshold
-- Automatically enrolls them into the appropriate sequence (X or LinkedIn)
-- Respects your daily send limits to avoid over-enrolling
-- Skips leads already in a sequence
-- Enrolls within your Activity Window
+**Enrollment criteria:**
 
-See all enrolled leads in **Sequences > Leads**.
+- Lead must be in `active` buyer state (score 60+)
+- Lead must not already be enrolled in the sequence
+- Lead must have the required platform data (X profile for X sequences; LinkedIn profile for LinkedIn sequences)
+- Sequence must have `auto_enroll_active_leads` enabled and be in `active` or `scheduling` status
+- Lead's scored offer must match the sequence's offer
 
-## Lead Scoring
+**Per cycle:** Up to 200 leads are fetched from the database, filtered, and a maximum of **50 leads are enrolled per cycle**.
 
-**Real-time background scoring** for every new lead:
+**Platform routing:** Leads are enrolled into the matching platform sequence — X leads go to the X sequence, LinkedIn leads go to the LinkedIn sequence.
 
-- Analyzes social signals, headline changes, and activity patterns
-- Evaluates buyer intent based on your Offer's search signals
-- Updates scores continuously as new data arrives
-- Identifies when leads become active buyers
+Auto-enrollment also has a real-time hook: when scoring completes and a lead becomes `active`, enrollment can trigger immediately without waiting for the next 5-minute cycle.
 
-Higher scores mean more readiness to buy.
+## Buyer Expansion
 
-{% hint style="success" %}
-**Scoring is continuous.** A lead might start at a low score, then jump significantly when they post about your space. Autopilot catches that shift and enrolls them instantly.
-{% endhint %}
+Expansion discovers new prospects daily from your existing pipeline.
 
-## Lead Pooling (On Expansion)
+**X expansion:**
+- Increases the follower extraction target by a daily batch (100–200 followers)
+- Resets extraction status to `pending` so the extraction worker picks it up
+- Also triggers a lead pool match job to find instant results from existing database leads
 
-When you add a new Offer or expand your ICP:
+**LinkedIn expansion:**
+- Rotates through role-based keyword searches, one role per day
+- Priority roles: CEO, CTO, CFO, COO, Founder, VP, Director, Head, Manager, Lead, Partner, Owner
+- Each daily run searches for one role with a cap of 100 leads
+- If a role returns 0 results, it immediately rotates to the next role
 
-- Autopilot matches existing enriched leads against your new target criteria
-- Automatically identifies which leads fit the new Offer
-- Pools them for enrollment into new sequences
+**Both platforms:** Random 0–6 hour delay before triggering. 24-hour cooldown between runs. Respects the user's activity window (skips if in sleep mode).
 
-This maximizes your existing lead database.
-
-## Recurring Searches
-
-**Daily execution** of all search queries tied to your Offer:
-
-- Runs at consistent times each day
-- Discovers new leads matching your ICP
-- Feeds into the scoring and enrollment pipeline
-- Keeps your prospect base fresh
-
-Each search query finds the latest, most active prospects.
-
-## AI Responses
-
-**Real-time message handling** across X and LinkedIn:
-
-- Monitors incoming DMs
-- Generates contextual replies based on conversation
-- Respects your reply limits and engagement settings
-- Learns from your tone examples to match your voice
-
-Your inbox gets responses without you typing them.
+Expansion runs every hour, checking if conditions are met for a new expansion cycle.
 
 ## Monitor Resurfacing
 
-Autopilot periodically re-checks lower-scored leads for new buying signals, with higher-priority leads checked more frequently. Resurfacing checks:
+Resurfacing re-checks lower-scored leads on a tiered schedule, giving them another chance when new signals appear.
 
-- LinkedIn headline changes, including job changes
-- Company and job data freshness
-- New activity patterns
-- Updated social signals
+**Tiered check frequency:**
 
-If a lead's score improves to meet your buyer score threshold, they are upgraded to active and you are notified. This is how Autopilot catches leads who weren't ready before but are now.
+| Tier | Score Range | Re-check Interval |
+|---|---|---|
+| 1 (warmest) | 50–59 | Every 5 days |
+| 2 | 40–49 | Every 10 days |
+| 3 | 30–39 | Every 14 days |
+| 4 (coldest) | 0–29 | Every 21 days |
 
-{% hint style="success" %}
-**Leads get second chances.** Monitor resurfacing ensures you don't miss prospects who become buyers later.
-{% endhint %}
+**Resurfacing window:** Runs approximately every 8 hours with random jitter (0–60 minutes). Each window processes up to 40–60 leads within a 20-minute time budget per user.
 
-## The Complete Loop
+**What it checks:**
+- **Recent activity**: Fetches new posts and social signals
+- **LinkedIn headline changes**: Detects job changes — triggers a +25 score boost and tenure reset
+- **Company jobs refresh**: Updates hiring data if the lead's company jobs data is older than 7 days
 
-Here's how it all works together:
+**Score upgrades:**
+- Score reaches 60+ → lead is upgraded to Active buyer state and eligible for auto-enrollment
+- Score reaches 30–59 → lead moves from Poor Fit to Monitor state for more frequent re-checks
 
-1. **Searches** find new prospects
-2. **Scoring** evaluates their buyer intent
-3. **Auto-enrollment** puts active leads into sequences
-4. **Sequences** execute outreach (DMs, follows, likes)
-5. **Resurfacing** re-checks inactive leads for new signals
-6. **Expansion** discovers more prospects from influencers
+## Signal Search
 
-This cycle runs 24/7, turning your ICP into a continuous revenue pipeline.
+The signal search loop runs every 5 minutes, checking for intent signal searches that need their first run. Once initial lead extraction completes, it triggers the signal search to find prospects actively posting about topics related to your offer.
 
 ## Next Steps
 
-- **[Auto-Enrollment](auto-enrollment.md)**: Learn how scored leads get added to sequences automatically
-- **[Buyer Expansion](buyer-expansion.md)**: See how Autopilot discovers new prospects every day
-- **[Monitor Resurfacing](monitor-resurfacing.md)**: Understand how low-score leads get a second chance
+- **[Auto-Enrollment](auto-enrollment.md)**: Enrollment criteria and platform routing details
+- **[Buyer Expansion](buyer-expansion.md)**: How X and LinkedIn expansion work
+- **[Monitor Resurfacing](monitor-resurfacing.md)**: Tiered resurfacing and score upgrades

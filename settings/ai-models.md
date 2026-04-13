@@ -1,72 +1,48 @@
 # AI Model Configuration
 
-Configure which AI providers and models AutoReach uses for different tasks. You can customize each category independently or stick with the recommended defaults.
-
-## Accessing AI Model Settings
-
-Navigate to **Settings > AI & Models** to configure your AI provider setup.
+Configure which AI models AutoReach uses for different tasks. Each category has a primary model and a fallback model.
 
 ## API Keys
 
-Connect your AI provider accounts by adding API keys:
+Connect your AI providers by adding API keys in **Settings > AI & Models**:
 
-- **AI provider API keys** - required to run any AI-powered features
-- **Email discovery API key** - used for email discovery; if not provided, email finding is skipped
+- **AI provider API keys** — required for all AI-powered features (Anthropic and/or OpenAI)
+- **Email discovery API key** — required for email finding (Findymail)
 
-{% hint style="info" %}
-You only need to add keys for the providers you plan to use. AutoReach supports multiple AI providers, and you can mix providers across categories.
-{% endhint %}
+## Model Categories
 
-## Model Configuration Categories
+AutoReach uses AI across **11 categories**. Each has independent primary and fallback model settings:
 
-AutoReach uses AI for 9 distinct tasks. Each category has a **Primary Model** (used first) and a **Fallback Model** (used if the primary fails or is unavailable).
+| Category | Purpose |
+|---|---|
+| Content Writing | DMs, posts, replies, engagement comments, warmup content |
+| Buyer Scoring | Evaluating leads against your ICP |
+| Keyword Generation | Creating search queries for lead discovery |
+| Classification | Classifying content by topic, sentiment, and tone |
+| Web Search | General web search operations |
+| Web Search (Finding) | Cross-platform profile discovery |
+| Web Search (Enrichment) | Company data extraction from websites |
+| Web Search (Lookalike) | Finding influencers similar to target profiles |
+| Web Search (Research) | Deep analysis and exploration |
+| Lead Relevance | Scoring leads with detailed reasoning |
+| Call Briefs | Generating meeting preparation documents |
 
-AutoReach supports multiple AI providers and models, with a recommended default configuration that balances quality and reliability.
+## Per-User Overrides
 
-### Content Writing
-Generates direct messages, posts, replies, and engagement comments.
+Each category can be customized with a primary and fallback model selection. The system validates your choices against available models and checks that the required API key is present. Invalid or missing configurations fall back to defaults.
 
-### Keyword Generation
-Creates search queries to find your target buyers on X and LinkedIn.
+## How Fallbacks Work
 
-### Classification
-Classifies content by topic, sentiment, and tone to filter leads.
+If the primary model fails (timeout, rate limit, API error), AutoReach automatically switches to the fallback model for that operation. This provides resilience without manual intervention.
 
-### Profile Finding
-Discovers cross-platform profiles (finds X handles for LinkedIn users, etc.).
+## Settings UI
 
-### Web Enrichment
-Extracts company data, products, and funding info from websites.
+The AI Configuration section in Settings shows all 11 categories with primary and fallback dropdowns. Changes take effect immediately and are validated on save.
 
-### Lookalike Search
-Finds influencers and thought leaders similar to your target profiles.
+## Dynamic Cost Impact
 
-### Research & Copilot
-Performs deep analysis for custom research and AI-powered exploration.
-
-### Lead Relevance
-Scores leads against your ICP with detailed reasoning.
-
-### Call Briefs
-Generates meeting preparation documents with background research.
-
-## How Fallback Models Work
-
-If your primary model fails (timeout, rate limit, API error), AutoReach automatically switches to the fallback model for that operation. Fallback activation is logged in your activity feed so you can see when it is happening.
-
-## Dynamic Cost Estimation
-
-AutoReach estimates your pipeline costs in real time based on your model choices. The cost display:
-
-- Reflects your selected primary and fallback models
-- Reflects measured token counts from production runs
-- Updates instantly when you change models
-
-{% hint style="tip" %}
-The default model configuration works well for most users. You can customize individual categories if you have specific cost or quality preferences for particular tasks.
-{% endhint %}
+Your model selections directly affect pipeline costs. The cost estimation system reads your actual model configuration and calculates costs using blended pricing (85% primary + 15% fallback). See **[Cost Estimation](cost-estimation.md)** for details.
 
 ## Next Steps
 
-- **[Pipeline Cost Estimation](cost-estimation.md)**: See how your model choices affect per-lead costs
-- **[Creating Your First Offer](../getting-started/create-offer.md)**: Set up an offer to start using your configured models
+- **[Pipeline Cost Estimation](cost-estimation.md)**: How model choices affect per-lead costs

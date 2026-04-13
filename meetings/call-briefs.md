@@ -1,90 +1,58 @@
 # Call Brief Generation
 
-Prepare for every meeting with AI-generated call briefs that give you an instant edge. Call briefs pull data from your lead profiles, conversation history, and buyer intelligence to arm you with talking points before you pick up the phone.
-
-## What Is a Call Brief?
-
-A call brief is a pre-call preparation document generated in seconds that combines everything AutoReach knows about a lead into actionable insights.
-
-{% hint style="success" %}
-Call briefs help you walk into every meeting confident, prepared, and informed, without scrambling through conversations or notes.
-{% endhint %}
+Call briefs are AI-generated pre-call preparation documents that combine lead data, conversation history, and buyer intelligence into actionable talking points.
 
 ## How to Generate a Call Brief
 
 1. Open any conversation in your **Inbox**
-2. Click the **Call Brief** button (looks like a document icon)
-3. Wait a few seconds while AutoReach generates the brief
-4. Read through and take notes before your meeting starts
+2. Click the **Call Brief** button
+3. The brief generates in a few seconds and appears inline
 
-That's it. The brief appears inline in the conversation thread.
+The brief is saved to the conversation's metadata for future reference.
 
-## What's Included in a Call Brief
+## What's Included
 
-### Lead Snapshot
-- Current role and title
-- Company name and industry
-- Company size and location
-- Key professional background
-- Buyer intelligence score and status (active, monitor, poor fit, etc.)
+Call briefs include up to **10 sections** (each included only if relevant data is available):
 
-### Conversation Recap
-- Summary of all prior messages exchanged
-- Key topics and pain points mentioned
-- Previous commitments or interests expressed
-- Timeline and deal stage context
+| Section | Content |
+|---|---|
+| Lead Snapshot | Current role, company, industry, size, location, buyer score and status |
+| Company Intelligence | LinkedIn company data, funding, tech stack |
+| Conversation Recap | Summary of all prior messages, key topics, commitments |
+| Pain Points Identified | Specific challenges mentioned in the conversation |
+| Talking Points & Agenda | Suggested discussion topics tailored to the lead |
+| Recent Activity | Up to 8 recent posts from the lead |
+| Offer Alignment | How your offer maps to their situation |
+| Objection Preparation | Anticipated pushback and counter-points |
+| Competitive Intel | Competitive context from your offer |
+| Recommended Next Steps | Stage-aware suggestions for what to propose |
 
-### Objection Preparation
-- Anticipated pushback based on buyer signals
-- Common concerns and how to address them
-- Reassurances and competitive advantages to highlight
-- Tie-back to the lead's specific needs
+Maximum brief length: **1,500 words**.
 
-### Recommended Next Steps
-- Stage-aware recommendations (what to propose next based on where they are in the buying cycle)
-- Talking points tailored to their business
-- Key insights from buyer intelligence
-- Conversation starters if the meeting is a first touch
+## Data Sources
 
-## Data Used to Generate Briefs
+The brief draws from:
 
-AutoReach draws on multiple sources to create a comprehensive brief:
+- **Lead profile**: Bio, headline, location, email, website
+- **Company data**: Industry, size, funding, tech stack
+- **Career history**: Up to 6 positions, up to 3 education entries, top 10 skills
+- **Web enrichment**: Company technologies, enrichment summary
+- **Conversation transcript**: Up to 50 messages
+- **Buyer intelligence**: Fit, intent, timing, and composite scores
+- **Recent posts**: Up to 8 posts
+- **Offer context**: Your value proposition and pain points
 
-- **Lead profile data** - enriched contact information, social profiles, company details
-- **Full conversation history** - every message exchanged in the thread
-- **Buyer intelligence scores** - signals showing purchase intent and buying stage
-- **Offer context** - the pain points and competitors associated with your offer
-- **Stage-aware guidance** - personalized next-step recommendations based on their current position in your pipeline
+## Stage-Aware Instructions
 
-## Tips for Best Results
+The brief adapts its recommendations based on conversation status:
 
-**Generate a fresh call brief right before every meeting.** AutoReach updates lead data and conversation context in real-time, so a new brief reflects the most current information.
-
-**Use the brief to:**
-- Build confidence before calls
-- Spot objections before they arise
-- Personalize your pitch based on their specific situation
-- Prepare talking points that resonate with their role and company
-
-**Don't just read it. Reference it during the call.** Keep the brief open on a second monitor or device during your meeting to stay grounded and on-message.
-
-{% hint style="tip" %}
-If a conversation is missing context or you have had multiple touchpoints, the brief may be more general. Add notes to the lead's profile to give AutoReach more information for next time.
-{% endhint %}
-
-## When Call Briefs Are Most Valuable
-
-- **First calls with a new lead** - understand their context before introducing yourself
-- **Follow-up meetings** - remind yourself of prior conversations
-- **Objection handling** - see anticipated pushback and prep your responses
-- **High-stakes meetings** - ensure you are fully prepared with talking points
-- **Cold calls** - lead with insights that show you have done your homework
-
-{% hint style="info" %}
-Call briefs are powered by AI and trained on your past successful conversations. The quality improves as AutoReach learns more about your leads and sales patterns.
-{% endhint %}
+| Status | Brief Focus |
+|---|---|
+| Meeting Booked | Never suggests booking — focuses on meeting preparation |
+| Replied | Focuses on advancing toward a booking |
+| Pending | Focuses on follow-up strategies |
 
 ## Next Steps
 
-- **[Meeting Booking Integration](booking-integration.md)**: Set up Calendly or Cal.com to track bookings automatically
-- **[Chrome Extension CRM](chrome-extension-crm.md)**: Access call briefs and pipeline data from your browser
+- **[Meeting Booking](booking-integration.md)**: Track bookings automatically via Calendly or Cal.com
+- **[Chrome Extension](chrome-extension-crm.md)**: Access call briefs from your browser

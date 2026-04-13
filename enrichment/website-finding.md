@@ -1,91 +1,109 @@
 # Website Finding
 
-Website finding automatically discovers professional and company websites for your leads during enrichment. These websites provide valuable context that powers more personalized outreach.
+Website finding discovers company and personal websites for leads using AI-powered web search. It is a **separate, optional enrichment** that is not part of the standard pipeline -- you must trigger it explicitly. Found websites improve email finding accuracy (providing a domain to search against) and give AI more context for outreach personalization.
 
-## What Website Finding Does
+## How It Works
 
-As part of the enrichment process, AutoReach searches for and identifies websites associated with each lead. This runs automatically when new leads are added to your workspace, requiring no manual effort.
+Website finding uses AI web search (based on your model configuration) to search for a lead's company or personal website. It implements **three search strategies** tried sequentially, returning the first high-confidence result or the best result across all strategies.
 
-Discovered websites are stored on the lead profile and made available to AI message generation for deeper personalization.
+### Search Strategies
 
-## Types of Websites Discovered
+**Strategy 1: Bio/Headline Company Search** (tried first)
+- Extracts company name from the lead's bio using common patterns (e.g., "@ Company", "at Company", "CEO of X")
+- Searches for that company's official website
+- If confidence is HIGH (>= 0.75), returns immediately without trying other strategies
+- Confidence reduced by 20% if the company name couldn't be verified
 
-Website finding looks for several categories of web presence:
+**Strategy 2: LinkedIn Company Search**
+- Extracts company from the lead's LinkedIn profile data
+- Searches for the company's official website
+- If confidence is HIGH (>= 0.65), kept for comparison
 
-- **Company Websites** - Official corporate domains and marketing sites
-- **Personal Websites** - Consulting sites, bio pages, or personal branding sites
-- **Portfolio Sites** - Showcases of past work, case studies, or client results
-- **Project Websites** - Startup landing pages, side projects, or open-source work
+**Strategy 3: Direct Person Search** (last resort)
+- Searches for the person's personal website or portfolio using their name and social handle
+- Generally returns lower confidence scores
 
-## How Discovered Websites Are Used
+The best result with confidence >= 0.40 is returned. If no candidate meets that threshold, no website is stored.
 
-### AI Personalization
+### Rate Limit
 
-AutoReach AI uses discovered websites to craft more relevant outreach. It analyzes website content to understand a lead's focus, expertise, and professional interests, then incorporates those insights into generated messages.
+Website finding processes up to **10 leads per minute**.
 
-For example, if AutoReach discovers a personal website showcasing software engineering expertise with specific technologies, the AI might personalize an outreach message:
+### Preconditions
 
-> "I noticed you've built some impressive projects using Go and Kubernetes. We're helping engineering teams scale their infrastructure like you have..."
+A lead must have **at least one** of:
+- A LinkedIn profile URL
+- A bio longer than 20 characters
 
-Higher relevance leads to higher response rates.
+Leads without either are skipped.
 
-### Competitor Insights
+## What Gets Stored
 
-If a discovered website reveals that a lead works at a competing company or is building a competitive product, AutoReach's buyer scoring can factor that into lead quality assessments.
+| Field | Description |
+|---|---|
+| Website URL | The discovered website URL |
+| Website Confidence | Confidence score (0.0-1.0) |
+| Website Source | How it was found: LinkedIn company, bio company, direct search, or Twitter search |
 
-## Best Practices
+### Confidence Scoring
 
-### Combine With Other Enrichment
+Each strategy returns an AI confidence level (HIGH, MEDIUM, LOW) mapped to a numeric range:
 
-Website discovery works best alongside other enrichment sources:
+| Strategy | HIGH | MEDIUM | LOW |
+|---|---|---|---|
+| Bio company | 0.75 | 0.60 | 0.45 |
+| LinkedIn company | 0.85 | 0.70 | 0.55 |
+| Direct person search | 0.65 | 0.50 | 0.40 |
 
-- **LinkedIn Enrichment** - Professional context and career history
-- **X Enrichment** - Real-time interests and activity
-- **Web Enrichment** - Company-level context like funding, tech stack, and news
+Bio company confidence is reduced by 20% if the extracted company name couldn't be verified. Only results with confidence >= 0.40 are accepted.
 
-Together, these create a complete picture of your lead.
+## Domain Filtering
 
-### Enable AI-Powered Messaging
+Website finding filters out social media, link aggregators, URL shorteners, and other non-website domains. Any result matching or being a subdomain of these is discarded:
 
-{% hint style="success" %}
-**Pro Tip:** Enable AI-powered DM generation in your sequences. The AI will automatically reference discovered websites to create more personalized, relevant messages.
-{% endhint %}
+- **Social networks:** twitter.com, x.com, facebook.com, instagram.com, youtube.com, tiktok.com
+- **Professional platforms:** linkedin.com, github.com
+- **Link aggregators:** linktr.ee, linkin.bio, bio.link, beacons.ai
+- **Scheduling:** calendly.com, cal.com
+- **URL shorteners:** bit.ly, t.co, goo.gl
+- **Creator platforms:** medium.com, substack.com, patreon.com, ko-fi.com, buymeacoffee.com, gumroad.com
+- **Messaging:** discord.gg, discord.com, telegram.me, t.me, wa.me, whatsapp.com
 
-### Review High-Value Leads
+URLs without a protocol are auto-prepended with `https://`.
 
-For your highest-priority leads, manually review discovered websites. You may find details you can use directly in subject lines or opening lines of your outreach.
+## How It's Triggered
 
-## Troubleshooting
+Website finding does **not run automatically** when leads are added. It must be triggered explicitly:
 
-### No Websites Found
+| Trigger | Description |
+|---|---|
+| `POST /api/enrich` with `website: true` | Manual enrichment -- select leads and enable website finding |
+| `POST /api/enrich/re-enrich-skipped` | Retry failed or skipped leads |
 
-This is normal. Not every lead has a discoverable web presence:
+## Cost
 
-- Some professionals do not maintain personal websites
-- Company websites may not be well indexed
-- The lead may be newer to their role
+Approximately **$0.02 per lead** -- one AI web search call per strategy attempted (up to 3 strategies). Cost varies by AI provider.
 
-This does not affect outreach quality. AutoReach can still reference LinkedIn and X data for personalization.
+## Error Handling
 
-### Irrelevant Websites Found
+| Error | Behavior |
+|---|---|
+| Rate limit (429) | Retried with exponential backoff, up to 3 attempts |
+| Lead not found | Logged as warning, job completes |
+| No website found | Marked as attempted (not an error) |
+| Invalid lead data | Error recorded, job completes |
+| Other errors | Error recorded, job completes without retry |
 
-Occasionally, website finding may return results for a different person with the same name:
+Only rate limit errors trigger retries. All other errors are logged and the job completes to avoid infinite retry loops.
 
-1. Review the discovered websites in the lead profile
-2. Delete any that do not match by clicking the remove icon
-3. The AI will use only the remaining websites for message generation
+## Integration with Email Finding
 
-### Website Not Updating
+Website finding feeds into email finding. The email finder uses the lead's website URL to extract a company domain, which is the preferred input for Findymail API lookups. Running website finding before email finding improves email discovery rates by providing a verified domain.
 
-Website discovery runs once per lead by default. To refresh:
-
-1. Open the lead profile
-2. Click **Refresh Enrichment**
-3. Website finding will re-run with the latest data
-
-You may want to refresh if the lead recently launched a new website or you suspect the discovered URL is outdated.
+This is not a strict pipeline dependency -- email finding can proceed without a website URL by falling back to LinkedIn company data or the lead's bio.
 
 ## Next Steps
 
-- **[Email Finding](email-finding.md)** - Discover work email addresses using Findymail integration
-- **[Web Enrichment](web-enrichment.md)** - Gather company-level context like funding, tech stack, and news
+- **[Email Finding](email-finding.md)**: Discover work email addresses using the domains found here
+- **[Web Enrichment](web-enrichment.md)**: Gather additional company context from the web
+- **[Enrichment Pipeline](pipeline.md)**: See how the standard enrichment pipeline works

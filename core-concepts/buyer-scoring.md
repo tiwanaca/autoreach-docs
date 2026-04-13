@@ -2,9 +2,9 @@
 
 AutoReach's **Buyer Intelligence** system is the heart of smart outreach. Instead of blasting everyone, it scores each lead across three dimensions (fit, intent, and timing) and uses that data to predict who is most likely to buy right now.
 
-## The FIT-FIRST Model
+## The Intent-Led Scoring Model
 
-Our proprietary scoring system operates on three independent dimensions:
+AutoReach uses an **intent-led** scoring model: leads with active buying signals surface above cold ICP matches, while strong ICP fits still score well. The system scores three independent dimensions:
 
 ### Fit Score (0-100)
 
@@ -22,7 +22,7 @@ Fit measures how well a lead matches your ideal customer profile (ICP). It answe
 
 "Is this person actively looking for a solution?"
 
-Intent measures signals that show the lead is searching for, considering, or planning to buy something. It answers:
+Intent is the primary driver of the composite score. It measures signals that show the lead is searching for, considering, or planning to buy something:
 
 - Are they asking for recommendations?
 - Have they mentioned switching tools?
@@ -46,8 +46,8 @@ Timing measures how urgent or immediate their needs appear. It answers:
 
 Each dimension is scored independently on a 0-100 scale. A higher score means a stronger signal in that dimension. You might have:
 
-- **High fit + Low intent:** Someone in your target market who is not actively looking yet
-- **Low fit + High intent:** Someone actively buying, but not the right persona
+- **High fit + Low intent:** Someone in your target market who is not actively looking yet — they'll land in monitor, not active
+- **Low fit + High intent:** Someone actively buying, but not the right persona — intent alone won't promote them without decent fit
 - **High fit + High intent + High timing:** Your ideal buyer, ready to engage right now
 
 The combination of all three dimensions determines whether a lead is worth reaching out to.
@@ -56,9 +56,26 @@ The combination of all three dimensions determines whether a lead is worth reach
 
 While fit, intent, and timing are independent, AutoReach combines them into a single **Buyer Score** (0-100) that appears on the Buyers page.
 
-The weights between fit, intent, and timing are dynamic based on your Offer's **signal likelihood** setting. When your buyers frequently post about their needs on social media (high likelihood), intent signals carry more weight. When they rarely post (low likelihood), fit becomes the dominant factor.
+The weights between fit, intent, and timing are **dynamic** based on your Offer's **signal likelihood** setting:
 
-AutoReach also applies intelligent safety rails so that strong ICP matches and high-intent leads are never missed, even if one dimension scores lower.
+| Signal Likelihood | Fit Weight | Intent Weight | Timing Weight |
+|---|---|---|---|
+| **High** — buyers frequently post about their needs | 0.30 | **0.45** | 0.25 |
+| **Medium** (default) | 0.45 | **0.40** | 0.15 |
+| **Low** — buyers rarely post on social media | **0.55** | 0.30 | 0.15 |
+
+Intent leads or ties with fit in most configurations. Only when signal likelihood is set to low does fit become the dominant factor.
+
+### Intent-Gated Promotion
+
+On top of the weighted score, AutoReach applies promotion rules that ensure high-signal leads are never buried:
+
+- **High intent (70+) + decent fit (40+):** guaranteed active (score floor 60)
+- **Moderate intent (50+) + decent fit (40+):** floor at monitor (45)
+- **Strong ICP fit (85+) alone:** floor at 50 — worth reaching out even without intent signals
+- **Good ICP fit (70+) alone:** floor at 40 — stays visible in monitor
+
+These rules mean a perfect ICP match won't disappear, but a lead with real buying signals will always rank higher.
 
 ## Scoring Rules
 
@@ -68,9 +85,7 @@ AutoReach applies rules that override normal scoring:
 - **Competitors:** If a lead works at a competitor company, they are automatically disqualified
 - **Internal builders:** If a lead is building a competing product, they are automatically disqualified
 
-{% hint style="warning" %}
-**Override Available:** You can manually override scoring rules via the UI (set "Manual Outreach" state) if you want to reach someone despite these filters.
-{% endhint %}
+> **Warning:** You can manually override scoring rules via the UI (set "Manual Outreach" state) if you want to reach someone despite these filters.
 
 ## Source-Aware Scoring
 
@@ -93,16 +108,14 @@ Lead scores are not static. They update when:
 4. **Manual rescore triggered** - You explicitly request re-analysis
 5. **Re-engagement** - Lead responds to your message (new engagement activity)
 
-A lead could be a poor_fit at month 1, then jump to active at month 3 because:
+A lead could be Poor Fit at month 1, then jump to Active at month 3 because:
 
 - They got promoted (role match improved)
 - Started posting about your keywords (intent detected)
 - Company announced funding (timing signal)
 - Changed companies (potential new ICP match)
 
-{% hint style="info" %}
-**Monitor is Your Friend:** Leads in the monitor state (30-59) are watched for these score movements. AutoReach automatically promotes them to active if scoring triggers are met.
-{% endhint %}
+> **Tip:** Leads in the monitor state (30-59) are watched for these score movements. AutoReach automatically promotes them to active if scoring triggers are met.
 
 ## Debugging a Low Score
 

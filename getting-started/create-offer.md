@@ -126,7 +126,7 @@ Upload your strategy docs, case studies, and other context. AutoReach's AI uses 
 
 ### What to Upload
 
-Upload 1-5 documents (PDF, DOCX, or TXT) with:
+Upload up to 10 documents (PDF, DOCX, or TXT) with:
 
 - **Case studies**: How you solved problems for past clients
 - **Playbooks**: Your outreach strategy, sales process, or methodology
@@ -148,9 +148,7 @@ AutoReach will:
 
 When someone replies to your outreach, AutoReach's AI will search your knowledge base for relevant context and use it to generate smart, personalized responses.
 
-{% hint style="info" %}
-**Tip**: The more detailed your knowledge base, the better AutoReach's AI performs. Include real examples of your work, your problem-solving approach, and customer success stories.
-{% endhint %}
+> **Tip:** The more detailed your knowledge base, the better AutoReach's AI performs. Include real examples of your work, your problem-solving approach, and customer success stories.
 
 ### How Knowledge Base Powers AI Responses
 

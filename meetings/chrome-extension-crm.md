@@ -1,143 +1,51 @@
-# Chrome Extension CRM Pipeline
+# Chrome Extension CRM
 
-The AutoReach Chrome Extension brings your entire CRM pipeline directly into your browser. Manage leads, track progress, and run outreach without leaving your daily workflow on LinkedIn and X.
+The AutoReach Chrome Extension brings your CRM pipeline into your browser. It works on LinkedIn and X, providing lead management, pipeline tracking, and account connectivity.
 
-## The Pipeline
+## CRM Pipeline Stages
 
-Your leads move through a clean, visual pipeline right in the extension:
+Leads move through a visual pipeline:
 
-**new > on hold > requested > accepted > contacted > replied > meeting > won/lost**
+**new → requested → accepted → contacted → replied → meeting → won / lost**
 
-Each stage represents a moment in the lead journey:
-- **new** - freshly added to AutoReach
-- **on hold** - lead is paused or waiting for action
-- **requested** - connection request or first message sent
-- **accepted** - connection accepted or first reply received
-- **contacted** - ongoing conversation started
-- **replied** - they have engaged with your outreach
-- **meeting** - meeting booked
-- **won** - closed deal
-- **lost** - disqualified or no longer pursuing
+| Stage | Description |
+|---|---|
+| `new` | Freshly added to AutoReach |
+| `requested` | Connection request or first message sent |
+| `accepted` | Connection accepted or first reply received |
+| `contacted` | Ongoing conversation started |
+| `replied` | Lead has engaged with your outreach |
+| `meeting` | Meeting booked |
+| `won` | Deal closed |
+| `lost` | Disqualified or no longer pursuing |
 
-## Moving Leads Through the Pipeline
+Leads auto-progress through stages as sequence activity occurs. You can manually drag leads between stages to override.
 
-**Drag and drop:** Manually move leads between stages by dragging their card within the pipeline view.
+## Adding Leads
 
-**Auto-progression:** Leads automatically advance through stages as sequence activity progresses. A lead moves from "new" to "requested" when a DM is sent, and from "contacted" to "replied" when they respond.
+On LinkedIn profile pages, the extension injects an **"Add to Leads"** button. You can also add leads from posts and comments in the LinkedIn feed. Lead addition is manual — you identify prospects and add them via the extension panel.
 
-{% hint style="info" %}
-You can always override auto-progression by manually dragging a lead to a different stage if needed.
-{% endhint %}
+The extension is a **CRM tool**, not an automated lead generator. It does not scan feeds or match ICPs automatically.
 
-## Pipeline Analytics
+## Account Connection
 
-The extension includes a built-in analytics dashboard showing:
-- **Lead count per stage** - how many leads are in each pipeline stage
-- **Conversion rates** - percentage of leads moving from one stage to the next
-- **Stage velocity** - average time spent in each stage
-- **Total pipeline value** - based on average deal size for your offer
+The extension handles connecting your LinkedIn and X accounts to AutoReach:
 
-Use these metrics to identify bottlenecks and optimize your outreach.
+- Extracts authentication cookies from your active browser sessions
+- Registers accounts with the AutoReach backend
+- Detects the platform automatically (LinkedIn vs X) based on the current page
 
-{% hint style="tip" %}
-Check your analytics weekly to spot trends. If leads are stuck in "contacted," you may need to adjust your follow-up messaging.
-{% endhint %}
+## LinkedIn Connection Tracking
 
-## LinkedIn Connection Acceptance Detection
+When you send a connection request through AutoReach, the extension captures the **invitation URN** via an interceptor script that monitors LinkedIn network requests. This allows the system to track the connection status and support auto-withdrawal.
 
-The extension monitors your LinkedIn account in real-time for connection acceptances.
+The lead moves to `requested` stage and the `invitation_id` is stored for lifecycle management.
 
-**How it works:**
-- When someone accepts your connection request, the extension detects it automatically
-- The system automatically links the connection to the corresponding lead in AutoReach
-- The lead's status updates to **"accepted"** in your pipeline
+## Phishing Protection
 
-This means you do not have to manually track who has accepted. It is all automatic.
-
-{% hint style="success" %}
-AutoReach is smart enough to handle common name variations and differences, so connections are linked accurately even if the name is not an exact match.
-{% endhint %}
-
-## Security: Cyrillic Character Detection
-
-The extension includes built-in phishing protection that detects lookalike profiles using Cyrillic characters.
-
-**Why this matters:** Bad actors often use Cyrillic characters that visually resemble Latin letters to create fake profiles that look legitimate. The extension flags these suspicious profiles to protect you.
-
-If a profile is flagged as potentially dangerous, the extension will warn you before you interact with it.
-
-{% hint style="warning" %}
-Be cautious with flagged profiles. Do not accept connection requests or share sensitive information with accounts that trigger security warnings.
-{% endhint %}
-
-## Lead Linking to AutoReach
-
-When you visit a LinkedIn or X profile, the extension automatically extracts the profile data and links it to leads in AutoReach.
-
-**This means:**
-- You see at a glance which AutoReach leads match the profiles you are viewing
-- You can start conversations knowing the lead is already in your system
-- Lead context from AutoReach (buyer score, signals, conversation history) is just a click away
-
-## Active Sequence Tracking
-
-Each lead shows which sequences they are enrolled in, visible in the extension sidebar.
-
-You will see:
-- Sequence name
-- Current step
-- Next scheduled action
-- Days in sequence
-
-This keeps you aware of where each lead is in your outreach without switching apps.
-
-{% hint style="tip" %}
-Use active sequence tracking to avoid duplicate outreach. If a lead is in multiple sequences, you will see it in the extension.
-{% endhint %}
-
-## Real-Time Messaging Overlay
-
-When you are chatting with someone on LinkedIn or X, a lightweight messaging overlay appears showing:
-- Lead profile and buyer intelligence
-- Conversation history from AutoReach
-- Recommended next messages (if AI suggestions are enabled)
-- Quick action buttons (link to AutoReach, add to sequence, etc.)
-
-This keeps relevant context visible while you are actually in the conversation.
-
-{% hint style="info" %}
-The messaging overlay is lightweight and does not interfere with normal LinkedIn/X messaging. You can minimize or close it anytime.
-{% endhint %}
-
-## Connecting Your Accounts
-
-To connect your LinkedIn and X accounts to AutoReach, use the Chrome Extension:
-
-1. Click the **Connect Account** button in the extension
-2. Select LinkedIn or X
-3. Review the permissions and click **Authorize**
-4. You are connected. The extension can now send messages and track activity
-
-{% hint style="success" %}
-Your actual password is never shared or stored. You can revoke access anytime in the extension settings.
-{% endhint %}
-
-## Bridging Browser and Outreach
-
-The Chrome Extension is the bridge between your daily browsing and your outreach strategy. You can:
-
-- Find prospects on LinkedIn and X, then instantly add them to AutoReach
-- See lead context and conversation history while messaging
-- Track pipeline stages without leaving your browser
-- Monitor sequence activity in real-time
-- Generate call briefs before meetings
-- Take next steps all in one place
-
-{% hint style="success" %}
-Install the extension and pin it to your toolbar for quick access. It is designed to fit seamlessly into your workflow without slowing you down.
-{% endhint %}
+The extension includes Cyrillic character detection that flags profiles using lookalike characters (Cyrillic letters that visually resemble Latin letters). Flagged profiles display a warning before you interact with them.
 
 ## Next Steps
 
-- **[Installing the Chrome Extension](../getting-started/chrome-extension.md)**: Get started with installation and license activation
-- **[Call Brief Generation](call-briefs.md)**: Prepare for meetings with AI-generated briefs from your pipeline
+- **[Call Briefs](call-briefs.md)**: Generate pre-call preparation from your pipeline
+- **[Meeting Booking](booking-integration.md)**: Track bookings via Calendly or Cal.com

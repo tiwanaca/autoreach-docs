@@ -1,133 +1,48 @@
 # Knowledge Base
 
-The Knowledge Base is AutoReach's memory system. Upload your sales playbooks, case studies, FAQs, and objection handling docs, and the AI will reference them when generating responses, making your AI assistant smarter with every document you add.
+The Knowledge Base stores your sales documents so the AI can reference them when generating responses. Upload playbooks, case studies, FAQs, and objection handling docs to make the AI smarter and more context-aware.
 
-## Uploading Documents
+## How It Works
 
-You can upload:
+Documents are processed through a RAG (Retrieval-Augmented Generation) pipeline:
 
-- **PDF files**: Sales decks, case studies, whitepapers
-- **DOCX files**: Word documents, playbooks, sales guides
-- **TXT files**: FAQs, objection handling scripts, notes
-
-Simply drag and drop or click **Upload Documents** in your Knowledge Base section.
-
-{% hint style="info" %}
-**File Size Limits**: Most documents up to 10 MB are supported. If you hit a limit, split large documents into separate uploads.
-{% endhint %}
-
-AutoReach automatically processes and indexes your documents so the AI can reference them when generating responses.
+1. **Upload**: Documents are uploaded per-offer
+2. **Chunking**: Text is split into chunks for optimal retrieval
+3. **Embedding**: Each chunk is converted to a vector embedding
+4. **Storage**: Embeddings are stored for semantic search
 
 ## When Knowledge Base Is Used
 
-When generating a response, the AI automatically finds and uses the most relevant parts of your uploaded documents.
+When the AI generates a response, it searches your knowledge base for the most relevant chunks and injects them into the prompt.
 
-The Knowledge Base powers AI responses in three key moments:
+**Token budget**: Knowledge base context is capped at **600 tokens** per response. Combined with tone examples (500 tokens), the total RAG budget is **1,100 tokens**.
 
-### 1. Cold DM Generation
+Knowledge base is scoped per-offer — different offers can have different knowledge bases, so AI responses are tailored to each target audience.
 
-When the AI generates your initial outreach message, it references your Knowledge Base to:
+### Key Moments
 
-- Match your company's value proposition
-- Reference relevant metrics and case studies
-- Include credible social proof
+- **Cold DM generation**: References your value proposition, metrics, and case studies
+- **Response generation**: Finds relevant objection handling scripts, product details, or case studies based on the conversation topic
+- **Offer-specific context**: Ensures Enterprise case studies don't appear in SMB conversations
 
-### 2. Response Generation
+## Uploading Documents
 
-When a prospect replies, the AI searches your Knowledge Base for:
+Supported file types:
+- **PDF**: Sales decks, case studies, whitepapers
+- **DOCX**: Playbooks, sales guides
+- **TXT**: FAQs, objection handling scripts, notes
 
-- Relevant case studies (if the prospect's industry matches)
-- Objection handling scripts (if they raise a common concern)
-- Product details (if they ask about your solution)
+Documents are automatically processed and indexed after upload.
 
-### 3. Offer-Specific Context
+## Best Practices
 
-Your Knowledge Base can be attached to a specific **Offer** (ICP), so:
-
-- Different offers can have different knowledge bases
-- AI responses are tailored to each target audience
-- Case studies for Enterprise clients don't confuse SMB responses
-
-## Best Practices for Your Knowledge Base
-
-### 1. Upload Your Sales Playbook
-
-Include:
-
-- Your core value proposition
-- Typical buyer personas
-- Sales process steps
-- Key questions to ask in each stage
-
-**Why**: The AI will align responses with your documented process.
-
----
-
-### 2. Include Objection Handling
-
-Upload a document with:
-
-- Common objections you hear (budget, timing, fit, etc.)
-- Your standard responses to each
-- Counter-arguments with data
-
-**Why**: When the AI enters the Objections stage, it'll have a playbook to reference.
-
----
-
-### 3. Add Case Studies
-
-Include:
-
-- 3-5 detailed case studies from similar prospects
-- Before/after metrics (time saved, revenue impact, etc.)
-- Company size, industry, specific challenge
-
-**Why**: The AI can reference relevant proof points when a prospect asks "Does this work for companies like mine?"
-
----
-
-### 4. Create a FAQ Document
-
-Include:
-
-- Pricing (if relevant)
-- Common technical questions
-- Implementation timeline
-- Support and onboarding details
-
-**Why**: The AI can answer prospect questions without you needing to jump in.
-
----
-
-### 5. Keep It Updated
-
-- Review your Knowledge Base quarterly
-- Replace outdated case studies with fresh ones
-- Update pricing, timelines, or process changes
-- Remove conflicting information
-
-**Why**: Stale docs will lead to stale or conflicting AI responses.
-
----
-
-## Example: A Well-Structured Knowledge Base
-
-```
-Knowledge Base
-  Playbook.docx (Your sales process, buyer personas, value prop)
-  Case Studies.pdf (3-5 recent case studies with metrics)
-  Objection Handling.docx (Common objections + responses)
-  FAQ.txt (Pricing, implementation, support FAQs)
-  Product Overview.pdf (Feature overview, use cases)
-```
-
-This structure gives the AI a complete picture of your business without overloading any single category.
-
----
+1. **Upload your sales playbook** — core value proposition, buyer personas, sales process steps
+2. **Include objection handling** — common objections with your standard responses
+3. **Add case studies** — 3–5 detailed case studies with before/after metrics
+4. **Create a FAQ document** — pricing, implementation timeline, support details
+5. **Keep it updated** — review quarterly, replace stale content, remove conflicting information
 
 ## Next Steps
 
-- Learn how the AI uses Knowledge Base in [AI Response Engine](ai-response-engine.md)
-- Understand conversation stages that benefit most from Knowledge Base in [Conversation Stages](conversation-stages.md)
-- Review knowledge retrieval in [Tone Examples & Customization](tone-examples.md)
+- **[AI Response Engine](ai-response-engine.md)**: How the AI uses knowledge base during generation
+- **[Tone Examples](tone-examples.md)**: The other half of the RAG context

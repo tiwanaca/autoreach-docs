@@ -1,80 +1,157 @@
 # Finding Leads Overview
 
-AutoReach provides multiple intelligent lead discovery methods to help you find prospects that match your ideal customer profile (ICP). Whether you are searching for intent signals, industry-specific profiles, or lookalike audiences, AutoReach has you covered.
+AutoReach provides multiple lead discovery methods to help you find prospects that match your ideal customer profile (ICP). Methods range from intent-driven social searches to follower extraction and instant pool matching.
 
-## Available Lead Discovery Methods
+## Search-Based Discovery
 
-### X Post Search
-Find prospects from intent-signaling posts on X. AutoReach analyzes your offer and generates targeted search queries to discover decision-makers discussing problems you solve.
+These methods find leads through keyword and filter-based searches.
+
+### X Tweet Search
+Find prospects from intent-signaling posts on X. AutoReach can analyze your offer and auto-generate targeted search queries organized by intent category (budget pressure, operational pain, competitor switching, hiring/scaling, etc.), or you can provide your own keywords. Both tweet authors and commenters are captured as leads.
+
+Supports **daily recurring searches** — AutoReach regenerates fresh keywords and re-runs searches every 24 hours automatically.
 
 **Best for:** Finding leads showing active buying signals on X.
 
-[Learn more about X Post Search →](tweet-search.md)
+[Learn more about X Tweet Search →](tweet-search.md)
 
 ### LinkedIn Content Search
-Discover decision-makers through LinkedIn posts and comments. Surface leads discussing hiring challenges, security concerns, growth goals, and solutions in your space.
+Discover decision-makers through LinkedIn posts and comments. Both post authors and commenters are captured by default (`include_commenters` is on).
+
+Supports **daily recurring searches** with auto-regenerated queries.
 
 **Best for:** Finding engaged LinkedIn users with professional signal strength.
 
 [Learn more about LinkedIn Content Search →](linkedin-content-search.md)
 
 ### LinkedIn People Search
-Direct profile discovery using LinkedIn's powerful search filters. Find people by location, industry, company size, job title, and more.
+Direct profile discovery using LinkedIn's search API. Available filters:
+
+- **Location** (geo URNs)
+- **Industry**
+- **Current company**
+- **Job title** (keyword)
+- **Network** (1st/2nd/3rd+ connections)
+- **Profile language**
+- **Follower of** (specific profile URNs — used by lookalike-driven searches)
+
+Note: company size is not a direct LinkedIn People Search filter. It is part of your offer's ICP definition and checked during scoring, not at search time.
+
+Supports **buyer expansion** — a daily autopilot that re-runs people searches with role rotation to continuously find new leads.
 
 **Best for:** Systematic targeting of specific roles at specific companies.
 
 [Learn more about LinkedIn People Search →](linkedin-people-search.md)
 
 ### LinkedIn Job Search
-Identify decision-makers at companies that are actively hiring. Search job postings, extract company information, and find hiring managers.
+Find decision-makers at companies that are actively hiring. The flow:
 
-**Best for:** Targeting growth-stage companies and hiring managers.
+1. AI generates role targets based on your offer
+2. Searches LinkedIn job postings for each role
+3. Deduplicates by company
+4. Fetches full company profiles (industry, size, headquarters, etc.)
+5. Runs a people search within each company to find a decision-maker by seniority scoring (CEO/CTO/Founder score highest)
+
+The system finds the most senior relevant decision-maker at the company, not necessarily the person who posted the job.
+
+**Best for:** Targeting growth-stage companies and their decision-makers.
 
 [Learn more about LinkedIn Job Search →](linkedin-job-search.md)
 
-### Lookalike Audience Discovery
-Find followers of influencers and thought leaders whose audiences match your ICP. Discover industry publications, competitor communities, and vertical-specific accounts.
-
-**Best for:** Rapid scaling with audience-targeted outreach.
-
-[Learn more about Lookalike Audiences →](lookalike-audiences.md)
-
-### Lead Pool (Instant Matching)
-Instantly match against your previously enriched leads. Get qualified prospects without additional enrichment costs.
-
-**Best for:** Quick scaling and cost-effective lead qualification.
-
-[Learn more about Lead Pool →](lead-pool.md)
-
-### Cross-Platform Profile Matching
-Automatically find X profiles for LinkedIn leads, and LinkedIn profiles for X leads. Enable true multi-platform outreach from any single-platform discovery source.
-
-**Best for:** Maximizing outreach flexibility across both platforms.
-
-[Learn more about Cross-Platform Matching →](cross-platform-matching.md)
-
 ### Keyword Generation
-Let AI generate targeted search queries tailored to your offer. Powers recurring daily searches across both platforms.
+AI generates targeted search queries tailored to your offer for both X and LinkedIn. For X, this includes both keywords and intent-organized query clusters. For LinkedIn, it generates content search queries.
 
-**Best for:** Discovering relevant keywords you might not think of yourself.
+Keyword generation is both a standalone preview tool and the engine behind daily recurring searches — each recurring run regenerates fresh keywords automatically.
+
+**Best for:** Discovering relevant search terms you might not think of yourself.
 
 [Learn more about Keyword Generation →](keyword-generation.md)
 
+## Audience-Based Discovery
+
+These methods find leads by extracting followers or audiences from relevant accounts.
+
+### Lookalike Audience Discovery
+AutoReach uses AI to find influencers, thought leaders, and communities whose audiences match your ICP. The lookalike search works on both X and LinkedIn. However, the downstream lead extraction differs by platform:
+
+- **X:** Followers are extracted directly via the follower extraction pipeline
+- **LinkedIn:** Leads are found via People Search filtered by `followerOf` the discovered account's profile URN
+
+**Best for:** Scaling outreach by tapping into existing relevant communities.
+
+[Learn more about Lookalike Audiences →](lookalike-audiences.md)
+
+### Follower/Following Extraction
+Extract followers or following lists from specific X accounts you choose as seed accounts. You specify a username, choose followers or following, and set a max count. AutoReach paginates through the list and scores each person against your offer.
+
+Supports **buyer expansion** — a daily autopilot that re-extracts from seed accounts to capture new followers.
+
+**Best for:** Mining the audience of specific industry accounts, newsletters, or competitors on X.
+
+### Link Extraction
+Extract leads from specific URLs — either profile links or comment sections. Supports four extraction types:
+
+- X comments (from a tweet URL)
+- X profiles (from a thread or list)
+- LinkedIn comments (from a post URL)
+- LinkedIn profiles (from a post or article)
+
+**Best for:** Capturing engaged audiences from specific high-signal posts or threads.
+
+### Comment Extraction
+When a search finds a high-signal post, AutoReach can also extract the commenters as leads. This happens automatically during X Tweet Search and LinkedIn Content Search when commenters are included, and can also be triggered via Link Extraction on specific post URLs.
+
+## Instant & Manual Methods
+
+### Lead Pool (Instant Matching)
+AutoReach maintains a shared pool of pre-enriched lead profiles with vector embeddings. When you create or update an offer, the system uses cosine similarity search to match existing pool entries against your ICP. Pool entries are platform-agnostic — they can originate from X, LinkedIn, or both.
+
+The pool is triggered automatically at search start and on offer updates, as well as manually.
+
+**Best for:** Getting scored leads instantly without waiting for enrichment.
+
+[Learn more about Lead Pool →](lead-pool.md)
+
+### CSV Import
+Bulk import leads from a spreadsheet with X handle, LinkedIn URL, or email. Includes duplicate detection and queues imported leads for full enrichment.
+
+**Best for:** Bringing in existing prospect lists from other tools or sources.
+
+### Manual Add
+Add individual leads by URL or username. Queued for enrichment and scoring.
+
+### Chrome Extension
+On LinkedIn, click the **Add to Leads** button on any profile page to add them directly via the AutoReach Chrome Extension.
+
+## Automated Discovery (Buyer Expansion)
+
+The **buyer expansion scheduler** is a background autopilot that runs daily to continuously grow your lead pipeline. When enabled on a search or seed account, it:
+
+- Re-runs X follower extractions on seed accounts to capture new followers
+- Re-runs LinkedIn people searches with role rotation to find new matches
+- Triggers automatically — no manual intervention needed after initial setup
+
+## Cross-Platform Profile Matching
+
+Cross-platform matching (finding X profiles for LinkedIn leads and vice versa) is **not a standalone discovery method**. It runs automatically during the enrichment pipeline when a lead enters from any source. See [Cross-Platform Matching](cross-platform-matching.md) for details on how it works.
+
 ## Choosing the Right Method
 
-| Method | Platform | Best For | Scale | Speed |
-|--------|----------|----------|-------|-------|
-| X Post Search | X | Intent signals | Medium | Fast |
-| Content Search | LinkedIn | Engaged professionals | Medium | Medium |
-| People Search | LinkedIn | Systematic targeting | Large | Medium |
-| Job Search | LinkedIn | Hiring companies | Medium | Medium |
-| Lookalike Audiences | Both | Rapid scaling | Large | Fast |
-| Lead Pool | Both | Instant matches | Large | Very Fast |
-| Cross-Platform | Both | Multi-platform | Any | Medium |
+| Method | Platform | Best For |
+|--------|----------|----------|
+| X Tweet Search | X | Intent signals from active discussions |
+| LinkedIn Content Search | LinkedIn | Professionals discussing relevant topics |
+| LinkedIn People Search | LinkedIn | Systematic targeting by role/location/industry |
+| LinkedIn Job Search | LinkedIn | Growth-stage companies and decision-makers |
+| Lookalike Audiences | Both | Scaling via relevant community audiences |
+| Follower Extraction | X | Mining specific account audiences |
+| Link/Comment Extraction | Both | Capturing engagement on specific posts |
+| Lead Pool | Both | Instant matches from pre-enriched profiles |
+| CSV Import | Both | Bringing in external prospect lists |
 
 ## Quick Start
 
-1. **Starting with a new offer?** Begin with [X Post Search](tweet-search.md) or [LinkedIn Content Search](linkedin-content-search.md) to find intent-driven prospects.
+1. **Starting with a new offer?** Begin with [X Tweet Search](tweet-search.md) or [LinkedIn Content Search](linkedin-content-search.md) to find intent-driven prospects.
 
 2. **Have specific role/location targets?** Use [LinkedIn People Search](linkedin-people-search.md) for precise filtering.
 
@@ -82,12 +159,8 @@ Let AI generate targeted search queries tailored to your offer. Powers recurring
 
 4. **Need fast results?** Use [Lead Pool](lead-pool.md) to instantly match against existing enriched leads.
 
-5. **Want cross-platform coverage?** Enable [Cross-Platform Matching](cross-platform-matching.md) to expand your outreach reach.
+5. **Want continuous growth?** Enable **buyer expansion** on your searches and seed accounts for daily autopilot discovery.
 
-{% hint style="info" %}
-All lead discovery methods are powered by AI and automatically check new prospects against your ICP. AutoReach scores every lead for buyer intent and fit before adding them to your sequence.
-{% endhint %}
+> **Note:** All lead discovery methods automatically score new prospects against your offer for fit, intent, and timing before they appear in your pipeline.
 
-{% hint style="warning" %}
-Lead quality depends on accurate ICP definition. Spend time setting up your offer with clear pain points, target audience, and search signals for best results.
-{% endhint %}
+> **Warning:** Lead quality depends on accurate ICP definition. Spend time setting up your offer with clear pain points, target audience, and search signals for best results.

@@ -1,48 +1,85 @@
 # Daily Action Allocation
 
-The Engagement Engine spreads your activity throughout the day in randomized patterns. This natural variation is what separates a healthy, human-like account from a bot-flagged account.
+The Engagement Engine generates a randomized mix of actions each day. Counts vary daily to mimic natural human behavior.
 
-## How Daily Actions Work
+## Daily Action Ranges
 
-Each day, the Engagement Engine generates a randomized mix of actions across posts, likes, follows, replies, and other engagement types. The exact count changes every day, so your activity never looks scripted or repetitive. You do not need to configure or tune these numbers manually.
+There are no ramp-up phases. Activity starts at full range from day 1.
 
-## Randomization and Natural Variation
+### X (Twitter)
 
-AutoReach varies the number and type of actions it takes on your behalf each day. Rather than repeating the same activity on a fixed schedule, the Engagement Engine selects different combinations day to day. This unpredictability is the hallmark of real human behavior.
+| Action | Base | Variation | Daily Range |
+|---|---|---|---|
+| Likes | 5 | ±60% | 2–8 |
+| Follows | 3 | ±60% | 1–5 |
+| Tweets | 3 | ±40% | 2–4 |
+| Replies | 5 | ±50% | 2–8 |
+| DMs | — | — | Always 0 |
 
-{% hint style="info" %}
-Platforms use sophisticated automation detection. Perfectly consistent behavior (the same number of posts, likes, and follows every single day) is a red flag. Natural variation keeps your account healthy and in good standing.
-{% endhint %}
+Additional skip chances per action type:
+- **Tweets**: 15% chance of 0 tweets for the day
+- **Replies**: 20% chance of 0 replies for the day
 
-## Skip Days Simulate Real Life
+### LinkedIn
 
-Occasionally, the Engagement Engine will take a complete skip day with no posts, likes, follows, or engagement activity. This mimics how real people behave: everyone takes days off. Skip days make your account look authentic and help prevent algorithm flagging.
+| Action | Base | Variation | Daily Range |
+|---|---|---|---|
+| Profile views | 2 | ±50% | 1–3 |
+| Likes | 3 | ±50% | 1–5 |
+| Connection requests | 1 | ±50% | 0–2 |
+| Comments | 2 | ±50% | 1–3 |
+| Posts | 1 | flat | 0–1 |
 
-Your outreach sequences are not affected by skip days. Sequences continue as scheduled. Skip days only pause Engagement Engine content and engagement activity.
+LinkedIn posts have a **20% skip chance** (0 posts for the day).
 
-{% hint style="warning" %}
-Skip days are **not** days when your outreach stops. Sequences continue as scheduled. Skip days only affect Engagement Engine content and engagement activity.
-{% endhint %}
+## Skip Days
 
-## Activity Window and Timing
+There is a **15% chance** of a full skip day on any given day. On skip days:
 
-All daily actions are spread throughout your **Activity Window**, the hours you define as your active time. For example:
+- **X**: Only 0–2 likes, all other actions set to 0
+- **LinkedIn**: Only 0–1 profile views, all other actions set to 0
 
-- If your Activity Window is 9am to 6pm EST, actions will be distributed at random intervals within those hours
-- This ensures your activity looks like it is coming from a real person working during normal hours, not a bot posting around the clock
+Skip days simulate natural human behavior — everyone takes days off. Outreach sequences are **not affected** by skip days. Only Engagement Engine activity pauses.
 
-## No Manual Tuning Required
+## Action Scheduling
 
-You do not manually set action counts. AutoReach automatically adjusts daily allocation based on:
+Actions are distributed into sessions within your activity window:
 
-- Your engagement stage (early ramp-up periods are more gradual)
-- Account age and follower count
-- Platform safety guidelines
-- Overall outreach campaign intensity
+- Sessions are placed at random time intervals during active hours
+- Actions within each session are spaced with randomized delays (2–5 seconds between actions)
+- No sudden bursts of activity
 
-Just set it and let it run.
+## Per-Action Randomization
+
+During execution, each individual action has additional randomization:
+
+- **3% random skip rate**: any action has a 3% chance of being skipped entirely
+- **4% give-up rate**: chance to abandon an action mid-execution (simulates distraction)
+
+## Error-Based Ramp-Down
+
+If account errors occur, daily activity automatically reduces:
+
+| Errors (24h) | Activity Level |
+|---|---|
+| 1 | 90% |
+| 2 | 70% |
+| 3 | 50% |
+| 4 | 30% |
+| 5+ | 10% |
+
+## Configurable Ceilings
+
+Default maximum ceilings per account (configurable):
+
+| Action | Default Max |
+|---|---|
+| Likes | 25 |
+| Follows | 10 |
+| Replies | 8 |
+| DMs | 8 |
 
 ## Next Steps
 
-- **[Content Generation](content-generation.md)**: Learn what kind of content fills these daily slots
-- **[Engagement Automation](engagement.md)**: See how engagement targeting works
+- **[Content Generation](content-generation.md)**: How tweets and posts are created
+- **[Engagement Automation](engagement.md)**: How engagement targeting works

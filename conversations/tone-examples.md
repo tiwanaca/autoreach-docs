@@ -1,109 +1,65 @@
-# Tone Examples & Customization
+# Tone Examples
 
-Tone examples are conversation samples that teach the AI exactly how you want to sound. They're the single most effective way to make AutoReach's responses feel authentic to your voice and sales style.
+Tone examples are conversation samples that teach the AI how you want to sound. They are the most effective way to make AI responses feel authentic to your voice and sales style.
 
-## What Are Tone Examples?
+## How They Work
 
-Tone examples are real (or realistic) conversation snippets that demonstrate:
+Tone examples are stored **per-sequence**. Each example contains:
 
-- How you greet prospects
-- How you ask questions
-- How you respond to objections
-- How you close opportunities
-- Your casual language, humor, and energy level
+- A **label** describing the scenario
+- A **stage** classification (Opener Reply, Discovery, Objection Handling, etc.)
+- A **conversation** with message pairs showing the exchange
+- A **source type** indicating how it was created
 
-The AI uses these examples to match your voice, word choice, sentence length, and conversational style in its generated responses.
+The AI retrieves the most relevant tone examples at response time via **semantic search** using vector embeddings. The search query combines the lead's latest message with the last 3 conversation messages for context.
 
-## How They're Generated
+## Retrieval Budget
 
-When you create an offer, AutoReach automatically generates a set of tone examples covering different conversation stages and scenarios.
+Tone examples are capped at **500 tokens** of context injected into the AI prompt. Combined with the knowledge base (600 tokens), the total RAG budget is 1,100 tokens per response.
 
-These examples capture different tones and situations so the AI has a diverse range to learn from. AutoReach also automatically removes redundant examples to keep your tone library focused and non-repetitive.
+## Stage Classification
 
-## Anti-Pattern Detection
+When examples are created, they are classified into stages using keyword heuristics — checking for patterns like pricing questions, scheduling language, and question marks. This is lightweight and doesn't require an AI call.
 
-During generation, AutoReach filters out overused phrases and formal language that would make messages sound generic or robotic. This ensures your tone library contains only high-quality, authentic examples.
+## Auto-Capture from Conversations
 
-## Contraction Enforcement
+Tone examples are automatically captured from real conversation outcomes:
 
-All examples are normalized to use contractions:
+### Winning Conversations
 
-- "I'm" instead of "I am"
-- "You're" instead of "You are"
-- "They've" instead of "They have"
+When a conversation reaches **Meeting Booked** status:
+- The system extracts 2–3 of the best exchanges (scored by average message length and presence of questions)
+- Each exchange is classified by stage via heuristics
+- Duplicates are filtered using Jaccard similarity (threshold: 0.85 against existing examples)
+- Saved as a "Captured Win" example
+- After every 3 captured wins, the tone summary is automatically regenerated
 
-Contractions feel natural and conversational. Without them, the AI sounds robotic.
+### Losing Conversations
 
-## Reviewing and Editing Tone Examples
+When a conversation reaches "Lost" or "Graceful Exit" status:
+- The last 4 messages are captured
+- Saved as a "Captured Loss" example at the Graceful Exit stage
+- Labeled as "Anti-example: Lost conversation"
 
-You can review, edit, or delete tone examples at any time:
+## Tone Summary
 
-1. **Open your sequence** > **Tone Examples** tab
-2. **View all examples** by stage (Opener Reply, Discovery, Objections, etc.)
-3. **Edit an example** to match your voice better
-4. **Delete an example** if it doesn't fit your style
-5. **Add custom examples** for specific scenarios you've handled well
+A **tone summary** is a 150–250 word style guide extracted from your tone examples by AI. It analyzes vocabulary, brevity, value-led approach, curiosity gaps, and anti-patterns (e.g., overused phrases, non-contractions, filler openings).
 
-### When to Edit
+The summary is auto-regenerated after every 3 new captured wins to stay current with your evolving voice.
 
-Edit tone examples if:
+## Managing Tone Examples
 
-- The auto-generated examples are too formal or too casual
-- They use language you'd never use
-- They don't capture your sales style
-- You've found a great response in a real conversation and want to replicate it
+Open your sequence's **Tone Examples** tab to:
 
-### When to Add
+- **View** examples organized by stage
+- **Edit** text to better match your voice
+- **Delete** examples that don't fit your style
+- **Add** custom examples from conversations that went well
 
-Add custom examples when:
-
-- You've had a conversation that went really well and want the AI to match that energy
-- A specific stage (like Objection Handling) needs more examples
-- You want to capture a unique quirk of your voice (humor, specific jargon, etc.)
-
-### When to Delete
-
-Delete examples when:
-
-- They contain phrases you don't actually use
-- They don't match your voice
-- They're redundant with other examples
-- They're too long or too short compared to your actual style
-
-{% hint style="warning" %}
-**Deleting Examples**: Once deleted, examples won't be used to train future AI responses. Make sure you're not deleting something you actually like. You can always edit instead of delete.
-{% endhint %}
-
-## Matching Tone, Length, and Energy
-
-When the AI generates a response, it automatically finds the most relevant tone examples for the current conversation stage and uses them to inform the reply.
-
-The AI uses your tone examples to:
-
-- **Match word choice.** If your examples use "totally" instead of "absolutely", the AI will too
-- **Match sentence structure.** If your examples use short, punchy sentences, the AI follows suit
-- **Match formality level.** If you're casual, the AI sounds casual
-- **Match question style.** Do you ask open-ended or closed-ended questions?
-- **Match energy.** Are you enthusiastic, matter-of-fact, or somewhere in between?
-
-The more consistent your tone examples are, the more consistent the AI's responses will be.
-
-## Pro Tips for Tone Examples
-
-1. **Review after your first 5 conversations.** Have the AI responses matched your actual voice? If not, edit examples.
-
-2. **Keep examples 40-120 words.** This range captures full conversational turns without being unwieldy.
-
-3. **Mix stages.** Make sure you have examples for all 7 conversation stages. If you have 10 examples of Discovery and none of Objection Handling, the AI will struggle with objections.
-
-4. **Use real conversations.** The best tone examples come from conversations that actually went well with prospects. Copy and paste them in.
-
-5. **Update quarterly.** As your sales pitch evolves, refresh your tone examples to match your current voice.
-
----
+All examples use contractions (I'm, you're, they've) by default — non-contracted language sounds robotic in DMs.
 
 ## Next Steps
 
-- Learn about all 7 conversation stages in [Conversation Stages](conversation-stages.md)
-- See how the AI uses tone examples in [AI Response Engine](ai-response-engine.md)
-- Review tone examples with the [Conversation Analyzer](conversation-analyzer.md)
+- **[Conversation Stages](conversation-stages.md)**: The 7 stages that tone examples align to
+- **[AI Response Engine](ai-response-engine.md)**: How tone examples are used during generation
+- **[Conversation Analyzer](conversation-analyzer.md)**: AI suggestions for improving your tone examples

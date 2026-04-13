@@ -2,7 +2,7 @@
 
 Every lead in AutoReach has a **buyer state** that represents their current status in your pipeline. The state determines where they appear in the UI, whether they're eligible for outreach, and how AutoReach treats them.
 
-## The Five Buyer States
+## The Six Buyer States
 
 ### 1. Active
 
@@ -28,7 +28,7 @@ Every lead in AutoReach has a **buyer state** that represents their current stat
 
 **Outreach eligibility:** Can be enrolled in sequences, but not recommended. Better used for nurture or light-touch engagement.
 
-**AutoReach behavior:** Continuous signal monitoring. If new signals appear that boost their score to 60+, they automatically promote to **active**.
+**AutoReach behavior:** The resurfacing scheduler periodically rescores monitor leads (every 5-14 days depending on score). If new signals boost their score to 60+, they automatically promote to **active**.
 
 **Next action:** Monitor for score movements, or manually enroll in a light-touch sequence if high strategic value
 
@@ -36,15 +36,15 @@ Every lead in AutoReach has a **buyer state** that represents their current stat
 
 ### 3. Poor Fit
 
-**Condition:** Buyer Score < 30
+**Condition:** Buyer Score < 30, but fit score >= 15 or buyer score >= 15
 
-**What it means:** This person doesn't match your ideal customer profile well. Whether it's a fit gap, wrong industry, or wrong seniority, something significant doesn't line up.
+**What it means:** This person doesn't match your ideal customer profile well. Whether it's a fit gap, wrong industry, or wrong seniority, something significant doesn't line up. Competitors flagged manually or detected during scoring also land here with zeroed scores.
 
-**Where it appears:** The **All Leads** page (filtered by state or score range)
+**Where it appears:** The **Buyers** page (Poor Fit tab) and the **All Leads** page
 
 **Outreach eligibility:** Not recommended. Low ROI outreach.
 
-**AutoReach behavior:** Still tracked and monitored, but deprioritized.
+**AutoReach behavior:** Still tracked and monitored. The resurfacing scheduler checks Poor Fit leads on a 21-day cycle and rescores them if new signals appear.
 
 **Next action:** Generally ignore unless you're running experiments or doing account-based targeting on strategic accounts
 
@@ -52,21 +52,37 @@ Every lead in AutoReach has a **buyer state** that represents their current stat
 
 ### 4. Disqualified
 
-**Condition:** Very low fit and intent scores
+**Condition:** Fit score < 15 AND buyer score < 15
 
-**What it means:** AutoReach has automatically removed this person from your database. They are so misaligned that there is no point tracking them further.
+**What it means:** This person is so far outside your ICP that there is almost no chance of conversion. They remain in the database but are excluded from automatic processing.
 
-**Where it appears:** Not visible in normal UI (archived/deleted)
+**Where it appears:** The **Buyers** page (Disqualified tab) and the **All Leads** page (filterable)
 
-**Outreach eligibility:** Not eligible. Permanently disqualified.
+**Outreach eligibility:** Not eligible. Must be overridden to Manual Outreach first.
 
-**AutoReach behavior:** Removed from further processing
+**AutoReach behavior:** Skipped by the resurfacing scheduler and automatic pipeline scoring. Can be force-rescored manually.
 
-**Next action:** None. Move on.
+**Next action:** Generally ignore. If circumstances change (e.g., they switch companies), you can manually change their state or trigger a rescore.
 
-**Example:** Someone working at a direct competitor, with zero intent signals. Permanently disqualified.
+**Example:** A student with no professional experience and no intent signals. Fit score = 8, buyer score = 6.
 
-### 5. Not Scored
+### 5. Manual Outreach
+
+**Condition:** Manually set by user, regardless of score
+
+**What it means:** You've decided this person is worth reaching out to, overriding the scoring system. This is a full buyer state, not just a flag.
+
+**Where it appears:** The **Buyers** page (Manual Outreach tab) and the **All Leads** page
+
+**Outreach eligibility:** Eligible for sequence enrollment, treated like active
+
+**AutoReach behavior:** Protected from automatic pipeline rescoring. However, if you explicitly trigger a manual rescore, the state will be overwritten by whatever the new score produces.
+
+**When to use:** VIP accounts, strategic partnerships, founder relationships, testing, or intentional lower-funnel experiments
+
+**Example:** You want to reach the founder of a partner company. Their buyer score is 25, but you know the relationship is valuable. Set to Manual Outreach.
+
+### 6. Not Scored
 
 **Condition:** Lead hasn't completed initial enrichment/scoring
 
@@ -82,16 +98,6 @@ Every lead in AutoReach has a **buyer state** that represents their current stat
 
 **Example:** You just added alice@example.com manually 2 minutes ago. Still enriching.
 
-## Manual Outreach Override
-
-Beyond the five automatic states, you can set a lead to **Manual Outreach** regardless of their calculated buyer score.
-
-**When to use:** VIP accounts, strategic partnerships, founder relationships, testing, or intentional lower-funnel experiments
-
-**Behavior:** Treated as **active** for outreach purposes, even if their score is 15
-
-**Example:** You want to reach the founder of a competitor to explore a potential partnership. Set to Manual Outreach to override disqualification.
-
 ## State Transitions
 
 Leads move between states based on:
@@ -102,32 +108,43 @@ Once enrichment completes and the initial score is calculated, the lead is place
 
 ### Score Movement Between States
 
-Leads can move up or down as new signals appear. For example, a Poor Fit lead could be promoted to Monitor or Active if they change jobs to your target industry, start posting about relevant pain points, or show new timing signals like company funding.
+Leads can move up or down as new signals appear. Active leads can be demoted to Monitor or Poor Fit on rescore if their signals weaken. Poor Fit leads can be promoted to Monitor or Active if they change jobs, start posting about relevant pain points, or show new timing signals.
 
-**Example:** A lead scored low because they worked in a tangential industry with no signals. Three weeks later, they post "just joined Acme Corp as Director of Sales" (your target industry + job change signal). AutoReach rescores them and promotes them to Active.
+The **resurfacing scheduler** automatically rescores Monitor and Poor Fit leads on a tiered cycle:
+
+| Score Range | Recheck Frequency |
+|---|---|
+| 50-59 (high monitor) | Every 5 days |
+| 40-49 (mid monitor) | Every 10 days |
+| 30-39 (low monitor) | Every 14 days |
+| 0-29 (poor fit) | Every 21 days |
+
+Before rescoring, the scheduler checks for LinkedIn headline changes (job change detection) and refreshes company hiring signals if stale.
+
+**Example:** A lead scored low because they worked in a tangential industry with no signals. Three weeks later, they post "just joined Acme Corp as Director of Sales" (your target industry + job change signal). The resurfacing scheduler detects the headline change, rescores them, and promotes them to Active.
 
 ### Manual Overrides
 
-You can manually override any lead into:
+You can manually change any lead's state via the UI:
 
-- **Manual Outreach** (regardless of score)
-- **Remove from platform** (delete permanently)
+- **Manual Outreach** — overrides scoring, treated as active for enrollment
+- **Any other state** — manually set via the Buyers page state control
 
-{% hint style="info" %}
-**Resurfacing:** Disqualified leads won't resurface automatically. If someone was disqualified (worked at competitor) and then moves to a company in your ICP, you would need to manually re-add them or contact support to restore their profile.
-{% endhint %}
+> **Warning:** Manual Outreach is protected from automatic pipeline rescoring. But if you explicitly trigger a manual rescore on that lead, the state will be overwritten by the new calculated state.
+
+> **Note:** Disqualified leads won't resurface automatically -- the resurfacing scheduler skips them. To re-evaluate a disqualified lead, change their state manually or trigger a force rescore.
 
 ## Where States Appear in the UI
 
 ### Buyers Page
 
-Only **active** leads appear here. This is your hot list of people ready to buy.
+The Buyers page has tabs for **all six states**: Active, Monitor, Poor Fit, Manual Outreach, Not Scored, and Disqualified. Each tab shows leads in that state.
 
 **Filters:** Sort by score, signals, activity date, or search by name
 
 ### All Leads Page
 
-Contains: **monitor**, **poor_fit**, **not_scored**, and **manual_outreach** leads
+Contains all leads across all states. All six buyer states are filterable.
 
 **Filters:** Filter by state, score range, signal type, source, and more
 
@@ -137,38 +154,32 @@ Contains: **monitor**, **poor_fit**, **not_scored**, and **manual_outreach** lea
 
 **Monitor count:** Potential deals in development
 
-**Conversion funnel:** active, replied, meeting_booked
+**Conversion funnel:** Active → Replied → Meeting Booked
 
 ## State Impact on Sequences
 
 When you add a lead to a sequence:
 
-| Lead State      | Behavior                                                    |
-|-----------------|-------------------------------------------------------------|
-| active          | Immediate enrollment, outreach begins                       |
-| monitor         | Enrollment allowed, but marked as nurture                   |
-| poor_fit        | Enrollment allowed (manual override), low priority          |
-| disqualified    | Cannot enroll (must override to Manual Outreach first)      |
-| not_scored      | Enrollment queued, starts when scoring completes            |
-| manual_outreach | Enrollment immediate, treated as active                     |
+| Lead State      | Auto-Enrollment | Manual Enrollment                              |
+|-----------------|-----------------|--------------------------------------------------|
+| Active          | Yes             | Immediate enrollment, outreach begins            |
+| Manual Outreach | No              | Immediate enrollment, treated as Active          |
+| Monitor         | No              | Allowed, but not recommended                     |
+| Poor Fit        | No              | Allowed (manual override), low priority          |
+| Not Scored      | No              | Enrollment queued, starts when scoring completes |
+| Disqualified    | No              | Must override to Manual Outreach first           |
+
+Only **active** leads are eligible for automatic enrollment by Autopilot. All other states require manual enrollment.
 
 ## Best Practices
 
-{% hint style="info" %}
-**Focus on Active:** Your conversion rates will be highest with active leads. Spend 80% of your effort on this list.
-{% endhint %}
+> **Tip:** Your conversion rates will be highest with active leads. Spend 80% of your effort on this list.
 
-{% hint style="info" %}
-**Monitor is the Future:** Your next batch of active leads comes from the monitor state. Check in weekly to see who got promoted.
-{% endhint %}
+> **Tip:** Your next batch of active leads comes from the monitor state. Check in weekly to see who got promoted.
 
-{% hint style="warning" %}
-**Don't Ignore Timing:** A lead might be poor_fit today and active tomorrow if they change jobs or companies. Keep monitoring.
-{% endhint %}
+> **Warning:** A lead might be Poor Fit today and Active tomorrow if they change jobs or companies. Keep monitoring.
 
-{% hint style="info" %}
-**Use Manual Outreach Strategically:** It's powerful for high-value accounts, but don't overuse it. It bypasses the scoring logic for a reason.
-{% endhint %}
+> **Tip:** Use Manual Outreach strategically. It's powerful for high-value accounts, but don't overuse it. It bypasses the scoring logic for a reason.
 
 ## Next Steps
 

@@ -1,69 +1,59 @@
 # Autopilot Overview
 
-Autopilot is a quick-start assistant that automatically configures your searches, sequences, and outreach settings based on your Offer. Instead of building everything from scratch, Autopilot sets it all up for you in minutes. You can still create and manage searches and sequences manually at any time.
+Autopilot automatically configures and runs your entire outreach pipeline based on your Offer. Instead of manually creating searches, sequences, and enrollment rules, Autopilot sets everything up and keeps it running continuously.
 
 ## What Autopilot Sets Up
 
-When you enable Autopilot, it automatically configures:
+When you enable Autopilot, it configures:
 
-- **Lead discovery**: Creates searches based on your Offer criteria so they run on a recurring schedule
-- **Lead enrichment**: Gathers profile data and social signals for discovered leads
-- **Buyer scoring**: Evaluates leads against your Offer to surface the most relevant prospects
-- **Sequence enrollment**: Enrolls qualified leads into a sequence automatically
-- **AI responses**: Handles incoming messages across X and LinkedIn
-- **Buyer expansion**: Discovers new prospects from existing high-intent accounts
-- **Lead resurfacing**: Re-checks lower-priority leads for new buying signals
-
-## Your Autopilot Dashboard
-
-At a glance, see:
-
-- **Active since**: When Autopilot was last enabled
-- **Number of searches**: Recurring searches currently running
-- **Active sequences**: How many sequences are currently enrolling leads
-- **Active leads count**: Total leads currently in your sequences
-
-## Why Use Autopilot?
-
-Autopilot is the fastest way to go from zero to a fully configured outreach setup. Instead of manually:
-
-1. Creating searches
-2. Setting up sequences
-3. Configuring scoring
-4. Setting up enrollment rules
-
-...you enable Autopilot and it handles the initial configuration for you. Once everything is running, your only job is reviewing results in your Inbox and responding to opportunities.
-
-{% hint style="info" %}
-**Autopilot is optional.** Everything it configures can also be set up manually. Autopilot just saves time by doing the initial setup automatically based on your Offer.
-{% endhint %}
+- **Lead discovery**: Creates recurring searches (X and/or LinkedIn) based on your Offer criteria
+- **Lookalike discovery**: Finds influencer accounts in your space and extracts their followers as prospects
+- **Sequence creation**: Builds outreach sequences with AI-generated prompts and tone examples
+- **Auto-enrollment**: Enrolls qualified leads (score 60+) into sequences automatically
+- **Buyer expansion**: Discovers new prospects daily from existing high-performing accounts
+- **Monitor resurfacing**: Re-checks lower-scored leads on a tiered schedule for new buying signals
 
 ## Prerequisites
 
-Before you can enable Autopilot, you need:
+Before enabling Autopilot:
 
-- **At least one Offer created**: Your ideal customer profile and value proposition
-- **At least one social account connected**: X and/or LinkedIn account authorized
+- **At least one Offer** must be created with your ICP and value proposition
+- **At least one social account** must be connected (X and/or LinkedIn)
 
-## What Happens When You Enable Autopilot?
+## How It Works
 
-Enabling Autopilot is instant, but the setup runs in the background:
+Autopilot runs three background loops continuously:
 
-1. Scores existing leads from the database against your Offer
-2. Starts a role-based search on LinkedIn to find matching prospects
-3. Finds a lookalike account and starts a search on their followers
-4. Starts an intent signal search for prospects showing buying signals
-5. Creates your first sequence and starts it immediately
-6. Enables auto-enroll so ready buyers go directly into the sequence
-7. Enables Buyer Expansion on all searches so they run on a daily schedule to keep the pipeline full
+| Loop | Interval | Purpose |
+|---|---|---|
+| Lookalike rotation | Every 2 hours | Checks if current extraction sources are exhausted and rotates to fresh seed accounts |
+| Auto-enrollment | Every 5 minutes | Finds newly scored leads at `active` buyer state and enrolls them into sequences |
+| Signal search | Every 5 minutes | Triggers intent signal searches once initial extraction completes |
 
-The whole process takes just 1-2 minutes, and you will see progress indicators as each component initializes.
+Two additional background processes run independently:
 
-{% hint style="success" %}
-**Ready to go?** Once Autopilot finishes setup, your outreach runs continuously. Check the Autopilot dashboard to monitor leads, view activity, and adjust settings as needed.
-{% endhint %}
+| Process | Interval | Purpose |
+|---|---|---|
+| Buyer expansion | Every 1 hour | Expands lead discovery via follower extraction (X) or role rotation (LinkedIn) |
+| Monitor resurfacing | Every ~8 hours | Re-checks lower-scored leads for new buying signals on a tiered schedule |
+
+## The Autopilot Loop
+
+1. **Searches** discover new prospects matching your ICP
+2. **Enrichment & scoring** evaluate each lead's fit and intent
+3. **Auto-enrollment** moves leads scoring 60+ into sequences
+4. **Sequences** execute outreach (likes, follows, DMs, connection requests)
+5. **Resurfacing** re-checks leads below threshold for new signals
+6. **Expansion** discovers more prospects from influencer followers and role searches
+
+This cycle runs continuously. Your only job is reviewing conversations in your Inbox and closing deals.
+
+## Autopilot Is Optional
+
+Everything Autopilot configures can also be set up manually. Autopilot saves time by automating the initial setup and ongoing pipeline management. You can create and manage searches, sequences, and enrollment rules independently at any time.
 
 ## Next Steps
 
-- **[Enabling Autopilot](enabling.md)**: Walk through the enable process step by step
-- **[What Autopilot Does](what-it-does.md)**: See every operation Autopilot manages after setup
+- **[Enabling Autopilot](enabling.md)**: Walk through the enable process
+- **[What Autopilot Does](what-it-does.md)**: Detailed breakdown of each continuous operation
+- **[Pausing and Disabling](pausing-and-disabling.md)**: Control Autopilot without losing data

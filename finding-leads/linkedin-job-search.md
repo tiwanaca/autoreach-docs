@@ -1,171 +1,161 @@
 # LinkedIn Job Search
 
-Find decision-makers at companies that are actively hiring. LinkedIn Job Search identifies growth-stage companies through job postings and automatically extracts hiring managers and decision-makers.
+Find decision-makers at companies that are actively hiring. LinkedIn Job Search identifies growth-stage companies through job postings, resolves company profiles, and extracts the most senior decision-maker at each company.
 
 ## How It Works
 
-The job search pipeline has four key stages:
+Job search is not a standalone search type — it is integrated into LinkedIn Content Search and triggers when you include **hiring_signals** in your selected intent categories.
 
-### Stage 1: Job Listing Discovery
+### Stage 1: AI-Generated Role Targets
 
-Search LinkedIn Jobs by:
-- **Keywords:** Titles, job keywords, skills required (e.g., "Sales Operations Manager", "API Integration")
-- **Company:** Specific company names or domains
-- **Time filter:** Narrow by posting recency
+AutoReach generates 3-5 job title keywords tailored to your offer using AI. The prompt analyzes your offer description, name, and target audience to produce domain-specific titles.
 
-**Time Filter Options:**
-- **24 hours:** Very fresh postings (posted today)
-- **7 days:** Last week's postings
-- **1 month:** Past 30 days
-- **Any time:** All postings (largest dataset)
+Additionally, niche targets are generated from insider terminology — LinkedIn title searches and insider terms from your offer's jargon profile (up to 5 + 3 additional niche terms). All targets are deduplicated before searching.
 
-### Stage 2: Company Profile Resolution
-
-For each job found, we automatically extract:
-
-- **Company name** and domain
-- **Industry classification** (e.g., SaaS, Financial Services, Manufacturing)
-- **Headquarters location** and office locations
-- **Staff count** and growth trajectory
-- **Company website** and public profile
-
-This gives you context on the hiring company before contacting prospects.
-
-### Stage 3: Decision-Maker Discovery
-
-Rather than just contacting the job poster, we identify actual decision-makers:
-
-- **Hiring Managers** (often directly responsible for the role)
-- **Department Heads** (overseeing the function)
-- **Executive Leadership** (influencers in hiring decisions)
-
-Multiple decision-makers are extracted per job posting, giving you several outreach angles at each company.
-
-### Stage 4: Lead Enrichment and Scoring
-
-Each discovered decision-maker is:
-- **Enriched** with company role, tenure, location
-- **Scored** against your ICP
-- **Matched** to buyer intent signals
-- **Added** to your lead database for outreach
-
-## End-to-End Pipeline
-
-```
-Job Posting Found
-       ↓
-Company Profile Resolved
-       ↓
-Decision-Makers Extracted
-       ↓
-Prospect Enriched & Scored
-       ↓
-Added to Lead Database
-```
-
-## AI-Generated Niche Job Titles
-
-AutoReach doesn't just use generic job titles. We generate domain-specific titles matching your offer:
-
-**Example for Sales Automation Platform:**
+**Example for a Sales Automation Platform:**
 - "Sales operations manager"
 - "Sales pipeline builder"
-- "Sales automation specialist"
 - "CRM implementation consultant"
 - "VP of sales operations"
 
 **Example for HR Analytics:**
 - "People analytics lead"
 - "HR metrics manager"
-- "Talent insights analyst"
 - "Head of people operations"
 
-These specific titles yield higher-quality matches than generic searches.
+### Stage 2: Job Listing Discovery
+
+For each role target, AutoReach searches LinkedIn Jobs via LinkedIn's API.
+
+**Search parameters:**
+- **Keywords:** The AI-generated role targets
+- **Location:** Resolved from your offer's preferred locations (geo IDs)
+- **Time filter:** Controls posting recency
+
+**Time filter options:**
+
+| Filter | Value | Description |
+|---|---|---|
+| 24 hours | `r86400` | Very fresh postings |
+| 1 week | `r604800` | Last week's postings |
+| 1 month *(default)* | `r2592000` | Past 30 days |
+| Any time | no filter | All postings |
+
+**Data extracted per job posting:**
+- Job ID and title
+- Company name
+- Location and workplace type (Remote/Hybrid/On-site — parsed from location string)
+- Posted timestamp and relative time
+- Easy Apply flag
+
+### Stage 3: Company Deduplication
+
+After collecting jobs across all role targets, AutoReach deduplicates by company name (case-insensitive). When multiple job postings exist for the same company, the most recently posted one is kept. The list is then capped at `max_companies` (default: 30).
+
+### Stage 4: Company Profile Resolution
+
+For each deduplicated company, AutoReach fetches the full company profile from LinkedIn's API (trying up to 3 URL variants for resilience). Extracted data:
+
+- Company name, description, and tagline
+- Industry classification and company type
+- Headquarters location and confirmed office locations
+- Staff count and staff count range
+- Website URL and founding year
+- Specialties, logo, and follower count
+
+### Stage 5: Decision-Maker Discovery
+
+For each company, AutoReach searches for employees using LinkedIn's API (with a `currentCompany` filter) and returns up to 10 employees. These are ranked by **seniority scoring**:
+
+| Role | Score |
+|---|---|
+| Founder / Co-Founder | 100 |
+| CEO | 95 |
+| CTO, CFO, COO, CMO, CRO | 90 |
+| Owner | 85 |
+| Partner | 80 |
+| VP, SVP, EVP | 75 |
+| Director | 60 |
+| Head | 55 |
+| Manager | 40 |
+| Lead | 35 |
+
+The **single highest-scoring person** is selected as the decision-maker for that company. One decision-maker per company, not multiple.
+
+**Experience verification:** For the top 3 candidates, AutoReach fetches their full profile and verifies they currently work at the company (`isCurrent === true` + company name/ID match). If all 3 fail verification, the top-ranked unverified candidate is used as a fallback — the company filter is reliable, so verification is a safety net.
+
+### Stage 6: Lead Enrichment and Scoring
+
+Each discovered decision-maker is added to your lead database and queued for enrichment and scoring based on your `pipeline_actions` setting.
+
+## Competitor Customer Detection
+
+When your offer has competitors configured, LinkedIn Job Search is also used to discover **competitor customers** automatically. The flow:
+
+1. Each competitor name is used as a job search keyword
+2. Companies posting jobs requiring experience with the competitor are identified as likely customers of that competitor
+3. Companies that ARE the competitor are filtered out
+4. Decision-makers at these companies are extracted and tagged with `intent_category: 'competitor_customer'` and a priority score of 70
+5. Capped at 5 competitors searched, 15 companies per competitor
+
+This runs automatically as part of the content search pipeline when hiring_signals is enabled and competitors are defined.
+
+## Search Parameters
+
+| Parameter | Default | Description |
+|---|---|---|
+| `max_jobs_per_role` | 100 | Max job postings to collect per role target |
+| `max_companies` | 30 | Max deduplicated companies to process |
+| `daily_recurring` | false | Enable automatic daily re-runs |
+
+These are set via the LinkedIn content search route alongside the `hiring_signals` intent category.
 
 ## Best Practices
 
-1. **Search for growth signals:** Target jobs that indicate company scaling or new initiatives
-   - "We're hiring for 5 new roles" (expansion)
-   - "Team growing 50%" (rapid growth)
-   - "Opening new department" (new initiative)
+1. **Rely on AI-generated titles.** The AI generates domain-specific role targets based on your offer. These yield higher-quality matches than generic titles.
 
-2. **Use job descriptions as ICP validation:** The skills and requirements mentioned tell you what problems the company is solving
+2. **Use recent time filters.** Fresh postings (24h or 1 week) indicate active hiring and receptive decision-makers.
 
-3. **Extract multiple decision-makers:** Go beyond the hiring manager. Identify their boss, skip-level, and peer decision-makers
+3. **Combine with other intent categories.** Run hiring_signals alongside pain_points or solution_seeking in a single content search to maximize coverage.
 
-4. **Monitor posting recency:** Fresh postings (< 24 hours) mean active hiring and responsiveness
+4. **Monitor company profiles.** The resolved company data (industry, staff count, funding) helps validate whether a company is in your ICP before outreach.
 
-5. **Combine with company filters:** If you have a target account list, search those companies' job postings specifically
+5. **Enable recurring searches.** Set `daily_recurring` to catch new job postings and hiring activity continuously.
 
-6. **Recurring searches:** Set up daily job searches to catch new postings and hiring activity
+6. **Leverage competitor customer detection.** If you have competitors defined in your offer, this feature automatically finds companies already paying for solutions like yours.
 
 ## Example Workflow
 
 **Offer:** "People analytics and HR intelligence platform"
 
-**Job title searches you might run:**
+**AI generates role targets:**
 - "Head of People Operations"
 - "People Analytics Manager"
-- "HR Operations Director"
-- "VP Human Resources"
 - "HR Technology Lead"
 
-**Company filter (optional):**
-- Target SaaS companies, 100-500 employees
-- Or specific company names (e.g., Zendesk, Datadog, Figma)
+**Time filter:** 1 week
 
-**Recency:** Last 7 days (recent postings, active hiring)
-
-**Result:** Find all hiring managers and decision-makers at companies actively building their HR operations teams. These are proven buyers with active budget.
-
-## Company Hiring Signals
-
-Job postings indicate:
-- **Active budget:** Companies posting are actively hiring (have budget allocated)
-- **Department priority:** Growth areas show where companies are investing
-- **Cultural fit:** Job descriptions reveal company values and priorities
-- **Timing:** Recent postings mean receptive decision-makers
-
-These are stronger buying signals than passive prospect lists.
-
-## Combining with Other Methods
-
-Job Search pairs well with:
-
-- **[LinkedIn People Search](linkedin-people-search.md):** After finding hiring companies via jobs, use People Search to find other decision-makers at those companies (not just hiring managers)
-
-- **[Content Search](linkedin-content-search.md):** Combine job search results with content search to find hiring managers discussing challenges before you reach out
-
-- **[Lookalike Audiences](lookalike-audiences.md):** Identify companies similar to those actively hiring in your space
-
-- **[Cross-Platform Matching](cross-platform-matching.md):** Find X profiles for job-found decision-makers
+**Result:** Job search finds 85 job postings across the 3 roles, deduplicates to 30 companies, resolves their profiles (industry, size, HQ), and extracts the most senior decision-maker at each. Competitor customer detection also finds 12 companies hiring for roles requiring experience with competing HR platforms.
 
 ## Troubleshooting
 
 **Getting too many irrelevant job postings?**
-- Use more specific, niche job titles
-- Add company domain filters to narrow to your TAM
-- Use 24-hour or 7-day filters instead of "any time"
-
-**Not finding enough decision-makers per job?**
-- This is normal. Not every posting will have multiple extractable contacts
-- Focus on quality over quantity
-- Combine with [LinkedIn People Search](linkedin-people-search.md) to find additional people at hiring companies
+- The AI generates niche titles, but you can reduce `max_jobs_per_role` to limit volume
+- Use 24-hour or 7-day time filters instead of 1 month
+- Reduce `max_companies` to focus on the best matches
 
 **Decision-makers extracted don't seem relevant?**
-- Review the job posting, which should indicate their relevance
-- Sometimes hiring managers are contractors or recruiters (filter these out)
-- Cross-check extracted contacts against the company organization
+- Seniority scoring prioritizes C-suite and VPs. If you want mid-level contacts, the scoring may not match your needs.
+- Experience verification ensures the person actually works at the company, but the search may return people in tangential roles.
+- Combine with [LinkedIn People Search](linkedin-people-search.md) to find specific roles at companies discovered through job search.
 
-**Job postings seem old/inactive?**
-- Use more recent time filters (24h or 7-day)
-- Some postings on LinkedIn have old dates
-- Focus on companies with multiple recent postings (indicates active hiring)
+**Not finding enough companies?**
+- Increase `max_jobs_per_role` to collect more postings
+- Use "any time" filter to search all historical postings
+- Check if your target industry actively posts on LinkedIn Jobs
 
-## Advanced Strategy
+## Next Steps
 
-**Find Serial Hirers:**
-- Run monthly job searches
-- Identify companies posting repeatedly
-- These are high-growth companies with continuous hiring (proven buyers)
-- Prioritize outreach to serial hirers, as they are actively scaling
+- **[LinkedIn People Search](linkedin-people-search.md)**: Find additional decision-makers at companies discovered through job search
+- **[LinkedIn Content Search](linkedin-content-search.md)**: Discover professionals discussing challenges related to hiring activity
+- **[Enrichment Pipeline](../enrichment/pipeline.md)**: See how discovered leads get enriched with full profile and company data
