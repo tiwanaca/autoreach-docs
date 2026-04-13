@@ -6,18 +6,19 @@ The AutoReach Chrome Extension brings your CRM pipeline into your browser. It wo
 
 Leads move through a visual pipeline:
 
-**new → requested → accepted → contacted → replied → meeting → won / lost**
+**new → on_hold → requested → accepted → contacted → replied → meeting → won / lost**
 
 | Stage | Description |
 |---|---|
-| `new` | Freshly added to AutoReach |
-| `requested` | Connection request or first message sent |
-| `accepted` | Connection accepted or first reply received |
-| `contacted` | Ongoing conversation started |
-| `replied` | Lead has engaged with your outreach |
-| `meeting` | Meeting booked |
-| `won` | Deal closed |
-| `lost` | Disqualified or no longer pursuing |
+| New | Freshly added to AutoReach |
+| On Hold | Temporarily paused (e.g., cooldown after withdrawal) |
+| Requested | Connection request or first message sent |
+| Accepted | Connection accepted or first reply received |
+| Contacted | Ongoing conversation started |
+| Replied | Lead has engaged with your outreach |
+| Meeting | Meeting booked |
+| Won | Deal closed |
+| Lost | Disqualified or no longer pursuing |
 
 Leads auto-progress through stages as sequence activity occurs. You can manually drag leads between stages to override.
 
@@ -39,11 +40,11 @@ The extension handles connecting your LinkedIn and X accounts to AutoReach:
 
 When you send a connection request through AutoReach, the extension captures the **invitation URN** via an interceptor script that monitors LinkedIn network requests. This allows the system to track the connection status and support auto-withdrawal.
 
-The lead moves to `requested` stage and the `invitation_id` is stored for lifecycle management.
+The lead moves to `requested` stage and the connection request is tracked for lifecycle management.
 
-## Phishing Protection
+## Name Normalization
 
-The extension includes Cyrillic character detection that flags profiles using lookalike characters (Cyrillic letters that visually resemble Latin letters). Flagged profiles display a warning before you interact with them.
+Names with special characters are normalized for accurate matching.
 
 ## Next Steps
 

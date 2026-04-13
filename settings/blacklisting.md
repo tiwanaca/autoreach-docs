@@ -20,11 +20,11 @@ The response includes a count of removed sequence leads so you can see the impac
 
 ### Single Account
 
-Go to **Settings > Blacklist**, click **Add Account**, and enter a username or profile URL.
+On the **Leads page**, click the menu on any lead and select **Blacklist**. Enter the username to blacklist.
 
-### Bulk Import
+### Bulk Blacklist
 
-Go to **Settings > Blacklist**, click **Bulk Import**, and paste up to **1,000 lead IDs** (one per line). The same cascade removal logic applies to each.
+On the **Leads page**, select multiple leads in the table using the checkboxes. A floating selection bar appears at the bottom — click **Blacklist** to blacklist all selected leads at once. The same cascade removal logic applies to each.
 
 ## What Blacklisting Prevents
 
@@ -35,7 +35,7 @@ Go to **Settings > Blacklist**, click **Bulk Import**, and paste up to **1,000 l
 
 ## Removing from Blacklist
 
-Go to **Settings > Blacklist**, find the account, and click **Remove**. The account becomes discoverable and engageable again in future runs.
+Find the account in the blacklist and click **Remove**. The account becomes discoverable and engageable again in future runs.
 
 Removing from the blacklist does not restore previously deleted sequence leads or actions.
 

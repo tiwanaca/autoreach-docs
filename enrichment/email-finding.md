@@ -38,7 +38,6 @@ Last name is optional -- the service handles single-name leads gracefully.
 | Email | The discovered email address |
 | Email Confidence | Confidence score (0.95 when found, 0 when not) |
 | Email Verified At | Timestamp if Findymail reports the email as verified |
-| Email Source | Source identifier (e.g., "findymail") |
 
 ### Confidence Scoring
 
@@ -72,7 +71,7 @@ Email finding requires your own Findymail API key. Without a configured key, ema
 
 ### Connecting Your Findymail API Key
 
-To enable email finding, go to **Settings > AI & Models** and enter your Findymail API key in the email discovery field. Once saved, AutoReach will use Findymail's database to look up verified work email addresses for your leads. Findymail typically achieves higher discovery rates than generic email guessing tools because it maintains a large database of verified business emails. If you do not have a Findymail account, you can sign up at findymail.com and add your key afterward.
+To enable email finding, go to **Settings > AI & Models** and enter your Findymail API key in the Findymail API Key field. Once saved, AutoReach will use Findymail's database to look up verified work email addresses for your leads. Findymail typically achieves higher discovery rates than generic email guessing tools because it maintains a large database of verified business emails. If you do not have a Findymail account, you can sign up at findymail.com and add your key afterward.
 
 ## Cost
 

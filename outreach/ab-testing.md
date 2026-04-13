@@ -13,8 +13,8 @@ For instructions on running simulations and previewing messages, see [Simulation
 ```
 Hi {{first_name}},
 
-Saw your post on {{topic}}. Would love to connect and learn
-how you're thinking about it.
+Your recent post about {{topic}} got me thinking.
+How are you approaching it at {{company}}?
 ```
 
 **Variant B (Direct):**
@@ -35,13 +35,9 @@ Simulate both with 3-5 different leads. Which feels more authentic for your audi
 ```
 Hi {{first_name}},
 
-I've been following {{company}} for a while and really impressed
-by how you're building {{achievement}}.
-
-In my experience working with similar companies, one thing that often
-holds teams back is {{pain_point}}. We've built a framework to help with this.
-
-Would you be open to a 20-min conversation to explore?
+{{company}}'s work on {{achievement}} stands out.
+Teams at this stage often run into {{pain_point}}.
+Would a 15-min call to walk through how we solve that be useful?
 ```
 
 **Variant B (Short):**
@@ -62,10 +58,9 @@ Simulate with your target audience. Short and punchy, or long and detailed?
 ```
 {{first_name}},
 
-Noticed your post about {{recent_topic}}. We've worked with
-{{example_company}} on the same challenge.
-
-Worth a conversation?
+Your post about {{recent_topic}} resonated.
+We helped {{example_company}} solve the same challenge.
+Are you open to a quick conversation?
 ```
 
 **Variant B (Generic):**
@@ -95,9 +90,8 @@ in improving {{pain_point}}.
 ```
 Hey {{first_name}},
 
-Been following {{company}}'s journey. Think we could help
-with {{pain_point}}.
-
+{{company}} is making moves in {{industry}}.
+We help teams tackle {{pain_point}}.
 Worth exploring?
 ```
 

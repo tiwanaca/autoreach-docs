@@ -10,15 +10,13 @@ The Conversation Simulator is a three-step wizard that lets you:
 
 1. **Select a sequence** -- pick any active, paused, or draft sequence
 2. **Choose a lead** -- pick a real lead from your database
-3. **Generate and preview DMs** -- see 2 personalized variants with actual lead data
+3. **Select mode and persona** -- configure the simulation mode and persona settings
 
 You can then compare variants side-by-side, edit either variant, reply as the lead to see how AI responds, and preview the full conversation flow. Nothing is sent.
 
 ## Starting the Simulator
 
-**From Sequence Builder:** Open a sequence in edit mode and click the **Simulate** button.
-
-**From Sequences List:** Go to **Outreach > Sequences** and click the **Simulate** icon next to any sequence.
+Navigate to **Simulation** in the sidebar. The simulator is a standalone page at `/simulation`.
 
 ## Step 1: Select Sequence
 
@@ -32,7 +30,7 @@ Search or browse leads to simulate with. You can search by name, username, compa
 
 Once selected, you see the lead's profile: name, role, company, followers, recent activity, and other enrichment data.
 
-## Step 3: Generate DM
+## Step 3: Select Mode and Persona
 
 AutoReach generates 2 DM variants personalized to the selected lead. For example:
 

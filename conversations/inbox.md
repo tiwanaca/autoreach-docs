@@ -7,7 +7,6 @@ The Inbox is your unified view of all conversations across X and LinkedIn. Every
 Your Inbox displays all conversations in a single, paginated list. Each conversation shows:
 
 - Lead name and profile
-- Platform (X or LinkedIn)
 - Last message preview
 - Timestamp of most recent activity
 - AI status indicator
@@ -24,21 +23,20 @@ New inbound messages are tracked automatically. The Inbox shows an unread count 
 ### Filtering
 
 Filter conversations by:
-- **Status** (Active, Replied, Meeting Booked, etc.)
+- **Status** (All Statuses, Replied, Meeting Booked)
 - **Sequence** (specific sequence)
-- **Platform** (X or LinkedIn)
 - **Search query** (lead name)
 
-Combine filters to narrow your view -- for example, show only LinkedIn conversations with a "Replied" status to focus on warm leads on that platform.
+Combine filters to narrow your view -- for example, show only conversations with a "Replied" status to focus on warm leads.
 
 ## Real-Time Message Detection
 
-New messages on X are detected in real time via Twitter's native DM WebSocket connection (binary Thrift protocol). This means conversations appear in your Inbox as they happen without polling delays.
+New messages on X are detected in real time via Twitter's native DM connection. This means conversations appear in your Inbox as they happen without polling delays.
 
 ## AI Status Indicators
 
 - **AI ON toggle**: Visible at the top of each conversation — indicates whether AI can auto-reply
-- **Green indicators**: AI-generated responses (pending or sent)
+- **Bot icon**: A red Bot icon overlay appears on conversations where AI is disabled
 
 ## AI Control Per Conversation
 

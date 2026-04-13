@@ -7,7 +7,7 @@ All Engagement Engine content is AI-generated using your offer context, content 
 1. **Input**: Offer, ICP, pain points, weekly pillar, current date
 2. **AI generation**: Claude (primary) with OpenAI fallback generates content
 3. **Post-processing**: Em dashes are replaced with hyphens, formatting is cleaned
-4. **Approval routing**: Content enters the approval queue as `pending_approval`, or goes directly to `pending` (auto-posts) if auto-approval is enabled
+4. **Approval routing**: Content enters the approval queue as **Pending Approval**, or goes directly to the post queue if auto-approval is enabled
 
 ## X Tweets
 

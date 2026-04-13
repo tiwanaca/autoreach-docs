@@ -6,32 +6,22 @@ The AI Response Engine generates contextual, stage-aware replies to incoming mes
 
 When a new inbound message is detected:
 
-1. **Stage classification**: The conversation stage is identified (opener_reply, discovery, etc.)
+1. **Stage classification**: The conversation stage is identified (Opener Reply, Discovery, etc.)
 2. **Objection check**: Message is checked for negative/sensitive content
 3. **RAG context**: Knowledge base and tone examples are retrieved via semantic search
 4. **System prompt assembly**: A multi-layer prompt is built with stage instructions, RAG context, tone examples, offer context, and conversation history
 5. **AI generation**: The content AI model generates a response
-6. **Human delay simulation**: A typing/composition delay is applied before sending
+6. **Natural response timing**: A delay is applied before sending
 7. **Message delivery**: Sent via the appropriate platform API
 8. **Database save**: Message saved and AI response count incremented
 
-## Scheduling Architecture
+## Scheduling
 
-The AI response system uses background scheduling, not WebSocket-based generation:
-
-| Scheduler | Interval | Purpose |
-|---|---|---|
-| AI response scheduler | Every 60 seconds | Polls for due responses |
-| Follow-up scheduler | Every 10 minutes | Detects stale conversations where the lead went silent |
-| AI response worker | Concurrency 2 | Processes individual response jobs |
-
-Rate limiting: Maximum **20 AI responses per 60 seconds** at the worker level.
-
-Crash recovery: A uniqueness constraint on each conversation and inbound message prevents duplicate responses after crashes or retries.
+Responses are scheduled with natural timing to avoid detection. The system uses background scheduling to poll for due responses and process them.
 
 ## RAG Context
 
-Each response includes relevant context retrieved via semantic search from your knowledge base (600 tokens) and tone examples (500 tokens). See [Knowledge Base](knowledge-base.md) for document management and [Tone Examples](tone-examples.md) for conversation samples.
+AutoReach retrieves relevant context from your knowledge base and tone examples for each AI response via semantic search. See [Knowledge Base](knowledge-base.md) for document management and [Tone Examples](tone-examples.md) for conversation samples.
 
 ## Stage-Specific Generation
 
@@ -69,11 +59,11 @@ When a lead goes silent, the follow-up scheduler can automatically re-engage:
 
 | Setting | Default | Range |
 |---|---|---|
-| Conversation follow-up enabled | false | — |
-| Follow-up wait days | 3 | 1–30 |
-| Max follow-up count | 2 | 1–10 |
+| Follow-up enabled | false | — |
+| Wait days | 3 | 1–30 |
+| Max follow-ups | 2 | 1–10 |
 
-The follow-up scheduler runs every 10 minutes, checking for conversations where the lead hasn't responded within the configured wait period. Follow-up messages are generated with a fresh angle and queued for delivery.
+The follow-up scheduler checks periodically for conversations where the lead hasn't responded within the configured wait period. Follow-up messages are generated with a fresh angle and queued for delivery.
 
 ## Next Steps
 

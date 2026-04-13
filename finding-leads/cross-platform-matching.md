@@ -4,7 +4,7 @@ AutoReach automatically finds the matching profile on the other platform for eve
 
 ## How It Works
 
-Cross-platform matching runs automatically as part of the enrichment pipeline via dedicated background workers. There is nothing you need to configure or trigger manually.
+Cross-platform matching runs automatically as part of the enrichment pipeline. There is nothing you need to configure or trigger manually.
 
 ### Finding X Profiles for LinkedIn Leads
 
@@ -32,19 +32,14 @@ The same scoring approach and confidence mapping is applied as the X finder.
 
 ## Pipeline Integration
 
-Cross-platform matching runs in **separate dedicated workers**, not inside the main enrichment pipeline:
-
-- **X profile finder:** concurrency 3
-- **LinkedIn profile finder:** concurrency 1
-
-These workers are part of the lead pipeline coordinator's step chain. The flow:
+Cross-platform matching runs as a separate step in the enrichment pipeline. The flow:
 
 1. **Lead enters pipeline** from any discovery source
 2. **Cross-platform finder runs** — searches for the missing platform profile
 3. **If found:** the lead record is updated with the matched profile URL, and enrichment proceeds for both platforms
 4. **If not found:** the pipeline advances anyway — enrichment continues with data from the source platform only
 
-In the main pipeline worker, LinkedIn and X profile enrichment run **in parallel** (`Promise.allSettled`) for leads that have URLs on both platforms. Enrichment failure on one platform does not block the other.
+LinkedIn and X profile enrichment run **in parallel** for leads that have URLs on both platforms. Enrichment failure on one platform does not block the other.
 
 **Skip logic:** If the lead already has a profile URL or a previous search timestamp for the other platform, the finder worker skips the search entirely.
 
@@ -92,7 +87,7 @@ Low-confidence matches (below 0.35) are filtered out automatically, but occasion
 The system requires a minimum confidence score before linking profiles. If the available signals were not sufficient (e.g., common name, no company overlap, handle doesn't contain the name), it skips the link rather than risk a false positive. You can always add the profile manually.
 
 **Web search quota exhausted?**
-The finders catch OpenAI 429/quota errors and propagate them as `OPENAI_QUOTA_EXHAUSTED`. If your OpenAI quota is hit, matching pauses until quota resets. Enrichment continues without the cross-platform profile.
+If the AI provider's quota is exhausted, matching is paused until credits are available. Enrichment continues without the cross-platform profile.
 
 ## Next Steps
 

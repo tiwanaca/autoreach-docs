@@ -94,7 +94,7 @@ Do not attempt to bypass the pause. AutoReach will automatically resume activity
 
 **Likely Cause (4):** The connected account is paused or has errors.
 
-**Fix:** Check Analytics > Account Status. If the account shows errors or a paused state, resolve the underlying issue (see Account Connection Issues above).
+**Fix:** Check the **Accounts** page. If the account shows errors or a paused state, resolve the underlying issue (see Account Connection Issues above).
 
 ---
 
@@ -134,7 +134,7 @@ Do not attempt to bypass the pause. AutoReach will automatically resume activity
 
 **Likely Cause (2):** Your AI API keys have run out of credits.
 
-**Fix:** Check Analytics > AI Health. If you see a quota warning, add credits to your OpenAI and/or Anthropic accounts.
+**Fix:** Check the health warnings on the Dashboard. If you see a quota warning, add credits to your OpenAI and/or Anthropic accounts.
 
 **Likely Cause (3):** Your offer is missing key ICP information.
 
@@ -150,7 +150,7 @@ Do not attempt to bypass the pause. AutoReach will automatically resume activity
 
 **Likely Cause (1):** Your AI provider's API key is invalid or out of credits.
 
-**Fix:** Check Analytics > AI Health for provider errors. Verify your API keys are correct in Settings > API Keys and that you have available credits.
+**Fix:** Check the health warnings on the Dashboard for provider errors. Verify your API keys are correct in Settings > API Keys and that you have available credits.
 
 **Likely Cause (2):** Both your primary and fallback AI models are down.
 

@@ -18,9 +18,11 @@ A typical sequence might look like:
 | Status | Description |
 |---|---|
 | Draft | Initial state — can be configured and edited |
+| Scheduling | Actions are being scheduled for enrolled leads |
 | Active | Running — actions are scheduled and executing |
 | Paused | Temporarily stopped (can be resumed) |
-| Stopped | Permanently stopped |
+| Completed | All leads have finished the sequence |
+| Failed | Sequence encountered a critical error |
 
 ### Platform Support
 
@@ -34,12 +36,10 @@ Each step in a sequence performs one of these action types:
 |---|---|---|
 | DM | X, LinkedIn | Send a direct message (AI-personalized) |
 | Like | X, LinkedIn | Like/react to a lead's recent post |
-| Reply | X, LinkedIn | Reply to a post with a personalized message |
-| Comment | LinkedIn | Comment on a LinkedIn post |
+| Reply | X, LinkedIn | Reply to a post (X) or comment on a post (LinkedIn) |
 | Follow | X | Follow the account |
 | Connection Request | LinkedIn | Send a LinkedIn connection request |
 | View Profile | LinkedIn | View the lead's LinkedIn profile |
-| Wait | — | Delay/pause before the next step |
 | Condition | — | Branch based on lead status (replied vs. not replied) |
 
 Each step has a defined order, platform-specific settings, positioning data for the visual flow editor, and a reference to the next step for linear flow progression.
@@ -60,11 +60,11 @@ The AI draws on the lead's profile data, recent activity, enrichment intelligenc
 
 ### Scheduling
 
-The scheduler creates action records and the action worker processes them at concurrency 1 to avoid rate limit issues.
+Actions are scheduled automatically and executed one at a time to avoid rate limit issues.
 
 **Lead selection order:** Leads are picked by buyer priority — purchase probability descending, signal date descending, explicit signal flag descending.
 
-**Step progression:** The worker walks the flow graph following each step's connection to the next. Condition steps evaluate lead status and branch accordingly. After each action completes, the next step is queued with the configured delay.
+**Step progression:** Each step's connection determines what happens next. Condition steps evaluate lead status and branch accordingly. After each action completes, the next step is queued with the configured delay.
 
 ### Anti-Detection Timing
 
@@ -94,7 +94,7 @@ Outreach only executes during the configured activity window. Defaults to **09:0
 | Meeting Booked | Meeting scheduled |
 | Completed | Sequence flow completed for this lead |
 | Failed | Action execution failed |
-| Removed | Manually removed from sequence |
+| Lost | Manually removed from sequence |
 
 ## Daily Send Limits
 
@@ -130,7 +130,7 @@ Leads failing validation are skipped with a reason. If the sequence is active, s
 **Reply detection** is passive — incoming messages in a conversation update the lead's status to "Replied" and increment the sequence's reply counter.
 
 **Opt-out handling** uses a blacklist system:
-- Blacklist accounts manually from Settings
+- Blacklist accounts manually from the Leads page
 - Blacklisted leads are automatically removed from all sequences
 - Blacklisted accounts cannot be re-enrolled
 - The system does not auto-blacklist based on replies — opt-out decisions are left to the user

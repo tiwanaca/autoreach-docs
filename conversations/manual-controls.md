@@ -32,18 +32,16 @@ When a lead goes silent, AutoReach can automatically send follow-up messages to 
 
 | Setting | Default | Range |
 |---|---|---|
-| `conversation_followup_enabled` | false | — |
-| `conversation_followup_wait_days` | 3 | 1–30 |
-| `conversation_followup_max_count` | 2 | 1–10 |
+| Follow-up enabled | false | — |
+| Wait days | 3 | 1–30 |
+| Max follow-ups | 2 | 1–10 |
 
-The follow-up scheduler runs every 10 minutes. When it detects a conversation where the lead hasn't responded within the configured wait period, it generates a fresh-angle follow-up message and queues it for delivery.
+When the system detects a conversation where the lead hasn't responded within the configured wait period, it generates a fresh-angle follow-up message and queues it for delivery.
 
 Follow-ups respect:
 - The max follow-up count per conversation
-- The `max_ai_responses_per_conversation` limit
+- The max AI responses per conversation limit
 - Your activity window
-
-When Autopilot creates sequences automatically, it sets `conversation_followup_max_count` to 1 by default.
 
 ## Next Steps
 

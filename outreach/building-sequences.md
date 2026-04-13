@@ -4,10 +4,10 @@ The flow editor is a visual sequence builder powered by React Flow (`@xyflow/rea
 
 ## Creating a New Sequence
 
-1. Navigate to **Outreach > Sequences**
+1. Navigate to **Sequences** in the sidebar
 2. Click **Create Sequence**
 3. Enter a sequence name
-4. (Optional) Associate an offer to track performance by target audience
+4. Associate an offer (required — the create button is disabled without one)
 5. Select platform accounts — at least one of Twitter or LinkedIn is required
 6. Click **Create**
 
@@ -73,14 +73,14 @@ These are separate storage systems. The visual representation and execution mode
 
 | Action | Platforms | Description |
 |---|---|---|
-| `like` | X, LinkedIn | Like a lead's recent post |
-| `reply` | X, LinkedIn | Reply to a post (AI-generated from post content) |
-| `follow` | X | Follow the account |
-| `dm` | X, LinkedIn | Send a direct message |
-| `condition` | — | Branch based on lead status |
-| `connection_request` | LinkedIn | Send a connection request |
-| `view_profile` | LinkedIn | View the lead's LinkedIn profile |
-| `withdraw_connection` | LinkedIn | Withdraw a pending or accepted connection |
+| Like | X, LinkedIn | Like a lead's recent post |
+| Reply | X, LinkedIn | Reply to a post (AI-generated from post content) |
+| Follow | X | Follow the account |
+| DM | X, LinkedIn | Send a direct message |
+| Condition | — | Branch based on lead status |
+| Connection Request | LinkedIn | Send a connection request |
+| View Profile | LinkedIn | View the lead's LinkedIn profile |
+| Withdraw Connection | LinkedIn | Withdraw a pending or accepted connection |
 
 ## Configuring Steps
 
@@ -95,14 +95,14 @@ Click any node to open its configuration panel on the right side.
 | Delay Minutes | Additional minutes (0–59) |
 | Label | Optional display name for the step |
 
-Total delay = `(delay_days × 24 hours) + delay_minutes`. Displayed on the node as "Delay: 1d 15m" or "Immediate" for zero delay.
+Total delay = (days x 24 hours) + minutes. Displayed on the node as "Delay: 1d 15m" or "Immediate" for zero delay.
 
 ### DM Configuration
 
 | Setting | Description |
 |---|---|
-| `message_template` | Required — message text with `{{variable}}` placeholders |
-| `ai_prompt` | Optional — custom AI instructions for personalization |
+| Message template | Required — message text with `{{variable}}` placeholders |
+| AI prompt | Optional — custom AI instructions for personalization |
 
 Use the variable picker to browse available placeholders. The AI personalizes the template for each lead using their profile data, recent activity, and offer context.
 
@@ -110,16 +110,16 @@ Use the variable picker to browse available placeholders. The AI personalizes th
 
 | Setting | Description |
 |---|---|
-| `ai_prompt` | Optional — custom instructions for reply generation |
+| AI prompt | Optional — custom instructions for reply generation |
 
-Replies are AI-generated from the lead's most recent post content. If no `ai_prompt` is set, the sequence's `warmup_prompt` is used as default instructions.
+Replies are AI-generated from the lead's most recent post content. If no AI prompt is set, the sequence's warmup prompt is used as default instructions.
 
 ### Connection Request Configuration
 
 | Setting | Description |
 |---|---|
-| `connection_note` | Optional personalized note (max 300 characters, character count shown) |
-| `auto_withdraw_days` | Auto-withdraw if not accepted within N days (default 14, range 1–30) |
+| Connection note | Optional personalized note (max 300 characters, character count shown) |
+| Auto-withdraw days | Auto-withdraw if not accepted within N days (default 14, range 1–30) |
 
 The connection note supports `{{variable}}` placeholders for personalization.
 
@@ -127,20 +127,20 @@ The connection note supports `{{variable}}` placeholders for personalization.
 
 | Setting | Description |
 |---|---|
-| `condition_type` | What to evaluate (see table below) |
-| `retry_interval_days` | Days between rechecks |
-| `retry_max_attempts` | Max rechecks before falling to FALSE branch |
+| Condition type | What to evaluate (see table below) |
+| Retry interval (days) | Days between rechecks |
+| Max retry attempts | Max rechecks before falling to FALSE branch |
 
 **Condition types:**
 
 | Type | Description |
 |---|---|
-| `replied` | Lead replied to a previous message |
-| `followed_back` | Lead followed back (X only) |
-| `has_profile` | Lead has a filled-out profile on the target platform |
-| `connection_accepted` | LinkedIn connection request was accepted |
+| Replied | Lead replied to a previous message |
+| Followed back | Lead followed back (X only) |
+| Has profile | Lead has a filled-out profile on the target platform |
+| Connection accepted | LinkedIn connection request was accepted |
 
-Condition nodes have two outgoing branches: **TRUE** (left handle, green) and **FALSE** (right handle, red). Each branch can connect to a different next step. The condition is evaluated at the scheduled time — if false and retries remain, it rechecks after `retry_interval_days`. After exhausting retries, the FALSE branch executes.
+Condition nodes have two outgoing branches: **TRUE** (left handle, green) and **FALSE** (right handle, red). Each branch can connect to a different next step. The condition is evaluated at the scheduled time — if false and retries remain, it rechecks after the retry interval. After exhausting retries, the FALSE branch executes.
 
 Example: "Recheck every 3 days, up to 3 times" = 9 days max before falling to the FALSE branch.
 
@@ -151,7 +151,7 @@ Example: "Recheck every 3 days, up to 3 times" = 9 days max before falling to th
 - At least one node must exist
 - All action nodes must be reachable from the entry node (topmost)
 - No orphaned nodes
-- DM nodes must have a non-empty `message_template`
+- DM nodes must have a non-empty message template
 - Condition nodes must have at least one branch edge (true or false)
 
 ### Pre-Start Validation (Before Activation)
@@ -169,10 +169,10 @@ Beyond the flow itself, configure overall sequence behavior:
 
 | Setting | Description |
 |---|---|
-| `skip_contacted_leads` | Don't re-reach leads contacted in other sequences |
-| `skip_negative_content` | Skip leads with controversial or toxic posts |
-| `skip_old_posts_days` | Only reach leads with activity within N days |
-| `prefer_original_posts` | Prefer original posts over reposts for engagement |
+| Skip contacted leads | Don't re-reach leads contacted in other sequences |
+| Skip negative content | Skip leads with controversial or toxic posts |
+| Skip old posts (days) | Only reach leads with activity within N days |
+| Prefer original posts | Prefer original posts over reposts for engagement |
 
 ### Daily Limits
 
@@ -182,30 +182,30 @@ Each sequence has configurable daily action limits (combined, LinkedIn-specific,
 
 | Setting | Default | Description |
 |---|---|---|
-| `max_ai_responses_per_conversation` | 0 (unlimited) | Max auto-replies per lead (max 100) |
-| `ai_disabled_by_default` | false | New conversations start with AI off |
+| Max AI responses per conversation | 0 (unlimited) | Max auto-replies per lead (max 100) |
+| AI disabled by default | false | New conversations start with AI off |
 
 ### Follow-Up
 
 | Setting | Default | Range |
 |---|---|---|
-| `conversation_followup_enabled` | false | — |
-| `conversation_followup_wait_days` | 3 | 1–30 |
-| `conversation_followup_max_count` | 2 | 1–10 |
+| Conversation follow-up enabled | false | — |
+| Follow-up wait (days) | 3 | 1–30 |
+| Max follow-ups | 2 | 1–10 |
 
 ### AI Prompts
 
 | Setting | Description |
 |---|---|
-| `ai_prompt` | General AI instructions for message generation |
-| `dm_generation_prompt` | Specific prompt for cold DM generation |
-| `warmup_prompt` | Prompt for warmup engagement (likes, replies) |
+| AI prompt | General AI instructions for message generation |
+| DM generation prompt | Specific prompt for cold DM generation |
+| Warmup prompt | Prompt for warmup engagement (likes, replies) |
 
 ## Starting, Pausing, and Stopping
 
 | Action | Effect |
 |---|---|
-| **Start** | Sets status to `active`, triggers background scheduling of actions for enrolled leads |
+| **Start** | Sets status to Active, triggers background scheduling of actions for enrolled leads |
 | **Pause** | Temporarily stops all pending actions without losing progress. Can be resumed. |
 | **Stop** | Permanently ends the sequence. Cannot be restarted — create a new sequence or duplicate. |
 

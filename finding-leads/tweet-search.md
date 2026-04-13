@@ -15,17 +15,17 @@ When you start a search, you can either:
 
 The AI organizes queries across these intent types (selecting the most relevant for your offer):
 
-- **operational_pain** — day-to-day frustrations and inefficiencies
-- **budget_pressure** — cost concerns and budget constraints
-- **hiring_scaling** — growth challenges and team scaling
-- **buying_evaluation** — actively comparing or evaluating solutions
-- **competitor_switch** — switching away from or frustrated with competitors
-- **growth_signals** — expansion, new markets, scaling needs
-- **security_compliance** — regulatory, security, or compliance concerns
-- **niche_jargon** — insider terminology specific to your vertical
-- **vertical_specific** — industry-specific pain points
+- **Operational Pain** — day-to-day frustrations and inefficiencies
+- **Budget Pressure** — cost concerns and budget constraints
+- **Hiring & Scaling** — growth challenges and team scaling
+- **Buying Evaluation** — actively comparing or evaluating solutions
+- **Competitor Switch** — switching away from or frustrated with competitors
+- **Growth Signals** — expansion, new markets, scaling needs
+- **Security & Compliance** — regulatory, security, or compliance concerns
+- **Professional Identity** — role-based challenges and aspirations
+- **Vertical Specific** — industry-specific pain points
 
-An additional `generateNicheJargon()` call adds insider-term-based query groups to catch leads using specialized language.
+A separate AI step generates insider terminology queries specific to your industry to catch leads using specialized language.
 
 ### 2. Search Execution
 
@@ -33,7 +33,7 @@ AutoReach searches X via X's API. For each query group:
 
 1. **Combined OR query** — up to 7 keywords combined with OR operators, searched in both `Top` and `Latest` modes
 2. **Individual term searches** — each keyword is also searched individually in `Latest` mode to catch results missed by the combined query
-3. **Search operators applied** — exact phrase matching for 2-word terms, minus exclusions, `min_faves:2` engagement filter
+3. **Search operators applied** — exact phrase matching for 2-word terms, minus exclusions, minimum engagement filter
 
 Search results are deduplicated at two levels: per-search (in-memory Set) and globally across all user searches (database check). Link-only tweets are filtered out.
 
@@ -90,9 +90,9 @@ Keywords:
 - "CRM data quality issues"
 
 Intent clusters:
-- **operational_pain:** "my team spends hours on data entry", "sales admin is killing productivity"
-- **buying_evaluation:** "evaluating sales tools", "comparing CRM platforms"
-- **competitor_switch:** "moving away from Salesforce", "HubSpot isn't scaling"
+- **Operational Pain:** "my team spends hours on data entry", "sales admin is killing productivity"
+- **Buying Evaluation:** "evaluating sales tools", "comparing CRM platforms"
+- **Competitor Switch:** "moving away from Salesforce", "HubSpot isn't scaling"
 
 **Result:** Each query surfaces relevant tweets from CTOs, VPs of Sales, and Operations Managers. Both tweet authors and commenters are extracted, converted to leads, and queued for enrichment and scoring.
 

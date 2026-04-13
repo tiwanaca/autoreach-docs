@@ -14,7 +14,7 @@ When you click "Enable Autopilot," the following steps execute:
 
 ### Step 1: Create Configuration
 
-An `autopilot_config` record is created immediately with `active` status. Any prior disabled config for the same Offer is removed first. The UI returns immediately while setup continues in the background.
+Autopilot is activated immediately. Any prior disabled configuration for the same Offer is removed first. The UI returns immediately while setup continues in the background.
 
 ### Step 2: Generate AI Content
 
@@ -24,19 +24,15 @@ Autopilot generates a shared campaign prompt and tone examples for your Offer. T
 
 For each connected platform (X, then LinkedIn), Autopilot:
 
-1. Creates a sequence with AI-generated steps, tone examples, and `auto_enroll_active_leads` enabled
+1. Creates a sequence with AI-generated steps, tone examples, and auto-enrollment enabled
 2. Generates keywords from your Offer
-3. Creates a recurring search (`tweet_search` or `linkedin_search`) with `daily_recurring` enabled
+3. Creates a recurring search for that platform
 4. Finds a lookalike influencer account via AI search
-5. Creates a seed extraction source — `target_user` for X (200 followers to extract) or `linkedin_seed_search` with buyer expansion enabled for LinkedIn
+5. Creates a seed extraction source -- a follower extraction for X, or a LinkedIn people search with buyer expansion enabled
 
 Platforms are processed sequentially to avoid AI rate limits.
 
-### Step 4: Track Resources
-
-All created resource IDs (sequences, searches, target users, lookalike accounts, seed searches) are saved to the config's `created_resources` field for lifecycle management.
-
-### Step 5: Background Loops Begin
+### Step 4: Background Loops Begin
 
 Once setup completes, the three Autopilot loops (lookalike rotation, auto-enrollment, signal search) begin processing the new config on their regular intervals.
 
@@ -45,7 +41,7 @@ Once setup completes, the three Autopilot loops (lookalike rotation, auto-enroll
 - **Searches begin immediately**: Your first recurring searches start running
 - **Follower extraction starts**: Seed accounts begin extracting followers
 - **First leads appear**: Typically within the first few hours as searches and extraction run
-- **Auto-enrollment activates**: Leads scoring 60+ are enrolled into sequences automatically
+- **Auto-enrollment activates**: Qualified leads are enrolled into sequences automatically
 
 ## Re-enabling After Disable
 

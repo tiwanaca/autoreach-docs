@@ -86,14 +86,14 @@ As each stage completes, the lead's profile gets richer. You can view partial da
 
 Every lead has a buyer state that determines where it appears in the UI and whether it is eligible for outreach:
 
-| State | Condition | Where It Appears |
-| --- | --- | --- |
-| **Active** | Buyer Score >= 60 | Buyers page |
-| **Monitor** | Buyer Score 30-59 | All Leads page |
-| **Poor Fit** | Buyer Score < 30 (but fit >= 15 or score >= 15) | All Leads page |
-| **Disqualified** | Fit < 15 AND Buyer Score < 15 | All Leads page (hidden by default) |
-| **Not Scored** | Enrichment not complete | All Leads page |
-| **Manual Outreach** | User override | Treated as Active |
+| State | UI Tab Label | Condition | Where It Appears |
+| --- | --- | --- | --- |
+| **Active** | **Ready** | Buyer Score >= 60 | Buyers page (Ready tab) |
+| **Monitor** | **Emerging** | Buyer Score 30-59 | Buyers page (Emerging tab) |
+| **Poor Fit** | **Low Priority** | Buyer Score < 30 (but fit >= 15 or score >= 15) | Buyers page (Low Priority tab) |
+| **Disqualified** | **Disqualified** | Fit < 15 AND Buyer Score < 15 | Buyers page (Disqualified tab) |
+| **Not Scored** | **Analyzing** | Enrichment not complete | Buyers page (Analyzing tab) |
+| **Manual Outreach** | **Manual** | User override | Buyers page (Manual tab), treated as Active |
 
 See [Buyer States](buyer-states.md) for full details on each state and how transitions work.
 

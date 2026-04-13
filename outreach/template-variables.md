@@ -92,9 +92,7 @@ Both map to the same logic (`{{tweet}}` is a backwards-compatible alias). Fetche
 1. **Stored X intent stream** — if lead was sourced from X search with original content
 2. **Stored LinkedIn intent stream** — if lead was sourced from LinkedIn search with original content
 3. **Live X tweet fetch** — fetches latest tweet from X (retries up to 8 times over 30 minutes)
-4. **Cached LinkedIn posts** — from enrichment cache
-5. **Live LinkedIn post fetch** — via LinkedIn API
-6. **Bio fallback** — instructs AI to use bio for personalization instead
+4. **Bio fallback** — instructs AI to use bio for personalization instead
 
 For commenter-sourced leads, the context includes both the original post and the lead's reply:
 ```

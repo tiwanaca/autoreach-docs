@@ -15,7 +15,7 @@ After starting a sequence, AutoReach begins executing actions according to the d
 
 Do not expect instant results. Social outreach is a slow burn -- most prospects need to see your name a few times before they engage.
 
-> **Tip:** Check the Activity Feed in Analytics to see exactly what actions AutoReach has completed and when.
+> **Tip:** Check the Activity Feed on the **Dashboard** to see exactly what actions AutoReach has completed and when.
 
 ---
 
@@ -107,7 +107,7 @@ Why this matters:
 - Consistent engagement builds credibility and warms up your accounts
 - It runs automatically in the background
 
-Enable it from the **Engagement Engine** section. Start with approval mode so you can review each engagement before it goes out.
+Enable it from your account's detail page (go to **Accounts**, click your account, and find the Engagement Engine section). Start with approval mode so you can review each engagement before it goes out.
 
 See [Engagement Engine Overview](../engagement-engine/overview.md) for setup instructions.
 
@@ -116,7 +116,7 @@ See [Engagement Engine Overview](../engagement-engine/overview.md) for setup ins
 ## Common "Why Isn't This Working?" Scenarios
 
 ### "My sequence is active but no actions are happening"
-- Check that your connected accounts are healthy (no paused or error status in Analytics > Account Status)
+- Check that your connected accounts are healthy (no paused or error status on the **Accounts** page)
 - Verify you have leads enrolled in the sequence (open the sequence and check the Leads tab)
 - Check your activity window -- actions only execute during your configured hours
 - Make sure your daily action limits have not been reached for today
@@ -130,7 +130,7 @@ See [Engagement Engine Overview](../engagement-engine/overview.md) for setup ins
 
 ### "Leads are not getting scored"
 - Verify your offer is fully configured with ICP details, pain points, and qualifying criteria
-- Check AI health in Analytics -- your API keys may have run out of credits
+- Check the health warnings on the Dashboard -- your API keys may have run out of credits
 - Look at the lead's profile -- if enrichment has not completed, scoring cannot run yet
 
 ### "AI messages look generic or off-brand"
@@ -139,7 +139,7 @@ See [Engagement Engine Overview](../engagement-engine/overview.md) for setup ins
 - Use the Simulation tool to iterate on message quality before sending
 
 ### "Account shows a warning or paused status"
-- Check the account health card in Analytics for the specific error
+- Check the account health card on the **Accounts** page for the specific error
 - If rate-limited, wait for the cooldown period to expire (24 hours for rate limits, 7 days for bot detection)
 - If cookies expired, reconnect via the Chrome Extension (click three dots > Reconnect)
 - Review the [Account Safety](../settings/account-safety.md) guide for prevention tips

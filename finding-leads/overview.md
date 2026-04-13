@@ -16,7 +16,7 @@ Supports **daily recurring searches** — AutoReach regenerates fresh keywords a
 [Learn more about X Tweet Search →](tweet-search.md)
 
 ### LinkedIn Content Search
-Discover decision-makers through LinkedIn posts and comments. Both post authors and commenters are captured by default (`include_commenters` is on).
+Discover decision-makers through LinkedIn posts and comments. Both post authors and commenters are captured by default (commenter extraction is enabled by default).
 
 Supports **daily recurring searches** with auto-regenerated queries.
 
@@ -33,7 +33,7 @@ Direct profile discovery using LinkedIn's search API. Available filters:
 - **Job title** (keyword)
 - **Network** (1st/2nd/3rd+ connections)
 - **Profile language**
-- **Follower of** (specific profile URNs — used by lookalike-driven searches)
+- **Follower of** (followers of a specific profile — used by lookalike-driven searches)
 
 Note: company size is not a direct LinkedIn People Search filter. It is part of your offer's ICP definition and checked during scoring, not at search time.
 
@@ -75,7 +75,7 @@ These methods find leads by extracting followers or audiences from relevant acco
 AutoReach uses AI to find influencers, thought leaders, and communities whose audiences match your ICP. The lookalike search works on both X and LinkedIn. However, the downstream lead extraction differs by platform:
 
 - **X:** Followers are extracted directly via the follower extraction pipeline
-- **LinkedIn:** Leads are found via People Search filtered by `followerOf` the discovered account's profile URN
+- **LinkedIn:** Leads are found via People Search filtered to followers of the discovered account
 
 **Best for:** Scaling outreach by tapping into existing relevant communities.
 

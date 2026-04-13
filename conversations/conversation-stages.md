@@ -4,54 +4,46 @@ AutoReach classifies conversations into 7 stages. Each stage has its own tone an
 
 ## The 7 Stages
 
-### 1. Opener Reply (`opener_reply`)
+### 1. Opener Reply
 
 **Triggered**: Lead just responded to your cold DM.
 **Goal**: Acknowledge their message, show genuine interest, keep it light. No pitching.
 
-### 2. Discovery (`discovery`)
+### 2. Discovery
 
 **Triggered**: You're learning about their situation.
 **Goal**: Ask targeted questions about their pain points, timeline, and constraints.
 
-### 3. Value Prop (`value_prop`)
+### 3. Value Prop
 
 **Triggered**: Lead is asking about your solution or you're introducing it.
 **Goal**: Connect your value directly to what the lead mentioned, using relevant proof points from your knowledge base.
 
-### 4. Objection Handling (`objection_handling`)
+### 4. Objection Handling
 
 **Triggered**: Lead raises a concern, budget question, or pushback.
 **Goal**: Validate the concern first, then address it with a specific counter-point and clear next step.
 
-### 5. Soft Close (`soft_close`)
+### 5. Soft Close
 
 **Triggered**: Lead seems ready to move forward or book a call.
 **Goal**: Propose a specific, easy next step without being pushy.
 
-### 6. Follow Up (`follow_up`)
+### 6. Follow Up
 
 **Triggered**: Lead went silent for a configurable period.
 **Goal**: Re-engage with a fresh angle or new information that gives the lead a reason to respond.
 
-### 7. Graceful Exit (`graceful_exit`)
+### 7. Graceful Exit
 
 **Triggered**: Lead declines or the conversation has reached a dead end.
 **Goal**: Exit respectfully and leave the door open for the future.
 
 ## Stage Detection
 
-Stage detection uses a two-layer approach:
+The system uses message patterns and conversation signals to determine the current stage. A lightweight AI model classifies the stage based on the full conversation history.
 
-**Heuristic shortcuts** (no AI call needed):
-- If message count is 1 or fewer → always `opener_reply` (confidence 1.0)
-- If objection count is 2 or more → always `graceful_exit` (confidence 1.0)
-
-**AI classification**: For all other cases, a lightweight AI model classifies the stage based on the full conversation history.
-
-**Fallback**: If the AI call fails, a keyword-based rule system runs, checking for exit signals, buying signals, information-seeking signals, and message length.
-
-Conversations can move between stages non-linearly — for example, from `soft_close` back to `objection_handling` if the lead raises new concerns. The classifier re-evaluates on every new message.
+Conversations can move between stages non-linearly — for example, from Soft Close back to Objection Handling if the lead raises new concerns. The classifier re-evaluates on every new message.
 
 ## Next Steps
 

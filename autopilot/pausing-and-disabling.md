@@ -6,15 +6,13 @@ You can pause or disable Autopilot at any time. Both options preserve your leads
 
 | | Pause | Disable |
 |---|---|---|
-| **Config status** | `paused` | `disabled` |
-| **Searches** | Set to `daily_recurring: false` (preserved) | Deleted |
-| **Sequences** | Set to `paused` status | Set to `paused` status, `auto_enroll_active_leads` set to `false` |
-| **Target users (X)** | Unchanged | Set to `paused` status, `buyer_expansion: false` |
-| **LinkedIn seed searches** | Unchanged | Set to `buyer_expansion: false` |
+| **Searches** | Paused (preserved) | Deleted |
+| **Sequences** | Paused | Paused, auto-enrollment disabled |
+| **Seed sources (X)** | Unchanged | Paused, buyer expansion disabled |
+| **LinkedIn seed searches** | Unchanged | Buyer expansion disabled |
 | **Lookalike accounts** | Preserved | Deleted |
 | **Leads & conversations** | Preserved | Preserved |
-| **Pipeline progress (Redis)** | Preserved | Cleared |
-| **Resume** | Yes — instant | Must re-enable (creates fresh resources) |
+| **Resume** | Yes -- instant | Must re-enable (creates fresh resources) |
 
 ## When to Pause
 
@@ -24,9 +22,9 @@ Pause when you want to temporarily stop all Autopilot operations and resume late
 - Account maintenance
 - Adjusting settings before resuming
 
-**To pause:** Go to the Autopilot Dashboard and click **Pause**.
+**To pause:** Click the pause icon on the autopilot card.
 
-**To resume:** Click **Resume**. Autopilot restores `daily_recurring: true` on searches, sets sequences back to `active`, and sets config status back to `active`. Operations resume on their regular intervals.
+**To resume:** Click the play icon on the autopilot card. Autopilot restores searches, reactivates sequences, and resumes operations on their regular intervals.
 
 ## When to Disable
 
@@ -36,7 +34,7 @@ Disable when you're stopping outreach for the long term or want a clean slate:
 - Switching to manual-only mode
 - Pivoting to a different ICP
 
-**To disable:** Go to the Autopilot Dashboard, open Settings, and select **Disable Autopilot**.
+**To disable:** Click the trash icon on the autopilot card, then confirm by clicking **Remove**.
 
 Disabling cleans up automation infrastructure (searches, lookalike accounts, expansion settings) but preserves all leads, conversations, and historical data.
 

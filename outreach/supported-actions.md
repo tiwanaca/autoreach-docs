@@ -26,8 +26,8 @@ Likes a lead's recent post. The post is selected automatically.
 **Post selection logic:**
 1. Fetches the lead's recent posts (20 for X, 10 for LinkedIn)
 2. Filters out posts already liked or interacted with — deduplication checks across **all sequences**, not just the current one
-3. If `prefer_original_posts` is enabled, originals are tried first, then reposts/retweets as fallback
-4. If `skip_old_posts_days` is configured, posts older than N days are excluded
+3. If the prefer original posts setting is enabled, originals are tried first, then reposts/retweets as fallback
+4. If the skip old posts setting is configured, posts older than N days are excluded
 5. Returns the most recent qualifying post
 
 **Execution:**
@@ -45,8 +45,8 @@ If no qualifying posts are found, the action is skipped and the sequence advance
 Replies to a lead's recent post with AI-generated text. On X this creates a thread reply; on LinkedIn it posts a comment.
 
 **Post selection:**
-- Same logic as `like` but also filters out posts already replied to (global check across all sequences)
-- If `skip_negative_content` is enabled, posts with tragic or negative content are skipped (checked via AI)
+- Same logic as Like but also filters out posts already replied to (global check across all sequences)
+- If the skip negative content setting is enabled, posts with tragic or negative content are skipped (checked via AI)
 - For LinkedIn, attempts to coordinate with a prior like action — commenting on the same post that was recently liked
 
 **Reply generation:**
@@ -116,7 +116,7 @@ Sends a LinkedIn connection request, optionally with a personalized note.
 | Premium | 150 |
 | Sales Navigator | 200 |
 
-If the weekly limit is reached, the action enters `deferred` status and all remaining connection request actions in the sequence are batch-deferred to the following Monday.
+If the weekly limit is reached, the action enters Deferred status and all remaining connection request actions in the sequence are batch-deferred to the following Monday.
 
 **Execution:**
 1. Checks weekly limit
@@ -187,11 +187,11 @@ Evaluates a condition and routes the lead to the TRUE or FALSE branch.
 
 ## Pre-Action Checks
 
-Before every action executes, the worker runs these checks in order:
+Before every action executes, the system runs these checks in order:
 
 | Check | Behavior if Failed |
 |---|---|
-| Action status is `pending` or `queued` | Skip |
+| Action status is Pending or Queued | Skip |
 | Lead not in terminal status (Replied, Meeting Booked, Lost, Completed) | Skip |
 | Lead not in CRM at non-"new" stage | Skip |
 | Lead not marked as competitor | Skip |

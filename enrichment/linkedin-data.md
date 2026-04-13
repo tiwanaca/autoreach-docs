@@ -36,13 +36,13 @@ All API calls go through the LinkedIn account gateway, which enforces per-accoun
 | Industry | Primary industry classification |
 | Profile Image | Profile picture URL |
 | Background Image | Banner/cover image URL |
-| Profile URN | LinkedIn internal identifier |
+| Profile ID | LinkedIn profile identifier |
 | Public Identifier | Vanity URL slug |
 | Bio | Built from headline + summary |
 
 ### Contact Information
 
-Extracted from the ContactInfo endpoint:
+Extracted from the lead's LinkedIn contact information:
 
 | Field | Description |
 |---|---|

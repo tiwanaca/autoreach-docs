@@ -13,10 +13,6 @@ Tone examples are stored **per-sequence**. Each example contains:
 
 The AI retrieves the most relevant tone examples at response time via **semantic search** using vector embeddings. The search query combines the lead's latest message with the last 3 conversation messages for context.
 
-## Retrieval Budget
-
-Tone examples are capped at **500 tokens** of context injected into the AI prompt. Combined with the knowledge base (600 tokens), the total RAG budget is 1,100 tokens per response.
-
 ## Stage Classification
 
 When examples are created, they are classified into stages using keyword heuristics — checking for patterns like pricing questions, scheduling language, and question marks. This is lightweight and doesn't require an AI call.
@@ -30,9 +26,9 @@ Tone examples are automatically captured from real conversation outcomes:
 When a conversation reaches **Meeting Booked** status:
 - The system extracts 2–3 of the best exchanges (scored by average message length and presence of questions)
 - Each exchange is classified by stage via heuristics
-- Duplicates are filtered using Jaccard similarity (threshold: 0.85 against existing examples)
+- Duplicate detection prevents storing very similar examples
 - Saved as a "Captured Win" example
-- After every 3 captured wins, the tone summary is automatically regenerated
+- The tone summary is regenerated periodically as new examples are captured
 
 ### Losing Conversations
 
@@ -45,7 +41,7 @@ When a conversation reaches "Lost" or "Graceful Exit" status:
 
 A **tone summary** is a 150–250 word style guide extracted from your tone examples by AI. It analyzes vocabulary, brevity, value-led approach, curiosity gaps, and anti-patterns (e.g., overused phrases, non-contractions, filler openings).
 
-The summary is auto-regenerated after every 3 new captured wins to stay current with your evolving voice.
+The summary is regenerated periodically as new examples are captured to stay current with your evolving voice.
 
 ## Managing Tone Examples
 

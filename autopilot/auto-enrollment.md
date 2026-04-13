@@ -4,14 +4,14 @@ Auto-enrollment is the bridge between lead scoring and outreach. It automaticall
 
 ## How It Works
 
-Autopilot checks for enrollable leads every **5 minutes**. Each cycle:
+Autopilot checks regularly for enrollable leads. Each cycle:
 
-1. Fetches up to 200 leads in "Active" buyer state (score 60+)
+1. Fetches leads in Active buyer state
 2. Filters out leads already enrolled in the target sequence
 3. Validates each lead has the required platform data
-4. Enrolls up to **50 leads per cycle** into the matching sequence
+4. Enrolls qualified leads into the matching sequence
 
-There is also a real-time enrollment hook: when scoring marks a lead as "Active", enrollment can trigger immediately without waiting for the next 5-minute cycle.
+There is also a real-time enrollment hook: when scoring marks a lead as Active, enrollment can trigger immediately.
 
 ## Enrollment Criteria
 
@@ -19,8 +19,8 @@ A lead is enrolled when all conditions are met:
 
 | Condition | Details |
 |---|---|
-| Buyer state | Must be "Active" (score 60+) |
-| Sequence status | Must be "Active" or "Scheduling" with auto-enrollment enabled |
+| Buyer state | Must be Active |
+| Sequence status | Must be active with auto-enrollment enabled |
 | Offer match | Lead's offer must match the sequence's offer |
 | Platform data | X requires an X profile; LinkedIn requires a LinkedIn profile |
 | Not already enrolled | Lead must not already be enrolled in the sequence |

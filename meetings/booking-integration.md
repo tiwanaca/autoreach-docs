@@ -11,13 +11,11 @@ AutoReach integrates with Calendly and Cal.com to automatically detect when lead
 ## Calendly Setup
 
 1. Add your Calendly booking link in **Settings > Meeting & Calendar**
-2. Follow the instructions to get the webhook **auth token**
+2. Follow the instructions to get the webhook **Personal Access Token**
 3. Enable **all scopes** for permissions
 4. Save — AutoReach will receive booking events automatically
 
 AutoReach verifies every webhook event using HMAC-SHA256 signature validation (via `calendly-webhook-signature` and `calendly-webhook-signature-timestamp` headers).
-
-The webhook URL includes your `user_id` as a query parameter for routing.
 
 ## Cal.com Setup
 
@@ -25,8 +23,6 @@ The webhook URL includes your `user_id` as a query parameter for routing.
 2. AutoReach generates a **webhook URL** for you
 3. Copy the webhook URL into your Cal.com webhook settings
 4. Save — bookings are tracked automatically
-
-Cal.com webhooks are verified via HMAC-SHA256 signature (via `x-cal-signature-256` header).
 
 ## How Lead Matching Works
 
@@ -36,7 +32,7 @@ When a booking webhook fires, AutoReach matches the attendee to a lead using thi
 2. **Username** — match by platform username
 3. **Email** — match by attendee email address
 
-The tracking parameter is embedded in your booking URL via the `{{booking_link}}` template variable. Calendly uses the `a1` parameter; Cal.com uses the `responses.username` field.
+The tracking parameter is embedded in your booking URL via the `{{booking_link}}` template variable. Calendly uses the `a1` parameter; Cal.com uses the `x_username` field.
 
 ## What Happens When a Meeting Is Booked
 

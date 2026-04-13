@@ -15,7 +15,7 @@ AutoReach uses AI across **10 categories**. Each has independent primary and fal
 
 | Category | Purpose |
 |---|---|
-| Content Writing | DMs, posts, replies, engagement comments, warmup content |
+| Content Writing | DMs, replies, first messages, templates, warmup, copilot |
 | Buyer Scoring | Evaluating leads against your ICP |
 | Keyword Generation | Creating search queries for lead discovery |
 | Classification | Classifying content by topic, sentiment, and tone |

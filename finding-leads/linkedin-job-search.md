@@ -50,7 +50,7 @@ For each role target, AutoReach searches LinkedIn Jobs via LinkedIn's API.
 
 ### Stage 3: Company Deduplication
 
-After collecting jobs across all role targets, AutoReach deduplicates by company name (case-insensitive). When multiple job postings exist for the same company, the most recently posted one is kept. The list is then capped at `max_companies` (default: 30).
+After collecting jobs across all role targets, AutoReach deduplicates by company name (case-insensitive). When multiple job postings exist for the same company, the most recently posted one is kept. The list is then capped at the maximum companies limit (default: 30).
 
 ### Stage 4: Company Profile Resolution
 
@@ -82,11 +82,11 @@ For each company, AutoReach searches for employees using LinkedIn's API (with a 
 
 The **single highest-scoring person** is selected as the decision-maker for that company. One decision-maker per company, not multiple.
 
-**Experience verification:** For the top 3 candidates, AutoReach fetches their full profile and verifies they currently work at the company (`isCurrent === true` + company name/ID match). If all 3 fail verification, the top-ranked unverified candidate is used as a fallback — the company filter is reliable, so verification is a safety net.
+**Experience verification:** For the top 3 candidates, AutoReach fetches their full profile and verifies they currently work at the company. If all 3 fail verification, the top-ranked unverified candidate is used as a fallback — the company filter is reliable, so verification is a safety net.
 
 ### Stage 6: Lead Enrichment and Scoring
 
-Each discovered decision-maker is added to your lead database and queued for enrichment and scoring based on your `pipeline_actions` setting.
+Each discovered decision-maker is added to your lead database and queued for enrichment and scoring based on your enrichment settings.
 
 ## Competitor Customer Detection
 
@@ -95,7 +95,7 @@ When your offer has competitors configured, LinkedIn Job Search is also used to 
 1. Each competitor name is used as a job search keyword
 2. Companies posting jobs requiring experience with the competitor are identified as likely customers of that competitor
 3. Companies that ARE the competitor are filtered out
-4. Decision-makers at these companies are extracted and tagged with `intent_category: 'competitor_customer'` and a priority score of 70
+4. Decision-makers at these companies are extracted and tagged as a competitor's customer with elevated priority
 5. Capped at 5 competitors searched, 15 companies per competitor
 
 This runs automatically as part of the content search pipeline when hiring_signals is enabled and competitors are defined.
@@ -104,11 +104,11 @@ This runs automatically as part of the content search pipeline when hiring_signa
 
 | Parameter | Default | Description |
 |---|---|---|
-| `max_jobs_per_role` | 100 | Max job postings to collect per role target |
-| `max_companies` | 30 | Max deduplicated companies to process |
-| `daily_recurring` | false | Enable automatic daily re-runs |
+| **Max Jobs Per Role** | 100 | Max job postings to collect per role target |
+| **Max Companies** | 30 | Max deduplicated companies to process |
+| **Daily Recurring** | disabled | Enable automatic daily re-runs |
 
-These are set via the LinkedIn content search route alongside the `hiring_signals` intent category.
+These are configured via the LinkedIn content search settings alongside the hiring signals intent category.
 
 ## Best Practices
 
@@ -120,7 +120,7 @@ These are set via the LinkedIn content search route alongside the `hiring_signal
 
 4. **Monitor company profiles.** The resolved company data (industry, staff count, funding) helps validate whether a company is in your ICP before outreach.
 
-5. **Enable recurring searches.** Set `daily_recurring` to catch new job postings and hiring activity continuously.
+5. **Enable recurring searches.** Turn on daily recurring to catch new job postings and hiring activity continuously.
 
 6. **Leverage competitor customer detection.** If you have competitors defined in your offer, this feature automatically finds companies already paying for solutions like yours.
 
@@ -140,9 +140,9 @@ These are set via the LinkedIn content search route alongside the `hiring_signal
 ## Troubleshooting
 
 **Getting too many irrelevant job postings?**
-- The AI generates niche titles, but you can reduce `max_jobs_per_role` to limit volume
+- The AI generates niche titles, but you can reduce the max jobs per role to limit volume
 - Use 24-hour or 7-day time filters instead of 1 month
-- Reduce `max_companies` to focus on the best matches
+- Reduce the max companies to focus on the best matches
 
 **Decision-makers extracted don't seem relevant?**
 - Seniority scoring prioritizes C-suite and VPs. If you want mid-level contacts, the scoring may not match your needs.
@@ -150,7 +150,7 @@ These are set via the LinkedIn content search route alongside the `hiring_signal
 - Combine with [LinkedIn People Search](linkedin-people-search.md) to find specific roles at companies discovered through job search.
 
 **Not finding enough companies?**
-- Increase `max_jobs_per_role` to collect more postings
+- Increase the max jobs per role to collect more postings
 - Use "any time" filter to search all historical postings
 - Check if your target industry actively posts on LinkedIn Jobs
 

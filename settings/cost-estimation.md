@@ -27,18 +27,14 @@ The main cost drivers per lead:
 
 ### Enrichment
 
-- **LinkedIn profile finding** — web search to find LinkedIn profiles for X-sourced leads (applies to ~90% of X leads, 0% of LinkedIn leads, ~50% of lookalike leads)
+- **LinkedIn profile finding** — web search to find LinkedIn profiles for X-sourced leads
 - **Website finding** — web search for company websites
 - **Web enrichment** — deep company analysis from websites (most expensive per-lead operation)
 - **Email finding** — third-party API cost (your own Findymail key, no AutoReach markup)
 
 ### Buyer Scoring
 
-- System prompt (~30 tokens) + template (~650 tokens) + profile data (~120 tokens)
-- Up to 10 posts per lead
-- JSON schema (~600 tokens) + output (~750 tokens)
-- Optional company posts section (~4,100 tokens, 75% probability)
-- Optional web enrichment context (~400 tokens, 30% probability)
+Scoring costs depend on the amount of profile data available for each lead. Leads with more enrichment data (posts, company info, web research) cost more to score than leads with minimal profile information.
 
 ## Example Cost Scenarios
 
@@ -73,7 +69,7 @@ For budget-conscious users, the biggest savings come from keeping scoring and cl
 
 ## Checking Your AI Spending
 
-You can review your actual AI usage and spending in **Analytics > AI Usage**. This shows token consumption and costs broken down by category, so you can see exactly where your budget is going and identify opportunities to optimize.
+You can review your actual AI usage and spending in the **AI Usage panel on the Dashboard**. This shows token consumption and costs broken down by category, so you can see exactly where your budget is going and identify opportunities to optimize.
 
 ## Reducing Costs
 

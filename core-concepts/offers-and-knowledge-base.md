@@ -27,10 +27,10 @@ When you create an offer, you define:
 ### Target Audience
 
 - **Target audience:** Free-form ICP definition. You can include who to target, who to avoid, and any context that helps AutoReach understand your ideal buyer.
-- **Locations:** Geographic focus (pipe-separated), with a **location filter type** setting that controls whether leads are matched by their own location or their company's HQ location
+- **Locations:** Target locations, with a **location filter type** setting that controls whether leads are matched by their own location or their company's HQ location
 - **Industries:** LinkedIn industry IDs used to filter people searches
 - **Language:** The language for your outreach messages (ISO 639-1 code, e.g., "en", "es", "it")
-- **Qualification criteria:** Custom qualification rules stored as structured data
+- **Qualification criteria:** Optional free-form qualification rules for your offer
 
 ### Market Positioning
 
@@ -123,10 +123,10 @@ Limit: 10 documents per offer, 10MB per file.
 When you upload a document, AutoReach processes it through a full RAG (Retrieval-Augmented Generation) pipeline:
 
 1. The file is stored in cloud storage
-2. A background worker parses the document, splits it into 512-token chunks (with 50-token overlap), and generates vector embeddings for each chunk
+2. A background worker parses the document, splits it into chunks, and generates vector embeddings for each chunk
 3. Embeddings are stored for similarity search
 
-When a prospect replies to your outreach, AutoReach performs a vector similarity search against your knowledge base chunks to find the most relevant content (up to 600 tokens of context), then feeds it to the AI alongside the conversation to generate accurate, on-brand responses.
+When a prospect replies to your outreach, AutoReach performs a vector similarity search against your knowledge base chunks to find the most relevant content, then feeds it to the AI alongside the conversation to generate accurate, on-brand responses.
 
 > **Warning:** Upload your best docs: case studies, pricing, qualification criteria, objection handling, and key talking points. A few high-quality documents will perform better than a large volume of generic content.
 
@@ -134,7 +134,7 @@ When a prospect replies to your outreach, AutoReach performs a vector similarity
 
 **Tone examples** are conversation samples that define your outreach voice. They are configured **per sequence**, not at the offer level.
 
-Tone examples show AutoReach how you talk to prospects. They cover different conversation stages like openings, value propositions, objection handling, social proof, and closing. You add tone examples manually to your sequence, and can edit or remove them at any time. Once added, AutoReach auto-generates a tone summary in the background that the AI uses alongside the examples. During conversations, up to 500 tokens of relevant tone example content is retrieved via vector similarity search to keep AI responses on-voice.
+Tone examples show AutoReach how you talk to prospects. They cover different conversation stages like openings, value propositions, objection handling, social proof, and closing. You add tone examples manually to your sequence, and can edit or remove them at any time. Once added, AutoReach auto-generates a tone summary in the background that the AI uses alongside the examples. During conversations, relevant tone example content is retrieved via vector similarity search to keep AI responses on-voice.
 
 > **Tip:** Review and edit your tone examples in your sequence's Advanced Settings. If your samples sound corporate but you are naturally casual, your AI replies will not match your real voice.
 

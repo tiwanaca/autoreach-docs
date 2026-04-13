@@ -20,7 +20,7 @@ AutoReach derives keywords from multiple elements of your offer:
 
 X keyword generation has four components:
 
-### Simple Keywords (`generateKeywords`)
+### Simple Keywords
 
 Generates **15-25 keywords** (capped at 25), plus a 6-8 term OR-joined search query string. Keywords are short conversational phrases:
 
@@ -30,27 +30,27 @@ Generates **15-25 keywords** (capped at 25), plus a 6-8 term OR-joined search qu
 
 The AI draws from up to 8 categories: conversational first-person, pain points, solution-seeking, hiring/growth signals, tool evaluation, company growth signals, competitor alternatives, and professional identity. Categories 4-8 are conditional — skipped if they don't fit the offer.
 
-### Intent Query Clusters (`generateIntentQueries`)
+### Intent Query Clusters
 
-A separate AI call that generates **full Twitter search queries with operators** (`OR`, `"quoted phrases"`, `-exclusions`, `min_faves:2`). This is where search operators actually live — simple keywords do not contain operators.
+A separate AI step generates **full Twitter search queries with operators** (OR, quoted phrases, exclusions, engagement filters). This is where search operators actually live — simple keywords do not contain operators.
 
 The AI selects 3-6 relevant intent categories and generates 2-6 queries per cluster:
 
 | Intent Category | What It Targets |
 |---|---|
-| `operational_pain` | Day-to-day frustrations and inefficiencies |
-| `budget_pressure` | Cost concerns and budget constraints |
-| `hiring_scaling` | Growth challenges and team scaling |
-| `buying_evaluation` | Actively comparing or evaluating solutions |
-| `competitor_switch` | Switching away from or frustrated with competitors |
-| `growth_signals` | Expansion, new markets, scaling needs |
-| `security_compliance` | Regulatory, security, or compliance concerns |
-| `vertical_specific` | Industry-specific pain points |
-| `professional_identity` | Role-based challenges and aspirations |
+| Operational Pain | Day-to-day frustrations and inefficiencies |
+| Budget Pressure | Cost concerns and budget constraints |
+| Hiring & Scaling | Growth challenges and team scaling |
+| Buying Evaluation | Actively comparing or evaluating solutions |
+| Competitor Switch | Switching away from or frustrated with competitors |
+| Growth Signals | Expansion, new markets, scaling needs |
+| Security & Compliance | Regulatory, security, or compliance concerns |
+| Vertical Specific | Industry-specific pain points |
+| Professional Identity | Role-based challenges and aspirations |
 
-### Competitor Keywords (`generateCompetitorKeywords`)
+### Competitor Keywords
 
-A **synchronous function** (no AI call). For each competitor, generates 10 keyword variants:
+For each competitor, generates 10 keyword variants automatically (no AI call needed):
 - "switching from [competitor]"
 - "[competitor] alternative"
 - "replacing [competitor]"
@@ -58,9 +58,9 @@ A **synchronous function** (no AI call). For each competitor, generates 10 keywo
 
 Plus a 5-clause OR search query with fully quoted phrases. The top 3 keywords per competitor are injected into the main keyword array.
 
-### Niche Jargon (`generateNicheJargon`)
+### Niche Jargon
 
-A separate AI call that generates insider terminology:
+A separate AI step generates insider terminology specific to your industry:
 - **Insider terms** — tools, certifications, acronyms, conferences (5-10 items)
 - **Headline keywords** — job titles (5-8)
 - **Community names** — newsletters, Slack groups, communities (3-5)
@@ -73,10 +73,10 @@ LinkedIn generates **up to 20 keywords** plus **10-15 search queries** organized
 
 ### Search Query Format
 
-LinkedIn queries are short natural phrases (3-5 words) without search operators — LinkedIn's content search doesn't support them. Each query is a `SearchQuery` object with:
-- `query` — the search text
-- `intent` — the intent category it belongs to
-- `description` — what the query is designed to surface
+LinkedIn queries are short natural phrases (3-5 words) without search operators — LinkedIn's content search doesn't support them. Each query includes:
+- The search text
+- The intent category it belongs to
+- A description of what the query is designed to surface
 
 ### LinkedIn Intent Categories
 
@@ -84,16 +84,16 @@ The AI generates queries across these intents (2-3 queries per category):
 
 | Intent | Description |
 |---|---|
-| `pain_points` | Operational challenges and frustrations |
-| `hiring_signals` | Recruiting, team expansion, skill gaps |
-| `solution_seeking` | Evaluating tools, asking for recommendations |
-| `buying_intent` | Budget allocation, vendor selection |
-| `growth_signals` | Revenue growth, market expansion |
-| `professional_identity` | Role-based challenges |
-| `competitor_switching` | Moving away from competitors |
-| `cost_pressure` | Cost reduction, budget constraints |
-| `compliance_regulatory` | Regulatory and compliance needs |
-| `tool_evaluation` | Comparing or testing tools |
+| Pain Points | Operational challenges and frustrations |
+| Hiring Signals | Recruiting, team expansion, skill gaps |
+| Solution Seeking | Evaluating tools, asking for recommendations |
+| Buying Intent | Budget allocation, vendor selection |
+| Growth Signals | Revenue growth, market expansion |
+| Professional Identity | Role-based challenges |
+| Competitor Switching | Moving away from competitors |
+| Cost Pressure | Cost reduction, budget constraints |
+| Compliance & Regulatory | Regulatory and compliance needs |
+| Tool Evaluation | Comparing or testing tools |
 
 When you start a LinkedIn content search, you select which intent categories to include. Only queries matching your selected categories are used.
 
@@ -156,19 +156,19 @@ The recurring search scheduler runs every hour. Searches re-trigger only when la
 - "revenue forecast inaccurate"
 
 **X Intent Clusters:**
-- **operational_pain:** `"spreadsheet" OR "manual" "financial model" min_faves:2 -crypto`
-- **buying_evaluation:** `"FP&A tool" OR "forecasting software" "evaluating" min_faves:2`
-- **budget_pressure:** `"budget process" OR "budget cycle" "too slow" min_faves:2`
+- **Operational Pain:** `"spreadsheet" OR "manual" "financial model" -crypto`
+- **Buying Evaluation:** `"FP&A tool" OR "forecasting software" "evaluating"`
+- **Budget Pressure:** `"budget process" OR "budget cycle" "too slow"`
 
 **X Competitor Keywords:**
 - "switching from Anaplan"
 - "Adaptive Insights alternative"
 
 **LinkedIn Queries:**
-- (pain_points) "financial planning manual process"
-- (solution_seeking) "FP&A software recommendation"
-- (growth_signals) "scaling finance team"
-- (hiring_signals) "hiring FP&A analyst"
+- (Pain Points) "financial planning manual process"
+- (Solution Seeking) "FP&A software recommendation"
+- (Growth Signals) "scaling finance team"
+- (Hiring Signals) "hiring FP&A analyst"
 
 **Result:** Multi-layered queries across both platforms, running daily with fresh keyword rotation to surface CFOs, FP&A leaders, and finance operators.
 

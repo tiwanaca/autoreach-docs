@@ -22,7 +22,7 @@ For example, with a 09:00–21:00 window, the sleep period is 21:00–09:00. Mid
 
 ### How Actions Are Scheduled
 
-The scheduler creates action records for each lead. The system polls every **2 minutes** for pending actions whose scheduled time has arrived.
+The scheduler creates action records for each lead and processes them when their scheduled time arrives.
 
 ### Lead Priority
 
@@ -66,19 +66,14 @@ Daily limits are **per-sequence** (not per-account). Each sequence has its own c
 
 | Limit | Default | Maximum |
 |---|---|---|
-| Combined daily actions | 20 | 100 |
 | LinkedIn daily actions | 20 | 100 |
 | X daily actions | 40 | 100 |
 
-All action types count toward the limit: like, reply, follow, dm, connection_request, view_profile. Condition steps do not count.
-
-### DM Limits
-
-A separate **daily DM limit** exists per sequence, tracked independently from the combined action limit. Both are checked — if either is reached, actions are blocked.
+All action types count toward their platform's limit: like, reply, follow, DM, connection request, view profile. Condition steps do not count.
 
 ### Limit Reset
 
-Limits reset at **midnight in the user's timezone**. The reset is lazy — triggered on the first action check after midnight. All daily counters (combined, LinkedIn, and X) are set to 0.
+Limits reset at **midnight in the user's timezone**. The reset is lazy — triggered on the first action check after midnight. All daily counters (LinkedIn and X) are set to 0.
 
 ### Enforcement
 
@@ -86,7 +81,6 @@ Before each action, the system checks the appropriate counter against the limit:
 
 - LinkedIn actions: checks LinkedIn-specific count/limit
 - X actions: checks X-specific count/limit
-- Other actions: checks combined count/limit
 
 If the limit is reached, the action is rescheduled for the next day at a random time within the activity window.
 

@@ -12,7 +12,8 @@ Content moves through these statuses:
 | Pending | Approved and waiting to post at scheduled time |
 | Posting | Currently being posted |
 | Posted / Completed | Successfully published |
-| Rejected | Discarded by you; replacement generated |
+| Discarded | Permanently removed by you |
+| Regenerated | Replaced with a new AI-generated version |
 | Skipped | Expired (48 hours without review) or approval queue disabled |
 | Failed | Post attempt failed |
 
@@ -24,17 +25,13 @@ All generated content enters the approval queue as "Pending Approval" unless aut
 
 Click **Approve** to post the content as-is at its scheduled time. The status moves to "Pending".
 
-### Reject
+### Regenerate
 
-Click **Reject** to discard the content. The system immediately generates a replacement, which enters the queue as a new "Pending Approval" item.
+Click **Regenerate** to replace the content with a new AI-generated version. The new version enters the queue as a new "Pending Approval" item.
 
-### Edit
+### Discard
 
-Modify the text before approving:
-
-1. Edit the content
-2. Save and approve the edited version
-3. The edited content posts at the scheduled time
+Click **Discard** to permanently remove the content. The item is deleted and no replacement is generated.
 
 ## Auto-Approval
 

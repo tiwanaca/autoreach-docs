@@ -14,7 +14,7 @@ The AutoReach Chrome Extension is the central tool for connecting your social ac
 After installation, activate your license key:
 
 1. Click the **AutoReach icon** in your Chrome toolbar
-2. Paste your **License Key** (generated during onboarding or found at [autoreach.tech/settings/integrations](https://autoreach.tech/settings/integrations))
+2. Paste your **License Key** (generated during onboarding or found at [autoreach.tech/settings](https://autoreach.tech/settings))
 3. Click **Activate**
 
 > **Important:** Keep your license key private. Never share it with others or post it online.
@@ -62,7 +62,7 @@ On LinkedIn, the extension provides the full AutoReach experience.
 ### Account Connection
 
 - Connect your LinkedIn account by entering your first and last name
-- The extension automatically extracts session cookies and li_at token
+- The extension automatically extracts session cookies
 - See [Connecting LinkedIn](connect-linkedin.md) for details
 
 ### Account Management
@@ -286,7 +286,7 @@ All settings are saved with a unified save bar that detects unsaved changes.
 
 Your license key has expired or is incorrect.
 
-1. Go to [autoreach.tech/settings/integrations](https://autoreach.tech/settings/integrations)
+1. Go to [autoreach.tech/settings](https://autoreach.tech/settings)
 2. Copy your current license key
 3. Paste it into the extension
 4. Click **Activate**

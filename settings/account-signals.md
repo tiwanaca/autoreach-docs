@@ -10,18 +10,16 @@ The heat score (0–100) combines three factors:
 - **Recency bonus**: Recent signals (last 7 days) receive additional weight
 - **Diversity multiplier**: More leads at the same company showing signals amplifies the score — wider signal distribution across a team is a stronger indicator than concentrated signals from one person
 
-Heat scores are cached for **30 minutes** per user per company.
-
 ## Company Identification
 
-Companies are identified by LinkedIn company ID (preferred) or normalized company name. Self-employed, freelance, consultant, and similar values (12 excluded terms) are filtered out.
+Companies are identified by LinkedIn company ID (preferred) or normalized company name. Self-employed, freelance, consultant, and similar generic values are filtered out.
 
 Only companies with **2 or more leads** are included in heat scoring.
 
 ### Lead Filtering
 
-- Leads with a fit score below 20 or in "Disqualified" state are excluded
-- Leads with a fit score of 20–59 have their signal strengths downgraded by one tier
+- Leads with very low fit scores or in "Disqualified" state are excluded
+- Leads with moderate fit scores have their signal strengths downgraded
 
 ## Signal Types
 

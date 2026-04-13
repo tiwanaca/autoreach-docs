@@ -8,7 +8,7 @@ Key terms used throughout AutoReach, listed alphabetically.
 
 **Activity Window** — The time range during which AutoReach executes outreach actions (e.g., 9:00 AM to 9:00 PM). Actions scheduled outside this window are deferred until it reopens. Configured in Settings along with your timezone. See [Scheduling & Send Limits](outreach/scheduling.md).
 
-**Auto-Enrollment** — A feature that automatically adds newly scored Active leads into a running sequence without manual intervention. Auto-enrollment checks every 5 minutes and can enroll up to 50 leads per cycle. See [Auto-Enrollment](autopilot/auto-enrollment.md).
+**Auto-Enrollment** — Auto-enrollment periodically adds newly scored Active leads into a running sequence. See [Auto-Enrollment](autopilot/auto-enrollment.md).
 
 **Autopilot** — AutoReach's one-click automation system that configures searches, creates sequences, enrolls leads, and runs five continuous background operations (lookalike rotation, auto-enrollment, buyer expansion, monitor resurfacing, and signal search). See [Autopilot Overview](autopilot/overview.md).
 
@@ -72,7 +72,7 @@ Key terms used throughout AutoReach, listed alphabetically.
 
 **Manual Outreach** — A buyer state you set manually on any lead, regardless of their score. Treated as Active for enrollment eligibility. Use this for VIP accounts, strategic partnerships, or leads you want to reach despite low scores. See [Buyer States](core-concepts/buyer-states.md).
 
-**Monitor** — A buyer state for leads with a Buyer Score between 30 and 59. Monitor leads have potential but are not yet ready for outreach. They are automatically rechecked on a tiered schedule (every 5-14 days) and promoted to Active if their score improves. See [Buyer States](core-concepts/buyer-states.md).
+**Monitor** — A buyer state for leads with a Buyer Score between 30 and 59. Monitor leads have potential but are not yet ready for outreach. They are automatically rechecked on a tiered schedule (every 5 to 21 days depending on buyer state) and promoted to Active if their score improves. See [Buyer States](core-concepts/buyer-states.md).
 
 **Offer** — The foundation of AutoReach. An Offer describes what you sell, who you are targeting, and your outreach goals. It powers lead discovery, scoring, DM personalization, and AI responses. You can create multiple Offers, each with its own pipeline and settings. See [Offers & Knowledge Base](core-concepts/offers-and-knowledge-base.md).
 
@@ -80,7 +80,7 @@ Key terms used throughout AutoReach, listed alphabetically.
 
 **Poor Fit** — A buyer state for leads with a Buyer Score below 30 who still have some baseline fit or score above 15. Poor Fit leads are monitored on a 21-day cycle and can be promoted if new signals appear. See [Buyer States](core-concepts/buyer-states.md).
 
-**RAG (Retrieval-Augmented Generation)** — A technique where AI responses are enhanced with relevant context retrieved from your knowledge base and tone examples via semantic search. AutoReach retrieves up to 1,100 tokens of context (600 from knowledge base, 500 from tone examples) for each AI response.
+**RAG (Retrieval-Augmented Generation)** — A technique where AI responses are enhanced with relevant context retrieved from your knowledge base and tone examples via semantic search. AutoReach retrieves relevant context from your knowledge base and tone examples for each AI response.
 
 **Resurfacing** — The process of automatically rechecking lower-scored leads for new signals on a tiered schedule. When new signals boost a lead's score above the Active threshold (60+), they are promoted and become eligible for auto-enrollment. See [Monitor Resurfacing](autopilot/monitor-resurfacing.md).
 

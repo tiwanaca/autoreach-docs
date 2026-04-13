@@ -15,7 +15,7 @@ Documents are processed through a RAG (Retrieval-Augmented Generation) pipeline:
 
 When the AI generates a response, it searches your knowledge base for the most relevant chunks and injects them into the prompt.
 
-**Token budget**: Knowledge base context is capped at **600 tokens** per response. Combined with tone examples (500 tokens), the total RAG budget is **1,100 tokens**.
+AutoReach retrieves relevant context from your knowledge base and tone examples for each AI response.
 
 Knowledge base is scoped per-offer — different offers can have different knowledge bases, so AI responses are tailored to each target audience.
 
@@ -40,13 +40,12 @@ You can upload up to **10 documents per offer**. If you need to add more, remove
 ### How to Upload
 
 1. Navigate to your Offer and open the **Knowledge Base** section
-2. Click **Upload Documents**
-3. Select one or more files from your computer (PDF, DOCX, or TXT)
-4. Click **Upload** to begin processing
+2. Click the upload area or drag a file onto it
+3. Select a file from your computer (PDF, DOCX, or TXT)
 
-After uploading, AutoReach automatically splits your documents into sections, generates embeddings, and indexes them for semantic search. This process takes a few seconds per document. Once complete, your knowledge base is ready to use.
+After uploading, AutoReach automatically splits your document into sections, generates embeddings, and indexes them for semantic search. This process takes a few seconds per document. Once complete, your knowledge base is ready to use.
 
-> **Tip:** You can upload multiple files at once. Each file is processed independently, so a failed upload for one document does not affect the others.
+> **Tip:** Upload one file at a time. Each file is processed independently.
 
 ### What Makes a Good Knowledge Base Document
 
@@ -70,8 +69,6 @@ The AI retrieves the most relevant sections from your knowledge base when genera
 ## How the AI Uses Your Knowledge Base
 
 When the AI generates a response, it performs a **semantic search** across your knowledge base to find the most relevant sections. Rather than keyword matching, it understands the meaning of what the lead said and retrieves content that addresses their question or concern.
-
-The retrieved content is injected into the AI's context within a **600-token budget**. This means the AI sees roughly a page of relevant knowledge base content per response. Combined with tone examples (which have their own 500-token budget), the total contextual input is capped at 1,100 tokens.
 
 For example, if your knowledge base includes a case study about reducing churn by 40%, and a lead asks "What kind of results do your clients see?", the AI might reference that specific case study in its reply -- making the response grounded in real data rather than generic claims.
 

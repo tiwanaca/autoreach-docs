@@ -101,7 +101,7 @@ Your X session has expired. Open the Chrome Extension, click the **three dots** 
 
 ### "Proxy Connection Failed"
 
-Check your proxy host, port, and credentials. Verify the proxy is running and accessible from your network.
+Your proxy was provisioned automatically during onboarding. If you see persistent proxy errors, contact support at hello@autoreach.tech.
 
 ### "Rate Limited"
 

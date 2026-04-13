@@ -14,7 +14,7 @@ The cold DM generator creates **2 unique DM variants** from a set of inputs. Thi
 | Target | Yes | Who you're reaching (10–400 characters) |
 | Goal | Yes | Conversation objective |
 | Keep it short and punchy | No | Checkbox — when enabled, generates shorter, punchier messages |
-| Recent Post | No | Recent post text for contextual reference |
+| Recent tweet/post | No | Paste a recent tweet or post for contextual personalization |
 | Name | No | Lead name or username for personalization |
 
 ### Goal Options
@@ -22,18 +22,17 @@ The cold DM generator creates **2 unique DM variants** from a set of inputs. Thi
 | Goal | Description |
 |---|---|
 | Start Conversation | Open dialogue, no hard ask |
-| Provide Value | Share something useful (article, intro, tool) |
+| Provide Value First | Share something useful (article, intro, tool) |
 | Soft Pitch | Gentle suggestion to explore your offer |
-| Book Call | Direct ask for a meeting |
+| Book a Call | Direct ask for a meeting |
 
 ### How It Works
 
-1. Selects AI provider — authenticated users get their configured content provider (Claude primary, OpenAI fallback); unauthenticated users get the server's default key
+1. Uses your configured AI model
 2. Builds context from goal instruction, tweet context, and name-based greeting rules
 3. Calls AI with a strict system prompt enforcing DM rules
 4. Parses response into 2 variants (split by blank lines)
 5. Cleans em dashes and removes numbering prefixes
-6. Returns variants array with `id` and `message` fields
 
 ## Sequence DM Personalization
 

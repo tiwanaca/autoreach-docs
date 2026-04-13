@@ -4,13 +4,13 @@ Every lead in AutoReach has a **buyer state** that represents their current stat
 
 ## The Six Buyer States
 
-### 1. Active
+### 1. Active (shown as "Ready" in the UI)
 
 **Condition:** Buyer Score >= 60
 
 **What it means:** This person is ready to buy. They meet your ICP, show buying intent, and the timing is right.
 
-**Where it appears:** The **Buyers** page (your hottest prospects)
+**Where it appears:** The **Buyers** page, **Ready** tab
 
 **Outreach eligibility:** Fully eligible for sequence enrollment and immediate campaigns
 
@@ -18,13 +18,13 @@ Every lead in AutoReach has a **buyer state** that represents their current stat
 
 **Example:** A VP of Operations at a mid-market SaaS company just posted "evaluating project management tools" and has 5 years of tenure. Buyer Score = 72.
 
-### 2. Monitor
+### 2. Monitor (shown as "Emerging" in the UI)
 
 **Condition:** Buyer Score 30-59
 
 **What it means:** This person has potential, but they're not quite ready yet. Maybe fit is strong but intent is weak, or the timing isn't quite there. You're keeping an eye on them.
 
-**Where it appears:** The **All Leads** page
+**Where it appears:** The **Buyers** page, **Emerging** tab
 
 **Outreach eligibility:** Can be enrolled in sequences, but not recommended. Better used for nurture or light-touch engagement.
 
@@ -34,13 +34,13 @@ Every lead in AutoReach has a **buyer state** that represents their current stat
 
 **Example:** A hiring manager at an ideal-fit company is active on LinkedIn but hasn't posted anything suggesting they're looking to buy. Buyer Score = 48.
 
-### 3. Poor Fit
+### 3. Poor Fit (shown as "Low Priority" in the UI)
 
 **Condition:** Buyer Score < 30, but fit score >= 15 or buyer score >= 15
 
 **What it means:** This person doesn't match your ideal customer profile well. Whether it's a fit gap, wrong industry, or wrong seniority, something significant doesn't line up. Competitors flagged manually or detected during scoring also land here with zeroed scores.
 
-**Where it appears:** The **Buyers** page (Poor Fit tab) and the **All Leads** page
+**Where it appears:** The **Buyers** page, **Low Priority** tab
 
 **Outreach eligibility:** Not recommended. Low ROI outreach.
 
@@ -56,7 +56,7 @@ Every lead in AutoReach has a **buyer state** that represents their current stat
 
 **What it means:** This person is so far outside your ICP that there is almost no chance of conversion. They remain in the database but are excluded from automatic processing.
 
-**Where it appears:** The **Buyers** page (Disqualified tab) and the **All Leads** page (filterable)
+**Where it appears:** The **Buyers** page, **Disqualified** tab
 
 **Outreach eligibility:** Not eligible. Must be overridden to Manual Outreach first.
 
@@ -66,13 +66,13 @@ Every lead in AutoReach has a **buyer state** that represents their current stat
 
 **Example:** A student with no professional experience and no intent signals. Fit score = 8, buyer score = 6.
 
-### 5. Manual Outreach
+### 5. Manual Outreach (shown as "Manual" in the UI)
 
 **Condition:** Manually set by user, regardless of score
 
 **What it means:** You've decided this person is worth reaching out to, overriding the scoring system. This is a full buyer state, not just a flag.
 
-**Where it appears:** The **Buyers** page (Manual Outreach tab) and the **All Leads** page
+**Where it appears:** The **Buyers** page, **Manual** tab
 
 **Outreach eligibility:** Eligible for sequence enrollment, treated like active
 
@@ -82,13 +82,13 @@ Every lead in AutoReach has a **buyer state** that represents their current stat
 
 **Example:** You want to reach the founder of a partner company. Their buyer score is 25, but you know the relationship is valuable. Set to Manual Outreach.
 
-### 6. Not Scored
+### 6. Not Scored (shown as "Analyzing" in the UI)
 
 **Condition:** Lead hasn't completed initial enrichment/scoring
 
 **What it means:** You just added this lead, but they haven't been fully enriched or scored yet. They're in progress.
 
-**Where it appears:** The **All Leads** page (typically sorted to bottom)
+**Where it appears:** The **Buyers** page, **Analyzing** tab
 
 **Outreach eligibility:** Not eligible until scoring completes. Wait for state transition.
 
@@ -138,7 +138,7 @@ You can manually change any lead's state via the UI:
 
 ### Buyers Page
 
-The Buyers page has tabs for **all six states**: Active, Monitor, Poor Fit, Manual Outreach, Not Scored, and Disqualified. Each tab shows leads in that state.
+The Buyers page has tabs for **all six states**: Ready, Emerging, Low Priority, Manual, Analyzing, and Disqualified. Each tab shows leads in that state.
 
 **Filters:** Sort by score, signals, activity date, or search by name
 

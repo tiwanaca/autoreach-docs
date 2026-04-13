@@ -124,7 +124,7 @@ You can trigger web enrichment manually from the Leads page by selecting leads a
 
 ## Cost
 
-Web enrichment costs approximately **$0.08 per lead** (3 web search calls). Cost estimation is available via the estimate endpoint before committing to enrichment.
+Web enrichment costs approximately **$0.08 per lead** (3 web search calls). Cost estimation is available before starting enrichment.
 
 ## Error Handling
 

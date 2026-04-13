@@ -10,13 +10,12 @@ The main dashboard shows your key pipeline metrics at a glance:
 
 | Metric | What It Measures |
 |---|---|
-| **Total Leads** | All leads in your account (across all sources) |
-| **Qualified Leads** | Leads scored as active buyers by the intelligence engine |
-| **Sequence Leads** | Leads currently enrolled in sequences |
-| **Contacted** | Leads who have received a DM or message |
-| **Replied** | Leads who have responded to your outreach |
-| **Meetings Booked** | Leads who scheduled a meeting through your calendar link |
-| **Pipeline Value** | Estimated revenue from qualified leads, based on your offer's deal size |
+| **Pipeline Created** | Total leads in your account (across all sources) |
+| **Buyers Identified** | Leads scored as qualified buyers by the intelligence engine |
+| **Outreach Delivered** | Leads who have been contacted |
+| **Meetings Generated** | Total meetings booked through your calendar link |
+
+A **potential pipeline** value is displayed in the hero section, showing estimated revenue from qualified leads based on your offer's deal size.
 
 These numbers update in real time as your sequences run and leads progress through the pipeline.
 
@@ -34,7 +33,7 @@ The daily summary gives you a snapshot of today's activity across all your seque
 - **Profile views** -- LinkedIn profiles viewed
 - **Total actions** -- combined count of all actions today
 
-This summary appears as a notification card so you can quickly see how active your outreach has been.
+This summary appears as a **toast notification** once per session per day, giving you a quick snapshot of today's activity.
 
 ---
 
@@ -73,7 +72,7 @@ AutoReach tracks every AI call made on your behalf so you can monitor token cons
 
 ### Usage Summary
 
-The AI Usage page shows aggregate stats for a configurable time period (up to 90 days):
+The AI Usage panel on the Dashboard shows aggregate stats for a configurable time period (up to 90 days):
 
 - **Total tokens used** -- prompt tokens (input) and completion tokens (output)
 - **Total cost** -- estimated cost in USD based on model pricing
@@ -83,7 +82,7 @@ The AI Usage page shows aggregate stats for a configurable time period (up to 90
 
 ### Recent Activity Log
 
-Below the summary, a paginated log shows individual AI calls with:
+Below the summary, a scrollable log shows individual AI calls with:
 
 - The action that triggered it (e.g., "DM generation", "buyer scoring", "keyword generation")
 - Which model was used
@@ -113,26 +112,18 @@ You can dismiss the warning once you have resolved the issue (e.g., added credit
 
 ## Account Health Monitoring
 
-The account status view shows the health of every connected X and LinkedIn account:
-
-- **Active/Paused status** -- whether the account is running or paused
-- **Pause reason** -- if paused, why (rate limit, bot detection, auth error, etc.)
-- **Today's actions** -- how many actions have been performed today
-- **Error indicators** -- whether errors have occurred in the last 24 hours and what the most recent error was
-
-This is your first place to check if something seems wrong with your outreach. A healthy account shows as active with zero errors.
+A health banner on the Dashboard alerts you when a connected account has issues. It shows the account's status and the reason for any problems (rate limit, bot detection, auth error, etc.). A healthy account shows no banner.
 
 ---
 
 ## LinkedIn Pipeline Analytics
 
-If you use the LinkedIn pipeline, additional analytics are available:
+If you use the Chrome Extension CRM pipeline for LinkedIn, additional analytics are available:
 
 - **Funnel stages** -- leads broken down by stage (new, requested, accepted, contacted, replied, meeting, won, lost)
 - **Needs follow-up** -- how many leads are overdue for a follow-up message
 - **Reply rate** -- percentage of contacted leads who replied
 - **Meeting rate** -- percentage of contacts that converted to meetings
-- **Last pipeline run** -- when the pipeline last processed new activity
 
 ---
 

@@ -50,7 +50,7 @@ Only runs in full pipeline mode when scoring is not explicitly skipped. This is 
 Special handling for own-post engagement leads with no explicit offer: scored against all active offers, and the best-scoring one is assigned.
 
 Post-scoring, several operations trigger:
-- **Webhook:** `lead.scored` event
+- **Webhook:** Lead scored event
 - **Account signals:** Dark Funnel aggregation
 - **Autopilot enrollment:** Checks if the lead qualifies for automatic sequence enrollment
 
@@ -61,7 +61,7 @@ If the user's billing is paused, the pipeline halts until billing is restored.
 - Lead status is set to ready
 - Pipeline progress counters are updated
 - Lead is added to the global Lead Pool (for cross-user matching)
-- `enrichment.completed` webhook fires
+- Enrichment completed webhook fires
 - Source search completion is checked
 
 ## Cross-Platform Profile Finding
@@ -97,8 +97,8 @@ Requires the lead to have a LinkedIn profile URL, website URL, or bio longer tha
 |---|---|
 | Processing | Pipeline job is actively running |
 | Ready | All phases complete |
-| Billing paused | Paused due to billing/credits issue |
-| Outside outreach window | Deferred until outreach window opens |
+| Billing Paused | Paused due to billing/credits issue |
+| Outside Outreach Window | Deferred until outreach window opens |
 
 ## Pipeline Progress Tracking
 

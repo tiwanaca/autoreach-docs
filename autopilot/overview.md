@@ -9,7 +9,7 @@ When you enable Autopilot, it configures:
 - **Lead discovery**: Creates recurring searches (X and/or LinkedIn) based on your Offer criteria
 - **Lookalike discovery**: Finds influencer accounts in your space and extracts their followers as prospects
 - **Sequence creation**: Builds outreach sequences with AI-generated prompts and tone examples
-- **Auto-enrollment**: Enrolls qualified leads (score 60+) into sequences automatically
+- **Auto-enrollment**: Enrolls qualified leads into sequences automatically
 - **Buyer expansion**: Discovers new prospects daily from existing high-performing accounts
 - **Monitor resurfacing**: Re-checks lower-scored leads on a tiered schedule for new buying signals
 
@@ -22,26 +22,19 @@ Before enabling Autopilot:
 
 ## How It Works
 
-Autopilot runs three background loops continuously:
+Autopilot runs several background loops continuously:
 
-| Loop | Interval | Purpose |
-|---|---|---|
-| Lookalike rotation | Every 2 hours | Checks if current extraction sources are exhausted and rotates to fresh seed accounts |
-| Auto-enrollment | Every 5 minutes | Finds newly scored leads at `active` buyer state and enrolls them into sequences |
-| Signal search | Every 5 minutes | Triggers intent signal searches once initial extraction completes |
-
-Two additional background processes run independently:
-
-| Process | Interval | Purpose |
-|---|---|---|
-| Buyer expansion | Every 1 hour | Expands lead discovery via follower extraction (X) or role rotation (LinkedIn) |
-| Monitor resurfacing | Every ~8 hours | Re-checks lower-scored leads for new buying signals on a tiered schedule |
+- **Lookalike rotation**: Checks periodically whether current extraction sources are exhausted and rotates to fresh seed accounts
+- **Auto-enrollment**: Regularly finds newly scored leads in Active buyer state and enrolls them into sequences
+- **Signal search**: Triggers intent signal searches once initial extraction completes
+- **Buyer expansion**: Runs periodically to expand lead discovery via follower extraction (X) or role rotation (LinkedIn)
+- **Monitor resurfacing**: Re-checks lower-scored leads for new buying signals on a tiered schedule
 
 ## The Autopilot Loop
 
 1. **Searches** discover new prospects matching your ICP
 2. **Enrichment & scoring** evaluate each lead's fit and intent
-3. **Auto-enrollment** moves leads scoring 60+ into sequences
+3. **Auto-enrollment** moves qualified leads into sequences
 4. **Sequences** execute outreach (likes, follows, DMs, connection requests)
 5. **Resurfacing** re-checks leads below threshold for new signals
 6. **Expansion** discovers more prospects from influencer followers and role searches

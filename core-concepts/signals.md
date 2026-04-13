@@ -17,19 +17,19 @@ Signals are data points that indicate a lead is interested, actively buying, or 
 
 These are direct mentions or statements showing buying intent:
 
-### asked_recommendation
+### Asked for Recommendation
 
 Lead explicitly asked for recommendations on a product/service category.
 
 **Example:** "Anyone have a good recommendation for customer data platforms? We're evaluating options."
 
-### switching_from
+### Switching From Competitor
 
 Lead mentioned they are switching away from a competitor. This is one of the strongest intent signals.
 
 **Example:** "Finally ditching Mailchimp for Klaviyo. Should've done this years ago."
 
-### looking_for_alternative
+### Looking for Alternative
 
 Lead is actively searching for an alternative to their current solution.
 
@@ -103,7 +103,7 @@ Company is expanding to a new geographic market.
 
 These signals show active engagement with your domain:
 
-### competitor_engagement
+### Competitor Engagement
 
 Lead engaged with (liked, commented on) content from competitor companies.
 
@@ -131,7 +131,7 @@ Lead is a confirmed user of a competing product. Detected via LinkedIn job searc
 
 **Example:** Lead's company is listed as a customer of a competitor on their website
 
-### orbit_cluster (Interaction Orbit)
+### Interaction Orbit
 
 AutoReach tracks a lead's engagement orbit — the accounts they interact with on social media. When a lead suddenly starts engaging with multiple competitor or adjacent vendor accounts in a short time window, it signals active evaluation.
 
@@ -157,17 +157,17 @@ Specific roles being hired for.
 
 **Example:** "Hiring: VP Sales, Sales Manager, Sales Dev Rep"
 
-### job_change_detected
+### Job Change Detected
 
 Lead recently changed jobs (career move). New hires often evaluate tools at new companies, making this a strong timing signal. Fit may also shift if they changed to your target industry.
 
-### role_tenure_days
+### Role Tenure
 
 How long the lead has been in their current role. Early tenure is a positive timing signal.
 
-### is_new_hire
+### New Hire
 
-Flag indicating the lead started their current role within the last 180 days (6 months). Derived from `role_tenure_days`.
+Indicates the lead started their current role within the last 6 months.
 
 **Example:** Started new job as "Director of Product" 45 days ago
 
@@ -204,13 +204,13 @@ These signals are classification data rather than intent signals, but they impac
 
 Lead's industry classification. Compared against your offer's target industries. A match increases fit, while a mismatch caps the fit score.
 
-### is_competitor
+### Competitor Employee
 
 Lead works at a competing company. Scored as **Poor Fit** with all scores zeroed out. Despite the scoring reason label saying "disqualified," the actual buyer state is Poor Fit, not Disqualified.
 
 ## Location & Geographic Signals
 
-### location_match
+### Location Match
 
 Lead's location matches your preferred locations. The check method depends on your offer's **location filter type**: when set to "lead," it matches the lead's own location; when set to "company_hq," it matches the company's headquarters location. A mismatch results in a Poor Fit score.
 
@@ -232,7 +232,7 @@ AutoReach monitors for new signals through the **resurfacing scheduler**, which 
 
 Signal recency is handled at two levels:
 
-- **Account-level heat score:** Signals from the last 7 days contribute a recency bonus to the company heat score. Heat history is retained for 30 days.
+- **Account-level heat score:** Signals from the last 7 days contribute a recency bonus to the company heat score.
 - **Individual lead scoring:** The LLM evaluates timing based on signal age — signals within 90 days score higher, very old or absent signals score lower. There is no deterministic decay formula; the LLM interprets recency contextually.
 
 A lead could be at monitor (40 score), and then:
@@ -246,7 +246,7 @@ A lead could be at monitor (40 score), and then:
 
 In the lead profile, you can see:
 
-- All detected signals as boolean flags in the lead's raw_signals data
+- All detected signals as boolean flags in the lead's signal summary
 - Intent strength (high/medium/low/none) — an overall LLM-assessed rating of buying intent
 - Account-level signals with individual strength ratings (high/medium/low) and dates
 - Raw activity (posts, comments, job changes)

@@ -10,35 +10,34 @@ AutoReach continuously monitors account health and classifies errors into action
 
 | Error Type | Cooldown | Auto-Recoverable |
 |---|---|---|
-| `rate_limit` | 24 hours | Yes |
-| `auth_error` | 48 hours | Yes |
-| `proxy_error` | 24 hours | Yes (Decodo proxies skip pause) |
-| `ip_blocked` | 24 hours | No |
-| `bot_detection` | 7 days | No |
-| `captcha` | Manual intervention | No |
-| `timeout` | 2 hours | Yes |
-| `ai_provider_error` | Manual | No (never pauses social account) |
-| `duplicate_action` | None | Skip |
-| `no_content` | None | Skip |
-| `budget_exhausted` | None | Skip |
-| `unknown` | 6 hours | Yes |
+| Rate Limit | 24 hours | Yes |
+| Authentication Error | 48 hours | Yes |
+| Proxy Error | 24 hours | Yes |
+| IP Blocked | 24 hours | No |
+| Bot Detection | 7 days | No |
+| Captcha Challenge | Manual intervention | No |
+| Timeout | 2 hours | Yes |
+| AI Provider Error | Manual | No (never pauses social account) |
+| Duplicate Action | None | Skip |
+| No Content Available | None | Skip |
+| Daily Budget Exhausted | None | Skip |
+| Unknown Error | 6 hours | Yes |
 
 Errors are automatically classified based on the error response from each platform.
 
 ### Email Notifications
 
 Not all errors trigger email alerts:
-- Auto-recoverable types (`rate_limit`, `timeout`, `unknown`) never send emails
-- `proxy_error` and `ip_blocked` only email after the 3rd occurrence within 24 hours
+- Auto-recoverable types (Rate Limit, Timeout, Unknown Error) never send emails
+- Proxy Error and IP Blocked only email after the 3rd occurrence within 24 hours
 
 ### Cascade Pause
 
 When a pause-triggering error occurs, all associated resources are paused:
 
-- Account warmup engagements, tweets, and strategies (marked `paused_by_account: true`)
-- Sequences using the account (marked `paused_by_account: true`)
+- Account warmup engagements, tweets, and strategies
+- Sequences using the account
 - Target users (X only) and link extractions
-- Per-account pipeline queue is drained; affected leads are reset to `ready` status
 
 After a cascade pause, manual resume is required.
 
@@ -71,7 +70,7 @@ Before engaging with a lead's post, content is checked for sensitive topics:
 
 **Allowed topics**: Work frustrations, business failures, layoffs, industry criticism, competitive pressure
 
-This is a **fail-open** design — if the check fails, the action proceeds.
+If the content check fails, the action proceeds rather than blocking.
 
 ## Best Practices
 

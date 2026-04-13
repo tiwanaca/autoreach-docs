@@ -10,6 +10,7 @@ Each account shows one of these statuses:
 |---|---|
 | Active | Operating normally |
 | Paused | Paused — no actions scheduled |
+| Suspended | Suspended due to safety issue — review required |
 | Expired | Authentication expired — re-connect required |
 
 ## X Accounts
@@ -42,20 +43,18 @@ Using dedicated proxies is strongly recommended for LinkedIn accounts.
 
 ## Pausing and Resuming
 
-**Pause**: All pending actions are cancelled and no new actions are scheduled. Associated warmup strategies and sequences are paused (marked `paused_by_account: true`).
+**Pause**: All pending actions are cancelled and no new actions are scheduled. Associated warmup strategies and sequences are automatically paused.
 
-**Resume**: Account reconnects and operations resume. Resources marked `paused_by_account` are reactivated.
+**Resume**: Account reconnects and operations resume. Previously paused warmup strategies and sequences are reactivated.
 
 ## Account Health
 
 Each account card displays:
 
 - Last activity timestamp
-- Daily action count (resets at midnight)
-- Scheduled actions in queue
-- Error rate (last 24 hours)
+- Current health or error status
 
-Check the Accounts page regularly. Elevated error rates may indicate proxy issues or authentication expiration.
+Check the Accounts page regularly. Error indicators may signal proxy issues or authentication expiration.
 
 ## Next Steps
 

@@ -78,9 +78,9 @@ From the Lookalike Audiences page, you can:
 
 When Autopilot is enabled, seed accounts rotate automatically via the autopilot scheduler (runs every 2 hours):
 
-1. When a target user or seed search is exhausted (status goes `idle`), the scheduler calls `searchInfluencers()` to discover **new** seed accounts via web search
+1. When a target user or seed search is exhausted, the scheduler discovers **new** seed accounts via web search
 2. New seeds are saved and extraction is immediately created (target user for X, seed search for LinkedIn)
-3. A `used_ids` list tracks previously-used usernames to avoid repeating seeds
+3. Previously used accounts are tracked to avoid duplicates
 4. After 2+ consecutive misses (no new accounts found), the AI is prompted to find "DIFFERENT, lesser-known accounts"
 5. After 3+ consecutive misses, a stall notification is sent to the user
 

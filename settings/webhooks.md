@@ -8,7 +8,7 @@ This is useful for connecting AutoReach to your CRM, Slack workspace, internal t
 
 ## Available Events
 
-You can subscribe to any combination of the following events:
+Each webhook subscribes to **one event**. To receive notifications for multiple events, create a separate webhook for each. The following events are available:
 
 | Event | Description |
 |---|---|
@@ -28,7 +28,7 @@ You can subscribe to any combination of the following events:
 2. Click **Add Webhook**
 3. Enter a **name** for the webhook (e.g., "CRM Sync" or "Slack Alerts")
 4. Enter the **URL** where you want to receive events (must use HTTPS)
-5. Select which **events** you want to subscribe to
+5. Select which **event** you want to subscribe to
 6. (Optional) Enter a **signing secret** for payload verification (minimum 16 characters)
 7. Click **Create**
 

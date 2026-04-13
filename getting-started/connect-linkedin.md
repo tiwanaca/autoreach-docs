@@ -13,7 +13,7 @@ LinkedIn is one of the two core platforms AutoReach supports for outreach. Conne
 3. Enter your **first name** and **last name**
 4. Click **Connect Account**
 
-The extension will automatically extract your session cookies and li\_at token, and link your LinkedIn account to AutoReach. No manual cookie copying or DevTools required.
+The extension will automatically extract your session cookies and link your LinkedIn account to AutoReach. No manual cookie copying or DevTools required.
 
 ***
 
@@ -39,15 +39,9 @@ These limits reset weekly. AutoReach tracks your usage and pauses connection req
 
 ***
 
-## Three-Layer Rate Limiting
+## Rate Limiting
 
-AutoReach protects your LinkedIn account with three layers of rate limiting:
-
-1. **Concurrency semaphore**: Maximum 1 concurrent request per account. No parallel API calls that could look suspicious.
-2. **Token bucket**: 15 requests per minute. Spreads activity naturally across time.
-3. **Daily budget**: 25,000 requests per day. A hard ceiling that prevents excessive activity.
-
-If LinkedIn returns automation-detection signals (429 after retries, 999 status, or 403 with automation keywords), AutoReach triggers an **emergency pause** that instantly stops all activity on that account.
+AutoReach uses multiple layers of rate limiting to protect your LinkedIn account, including per-request throttling, daily activity caps, and automatic emergency pausing when issues are detected.
 
 ***
 

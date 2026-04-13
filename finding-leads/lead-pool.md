@@ -57,9 +57,9 @@ Lead Pool matching fires automatically in several scenarios:
 
 | Trigger | When It Fires |
 |---------|---------------|
-| **offer_update** | You create a new offer |
-| **search_complete** | Any search finishes: X tweet search, LinkedIn content search, LinkedIn seed search, or link extraction |
-| **target_user_extraction** | A follower extraction is started |
+| **New offer created** | When you create a new offer |
+| **Search finishes** | When any search completes: X tweet search, LinkedIn content search, LinkedIn seed search, or link extraction |
+| **Follower extraction starts** | When a follower extraction begins |
 
 Note: Updating an existing offer re-embeds the ICP but does not automatically trigger a pool match job — only offer creation does.
 
@@ -80,11 +80,11 @@ The platform API cost (Twitter/LinkedIn calls) is zero because leads are already
 | Platforms | -- | Optional filter: X only, LinkedIn only, or both |
 | Similarity threshold | 0.25 | Minimum cosine similarity score |
 
-The worker does not pass platform filters by default — all platforms are matched unless explicitly filtered via the manual API endpoint.
+By default, all platforms are matched unless you explicitly filter to X-only or LinkedIn-only leads.
 
 ## Existing Lead Rescoring
 
-In addition to cloning new leads from the pool, the matching process also calls `match_existing_leads_for_offer` to find leads the user already has that may match a different offer. These are rescored against the new offer without cloning.
+In addition to cloning new leads from the pool, the matching process also checks your existing leads that may match a different offer. These are rescored against the new offer without cloning.
 
 The total across cloned + rescored leads never exceeds the max candidates limit.
 

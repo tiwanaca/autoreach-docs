@@ -26,28 +26,20 @@ Classification uses two passes:
 
 ## Cluster Detection
 
-Orbit targets are grouped into **clusters** — collections of related accounts a lead engages with together.
+Orbit targets are grouped into **clusters** — collections of related accounts a lead engages with together within a recent time window.
 
-- **Cluster window**: 14 days
-- **Minimum cluster size**: 2 accounts
-
-Example: A prospect replies to 3 data warehouse companies and 2 BI tool accounts within 14 days → forms a "data stack evaluation" cluster.
+Example: A prospect replies to 3 data warehouse companies and 2 BI tool accounts in a short period, forming a "data stack evaluation" cluster.
 
 ### New Cluster Detection
 
-When a cluster forms for the first time (within the last 14 days), it generates an orbit cluster signal that feeds into the buyer scoring system:
-
-- **Competitor clusters** → signal strength: `high`
-- **All other clusters** → signal strength: `medium`
-
-New competitor clusters are flagged as "ACTIVE COMPETITOR EVALUATION" in the buyer scoring prompt, directly boosting the lead's intent score.
+When a cluster forms for the first time, it generates an orbit cluster signal that feeds into the buyer scoring system. Competitor clusters produce stronger signals than other cluster types, directly boosting the lead's intent score.
 
 ## How Orbit Data Feeds Scoring
 
 Orbit signals flow into two systems:
 
-1. **Account Signal Service** — orbit clusters contribute to the company-level heat score via the diversity multiplier
-2. **Buyer Intelligence** — the scoring prompt includes orbit data, flagging active competitor evaluations and high-velocity engagement patterns
+1. **Account Signal Service** — orbit clusters contribute to the company-level heat score. Leads interacting with multiple accounts in your orbit score higher.
+2. **Buyer Intelligence** — the scoring prompt includes orbit data, highlighting active competitor evaluations and high-velocity engagement patterns
 
 ## Lead Profile Integration
 

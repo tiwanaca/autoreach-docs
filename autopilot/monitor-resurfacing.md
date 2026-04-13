@@ -15,7 +15,7 @@ Leads are grouped into tiers based on their current score. Warmer leads are chec
 
 ## Resurfacing Schedule
 
-The resurfacing process runs approximately every **8 hours** with a random jitter of 0–60 minutes to avoid predictable patterns. Each window has a **20-minute time budget** per user, processing roughly 40–60 leads per window.
+The resurfacing process runs periodically throughout the day.
 
 ## What Gets Checked
 
@@ -29,13 +29,13 @@ Fetches new posts and social activity for the lead using the standard activity f
 
 Compares the lead's current LinkedIn headline against the stored headline. If a change is detected:
 
-- Lead receives a **+25 score boost**
-- Tenure (time in current role) is reset to 0
-- This is one of the highest-signal events — a job change often indicates new priorities and buying intent
+- Lead receives a score boost
+- Tenure (time in current role) is reset
+- This is one of the highest-signal events -- a job change often indicates new priorities and buying intent
 
 ### Company Jobs Refresh
 
-If the lead has an associated `company_id` and the company's hiring data is older than **7 days**, Autopilot refreshes the company's job listings. Active hiring can indicate growth and budget availability.
+If the lead has an associated company and the company's hiring data is stale, Autopilot refreshes the company's job listings. Active hiring can indicate growth and budget availability.
 
 ## Score Upgrades
 
@@ -47,7 +47,7 @@ When resurfacing detects new signals and the lead's score improves:
 | 30–59 | Lead moves from Poor Fit to Monitor state, entering a more frequent re-check tier |
 | Below 30 | Lead remains in its current tier and is re-checked at the tier's interval |
 
-Leads upgraded to Active are picked up by the auto-enrollment loop (every 5 minutes) and enrolled into the appropriate sequence.
+Leads upgraded to Active are picked up by the auto-enrollment loop and enrolled into the appropriate sequence.
 
 ## Why Tiered Frequency
 
