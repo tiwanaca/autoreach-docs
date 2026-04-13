@@ -6,7 +6,7 @@ For full simulator instructions, see [Simulation](simulation.md).
 
 ## How A/B Compare Works
 
-1. Open the simulator and select a sequence, lead, and **Automatic** mode
+1. Open the simulator and select a sequence, lead, and **Manual** or **Automatic** mode
 2. Toggle **A/B Compare** on in the toolbar
 3. The simulator creates two conversation slots: **Prompt A** (your current AI prompt) and **Prompt B** (an editable copy)
 4. Edit Prompt B with your changes — different tone, different instructions, different strategy

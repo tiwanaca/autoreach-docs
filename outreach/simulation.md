@@ -36,18 +36,18 @@ Three simulation modes are available:
 
 | Persona | Behavior |
 |---|---|
-| Hard to Convince | Skeptical, needs proof and social validation |
-| Easy Enthusiastic | Excited, moves fast, asks about next steps |
-| Asks Lots of Questions | Curious, wants every detail before committing |
-| Not a Fit | Misunderstands the offer or is looking for something else |
-| Price Sensitive | Budget-conscious, pushes back on cost |
-| Uses Competitor | Already has a competing solution |
-| Skeptical | Suspects spam or automation, trust issues |
+| Hard to Convince | Skeptical, needs proof, pushes back |
+| Easy and Enthusiastic | Genuinely interested, moves fast |
+| Asks Lots of Questions | Curious, wants to understand everything |
+| Not a Fit (Job Seeker) | Misunderstood the DM, looking for work |
+| Price Sensitive | Budget-conscious, needs ROI justification |
+| Uses a Competitor | Already has a solution, wants differentiation |
+| Skeptical / Trust Issues | Suspects spam or bot, cautious |
 | Terse Responder | Replies in 1-5 words |
 
 You can also write a **custom persona** description for specific scenarios (e.g., "A VP of Engineering at a 500-person company who just switched from a competitor last month").
 
-**A/B Compare** — Available in Automatic mode. Toggle this on to test two different AI prompts against the same lead and persona, running both conversations side by side.
+**A/B Compare** — Available in Manual and Automatic modes. Toggle this on to test two different AI prompts against the same lead and persona, running both conversations side by side.
 
 ## Manual Mode
 
@@ -82,6 +82,7 @@ The conversation ends naturally when one of these occurs:
 | End Conversation | The lead explicitly ends the chat |
 | Graceful Exit | The AI reaches a natural conclusion |
 | Max Turns | The conversation hit the turn limit |
+| Error | Something went wrong during generation |
 
 ## Batch Mode
 
@@ -121,13 +122,13 @@ The scorecard also reports:
 
 Click any message in a simulation to inspect the AI's decision-making. The debug panel has four tabs:
 
-**Stage and Signals** — Shows the classified conversation stage, confidence level, detected buying signals, lead communication style, and response temperature.
+**Stage and Signals** — Shows the classified conversation stage, confidence level, stage reasoning, detected buying signals, and objection subtype.
 
 **System Prompt** — Reveals the full prompt sent to the AI, broken into layers: base instructions, conversation context, lead data, knowledge base content, and tone guidance.
 
 **RAG Context** — Shows which knowledge base chunks and tone examples were retrieved for this response.
 
-**Lead Analysis** — Displays the lead's profile data, enrichment results, and any detected intent signals.
+**Lead Analysis** — Displays the lead's profile data, communication style, response temperature, and detected intent signals.
 
 ## Conversation Analysis
 
