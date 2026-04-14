@@ -58,7 +58,7 @@ If your reply rate is below 3% after the first 50-100 DMs, try these adjustments
 Use the **Simulation** feature to preview what your DMs look like for specific leads. If they sound generic, add more personalization to your DM template or refine your AI prompt.
 
 ### Check Your Targeting
-Review your scored leads. If most leads have low buyer scores (under 50), your ICP definition may be too broad. Tighten your offer's target audience, pain points, and qualifying criteria.
+Review your scored leads. If most leads have low buyer scores, your ICP definition may be too broad. Tighten your offer's target audience, pain points, and qualifying criteria.
 
 ### Add a Warmup Before the DM
 If you are going straight to DM, consider adding engagement steps first (like, follow, reply to a post). Leads are more likely to respond to someone whose name they recognize.

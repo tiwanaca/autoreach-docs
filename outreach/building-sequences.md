@@ -21,22 +21,22 @@ When a new sequence is created, a default flow template is applied based on the 
 
 **X (Twitter) template:**
 ```
-Like (immediate) → Follow (15min) → DM (1 day)
+Like → Follow → DM
 ```
 
 **LinkedIn template:**
 ```
-Connection Request (immediate) → Condition: Connection Accepted? (retry 3d × 3) → DM (if accepted)
+Connection Request → Condition: Connection Accepted? (with retries) → DM (if accepted)
 ```
 
 **Combined X + LinkedIn template:**
 ```
-View LinkedIn Profile → Like X (10min) → Like LinkedIn (10min) → Follow (1 day)
-→ Connection Request (10min) → Like X (1 day) → Condition (2 days)
+View LinkedIn Profile → Like X → Like LinkedIn → Follow
+→ Connection Request → Like X → Condition
 → DM LinkedIn (if connected) / DM X (if not)
 ```
 
-Templates can be modified after creation. Use the "Reset to Default" dialog to restore the original template.
+Each template includes pre-configured delays between steps. Templates can be modified after creation - adjust the timing and steps to match your outreach style. Use the "Reset to Default" dialog to restore the original template.
 
 ## The Flow Editor Interface
 

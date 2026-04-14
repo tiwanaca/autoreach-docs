@@ -57,7 +57,7 @@ Your choice of AI models has a dramatic impact on per-lead costs. Nano-class mod
 
 - **Nano models** (best for scoring, classification, keywords): Lowest cost, suitable for high-volume operations where speed matters more than nuance
 - **Mid-tier models** (Sonnet-class): Good balance of quality and cost, often used as fallback models
-- **Premium models** (Opus-class, GPT-5.4): Highest quality output, best for content writing where tone and personalization matter, but significantly more expensive per token
+- **Premium models** (Opus-class and equivalent): Highest quality output, best for content writing where tone and personalization matter, but significantly more expensive per token
 
 For budget-conscious users, the biggest savings come from keeping scoring and classification on nano models and reserving premium models only for content writing (DMs, posts, replies).
 

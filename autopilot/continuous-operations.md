@@ -83,9 +83,9 @@ Both platforms include automatic exhaustion detection:
 
 Monitor Resurfacing re-checks lower-scored leads for new buying signals. Instead of abandoning leads that are not ready yet, Autopilot periodically evaluates them and upgrades them to active outreach when their signals improve.
 
-### Tiered Check Frequency
+### Check Frequency
 
-Leads are grouped into tiers based on their current score. Warmer leads (closer to the Active threshold) are checked more frequently, while colder leads are checked at longer intervals. This focuses attention on leads most likely to cross the activation threshold soon.
+Leads are checked on a regular schedule. Warmer leads are checked more frequently than colder leads, focusing attention on leads most likely to become ready for outreach soon.
 
 ### What Gets Checked
 

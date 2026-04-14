@@ -221,9 +221,9 @@ AutoReach applies rules that override normal scoring:
 
 > **Note:** You can manually override scoring rules via the UI (set "Manual Outreach" state) if you want to reach someone despite these filters.
 
-## Source-Aware Scoring
+## Lead Source Context
 
-AutoReach automatically adjusts scoring based on how a lead was discovered. A lead found by searching for your keywords carries inherent intent signal, while a CSV import or follower extraction starts with no intent signal. This happens automatically - no configuration needed.
+AutoReach automatically considers how a lead was discovered when scoring. A lead found by searching for your keywords carries inherent intent signal, while a CSV import or follower extraction starts with no intent signal. This happens automatically - no configuration needed.
 
 ## Rescoring
 

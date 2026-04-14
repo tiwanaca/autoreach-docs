@@ -4,7 +4,7 @@ Key terms used throughout AutoReach, listed alphabetically.
 
 ---
 
-**Active**-  A buyer state assigned to leads with a Buyer Score of 60 or higher. Active leads are considered ready for outreach and are eligible for automatic enrollment into sequences. See [Buyer Intelligence](core-concepts/buyer-intelligence.md).
+**Active**-  A buyer state assigned to leads with a high Buyer Score. Active leads are considered ready for outreach and are eligible for automatic enrollment into sequences. See [Buyer Intelligence](core-concepts/buyer-intelligence.md).
 
 **Activity Window**-  The time range during which AutoReach executes outreach actions (e.g., 9:00 AM to 9:00 PM). Actions scheduled outside this window are deferred until it reopens. Configured in Settings along with your timezone. See [Scheduling & Send Limits](outreach/scheduling.md).
 
@@ -40,7 +40,7 @@ Key terms used throughout AutoReach, listed alphabetically.
 
 **Daily Limit**-  The maximum number of outreach actions AutoReach will execute per sequence per day. Separate limits exist for combined actions, LinkedIn-specific actions, and X-specific actions. When a limit is reached, remaining actions are rescheduled to the next day. See [Scheduling & Send Limits](outreach/scheduling.md).
 
-**Disqualified**-  A buyer state for leads with very low fit and buyer scores (both below 15). Disqualified leads are excluded from automatic rescoring and resurfacing. They can be manually overridden to Manual Outreach if needed. See [Buyer Intelligence](core-concepts/buyer-intelligence.md).
+**Disqualified**-  A buyer state for leads with very low fit and buyer scores. Disqualified leads are excluded from automatic rescoring and resurfacing. They can be manually overridden to Manual Outreach if needed. See [Buyer Intelligence](core-concepts/buyer-intelligence.md).
 
 **DM Template**-  A message template with `{{variable}}` placeholders that AutoReach fills with real lead data at send-time. Templates use a two-pass system: direct substitution for known variables, then AI inference for custom placeholders. See [DM Personalization](outreach/dm-personalization.md).
 
@@ -72,17 +72,17 @@ Key terms used throughout AutoReach, listed alphabetically.
 
 **Manual Outreach**-  A buyer state you set manually on any lead, regardless of their score. Treated as Active for enrollment eligibility. Use this for VIP accounts, strategic partnerships, or leads you want to reach despite low scores. See [Buyer Intelligence](core-concepts/buyer-intelligence.md).
 
-**Monitor**-  A buyer state for leads with a Buyer Score between 30 and 59. Monitor leads have potential but are not yet ready for outreach. They are automatically rechecked on a tiered schedule (every 5 to 21 days depending on buyer state) and promoted to Active if their score improves. See [Buyer Intelligence](core-concepts/buyer-intelligence.md).
+**Monitor**-  A buyer state for leads with moderate Buyer Scores. Monitor leads have potential but are not yet ready for outreach. They are automatically rechecked on a regular schedule and promoted to Active if their score improves. See [Buyer Intelligence](core-concepts/buyer-intelligence.md).
 
 **Offer**-  The foundation of AutoReach. An Offer describes what you sell, who you are targeting, and your outreach goals. It powers lead discovery, scoring, DM personalization, and AI responses. You can create multiple Offers, each with its own pipeline and settings. See [Offers & Knowledge Base](core-concepts/offers-and-knowledge-base.md).
 
 **Pipeline**-  The end-to-end flow a lead moves through: discovery, enrichment, scoring, engagement, response, and resurfacing. Also refers to the enrichment pipeline that processes leads through profile data collection, activity fetching, and scoring.
 
-**Poor Fit**-  A buyer state for leads with a Buyer Score below 30 who still have some baseline fit or score above 15. Poor Fit leads are monitored on a 21-day cycle and can be promoted if new signals appear. See [Buyer Intelligence](core-concepts/buyer-intelligence.md).
+**Poor Fit**-  A buyer state for leads with low Buyer Scores who still have some baseline relevance. Poor Fit leads are monitored periodically and can be promoted if new signals appear. See [Buyer Intelligence](core-concepts/buyer-intelligence.md).
 
 **RAG (Retrieval-Augmented Generation)**-  A technique where AI responses are enhanced with relevant context retrieved from your knowledge base and tone examples via semantic search. AutoReach retrieves relevant context from your knowledge base and tone examples for each AI response.
 
-**Resurfacing**-  The process of automatically rechecking lower-scored leads for new signals on a tiered schedule. When new signals boost a lead's score above the Active threshold (60+), they are promoted and become eligible for auto-enrollment. See [Continuous Operations](autopilot/continuous-operations.md).
+**Resurfacing**-  The process of automatically rechecking lower-scored leads for new signals on a regular schedule. When new signals boost a lead's score above the Active threshold, they are promoted and become eligible for auto-enrollment. See [Continuous Operations](autopilot/continuous-operations.md).
 
 **Scoring**-  The process of evaluating a lead across fit, intent, and timing dimensions to produce a Buyer Score. AutoReach uses AI-powered Deep Analysis to score leads. See [Buyer Intelligence & Scoring](core-concepts/buyer-intelligence.md).
 
@@ -98,7 +98,7 @@ Key terms used throughout AutoReach, listed alphabetically.
 
 **Tone Example**-  A conversation sample stored per-sequence that teaches the AI how you want to sound. Tone examples are classified by conversation stage and retrieved via semantic search at response time. AutoReach auto-captures winning examples from booked meetings. See [Tone & Knowledge](conversations/tone-and-knowledge.md).
 
-**Tone Summary**-  A 150-250 word AI-generated style guide extracted from your tone examples. It analyzes vocabulary, brevity, value-led approach, and anti-patterns. Auto-regenerated after every 3 new captured wins. See [Tone & Knowledge](conversations/tone-and-knowledge.md).
+**Tone Summary**-  An AI-generated style guide extracted from your tone examples. It analyzes vocabulary, brevity, value-led approach, and anti-patterns. Auto-regenerated as new winning examples are captured. See [Tone & Knowledge](conversations/tone-and-knowledge.md).
 
 **Warmup**-  The process of building a credible social presence on your accounts before launching outreach. The Engagement Engine handles warmup by posting content, engaging with relevant posts, and growing visibility with human-like patterns. See [Engagement Engine Overview](engagement-engine/overview.md).
 

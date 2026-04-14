@@ -82,7 +82,7 @@ Sends a direct message to the lead. The message template is personalized using l
 
 **Message personalization:**
 - Template variables are replaced with lead data: `{{name}}`, `{{first_name}}`, `{{bio}}`, `{{company}}`, `{{company_size}}`, `{{location}}`, `{{followers}}`, etc.
-- Special placeholders: `{{tweet}}` (lead's latest tweet), `{{replied_post}}` (post from a prior reply action)
+- Special placeholders: `{{post}}` (lead's latest post), `{{replied_post}}` (post from a prior reply action)
 - AI fills remaining smart placeholders (`{{role}}`, `{{pain_point}}`, custom placeholders) using enrichment data, web enrichment, and knowledge base context
 - Booking URL is injected with platform-specific tracking if configured
 
@@ -110,8 +110,7 @@ Sends a LinkedIn connection request, optionally with a personalized note.
 
 | Account Type | Weekly Limit |
 |---|---|
-| Free | 100 |
-| Premium | 150 |
+| Free / Premium | 100 |
 | Sales Navigator | 200 |
 
 If the weekly limit is reached, the action enters Deferred status and all remaining connection request actions in the sequence are batch-deferred to the following Monday.
@@ -139,9 +138,9 @@ Visits the lead's LinkedIn profile, triggering a "who viewed your profile" notif
 
 **Platforms:** LinkedIn only
 
-Withdraws a pending or accepted LinkedIn connection. Usually auto-scheduled by a connection request step's auto-withdraw setting, not manually added to flows.
+Withdraws a pending LinkedIn connection. This action is **automatically scheduled** by a connection request step's auto-withdraw setting - it is not available in the flow builder palette and cannot be manually added to sequences.
 
-Withdraws the connection if it's still pending. Does **not** count toward sequence progress or advance the lead.
+Does **not** count toward sequence progress or advance the lead.
 
 ---
 
@@ -209,7 +208,7 @@ Errors are classified by severity:
 
 ## Human Delay Simulation
 
-All actions include anti-detection timing that simulates natural browsing, reading, and typing behavior. Delays vary by action type and context to create realistic patterns.
+All actions include natural timing that simulates browsing, reading, and typing behavior. Delays vary by action type and context to create realistic patterns.
 
 ## Next Steps
 

@@ -124,14 +124,14 @@ Results are queued for enrichment based on your enrichment settings.
 - Results are scored by buyer intelligence after enrichment-  irrelevant profiles will score low automatically
 
 **Search seems slow?**
-- This is normal for large result sets. Delays of 8-12s between pages are intentional for account safety.
-- Searches run in the background-  you can continue using the app.
-- Large searches (1,500+ results) may take 30+ minutes to complete.
+- This is normal for large result sets. Searches are paced conservatively to protect your account.
+- Searches run in the background - you can continue using the app.
+- Large searches (1,500+ results) may take a while to complete.
 
 **Search stuck or failed?**
-- Auto-recovery retries stuck searches up to 3 times on server restart
+- Auto-recovery retries stuck searches automatically on server restart
 - If the LinkedIn session expired, reconnect your account and the search will resume
-- Automation-detected pauses clear after 30 minutes
+- Temporary pauses due to rate limiting clear automatically
 
 ## Next Steps
 

@@ -78,7 +78,7 @@
 * [AI Model Configuration](settings/ai-models.md)
 * [Multi-Account Management](settings/multi-account.md)
 * [Pipeline Cost Estimation](settings/cost-estimation.md)
-* [Account Safety & Anti-Detection](settings/account-safety.md)
+* [Account Safety](settings/account-safety.md)
 * [Account Signals & Interaction Orbit](settings/account-signals.md)
 * [Blacklisting Accounts](settings/blacklisting.md)
 * [Webhooks](settings/webhooks.md)

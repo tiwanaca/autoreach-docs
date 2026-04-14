@@ -40,7 +40,7 @@ After profile data is fetched, recent posts are collected:
 | Interaction Orbit | Who the lead interacts with on social media |
 | Signal Date | Updated if a newer post is found |
 
-Posts older than 6 months are filtered out. Activity data is not required for the pipeline to advance-  if it can't be fetched, scoring continues without it.
+Older posts are filtered out to keep activity data relevant. Activity data is not required for the pipeline to advance - if it can't be fetched, scoring continues without it.
 
 ## Error Handling
 

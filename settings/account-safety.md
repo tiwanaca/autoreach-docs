@@ -1,4 +1,4 @@
-# Account Safety & Anti-Detection
+# Account Safety
 
 AutoReach protects your accounts using browser identity management, rate limiting, health monitoring, and human behavior simulation.
 

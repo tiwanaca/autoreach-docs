@@ -80,7 +80,7 @@ A full sales pipeline built into the extension popup. View and manage all your l
 | Stage         | Description                                                  |
 | ------------- | ------------------------------------------------------------ |
 | **New**       | Lead added to your CRM                                       |
-| **On Hold**   | Lead temporarily paused (21-day cooldown after withdrawal)   |
+| **On Hold**   | Lead temporarily paused (cooldown period after withdrawal)   |
 | **Requested** | Connection request sent (auto-detected)                      |
 | **Accepted**  | Connection request accepted (auto-detected or manual check)  |
 | **Contacted** | You sent a DM (auto-detected)                                |
@@ -177,7 +177,7 @@ Manage pending connection requests that have not been accepted:
 - Configure a withdrawal threshold (number of days before a pending request should be withdrawn)
 - The extension checks for leads past the threshold and shows a withdrawal modal
 - Withdraw connections in batch (executed with delays for safety)
-- Withdrawn leads are moved to the **On Hold** stage (21-day cooldown before they can be re-contacted)
+- Withdrawn leads are moved to the **On Hold** stage (cooldown period before they can be re-contacted)
 
 ---
 

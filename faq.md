@@ -56,7 +56,7 @@ AutoReach scores each lead across three dimensions: Fit (does this person match 
 
 ### Why is a lead scored as Poor Fit?
 
-A lead lands in Poor Fit when their Buyer Score is below 30. This usually means they have a significant mismatch with your ICP, such as wrong industry, wrong seniority, or wrong company size. Check the scoring breakdown to see which dimension scored lowest. Poor Fit leads are still monitored and can be promoted if new signals appear, like a job change or new social activity. See [Buyer States](core-concepts/buyer-intelligence.md) for details.
+A lead lands in Poor Fit when their Buyer Score is low. This usually means they have a significant mismatch with your ICP, such as wrong industry, wrong seniority, or wrong company size. Check the scoring breakdown to see which dimension scored lowest. Poor Fit leads are still monitored and can be promoted if new signals appear, like a job change or new social activity. See [Buyer Intelligence](core-concepts/buyer-intelligence.md) for details.
 
 ### Can a lead's score change over time?
 
@@ -144,7 +144,7 @@ Autopilot runs five continuous operations: lookalike rotation (finding new seed 
 
 ### Is Autopilot safe for my accounts?
 
-Yes. Autopilot respects all the same safety measures as manual operation: daily send limits, activity windows, human behavior simulation, negative content screening, and anti-burst protection. It does not bypass any account safety features. See [Account Safety](settings/account-safety.md).
+Yes. Autopilot respects all the same safety measures as manual operation: daily send limits, activity windows, human behavior simulation, negative content screening, and gradual resumption. It does not bypass any account safety features. See [Account Safety](settings/account-safety.md).
 
 ---
 

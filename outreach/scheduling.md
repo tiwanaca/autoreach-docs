@@ -58,15 +58,15 @@ LinkedIn connection requests have a separate weekly limit tracked per-account (n
 
 Set the weekly connection limit on each LinkedIn account to match your account type. See [Supported Actions](supported-actions.md#connection-request) for the limits by account type.
 
-## Human Delay Simulation
+## Natural Timing
 
-All action execution includes anti-detection timing that simulates natural human behavior-  browsing, reading, typing, and thinking pauses. Delays vary by action type, time of day, and day of week to create realistic patterns unique to each account.
+All action execution includes natural pacing that simulates human behavior - browsing, reading, typing, and thinking pauses. Delays vary by action type, time of day, and day of week to create realistic patterns unique to each account.
 
 Occasional random pauses are inserted between actions to simulate natural breaks and distractions.
 
-## Anti-Burst Protection
+## Gradual Resumption
 
-When a paused sequence is resumed or actions become overdue, anti-burst protection spreads them across time instead of firing all at once. This keeps activity patterns looking natural.
+When a paused sequence is resumed or actions become overdue, they are spread across time instead of firing all at once. This keeps activity patterns looking natural.
 
 ## Max AI Responses Per Conversation
 

@@ -1,6 +1,6 @@
 # Outreach & Sequences Overview
 
-Sequences are automated multi-step campaigns that execute engagement actions across X and LinkedIn. Each sequence walks leads through a configured flow of actions-  likes, follows, DMs, replies, connection requests-  with AI-personalized messaging and anti-detection timing.
+Sequences are automated multi-step campaigns that execute engagement actions across X and LinkedIn. Each sequence walks leads through a configured flow of actions - likes, follows, DMs, replies, connection requests - with AI-personalized messaging and natural timing.
 
 ## What Is a Sequence?
 
@@ -66,9 +66,9 @@ Actions are scheduled automatically and executed one at a time to avoid rate lim
 
 **Step progression:** Each step's connection determines what happens next. Condition steps evaluate lead status and branch accordingly. After each action completes, the next step is queued with the configured delay.
 
-### Anti-Detection Timing
+### Natural Timing
 
-Sequence execution simulates human behavior to avoid platform detection-  actions are spaced naturally across the day, grouped into human-like sessions, and include realistic delays for reading and typing. Activity varies by time of day and day of week to match natural patterns.
+Sequence execution uses natural pacing - actions are spaced across the day, grouped into human-like sessions, and include realistic delays for reading and typing. Activity varies by time of day and day of week to match natural patterns.
 
 ### Activity Window
 

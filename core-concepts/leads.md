@@ -154,7 +154,7 @@ Once enrolled in a sequence, a lead progresses through these statuses:
 
 > **Tip:** If you are just getting started, the lead pool gives you scored leads instantly without waiting for enrichment.
 
-> **Tip:** Do not ignore Poor Fit leads entirely. Re-scoring happens when new signals are detected. A lead could jump from 25 to 65 based on a job change or new social activity.
+> **Tip:** Do not ignore Poor Fit leads entirely. Re-scoring happens when new signals are detected. A lead can jump significantly based on a job change or new social activity.
 
 ## Next Steps
 
