@@ -39,7 +39,7 @@ On X, the extension provides:
 
 - Connect your X account by entering your name and a 4-digit PIN for DM Chat
 - The extension automatically extracts session cookies from your browser
-- See [Connecting X](connect-twitter.md) for details
+- See [Connecting Accounts](connecting-accounts.md) for details
 
 ### Account Management
 
@@ -63,7 +63,7 @@ On LinkedIn, the extension provides the full AutoReach experience.
 
 - Connect your LinkedIn account by entering your first and last name
 - The extension automatically extracts session cookies
-- See [Connecting LinkedIn](connect-linkedin.md) for details
+- See [Connecting Accounts](connecting-accounts.md) for details
 
 ### Account Management
 
@@ -326,7 +326,6 @@ Found a security issue? Email hello@autoreach.tech.
 
 ## Next Steps
 
-- **[Connecting X](connect-twitter.md)**: Set up your X/Twitter account
-- **[Connecting LinkedIn](connect-linkedin.md)**: Set up your LinkedIn account
+- **[Connecting Accounts](connecting-accounts.md)**: Set up your X/Twitter and LinkedIn accounts
 - **[Creating Your First Offer](create-offer.md)**: Define your target audience and outreach goals
 - **[Quickstart](quickstart.md)**: Follow the complete setup guide

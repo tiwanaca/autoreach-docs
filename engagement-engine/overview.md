@@ -13,13 +13,7 @@ The Engagement Engine automatically:
 
 ## How It Works
 
-The system processes actions in regular cycles. Each cycle it:
-
-1. Expires stale approvals and engagements
-2. Updates internal counters and resets error states
-3. Processes tweets, engagement, auto-responses, and LinkedIn actions in parallel
-
-All actions are distributed into sessions within your activity window with randomized delays between actions.
+The system runs continuously throughout your activity window, distributing actions into natural sessions with randomized timing.
 
 ## Available Platforms
 
@@ -30,11 +24,21 @@ All actions are distributed into sessions within your activity window with rando
 
 You can run the Engagement Engine on multiple accounts simultaneously.
 
+## Account Persona
+
+When setting up the Engagement Engine, you can optionally define a persona to make generated content sound like a real person rather than a brand account:
+
+- **Full name and role** - e.g. "Sarah Chen, Growth Lead"
+- **Location** - e.g. "Los Angeles, CA"
+- **Voice and personality** - 1-2 sentences describing tone, e.g. "Direct and data-driven, shares real numbers and builder insights."
+
+All three fields are optional. If provided, the AI uses them to shape the voice and perspective of generated posts and engagement replies.
+
 ## Daily Activity
 
-The Engagement Engine generates a randomized mix of actions each day. There are no ramp-up phases — activity starts at full range from day 1. Each day's action counts vary to mimic natural human behavior, with a **15% chance** of a full skip day (minimal activity only).
+The Engagement Engine generates a randomized mix of actions each day. Action counts vary daily to mimic natural human behavior, including occasional skip days with minimal activity.
 
-See **[Daily Action Allocation](daily-actions.md)** for the complete breakdown of action ranges per platform.
+See **[Engagement Automation and Daily Actions](engagement.md)** for more details on daily activity patterns.
 
 ## Content Approval
 
@@ -49,7 +53,5 @@ Enable **auto-approval** to skip manual review and post content automatically. P
 ## Next Steps
 
 - **[Content Strategy & Pillars](content-strategy.md)**: How content themes are organized
-- **[Daily Action Allocation](daily-actions.md)**: Detailed breakdown of daily activity patterns
-- **[Content Generation](content-generation.md)**: How tweets and posts are created
-- **[Engagement Automation](engagement.md)**: How the engine interacts with relevant content
-- **[Approvals](approvals.md)**: Managing the content approval queue
+- **[Engagement Automation](engagement.md)**: Daily activity patterns and engagement targeting
+- **[Content Generation & Approvals](content-generation.md)**: How content is created and reviewed

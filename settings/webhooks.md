@@ -64,9 +64,9 @@ You can also **disable** a webhook without deleting it. Disabled webhooks are sa
 
 Every webhook delivery is a JSON payload with three fields:
 
-- **Event name** -- which event triggered this delivery
-- **Timestamp** -- when the event occurred (ISO 8601 format)
-- **Data** -- the event-specific information
+- **Event name** - which event triggered this delivery
+- **Timestamp** - when the event occurred (ISO 8601 format)
+- **Data** - the event-specific information
 
 ### What data is included
 

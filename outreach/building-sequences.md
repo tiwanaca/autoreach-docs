@@ -7,13 +7,13 @@ The flow editor is a visual sequence builder. You design sequences as connected 
 1. Navigate to **Sequences** in the sidebar
 2. Click **Create Sequence**
 3. Enter a sequence name
-4. Associate an offer (required — the create button is disabled without one)
-5. Select platform accounts — at least one of Twitter or LinkedIn is required
+4. Associate an offer (required-  the create button is disabled without one)
+5. Select platform accounts-  at least one of Twitter or LinkedIn is required
 6. Click **Create**
 
 The sequence is created in Draft status and opens in the flow editor with a default template applied based on the selected platform(s).
 
-Once set, platform accounts **cannot be changed** on a sequence — this prevents workflow disruption mid-execution.
+Once set, platform accounts **cannot be changed** on a sequence-  this prevents workflow disruption mid-execution.
 
 ## Default Templates
 
@@ -44,10 +44,10 @@ The flow editor displays your sequence as nodes connected by edges on a canvas:
 
 - **Nodes** represent actions (like, DM, follow, etc.) or logic (conditions)
 - **Edges** (arrows) show the execution flow between steps
-- **Handles** (small circles on nodes) are connection points — drag from a source handle to a target handle to create edges
+- **Handles** (small circles on nodes) are connection points-  drag from a source handle to a target handle to create edges
 - **Drag nodes** to reposition them on the canvas
 
-There is no explicit "Start" node — the entry point is the topmost node (lowest Y position on the canvas).
+There is no explicit "Start" node-  the entry point is the topmost node (lowest Y position on the canvas).
 
 ### Adding Steps
 
@@ -57,17 +57,15 @@ There is no explicit "Start" node — the entry point is the topmost node (lowes
 
 ### Deleting Steps
 
-Hover over a node to reveal the delete button. When a step is deleted, the chain is repaired — any step that pointed to the deleted step is automatically updated to point to the deleted step's next step, preserving flow continuity.
+Hover over a node to reveal the delete button. When a step is deleted, the chain is repaired-  any step that pointed to the deleted step is automatically updated to point to the deleted step's next step, preserving flow continuity.
 
 ### Saving
 
-Saving is **manual** — click the "Save Sequence" button. An "Unsaved changes" indicator appears when the flow has been modified. The save operation validates the flow structure before persisting.
+Saving is **manual**-  click the "Save Sequence" button. An "Unsaved changes" indicator appears when the flow has been modified. The save operation validates the flow structure before persisting.
 
 **What gets saved:**
-- **Visual layout** — node positions, edges, and viewport state for the flow editor
-- **Execution model** — action configurations, step order, and step connections
-
-These are separate storage systems. The visual representation and execution model are persisted independently.
+- **Visual layout**-  node positions, edges, and viewport state for the flow editor
+- **Execution model**-  action configurations, step order, and step connections
 
 ## Action Types
 
@@ -77,7 +75,7 @@ These are separate storage systems. The visual representation and execution mode
 | Reply | X, LinkedIn | Reply to a post (AI-generated from post content) |
 | Follow | X | Follow the account |
 | DM | X, LinkedIn | Send a direct message |
-| Condition | — | Branch based on lead status |
+| Condition |-  | Branch based on lead status |
 | Connection Request | LinkedIn | Send a connection request |
 | View Profile | LinkedIn | View the lead's LinkedIn profile |
 | Withdraw Connection | LinkedIn | Withdraw a pending or accepted connection |
@@ -101,8 +99,8 @@ Total delay = (days x 24 hours) + minutes. Displayed on the node as "Delay: 1d 1
 
 | Setting | Description |
 |---|---|
-| Message template | Required — message text with `{{variable}}` placeholders |
-| AI prompt | Optional — custom AI instructions for personalization |
+| Message template | Required-  message text with `{{variable}}` placeholders |
+| AI prompt | Optional-  custom AI instructions for personalization |
 
 Use the variable picker to browse available placeholders. The AI personalizes the template for each lead using their profile data, recent activity, and offer context.
 
@@ -110,7 +108,7 @@ Use the variable picker to browse available placeholders. The AI personalizes th
 
 | Setting | Description |
 |---|---|
-| AI prompt | Optional — custom instructions for reply generation |
+| AI prompt | Optional-  custom instructions for reply generation |
 
 Replies are AI-generated from the lead's most recent post content. If no AI prompt is set, the sequence's warmup prompt is used as default instructions.
 
@@ -140,7 +138,7 @@ The connection note supports `{{variable}}` placeholders for personalization.
 | Has profile | Lead has a filled-out profile on the target platform |
 | Connection accepted | LinkedIn connection request was accepted |
 
-Condition nodes have two outgoing branches: **TRUE** (left handle, green) and **FALSE** (right handle, red). Each branch can connect to a different next step. The condition is evaluated at the scheduled time — if false and retries remain, it rechecks after the retry interval. After exhausting retries, the FALSE branch executes.
+Condition nodes have two outgoing branches: **TRUE** (left handle, green) and **FALSE** (right handle, red). Each branch can connect to a different next step. The condition is evaluated at the scheduled time-  if false and retries remain, it rechecks after the retry interval. After exhausting retries, the FALSE branch executes.
 
 Example: "Recheck every 3 days, up to 3 times" = 9 days max before falling to the FALSE branch.
 
@@ -189,7 +187,7 @@ Each sequence has configurable daily action limits (combined, LinkedIn-specific,
 
 | Setting | Default | Range |
 |---|---|---|
-| Conversation follow-up enabled | false | — |
+| Conversation follow-up enabled | false |-  |
 | Follow-up wait (days) | 3 | 1–30 |
 | Max follow-ups | 2 | 1–10 |
 
@@ -207,7 +205,7 @@ Each sequence has configurable daily action limits (combined, LinkedIn-specific,
 |---|---|
 | **Start** | Sets status to Active, triggers background scheduling of actions for enrolled leads |
 | **Pause** | Temporarily stops all pending actions without losing progress. Can be resumed. |
-| **Stop** | Permanently ends the sequence. Cannot be restarted — create a new sequence or duplicate. |
+| **Stop** | Permanently ends the sequence. Cannot be restarted-  create a new sequence or duplicate. |
 
 ## Common Sequence Patterns
 
@@ -239,11 +237,11 @@ View Profile → Connection Request (1 day) → Condition: Accepted? (retry 3d �
 
 ### Duplicating a Sequence
 
-To reuse an existing sequence design, click **Duplicate** from the sequence menu. You will be asked to provide a new name and select which accounts to use (X, LinkedIn, or both). The duplicate copies all steps, flow layout, AI prompts, and settings -- but starts with no enrolled leads, so you can use it for a different audience or offer.
+To reuse an existing sequence design, click **Duplicate** from the sequence menu. You will be asked to provide a new name and select which accounts to use (X, LinkedIn, or both). The duplicate copies all steps, flow layout, AI prompts, and settings - but starts with no enrolled leads, so you can use it for a different audience or offer.
 
 ### Viewing the Lead Timeline
 
-Click on any lead within a sequence to see their individual action timeline. The timeline shows every step that has been completed, is currently pending, or has failed -- along with scheduled times, execution timestamps, and any error details. This is useful for understanding exactly where a specific lead is in the sequence flow.
+Click on any lead within a sequence to see their individual action timeline. The timeline shows every step that has been completed, is currently pending, or has failed - along with scheduled times, execution timestamps, and any error details. This is useful for understanding exactly where a specific lead is in the sequence flow.
 
 ### Retrying Failed Actions
 
@@ -252,8 +250,6 @@ When an action fails (due to rate limits, network errors, or platform issues), y
 ## Next Steps
 
 - **[Supported Actions](supported-actions.md)**: Detailed reference for each action type
-- **[Cold DM Generation](cold-dm-generation.md)**: How AI generates personalized first messages
-- **[Template Variables](template-variables.md)**: All available personalization variables
+- **[DM Personalization and Template Variables](dm-personalization.md)**: How AI generates personalized first messages
 - **[Scheduling](scheduling.md)**: Activity windows, timing, and send cadence
-- **[Simulation](simulation.md)**: Preview messages before sending
-- **[A/B Testing](ab-testing.md)**: Compare message variants
+- **[Simulation and A/B Testing](simulation-and-testing.md)**: Preview messages and compare variants

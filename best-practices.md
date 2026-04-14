@@ -44,7 +44,7 @@ Sequences are your outreach campaigns. Structure them to build familiarity befor
 - **Use conditions to branch intelligently.** On LinkedIn, always add a condition step after a connection request to check if it was accepted before sending a DM. This avoids wasting messages on unconnected leads.
 - **Set appropriate delays between steps.** Same-day engagement followed by a next-day DM feels natural. A DM within minutes of a like feels automated.
 - **Start with conservative daily limits.** Begin with 15-20 actions per day per sequence and increase gradually. Sudden spikes in activity look suspicious to platforms.
-- **Use the simulation tool before launching.** Test your DM template with 3-5 different leads to check variable substitution, tone, and edge cases where data might be missing. See [Simulation & A/B Testing](outreach/simulation.md).
+- **Use the simulation tool before launching.** Test your DM template with 3-5 different leads to check variable substitution, tone, and edge cases where data might be missing. See [Simulation & A/B Testing](outreach/simulation-and-testing.md).
 - **Associate an offer with each sequence.** This connects your sequence to the right scoring and personalization context.
 
 See [Building Sequences](outreach/building-sequences.md).
@@ -63,7 +63,7 @@ Your first message determines whether a lead responds. Make it count.
 - **Test with leads who have incomplete data.** Some leads may not have a company name or recent posts. Make sure your template still reads well when variables are missing.
 - **Set a custom DM generation prompt for DM-specific instructions.** This is separate from the general AI prompt and lets you control cold DM tone independently from conversation replies.
 
-See [Cold DM Generation](outreach/cold-dm-generation.md) and [Template Variables](outreach/template-variables.md).
+See [DM Personalization](outreach/dm-personalization.md).
 
 ---
 
@@ -78,7 +78,7 @@ Conversations are where deals happen. Balance AI automation with personal touch.
 - **Use the Conversation Analyzer monthly.** After you have enough data (20+ conversations), run the analyzer to identify patterns in what worked versus what did not, and apply the suggested improvements.
 - **Review the AI's graceful exits.** When the AI detects a dead-end conversation, it exits respectfully. Review these to make sure the AI's exit language matches your style.
 
-See [AI Response Engine](conversations/ai-response-engine.md), [Tone Examples](conversations/tone-examples.md), and [Manual Controls](conversations/manual-controls.md).
+See [AI Response Engine](conversations/ai-response-engine.md), [Tone & Knowledge](conversations/tone-and-knowledge.md), and [Inbox](conversations/inbox.md).
 
 ---
 

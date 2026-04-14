@@ -4,24 +4,9 @@ LinkedIn enrichment extracts comprehensive professional profile data from Linked
 
 ## How It Works
 
-LinkedIn profile enrichment fetches comprehensive profile data in **two optimized API calls**:
+LinkedIn profile enrichment fetches comprehensive profile data using your connected LinkedIn account-  including experience, education, skills, languages, certifications, contact information, and company data.
 
-1. **Full profile request** -- returns experience, education, skills, languages, certifications, and company entities in one bundled response
-2. **Contact info request** -- returns email, phone numbers, websites, and linked Twitter handle
-
-### Rate Limit
-
-LinkedIn enrichment processes up to **5 profiles per minute** per LinkedIn account.
-
-### Account Selection
-
-Each enrichment job uses a LinkedIn account belonging to the lead's owner:
-
-1. **Primary:** The LinkedIn account specified in the job
-2. **Fallback:** If the primary account is paused or has invalid cookies, another active account for the same user is selected automatically
-3. **No account available:** The job is deferred and retried up to 4 times at 15-minute intervals (1 hour max)
-
-All API calls go through the LinkedIn account gateway, which enforces per-account rate limiting and daily budget caps.
+If your LinkedIn account is temporarily unavailable, the job is automatically deferred and retried.
 
 ## What Gets Extracted
 
@@ -46,12 +31,12 @@ Extracted from the lead's LinkedIn contact information:
 
 | Field | Description |
 |---|---|
-| Email | Primary email (stored with confidence 1.0) |
+| Email | Primary email address |
 | Phone Numbers | Array of phone numbers |
 | Websites | Array of website URLs |
 | Twitter Handle | Linked Twitter/X handle |
 
-The first website is promoted to the lead's website URL if the lead doesn't already have one. Email is promoted to the lead's primary email with confidence 1.0 if not already set.
+The first website is promoted to the lead's website URL if the lead doesn't already have one. Email is promoted to the lead's primary email if not already set.
 
 ### Work Experience
 
@@ -84,7 +69,6 @@ From the work history, the enrichment derives current role information:
 | Is Current | Whether the position is current |
 | Tenure (months) | Months in current role |
 | Tenure (days) | Days in current role (precision) |
-| Fetched At | When this data was collected (30-day staleness TTL) |
 
 ### Education
 
@@ -155,7 +139,6 @@ The enrichment also fetches the full company profile for the lead's current empl
 | Specialities | Array of specialties |
 | Logo URL | Company logo URL |
 | Follower Count | Company page followers |
-| Fetched At | When this data was collected (30-day staleness check) |
 
 The staff count is promoted to the lead's employee count field for lead filtering.
 
@@ -178,34 +161,13 @@ When running as part of the pipeline, LinkedIn enrichment also fetches the lead'
 
 ## Error Handling
 
-### Transient Errors (Deferred with Delay)
+Transient errors (rate limits, account busy, budget exceeded) are automatically deferred and retried. Permanent errors (no LinkedIn URL, profile doesn't exist) are logged and the pipeline continues-  enrichment failure does not block scoring or other enrichment steps.
 
-| Error | Deferral | Max Attempts |
-|---|---|---|
-| Daily budget exhausted | Until midnight UTC | 2 |
-| No LinkedIn account available | 15 minutes | 4 (1 hour max) |
-| Heavy operation locked / gateway timeout | 2-5 minutes | 8 |
-| Account paused mid-request | 2-5 minutes | 8 |
-| Rate limit (429) | Exponential backoff | 3 |
-
-### Non-Transient Errors (Pipeline Advances)
-
-- No LinkedIn URL available
-- Invalid LinkedIn URL
-- Profile doesn't exist
-- Lead not found
-- Already enriched (skip)
-- Proxy required but not configured
-
-Non-transient errors are logged and the pipeline continues -- enrichment failure does not block scoring or other enrichment steps.
-
-### Critical Errors (Account Paused)
-
-Auth failures (401/403, expired sessions) and proxy connection failures trigger account health alerts and may pause the LinkedIn account.
+If your LinkedIn session expires, you'll need to reconnect your account.
 
 ## Data Quality
 
-LinkedIn profiles vary in completeness. Missing fields are simply not populated -- scoring algorithms account for incomplete data. A lead with only a headline and current company still gets enriched and scored, just with less context for personalization.
+LinkedIn profiles vary in completeness. Missing fields are simply not populated-  scoring accounts for incomplete data. A lead with only a headline and current company still gets enriched and scored, just with less context for personalization.
 
 Company data and company posts are fetched on a best-effort basis. If either fails, the lead continues through the pipeline with profile-level data only.
 

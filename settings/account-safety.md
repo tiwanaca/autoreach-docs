@@ -6,40 +6,19 @@ AutoReach protects your accounts using browser identity management, rate limitin
 
 AutoReach continuously monitors account health and classifies errors into actionable categories.
 
-### Error Types
+### Error Classification
 
-| Error Type | Cooldown | Auto-Recoverable |
-|---|---|---|
-| Rate Limit | 24 hours | Yes |
-| Authentication Error | 48 hours | Yes |
-| Proxy Error | 24 hours | Yes |
-| IP Blocked | 24 hours | No |
-| Bot Detection | 7 days | No |
-| Captcha Challenge | Manual intervention | No |
-| Timeout | 2 hours | Yes |
-| AI Provider Error | Manual | No (never pauses social account) |
-| Duplicate Action | None | Skip |
-| No Content Available | None | Skip |
-| Daily Budget Exhausted | None | Skip |
-| Unknown Error | 6 hours | Yes |
+AutoReach classifies errors into categories-  some are auto-recoverable (like rate limits and timeouts), while others require manual review (like bot detection or captcha challenges). Each category has an appropriate cooldown period before retrying.
 
-Errors are automatically classified based on the error response from each platform.
+Errors that are auto-recoverable resolve on their own after the cooldown. Serious issues like bot detection or IP blocks trigger an emergency pause and require you to manually resume the account after investigating.
 
 ### Email Notifications
 
-Not all errors trigger email alerts:
-- Auto-recoverable types (Rate Limit, Timeout, Unknown Error) never send emails
-- Proxy Error and IP Blocked only email after the 3rd occurrence within 24 hours
+You receive email alerts for significant account issues. Transient errors (like occasional rate limits or timeouts) do not generate emails-  only persistent or serious problems trigger notifications.
 
 ### Cascade Pause
 
-When a pause-triggering error occurs, all associated resources are paused:
-
-- Account warmup engagements, tweets, and strategies
-- Sequences using the account
-- Target users (X only) and link extractions
-
-After a cascade pause, manual resume is required.
+When a serious error occurs, AutoReach pauses not just the account but all associated activity-  warmup, sequences, and pending actions. This prevents further issues while you investigate. After a cascade pause, manual resume is required.
 
 ## Emergency Pause
 
@@ -60,7 +39,6 @@ All actions include realistic timing:
 - Randomized delays between interactions
 - Session pattern variation
 - Natural pacing that mimics real human browsing
-- Time-of-day and day-of-week multipliers
 
 ## Negative Content Screening
 
@@ -74,11 +52,11 @@ If the content check fails, the action proceeds rather than blocking.
 
 ## Best Practices
 
-1. **Use dedicated proxies** — one proxy per account minimum
-2. **Keep limits conservative** — especially on new accounts
-3. **Monitor the Accounts page** — check error rates regularly
-4. **Warm up new accounts** — use the Engagement Engine before launching outreach
-5. **Pause proactively** — if you notice unusual behavior, pause before AutoReach triggers an emergency pause
+1. **Use dedicated proxies**-  one proxy per account minimum
+2. **Keep limits conservative**-  especially on new accounts
+3. **Monitor the Accounts page**-  check error rates regularly
+4. **Warm up new accounts**-  use the Engagement Engine before launching outreach
+5. **Pause proactively**-  if you notice unusual behavior, pause before AutoReach triggers an emergency pause
 
 ## Next Steps
 

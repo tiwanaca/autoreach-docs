@@ -21,16 +21,16 @@ AutoReach's AI uses this information to:
 
 Go to **Offers** and click **New Offer**. You'll see two modes at the top:
 
-- **Website** (default) — Paste your website URL and click **Extract**. AutoReach's AI visits your site and extracts your product description, target audience, pain points, competitors, and industries. Review and adjust what's needed, then save.
-- **Manual** — Fill in all the details yourself from scratch.
+- **Website** (default)-  Paste your website URL and click **Extract**. AutoReach's AI visits your site and extracts your product description, target audience, pain points, competitors, and industries. Review and adjust what's needed, then save.
+- **Manual**-  Fill in all the details yourself from scratch.
 
 ### AI-Assisted Creation
 
 Most fields include a **Generate** (or **Regenerate**) button that uses AI to create or refine content based on your description. The description field has an **Enhance** button that rewrites your text to be clearer and more specific. You can regenerate individual fields as many times as you like without affecting the others.
 
-For new offers, the **Target Audience** field starts as a **Generate from description** button. Click it to have AI create your target audience from your description — you can then edit the result. This is required before you can save.
+For new offers, the **Target Audience** field starts as a **Generate from description** button. Click it to have AI create your target audience from your description-  you can then edit the result. This is required before you can save.
 
-> **Tip:** Start by pasting your URL and letting the AI do the first pass. Then spend a few minutes reviewing and tweaking -- this produces better results than writing everything from scratch.
+> **Tip:** Start by pasting your URL and letting the AI do the first pass. Then spend a few minutes reviewing and tweaking - this produces better results than writing everything from scratch.
 
 ## Offer Fields
 
@@ -62,7 +62,7 @@ This field supports longer descriptions. Include your value proposition, key fea
 
 ### Target Audience
 
-Who you're trying to reach (required). For new offers, this starts as a **Generate from description** button — click it to have AI create your ICP, then edit the result. Use **Regenerate** to get a fresh suggestion.
+Who you're trying to reach (required). For new offers, this starts as a **Generate from description** button-  click it to have AI create your ICP, then edit the result. Use **Regenerate** to get a fresh suggestion.
 
 You can be as descriptive as you want. This is not just a list of titles. You can include who to target, who to avoid, and any other context that helps AutoReach understand your ideal buyer. For example, you can write "Avoid freelancers and solopreneurs" or "Only target companies with 50+ employees" or "Do not reach out to agencies."
 
@@ -141,7 +141,7 @@ Upload up to 10 documents (PDF, DOCX, or TXT) with:
 
 1. On the Offers page, click **Knowledge Base** on your offer card
 2. Click or drag a file into the upload area (PDF, DOCX, or TXT, max 10MB)
-3. The document is processed automatically — you'll see it move from "Processing" to "Ready"
+3. The document is processed automatically-  you'll see it move from "Processing" to "Ready"
 
 AutoReach will:
 - Chunk your document into sections

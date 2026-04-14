@@ -1,62 +1,62 @@
-# Engagement Automation
+# Engagement Automation and Daily Actions
 
-While your account posts content, the Engagement Engine simultaneously interacts with relevant posts in your niche — liking, replying, following, and viewing profiles to build visibility.
-
-## How Engagement Works
-
-AutoReach processes engagement actions in regular cycles:
-
-1. **Scan**: Find posts matching your engagement keywords
-2. **Filter**: Apply relevance and follower count filters
-3. **Execute**: Perform likes, replies, follows, or profile views based on daily allocation
-4. **Delay**: Randomized human-like delays between actions (2–5 seconds)
+While your account posts content, the Engagement Engine simultaneously interacts with relevant posts in your niche - liking, replying, following, and viewing profiles to build visibility.
 
 ## Engagement Types
 
 ### Likes
 
-- Target posts matching your niche keywords on X and LinkedIn
-- X: 2–8 per day | LinkedIn: 1–5 per day
+Target posts matching your niche keywords on X and LinkedIn.
 
 ### Replies / Comments
 
-- AI-generated contextual responses that reference the original post
-- Add value to the conversation, not generic responses
-- X: 2–8 replies per day (20% skip chance) | LinkedIn: 1–3 comments per day
+AI-generated contextual responses that reference the original post and add value to the conversation - not generic responses like "great post."
 
 ### Follows / Connection Requests
 
-- Follow relevant accounts in your niche
-- X: 1–5 follows per day | LinkedIn: 0–2 connection requests per day
+Follow relevant accounts in your niche on X, or send connection requests on LinkedIn.
 
 ### Profile Views (LinkedIn Only)
 
-- Views relevant LinkedIn profiles to trigger "who viewed your profile" notifications
-- 1–3 per day
-- Often generates inbound profile visits in return
+Views relevant LinkedIn profiles to trigger "who viewed your profile" notifications. Often generates inbound profile visits in return.
 
 ## Keyword-Based Targeting
 
 Engagement uses keywords derived from your offer and content pillars to find relevant content. Only posts matching your niche keywords are candidates for engagement. This keeps interactions focused and relevant rather than indiscriminate.
 
-## High Follower Filtering
+## Smart Targeting
 
-On X, accounts with more than 100,000 followers are skipped. Engaging with mega-influencer accounts is ineffective — your interaction won't be noticed among thousands, and it signals clout-chasing rather than genuine engagement.
-
-The Engagement Engine focuses on mid-tier and emerging voices where your interaction is likely to be noticed and reciprocated.
-
-## Per-Action Randomization
-
-Each individual action has built-in randomization during execution:
-
-- **3% random skip rate**: Any action has a 3% chance of being skipped entirely
-- **4% give-up rate**: Chance to abandon an action mid-execution, simulating natural distraction
+The Engagement Engine focuses on mid-tier and emerging voices where your interaction is likely to be noticed and reciprocated. Very large accounts are skipped since your interaction will not stand out among thousands.
 
 ## Engagement and Outreach Are Independent
 
 Engagement Engine activity and outreach sequences run simultaneously and independently. The Engagement Engine builds your account presence while sequences handle direct lead outreach. Neither blocks the other.
 
+---
+
+## Daily Action Allocation
+
+The Engagement Engine generates a randomized mix of actions each day. Counts vary daily to mimic natural human behavior.
+
+### Daily Activity
+
+Each day, the Engagement Engine performs a mix of actions across your connected platforms:
+
+**X (Twitter):** Likes, follows, tweets, and replies - with daily variation in counts.
+
+**LinkedIn:** Profile views, likes, connection requests, comments, and posts - with daily variation in counts.
+
+Some days have reduced or zero activity for certain action types, and occasional skip days with minimal activity simulate natural human behavior. Outreach sequences are **not affected** by skip days - only Engagement Engine activity pauses.
+
+### Action Scheduling
+
+Actions are distributed into natural sessions within your activity window, with randomized timing between actions to avoid patterns.
+
+### Account Safety
+
+The Engagement Engine automatically reduces activity if account errors occur, protecting your accounts from platform detection. If errors persist, activity scales down progressively until the issue resolves.
+
 ## Next Steps
 
-- **[Daily Action Allocation](daily-actions.md)**: Full breakdown of daily activity ranges
-- **[Content Strategy & Pillars](content-strategy.md)**: How pillars guide engagement targeting
+- **[Content Strategy and Pillars](content-strategy.md)**: How pillars guide engagement targeting
+- **[Content Generation and Approvals](content-generation.md)**: How content is created and reviewed

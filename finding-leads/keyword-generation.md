@@ -12,9 +12,8 @@ AutoReach derives keywords from multiple elements of your offer:
 
 - **Target audience** details like titles, roles, and industries
 - **Pain points** described in your offer
-- **Search signals** automatically generated from your offer
-- **Competitors** — competitor-specific keywords are generated and merged separately
-- **Industry jargon** — niche terminology, insider terms, and community names
+- **Competitors**-  competitor-specific keywords are generated and merged separately
+- **Industry jargon**-  niche terminology, insider terms, and community names
 
 ## X Keyword Generation
 
@@ -22,19 +21,11 @@ X keyword generation has four components:
 
 ### Simple Keywords
 
-Generates **15-25 keywords** (capped at 25), plus a 6-8 term OR-joined search query string. Keywords are short conversational phrases:
-
-- 2-3 words ideal, 4 words max
-- First-person conversational style ("my X keeps breaking", "need a better X")
-- Two-word phrases are auto-quoted for exact matching; 3+ word phrases are left unquoted to avoid over-restricting results
-
-The AI draws from up to 8 categories: conversational first-person, pain points, solution-seeking, hiring/growth signals, tool evaluation, company growth signals, competitor alternatives, and professional identity. Categories 4-8 are conditional — skipped if they don't fit the offer.
+Short conversational phrases in first-person style ("my X keeps breaking", "need a better X") designed to match how real people talk about their problems on X.
 
 ### Intent Query Clusters
 
-A separate AI step generates **full Twitter search queries with operators** (OR, quoted phrases, exclusions, engagement filters). This is where search operators actually live — simple keywords do not contain operators.
-
-The AI selects 3-6 relevant intent categories and generates 2-6 queries per cluster:
+Structured search queries organized by intent category. The AI selects the most relevant categories for your offer:
 
 | Intent Category | What It Targets |
 |---|---|
@@ -50,37 +41,19 @@ The AI selects 3-6 relevant intent categories and generates 2-6 queries per clus
 
 ### Competitor Keywords
 
-For each competitor, generates 10 keyword variants automatically (no AI call needed):
-- "switching from [competitor]"
-- "[competitor] alternative"
-- "replacing [competitor]"
-- etc.
-
-Plus a 5-clause OR search query with fully quoted phrases. The top 3 keywords per competitor are injected into the main keyword array.
+For each competitor in your offer, AutoReach generates keywords like "switching from [competitor]", "[competitor] alternative", and similar variations.
 
 ### Niche Jargon
 
-A separate AI step generates insider terminology specific to your industry:
-- **Insider terms** — tools, certifications, acronyms, conferences (5-10 items)
-- **Headline keywords** — job titles (5-8)
-- **Community names** — newsletters, Slack groups, communities (3-5)
-- **Twitter search queries** — ready-to-use OR queries with operators (5-8)
-- **LinkedIn title searches** — title filter terms for LinkedIn People Search (5-8)
+Industry-specific insider terminology-  tools, certifications, acronyms, conferences, job titles, and community names that your target audience uses.
 
 ## LinkedIn Keyword Generation
 
-LinkedIn generates **up to 20 keywords** plus **10-15 search queries** organized by intent.
-
-### Search Query Format
-
-LinkedIn queries are short natural phrases (3-5 words) without search operators — LinkedIn's content search doesn't support them. Each query includes:
-- The search text
-- The intent category it belongs to
-- A description of what the query is designed to surface
+LinkedIn queries are short professional phrases without search operators-  optimized for LinkedIn's content search.
 
 ### LinkedIn Intent Categories
 
-The AI generates queries across these intents (2-3 queries per category):
+The AI generates queries across these intents:
 
 | Intent | Description |
 |---|---|
@@ -99,9 +72,7 @@ When you start a LinkedIn content search, you select which intent categories to 
 
 ### Key Differences from X
 
-- No search operators (LinkedIn doesn't support them)
-- No competitor keyword injection
-- Queries are professional/B2B-oriented phrases
+- Queries are professional/B2B-oriented phrases without search operators
 - Filtered by user-selected intent categories at search time
 
 ## Previewing Keywords
@@ -110,28 +81,13 @@ You can preview generated keywords before running a search. The keyword generato
 
 ## Keyword Overrides
 
-For X searches, you can provide your own keywords and search query at search start time to skip AI generation entirely. There is no way to edit keywords on an already-saved search -- overrides are applied at search creation only.
+For X searches, you can provide your own keywords and search query at search start time to skip AI generation entirely.
 
 LinkedIn searches always generate queries server-side. You cannot provide custom queries directly.
 
 ## Recurring Keyword Regeneration
 
-When daily recurring searches are enabled, keywords are **regenerated fresh** on each run (not reused):
-
-**X recurring regeneration:**
-- Regenerates keywords using the previous keywords and query as reference
-- The AI prompt includes a "KEYWORD ROTATION" block listing all previous keywords, instructing it to avoid repeating them
-- Falls back to existing keywords if regeneration fails
-- The search record's keywords and query are updated automatically
-
-**LinkedIn recurring regeneration:**
-- Regenerates LinkedIn queries using previous queries as reference
-- Same rotation pattern: prompt includes previous queries, instructs different angles
-- Result is filtered by the search's configured intent categories
-- Niche jargon queries (up to 5) are appended after regeneration
-- Falls back to generating fresh LinkedIn keywords on error
-
-The recurring search scheduler runs every hour. Searches re-trigger only when last run was 24+ hours ago.
+When Buyer Expansion is enabled, keywords are **regenerated fresh** on each daily run-  not reused. The AI references previous keywords to ensure variation and avoid repeating the same searches. If regeneration fails, existing keywords are used as a fallback.
 
 ## Best Practices
 
@@ -149,22 +105,20 @@ The recurring search scheduler runs every hour. Searches re-trigger only when la
 
 **Your Offer:** "Financial planning and analysis (FP&A) software for growing SaaS companies"
 
-**X Simple Keywords (15-25):**
+**X Keywords might include:**
 - "financial planning SaaS"
 - "FP&A forecasting"
 - "budget cycle manual"
 - "revenue forecast inaccurate"
-
-**X Intent Clusters:**
-- **Operational Pain:** `"spreadsheet" OR "manual" "financial model" -crypto`
-- **Buying Evaluation:** `"FP&A tool" OR "forecasting software" "evaluating"`
-- **Budget Pressure:** `"budget process" OR "budget cycle" "too slow"`
-
-**X Competitor Keywords:**
 - "switching from Anaplan"
 - "Adaptive Insights alternative"
 
-**LinkedIn Queries:**
+**X Intent Clusters might include:**
+- **Operational Pain:** queries about manual spreadsheet processes
+- **Buying Evaluation:** queries about evaluating FP&A tools
+- **Budget Pressure:** queries about slow budget cycles
+
+**LinkedIn Queries might include:**
 - (Pain Points) "financial planning manual process"
 - (Solution Seeking) "FP&A software recommendation"
 - (Growth Signals) "scaling finance team"
@@ -175,8 +129,8 @@ The recurring search scheduler runs every hour. Searches re-trigger only when la
 ## Troubleshooting
 
 **Getting too many irrelevant results?**
-- Your keywords may be too broad. Override with more specific terms.
-- Add exclusion terms to the search (default exclusions are minimal: `giveaway`, `retweet`, `airdrop`).
+- Your keywords may be too broad. Override with more specific terms on X.
+- Add exclusion terms to the search.
 - Focus on intent clusters rather than simple keywords for better precision.
 
 **Not getting enough results?**
@@ -185,12 +139,8 @@ The recurring search scheduler runs every hour. Searches re-trigger only when la
 - Verify that your target audience actively discusses these topics online.
 
 **Keywords seem too generic?**
-- The niche jargon generator adds insider terminology. Make sure your offer includes enough domain context for it to work with.
-- Override with your own validated keywords at search start.
-
-**How many keywords are generated?**
-- X: 15-25 simple keywords + 3-6 intent clusters (2-6 queries each) + competitor keywords + niche jargon
-- LinkedIn: up to 20 keywords + 10-15 search queries
+- Make sure your offer includes enough domain context-  industry jargon, specific pain points, and competitor names help the AI generate more targeted keywords.
+- Override with your own validated keywords at search start (X only).
 
 ## Next Steps
 

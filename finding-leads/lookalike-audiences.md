@@ -8,83 +8,68 @@ Lookalike Audience Discovery follows three steps:
 
 ### 1. Discover Seed Accounts
 
-AutoReach uses **OpenAI web search** (not just LLM knowledge) to find accounts whose audiences overlap with your target market. Based on your offer, it generates search queries, verifies candidates against live APIs, and returns a curated list of seed accounts.
+AutoReach uses AI-powered web search to find accounts whose audiences overlap with your target market. Based on your offer, it searches for relevant accounts, verifies them against live platform APIs, and returns a curated list of seed accounts.
 
-Discovery works on both X and LinkedIn from the same interface — the channel selection switches behavior.
+Discovery works on both X and LinkedIn from the same interface.
 
 **What it searches for:**
 
-The AI searches across five audience categories:
-- **Industry publications** — newsletters, media outlets, trade publications
-- **Professional communities** — groups, forums, community accounts
-- **Vendor/competitors** — competitor accounts and adjacent vendors
-- **Thought leaders** — executives, analysts, and domain experts
-- **Vertical-specific** — niche accounts specific to your industry
+The AI searches across multiple audience categories:
+- **Industry publications**-  newsletters, media outlets, trade publications
+- **Professional communities**-  groups, forums, community accounts
+- **Vendor/competitors**-  competitor accounts and adjacent vendors
+- **Thought leaders**-  executives, analysts, and domain experts
+- **Vertical-specific**-  niche accounts specific to your industry
 
-Each account is classified by type: publication, association, vendor, analyst, executive, or community.
-
-**How candidates are found:**
-- For X: the AI web-searches for `[name] twitter handle` or `x.com/[handle]`
-- For LinkedIn: the AI web-searches for `linkedin.com/in/username`
-- The AI is instructed to find only individual profiles for LinkedIn, not company pages
-
-**Verification and filtering:**
-When a platform account ID is provided, each candidate is verified against the live API (X or LinkedIn). Accounts with fewer than 1,000 followers are discarded. Accounts not found on the platform are also discarded. Without an account ID, AI-suggested names are returned unverified.
-
-**Quantity:** The AI searches for roughly double your requested number of candidates as a buffer (default is 10, so around 20 candidates are evaluated). After verification and deduplication, up to the requested number are returned.
-
-**Location filtering:** If your offer specifies preferred locations, this is passed to the AI prompt as a "LOCATION FOCUS" instruction to prioritize accounts with audiences in your target regions.
+If your offer specifies preferred locations, the AI prioritizes accounts with audiences in your target regions.
 
 ### 2. Extract Followers
 
 Once seed accounts are saved, their followers are extracted through the standard extraction pipelines:
 
-- **X seeds:** A target user is created for follower extraction, feeding into the follower extraction pipeline. Under Autopilot, a default goal of 200 followers is set with enrichment and deep analysis enabled.
-- **LinkedIn seeds:** A LinkedIn seed search is created with a follower filter, feeding into the LinkedIn People Search pipeline. Under Autopilot, buyer expansion is enabled for daily role-rotation extraction.
+- **X seeds:** Followers are extracted and queued for enrichment
+- **LinkedIn seeds:** A people search is created with a follower filter
 
-In the **manual flow**, you discover seeds from the Lookalike Audiences page, save them to your library, then separately trigger extraction. Under **Autopilot**, extraction is fully automatic after discovery.
+In the **manual flow**, you discover seeds from the Lookalike Audiences page, save them to your library, then separately trigger extraction via the "From a Lookalike" option. Under **Autopilot**, extraction is fully automatic after discovery.
 
 ### 3. Score and Add Leads
 
-Every extracted follower goes through the standard enrichment and scoring pipeline. There is no special filtering step in the lookalike service itself — all extracted followers are added as leads and scored by buyer intelligence like any other source. Low-scoring leads will land in Poor Fit or Disqualified states based on their scores.
+Every extracted follower goes through the standard enrichment and scoring pipeline. All extracted followers are added as leads and scored by buyer intelligence like any other source.
 
 ## Search Options
 
 When starting a lookalike search, you configure:
 
-- **Offer** -- select the offer that provides ICP context, location, and competitors
-- **Channel** -- choose X or LinkedIn
-- **Max results** -- how many seed accounts to return (default: 10)
-- **Platform account** -- select your connected X or LinkedIn account (required for live verification)
-- **Profile URL** (optional) -- enter a profile URL for profile-based discovery instead of offer-based
+- **Offer**-  select the offer that provides ICP context, location, and competitors
+- **Channel**-  choose X or LinkedIn
+- **Platform account**-  select your connected X or LinkedIn account
+- **Profile URL** (optional)-  enter a profile URL for profile-based discovery instead of offer-based
 
 **Two discovery modes:**
-- **Offer-based:** Select an offer -- finds seeds matching your offer's ICP, domain, and audience
-- **Profile-based:** Enter a profile URL -- finds accounts similar to a specific person
-
-These modes are mutually exclusive.
+- **By Offer:** Select an offer-  finds seeds matching your offer's ICP, domain, and audience
+- **By Profile URL:** Enter a profile URL-  finds accounts similar to a specific person
 
 ## Available Actions
 
 From the Lookalike Audiences page, you can:
 
-- **Estimate cost** -- preview the estimated cost before running a search
-- **Search for seeds** -- discover seed accounts with real-time progress updates
-- **Save accounts** -- save one or more discovered accounts to your library
-- **Browse saved accounts** -- view your saved accounts with pagination and filtering
-- **Delete accounts** -- remove individual or multiple saved accounts
+- **Estimate cost**-  preview the estimated cost before running a search
+- **Search for seeds**-  discover seed accounts with real-time progress updates
+- **Save accounts**-  save one or more discovered accounts to your library
+- **Browse saved accounts**-  view your saved accounts with pagination and filtering
+- **Delete accounts**-  remove individual or multiple saved accounts
 
 ## Automatic Rotation Under Autopilot
 
-When Autopilot is enabled, seed accounts rotate automatically via the autopilot scheduler (runs every 2 hours):
+When Autopilot is enabled, seed accounts rotate automatically:
 
-1. When a target user or seed search is exhausted, the scheduler discovers **new** seed accounts via web search
-2. New seeds are saved and extraction is immediately created (target user for X, seed search for LinkedIn)
+1. When a seed is exhausted, Autopilot discovers **new** seed accounts via web search
+2. New seeds are saved and extraction begins automatically
 3. Previously used accounts are tracked to avoid duplicates
-4. After 2+ consecutive misses (no new accounts found), the AI is prompted to find "DIFFERENT, lesser-known accounts"
-5. After 3+ consecutive misses, a stall notification is sent to the user
+4. If the AI can't find new relevant accounts, it broadens its search to find lesser-known accounts
+5. If discovery stalls, you receive a notification
 
-This means Autopilot actively discovers fresh seed accounts — it does not just re-extract from existing ones.
+This means Autopilot actively discovers fresh seed accounts-  it does not just re-extract from existing ones.
 
 ## Cost Estimation
 
@@ -110,7 +95,7 @@ Before running a search, use the cost estimation feature to preview estimated co
 
 **Step 1:** AutoReach web-searches for fintech publications, developer community accounts, API-focused thought leaders, and competitor ecosystems on X. Returns 10 verified seed accounts with 1,000+ followers each.
 
-**Step 2:** You save the 6 most relevant seeds. Follower extraction begins — 200 followers per seed, totaling ~1,200 profiles.
+**Step 2:** You save the 6 most relevant seeds. Follower extraction begins-  200 followers per seed, totaling ~1,200 profiles.
 
 **Step 3:** Each follower is enriched and scored. CTOs, engineering leaders, and technical founders who match your ICP surface as active leads. The rest land in Monitor or Poor Fit.
 
@@ -144,5 +129,5 @@ Before running a search, use the cost estimation feature to preview estimated co
 
 ## Next Steps
 
-- **[Buyer Expansion](../autopilot/buyer-expansion.md)**: Automate lookalike discovery with Autopilot's daily expansion
+- **[Continuous Operations](../autopilot/continuous-operations.md)**: Automate lookalike discovery with Autopilot's daily expansion
 - **[Enrichment Pipeline](../enrichment/pipeline.md)**: Understand how extracted followers get enriched and scored

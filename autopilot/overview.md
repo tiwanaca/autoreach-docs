@@ -1,4 +1,4 @@
-# Autopilot Overview
+# Autopilot
 
 Autopilot automatically configures and runs your entire outreach pipeline based on your Offer. Instead of manually creating searches, sequences, and enrollment rules, Autopilot sets everything up and keeps it running continuously.
 
@@ -11,33 +11,24 @@ When you enable Autopilot, it configures:
 - **Sequence creation**: Builds outreach sequences with AI-generated prompts and tone examples
 - **Auto-enrollment**: Enrolls qualified leads into sequences automatically
 - **Buyer expansion**: Discovers new prospects daily from existing high-performing accounts
-- **Monitor resurfacing**: Re-checks lower-scored leads on a tiered schedule for new buying signals
+- **Monitor resurfacing**: Re-checks lower-scored leads for new buying signals
 
 ## Prerequisites
 
-Before enabling Autopilot:
+- At least one **Offer** created with your ICP and value proposition
+- At least one **social account** connected (X and/or LinkedIn)
 
-- **At least one Offer** must be created with your ICP and value proposition
-- **At least one social account** must be connected (X and/or LinkedIn)
+## How It Runs
 
-## How It Works
-
-Autopilot runs several background loops continuously:
-
-- **Lookalike rotation**: Checks periodically whether current extraction sources are exhausted and rotates to fresh seed accounts
-- **Auto-enrollment**: Regularly finds newly scored leads in Active buyer state and enrolls them into sequences
-- **Signal search**: Triggers intent signal searches once initial extraction completes
-- **Buyer expansion**: Runs periodically to expand lead discovery via follower extraction (X) or role rotation (LinkedIn)
-- **Monitor resurfacing**: Re-checks lower-scored leads for new buying signals on a tiered schedule
-
-## The Autopilot Loop
+Once set up, Autopilot runs several continuous operations:
 
 1. **Searches** discover new prospects matching your ICP
-2. **Enrichment & scoring** evaluate each lead's fit and intent
+2. **Enrichment and scoring** evaluate each lead's fit and intent
 3. **Auto-enrollment** moves qualified leads into sequences
 4. **Sequences** execute outreach (likes, follows, DMs, connection requests)
 5. **Resurfacing** re-checks leads below threshold for new signals
 6. **Expansion** discovers more prospects from influencer followers and role searches
+7. **Lookalike rotation** checks whether extraction sources are exhausted and rotates to fresh seed accounts
 
 This cycle runs continuously. Your only job is reviewing conversations in your Inbox and closing deals.
 
@@ -47,6 +38,5 @@ Everything Autopilot configures can also be set up manually. Autopilot saves tim
 
 ## Next Steps
 
-- **[Enabling Autopilot](enabling.md)**: Walk through the enable process
-- **[What Autopilot Does](what-it-does.md)**: Detailed breakdown of each continuous operation
-- **[Pausing and Disabling](pausing-and-disabling.md)**: Control Autopilot without losing data
+- **[Enabling and Disabling Autopilot](enabling.md)**: Walk through setup, pausing, and disabling
+- **[Continuous Operations](continuous-operations.md)**: Auto-enrollment, buyer expansion, and monitor resurfacing in detail

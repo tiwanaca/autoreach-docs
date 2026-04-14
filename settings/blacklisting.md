@@ -4,7 +4,7 @@ Blacklist specific accounts to prevent AutoReach from discovering, enriching, or
 
 ## How Blacklisting Works
 
-Blacklisted accounts are stored by **normalized username** (lowercase, `@` stripped). The system also stores platform identifiers for precise cross-platform matching.
+Blacklisted accounts are matched by username (case-insensitive) across platforms.
 
 When you blacklist an account:
 
@@ -24,7 +24,7 @@ On the **Leads page**, click the menu on any lead and select **Blacklist**. Ente
 
 ### Bulk Blacklist
 
-On the **Leads page**, select multiple leads in the table using the checkboxes. A floating selection bar appears at the bottom — click **Blacklist** to blacklist all selected leads at once. The same cascade removal logic applies to each.
+On the **Leads page**, select multiple leads in the table using the checkboxes. A floating selection bar appears at the bottom-  click **Blacklist** to blacklist all selected leads at once. The same cascade removal logic applies to each.
 
 ## What Blacklisting Prevents
 
@@ -41,10 +41,10 @@ Removing from the blacklist does not restore previously deleted sequence leads o
 
 ## Common Use Cases
 
-- **Competitors** — avoid wasting enrichment costs on accounts you'll never contact
-- **Existing customers** — prevent duplicate outreach
-- **Do-not-contact requests** — comply with prospects who asked to stop receiving messages
-- **Internal contacts** — exclude your own team, CEO, or board members
+- **Competitors**-  avoid wasting enrichment costs on accounts you'll never contact
+- **Existing customers**-  prevent duplicate outreach
+- **Do-not-contact requests**-  comply with prospects who asked to stop receiving messages
+- **Internal contacts**-  exclude your own team, CEO, or board members
 
 ## Next Steps
 

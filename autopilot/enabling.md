@@ -1,26 +1,28 @@
-# Enabling Autopilot
+# Enabling, Pausing, and Disabling Autopilot
 
-Enabling Autopilot is a one-click process. The setup runs in the background and completes in 1–2 minutes.
+## Enabling Autopilot
 
-## Prerequisites
+Enabling Autopilot is a one-click process. The setup runs in the background and completes in 1-2 minutes.
+
+### Prerequisites
 
 - At least one **Offer** created with your ICP and value proposition
 - At least one **social account** connected (X and/or LinkedIn)
 - No existing active Autopilot config for the same Offer
 
-## The Enable Flow
+### The Enable Flow
 
 When you click "Enable Autopilot," the following steps execute:
 
-### Step 1: Create Configuration
+**Step 1: Create Configuration**
 
 Autopilot is activated immediately. Any prior disabled configuration for the same Offer is removed first. The UI returns immediately while setup continues in the background.
 
-### Step 2: Generate AI Content
+**Step 2: Generate AI Content**
 
 Autopilot generates a shared campaign prompt and tone examples for your Offer. This content is reused across all sequences created in the next step.
 
-### Step 3: Create Sequences (Per Platform)
+**Step 3: Create Sequences (Per Platform)**
 
 For each connected platform (X, then LinkedIn), Autopilot:
 
@@ -28,30 +30,75 @@ For each connected platform (X, then LinkedIn), Autopilot:
 2. Generates keywords from your Offer
 3. Creates a recurring search for that platform
 4. Finds a lookalike influencer account via AI search
-5. Creates a seed extraction source -- a follower extraction for X, or a LinkedIn people search with buyer expansion enabled
+5. Creates a seed extraction source (follower extraction for X, or a people search with buyer expansion for LinkedIn)
 
-Platforms are processed sequentially to avoid AI rate limits.
+**Step 4: Background Loops Begin**
 
-### Step 4: Background Loops Begin
+Once setup completes, Autopilot's continuous operations (lookalike rotation, auto-enrollment, signal search) begin running automatically.
 
-Once setup completes, the three Autopilot loops (lookalike rotation, auto-enrollment, signal search) begin processing the new config on their regular intervals.
-
-## What to Expect After Enabling
+### What to Expect After Enabling
 
 - **Searches begin immediately**: Your first recurring searches start running
 - **Follower extraction starts**: Seed accounts begin extracting followers
-- **First leads appear**: Typically within the first few hours as searches and extraction run
+- **First leads appear**: Typically within the first few hours
 - **Auto-enrollment activates**: Qualified leads are enrolled into sequences automatically
 
-## Re-enabling After Disable
+---
 
-If you previously disabled Autopilot and re-enable it:
+## Pausing Autopilot
+
+Pause when you want to temporarily stop all Autopilot operations and resume later exactly where you left off.
+
+**When to pause:** Vacations, short breaks, account maintenance, or adjusting settings before resuming.
+
+**To pause:** Click the pause icon on the autopilot card.
+
+**To resume:** Click the play icon on the autopilot card. Autopilot restores searches, reactivates sequences, and resumes operations.
+
+When paused:
+- Searches are paused (preserved)
+- Sequences are paused
+- Seed sources and lookalike accounts are preserved
+- All leads and conversations are preserved
+
+---
+
+## Disabling Autopilot
+
+Disable when you are stopping outreach for the long term or want a clean slate.
+
+**When to disable:** Fully stopping outreach for an Offer, switching to manual-only mode, or pivoting to a different ICP.
+
+**To disable:** Click the trash icon on the autopilot card, then confirm by clicking **Remove**.
+
+When disabled:
+- Searches and lookalike accounts are deleted
+- Sequences are paused with auto-enrollment disabled
+- Buyer expansion is disabled on seed sources
+- All leads, conversations, and historical data are preserved
+
+### Re-enabling After Disable
+
+When you re-enable Autopilot after disabling:
 
 - New sequences, searches, and lookalike accounts are created fresh
-- Existing leads in the database are preserved and can be re-scored
-- Previous automation infrastructure is not restored — Autopilot starts fresh
+- AI generates a new campaign prompt and tone examples
+- New seed accounts are discovered for follower extraction
+- Existing leads in your database are preserved and can be re-scored
+
+---
+
+## Pausing Individual Sequences
+
+You can pause a single sequence without affecting the rest of Autopilot:
+
+1. Go to **Sequences**
+2. Select the sequence
+3. Click **Pause Sequence**
+
+This stops outreach for that sequence only. Other sequences and Autopilot operations continue normally.
 
 ## Next Steps
 
-- **[What Autopilot Does](what-it-does.md)**: See the continuous operations that begin after setup
-- **[Pausing and Disabling](pausing-and-disabling.md)**: How to stop and resume Autopilot
+- **[Autopilot Overview](overview.md)**: All Autopilot operations at a glance
+- **[Continuous Operations](continuous-operations.md)**: Auto-enrollment, buyer expansion, and monitor resurfacing

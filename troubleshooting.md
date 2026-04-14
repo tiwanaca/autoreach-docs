@@ -42,12 +42,7 @@ A centralized guide for diagnosing and fixing common issues in AutoReach. Each s
 
 **Likely Cause:** AutoReach detected an automation warning from LinkedIn (rate limit, bot detection, or IP block) and paused the account to protect it.
 
-**Fix:** Wait for the cooldown period to expire:
-- Rate limit: 24 hours
-- Bot detection: 7 days
-- IP block: 24 hours
-
-Do not attempt to bypass the pause. AutoReach will automatically resume activity once the cooldown expires.
+**Fix:** AutoReach automatically applies cooldown periods to protect your account. Do not attempt to bypass the pause. AutoReach will automatically resume activity once the cooldown expires.
 
 ---
 
@@ -104,7 +99,7 @@ Do not attempt to bypass the pause. AutoReach will automatically resume activity
 
 **Likely Cause:** The actions are scheduled for a future time based on the delays configured in your flow.
 
-**Fix:** Check the scheduled time on each pending action in the lead timeline. If the timing looks correct, just wait — actions execute at their scheduled time within your activity window. If the delays are wrong, pause the sequence, adjust step delays in the flow editor, then resume.
+**Fix:** Check the scheduled time on each pending action in the lead timeline. If the timing looks correct, just wait-  actions execute at their scheduled time within your activity window. If the delays are wrong, pause the sequence, adjust step delays in the flow editor, then resume.
 
 ---
 
@@ -117,7 +112,7 @@ Do not attempt to bypass the pause. AutoReach will automatically resume activity
 **Fix:**
 1. Check the error message on the failed action
 2. If rate-limited, reduce your daily limits for that action type
-3. If the lead's account has restrictions, the action may not be possible -- consider removing that lead or skipping the step
+3. If the lead's account has restrictions, the action may not be possible - consider removing that lead or skipping the step
 4. Retry the failed action using the retry button
 
 ---
@@ -203,7 +198,7 @@ Do not attempt to bypass the pause. AutoReach will automatically resume activity
 
 **Likely Cause:** You hit the platform's daily or hourly limit for a specific action type.
 
-**Fix:** Wait 24 hours for the cooldown to expire. Then reduce your daily action limits to stay under the platform's thresholds. Start conservative (15-20 DMs/day for X, stay well under LinkedIn's weekly connection limit).
+**Fix:** AutoReach automatically applies cooldown periods when rate limits are hit. Wait for the cooldown to expire, then reduce your daily action limits to stay under the platform's thresholds. Start conservative (15-20 DMs/day for X, stay well under LinkedIn's weekly connection limit).
 
 ---
 
@@ -214,7 +209,7 @@ Do not attempt to bypass the pause. AutoReach will automatically resume activity
 **Likely Cause:** The platform flagged a pattern of activity that looks automated (too many actions in rapid succession, unusual hours, or suspicious IP).
 
 **Fix:**
-1. Wait the full 7-day cooldown -- do not try to bypass it
+1. Wait for the full cooldown period to expire - do not try to bypass it
 2. After the cooldown, reduce your daily limits significantly
 3. Make sure your activity window matches realistic usage patterns
 4. Verify your proxy is working (residential IPs are safest)
@@ -229,7 +224,7 @@ Do not attempt to bypass the pause. AutoReach will automatically resume activity
 
 **Likely Cause:** Your session cookies have been revoked, often because LinkedIn detected a mismatch between your login location and the proxy location.
 
-**Fix:** Reconnect your LinkedIn account via the Chrome Extension. If this happens repeatedly, contact support -- your proxy configuration may need adjustment.
+**Fix:** Reconnect your LinkedIn account via the Chrome Extension. If this happens repeatedly, contact support - your proxy configuration may need adjustment.
 
 ---
 
@@ -293,5 +288,5 @@ Do not attempt to bypass the pause. AutoReach will automatically resume activity
 
 If your issue is not covered here:
 
-1. Check the specific feature's documentation page -- most have their own troubleshooting section
+1. Check the specific feature's documentation page - most have their own troubleshooting section
 2. Email support at **hello@autoreach.tech** with a description of the issue and any error messages you see

@@ -4,46 +4,59 @@ The AI Response Engine generates contextual, stage-aware replies to incoming mes
 
 ## Response Flow
 
-When a new inbound message is detected:
+When a new inbound message is detected, AutoReach:
 
-1. **Stage classification**: The conversation stage is identified (Opener Reply, Discovery, etc.)
-2. **Objection check**: Message is checked for negative/sensitive content
-3. **RAG context**: Knowledge base and tone examples are retrieved via semantic search
-4. **System prompt assembly**: A multi-layer prompt is built with stage instructions, RAG context, tone examples, offer context, and conversation history
-5. **AI generation**: The content AI model generates a response
-6. **Natural response timing**: A delay is applied before sending
-7. **Message delivery**: Sent via the appropriate platform API
-8. **Database save**: Message saved and AI response count incremented
+1. **Classifies the conversation stage** (Opener Reply, Discovery, Objection Handling, etc.)
+2. **Retrieves relevant context** from your knowledge base and tone examples
+3. **Generates a response** tailored to the stage, lead context, and your voice
+4. **Sends with natural timing** to avoid instant robotic replies
 
-## Scheduling
+## Conversation Stages
 
-Responses are scheduled with natural timing to avoid detection. The system uses background scheduling to poll for due responses and process them.
+AutoReach classifies conversations into 7 stages. Each stage has its own tone and goals. The AI detects the current stage and adapts its responses accordingly.
 
-## RAG Context
+### 1. Opener Reply
 
-AutoReach retrieves relevant context from your knowledge base and tone examples for each AI response via semantic search. See [Knowledge Base](knowledge-base.md) for document management and [Tone Examples](tone-examples.md) for conversation samples.
+**Triggered**: Lead just responded to your cold DM.
+**Goal**: Acknowledge their message, show genuine interest, keep it light. No pitching.
 
-## Stage-Specific Generation
+### 2. Discovery
 
-The AI adapts response style based on the detected conversation stage:
+**Triggered**: You are learning about their situation.
+**Goal**: Ask targeted questions about their pain points, timeline, and constraints.
 
-- **Opener Reply**: Light acknowledgment, no pitch
-- **Discovery**: Inquisitive, learning-focused
-- **Value Prop**: Confident but consultative
-- **Objection Handling**: Direct, empathetic
-- **Soft Close**: Natural next-step suggestion
-- **Follow Up**: Fresh angle, minimal pressure
-- **Graceful Exit**: Respectful, door left open
+### 3. Value Prop
 
-## Anti-Consulting Rules
+**Triggered**: Lead is asking about your solution or you are introducing it.
+**Goal**: Connect your value directly to what the lead mentioned, using relevant proof points from your knowledge base.
 
-Built-in guardrails prevent giving away too much value before qualifying:
+### 4. Objection Handling
 
-- Don't over-explain your solution before qualifying the prospect
-- Don't answer every technical question in full detail
-- Redirect curiosity to conversations: "This is exactly what we'd dig into on a quick call"
+**Triggered**: Lead raises a concern, budget question, or pushback.
+**Goal**: Validate the concern first, then address it with a specific counter-point and clear next step.
 
-The AI detects when a prospect is genuinely evaluating (via stage detection) and adjusts accordingly.
+### 5. Soft Close
+
+**Triggered**: Lead seems ready to move forward or book a call.
+**Goal**: Propose a specific, easy next step without being pushy.
+
+### 6. Follow Up
+
+**Triggered**: Lead went silent for a configurable period.
+**Goal**: Re-engage with a fresh angle or new information that gives the lead a reason to respond.
+
+### 7. Graceful Exit
+
+**Triggered**: Lead declines or the conversation has reached a dead end.
+**Goal**: Exit respectfully and leave the door open for the future.
+
+### Stage Detection
+
+The AI classifies the current stage based on the full conversation history. Conversations can move between stages non-linearly. For example, from Soft Close back to Objection Handling if the lead raises new concerns. The classifier re-evaluates on every new message.
+
+## Anti-Consulting Guardrails
+
+The AI is designed to avoid giving away too much value before qualifying a prospect. It redirects detailed technical questions toward a call or meeting rather than answering everything in a DM. This keeps conversations moving toward a booking rather than becoming free consulting sessions.
 
 ## Max AI Responses Per Conversation
 
@@ -59,14 +72,18 @@ When a lead goes silent, the follow-up scheduler can automatically re-engage:
 
 | Setting | Default | Range |
 |---|---|---|
-| Follow-up enabled | false | — |
-| Wait days | 3 | 1–30 |
-| Max follow-ups | 2 | 1–10 |
+| Follow-up enabled | false | - |
+| Wait days | 3 | 1-30 |
+| Max follow-ups | 2 | 1-10 |
 
-The follow-up scheduler checks periodically for conversations where the lead hasn't responded within the configured wait period. Follow-up messages are generated with a fresh angle and queued for delivery.
+When a lead has not responded within the configured wait period, a follow-up message is generated with a fresh angle and sent automatically.
+
+Follow-ups respect:
+- The max follow-up count per conversation
+- The max AI responses per conversation limit
+- Your activity window
 
 ## Next Steps
 
-- **[Conversation Stages](conversation-stages.md)**: How stages are detected and classified
-- **[Tone Examples](tone-examples.md)**: Customize the AI's voice
-- **[Knowledge Base](knowledge-base.md)**: Add context for smarter responses
+- **[Tone and Knowledge Base](tone-and-knowledge.md)**: Customize the AI's voice and provide sales context
+- **[Conversation Analyzer](conversation-analyzer.md)**: AI suggestions for improving your sequences

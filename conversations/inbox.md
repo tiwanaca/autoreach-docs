@@ -1,6 +1,6 @@
-# Inbox
+# Inbox and Manual Controls
 
-The Inbox is your unified view of all conversations across X and LinkedIn. Every DM and reply flows through here, with real-time message detection and AI status indicators.
+The Inbox is your unified view of all conversations across X and LinkedIn. Every DM and reply flows through here, with real-time message detection and AI status indicators. You always have full control to step in, override AI responses, and handle conversations that need a human touch.
 
 ## Conversation List
 
@@ -14,11 +14,11 @@ Your Inbox displays all conversations in a single, paginated list. Each conversa
 
 ### Starring Conversations
 
-You can star important conversations to keep them easy to find. Click the star icon on any conversation to toggle it. Starred conversations can be used as a personal shortlist for high-priority leads or deals in progress.
+Click the star icon on any conversation to keep it easy to find. Starred conversations work as a personal shortlist for high-priority leads or deals in progress.
 
 ### Unread Indicators
 
-New inbound messages are tracked automatically. The Inbox shows an unread count so you can see at a glance how many conversations have new messages since you last checked. This count updates in real time as new messages arrive.
+New inbound messages are tracked automatically. The Inbox shows an unread count that updates in real time as new messages arrive.
 
 ### Filtering
 
@@ -27,34 +27,46 @@ Filter conversations by:
 - **Sequence** (specific sequence)
 - **Search query** (lead name)
 
-Combine filters to narrow your view -- for example, show only conversations with a "Replied" status to focus on warm leads.
+Combine filters to narrow your view. For example, show only "Replied" conversations to focus on warm leads.
 
 ## Real-Time Message Detection
 
-New messages on X are detected in real time via Twitter's native DM connection. This means conversations appear in your Inbox as they happen without polling delays.
+New messages on X are detected in real time via Twitter's native DM connection. Conversations appear in your Inbox as they happen without polling delays.
 
 ## AI Status Indicators
 
-- **AI ON toggle**: Visible at the top of each conversation — indicates whether AI can auto-reply
+- **AI ON toggle**: Visible at the top of each conversation, indicates whether AI can auto-reply
 - **Bot icon**: A red Bot icon overlay appears on conversations where AI is disabled
 
-## AI Control Per Conversation
+## Sending Manual Messages
 
-Toggle AI on or off for individual conversations:
+Send a message directly from the Inbox without AI involvement:
+
+1. Open a conversation
+2. Type your message
+3. Click Send
+
+Manual messages are:
+- **Sent instantly** with no scheduling delay
+- **Not subject to daily limits**, so manual DMs do not count against your action limits
+- **Auto-cancel pending AI responses**. If the AI had a response queued, it is immediately cancelled when you send a manual message
+
+## AI ON/OFF Toggle
+
+At the top of any conversation, toggle AI responses:
 
 - **AI ON**: AI generates and sends responses automatically based on your prompts and tone examples
 - **AI OFF**: Only your manual messages are sent
 
-The toggle applies to that single conversation only, not the entire sequence.
+The toggle applies to that single conversation only. You can have AI enabled for most conversations while handling your hottest prospects manually.
 
 ## Call Briefs
 
 Click the **Call Brief** button in any conversation to generate a pre-call preparation document. The brief pulls data from the lead's profile, conversation history, and buyer intelligence to give you talking points before a meeting.
 
-See **[Call Briefs](../meetings/call-briefs.md)** for details.
+See **[Meetings, Booking, and Call Briefs](../meetings/meetings.md)** for details.
 
 ## Next Steps
 
 - **[AI Response Engine](ai-response-engine.md)**: How AI generates responses
-- **[Manual Controls](manual-controls.md)**: Send manual messages, toggle AI, manage conversations
-- **[Tone Examples](tone-examples.md)**: Customize the AI's voice
+- **[Tone and Knowledge Base](tone-and-knowledge.md)**: Customize the AI's voice and provide sales context

@@ -13,7 +13,7 @@ After starting a sequence, AutoReach begins executing actions according to the d
 - **Within 24 hours**: Your first DMs go out (assuming a 1-day delay before messaging)
 - **24-48 hours after DMs**: First replies start arriving
 
-Do not expect instant results. Social outreach is a slow burn -- most prospects need to see your name a few times before they engage.
+Do not expect instant results. Social outreach is a slow burn - most prospects need to see your name a few times before they engage.
 
 > **Tip:** Check the Activity Feed on the **Dashboard** to see exactly what actions AutoReach has completed and when.
 
@@ -23,9 +23,9 @@ Do not expect instant results. Social outreach is a slow burn -- most prospects 
 
 Open your dashboard to see your pipeline metrics. The key numbers to watch early on are:
 
-- **Contacted** -- confirms DMs are actually being delivered
-- **Replied** -- the metric that matters most; aim for 5-15% reply rates on cold outreach
-- **Meetings Booked** -- the ultimate conversion (this may take a few days to appear)
+- **Contacted** - confirms DMs are actually being delivered
+- **Replied** - the metric that matters most; aim for 5-15% reply rates on cold outreach
+- **Meetings Booked** - the ultimate conversion (this may take a few days to appear)
 
 If you see "Contacted" climbing but "Replied" stuck at zero after 48 hours, see the troubleshooting section below.
 
@@ -43,7 +43,7 @@ Replies appear in your **Inbox** (Conversations section). Each reply shows:
 
 - **AI is on by default**: If you left AI responses enabled, AutoReach will automatically reply to incoming messages using your offer context and tone examples. Review the AI's responses early on to make sure the tone matches what you want.
 - **Take over manually**: Click on any conversation to read the thread. You can toggle AI off for that conversation and respond yourself whenever a lead shows genuine buying interest.
-- **Add tone examples**: If the AI's tone is not quite right, go to your sequence settings and add tone examples -- these teach the AI how you actually talk.
+- **Add tone examples**: If the AI's tone is not quite right, go to your sequence settings and add tone examples - these teach the AI how you actually talk.
 - **Mark as meeting booked**: When a lead agrees to a call, mark the conversation accordingly so it reflects in your metrics.
 
 > **Tip:** For your first few days, manually review every AI response before the next one goes out. This helps you tune the AI's style and catch anything off-brand.
@@ -99,7 +99,7 @@ See [Autopilot Overview](../autopilot/overview.md) for full details.
 
 ## Enabling the Engagement Engine
 
-The Engagement Engine builds your brand presence by engaging with relevant content on X and LinkedIn. It operates separately from sequences and does not send DMs -- it likes, replies to, and comments on posts from people in your target audience.
+The Engagement Engine builds your brand presence by engaging with relevant content on X and LinkedIn. It operates separately from sequences and does not send DMs - it likes, replies to, and comments on posts from people in your target audience.
 
 Why this matters:
 
@@ -118,20 +118,20 @@ See [Engagement Engine Overview](../engagement-engine/overview.md) for setup ins
 ### "My sequence is active but no actions are happening"
 - Check that your connected accounts are healthy (no paused or error status on the **Accounts** page)
 - Verify you have leads enrolled in the sequence (open the sequence and check the Leads tab)
-- Check your activity window -- actions only execute during your configured hours
+- Check your activity window - actions only execute during your configured hours
 - Make sure your daily action limits have not been reached for today
 
 ### "DMs are sending but nobody is replying"
-- Review message quality with Simulation -- personalization may be weak
+- Review message quality with Simulation - personalization may be weak
 - Check that your leads are relevant (high buyer scores)
 - Verify your DMs are not landing in spam (check from the recipient's perspective if possible)
 - Consider adding warmup steps before the DM
-- Wait at least 48 hours -- some people take time to respond
+- Wait at least 48 hours - some people take time to respond
 
 ### "Leads are not getting scored"
 - Verify your offer is fully configured with ICP details, pain points, and qualifying criteria
-- Check the health warnings on the Dashboard -- your API keys may have run out of credits
-- Look at the lead's profile -- if enrichment has not completed, scoring cannot run yet
+- Check the health warnings on the Dashboard - your API keys may have run out of credits
+- Look at the lead's profile - if enrichment has not completed, scoring cannot run yet
 
 ### "AI messages look generic or off-brand"
 - Add tone examples to your sequence (go to the Tone Examples section in sequence settings)
@@ -140,7 +140,7 @@ See [Engagement Engine Overview](../engagement-engine/overview.md) for setup ins
 
 ### "Account shows a warning or paused status"
 - Check the account health card on the **Accounts** page for the specific error
-- If rate-limited, wait for the cooldown period to expire (24 hours for rate limits, 7 days for bot detection)
+- If rate-limited, AutoReach automatically applies cooldown periods to protect your account. Wait for the cooldown to expire
 - If cookies expired, reconnect via the Chrome Extension (click three dots > Reconnect)
 - Review the [Account Safety](../settings/account-safety.md) guide for prevention tips
 
@@ -149,7 +149,7 @@ See [Engagement Engine Overview](../engagement-engine/overview.md) for setup ins
 ## Next Steps
 
 - **[Building Sequences](../outreach/building-sequences.md)**: Refine your sequence flow and add new steps
-- **[Cold DM Generation](../outreach/cold-dm-generation.md)**: Improve your DM templates and AI prompts
-- **[Simulation and A/B Testing](../outreach/simulation.md)**: Preview messages before sending
+- **[DM Personalization](../outreach/dm-personalization.md)**: Improve your DM templates and AI prompts
+- **[Simulation & A/B Testing](../outreach/simulation-and-testing.md)**: Preview messages before sending
 - **[Autopilot Overview](../autopilot/overview.md)**: Automate lead discovery and enrollment
 - **[Engagement Engine](../engagement-engine/overview.md)**: Build brand presence through content engagement

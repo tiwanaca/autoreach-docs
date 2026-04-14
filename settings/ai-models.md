@@ -6,12 +6,12 @@ Configure which AI models AutoReach uses for different tasks. Each category has 
 
 Connect your AI providers by adding API keys in **Settings > AI & Models**:
 
-- **AI provider API keys** — required for all AI-powered features (Anthropic and/or OpenAI)
-- **Email discovery API key** — required for email finding (Findymail)
+- **AI provider API keys**-  required for all AI-powered features (Anthropic and/or OpenAI)
+- **Email discovery API key**-  required for email finding (Findymail)
 
 ## Model Categories
 
-AutoReach uses AI across **10 categories**. Each has independent primary and fallback model settings:
+AutoReach uses AI across multiple categories. Each has independent primary and fallback model settings:
 
 | Category | Purpose |
 |---|---|
@@ -34,7 +34,7 @@ Each category can be customized with a primary and fallback model selection. The
 
 If the primary model fails (timeout, rate limit, API error), AutoReach automatically switches to the fallback model for that operation. This provides resilience without manual intervention.
 
-In practice, about 85% of requests succeed on the primary model, and about 15% fall back to the secondary model. You do not need to do anything when a fallback occurs -- the system handles it automatically and the output is still delivered. The only visible effect is that your cost reflects the blended rate of both models rather than just the primary.
+You do not need to do anything when a fallback occurs-  the system handles it automatically and the output is still delivered. The only visible effect is that your cost reflects the blended rate of both models rather than just the primary.
 
 If both the primary and fallback models fail (rare, but possible during provider outages), the operation is retried later.
 
@@ -54,9 +54,9 @@ If both the primary and fallback models fail (rare, but possible during provider
 
 Model pricing varies significantly. As a rough guide:
 
-- **Nano-class models** are the cheapest option -- ideal for scoring, classification, and keyword generation where volume is high
+- **Nano-class models** are the cheapest option - ideal for scoring, classification, and keyword generation where volume is high
 - **Mid-tier models** (Sonnet-class) offer a good balance and work well as fallback models
-- **Premium models** (Opus-class) deliver the highest quality but cost considerably more per token -- reserve these for content writing if budget is a concern
+- **Premium models** (Opus-class) deliver the highest quality but cost considerably more per token - reserve these for content writing if budget is a concern
 
 Since scoring and classification run on every lead while content writing only runs when sending messages, moving scoring to a cheaper model produces larger savings than optimizing content writing.
 
@@ -64,15 +64,15 @@ Since scoring and classification run on every lead while content writing only ru
 
 **Budget-conscious setup:** Use nano models for scoring, classification, and keyword generation. Use a mid-tier model for content writing. This minimizes per-lead costs while keeping message quality reasonable.
 
-**Quality-focused setup:** Use a premium model for content writing (DMs, posts, replies). Keep scoring and classification on nano or mid-tier models -- these tasks do not benefit as much from premium models. This gives you the best message quality without overspending on scoring.
+**Quality-focused setup:** Use a premium model for content writing (DMs, posts, replies). Keep scoring and classification on nano or mid-tier models - these tasks do not benefit as much from premium models. This gives you the best message quality without overspending on scoring.
 
 ## Settings UI
 
-The AI Configuration section in Settings shows all 10 categories with primary and fallback dropdowns. Changes take effect immediately and are validated on save.
+The AI Configuration section in Settings shows all categories with primary and fallback dropdowns. Changes take effect immediately and are validated on save.
 
 ## Dynamic Cost Impact
 
-Your model selections directly affect pipeline costs. The cost estimation system reads your actual model configuration and calculates costs using blended pricing (85% primary + 15% fallback). See **[Cost Estimation](cost-estimation.md)** for details.
+Your model selections directly affect pipeline costs. The cost estimation system reads your actual model configuration and calculates blended pricing based on observed fallback rates. See **[Cost Estimation](cost-estimation.md)** for details.
 
 ## Next Steps
 

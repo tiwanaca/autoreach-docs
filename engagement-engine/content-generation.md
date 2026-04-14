@@ -1,28 +1,25 @@
-# Content Generation
+# Content Generation and Approvals
 
-All Engagement Engine content is AI-generated using your offer context, content pillars, and the current week's theme.
+All Engagement Engine content is AI-generated using your offer context, content pillars, and the current week's theme. You control what gets posted through the approval queue.
 
 ## Generation Flow
 
-1. **Input**: Offer, ICP, pain points, weekly pillar, current date
-2. **AI generation**: Claude (primary) with OpenAI fallback generates content
-3. **Post-processing**: Em dashes are replaced with hyphens, formatting is cleaned
-4. **Approval routing**: Content enters the approval queue as **Pending Approval**, or goes directly to the post queue if auto-approval is enabled
+1. **Input**: Your offer, ICP, pain points, weekly pillar, and current date
+2. **AI generation**: Content is generated using your configured AI models
+3. **Approval routing**: Content enters the approval queue as **Pending Approval**, or goes directly to the post queue if auto-approval is enabled
 
 ## X Tweets
 
 Tweets are short-form content generated daily based on the current week's pillar:
 
 - Concise and engaging, optimized for the X platform
-- References current year and recent trends (year-awareness is injected into every prompt)
+- References current year and recent trends
 - Matches your professional voice and tone
-- 2–4 tweets generated per day (with 15% chance of 0 tweets)
 
 ## LinkedIn Posts
 
 LinkedIn posts are longer, narrative-driven content:
 
-- One post per day (with 20% chance of 0 posts)
 - Professional tone suited to the LinkedIn platform
 - Designed for engagement, comments, and shares
 
@@ -31,26 +28,63 @@ LinkedIn posts are longer, narrative-driven content:
 When the Engagement Engine replies to or comments on other posts, it generates contextual responses:
 
 - References the original post specifically
-- Adds value to the conversation (not generic responses like "great post")
+- Adds value to the conversation (not generic "great post" responses)
 - Matches your professional voice
-- 1–3 sentences, concise and conversational
+- Concise and conversational
 
 ## Year Awareness
 
-All content generation prompts include current date and year context. This ensures posts reference recent trends and don't contain outdated year references.
+All content generation prompts include current date and year context. This ensures posts reference recent trends and do not contain outdated year references.
 
-## Editing and Customization
+---
 
-You can edit any piece of generated content before it posts:
+## Approval Queue
+
+All generated content enters the approval queue as "Pending Approval" unless auto-approval is enabled. Each item shows the content text and its scheduled post time.
+
+### Approval Statuses
+
+| Status | Description |
+|---|---|
+| Pending Approval | Awaiting your review |
+| Pending | Approved and waiting to post at scheduled time |
+| Posting | Currently being posted |
+| Posted / Completed | Successfully published |
+| Discarded | Permanently removed by you |
+| Regenerated | Replaced with a new AI-generated version |
+| Skipped | Expired without review or approval queue disabled |
+| Failed | Post attempt failed |
+
+### Actions
+
+**Approve** - Post the content as-is at its scheduled time. The status moves to "Pending".
+
+**Regenerate** - Replace the content with a new AI-generated version. The new version enters the queue as a new "Pending Approval" item.
+
+**Discard** - Permanently remove the content. No replacement is generated.
+
+**Edit** - Modify the text before approving:
 
 1. Open the approval queue
 2. Edit the text as needed
 3. Approve the edited version
 
-See **[Approvals](approvals.md)** for the full approval workflow.
+### Auto-Approval
+
+Toggle **auto-approval** in your Engagement Engine settings. When enabled:
+
+- Generated content goes directly to "Pending" status (skips the approval queue)
+- Content posts automatically at scheduled times without manual review
+- You can still view posted content in activity logs
+
+When disabled, all content requires manual review before posting.
+
+### Approval Expiry
+
+Pending approvals expire after **48 hours**. Stale approvals are automatically marked as "Skipped". This prevents a backlog of outdated content from accumulating if you do not review the queue regularly.
 
 ## Next Steps
 
-- **[Approvals](approvals.md)**: Review and manage content before posting
-- **[Content Strategy & Pillars](content-strategy.md)**: How content themes are organized
-- **[Daily Action Allocation](daily-actions.md)**: How often content is posted
+- **[Content Strategy and Pillars](content-strategy.md)**: How content themes are organized
+- **[Engagement Automation](engagement.md)**: How engagement targeting works
+- **[Engagement Engine Overview](overview.md)**: Return to the overview

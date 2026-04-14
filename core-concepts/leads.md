@@ -73,12 +73,12 @@ Bulk import leads from a spreadsheet with X handle, LinkedIn URL, or email.
 
 When a lead enters AutoReach, it goes through automatic enrichment in the background:
 
-1. **Profile enrichment:** Enrich LinkedIn and X profiles in parallel — extract bio, headline, experience, education, skills, and company data.
+1. **Profile enrichment:** Enrich LinkedIn and X profiles in parallel-  extract bio, headline, experience, education, skills, and company data.
 2. **Activity enrichment:** Fetch recent posts, engagement patterns, and social activity
 3. **Location enrichment:** *(conditional)* Resolve lead location when geographic targeting is enabled
 4. **Scoring:** Run Buyer Intelligence to calculate fit, intent, and timing scores
 
-As each stage completes, the lead's profile gets richer. You can view partial data during enrichment. Scoring runs after enrichment completes, but partial enrichment failures do not block scoring — the lead is scored with whatever data is available.
+As each stage completes, the lead's profile gets richer. You can view partial data during enrichment. Scoring runs after enrichment completes, but partial enrichment failures do not block scoring-  the lead is scored with whatever data is available.
 
 > **Warning:** Enrichment speed varies. X and LinkedIn rate limiting can affect enrichment speed. Large batches may take time to fully enrich.
 
@@ -86,20 +86,20 @@ As each stage completes, the lead's profile gets richer. You can view partial da
 
 Every lead has a buyer state that determines where it appears in the UI and whether it is eligible for outreach:
 
-| State | UI Tab Label | Condition | Where It Appears |
+| State | UI Tab Label | Description | Where It Appears |
 | --- | --- | --- | --- |
-| **Active** | **Ready** | Buyer Score >= 60 | Buyers page (Ready tab) |
-| **Monitor** | **Emerging** | Buyer Score 30-59 | Buyers page (Emerging tab) |
-| **Poor Fit** | **Low Priority** | Buyer Score < 30 (but fit >= 15 or score >= 15) | Buyers page (Low Priority tab) |
-| **Disqualified** | **Disqualified** | Fit < 15 AND Buyer Score < 15 | Buyers page (Disqualified tab) |
-| **Not Scored** | **Analyzing** | Enrichment not complete | Buyers page (Analyzing tab) |
-| **Manual Outreach** | **Manual** | User override | Buyers page (Manual tab), treated as Active |
+| **Active** | **Ready** | High-scoring leads ready for outreach | Buyers page (Ready tab) |
+| **Monitor** | **Emerging** | Promising leads not yet ready for outreach | Buyers page (Emerging tab) |
+| **Poor Fit** | **Low Priority** | Low-scoring leads unlikely to convert | Buyers page (Low Priority tab) |
+| **Disqualified** | **Disqualified** | Leads that do not match your ICP | Buyers page (Disqualified tab) |
+| **Not Scored** | **Analyzing** | Enrichment not yet complete | Buyers page (Analyzing tab) |
+| **Manual Outreach** | **Manual** | User override - treated as Active | Buyers page (Manual tab) |
 
-See [Buyer States](buyer-states.md) for full details on each state and how transitions work.
+See [Buyer Intelligence](buyer-intelligence.md) for full details on each state and how transitions work.
 
 ## Cross-Platform Profile Matching
 
-You can search for a lead's profile on the other platform by selecting leads, clicking Enrich, and enabling "Find LinkedIn" or "Find X Profile" under Profile Discovery. This cross-platform data makes enrichment and scoring far more accurate than single-platform data alone. See [Cross-Platform Matching](../finding-leads/cross-platform-matching.md) for details.
+You can search for a lead's profile on the other platform by selecting leads, clicking Enrich, and enabling "Find LinkedIn" or "Find X Profile" under Profile Discovery. This cross-platform data makes enrichment and scoring far more accurate than single-platform data alone. See [Lead Pool](../finding-leads/lead-pool.md) for details.
 
 ## Lead Profile Data
 
@@ -158,5 +158,5 @@ Once enrolled in a sequence, a lead progresses through these statuses:
 
 ## Next Steps
 
-* [**Buyer Intelligence & Scoring**](buyer-scoring.md): Learn how AutoReach scores leads across fit, intent, and timing
+* [**Buyer Intelligence**](buyer-intelligence.md): Learn how AutoReach scores leads across fit, intent, and timing
 * [**Finding Leads Overview**](../finding-leads/overview.md): Explore all the ways to discover new leads

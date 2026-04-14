@@ -6,15 +6,12 @@ The Conversation Analyzer reviews your conversations, identifies patterns, and g
 
 When you run an analysis:
 
-1. Fetches all replied conversations for the sequence (statuses: Replied, Meeting Booked, Lost, Completed, Graceful Exit)
-2. Classifies outcomes:
-   - **Positive**: Meeting Booked
-   - **Negative**: Lost, Graceful Exit
-   - **Neutral**: all others
-3. Sends the classified conversations to an AI model for pattern analysis
-4. Generates **3–7 actionable suggestions**
+1. Fetches all replied conversations for the sequence
+2. Classifies outcomes (positive, negative, neutral) based on conversation status
+3. Analyzes patterns across your conversations using AI
+4. Generates actionable suggestions for improvement
 
-Analysis is triggered manually — it is not automatic.
+Analysis is triggered manually-  it is not automatic.
 
 ## Suggestion Types
 
@@ -35,9 +32,9 @@ A tone example contains anti-patterns or is consistently associated with stalled
 ### Modify Prompt
 
 Your AI prompt needs adjustment. Each prompt modification suggestion targets a specific prompt field:
-- **AI Prompt** — general conversation AI instructions
-- **Warmup Prompt** — warmup engagement prompt
-- **DM Generation Prompt** — cold DM generation prompt
+- **AI Prompt**-  general conversation AI instructions
+- **Warmup Prompt**-  warmup engagement prompt
+- **DM Generation Prompt**-  cold DM generation prompt
 
 ## Applying Suggestions
 
@@ -49,9 +46,9 @@ For each suggestion, you can:
 
 ## When to Run Analysis
 
-Run the Conversation Analyzer after accumulating enough conversations for meaningful patterns — typically after 20+ replied conversations. The more data available, the more reliable the suggestions.
+Run the Conversation Analyzer after accumulating enough conversations for meaningful patterns-  typically after 20+ replied conversations. The more data available, the more reliable the suggestions.
 
 ## Next Steps
 
-- **[Tone Examples](tone-examples.md)**: Manage the tone examples that suggestions modify
+- **[Tone and Knowledge Base](tone-and-knowledge.md)**: Manage the tone examples that suggestions modify
 - **[AI Response Engine](ai-response-engine.md)**: How tone and prompt changes affect responses

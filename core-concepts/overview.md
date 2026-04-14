@@ -12,7 +12,7 @@ AutoReach connects six core concepts into an intelligent outreach machine. Under
 
 **Leads** are the people you're trying to reach. AutoReach automatically discovers them across X and LinkedIn, unifying their profiles across platforms. Each lead gets enriched with education, experience, signals, and social activity data.
 
-**Buyer Intelligence** is the AI-powered brain of AutoReach. Our intent-led scoring system analyzes each lead across three dimensions (fit, intent, and timing) to surface leads with active buying signals above cold ICP matches, while ensuring strong fits are never missed.
+**Buyer Intelligence** is the AI-powered brain of AutoReach. It analyzes each lead across three dimensions (fit, intent, and timing) to surface leads with active buying signals, while ensuring strong fits are never missed.
 
 **Sequences** are your multi-step outreach campaigns. Define the actions you want to take (send DM, like post, follow), set the timing, and AutoReach executes them automatically across your enrolled leads.
 
@@ -76,7 +76,5 @@ Each concept builds on the others:
 ## What's Next?
 
 - **[How Leads Work](./leads.md)** - Discover how AutoReach sources, enriches, and organizes leads
-- **[Buyer Intelligence & Scoring](./buyer-scoring.md)** - Understand the three-dimensional scoring model
-- **[Buyer States](./buyer-states.md)** - Learn the six buyer states and where they appear in the UI
+- **[Buyer Intelligence](./buyer-intelligence.md)** - Understand the three-dimensional scoring model, buyer states, and signal detection
 - **[Offers & Knowledge Base](./offers-and-knowledge-base.md)** - Deep dive into how offers power everything
-- **[Signal Detection](./signals.md)** - Catalog of all signals AutoReach identifies

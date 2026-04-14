@@ -52,19 +52,19 @@ Yes. You can export leads from the All Leads page or the Buyers page. Use the ex
 
 ### How does buyer scoring work?
 
-AutoReach scores each lead across three dimensions: Fit (does this person match your ICP?), Intent (are they actively looking for a solution?), and Timing (is this the right moment to reach them?). These combine into a single Buyer Score from 0-100 that determines the lead's buyer state. See [Buyer Intelligence & Scoring](core-concepts/buyer-scoring.md) for the full breakdown.
+AutoReach scores each lead across three dimensions: Fit (does this person match your ICP?), Intent (are they actively looking for a solution?), and Timing (is this the right moment to reach them?). These combine into a single Buyer Score from 0-100 that determines the lead's buyer state. See [Buyer Intelligence & Scoring](core-concepts/buyer-intelligence.md) for the full breakdown.
 
 ### Why is a lead scored as Poor Fit?
 
-A lead lands in Poor Fit when their Buyer Score is below 30. This usually means they have a significant mismatch with your ICP, such as wrong industry, wrong seniority, or wrong company size. Check the scoring breakdown to see which dimension scored lowest. Poor Fit leads are still monitored and can be promoted if new signals appear, like a job change or new social activity. See [Buyer States](core-concepts/buyer-states.md) for details.
+A lead lands in Poor Fit when their Buyer Score is below 30. This usually means they have a significant mismatch with your ICP, such as wrong industry, wrong seniority, or wrong company size. Check the scoring breakdown to see which dimension scored lowest. Poor Fit leads are still monitored and can be promoted if new signals appear, like a job change or new social activity. See [Buyer States](core-concepts/buyer-intelligence.md) for details.
 
 ### Can a lead's score change over time?
 
-Yes. Scores are not static. They update when new signals are detected (a relevant post, a job change, company funding), when you update your offer definition, or when you trigger a manual rescore. The resurfacing scheduler automatically rechecks Monitor and Poor Fit leads on a tiered cycle ranging from every 5 days to every 21 days. See [Monitor Resurfacing](autopilot/monitor-resurfacing.md).
+Yes. Scores are not static. They update when new signals are detected (a relevant post, a job change, company funding), when you update your offer definition, or when you trigger a manual rescore. The resurfacing scheduler automatically rechecks Monitor and Poor Fit leads on a regular cycle. See [Continuous Operations](autopilot/continuous-operations.md).
 
 ### What is the difference between Active and Monitor buyer states?
 
-Active leads (score 60+) are ready for outreach and eligible for automatic enrollment into sequences. Monitor leads (score 30-59) have potential but are not quite ready, perhaps strong fit but weak intent. Monitor leads are automatically rechecked on a regular schedule and promoted to Active if their score improves. See [Buyer States](core-concepts/buyer-states.md).
+Active leads are ready for outreach and eligible for automatic enrollment into sequences. Monitor leads have potential but are not quite ready - perhaps strong fit but weak intent. Monitor leads are automatically rechecked on a regular schedule and promoted to Active if their score improves. See [Buyer Intelligence](core-concepts/buyer-intelligence.md).
 
 ---
 
@@ -96,11 +96,11 @@ Yes. You can have multiple active sequences running simultaneously, even on the 
 
 ### How does AI personalize my DMs?
 
-When a DM step executes, AutoReach replaces template variables (like first name, company, role) with real lead data, then passes any remaining placeholders to the AI along with the lead's profile, recent posts, your offer context, and knowledge base content. The AI fills in context-specific details and ensures the message sounds natural. See [Cold DM Generation](outreach/cold-dm-generation.md).
+When a DM step executes, AutoReach replaces template variables (like first name, company, role) with real lead data, then passes any remaining placeholders to the AI along with the lead's profile, recent posts, your offer context, and knowledge base content. The AI fills in context-specific details and ensures the message sounds natural. See [Cold DM Generation](outreach/dm-personalization.md).
 
 ### How do I customize the tone of AI messages?
 
-Add tone examples to your sequence. These are conversation samples that teach the AI how you sound. The AI retrieves the most relevant examples at response time via semantic search. You can also adjust the AI prompt and DM generation prompt in your sequence settings. AutoReach auto-captures winning conversation patterns from meetings you book. See [Tone Examples](conversations/tone-examples.md).
+Add tone examples to your sequence. These are conversation samples that teach the AI how you sound. The AI retrieves the most relevant examples at response time via semantic search. You can also adjust the AI prompt and DM generation prompt in your sequence settings. AutoReach auto-captures winning conversation patterns from meetings you book. See [Tone Examples](conversations/tone-and-knowledge.md).
 
 ### What does "max AI responses = 0" mean?
 
@@ -112,15 +112,15 @@ A value of 0 means unlimited. The AI will continue responding to a conversation 
 
 ### How does the AI know what stage a conversation is in?
 
-AutoReach classifies conversations into 7 stages: Opener Reply, Discovery, Value Prop, Objection Handling, Soft Close, Follow Up, and Graceful Exit. Stage detection uses a combination of heuristics (message count, objection count) and AI classification based on conversation history. The AI adapts its tone and goals for each stage. See [Conversation Stages](conversations/conversation-stages.md).
+AutoReach classifies conversations into 7 stages: Opener Reply, Discovery, Value Prop, Objection Handling, Soft Close, Follow Up, and Graceful Exit. Stage detection uses a combination of heuristics (message count, objection count) and AI classification based on conversation history. The AI adapts its tone and goals for each stage. See [Conversation Stages](conversations/ai-response-engine.md).
 
 ### Can I take over a conversation from the AI?
 
-Yes. Toggle AI off for any individual conversation using the AI ON/OFF switch in the Inbox. When AI is off, only your manual messages are sent. Sending a manual message also auto-cancels any pending AI response. You can toggle AI back on at any time. See [Manual Controls](conversations/manual-controls.md).
+Yes. Toggle AI off for any individual conversation using the AI ON/OFF switch in the Inbox. When AI is off, only your manual messages are sent. Sending a manual message also auto-cancels any pending AI response. You can toggle AI back on at any time. See [Manual Controls](conversations/inbox.md).
 
 ### How do follow-ups work when a lead goes silent?
 
-Enable conversation follow-ups in your sequence settings. You configure how many days to wait before following up (default 3) and how many follow-ups to send (default 2). AutoReach periodically checks for stale conversations and generates a fresh-angle message to re-engage the lead. See [Manual Controls](conversations/manual-controls.md).
+Enable conversation follow-ups in your sequence settings. You configure how many days to wait before following up (default 3) and how many follow-ups to send (default 2). AutoReach periodically checks for stale conversations and generates a fresh-angle message to re-engage the lead. See [Manual Controls](conversations/inbox.md).
 
 ---
 
@@ -132,7 +132,7 @@ The Engagement Engine builds a credible social presence on your accounts by auto
 
 ### Do I need to approve everything the Engagement Engine posts?
 
-By default, yes. All generated content enters an approval queue where you can approve, reject, or edit it. You can enable auto-approval in your Engagement Engine settings to skip manual review and let content post automatically. Pending approvals expire if not reviewed within a set period. See [Approving Content](engagement-engine/approvals.md).
+By default, yes. All generated content enters an approval queue where you can approve, reject, or edit it. You can enable auto-approval in your Engagement Engine settings to skip manual review and let content post automatically. Pending approvals expire if not reviewed within a set period. See [Approving Content](engagement-engine/content-generation.md).
 
 ---
 
@@ -140,7 +140,7 @@ By default, yes. All generated content enters an approval queue where you can ap
 
 ### What does Autopilot actually automate?
 
-Autopilot runs five continuous operations: lookalike rotation (finding new seed accounts), auto-enrollment (adding scored leads to sequences), buyer expansion (daily discovery of new prospects), monitor resurfacing (rechecking lower-scored leads for new signals), and signal search (finding prospects posting about your offer topics). See [What Autopilot Does](autopilot/what-it-does.md).
+Autopilot runs five continuous operations: lookalike rotation (finding new seed accounts), auto-enrollment (adding scored leads to sequences), buyer expansion (daily discovery of new prospects), monitor resurfacing (rechecking lower-scored leads for new signals), and signal search (finding prospects posting about your offer topics). See [What Autopilot Does](autopilot/overview.md).
 
 ### Is Autopilot safe for my accounts?
 
@@ -172,4 +172,4 @@ Three strategies: disable web enrichment for leads that don't need it (it's the 
 
 ### How do I set up webhooks for meeting tracking?
 
-Go to Settings and configure your calendar integration. For Calendly, add your booking link and follow the instructions to get the Personal Access Token with all scopes enabled. For Cal.com, copy the webhook URL generated by AutoReach and paste it into Cal.com. The webhook allows AutoReach to automatically detect when meetings are booked and update lead status. See [Meeting Booking](meetings/booking-integration.md).
+Go to Settings and configure your calendar integration. For Calendly, add your booking link and follow the instructions to get the Personal Access Token with all scopes enabled. For Cal.com, copy the webhook URL generated by AutoReach and paste it into Cal.com. The webhook allows AutoReach to automatically detect when meetings are booked and update lead status. See [Meeting Booking](meetings/meetings.md).

@@ -8,13 +8,7 @@ Cost estimates reflect your **actual model selections**. When you change models 
 
 ### Blended Pricing
 
-Each category's cost is blended between primary and fallback models:
-
-- **85% primary model** pricing + **15% fallback model** pricing
-
-This reflects the observed fallback activation rate in production. In plain terms, about 85% of the time your primary model handles the request successfully, and about 15% of the time the system falls back to the secondary model (due to rate limits, timeouts, or temporary API issues). Your cost estimate reflects this real-world mix rather than assuming the primary model handles everything.
-
-The system reads your resolved model configuration and computes blended input/output token costs per category.
+Each category's cost is blended between your primary and fallback models based on observed fallback rates. This means your cost estimate reflects real-world usage rather than assuming the primary model handles every request.
 
 ## Cost Components
 
@@ -22,15 +16,15 @@ The main cost drivers per lead:
 
 ### Extraction (Lead Discovery)
 
-- Keyword generation tokens (classification category pricing)
-- Sentiment analysis tokens
+- Keyword generation
+- Sentiment analysis
 
 ### Enrichment
 
-- **LinkedIn profile finding** — web search to find LinkedIn profiles for X-sourced leads
-- **Website finding** — web search for company websites
-- **Web enrichment** — deep company analysis from websites (most expensive per-lead operation)
-- **Email finding** — third-party API cost (your own Findymail key, no AutoReach markup)
+- **LinkedIn profile finding**-  web search to find LinkedIn profiles for X-sourced leads
+- **Website finding**-  web search for company websites
+- **Web enrichment**-  deep company analysis from websites (most expensive per-lead operation)
+- **Email finding**-  third-party API cost (your own Findymail key, no AutoReach markup)
 
 ### Buyer Scoring
 
@@ -73,12 +67,12 @@ You can review your actual AI usage and spending in the **AI Usage panel on the 
 
 ## Reducing Costs
 
-1. **Disable web enrichment** — the most expensive per-lead operation; skip it for lead sources where you already have company context
-2. **Use lower-cost models for scoring and classification** — these high-volume categories process every lead, so even small per-token savings add up quickly
-3. **Filter early** — apply keyword filters and exclusions before enrichment to reduce the number of leads entering the pipeline
-4. **Choose efficient fallback models** — since fallbacks contribute 15% of blended cost, an expensive fallback model increases your effective rate
-5. **Run smaller batches first** — test with 20-50 leads before running large searches to validate your keywords and filters
-6. **Review the cost estimate before running** — the estimate updates in real time as you adjust search parameters, so use it to experiment before committing
+1. **Disable web enrichment**-  the most expensive per-lead operation; skip it for lead sources where you already have company context
+2. **Use lower-cost models for scoring and classification**-  these high-volume categories process every lead, so even small per-token savings add up quickly
+3. **Filter early**-  apply keyword filters and exclusions before enrichment to reduce the number of leads entering the pipeline
+4. **Choose efficient fallback models**-  an expensive fallback model increases your effective rate
+5. **Run smaller batches first**-  test with 20-50 leads before running large searches to validate your keywords and filters
+6. **Review the cost estimate before running**-  the estimate updates in real time as you adjust search parameters, so use it to experiment before committing
 
 ## Next Steps
 

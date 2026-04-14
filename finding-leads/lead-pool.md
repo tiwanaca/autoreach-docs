@@ -1,147 +1,92 @@
-# Lead Pool (Instant Matching)
+# Lead Pool and Cross-Platform Matching
 
-Discover qualified prospects by matching your offer's ICP against a global pool of pre-enriched lead profiles using vector similarity search. Lead Pool delivers results in seconds because the profiles are already enriched — only scoring needs to run.
+## Lead Pool (Instant Matching)
 
-## What Is the Lead Pool?
+Discover qualified prospects by matching your offer's ICP against a shared pool of pre-enriched lead profiles. Lead Pool delivers results in seconds because the profiles are already enriched - only scoring needs to run.
 
-The Lead Pool is a **global, cross-user** database of enriched lead profiles stored as vector embeddings. Every lead enriched through AutoReach has their profile embedded and added to the pool. When you create or update an offer, AutoReach generates an embedding of your ICP and runs a cosine similarity search against the entire pool to find the best matches.
+### What Is the Lead Pool?
 
-Unlike keyword-based filtering, semantic matching understands the meaning behind your offer description. A lead whose profile is conceptually aligned with your target audience will surface even if they do not share exact keywords with your search criteria.
+The Lead Pool is a shared database of enriched lead profiles. Every lead enriched through AutoReach is added to the pool. When you create an offer, AutoReach automatically matches existing pool entries against your ICP to find the best matches.
 
-## How It Works
+Unlike keyword-based filtering, the matching understands the meaning behind your offer description. A lead whose profile is conceptually aligned with your target audience will surface even if they do not share exact keywords with your search criteria.
 
-### 1. Profile Embedding
+### How It Works
 
-When any lead completes the enrichment pipeline (completes enrichment), their profile is embedded and stored. The embedding captures the lead's professional identity as a vector representation.
+**Profile Storage** - When any lead completes the enrichment pipeline, their professional profile is stored in the pool, including role, bio, industry, company, location, and skills.
 
-**What gets embedded per lead:**
-- Headline / role
-- Bio
-- Industry
-- Company name and employee count
-- Location
-- Top 10 LinkedIn skills
-- LinkedIn summary (truncated to 200 characters)
+**ICP Matching** - When matching triggers, your offer's ICP is compared against stored profiles. The matching is based on your target audience definition, industries, and preferred locations - focusing on who the buyer is, not what you are selling.
 
-Each embedding also stores metadata including platform identifiers, industry, location, company size, and available platforms for filtering.
+**Lead Creation** - Matched profiles are added as new leads with source marked as "Lead Pool," fresh scoring against your specific offer, and enrichment skipped since profile data is already available. Existing leads are excluded to prevent duplicates.
 
-### 2. ICP Embedding
-
-When matching triggers, your offer's ICP is embedded separately. The ICP embedding is built from:
-- Target audience definition
-- Industry names (resolved from LinkedIn industry IDs)
-- Preferred locations
-
-The ICP embedding focuses on who the buyer is, not what you're selling.
-
-### 3. Similarity Matching
-
-A cosine similarity search finds the closest matches:
-- **Similarity threshold:** 0.25 (minimum match score)
-- **Default limit:** 100 candidates per run
-- **Deduplication:** Leads the user already has are automatically excluded. A unique constraint prevents duplicate cloning.
-
-### 4. Lead Creation
-
-Matched profiles are **cloned** as new leads with:
-- Source marked as "Lead Pool"
-- All scoring fields reset (fresh scoring needed)
-- Pipeline status set to pending
-
-A scoring-only pipeline job is queued — enrichment is skipped because the profile data is already available, but buyer intelligence scoring runs fresh against your specific offer.
-
-## When Does It Trigger?
-
-Lead Pool matching fires automatically in several scenarios:
+### When Does It Trigger?
 
 | Trigger | When It Fires |
-|---------|---------------|
+|---|---|
 | **New offer created** | When you create a new offer |
-| **Search finishes** | When any search completes: X tweet search, LinkedIn content search, LinkedIn seed search, or link extraction |
+| **Search finishes** | When any search completes |
 | **Follower extraction starts** | When a follower extraction begins |
 
-Note: Updating an existing offer re-embeds the ICP but does not automatically trigger a pool match job — only offer creation does.
+Updating an existing offer does not automatically trigger a pool match - only offer creation does.
 
-## Cost
+### Cost
 
-Lead Pool matching is **not zero-cost**. Two cost components:
+Lead Pool matching is **not zero-cost**. While platform API costs are zero (leads are already enriched), AI scoring costs apply since every matched lead is queued for scoring using your configured AI models.
 
-1. **Embedding generation:** Each match run generates a vector embedding of your offer's ICP. Profile embeddings are created once during enrichment.
-2. **AI scoring:** Every matched lead is queued for deep analysis scoring, which uses your configured AI models. This is the primary cost.
+### Viewing Pool Leads
 
-The platform API cost (Twitter/LinkedIn calls) is zero because leads are already enriched, but AI costs apply.
+See pool-sourced leads by filtering the **All** tab on the Leads page by "Pool DB" source.
 
-## Search Parameters
-
-| Parameter | Default | Description |
-|---|---|---|
-| Max candidates | 100 | Maximum matches to return per run |
-| Platforms | -- | Optional filter: X only, LinkedIn only, or both |
-| Similarity threshold | 0.25 | Minimum cosine similarity score |
-
-By default, all platforms are matched unless you explicitly filter to X-only or LinkedIn-only leads.
-
-## Existing Lead Rescoring
-
-In addition to cloning new leads from the pool, the matching process also checks your existing leads that may match a different offer. These are rescored against the new offer without cloning.
-
-The total across cloned + rescored leads never exceeds the max candidates limit.
-
-## Getting Started
-
-### Prerequisites
-
-You need an existing base of enriched leads in the global pool. Build one through any discovery method:
-
-- [X Tweet Search](tweet-search.md)
-- [LinkedIn Content Search](linkedin-content-search.md)
-- [LinkedIn People Search](linkedin-people-search.md)
-- [Lookalike Audiences](lookalike-audiences.md)
-
-### Initial Setup
-
-1. **Create your offer** with a clear target audience, industries, and preferred locations.
-2. **Run your first discovery search** using any method above.
-3. **Wait for enrichment to complete.** Embeddings are generated at the end of the enrichment pipeline.
-4. **Lead Pool matching triggers automatically** on offer creation and after searches complete.
-
-### Continuous Scaling
-
-- Every new search triggers pool matching against the growing pool of enriched leads.
-- Your pool grows with every user's enrichment, making future matching more powerful.
-
-## Best Practices
+### Best Practices
 
 1. **Build the database first.** Lead Pool is most effective with a large base of enriched leads. Start with discovery searches before relying on pool matching.
+2. **Write detailed target audience definitions.** The matching is built from your target audience, industries, and locations. Be specific in those fields.
+3. **Monitor match quality.** Track response rates from Lead Pool matches and compare them to other discovery methods.
+4. **Combine with other methods.** Use Lead Pool for rapid scaling while continuing X and LinkedIn searches for fresh intent signals.
 
-2. **Write detailed target audience definitions.** The ICP embedding is built from your target audience, industries, and locations — not your offer description. Be specific in those fields.
+---
 
-4. **Monitor match quality.** Track response rates from Lead Pool matches and compare them to other discovery methods.
+## Cross-Platform Profile Matching
 
-5. **Refresh your offer periodically.** When your target market shifts, update your offer fields to change the ICP embedding. Creating a new offer triggers a fresh pool match automatically.
+AutoReach can find the matching profile on the other platform for your leads. If you have a prospect on LinkedIn, it can locate their X profile. If you have them on X, it can locate their LinkedIn profile.
 
-6. **Combine with other methods.** Use Lead Pool for rapid scaling while continuing X and LinkedIn searches for fresh intent signals.
+### How to Trigger It
 
-## Troubleshooting
+Cross-platform matching is a **manual action**:
 
-**Not getting any matches?**
-- Confirm that enriched leads exist in the pool (from your own or other users' searches).
-- Check that the enrichment pipeline has finished processing for recent searches.
-- Try creating a new offer or running a search to trigger a pool match.
-- Review your offer's target audience, industries, and locations — these drive the ICP embedding.
+1. Select the leads you want to match on the Leads page
+2. Click the **Enrich** button in the floating selection bar
+3. In the Enrich modal, look under **Profile Discovery**
+4. Toggle **Find LinkedIn** (for X leads) or **Find X Profile** (for LinkedIn leads)
+5. Confirm to start the search
 
-**Match quality seems low?**
-- Review your target audience definition. Vague or overly broad descriptions produce weaker matches.
-- Remember: the ICP embedding uses your target audience, industries, and locations — not your offer description or pain points.
+The options are platform-aware. "Find LinkedIn" only appears for X leads, and "Find X Profile" only appears for LinkedIn leads. When you select a profile finder, the corresponding profile enrichment is automatically enabled so the found profile gets enriched immediately.
 
-**Getting too many irrelevant matches?**
-- Tighten your target audience and preferred locations.
-- Use platform filtering to focus on X-only or LinkedIn-only leads.
-- Lower the max candidates limit.
+### How Matching Works
+
+AutoReach uses AI-powered web search to find matching profiles across platforms. Candidates are evaluated on name similarity, company match, source credibility, and corroboration from multiple sources.
+
+### What Happens After a Match
+
+- **If found:** the lead record is updated with the matched profile URL, and enrichment proceeds for both platforms
+- **If not found:** enrichment continues with data from the source platform only
+
+LinkedIn and X profile enrichment run in parallel for leads that have URLs on both platforms. Failure on one platform does not block the other.
+
+### Example Workflows
+
+**LinkedIn-First with X Follow-up** - Run a LinkedIn search, then use Find X Profile to locate their X accounts. Send LinkedIn messages first, then follow up on X for multi-channel outreach.
+
+**X-First with Full Professional Context** - Run a tweet search, then use Find LinkedIn to get full professional data (company, role, tenure, education, skills) for richer personalization.
+
+**Account-Based Outreach** - Run a LinkedIn people search targeting specific companies, then use Find X Profile for coordinated outreach across both platforms.
+
+### Troubleshooting
+
+**Not finding X profiles for some LinkedIn leads?** This is expected. Not every professional maintains an active X account.
+
+**A match looks incorrect?** Low-confidence matches are filtered out automatically, but occasional false positives can occur with common names. You can manually update the lead record.
 
 ## Next Steps
 
-- [Create or refine your offer](../getting-started/create-offer.md) to improve match accuracy.
-- [Run an X Tweet Search](tweet-search.md) to start building the enriched lead pool.
-- [Set up a LinkedIn People Search](linkedin-people-search.md) for systematic lead generation.
-- [Explore Lookalike Audiences](lookalike-audiences.md) to expand from your best-performing leads.
+- **[Enrichment Pipeline](../enrichment/pipeline.md)**: How matched profiles flow through enrichment and scoring
+- **[How Leads Work](../core-concepts/leads.md)**: Unified lead profiles across platforms
