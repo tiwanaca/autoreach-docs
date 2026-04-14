@@ -23,24 +23,22 @@ When generating a response, the AI retrieves the most relevant tone examples bas
 
 Tone examples are automatically captured from real conversation outcomes:
 
-**Winning Conversations** - When a conversation reaches **Meeting Booked** status, the system extracts the best exchanges and saves them as "Captured Win" examples, automatically classified by conversation stage. Duplicate examples are detected and skipped.
-
-**Losing Conversations** - When a conversation reaches "Lost" or "Graceful Exit" status, the final exchange is captured as an anti-example so the AI can learn what to avoid.
+**Winning Conversations** - When a conversation reaches **Meeting Booked** status, the system extracts the best exchanges and saves them as examples, automatically classified by conversation stage. Duplicate examples are detected and skipped.
 
 ### Tone Summary
 
-A **tone summary** is a style guide automatically extracted from your tone examples by AI. It captures your vocabulary, communication style, and common patterns, and is updated as new examples are captured to stay current with your evolving voice.
+A **tone summary** is a style guide automatically extracted from your tone examples by AI. It captures your vocabulary, communication style, and common patterns. You can regenerate it from the tone examples section to keep it current with your evolving voice.
 
 ### Managing Tone Examples
 
-Open your sequence's **Tone Examples** tab to:
+Open your sequence's **Settings** tab and scroll to the Tone Examples section to:
 
 - **View** examples organized by stage
 - **Edit** text to better match your voice
 - **Delete** examples that don't fit your style
 - **Add** custom examples from conversations that went well
 
-All examples use contractions (I'm, you're, they've) by default. Non-contracted language sounds robotic in DMs.
+Use contractions (I'm, you're, they've) in your examples. Non-contracted language sounds robotic in DMs.
 
 ---
 

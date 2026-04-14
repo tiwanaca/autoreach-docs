@@ -36,7 +36,7 @@ Key terms used throughout AutoReach, listed alphabetically.
 
 **Conversation Analyzer**-  An AI system that reviews your outreach conversations, compares positive outcomes (meetings booked) against negative ones (lost), and suggests improvements to tone examples and prompts. See [Offers & Knowledge Base](core-concepts/offers-and-knowledge-base.md).
 
-**Conversation Stage**-  One of seven stages that classify where a conversation currently sits: Opener Reply, Discovery, Value Prop, Objection Handling, Soft Close, Follow Up, or Graceful Exit. The AI adapts its response style based on the detected stage. See [AI Response Engine](conversations/ai-response-engine.md).
+**Conversation Stage**-  One of seven stages that classify where a conversation currently sits: Opener Reply, Discovery, Value Prop, Objection Handling, Soft Close, Follow Up, or Exit. The AI adapts its response style based on the detected stage. See [AI Response Engine](conversations/ai-response-engine.md).
 
 **Daily Limit**-  The maximum number of outreach actions AutoReach will execute per sequence per day. Separate limits exist for combined actions, LinkedIn-specific actions, and X-specific actions. When a limit is reached, remaining actions are rescheduled to the next day. See [Scheduling & Send Limits](outreach/scheduling.md).
 
@@ -52,7 +52,7 @@ Key terms used throughout AutoReach, listed alphabetically.
 
 **Follow-Up**-  An automatic message sent when a lead goes silent after a conversation. Configurable per sequence with wait time (1-30 days) and max count (1-10). Follow-ups are generated with a fresh angle to re-engage the lead. See [Inbox](conversations/inbox.md).
 
-**Graceful Exit**-  A conversation stage triggered when a lead declines or the conversation reaches a dead end. The AI exits respectfully and leaves the door open for the future. See [AI Response Engine](conversations/ai-response-engine.md).
+**Exit**-  A conversation stage triggered when a lead declines or the conversation reaches a dead end. The AI exits respectfully and leaves the door open for the future. See [AI Response Engine](conversations/ai-response-engine.md).
 
 **Heat Score**-  An account-level metric that aggregates recent signals across all leads at a company. Companies with multiple recent signals have a higher heat score, indicating the account is worth prioritizing. See [Account Signals](settings/account-signals.md).
 

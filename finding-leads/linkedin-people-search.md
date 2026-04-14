@@ -19,12 +19,9 @@ There are three ways to start a search:
 | **Title/Role** | Job title keyword (e.g., "CTO", "VP Sales"). Not used in follower-of searches. |
 | **Location** | Resolved from your offer's preferred locations. Supports countries, regions, cities, and abstract concepts like "Worldwide." |
 | **Industry** | Resolved from your offer or overridden directly. |
-| **Current Company** | Target specific companies for account-based targeting. |
-| **Network Distance** | 1st degree, 2nd degree, or 3rd+ degree connections. |
-| **Profile Language** | Defaults to English if not specified. |
 | **Follower Of** | Find followers of a specific LinkedIn profile. Used by lookalike-seeded searches. |
 
-Note: **Company size** is not a search filter-  it is part of your offer's ICP definition and checked during scoring, not at search time.
+Note: **Company size** and **network distance** are not search filters - they are part of your offer's ICP definition and checked during scoring, not at search time.
 
 ### Search Parameters
 
@@ -84,12 +81,7 @@ Results are queued for enrichment based on your enrichment settings.
 - **Industry:** Financial Services, Banking
 - **Result:** Finance leaders across major financial hubs
 
-### Example 3: Account-Based Targeting
-- **Role:** Head of Operations, Director Operations
-- **Company:** Specific target company URNs
-- **Result:** Operations leaders at your target accounts
-
-### Example 4: Continuous Prospecting with Buyer Expansion
+### Example 3: Continuous Prospecting with Buyer Expansion
 - **Role:** VP Sales (initial)
 - **Buyer expansion:** Enabled with default roles
 - **Result:** Daily automated discovery cycling through CEO, CTO, VP, Director, Manager roles at matching companies

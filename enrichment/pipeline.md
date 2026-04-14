@@ -62,8 +62,8 @@ Gathers company info, social profiles, and additional context from the web. See 
 | Mode | What Runs | Use Case |
 |---|---|---|
 | **Full pipeline** | All phases (enrich + score) | Default for new leads |
-| **Scoring-only** | Phase 4 only (Phases 1-3 skipped) | Lead Pool matches |
-| **Enrich-only** | Phases 1-3 only (no scoring) | Manual re-enrichment |
+| **Scoring-only** | Scoring phase only (profile and activity enrichment skipped) | Lead Pool matches |
+| **Enrich-only** | Profile and activity enrichment only (no scoring) | Manual re-enrichment |
 | **Manual re-enrich** | Selected enrichment types only | Targeted refresh of specific data |
 | **No-op** | Leads immediately set to ready | When neither enrich nor scoring is needed |
 
@@ -71,6 +71,7 @@ Gathers company info, social profiles, and additional context from the web. See 
 
 | Status | Meaning |
 |---|---|
+| Pending | Pipeline job queued but not yet started |
 | Processing | Pipeline job is actively running |
 | Ready | All phases complete |
 | Billing Paused | Paused due to billing/credits issue |

@@ -9,9 +9,9 @@ Each account shows one of these statuses:
 | Status | Description |
 |---|---|
 | Active | Operating normally |
-| Paused | Paused-  no actions scheduled |
-| Suspended | Suspended due to safety issue-  review required |
-| Expired | Authentication expired-  re-connect required |
+| Paused | Paused - no actions scheduled |
+| Suspended | Suspended due to safety issue - review required |
+| Expired | Authentication expired - re-connect required |
 
 ## X Accounts
 

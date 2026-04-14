@@ -4,7 +4,7 @@ Find decision-makers at companies that are actively hiring. LinkedIn Job Search 
 
 ## How It Works
 
-Job search is not a standalone search type-  it is integrated into LinkedIn Content Search as the **Hiring Signals** intent category. When you include Hiring Signals in your selected intent categories, additional settings appear for configuring the job search.
+Job search is not a standalone search type - it is integrated into LinkedIn Content Search as the **Hiring Signals** intent category. When a content search runs, hiring signal detection is included automatically. Additional settings let you configure the job search parameters.
 
 ### 1. AI-Generated Role Targets
 
@@ -45,7 +45,7 @@ This runs automatically as part of the content search pipeline when **Hiring Sig
 
 ## Search Parameters
 
-These are configured within the LinkedIn content search settings when the Hiring Signals intent category is selected:
+These are configured within the LinkedIn content search settings:
 
 | Parameter | Default | Description |
 |---|---|---|

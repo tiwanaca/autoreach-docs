@@ -10,7 +10,7 @@ When you enable Autopilot, it configures:
 - **Lookalike discovery**: Finds influencer accounts in your space and extracts their followers as prospects
 - **Sequence creation**: Builds outreach sequences with AI-generated prompts and tone examples
 - **Auto-enrollment**: Enrolls qualified leads into sequences automatically
-- **Buyer expansion**: Discovers new prospects daily from existing high-performing accounts
+- **Buyer expansion**: Discovers new prospects daily from your existing seed sources
 - **Monitor resurfacing**: Re-checks lower-scored leads for new buying signals
 
 ## Prerequisites

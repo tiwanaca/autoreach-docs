@@ -40,9 +40,10 @@ Your AI prompt needs adjustment. Each prompt modification suggestion targets a s
 
 For each suggestion, you can:
 
-- **Apply**: Implement the change immediately
-- **Dismiss**: Skip the suggestion
-- **Edit**: Modify the suggestion before applying
+- **Accept**: Select the suggestion for application
+- **Discard**: Remove the suggestion
+
+After reviewing, click **Apply** to implement all accepted suggestions at once, or **Dismiss** to clear all results.
 
 ## When to Run Analysis
 

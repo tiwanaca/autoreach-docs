@@ -30,7 +30,7 @@ When orbit data is available, the lead profile shows:
 
 - **Orbit targets** - accounts the lead engages with
 - **Clusters detected** - groups of related engagement targets
-- **Cluster velocity** - engagement frequency trend (Rising, Stable, Cooling)
+- **Cluster velocity** - engagement frequency (interactions per week)
 
 ### Privacy
 

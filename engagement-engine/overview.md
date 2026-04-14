@@ -45,10 +45,11 @@ See **[Engagement Automation and Daily Actions](engagement.md)** for more detail
 All generated content enters an approval queue by default. You can:
 
 - **Approve**: post as-is at the scheduled time
-- **Reject**: discard and regenerate a replacement
+- **Discard**: permanently remove the content
+- **Regenerate**: replace with a new AI-generated version
 - **Edit**: modify the text before approving
 
-Enable **auto-approval** to skip manual review and post content automatically. Pending approvals expire after **48 hours** if not reviewed.
+Enable **auto-post** to skip manual review and post content automatically. A separate **auto-reply** toggle controls whether engagement replies are auto-approved. Pending approvals expire if not reviewed.
 
 ## Next Steps
 

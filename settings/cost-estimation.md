@@ -26,7 +26,7 @@ The main cost drivers per lead:
 - **Web enrichment**-  deep company analysis from websites (most expensive per-lead operation)
 - **Email finding**-  third-party API cost (your own Findymail key, no AutoReach markup)
 
-### Buyer Scoring
+### Deep AI Analysis
 
 Scoring costs depend on the amount of profile data available for each lead. Leads with more enrichment data (posts, company info, web research) cost more to score than leads with minimal profile information.
 

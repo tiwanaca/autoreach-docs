@@ -1,6 +1,6 @@
 # Continuous Operations
 
-Once Autopilot is enabled, three continuous operations run in the background: auto-enrollment, buyer expansion, and monitor resurfacing. Together, they keep your pipeline growing and ensure qualified leads reach your sequences without manual intervention.
+Once Autopilot is enabled, five continuous operations run in the background: auto-enrollment, buyer expansion, monitor resurfacing, lookalike rotation, and signal search. Together, they keep your pipeline growing and ensure qualified leads reach your sequences without manual intervention.
 
 ---
 
@@ -37,7 +37,7 @@ Leads are automatically routed to the correct platform sequence:
 
 - Leads with X profile data go to the X sequence
 - Leads with LinkedIn profile data go to the LinkedIn sequence
-- Leads with both are enrolled in the sequence matching the Offer's primary platform
+- Leads with both are enrolled in the sequence that supports either platform
 
 ### Controlling Auto-Enrollment
 
@@ -106,6 +106,18 @@ When resurfacing detects new signals and the lead's score improves:
 - **No improvement** - Lead remains in its current tier and is re-checked at the next interval
 
 Leads upgraded to Active are picked up by auto-enrollment and enrolled into the appropriate sequence.
+
+---
+
+## Lookalike Rotation
+
+When an X seed account's followers are fully extracted, Autopilot automatically discovers a new lookalike account and begins extracting its followers. This keeps your X pipeline growing without manual seed management.
+
+---
+
+## Signal Search
+
+Autopilot periodically runs intent signal searches to find prospects actively posting about problems your product solves. These searches use your offer's pain points and target audience to surface high-intent leads from both X and LinkedIn.
 
 ## Next Steps
 

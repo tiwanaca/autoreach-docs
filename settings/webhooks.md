@@ -43,16 +43,15 @@ You can create up to **10 webhooks** per account.
 Before relying on a webhook in production, test it to make sure your endpoint is reachable and responding correctly.
 
 1. Go to **Settings > Webhooks**
-2. Click the **Test** button next to the webhook you want to verify
-3. AutoReach sends a test payload to your URL and shows whether it succeeded or failed
-
-The test sends a sample payload so you can verify your endpoint processes it correctly.
+2. Click the edit icon on the webhook you want to test
+3. In the edit dialog, select an event type and click **Send Test Payload**
+4. AutoReach sends a sample payload to your URL and shows whether it succeeded or failed
 
 ---
 
 ## Editing and Deleting Webhooks
 
-To **edit** a webhook, click on it in the list and update any fields (URL, events, name, secret, or enabled/disabled status). Click **Save** to apply changes.
+To **edit** a webhook, click the edit icon next to it and update any fields (URL, events, name, secret, or enabled/disabled status). Click **Save** to apply changes.
 
 To **delete** a webhook, click the delete button next to it. Deleted webhooks stop receiving events immediately.
 

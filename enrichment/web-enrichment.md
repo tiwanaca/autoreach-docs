@@ -1,10 +1,10 @@
 # Web Enrichment
 
-Web enrichment uses AI-powered web search to gather additional context about leads - company details, social profiles, contact information, recent news, and professional achievements. It is a **separate, optional process** that is not part of the standard enrichment pipeline.
+Web Intelligence uses AI-powered web search to gather additional context about leads - company details, social profiles, contact information, recent news, and professional achievements. It is a **separate, optional process** that is not part of the standard enrichment pipeline.
 
 ## How It Works
 
-Web enrichment uses AI web search to gather three categories of data:
+Web Intelligence uses AI web search to gather three categories of data:
 
 - **Identity & Company**-  current company, role, website, size, industry, funding, tech stack, headquarters
 - **Social & Contact**-  additional social profiles (GitHub, YouTube, Medium, Substack, personal website) and contact information (phone, additional emails, scheduling links)
@@ -92,9 +92,9 @@ Web enrichment data is only included in scoring context when overall confidence 
 
 ## How It's Triggered
 
-Web enrichment is **not part of the standard pipeline** and does **not run automatically** when leads are added. It must be triggered explicitly.
+Web Intelligence is **not part of the standard pipeline** and does **not run automatically** when leads are added. It must be triggered explicitly.
 
-You can trigger web enrichment manually from the Leads page by selecting leads and enabling the web enrichment option. You can also preview costs before enriching, retry failed or skipped leads, and check enrichment progress - all from the same interface.
+You can trigger Web Intelligence manually from the Leads page by selecting leads and enabling the Web Intelligence option. You can also preview costs before enriching, retry failed or skipped leads, and check enrichment progress - all from the same interface.
 
 ## Cost
 

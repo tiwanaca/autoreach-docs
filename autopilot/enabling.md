@@ -72,9 +72,9 @@ Disable when you are stopping outreach for the long term or want a clean slate.
 **To disable:** Click the trash icon on the autopilot card, then confirm by clicking **Remove**.
 
 When disabled:
-- Searches and lookalike accounts are deleted
-- Sequences are paused with auto-enrollment disabled
-- Buyer expansion is disabled on seed sources
+- Recurring searches are stopped
+- Sequences are paused
+- Lookalike expansion is disabled
 - All leads, conversations, and historical data are preserved
 
 ### Re-enabling After Disable
@@ -94,7 +94,7 @@ You can pause a single sequence without affecting the rest of Autopilot:
 
 1. Go to **Sequences**
 2. Select the sequence
-3. Click **Pause Sequence**
+3. Click **Pause**
 
 This stops outreach for that sequence only. Other sequences and Autopilot operations continue normally.
 

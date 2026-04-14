@@ -205,7 +205,7 @@ AutoReach continuously monitors for new signals. It periodically rechecks leads 
 In the lead profile, you can see:
 
 - All detected signals in the lead's signal summary
-- Intent strength (high/medium/low/none) - an overall AI-assessed rating of buying intent
+- Intent strength (Extremely High, High, Moderate, Low) - an overall AI-assessed rating of buying intent
 - Account-level signals with individual strength ratings and dates
 - Raw activity (posts, comments, job changes)
 
@@ -216,8 +216,8 @@ In the lead profile, you can see:
 AutoReach applies rules that override normal scoring:
 
 - **Industry mismatch:** If a lead is in the wrong industry, their fit score is reduced
-- **Competitors:** If a lead works at a competitor company, they are automatically disqualified
-- **Internal builders:** If a lead is building a competing product, they are automatically disqualified
+- **Competitors:** If a lead works at a competitor company, they are scored as Poor Fit with zeroed scores
+- **Internal builders:** If a lead is building a competing product, they are scored as Poor Fit with zeroed scores
 
 > **Note:** You can manually override scoring rules via the UI (set "Manual Outreach" state) if you want to reach someone despite these filters.
 
@@ -227,7 +227,7 @@ AutoReach automatically considers how a lead was discovered when scoring. A lead
 
 ## Rescoring
 
-You can rescore leads at any time by selecting them and running **AI Analysis**. This performs a full AI-powered analysis that examines the lead's entire profile, signals, and context. Use it for initial scoring, manual rescoring, or when you want to understand exactly why a lead scored the way they did.
+You can rescore leads at any time by selecting them and running a rescore. This performs a full AI-powered analysis that examines the lead's entire profile, signals, and context.
 
 ## Score Feedback
 

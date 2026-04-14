@@ -34,14 +34,14 @@ Three simulation modes are available:
 
 | Persona | Behavior |
 |---|---|
-| Hard to Convince | Skeptical, needs proof, pushes back |
-| Easy and Enthusiastic | Genuinely interested, moves fast |
-| Asks Lots of Questions | Curious, wants to understand everything |
-| Not a Fit (Job Seeker) | Misunderstood the DM, looking for work |
-| Price Sensitive | Budget-conscious, needs ROI justification |
-| Uses a Competitor | Already has a solution, wants differentiation |
-| Skeptical / Trust Issues | Suspects spam or bot, cautious |
-| Terse Responder | Replies in 1-5 words |
+| Hard to convince | Skeptical, needs proof, pushes back |
+| Easy & enthusiastic | Genuinely interested, moves fast |
+| Asks lots of questions | Curious, wants to understand everything |
+| Not a fit | Misunderstood the DM, looking for work |
+| Price sensitive | Budget-conscious, needs ROI justification |
+| Uses a competitor | Already has a solution, wants differentiation |
+| Skeptical | Suspects spam or bot, cautious |
+| Terse responder | Replies in 1-5 words |
 
 You can also write a **custom persona** description for specific scenarios (e.g., "A VP of Engineering at a 500-person company who just switched from a competitor last month").
 
@@ -62,7 +62,6 @@ In Automatic mode, the AI plays both sides of the conversation. The selected per
 
 Controls during an automatic simulation:
 
-- **Pause** - Temporarily stop the conversation
 - **Stop** - End the simulation early
 
 After the conversation ends, you can continue it:
@@ -76,7 +75,7 @@ The conversation ends naturally when one of these occurs:
 |---|---|
 | No Reply | The lead persona stops responding |
 | End Conversation | The lead explicitly ends the chat |
-| Graceful Exit | The AI reaches a natural conclusion |
+| Exit | The AI reaches a natural conclusion |
 | Max Turns | The conversation hit the turn limit |
 | Error | Something went wrong during generation |
 

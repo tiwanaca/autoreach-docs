@@ -16,15 +16,15 @@ AutoReach uses AI across multiple categories. Each has independent primary and f
 | Category | Purpose |
 |---|---|
 | Content Writing | DMs, replies, first messages, templates, warmup, copilot |
-| Buyer Scoring | Evaluating leads against your ICP |
-| Keyword Generation | Creating search queries for lead discovery |
-| Classification | Classifying content by topic, sentiment, and tone |
+| Buyer Scoring | Fit/intent/timing analysis and lead qualification |
+| Keyword Generation | X + LinkedIn search keyword generation |
+| Classification | Objection detection, negative content, deal signals, ICP matching |
 | Profile Finding | Email, LinkedIn, X profile, and website discovery |
-| Web Enrichment | Company data extraction from websites |
+| Web Enrichment | Company research, news, social profiles, insights |
 | Lookalike Search | Finding influencers similar to target profiles |
 | Research & Copilot | Follow-up research, copilot web search, topic research |
-| Lead Relevance | Scoring leads with detailed reasoning |
-| Call Briefs | Generating meeting preparation documents |
+| Lead Relevance | Post and tweet relevance analysis using reasoning |
+| Call Briefs | Pre-call meeting preparation documents |
 
 ## Per-User Overrides
 
@@ -48,7 +48,7 @@ If both the primary and fallback models fail (rare, but possible during provider
 **When to leave defaults alone:**
 - If you are just getting started, the defaults are a solid starting point
 - If your current output quality and costs are acceptable, there is no need to experiment
-- Web search categories are constrained to specific providers and generally should not be changed
+- If you are unsure which models to use, the defaults are well-tested
 
 ## Cost Implications
 

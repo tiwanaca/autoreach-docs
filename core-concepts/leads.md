@@ -139,14 +139,13 @@ Once enrolled in a sequence, a lead progresses through these statuses:
 | Status | Meaning |
 | --- | --- |
 | **Pending** | Enrolled but not yet started |
-| **Active** | Currently progressing through sequence steps |
+| **In Progress** | Currently progressing through sequence steps |
 | **Paused** | Manually paused mid-sequence |
 | **Replied** | Lead replied to a message |
 | **Meeting Booked** | Meeting scheduled |
 | **Completed** | Finished all sequence steps |
 | **Lost** | Lead went cold or opportunity closed without conversion |
 | **Failed** | Error during execution (invalid profile, rate limit) |
-| **Removed** | Manually removed from the sequence |
 
 ## Best Practices
 

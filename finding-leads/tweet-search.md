@@ -15,17 +15,15 @@ When you start a search, you can either:
 
 The AI organizes queries across these intent types (selecting the most relevant for your offer):
 
-- **Operational Pain**-  day-to-day frustrations and inefficiencies
-- **Budget Pressure**-  cost concerns and budget constraints
-- **Hiring & Scaling**-  growth challenges and team scaling
-- **Buying Evaluation**-  actively comparing or evaluating solutions
-- **Competitor Switch**-  switching away from or frustrated with competitors
-- **Growth Signals**-  expansion, new markets, scaling needs
-- **Security & Compliance**-  regulatory, security, or compliance concerns
-- **Professional Identity**-  role-based challenges and aspirations
-- **Vertical Specific**-  industry-specific pain points
-
-A separate AI step generates insider terminology queries specific to your industry to catch leads using specialized language.
+- **Operational Pain** - day-to-day frustrations and inefficiencies
+- **Budget Pressure** - cost concerns and budget constraints
+- **Hiring & Scaling** - growth challenges and team scaling
+- **Buying Evaluation** - actively comparing or evaluating solutions
+- **Competitor Switch** - switching away from or frustrated with competitors
+- **Growth Signals** - expansion, new markets, scaling needs
+- **Security & Compliance** - regulatory, security, or compliance concerns
+- **Vertical Specific** - industry-specific pain points
+- **Niche Jargon** - insider terminology, tools, certifications, and community names specific to your industry
 
 ### 2. Search Execution
 

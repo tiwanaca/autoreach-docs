@@ -62,18 +62,13 @@ The AI generates queries across these intents:
 | Solution Seeking | Evaluating tools, asking for recommendations |
 | Buying Intent | Budget allocation, vendor selection |
 | Growth Signals | Revenue growth, market expansion |
-| Professional Identity | Role-based challenges |
-| Competitor Switching | Moving away from competitors |
-| Cost Pressure | Cost reduction, budget constraints |
-| Compliance & Regulatory | Regulatory and compliance needs |
-| Tool Evaluation | Comparing or testing tools |
 
-When you start a LinkedIn content search, you select which intent categories to include. Only queries matching your selected categories are used.
+All intent categories are searched automatically when you start a LinkedIn content search.
 
 ### Key Differences from X
 
 - Queries are professional/B2B-oriented phrases without search operators
-- Filtered by user-selected intent categories at search time
+- All intent categories are searched automatically
 
 ## Previewing Keywords
 

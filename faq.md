@@ -112,7 +112,7 @@ A value of 0 means unlimited. The AI will continue responding to a conversation 
 
 ### How does the AI know what stage a conversation is in?
 
-AutoReach classifies conversations into 7 stages: Opener Reply, Discovery, Value Prop, Objection Handling, Soft Close, Follow Up, and Graceful Exit. Stage detection uses a combination of heuristics (message count, objection count) and AI classification based on conversation history. The AI adapts its tone and goals for each stage. See [Conversation Stages](conversations/ai-response-engine.md).
+AutoReach classifies conversations into 7 stages: Opener Reply, Discovery, Value Prop, Objection Handling, Soft Close, Follow Up, and Exit. Stage detection uses a combination of heuristics (message count, objection count) and AI classification based on conversation history. The AI adapts its tone and goals for each stage. See [Conversation Stages](conversations/ai-response-engine.md).
 
 ### Can I take over a conversation from the AI?
 

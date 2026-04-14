@@ -47,12 +47,12 @@ All generated content enters the approval queue as "Pending Approval" unless aut
 | Status | Description |
 |---|---|
 | Pending Approval | Awaiting your review |
-| Pending | Approved and waiting to post at scheduled time |
-| Posting | Currently being posted |
-| Posted / Completed | Successfully published |
+| Approved | Approved and waiting to post at scheduled time |
+| Queued | Picked up for posting |
+| Posted | Successfully published (tweets/posts) |
+| Completed | Successfully published (engagement replies) |
 | Discarded | Permanently removed by you |
-| Regenerated | Replaced with a new AI-generated version |
-| Skipped | Expired without review or approval queue disabled |
+| Skipped | Expired without review or auto-approval was disabled |
 | Failed | Post attempt failed |
 
 ### Actions
@@ -71,11 +71,12 @@ All generated content enters the approval queue as "Pending Approval" unless aut
 
 ### Auto-Approval
 
-Toggle **auto-approval** in your Engagement Engine settings. When enabled:
+Two separate toggles in your Engagement Engine settings control auto-approval:
 
-- Generated content goes directly to "Pending" status (skips the approval queue)
-- Content posts automatically at scheduled times without manual review
-- You can still view posted content in activity logs
+- **Auto-post** - Generated posts (tweets, LinkedIn posts) skip the approval queue and post automatically
+- **Auto-reply** - Generated engagement replies (comments on other posts) skip the approval queue
+
+When enabled, content posts automatically at scheduled times without manual review. You can still view posted content in activity logs.
 
 When disabled, all content requires manual review before posting.
 

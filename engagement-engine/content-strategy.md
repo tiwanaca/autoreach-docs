@@ -1,10 +1,10 @@
 # Content Strategy & Pillars
 
-The Engagement Engine organizes content around a **90-day content strategy** with rotating weekly themes. This structure ensures your posts stay relevant to your niche and build a consistent professional presence.
+The Engagement Engine organizes content around a **content strategy** with rotating weekly themes. This structure ensures your posts stay relevant to your niche and build a consistent professional presence.
 
 ## Content Pillars
 
-Each strategy has **3-5 content pillars** - core themes representing different angles of your expertise and value proposition. Pillars are AI-generated from your offer, ICP, and pain points.
+Each strategy has **content pillars** - core themes representing different angles of your expertise and value proposition. Pillars are AI-generated from your offer, ICP, and pain points.
 
 Example pillars for a sales automation company:
 1. Industry Insights - market trends and analysis
@@ -27,7 +27,7 @@ Pillars are generated automatically, but understanding what makes a good pillar 
 - **HR tech startup**: Hiring Trends, Employee Retention, DEI Insights, Workplace Culture, Product Use Cases
 - **Financial advisor**: Market Commentary, Retirement Planning, Tax Strategy, Client Wins, Economic Outlook
 
-## 90-Day Plan Structure
+## Plan Structure
 
 The content strategy generates:
 
@@ -41,7 +41,7 @@ Each week, all generated content (posts, engagement replies) aligns with that we
 
 Each week is assigned a focus pillar. If you have 5 pillars, the rotation cycles through all 5 over five weeks, then repeats. Week 1 might focus on "Industry Insights," Week 2 on "Practical Tips," and so on. By Week 6, the cycle restarts with "Industry Insights" but with a different weekly theme within that pillar.
 
-This means your audience sees variety week to week, but over the full 90 days, every pillar gets roughly equal attention. The weekly theme gives the AI a specific angle within the pillar - for example, under "Industry Insights," one week's theme might be "emerging trends in AI-powered sales" while another week focuses on "how buyer behavior is shifting."
+This means your audience sees variety week to week, and over time every pillar gets roughly equal attention. The weekly theme gives the AI a specific angle within the pillar - for example, under "Industry Insights," one week's theme might be "emerging trends in AI-powered sales" while another week focuses on "how buyer behavior is shifting."
 
 ### How Post Ideas Are Generated
 
@@ -62,7 +62,7 @@ The content strategy is AI-generated using:
 - Current date and year (prevents stale references)
 - Professional voice and tone
 
-For LinkedIn, the strategy also includes **comment angles** per pillar - topic-specific approaches for engaging with other people's posts.
+For LinkedIn, the AI also generates topic-specific approaches for engaging with other people's posts, aligned with your content pillars.
 
 ### Tips for Getting Better AI-Generated Content
 
@@ -75,8 +75,8 @@ For LinkedIn, the strategy also includes **comment angles** per pillar - topic-s
 
 Your content strategy is created when you:
 
-1. **Enable Autopilot**-  strategy is generated automatically as part of setup
-2. **Manually configure** the Engagement Engine with an associated offer
+1. **Manually configure** the Engagement Engine with an associated offer
+2. **Enable Autopilot** - which may create an Engagement Engine as part of its setup
 
 No manual pillar selection is needed. The AI determines the optimal pillar structure from your offer.
 

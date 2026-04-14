@@ -45,7 +45,7 @@ AutoReach classifies conversations into 7 stages. Each stage has its own tone an
 **Triggered**: Lead went silent for a configurable period.
 **Goal**: Re-engage with a fresh angle or new information that gives the lead a reason to respond.
 
-### 7. Graceful Exit
+### 7. Exit
 
 **Triggered**: Lead declines or the conversation has reached a dead end.
 **Goal**: Exit respectfully and leave the door open for the future.

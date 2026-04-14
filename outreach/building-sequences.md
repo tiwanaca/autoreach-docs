@@ -127,7 +127,7 @@ The connection note supports `{{variable}}` placeholders for personalization.
 |---|---|
 | Condition type | What to evaluate (see table below) |
 | Retry interval (days) | Days between rechecks |
-| Max retry attempts | Max rechecks before falling to FALSE branch |
+| Max retries | Max rechecks before falling to FALSE branch |
 
 **Condition types:**
 
@@ -181,7 +181,7 @@ Each sequence has configurable daily action limits (combined, LinkedIn-specific,
 | Setting | Default | Description |
 |---|---|---|
 | Max AI responses per conversation | 0 (unlimited) | Max auto-replies per lead (max 100) |
-| AI disabled by default | false | New conversations start with AI off |
+| AI replies off by default | false | New conversations start with AI off |
 
 ### Follow-Up
 

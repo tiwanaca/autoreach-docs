@@ -6,7 +6,7 @@ Discover high-intent decision-makers through LinkedIn posts and comments. AutoRe
 
 ### 1. Intent-Based Query Generation
 
-AutoReach's AI generates search queries based on your offer, organized by intent category. You select which intent categories to search from:
+AutoReach's AI generates search queries based on your offer, organized by intent category:
 
 | Intent Category | What It Finds |
 |-----------------|---------------|
@@ -15,13 +15,8 @@ AutoReach's AI generates search queries based on your offer, organized by intent
 | **Solution Seeking** | People evaluating tools, comparing options, asking for recommendations |
 | **Buying Intent** | Budget allocation, purchase decisions, vendor selection |
 | **Growth Signals** | Revenue growth, market expansion, new initiatives |
-| **Competitor Switching** | Moving away from or frustrated with current solutions |
-| **Cost Pressure** | Cost reduction and budget constraint discussions |
-| **Compliance & Regulatory** | Regulatory and compliance needs |
-| **Tool Evaluation** | Comparing or testing tools |
-| **Professional Identity** | Role-based challenges and aspirations |
 
-Only the categories you select are used in the search.
+All intent categories are searched automatically to maximize coverage.
 
 Queries are always generated server-side. Unlike X Tweet Search, you cannot provide your own queries directly.
 
@@ -47,18 +42,17 @@ Enable **Buyer Expansion** to run the search automatically every 24 hours. Each 
 
 | Parameter | Default | Description |
 |---|---|---|
-| Intent categories | *(required)* | Which intent categories to search |
 | Posts per search query | 25 | Max posts to collect per query |
-| Search period | Past week | How far back to search (Past 24 hours, Past week, Past month, Any time) |
+| Search period | Past month | How far back to search (Past 24 hours, Past week, Past month, Any time) |
 | Include commenters | enabled | Extract commenters from discovered posts |
-| Max comments per post | 100 | Max comments to fetch per post |
+| Max comments per post | 50 | Max comments to fetch per post |
 | Feed search | disabled | Also search your LinkedIn feed for signals |
 | Buyer Expansion | disabled | Enable automatic daily re-runs |
 | Enrichment options | - | Whether to run enrichment and deep analysis on discovered leads |
 
 ### Hiring Signals
 
-When you include the **Hiring Signals** intent category, additional settings appear:
+Additional settings for hiring signal detection:
 
 | Parameter | Default | Description |
 |---|---|---|
@@ -69,7 +63,7 @@ See [LinkedIn Job Search](linkedin-job-search.md) for details on how hiring sign
 
 ## Cost Estimation
 
-Before running a search, use the cost estimation feature to preview estimated costs based on your selected intent categories and settings.
+Before running a search, use the cost estimation feature to preview estimated costs based on your settings.
 
 ## Progress Tracking
 
@@ -96,7 +90,7 @@ While a content search runs, progress is tracked and updated in real time. You c
 
 **Offer:** "People analytics and HR software platform"
 
-**Selected intent categories:** Pain Points, Hiring Signals, Solution Seeking
+**Intent categories searched:** Pain Points, Hiring Signals, Solution Seeking, Buying Intent, Growth Signals
 
 **AI-generated queries might include:**
 - "struggling with employee retention"
@@ -109,11 +103,9 @@ While a content search runs, progress is tracked and updated in real time. You c
 ## Troubleshooting
 
 **Seeing too many generic results?**
-- Narrow your intent categories-  fewer categories means more focused queries
 - Review your offer description and pain points for clarity
 
 **Not finding enough prospects?**
-- Add more intent categories
 - Increase posts per search query to collect more results
 - Add more specific pain points to your offer
 - Check if your target audience is active on LinkedIn
