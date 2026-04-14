@@ -31,9 +31,8 @@ When matching triggers, your offer's ICP is embedded separately. The ICP embeddi
 - Target audience definition
 - Industry names (resolved from LinkedIn industry IDs)
 - Preferred locations
-- Search signals
 
-The ICP embedding deliberately **excludes** offer description, pain points, and competitors — it focuses on who the buyer is, not what you're selling.
+The ICP embedding focuses on who the buyer is, not what you're selling.
 
 ### 3. Similarity Matching
 
@@ -101,7 +100,7 @@ You need an existing base of enriched leads in the global pool. Build one throug
 
 ### Initial Setup
 
-1. **Create your offer** with clear target audience, search signals, and preferred locations.
+1. **Create your offer** with a clear target audience, industries, and preferred locations.
 2. **Run your first discovery search** using any method above.
 3. **Wait for enrichment to complete.** Embeddings are generated at the end of the enrichment pipeline.
 4. **Lead Pool matching triggers automatically** on offer creation and after searches complete.
@@ -115,9 +114,7 @@ You need an existing base of enriched leads in the global pool. Build one throug
 
 1. **Build the database first.** Lead Pool is most effective with a large base of enriched leads. Start with discovery searches before relying on pool matching.
 
-2. **Write detailed target audience definitions.** The ICP embedding is built from your target audience, industries, locations, and search signals — not your offer description. Be specific in those fields.
-
-3. **Use natural-language search signals.** Descriptive phrases improve semantic matching far more than short keyword lists.
+2. **Write detailed target audience definitions.** The ICP embedding is built from your target audience, industries, and locations — not your offer description. Be specific in those fields.
 
 4. **Monitor match quality.** Track response rates from Lead Pool matches and compare them to other discovery methods.
 
@@ -135,8 +132,7 @@ You need an existing base of enriched leads in the global pool. Build one throug
 
 **Match quality seems low?**
 - Review your target audience definition. Vague or overly broad descriptions produce weaker matches.
-- Add more specific search signals.
-- Remember: the ICP embedding uses your target audience, industries, locations, and search signals — not your offer description or pain points.
+- Remember: the ICP embedding uses your target audience, industries, and locations — not your offer description or pain points.
 
 **Getting too many irrelevant matches?**
 - Tighten your target audience and preferred locations.

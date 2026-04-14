@@ -56,26 +56,11 @@ The combination of all three dimensions determines whether a lead is worth reach
 
 While fit, intent, and timing are independent, AutoReach combines them into a single **Buyer Score** (0-100) that appears on the Buyers page.
 
-The weights between fit, intent, and timing are **dynamic** based on your Offer's **signal likelihood** setting:
+The balance between fit, intent, and timing adapts automatically based on your market. AutoReach analyzes your offer and determines how likely your target buyers are to post about their needs on social media. When buyers are active on social media, intent signals carry more weight. When buyers are quieter, ICP fit becomes the dominant factor.
 
-| Signal Likelihood | Fit Weight | Intent Weight | Timing Weight |
-|---|---|---|---|
-| **High** — buyers frequently post about their needs | 0.30 | **0.45** | 0.25 |
-| **Medium** (default) | 0.45 | **0.40** | 0.15 |
-| **Low** — buyers rarely post on social media | **0.55** | 0.30 | 0.15 |
+### Smart Promotion
 
-Intent leads or ties with fit in most configurations. Only when signal likelihood is set to low does fit become the dominant factor.
-
-### Intent-Gated Promotion
-
-On top of the weighted score, AutoReach applies promotion rules that ensure high-signal leads are never buried:
-
-- **High intent (70+) + decent fit (40+):** guaranteed active (score floor 60)
-- **Moderate intent (50+) + decent fit (40+):** floor at monitor (45)
-- **Strong ICP fit (85+) alone:** floor at 50 — worth reaching out even without intent signals
-- **Good ICP fit (70+) alone:** floor at 40 — stays visible in monitor
-
-These rules mean a perfect ICP match won't disappear, but a lead with real buying signals will always rank higher.
+AutoReach ensures that high-signal leads are never buried by low scores in other dimensions. A lead with strong buying signals and reasonable ICP fit will always surface, even if their timing score is low. Similarly, a near-perfect ICP match stays visible even without active intent signals — they are worth monitoring.
 
 ## Scoring Rules
 
@@ -93,10 +78,7 @@ Different lead sources carry different baseline signals. A lead found by searchi
 
 ## Rescoring
 
-AutoReach supports two ways to rescore leads:
-
-- **Deep Analysis:** A full AI-powered analysis that examines the lead's entire profile, signals, and context. Use this for initial scoring, manual rescoring, or when you want to understand exactly why a lead scored the way they did.
-- **Fast Rescore:** A lightweight recalculation based on existing signal data. Use this to quickly refresh scores after updating your offer definition or when new signals are detected.
+You can rescore leads at any time by selecting them and running **AI Analysis**. This performs a full AI-powered analysis that examines the lead's entire profile, signals, and context. Use it for initial scoring, manual rescoring, or when you want to understand exactly why a lead scored the way they did.
 
 ## Score Changes Over Time
 
@@ -117,17 +99,16 @@ A lead could be Poor Fit at month 1, then jump to Active at month 3 because:
 
 > **Tip:** Leads in the monitor state (30-59) are watched for these score movements. AutoReach automatically promotes them to active if scoring triggers are met.
 
-## Debugging a Low Score
+## Score Feedback
 
-If someone you think should score high is coming in low, check:
+If you disagree with a lead's score, you can correct it directly. Open a lead's detail view and click:
 
-1. **Fit dimension** - Does their industry, company size, and role match your ICP?
-2. **Intent dimension** - Are they posting/engaging about your keywords on social media?
-3. **Timing dimension** - Are they showing urgency signals (new job, hiring activity)?
-4. **Data completeness** - Has enrichment finished? Partial profiles score lower.
-5. **Offer definition** - Is your target audience/keywords specific enough?
+- **Should be a buyer** (thumbs up) — if the lead scored low but you believe they are a good fit
+- **Should NOT be a buyer** (thumbs down) — if the lead scored high but is not actually relevant
 
-Request a **Deep Analysis** rescore and review the scoring breakdown in the Buyer Intelligence dashboard to see exactly why they scored where they did.
+This opens the **Offer Refinement** flow. AutoReach analyzes why the score is off and suggests changes to your offer definition — adjustments to your target audience description, pain points, or ICP criteria. You can review and edit the suggestions before applying them. Once applied, the offer is updated and the lead is rescored against the refined definition.
+
+This feedback loop improves scoring accuracy over time by aligning your offer definition with your real-world judgment about who is and isn't a good prospect.
 
 ## Next Steps
 

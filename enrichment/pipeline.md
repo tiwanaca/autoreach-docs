@@ -86,7 +86,7 @@ Requires the lead to have a LinkedIn profile URL, website URL, or bio longer tha
 | Mode | What Runs | Use Case |
 |---|---|---|
 | **Full pipeline** | All phases (enrich + score) | Default for new leads |
-| **Scoring-only** | Phase 4 only (Phases 1-3 skipped) | Lead Pool matches, rescore requests |
+| **Scoring-only** | Phase 4 only (Phases 1-3 skipped) | Lead Pool matches |
 | **Enrich-only** | Phases 1-3 only (no scoring) | Manual re-enrichment |
 | **Manual re-enrich** | Selected enrichment types only | Targeted refresh of specific data |
 | **No-op** | Leads immediately set to ready | When neither enrich nor scoring is needed |

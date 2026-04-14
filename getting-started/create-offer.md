@@ -19,13 +19,16 @@ AutoReach's AI uses this information to:
 
 ## Creating Your Offer
 
-Go to **Offers** > **Create Offer**. The easiest way is to **add your website URL**. AutoReach will automatically extract your business details and pre-populate the offer fields. Review and modify what's needed, then save. You can also fill in all the details manually.
+Go to **Offers** and click **New Offer**. You'll see two modes at the top:
 
-### AI-Assisted Offer Creation
+- **Website** (default) — Paste your website URL and click **Extract**. AutoReach's AI visits your site and extracts your product description, target audience, pain points, competitors, and industries. Review and adjust what's needed, then save.
+- **Manual** — Fill in all the details yourself from scratch.
 
-When you paste your website URL, AutoReach's AI visits your site and extracts key details -- your product description, target audience, pain points you solve, competitors, and relevant industries. This saves you from filling in every field manually. After extraction, review each field and adjust anything that does not match your positioning.
+### AI-Assisted Creation
 
-Most fields also include a **Regenerate** button. Clicking it uses AI to generate or refine that specific field based on your website and description. For example, if the auto-detected pain points are too generic, click Regenerate to get a fresh set. The description field has a separate **Enhance** button that rewrites your text to be clearer and more specific. You can regenerate individual fields as many times as you like without affecting the others.
+Most fields include a **Generate** (or **Regenerate**) button that uses AI to create or refine content based on your description. The description field has an **Enhance** button that rewrites your text to be clearer and more specific. You can regenerate individual fields as many times as you like without affecting the others.
+
+For new offers, the **Target Audience** field starts as a **Generate from description** button. Click it to have AI create your target audience from your description — you can then edit the result. This is required before you can save.
 
 > **Tip:** Start by pasting your URL and letting the AI do the first pass. Then spend a few minutes reviewing and tweaking -- this produces better results than writing everything from scratch.
 
@@ -59,7 +62,7 @@ This field supports longer descriptions. Include your value proposition, key fea
 
 ### Target Audience
 
-Who you're trying to reach. List specific roles, titles, and the type of companies you target. Use the **Regenerate** button to have AI suggest a target audience based on your description.
+Who you're trying to reach (required). For new offers, this starts as a **Generate from description** button — click it to have AI create your ICP, then edit the result. Use **Regenerate** to get a fresh suggestion.
 
 You can be as descriptive as you want. This is not just a list of titles. You can include who to target, who to avoid, and any other context that helps AutoReach understand your ideal buyer. For example, you can write "Avoid freelancers and solopreneurs" or "Only target companies with 50+ employees" or "Do not reach out to agencies."
 
@@ -68,7 +71,7 @@ You can be as descriptive as you want. This is not just a list of titles. You ca
 
 ### Pain Points You Solve
 
-A list of problems your offer fixes. These help AI match leads who mention these issues on social media and personalize messages accordingly. Use the **Regenerate** button to have AI suggest pain points.
+A list of problems your offer fixes. These help AI match leads who mention these issues on social media and personalize messages accordingly. Type a pain point and click the **+** button (or press Enter) to add it. Use the **Generate** button to have AI suggest pain points.
 
 **Examples**:
 - "Lead generation quality is inconsistent"
@@ -79,7 +82,7 @@ A list of problems your offer fixes. These help AI match leads who mention these
 
 ### Known Competitors
 
-Companies or tools that compete with you. This helps AI detect leads who engage with competitors and understand your market position. Use the **Regenerate** button to have AI suggest competitors.
+Companies or tools that compete with you. This helps AI detect leads who engage with competitors and understand your market position. Type a competitor name and click the **+** button (or press Enter) to add it. Use the **Generate** button to have AI suggest competitors.
 
 **Examples**:
 - Common Room
@@ -89,7 +92,7 @@ Companies or tools that compete with you. This helps AI detect leads who engage 
 
 ### Target Industries
 
-LinkedIn industries to filter people search. These are used in "By Role" and Lookalike searches to find prospects in specific sectors. Use the **Regenerate** button to have AI suggest industries.
+LinkedIn industries to filter people search. These are used in "By Role" and Lookalike searches to find prospects in specific sectors. Use the **Generate** button to have AI suggest industries.
 
 **Examples**:
 - Computer Software
@@ -100,27 +103,21 @@ LinkedIn industries to filter people search. These are used in "By Role" and Loo
 
 ### Deal Value
 
-The monetary value of your offer (e.g., $99). This helps AutoReach estimate pipeline value and prioritize leads accordingly.
+The monetary value of your offer (e.g., $5,000). This helps AutoReach estimate pipeline value.
 
 ### Locations
 
-Geographic regions where you want to focus outreach. You can choose to filter by **Lead** location or **Company HQ** location. Add countries or regions from the dropdown.
-
-**Examples**:
-- United States
-- Canada
-- Europe
-- Australia
+Geographic regions where you want to focus outreach. Toggle between **Lead** location and **Company HQ** location to control how leads are matched. Search and add countries, regions, or cities.
 
 Leave blank for global targeting.
 
 ### Target Language
 
-The language for your outreach messages (e.g., English). AutoReach will generate DMs and responses in this language.
+The language for your outreach messages. Choose from English, Italian, Spanish, French, German, or Portuguese. AutoReach will generate DMs and responses in this language.
 
 ### Website
 
-Your website URL (e.g., https://yoursite.com). Used by the Enhance and Regenerate features to extract business details and auto-populate fields.
+Your website URL (e.g., https://yoursite.com). Used by the Enhance and Generate features to extract business details.
 
 ### Active Toggle
 
@@ -142,14 +139,13 @@ Upload up to 10 documents (PDF, DOCX, or TXT) with:
 
 ### How to Upload
 
-1. In your Offer, go to **Knowledge Base**
-2. Click **Upload Documents**
-3. Select 1-5 files (PDF, DOCX, TXT)
-4. Click **Upload**
+1. On the Offers page, click **Knowledge Base** on your offer card
+2. Click or drag a file into the upload area (PDF, DOCX, or TXT, max 10MB)
+3. The document is processed automatically — you'll see it move from "Processing" to "Ready"
 
 AutoReach will:
-- Chunk your documents into sections
-- Embed them using AI embeddings
+- Chunk your document into sections
+- Generate vector embeddings for each chunk
 - Index them for semantic search
 
 When someone replies to your outreach, AutoReach's AI will search your knowledge base for relevant context and use it to generate smart, personalized responses.
@@ -183,10 +179,9 @@ Higher scores mean a stronger fit with your ICP.
 
 ### 2. Keyword Generation
 
-AutoReach extracts keywords from your Offer and uses them to:
+AutoReach automatically generates search keywords from your offer's description and pain points, then uses them to:
 - Search for relevant prospects on X and LinkedIn
 - Filter leads in Autopilot
-- Identify trending topics in your space
 
 ### 3. DM Personalization
 

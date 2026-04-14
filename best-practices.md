@@ -10,11 +10,10 @@ Your Offer is the foundation that powers everything in AutoReach: lead discovery
 
 - **Be specific about your target audience.** "VP of Demand Gen at B2B SaaS companies with $10M+ ARR" scores better than "marketing professionals." Include who to target, who to avoid, and any context that helps scoring.
 - **Write detailed pain points.** Name the exact problems your buyers face: "Outbound outreach timing is guesswork" is more powerful than "help with sales." Pain points drive intent matching and message personalization.
-- **Use natural-language search signals.** Descriptive phrases like "looking for a better CRM" improve both keyword generation and Lead Pool semantic matching far more than short keyword lists.
-- **Set signal likelihood accurately.** If your buyers rarely post about their needs on social media, set this to Low so fit becomes the dominant scoring factor. If they frequently discuss pain points publicly, set it to High to prioritize intent signals.
+- **Be specific in your description and pain points.** The more detailed your offer, the better AutoReach generates search keywords and matches leads via the Lead Pool.
 - **Add your known competitors.** This helps AutoReach detect leads engaging with competitor content, which is one of the strongest intent signals.
 - **Upload 3-5 high-quality knowledge base documents.** Case studies, pricing sheets, and objection-handling guides give the AI real context for conversations. A few focused documents outperform a large volume of generic content.
-- **Review and update quarterly.** As you learn which types of companies convert, refine your target audience, pain points, and search signals to match.
+- **Review and update quarterly.** As you learn which types of companies convert, refine your target audience and pain points to match.
 
 See [Creating Your First Offer](getting-started/create-offer.md) and [Offers & Knowledge Base](core-concepts/offers-and-knowledge-base.md).
 
@@ -107,7 +106,7 @@ Track the right metrics to know whether your outreach is working and when to adj
 - **Track meetings booked per week.** This is the ultimate outcome metric. If replies are high but meetings are low, your conversation AI or follow-up strategy needs adjustment.
 - **Compare lead sources.** Check which discovery method (tweet search, LinkedIn search, lookalike, Lead Pool) produces the highest-scoring leads and best reply rates. Double down on what works.
 - **Monitor your Active-to-Enrolled ratio.** If many Active leads are not being enrolled, check your auto-enrollment settings and sequence status.
-- **Watch the Monitor-to-Active promotion rate.** A healthy pipeline has leads regularly graduating from Monitor to Active as new signals appear. If promotions are rare, your offer's search signals may need refinement.
+- **Watch the Monitor-to-Active promotion rate.** A healthy pipeline has leads regularly graduating from Monitor to Active as new signals appear. If promotions are rare, your offer's pain points and target audience may need refinement.
 - **Review AI response quality monthly.** Read through 10-20 AI-generated conversations to check for tone drift, missed objections, or generic responses.
 - **Check cost per lead.** Use the cost estimation tool to understand your per-lead AI spend and optimize model selections for high-volume categories.
 

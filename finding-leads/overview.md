@@ -133,7 +133,7 @@ The **buyer expansion scheduler** is a background autopilot that runs daily to c
 
 ## Cross-Platform Profile Matching
 
-Cross-platform matching (finding X profiles for LinkedIn leads and vice versa) is **not a standalone discovery method**. It runs automatically during the enrichment pipeline when a lead enters from any source. See [Cross-Platform Matching](cross-platform-matching.md) for details on how it works.
+Cross-platform matching (finding X profiles for LinkedIn leads and vice versa) is a **manual action**, not an automatic pipeline step. Select leads, click Enrich, and enable "Find LinkedIn" or "Find X Profile" under Profile Discovery. See [Cross-Platform Matching](cross-platform-matching.md) for details.
 
 ## Managing Your Leads
 
@@ -179,4 +179,4 @@ The Lead Pool contains pre-enriched profiles that are shared across the platform
 
 > **Note:** All lead discovery methods automatically score new prospects against your offer for fit, intent, and timing before they appear in your pipeline.
 
-> **Warning:** Lead quality depends on accurate ICP definition. Spend time setting up your offer with clear pain points, target audience, and search signals for best results.
+> **Warning:** Lead quality depends on accurate ICP definition. Spend time setting up your offer with clear pain points and target audience for best results.

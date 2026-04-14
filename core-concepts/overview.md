@@ -71,7 +71,7 @@ Each concept builds on the others:
 - Without **Conversations**, you can't scale personal responses
 - Without **Autopilot**, you configure searches and sequences yourself (which is totally fine)
 
-> **Tip:** Start by creating a detailed Offer. The richer your Offer definition (target audience, pain points, search signals), the smarter your Buyer Intelligence scores become.
+> **Tip:** Start by creating a detailed Offer. The richer your Offer definition (target audience, pain points, competitors), the smarter your Buyer Intelligence scores become.
 
 ## What's Next?
 

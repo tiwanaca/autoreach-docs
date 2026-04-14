@@ -20,7 +20,7 @@ Key terms used throughout AutoReach, listed alphabetically.
 
 **Buyer Intelligence** — AutoReach's AI-powered scoring system that evaluates each lead across three dimensions (fit, intent, and timing) to predict purchase probability. Also referred to as the scoring engine. See [Buyer Intelligence & Scoring](core-concepts/buyer-scoring.md).
 
-**Buyer Score** — A composite score from 0-100 that combines fit, intent, and timing into a single number. The Buyer Score determines a lead's buyer state and pipeline position. Weights between dimensions are dynamic based on your offer's signal likelihood setting. See [Buyer Intelligence & Scoring](core-concepts/buyer-scoring.md).
+**Buyer Score** — A composite score from 0-100 that combines fit, intent, and timing into a single number. The Buyer Score determines a lead's buyer state and pipeline position. The balance between dimensions adapts automatically based on your market. See [Buyer Intelligence & Scoring](core-concepts/buyer-scoring.md).
 
 **Buyer State** — One of six statuses assigned to every lead: Active, Monitor, Poor Fit, Disqualified, Manual Outreach, or Not Scored. The state determines where a lead appears in the UI and whether it is eligible for outreach. See [Buyer States](core-concepts/buyer-states.md).
 
@@ -84,7 +84,7 @@ Key terms used throughout AutoReach, listed alphabetically.
 
 **Resurfacing** — The process of automatically rechecking lower-scored leads for new signals on a tiered schedule. When new signals boost a lead's score above the Active threshold (60+), they are promoted and become eligible for auto-enrollment. See [Monitor Resurfacing](autopilot/monitor-resurfacing.md).
 
-**Scoring** — The process of evaluating a lead across fit, intent, and timing dimensions to produce a Buyer Score. AutoReach supports two scoring modes: Deep Analysis (full AI-powered evaluation) and Fast Rescore (lightweight recalculation from existing data). See [Buyer Intelligence & Scoring](core-concepts/buyer-scoring.md).
+**Scoring** — The process of evaluating a lead across fit, intent, and timing dimensions to produce a Buyer Score. AutoReach uses AI-powered Deep Analysis to score leads. See [Buyer Intelligence & Scoring](core-concepts/buyer-scoring.md).
 
 **Sequence** — A multi-step outreach campaign built visually in the flow editor. Sequences define the actions (like, follow, DM, connection request), timing between steps, and branching logic for each enrolled lead. See [Building Sequences](outreach/building-sequences.md).
 

@@ -104,17 +104,9 @@ Array of recent news items (last 6 months only):
 
 ## Enrichment Confidence
 
-Confidence is a weighted average across the three search phases:
+Confidence is calculated across the three search phases, with company data weighted most heavily since it provides the most critical identity and context information. Social/contact data and activity/insights contribute as supporting factors.
 
-| Phase | Weight | Description |
-|---|---|---|
-| Phase 1 (Company) | 50% | Most critical -- identity and company data |
-| Phase 2 (Social/Contact) | 25% | Supporting profiles and contact info |
-| Phase 3 (Activity/Insights) | 25% | Recent news and achievements |
-
-Each phase returns a confidence level mapped to a score: HIGH = 0.9, MEDIUM = 0.65, LOW = 0.4, NONE = 0. The weighted average is capped at 0.95.
-
-Web enrichment data is only included in scoring context when confidence exceeds 0.3.
+Each phase produces a confidence level (HIGH, MEDIUM, LOW, or NONE). Web enrichment data is only included in scoring context when overall confidence is sufficient.
 
 ## How It's Triggered
 

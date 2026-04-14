@@ -21,28 +21,28 @@ When you create an offer, you define:
 ### Core Definition
 
 - **Name:** What you are calling this offer (required)
-- **Description:** Detailed description of what you are selling and why (required)
-- **Website:** Your website URL. You can use the "Extract from Website" feature to auto-populate offer fields from your site — this is a separate step, not automatic on save.
+- **Description:** Detailed description of what you are selling and why (required). Use the **Enhance** button to have AI rewrite your description to be clearer and more specific.
+- **Website:** Your website URL. On offer creation, you can paste a URL and click **Extract** to auto-populate offer fields from your site.
 
 ### Target Audience
 
-- **Target audience:** Free-form ICP definition. You can include who to target, who to avoid, and any context that helps AutoReach understand your ideal buyer.
-- **Locations:** Target locations, with a **location filter type** setting that controls whether leads are matched by their own location or their company's HQ location
-- **Industries:** LinkedIn industry IDs used to filter people searches
-- **Language:** The language for your outreach messages (ISO 639-1 code, e.g., "en", "es", "it")
-- **Qualification criteria:** Optional free-form qualification rules for your offer
+- **Target audience:** Free-form ICP definition (required). You can include who to target, who to avoid, and any context that helps AutoReach understand your ideal buyer. For new offers, click **Generate from description** to have AI create this from your description — you can then edit it. Use **Regenerate** to get a fresh suggestion.
+- **Locations:** Target locations, with a **location filter type** toggle that controls whether leads are matched by their own location or their company's HQ location
+- **Industries:** LinkedIn industries used to filter people searches. Use the **Generate** button to have AI suggest relevant industries.
+- **Language:** The language for your outreach messages (English, Italian, Spanish, French, German, or Portuguese)
 
 ### Market Positioning
 
-- **Pain points:** Problems your offer solves (used for intent matching and message personalization)
-- **Known competitors:** Companies or tools that compete with you (helps detect leads engaging with competitors — these leads are scored as Poor Fit with zeroed scores, not Disqualified)
-- **Search signals:** Natural language phrases your buyers post on social media (e.g., "I need better customer data integration")
-- **Signal types:** Categories of signals to look for during discovery
-- **Signal likelihood:** How likely your target buyers post about this on social media (high/medium/low). This adjusts how heavily intent signals are weighted in scoring.
+- **Pain points:** Problems your offer solves (used for intent matching and message personalization). Add manually or use the **Generate** button.
+- **Known competitors:** Companies or tools that compete with you (helps detect leads engaging with competitors — these leads are scored as Poor Fit with zeroed scores, not Disqualified). Add manually or use the **Generate** button.
 
 ### Value
 
-- **Average value:** Expected contract size ($). Used to estimate pipeline value.
+- **Deal value:** Expected contract size ($). Used to estimate pipeline value.
+
+### Other Settings
+
+- **Active toggle:** Only active offers are used by Autopilot and sequences for lead scoring and outreach.
 
 ## How Offers Power Everything
 
@@ -50,19 +50,7 @@ Your offer definition cascades through AutoReach's entire system:
 
 ### 1. Lead Discovery
 
-AutoReach uses your offer's **search signals** to find relevant leads:
-
-```
-"Looking for project management software"
-↓
-Searches X and LinkedIn for these keywords
-↓
-Finds people posting about project management needs
-↓
-Adds them as leads
-```
-
-More specific search signals = more targeted discovery.
+AutoReach automatically generates search keywords from your offer's description and pain points, then uses them to find relevant leads on X and LinkedIn. More specific descriptions and pain points produce more targeted discovery.
 
 ### 2. Lead Scoring
 
@@ -90,14 +78,6 @@ When leads reply, AutoReach's conversation AI uses your offer to:
 - Generate on-brand replies
 - Know when to escalate to a human
 - Suggest next steps
-
-### 5. Signal Likelihood Weighting
-
-Your **signal likelihood** setting adjusts how the three scoring dimensions (fit, intent, timing) are weighted:
-
-- **High likelihood:** Your buyers frequently post about their needs on social media. Intent signals carry more weight.
-- **Medium likelihood** (default): Your buyers sometimes post about their needs. Balanced weighting.
-- **Low likelihood:** Your buyers rarely post about their needs. Fit becomes the dominant factor.
 
 > **Tip:** Spend time defining your offer well. A great offer definition is a force multiplier that makes every downstream feature smarter.
 

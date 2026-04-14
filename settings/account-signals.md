@@ -2,13 +2,13 @@
 
 Account-Level Signal Aggregation combines buying signals from multiple leads at the same company into a single **heat score** — an indicator of company-wide purchase intent.
 
-## How Heat Score Is Computed
+## How Heat Score Works
 
-The heat score (0–100) combines three factors:
+The heat score (0–100) reflects the overall buying intent at a company. It factors in:
 
-- **Signal strength**: Each signal contributes points based on its strength (high, medium, or low)
-- **Recency bonus**: Recent signals (last 7 days) receive additional weight
-- **Diversity multiplier**: More leads at the same company showing signals amplifies the score — wider signal distribution across a team is a stronger indicator than concentrated signals from one person
+- **Signal strength**: Stronger signals (like asking for recommendations) contribute more than weaker ones (like a single post like)
+- **Recency**: Recent signals carry more weight than older ones
+- **Team breadth**: Signals from multiple people at the same company are a stronger indicator than signals from just one person
 
 ## Company Identification
 

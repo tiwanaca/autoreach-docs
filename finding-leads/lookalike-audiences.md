@@ -126,7 +126,7 @@ Before running a search, use the cost estimation feature to preview estimated co
 
 **Low ICP match rate on extracted followers?**
 - Review whether the seed accounts truly align with your ICP
-- Refine your ICP definition, particularly pain points and search signals
+- Refine your ICP definition, particularly pain points and target audience
 - Try targeting more niche, specialized accounts rather than very broad ones
 
 **Seed accounts getting exhausted?**

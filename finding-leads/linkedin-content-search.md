@@ -18,7 +18,7 @@ AutoReach's AI generates 10-15 search queries and 15-20 keywords based on your o
 
 The AI may also generate queries for additional categories like competitor switching, cost pressure, compliance/regulatory, and tool evaluation, but only the categories you select are used.
 
-If you've defined **search signals** in your offer, these are given the highest priority in query generation — the AI is instructed to build queries around them. This is enforced at the prompt level.
+AutoReach also generates search signals from your offer automatically. These are given the highest priority in query generation — the AI is instructed to build queries around them.
 
 Queries are always generated server-side. Unlike X Tweet Search, you cannot provide your own queries directly.
 
@@ -92,9 +92,7 @@ While a content search runs, progress is tracked and updated in real time. You c
 
 2. **Include pain points.** Search for the exact pain points your offer solves (from your offer description).
 
-3. **Add search signals.** Define 5-8 natural language search signals based on real prospect conversations you've had. These get highest priority in query generation.
-
-4. **Keep commenters on.** LinkedIn commenters are often highly engaged decision-makers. Leave commenter extraction enabled.
+3. **Keep commenters on.** LinkedIn commenters are often highly engaged decision-makers. Leave commenter extraction enabled.
 
 5. **Run recurring searches.** Set up daily LinkedIn content searches to capture new prospects continuously with fresh query rotation.
 
@@ -110,29 +108,22 @@ While a content search runs, progress is tracked and updated in real time. You c
 - "talent management challenges"
 - "hiring pipeline needs improvement"
 
-**Search signals you add:**
-- "manual HR processes slowing us down"
-- "need better visibility into talent"
-- "looking for people analytics solution"
-
 **Result:** Content search finds posts discussing HR challenges, hiring, and performance management. Post authors and commenters are extracted — CHROs, VPs of People, and Talent Acquisition leaders discussing your exact problem space. All are added as leads and queued for enrichment and scoring.
 
 ## Troubleshooting
 
 **Seeing too many generic results?**
 - Narrow your intent categories — fewer categories means more focused queries
-- Add specific search signals to steer query generation
-- Review your offer description for clarity
+- Review your offer description and pain points for clarity
 
 **Not finding enough prospects?**
 - Add more intent categories
 - Increase posts per intent to collect more results
-- Include common pain point variations in your search signals
+- Add more specific pain points to your offer
 - Check if your target audience is active on LinkedIn
 
 **Getting low ICP match rates?**
 - Verify your offer's target audience and pain points are well-defined
-- Ensure search signals match your actual buyer personas
 
 **High duplicate rate across searches?**
 - This is normal. The same prospect may comment on multiple relevant posts. Deduplication happens before leads are added to your database.

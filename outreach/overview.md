@@ -73,7 +73,7 @@ Sequence execution simulates human behavior to avoid platform detection:
 | Mechanism | Details |
 |---|---|
 | Global action spacing | 5-minute minimum between actions |
-| Time slot weighting | Variable probability by hour (lunch peak 1.3x, early morning 0.6x) |
+| Time slot weighting | Variable probability by hour — higher during peak hours, lower during off-hours |
 | Session clustering | Actions grouped into human-like bursts |
 | Daily variance | ±20% variance on daily limits |
 | Day-of-week variance | Weekends 0.6–0.7x multiplier, weekdays 0.9–1.0x |

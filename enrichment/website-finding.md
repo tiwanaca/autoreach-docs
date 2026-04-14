@@ -11,19 +11,19 @@ Website finding uses AI web search (based on your model configuration) to search
 **Strategy 1: Bio/Headline Company Search** (tried first)
 - Extracts company name from the lead's bio using common patterns (e.g., "@ Company", "at Company", "CEO of X")
 - Searches for that company's official website
-- If confidence is HIGH (>= 0.75), returns immediately without trying other strategies
-- Confidence reduced by 20% if the company name couldn't be verified
+- If confidence is high, returns immediately without trying other strategies
+- Confidence is reduced if the company name couldn't be verified
 
 **Strategy 2: LinkedIn Company Search**
 - Extracts company from the lead's LinkedIn profile data
 - Searches for the company's official website
-- If confidence is HIGH (>= 0.65), kept for comparison
+- If confidence is high, kept for comparison
 
 **Strategy 3: Direct Person Search** (last resort)
 - Searches for the person's personal website or portfolio using their name and social handle
 - Generally returns lower confidence scores
 
-The best result with confidence >= 0.40 is returned. If no candidate meets that threshold, no website is stored.
+The best result above a minimum confidence threshold is returned. If no candidate meets the threshold, no website is stored.
 
 ### Rate Limit
 
@@ -47,15 +47,7 @@ Leads without either are skipped.
 
 ### Confidence Scoring
 
-Each strategy returns an AI confidence level (HIGH, MEDIUM, LOW) mapped to a numeric range:
-
-| Strategy | HIGH | MEDIUM | LOW |
-|---|---|---|---|
-| Bio company | 0.75 | 0.60 | 0.45 |
-| LinkedIn company | 0.85 | 0.70 | 0.55 |
-| Direct person search | 0.65 | 0.50 | 0.40 |
-
-Bio company confidence is reduced by 20% if the extracted company name couldn't be verified. Only results with confidence >= 0.40 are accepted.
+Each strategy returns a confidence level (HIGH, MEDIUM, or LOW). LinkedIn company searches tend to produce the highest confidence, followed by bio company extraction, and then direct person searches. Results below a minimum confidence threshold are discarded to avoid false matches.
 
 ## Domain Filtering
 

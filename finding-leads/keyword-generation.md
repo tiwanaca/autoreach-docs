@@ -12,7 +12,7 @@ AutoReach derives keywords from multiple elements of your offer:
 
 - **Target audience** details like titles, roles, and industries
 - **Pain points** described in your offer
-- **Search signals** you provide as natural language phrases
+- **Search signals** automatically generated from your offer
 - **Competitors** — competitor-specific keywords are generated and merged separately
 - **Industry jargon** — niche terminology, insider terms, and community names
 
@@ -106,7 +106,7 @@ When you start a LinkedIn content search, you select which intent categories to 
 
 ## Previewing Keywords
 
-You can preview generated keywords before running a search. The keyword generator is available when configuring X tweet searches and LinkedIn content searches. Previewing lets you review the AI-generated keywords and queries without starting a search, so you can adjust your offer description or search signals if needed.
+You can preview generated keywords before running a search. The keyword generator is available when configuring X tweet searches and LinkedIn content searches. Previewing lets you review the AI-generated keywords and queries without starting a search, so you can adjust your offer description or pain points if needed.
 
 ## Keyword Overrides
 
@@ -137,7 +137,7 @@ The recurring search scheduler runs every hour. Searches re-trigger only when la
 
 1. **Review AI-generated keywords.** AutoReach generates solid starting points, but you know your market best. Override where it makes sense.
 
-2. **Include industry jargon in your offer.** Niche terminology in your offer description, pain points, and search signals produces better AI-generated keywords.
+2. **Include industry jargon in your offer.** Niche terminology in your offer description and pain points produces better AI-generated keywords.
 
 3. **Vary intent signals.** Mix pain-focused ("struggling with"), growth-focused ("scaling"), and evaluation-focused ("comparing") to cover different buyer stages.
 

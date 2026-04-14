@@ -69,18 +69,6 @@ Company acquired another company or was acquired.
 
 **Example:** "Big news: We've acquired TechStartup to expand our platform capabilities"
 
-### Strategic Partnership
-
-Company announced a partnership with another company.
-
-**Example:** "Excited to partner with AWS to bring enterprise-grade security"
-
-### Major Customer Announcement
-
-Company announced a major customer win or case study.
-
-**Example:** "Thrilled to share that Fortune 500 Company X is now using our platform"
-
 ### Cost Cutting
 
 Company announced layoffs, consolidation, or cost reduction initiatives.
@@ -117,27 +105,25 @@ Lead has high engagement on posts related to your category.
 
 ### Own Post Engagement
 
-Lead engaged with YOUR posts (liked, commented, replied). This is an inbound signal — they came to you. AutoReach tracks three levels of engagement:
+Lead engaged with YOUR posts — this is an inbound signal, they came to you. AutoReach detects different types of engagement on each platform:
 
-- **Own Post Reply** (high strength) — Lead replied to or commented on your post
-- **Own Post Repeat Engagement** (high strength) — Lead engaged with 2+ of your posts
-- **Own Post Engagement** (medium strength) — Lead engaged with one of your posts
+**X (Twitter):** replies, likes, retweets, and new follows
+
+**LinkedIn:** reactions, comments, mentions, connection requests, and profile views
+
+Deeper engagement (replies, comments, mentions) and repeat engagement (interacting with multiple posts) are weighted more heavily than passive engagement like a single like.
 
 **Example:** A lead replied to your thread about sales automation best practices
 
 ### Competitor Customer
 
-Lead is a confirmed user of a competing product. Detected via LinkedIn job search matching companies that use competitor tools. These leads get an intent floor of 50 because they already have budget for the category and understand the problem.
+Lead is a confirmed user of a competing product. Detected via LinkedIn job search matching companies that use competitor tools. These leads receive an intent boost because they already have budget for the category and understand the problem.
 
 **Example:** Lead's company is listed as a customer of a competitor on their website
 
 ### Interaction Orbit
 
-AutoReach tracks a lead's engagement orbit — the accounts they interact with on social media. When a lead suddenly starts engaging with multiple competitor or adjacent vendor accounts in a short time window, it signals active evaluation.
-
-- **New competitor cluster** (2+ competitor accounts engaged recently) → intent floor 65
-- **New vendor cluster** (2+ adjacent vendor accounts engaged recently) → intent floor 65
-- **High orbit velocity + offer-relevant cluster** → timing floor 70
+AutoReach tracks a lead's engagement orbit — the accounts they interact with on social media. When a lead suddenly starts engaging with multiple competitor or adjacent vendor accounts in a short time window, it signals active evaluation. These clusters receive significant intent and timing boosts because they indicate a lead is actively comparing solutions.
 
 **Example:** A lead liked posts from three competing CRM vendors in the same week — they're evaluating options
 
@@ -220,7 +206,7 @@ Signals feed into the three scoring dimensions:
 
 - **Fit:** Industry match, role match, company size, location
 - **Intent:** Asking for recommendations, switching tools, complaints, pain point matches, competitor engagement, competitor customer status, interaction orbit clusters, custom intent signals
-- **Timing:** Job changes, new hires, funding, IPO filings, product launches, hiring activity, high orbit velocity
+- **Timing:** Job changes, new hires, funding, IPO filings, product launches, hiring activity
 
 The more signals a lead has, and the stronger those signals are, the higher their scores. Each signal contributes to the relevant dimension, and the composite buyer score reflects all three.
 
@@ -228,19 +214,14 @@ The more signals a lead has, and the stronger those signals are, the higher thei
 
 ## Signal Detection & Recency
 
-AutoReach monitors for new signals through the **resurfacing scheduler**, which checks leads on a tiered cycle (every 5-21 days depending on current score). Before rescoring, it checks for LinkedIn headline changes (job change detection) and refreshes company hiring signals if stale.
+AutoReach continuously monitors for new signals. It periodically rechecks leads for job changes, new posts, and company activity. Recent signals carry more weight — a funding announcement from last week is more relevant than one from six months ago.
 
-Signal recency is handled at two levels:
+A lead could be at monitor, and then:
 
-- **Account-level heat score:** Signals from the last 7 days contribute a recency bonus to the company heat score.
-- **Individual lead scoring:** The LLM evaluates timing based on signal age — signals within 90 days score higher, very old or absent signals score lower. There is no deterministic decay formula; the LLM interprets recency contextually.
-
-A lead could be at monitor (40 score), and then:
-
-- Their post about your keywords gets 100 reactions (+intent)
+- Their post about your keywords gets traction (+intent)
 - They announce a new job in a target role (+timing)
 - Their company announces funding (+timing)
-- Their score jumps to 65 and they promote to active
+- Their score jumps and they promote to active
 
 ## Viewing Lead Signals
 
@@ -255,7 +236,7 @@ In the lead profile, you can see:
 
 > **Tip:** Leads with recent job changes (< 60 days) or recent company signals (funding, hiring, expansion) are hottest. They're actively evaluating.
 
-> **Tip:** A lead asking "looking for recommendations" is 2-3x more likely to reply than someone with no intent signal. Weight intent signals heavily in your mental model.
+> **Tip:** Leads actively asking for recommendations or evaluating tools are significantly more likely to reply than those with no intent signal.
 
 > **Warning:** A lead with one strong signal but poor fit is still a poor prospect. Signals work together.
 

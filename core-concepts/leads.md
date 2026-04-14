@@ -73,7 +73,7 @@ Bulk import leads from a spreadsheet with X handle, LinkedIn URL, or email.
 
 When a lead enters AutoReach, it goes through automatic enrichment in the background:
 
-1. **Profile enrichment:** Enrich LinkedIn and X profiles in parallel — extract bio, headline, experience, education, skills, and company data. Cross-platform matching (finding the lead's profile on the other platform) happens at this stage.
+1. **Profile enrichment:** Enrich LinkedIn and X profiles in parallel — extract bio, headline, experience, education, skills, and company data.
 2. **Activity enrichment:** Fetch recent posts, engagement patterns, and social activity
 3. **Location enrichment:** *(conditional)* Resolve lead location when geographic targeting is enabled
 4. **Scoring:** Run Buyer Intelligence to calculate fit, intent, and timing scores
@@ -99,7 +99,7 @@ See [Buyer States](buyer-states.md) for full details on each state and how trans
 
 ## Cross-Platform Profile Matching
 
-When you add a lead from one platform, AutoReach automatically searches for their profile on the other. This cross-platform data makes enrichment and scoring far more accurate than single-platform data alone.
+You can search for a lead's profile on the other platform by selecting leads, clicking Enrich, and enabling "Find LinkedIn" or "Find X Profile" under Profile Discovery. This cross-platform data makes enrichment and scoring far more accurate than single-platform data alone. See [Cross-Platform Matching](../finding-leads/cross-platform-matching.md) for details.
 
 ## Lead Profile Data
 
