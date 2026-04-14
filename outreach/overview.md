@@ -26,7 +26,7 @@ A typical sequence might look like:
 
 ### Platform Support
 
-Each sequence is assigned a platform (X or LinkedIn) and can reference both an X account and a LinkedIn account simultaneously. Individual steps specify which platform they target, enabling dual-platform sequences where some steps execute on X and others on LinkedIn.
+When creating a sequence, you select which accounts to use - an X account, a LinkedIn account, or both. At least one account is required. Individual steps specify which platform they target, so a single sequence can include steps that execute on X and others that execute on LinkedIn.
 
 ## Supported Actions
 
@@ -48,13 +48,13 @@ Each step has a defined order, platform-specific settings, positioning data for 
 
 Every message sent through a sequence is personalized using the lead's enriched data. The system supports two layers:
 
-**Direct substitution**-  template variables replaced with lead data:
-- `{{name}}`, `{{first_name}}`, `{{username}}`, `{{bio}}`, `{{location}}`, `{{followers}}`
+**Direct substitution** - template variables replaced with lead data (identity, network stats, company info, enrichment insights, contact info, and more)
 
-**AI-inferred placeholders**-  filled by the AI model from lead context:
-- `{{role}}`, `{{company}}`, `{{industry}}`, `{{pain_point}}`, and any custom placeholder
+**AI-inferred placeholders** - filled by the AI model from lead context (`{{role}}`, `{{pain_point}}`, `{{question}}`, and any custom placeholder you define)
 
-The AI draws on the lead's profile data, recent activity, enrichment intelligence (tech stack, funding, company context), the offer's knowledge base (RAG), and tone examples configured on the sequence.
+AutoReach provides 30+ built-in template variables across categories like identity, company data, professional profile, web enrichment insights, and contact info. The AI draws on the lead's profile data, recent activity, enrichment intelligence (tech stack, funding, company context), the offer's knowledge base (RAG), and tone examples configured on the sequence.
+
+See **[DM Personalization](dm-personalization.md)** for the full variable reference.
 
 ## Sequence Execution
 
@@ -129,9 +129,12 @@ Leads failing validation are skipped with a reason. If the sequence is active, s
 | Metric | Description |
 |---|---|
 | Leads Added | Total leads enrolled |
-| Leads Contacted | Leads that received at least one action |
-| Leads Replied | Leads with status "Replied" or "Meeting Booked" |
-| Meetings Booked | Leads with a meeting scheduled |
+| Contacted | Leads that received at least one action |
+| Replied | Leads with status "Replied" or "Meeting Booked" |
+| Meetings | Leads with a meeting scheduled |
+| Reply Rate | Replied / Contacted |
+| Conversion Rate | Meetings / Replied |
+| Acceptance Rate | Connection requests accepted / sent (LinkedIn only) |
 
 Metrics are updated automatically when lead statuses change. Step-level execution stats are available via the activity log, which tracks every action with status, timestamps, and execution data.
 
@@ -139,14 +142,17 @@ Metrics are updated automatically when lead statuses change. Step-level executio
 
 | Setting | Description |
 |---|---|
+| LinkedIn Daily Limit | Max LinkedIn actions per day (default 20) |
+| X Daily Limit | Max X actions per day (default 40) |
+| Auto-Enroll Active Buyers | Automatically add leads scored as active for this offer |
 | AI Prompt | Custom AI instructions for message generation |
 | DM Generation Prompt | Specific prompt for cold DM generation |
 | Warmup Prompt | Prompt for warmup engagement |
 | Skip Contacted Leads | Skip leads with prior contact history |
-| Skip Negative Content | Skip leads with negative content |
+| Skip Negative Posts | Skip leads with negative content in recent posts |
 | Skip Old Posts (days) | Skip leads whose recent posts are older than N days |
 | Prefer Original Posts | Prefer original posts over reposts for engagement |
-| AI Disabled by Default | Disable AI auto-responses for conversations |
+| AI Replies Off by Default | Disable AI auto-responses for new conversations |
 | Max AI Responses per Conversation | Cap on AI responses per conversation (default 0 = unlimited) |
 
 ## Next Steps
