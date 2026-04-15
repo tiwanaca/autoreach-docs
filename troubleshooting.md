@@ -198,7 +198,7 @@ A centralized guide for diagnosing and fixing common issues in AutoReach. Each s
 
 **Likely Cause:** You hit the platform's daily or hourly limit for a specific action type.
 
-**Fix:** AutoReach automatically applies cooldown periods when rate limits are hit. Wait for the cooldown to expire, then reduce your daily action limits to stay under the platform's thresholds. Start conservative (15-20 DMs/day for X, stay well under LinkedIn's weekly connection limit).
+**Fix:** AutoReach automatically applies cooldown periods when rate limits are hit. Wait for the cooldown to expire, then reduce your daily action limits to stay under the platform's thresholds. Start conservative (15-20 DMs/day for X, stay well under LinkedIn's daily connection limit).
 
 ---
 

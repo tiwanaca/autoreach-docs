@@ -30,7 +30,6 @@ The daily summary gives you a snapshot of today's activity across all your seque
 - **Likes** - posts liked as part of sequences or warmup
 - **Follows** - new accounts followed (X only)
 - **Connection requests** - LinkedIn connection requests sent
-- **Profile views** - LinkedIn profiles viewed
 - **Total actions** - combined count of all actions today
 
 This summary appears as a **toast notification** when you open the app, giving you a quick snapshot of today's activity.
@@ -41,7 +40,7 @@ This summary appears as a **toast notification** when you open the app, giving y
 
 The activity feed is a chronological log of every completed action across your account. It shows:
 
-- **What happened** - the action type (like, DM, reply, follow, connection request, profile view)
+- **What happened** - the action type (like, DM, comment, follow, connection request)
 - **Who it was for** - the lead's name and username
 - **Which sequence** - the sequence that triggered the action (or "Engagement Engine" for warmup actions)
 - **Platform** - whether it happened on X or LinkedIn

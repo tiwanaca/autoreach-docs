@@ -19,8 +19,8 @@ The system runs continuously throughout your activity window, distributing actio
 
 | Platform | Action Types |
 |---|---|
-| **X** | Tweets, likes, follows, replies |
-| **LinkedIn** | Posts, likes, connection requests, comments, profile views |
+| **X** | Tweets, likes, follows |
+| **LinkedIn** | Posts, likes, connection requests, comments |
 
 You can run the Engagement Engine on multiple accounts simultaneously.
 

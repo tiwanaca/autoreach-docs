@@ -31,7 +31,7 @@ Connection Request → Condition: Connection Accepted? (with retries) → DM (if
 
 **Combined X + LinkedIn template:**
 ```
-View LinkedIn Profile → Like X → Like LinkedIn → Follow
+Like X → Like LinkedIn → Follow
 → Connection Request → Like X → Condition
 → DM LinkedIn (if connected) / DM X (if not)
 ```
@@ -72,12 +72,11 @@ Saving is **manual**-  click the "Save Sequence" button. An "Unsaved changes" in
 | Action | Platforms | Description |
 |---|---|---|
 | Like | X, LinkedIn | Like a lead's recent post |
-| Reply | X, LinkedIn | Reply to a post (AI-generated from post content) |
+| Comment | LinkedIn | Comment on a lead's LinkedIn post (AI-generated from post content) |
 | Follow | X | Follow the account |
 | DM | X, LinkedIn | Send a direct message |
 | Condition |-  | Branch based on lead status |
 | Connection Request | LinkedIn | Send a connection request |
-| View Profile | LinkedIn | View the lead's LinkedIn profile |
 | Withdraw Connection | LinkedIn | Withdraw a pending or accepted connection |
 
 ## Configuring Steps
@@ -104,13 +103,13 @@ Total delay = (days x 24 hours) + minutes. Displayed on the node as "Delay: 1d 1
 
 Use the variable picker to browse available placeholders. The AI personalizes the template for each lead using their profile data, recent activity, and offer context.
 
-### Reply Configuration
+### Comment Configuration
 
 | Setting | Description |
 |---|---|
-| AI prompt | Optional-  custom instructions for reply generation |
+| AI prompt | Optional - custom instructions for comment generation |
 
-Replies are AI-generated from the lead's most recent post content. If no AI prompt is set, the sequence's warmup prompt is used as default instructions.
+Comments are AI-generated from the lead's most recent LinkedIn post content. If no AI prompt is set, the sequence's warmup prompt is used as default instructions.
 
 ### Connection Request Configuration
 
@@ -228,7 +227,7 @@ DM → Condition: Replied? (2 days)
 ### LinkedIn Connection-First
 
 ```
-View Profile → Connection Request (1 day) → Condition: Accepted? (retry 3d × 3)
+Connection Request → Condition: Accepted? (retry 3d × 3)
   → TRUE: DM
   → FALSE: End
 ```

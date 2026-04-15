@@ -46,17 +46,17 @@ Daily limits are **per-sequence** (not per-account). Each sequence has its own c
 | LinkedIn daily actions | 20 | 100 |
 | X daily actions | 40 | 100 |
 
-All action types count toward their platform's limit: like, reply, follow, DM, connection request, view profile. Condition steps do not count.
+All action types count toward their platform's limit: like, comment, follow, DM, connection request. Condition steps do not count.
 
 ### Enforcement
 
 Limits reset at **midnight in your timezone**. If a limit is reached, remaining actions are deferred to the next day.
 
-## Weekly Connection Limits (LinkedIn)
+## Daily Connection Limits (LinkedIn)
 
-LinkedIn connection requests have a separate weekly limit tracked per-account (not per-sequence), resetting every Monday. When the limit is reached, pending connection requests are deferred to the following Monday. Other action types continue normally.
+LinkedIn connection requests have a separate daily limit tracked per-account (not per-sequence). When the limit is reached, pending connection requests are deferred to the next day. Other action types continue normally.
 
-Set the weekly connection limit on each LinkedIn account to match your account type. See [Supported Actions](supported-actions.md#connection-request) for the limits by account type.
+Set the daily connection limit on each LinkedIn account to match your account type. See [Supported Actions](supported-actions.md#connection-request) for the limits by account type.
 
 ## Natural Timing
 

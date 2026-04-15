@@ -1,6 +1,6 @@
 # Outreach & Sequences Overview
 
-Sequences are automated multi-step campaigns that execute engagement actions across X and LinkedIn. Each sequence walks leads through a configured flow of actions - likes, follows, DMs, replies, connection requests - with AI-personalized messaging and natural timing.
+Sequences are automated multi-step campaigns that execute engagement actions across X and LinkedIn. Each sequence walks leads through a configured flow of actions - likes, follows, DMs, comments, connection requests - with AI-personalized messaging and natural timing.
 
 ## What Is a Sequence?
 
@@ -36,10 +36,9 @@ Each step in a sequence performs one of these action types:
 |---|---|---|
 | DM | X, LinkedIn | Send a direct message (AI-personalized) |
 | Like | X, LinkedIn | Like/react to a lead's recent post |
-| Reply | X, LinkedIn | Reply to a post (X) or comment on a post (LinkedIn) |
+| Comment | LinkedIn | Comment on a lead's LinkedIn post |
 | Follow | X | Follow the account |
 | Connection Request | LinkedIn | Send a LinkedIn connection request |
-| View Profile | LinkedIn | View the lead's LinkedIn profile |
 | Condition |-  | Branch based on lead status (replied vs. not replied) |
 
 Each step has a defined order, platform-specific settings, positioning data for the visual flow editor, and a reference to the next step for linear flow progression.
@@ -89,7 +88,7 @@ Outreach only executes during the configured activity window. Defaults to **09:0
 
 ## Daily Send Limits
 
-Each sequence has configurable daily action limits that protect account health. Limits reset at midnight in your timezone. If a limit is reached, remaining actions are deferred to the next day. See [Scheduling](scheduling.md) for the full limits table, enforcement details, and weekly connection limits.
+Each sequence has configurable daily action limits that protect account health. Limits reset at midnight in your timezone. If a limit is reached, remaining actions are deferred to the next day. See [Scheduling](scheduling.md) for the full limits table, enforcement details, and daily connection limits.
 
 ## Conversation Follow-Ups
 

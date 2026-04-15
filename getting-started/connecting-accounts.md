@@ -16,7 +16,7 @@ Connect your X (Twitter) and LinkedIn accounts to AutoReach through the Chrome E
 
 The extension links your active browser session to AutoReach automatically.
 
-> **Warning:** Do not use automatic replies on X. Automated replies are the number one reason accounts get suspended. We strongly advise against enabling auto-replies inside sequences to reply to tweets, and against turning on auto-reply in the Engagement Engine.
+> **Warning:** Do not use automated engagement on X aggressively. Aggressive automated activity is the number one reason accounts get suspended. Start conservatively and increase gradually.
 
 ## Connecting LinkedIn
 
@@ -37,16 +37,16 @@ ISP residential static proxies use real internet service provider IPs, making yo
 
 ---
 
-## LinkedIn Weekly Connection Limits
+## LinkedIn Daily Connection Limits
 
-LinkedIn enforces weekly limits on connection requests. AutoReach tracks these automatically:
+LinkedIn enforces daily limits on connection requests. AutoReach tracks these automatically:
 
-| Account Type | Weekly Limit |
+| Account Type | Daily Limit |
 |---|---|
-| Free / Premium | 100 connections/week |
-| Sales Navigator | 200 connections/week |
+| Free / Premium | 100 connections/day |
+| Sales Navigator | 200 connections/day |
 
-These limits reset weekly. AutoReach tracks your usage and pauses connection requests when you approach the limit. If a connection request gets rate-limited, it enters a **deferred state** and automatically resumes the following Monday.
+These limits reset daily. AutoReach tracks your usage and pauses connection requests when you approach the limit. If a connection request gets rate-limited, it enters a **deferred state** and automatically resumes the next day.
 
 ---
 
@@ -56,7 +56,7 @@ AutoReach monitors your accounts for inbound engagement and processes it as buyi
 
 **X (Twitter):** Replies to your tweets, mentions, retweets, quote tweets, likes on your posts, and new followers.
 
-**LinkedIn:** Reactions on your posts, comments on your content, mentions, connection requests received, and profile views.
+**LinkedIn:** Reactions on your posts, comments on your content, mentions, and connection requests received.
 
 Someone engaging with your content may be a potential buyer. AutoReach can automatically create leads from high-intent engagers and update signals on existing leads.
 

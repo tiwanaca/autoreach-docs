@@ -33,7 +33,7 @@ LinkedIn accounts connect through the Chrome Extension, same as X.
 
 ### Connection Limits
 
-LinkedIn connection requests have a weekly limit tracked per-account. Set the weekly connection limit on each LinkedIn account to match your account type (Free, Premium, or Sales Navigator). See [Supported Actions](../outreach/supported-actions.md#connection-request) for the full limits table and deferral behavior.
+LinkedIn connection requests have a daily limit tracked per-account. Set the daily connection limit on each LinkedIn account to match your account type (Free, Premium, or Sales Navigator). See [Supported Actions](../outreach/supported-actions.md#connection-request) for the full limits table and deferral behavior.
 
 ### Proxy Configuration
 

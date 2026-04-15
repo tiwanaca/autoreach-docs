@@ -8,7 +8,7 @@ You have launched your first sequence. Now what? This guide covers what to expec
 
 After starting a sequence, AutoReach begins executing actions according to the delays you configured in your flow. Here is a typical timeline:
 
-- **Immediately**: The first step (usually a like or profile view) starts executing for enrolled leads
+- **Immediately**: The first step (usually a like) starts executing for enrolled leads
 - **Within minutes to hours**: Subsequent steps fire according to the delays between nodes (e.g., follow after 15 minutes, DM after 1 day)
 - **Within 24 hours**: Your first DMs go out (assuming a 1-day delay before messaging)
 - **24-48 hours after DMs**: First replies start arriving
@@ -99,7 +99,7 @@ See [Autopilot Overview](../autopilot/overview.md) for full details.
 
 ## Enabling the Engagement Engine
 
-The Engagement Engine builds your brand presence by engaging with relevant content on X and LinkedIn. It operates separately from sequences and does not send DMs - it likes, replies to, and comments on posts from people in your target audience.
+The Engagement Engine builds your brand presence by engaging with relevant content on X and LinkedIn. It operates separately from sequences and does not send DMs - it likes and comments on posts from people in your target audience.
 
 Why this matters:
 

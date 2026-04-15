@@ -7,11 +7,10 @@ Reference for all sequence action types, how they execute on each platform, and 
 | Action | X | LinkedIn | Description |
 |---|---|---|---|
 | Like | Y | Y | Like/react to a lead's recent post |
-| Reply | Y | Y | Reply to a post (X) or comment on a post (LinkedIn) |
+| Reply |-  | Y | Comment on a lead's LinkedIn post |
 | Follow | Y |-  | Follow the account |
 | DM | Y | Y | Send a direct message |
 | Connection Request |-  | Y | Send a LinkedIn connection request |
-| View Profile |-  | Y | View a lead's LinkedIn profile |
 | Withdraw Connection |-  | Y | Withdraw a pending or accepted connection |
 | Condition | Y | Y | Branch based on lead status |
 
@@ -37,25 +36,24 @@ If no qualifying posts are found, the action is skipped and the sequence advance
 
 ---
 
-### Reply / Comment
+### Comment
 
-**Platforms:** X (reply), LinkedIn (comment)
+**Platforms:** LinkedIn only
 
-Replies to a lead's recent post with AI-generated text. On X this creates a thread reply; on LinkedIn it posts a comment.
+Posts an AI-generated comment on a lead's recent LinkedIn post.
 
 **Post selection:**
-- Same logic as Like but also filters out posts already replied to (global check across all sequences)
+- Same logic as Like but also filters out posts already commented on (global check across all sequences)
 - If the skip negative content setting is enabled, posts with tragic or negative content are skipped (checked via AI)
-- For LinkedIn, attempts to coordinate with a prior like action-  commenting on the same post that was recently liked
+- Attempts to coordinate with a prior like action - commenting on the same post that was recently liked
 
-**Reply generation:**
-- AI generates the reply using the post text as context
+**Comment generation:**
+- AI generates the comment using the post text as context
 - Uses the step-level AI prompt if configured, otherwise falls back to the sequence's warmup prompt
-- Supports multilingual replies via the offer's language setting
+- Supports multilingual comments via the offer's language setting
 
 **Execution:**
-- **X:** Posts a thread reply via the X API
-- **LinkedIn:** Posts a comment via the LinkedIn API. If commenting is disabled on the first post, tries the next candidate post.
+- Posts a comment via the LinkedIn API. If commenting is disabled on the first post, tries the next candidate post.
 
 ---
 
@@ -67,7 +65,7 @@ Follows the lead's account on X. LinkedIn uses Connection Request instead.
 
 **Execution:**
 - Checks if already following-  skips if already following
-- Simulates natural browsing behavior before following (profile view, etc.)
+- Simulates natural browsing behavior before following
 - Follows the account
 
 ---
@@ -106,31 +104,21 @@ Sends a direct message to the lead. The message template is personalized using l
 
 Sends a LinkedIn connection request, optionally with a personalized note.
 
-**Weekly limits by account type:**
+**Daily limits by account type:**
 
-| Account Type | Weekly Limit |
+| Account Type | Daily Limit |
 |---|---|
 | Free / Premium | 100 |
 | Sales Navigator | 200 |
 
-If the weekly limit is reached, the action enters Deferred status and all remaining connection request actions in the sequence are batch-deferred to the following Monday.
+If the daily limit is reached, the action enters Deferred status and remaining connection request actions are deferred to the next day.
 
 **Execution:**
-- Checks weekly limit
+- Checks daily limit
 - Simulates natural browsing behavior before sending
 - Personalizes the connection note if configured (supports `{{variable}}` placeholders, max 300 characters)
 - Sends the connection request
 - If auto-withdraw is configured, schedules a withdraw action after the specified number of days
-
----
-
-### View Profile
-
-**Platforms:** LinkedIn only
-
-Visits the lead's LinkedIn profile, triggering a "who viewed your profile" notification on their end.
-
-Visits the lead's LinkedIn profile, triggering a "who viewed your profile" notification. Typically used as a warm-up step before sending a connection request.
 
 ---
 

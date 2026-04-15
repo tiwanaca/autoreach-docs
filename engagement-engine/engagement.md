@@ -1,6 +1,6 @@
 # Engagement Automation and Daily Actions
 
-While your account posts content, the Engagement Engine simultaneously interacts with relevant posts in your niche - liking, replying, following, and viewing profiles to build visibility.
+While your account posts content, the Engagement Engine simultaneously interacts with relevant posts in your niche - liking, commenting, and following to build visibility.
 
 ## Engagement Types
 
@@ -8,17 +8,13 @@ While your account posts content, the Engagement Engine simultaneously interacts
 
 Target posts matching your niche keywords on X and LinkedIn.
 
-### Replies / Comments
+### Comments
 
 AI-generated contextual responses that reference the original post and add value to the conversation - not generic responses like "great post."
 
 ### Follows / Connection Requests
 
 Follow relevant accounts in your niche on X, or send connection requests on LinkedIn.
-
-### Profile Views (LinkedIn Only)
-
-Views relevant LinkedIn profiles to trigger "who viewed your profile" notifications. Often generates inbound profile visits in return.
 
 ## Keyword-Based Targeting
 
@@ -42,9 +38,9 @@ The Engagement Engine generates a randomized mix of actions each day. Counts var
 
 Each day, the Engagement Engine performs a mix of actions across your connected platforms:
 
-**X (Twitter):** Likes, follows, tweets, and replies - with daily variation in counts.
+**X (Twitter):** Likes, follows, and tweets - with daily variation in counts.
 
-**LinkedIn:** Profile views, likes, connection requests, comments, and posts - with daily variation in counts.
+**LinkedIn:** Likes, connection requests, comments, and posts - with daily variation in counts.
 
 Some days have reduced or zero activity for certain action types, and occasional skip days with minimal activity simulate natural human behavior. Outreach sequences are **not affected** by skip days - only Engagement Engine activity pauses.
 
