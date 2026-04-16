@@ -38,7 +38,7 @@ AutoReach classifies conversations into 7 stages. Each stage has its own tone an
 ### 5. Soft Close
 
 **Triggered**: Lead seems ready to move forward or book a call.
-**Goal**: Propose a specific, easy next step without being pushy.
+**Goal**: Ask if they are open to a call first. Only share a booking link after they agree - never send it unsolicited.
 
 ### 6. Follow Up
 
@@ -53,6 +53,16 @@ AutoReach classifies conversations into 7 stages. Each stage has its own tone an
 ### Stage Detection
 
 The AI classifies the current stage based on the full conversation history. Conversations can move between stages non-linearly. For example, from Soft Close back to Objection Handling if the lead raises new concerns. The classifier re-evaluates on every new message.
+
+## Prompt Priority
+
+Your custom AI prompt (set in sequence settings) takes the **highest priority** in response generation. It overrides stage guidance and default behavior, including word limits. Use it to enforce specific rules, tone, or messaging strategy that the AI must always follow.
+
+Stage guidance (the conversation stages above) acts as secondary tactical guidance - it shapes the AI's approach but yields to your custom rules.
+
+## Anti-Fabrication
+
+The AI never fabricates client stories, case studies, statistics, or results. It only references proof points that exist in your knowledge base. If the AI does not have a relevant example, it speaks in general terms rather than inventing specifics.
 
 ## Anti-Consulting Guardrails
 

@@ -109,7 +109,7 @@ Use the variable picker to browse available placeholders. The AI personalizes th
 |---|---|
 | AI prompt | Optional - custom instructions for comment generation |
 
-Comments are AI-generated from the lead's most recent LinkedIn post content. If no AI prompt is set, the sequence's warmup prompt is used as default instructions.
+Comments are AI-generated from the lead's most recent LinkedIn post content. If no AI prompt is set, the sequence's comment prompt ("How AI comments on posts") is used as default instructions.
 
 ### Connection Request Configuration
 
@@ -167,8 +167,8 @@ Beyond the flow itself, configure overall sequence behavior:
 | Setting | Description |
 |---|---|
 | Skip contacted leads | Don't re-reach leads contacted in other sequences |
-| Skip negative content | Skip leads with controversial or toxic posts |
-| Skip old posts (days) | Only reach leads with activity within N days |
+| Skip negative content | Skip leads with controversial or toxic posts (LinkedIn only) |
+| Skip old posts (days) | Only reach leads with activity within N days (LinkedIn only) |
 | Prefer original posts | Prefer original posts over reposts for engagement |
 
 ### Daily Limits
@@ -196,7 +196,7 @@ Each sequence has configurable daily action limits (combined, LinkedIn-specific,
 |---|---|
 | AI prompt | General AI instructions for message generation |
 | DM generation prompt | Specific prompt for cold DM generation |
-| Warmup prompt | Prompt for warmup engagement (likes, replies) |
+| How AI comments on posts | Instructions for AI comment generation on LinkedIn posts (LinkedIn only) |
 
 ## Starting, Pausing, and Stopping
 

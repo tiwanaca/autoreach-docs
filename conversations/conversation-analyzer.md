@@ -33,7 +33,7 @@ A tone example contains anti-patterns or is consistently associated with stalled
 
 Your AI prompt needs adjustment. Each prompt modification suggestion targets a specific prompt field:
 - **AI Prompt**-  general conversation AI instructions
-- **Warmup Prompt**-  warmup engagement prompt
+- **How AI Comments on Posts**-  LinkedIn comment generation prompt
 - **DM Generation Prompt**-  cold DM generation prompt
 
 ## Applying Suggestions

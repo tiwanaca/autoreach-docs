@@ -45,6 +45,8 @@ Three simulation modes are available:
 
 You can also write a **custom persona** description for specific scenarios (e.g., "A VP of Engineering at a 500-person company who just switched from a competitor last month").
 
+**Language support** - If your offer targets a non-English audience, lead personas automatically respond in the offer's configured language, so you can test how conversations flow in the target language.
+
 ## Manual Mode
 
 In Manual mode, the AI sends the opening DM based on your sequence template. You then type responses as the lead and watch how the AI handles each reply.

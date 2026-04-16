@@ -146,10 +146,10 @@ Metrics are updated automatically when lead statuses change. Step-level executio
 | Auto-Enroll Active Buyers | Automatically add leads scored as active for this offer |
 | AI Prompt | Custom AI instructions for message generation |
 | DM Generation Prompt | Specific prompt for cold DM generation |
-| Warmup Prompt | Prompt for warmup engagement |
+| How AI Comments on Posts | Instructions for AI comment generation on LinkedIn posts (LinkedIn only) |
 | Skip Contacted Leads | Skip leads with prior contact history |
-| Skip Negative Posts | Skip leads with negative content in recent posts |
-| Skip Old Posts (days) | Skip leads whose recent posts are older than N days |
+| Skip Negative Posts | Skip leads with negative content in recent posts (LinkedIn only) |
+| Skip Old Posts (days) | Skip leads whose recent posts are older than N days (LinkedIn only) |
 | Prefer Original Posts | Prefer original posts over reposts for engagement |
 | AI Replies Off by Default | Disable AI auto-responses for new conversations |
 | Max AI Responses per Conversation | Cap on AI responses per conversation (default 0 = unlimited) |

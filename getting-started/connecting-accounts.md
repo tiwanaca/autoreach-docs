@@ -41,10 +41,7 @@ ISP residential static proxies use real internet service provider IPs, making yo
 
 LinkedIn enforces daily limits on connection requests. AutoReach tracks these automatically:
 
-| Account Type | Daily Limit |
-|---|---|
-| Free / Premium | 100 connections/day |
-| Sales Navigator | 200 connections/day |
+AutoReach lets you set a daily connection request limit per account. Options are 10, 15, 20, or 25 per day (default 15). Choose a limit that matches your account type and risk tolerance - lower limits are safer for new or free accounts.
 
 These limits reset daily. AutoReach tracks your usage and pauses connection requests when you approach the limit. If a connection request gets rate-limited, it enters a **deferred state** and automatically resumes the next day.
 

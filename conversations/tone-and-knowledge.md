@@ -17,7 +17,7 @@ Tone examples are stored **per-sequence**. Each example contains:
 - A **conversation** with message pairs showing the exchange
 - A **source type** indicating how it was created
 
-When generating a response, the AI retrieves the most relevant tone examples based on the current conversation context.
+When generating a response, the AI retrieves the most relevant tone examples based on the current conversation context. Examples cover all conversation stages including a dedicated "Not a Fit" category for gracefully handling leads that are not a match.
 
 ### Auto-Capture from Conversations
 

@@ -49,7 +49,7 @@ Posts an AI-generated comment on a lead's recent LinkedIn post.
 
 **Comment generation:**
 - AI generates the comment using the post text as context
-- Uses the step-level AI prompt if configured, otherwise falls back to the sequence's warmup prompt
+- Uses the step-level AI prompt if configured, otherwise falls back to the sequence's comment prompt ("How AI comments on posts")
 - Supports multilingual comments via the offer's language setting
 
 **Execution:**
@@ -104,12 +104,7 @@ Sends a direct message to the lead. The message template is personalized using l
 
 Sends a LinkedIn connection request, optionally with a personalized note.
 
-**Daily limits by account type:**
-
-| Account Type | Daily Limit |
-|---|---|
-| Free / Premium | 100 |
-| Sales Navigator | 200 |
+**Daily limits:** You can set a daily connection request limit per account. Options are 10, 15, 20, or 25 per day (default 15). Choose a limit that matches your account type and risk tolerance.
 
 If the daily limit is reached, the action enters Deferred status and remaining connection request actions are deferred to the next day.
 
@@ -182,7 +177,7 @@ Every action moves through these states:
 | Completed | Successfully executed |
 | Skipped | Bypassed (no content, missing platform data, blacklisted, error) |
 | Failed | Could not complete (rarely used-  most failures become skipped) |
-| Deferred | Rate-limited connection requests; auto-resumes Monday |
+| Deferred | Rate-limited connection requests; auto-resumes the next day |
 
 After every completed or skipped action, the next step is queued based on the flow graph.
 
