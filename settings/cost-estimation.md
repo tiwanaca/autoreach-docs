@@ -53,7 +53,7 @@ Web enrichment (deep company analysis from websites) is by far the most expensiv
 
 ## How Model Selection Affects Costs
 
-Your choice of AI models has a dramatic impact on per-lead costs. Nano-class models (designed for classification and scoring) cost roughly 10-30x less per token than premium models (designed for content writing).
+Your choice of AI models has a dramatic impact on per-lead costs. Nano-class models (designed for classification and scoring) cost roughly 10-30x less per token than premium models (designed for content writing). Actual cost per lead depends on how many tokens each operation consumes-  operations on richer profiles naturally use more tokens regardless of model tier.
 
 - **Nano models** (best for scoring, classification, keywords): Lowest cost, suitable for high-volume operations where speed matters more than nuance
 - **Mid-tier models** (Sonnet-class): Good balance of quality and cost, often used as fallback models

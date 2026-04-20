@@ -7,8 +7,7 @@ The Engagement Engine builds a credible social presence on your accounts before 
 The Engagement Engine automatically:
 
 - **Posts content** aligned with your offer and content pillars (X tweets and LinkedIn posts)
-- **Engages with relevant posts** in your niche (likes, replies/comments, follows/connections)
-- **Views LinkedIn profiles** to generate passive visibility
+- **Engages with relevant posts** in your niche (likes, comments, follows/connections)
 - **Maintains human-like patterns** with randomized timing, skip days, and natural variation
 
 ## How It Works
@@ -32,7 +31,7 @@ When setting up the Engagement Engine, you can optionally define a persona to ma
 - **Location** - e.g. "Los Angeles, CA"
 - **Voice and personality** - 1-2 sentences describing tone, e.g. "Direct and data-driven, shares real numbers and builder insights."
 
-All three fields are optional. If provided, the AI uses them to shape the voice and perspective of generated posts and engagement replies.
+All three fields are optional. If provided, the AI uses them to shape the voice and perspective of generated posts and engagement comments.
 
 ## Daily Activity
 
@@ -49,7 +48,7 @@ All generated content enters an approval queue by default. You can:
 - **Regenerate**: replace with a new AI-generated version
 - **Edit**: modify the text before approving
 
-Enable **auto-post** to skip manual review and post content automatically. A separate **auto-reply** toggle controls whether engagement replies are auto-approved. Pending approvals expire if not reviewed.
+Enable **auto-post** to skip manual review and post content automatically. A separate **auto-comment** toggle controls whether engagement comments are auto-approved. Pending approvals expire if not reviewed.
 
 ## Next Steps
 

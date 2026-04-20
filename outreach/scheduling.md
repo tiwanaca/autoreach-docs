@@ -1,6 +1,6 @@
 # Scheduling & Send Limits
 
-AutoReach schedules sequence actions to look like natural human behavior-  spacing actions across the day, clustering them into sessions with breaks, and enforcing daily and weekly limits to keep accounts healthy.
+AutoReach schedules sequence actions to look like natural human behavior-  spacing actions across the day, clustering them into sessions with breaks, and enforcing daily limits to keep accounts healthy.
 
 ## Activity Window
 

@@ -8,9 +8,9 @@ While your account posts content, the Engagement Engine simultaneously interacts
 
 Target posts matching your niche keywords on X and LinkedIn.
 
-### Comments
+### Comments (LinkedIn only)
 
-AI-generated contextual responses that reference the original post and add value to the conversation - not generic responses like "great post."
+AI-generated contextual responses that reference the original post and add value to the conversation - not generic responses like "great post." Comments run on LinkedIn only; X engagement is limited to likes and follows.
 
 ### Follows / Connection Requests
 

@@ -118,9 +118,7 @@ The AutoReach Chrome Extension brings your CRM pipeline into your browser. It wo
 
 ### CRM Pipeline Stages
 
-Leads move through a visual pipeline:
-
-**New > On Hold > Requested > Accepted > Contacted > Replied > Meeting > Won / Lost**
+Leads move through a visual pipeline. The typical progression is **New → Requested → Accepted → Contacted → Replied → Meeting → Won**, but **On Hold**, **Won**, and **Lost** can be reached from any stage at any time.
 
 | Stage | Description |
 |---|---|

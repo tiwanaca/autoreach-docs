@@ -246,7 +246,7 @@ Lead scores are not static. They update when:
 
 1. **New signals detected** - Background activity fetch finds new posts/engagement
 2. **Job changes detected** - Career moves update experience and timing
-3. **Offer redefined** - You update your ICP, keywords, or signal weights
+3. **Offer redefined** - You update your ICP, keywords, or target criteria
 4. **Manual rescore triggered** - You explicitly request re-analysis
 5. **Re-engagement** - Lead responds to your message
 

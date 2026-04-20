@@ -175,11 +175,15 @@ Beyond the flow itself, configure overall sequence behavior:
 
 Each sequence has configurable daily action limits (combined, LinkedIn-specific, and X-specific). See [Scheduling](scheduling.md) for the full limits table and enforcement details.
 
+### AI Temperature
+
+Controls how strictly the AI follows your prompt rules vs. allowing creative variation. Range 0 (strict) to 1 (default). Lower values produce more predictable, rule-following responses. This setting is only available when your content writing model supports temperature control.
+
 ### AI & Responses
 
 | Setting | Default | Description |
 |---|---|---|
-| Max AI responses per conversation | 0 (unlimited) | Max auto-replies per lead (max 100) |
+| Max AI responses per conversation | 0 (unlimited) | Max auto-replies per conversation (max 100) |
 | AI replies off by default | false | New conversations start with AI off |
 
 ### Follow-Up
@@ -197,6 +201,19 @@ Each sequence has configurable daily action limits (combined, LinkedIn-specific,
 | AI prompt | General AI instructions for message generation |
 | DM generation prompt | Specific prompt for cold DM generation |
 | How AI comments on posts | Instructions for AI comment generation on LinkedIn posts (LinkedIn only) |
+
+### Outreach Persona
+
+Configure the sender identity and sales flow used by AI when generating messages:
+
+| Setting | Description |
+|---|---|
+| Sender name | Name used in messages (defaults to your profile name) |
+| Sender role | Your role/title for context |
+| Sender is the founder | Toggle if you are both the sender and the company founder |
+| Founder name | Company founder's name (hidden when sender is the founder) |
+
+**Sales Flow** defines the steps in your closing flow (e.g., video call, free tool, website). Each step has a type, label, link, and an optional description explaining when to use that step. The AI references these steps when guiding leads toward a booking.
 
 ## Starting, Pausing, and Stopping
 

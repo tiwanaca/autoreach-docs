@@ -99,9 +99,9 @@ For commenter-sourced leads, the context includes both the original post and the
 
 ### `{{replied_post}}`
 
-References a post that was replied to in a **prior sequence step**. If a reply action executed earlier in the sequence, this variable provides the original post text and your reply text so the DM can reference prior engagement.
+References a post that was commented on in a **prior sequence step**. If a comment action executed earlier in the sequence, this variable provides the original post text and your comment text so the DM can reference prior engagement.
 
-If no prior reply happened (step was skipped), the AI uses a generic opener instead.
+If no prior comment happened (step was skipped), the AI uses a generic opener instead.
 
 ---
 

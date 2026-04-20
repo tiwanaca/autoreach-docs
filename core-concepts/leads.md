@@ -132,6 +132,16 @@ Each lead's profile includes:
 * Buyer state (Active, Monitor, Poor Fit, Disqualified)
 * Buyer score, fit score, intent score, timing score
 
+## Filtering Leads
+
+The All Leads view and Sequence Leads view support filtering by:
+
+- **Buyer state** (Ready, Emerging, Low Priority, etc.)
+- **Connection status** (Pending Sent, Connected, Pending Received, Not Connected) - filter by LinkedIn connection state
+- **Next action** - filter sequence leads by their upcoming action type
+
+Connection status badges appear inline next to lead names for quick visibility.
+
 ## Lead Lifecycle in a Sequence
 
 Once enrolled in a sequence, a lead progresses through these statuses:
@@ -139,7 +149,7 @@ Once enrolled in a sequence, a lead progresses through these statuses:
 | Status | Meaning |
 | --- | --- |
 | **Pending** | Enrolled but not yet started |
-| **In Progress** | Currently progressing through sequence steps |
+| **Active** | Currently progressing through sequence steps |
 | **Paused** | Manually paused mid-sequence |
 | **Replied** | Lead replied to a message |
 | **Meeting Booked** | Meeting scheduled |

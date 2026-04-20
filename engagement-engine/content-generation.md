@@ -23,9 +23,9 @@ LinkedIn posts are longer, narrative-driven content:
 - Professional tone suited to the LinkedIn platform
 - Designed for engagement, comments, and shares
 
-## Engagement Replies
+## Engagement Comments (LinkedIn)
 
-When the Engagement Engine replies to or comments on other posts, it generates contextual responses:
+When the Engagement Engine comments on LinkedIn posts, it generates contextual responses:
 
 - References the original post specifically
 - Adds value to the conversation (not generic "great post" responses)
@@ -50,14 +50,14 @@ All generated content enters the approval queue as "Pending Approval" unless aut
 | Approved | Approved and waiting to post at scheduled time |
 | Queued | Picked up for posting |
 | Posted | Successfully published (tweets/posts) |
-| Completed | Successfully published (engagement replies) |
+| Completed | Successfully published (engagement comments) |
 | Discarded | Permanently removed by you |
 | Skipped | Expired without review or auto-approval was disabled |
 | Failed | Post attempt failed |
 
 ### Actions
 
-**Approve** - Post the content as-is at its scheduled time. The status moves to "Pending".
+**Approve** - Post the content as-is at its scheduled time. The status moves to "Approved" and the item is queued for posting.
 
 **Regenerate** - Replace the content with a new AI-generated version. The new version enters the queue as a new "Pending Approval" item.
 
@@ -74,7 +74,7 @@ All generated content enters the approval queue as "Pending Approval" unless aut
 Two separate toggles in your Engagement Engine settings control auto-approval:
 
 - **Auto-post** - Generated posts (tweets, LinkedIn posts) skip the approval queue and post automatically
-- **Auto-reply** - Generated engagement replies (comments on other posts) skip the approval queue
+- **Auto-comment** - Generated engagement comments (on other posts) skip the approval queue
 
 When enabled, content posts automatically at scheduled times without manual review. You can still view posted content in activity logs.
 

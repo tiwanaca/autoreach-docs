@@ -35,7 +35,7 @@ The content strategy generates:
 - **Weekly themes**-  one per week, cycling through each pillar in rotation
 - **Post ideas per pillar**-  ready-to-use content seeds
 
-Each week, all generated content (posts, engagement replies) aligns with that week's pillar. This creates a natural rotation that keeps content fresh and varied.
+Each week, all generated content (posts, engagement comments) aligns with that week's pillar. This creates a natural rotation that keeps content fresh and varied.
 
 ### How Weekly Themes Work in Practice
 
@@ -82,7 +82,7 @@ No manual pillar selection is needed. The AI determines the optimal pillar struc
 
 ## Keyword-Based Engagement Targeting
 
-When the Engagement Engine engages with other posts (likes, replies), it uses keywords derived from your content pillars and offer to find relevant content. Only posts matching your niche keywords are targeted for engagement.
+When the Engagement Engine engages with other posts (likes on X and LinkedIn, comments on LinkedIn), it uses keywords derived from your content pillars and offer to find relevant content. Only posts matching your niche keywords are targeted for engagement.
 
 ## Next Steps
 

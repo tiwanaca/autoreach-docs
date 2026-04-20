@@ -7,7 +7,7 @@ Reference for all sequence action types, how they execute on each platform, and 
 | Action | X | LinkedIn | Description |
 |---|---|---|---|
 | Like | Y | Y | Like/react to a lead's recent post |
-| Reply |-  | Y | Comment on a lead's LinkedIn post |
+| Comment |-  | Y | Comment on a lead's LinkedIn post |
 | Follow | Y |-  | Follow the account |
 | DM | Y | Y | Send a direct message |
 | Connection Request |-  | Y | Send a LinkedIn connection request |
@@ -80,7 +80,7 @@ Sends a direct message to the lead. The message template is personalized using l
 
 **Message personalization:**
 - Template variables are replaced with lead data: `{{name}}`, `{{first_name}}`, `{{bio}}`, `{{company}}`, `{{company_size}}`, `{{location}}`, `{{followers}}`, etc.
-- Special placeholders: `{{post}}` (lead's latest post), `{{replied_post}}` (post from a prior reply action)
+- Special placeholders: `{{post}}` (lead's latest post), `{{replied_post}}` (post from a prior comment action)
 - AI fills remaining smart placeholders (`{{role}}`, `{{pain_point}}`, custom placeholders) using enrichment data, web enrichment, and knowledge base context
 - Booking URL is injected with platform-specific tracking if configured
 

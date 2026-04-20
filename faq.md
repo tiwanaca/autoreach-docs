@@ -152,7 +152,7 @@ Yes. Autopilot respects all the same safety measures as manual operation: daily 
 
 ### How does AutoReach avoid getting my account banned?
 
-AutoReach uses multiple layers of protection: consistent browser identity management per account, human behavior simulation (randomized delays, session clustering, typing simulation), time-of-day and day-of-week activity patterns, negative content screening, daily and weekly send limits, and automatic emergency pausing when issues are detected. See [Account Safety](settings/account-safety.md).
+AutoReach uses multiple layers of protection: consistent browser identity management per account, human behavior simulation (randomized delays, session clustering, typing simulation), time-of-day and day-of-week activity patterns, negative content screening, daily send limits, and automatic emergency pausing when issues are detected. See [Account Safety](settings/account-safety.md).
 
 ### What should I do if my account gets paused?
 

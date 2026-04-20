@@ -37,7 +37,6 @@ Structured search queries organized by intent category. The AI selects the most 
 | Growth Signals | Expansion, new markets, scaling needs |
 | Security & Compliance | Regulatory, security, or compliance concerns |
 | Vertical Specific | Industry-specific pain points |
-| Professional Identity | Role-based challenges and aspirations |
 
 ### Competitor Keywords
 

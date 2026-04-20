@@ -20,17 +20,15 @@ When you enable Autopilot, it configures:
 
 ## How It Runs
 
-Once set up, Autopilot runs several continuous operations:
+Once set up, Autopilot runs five continuous operations in the background:
 
-1. **Searches** discover new prospects matching your ICP
-2. **Enrichment and scoring** evaluate each lead's fit and intent
-3. **Auto-enrollment** moves qualified leads into sequences
-4. **Sequences** execute outreach (likes, follows, DMs, connection requests)
-5. **Resurfacing** re-checks leads below threshold for new signals
-6. **Expansion** discovers more prospects from influencer followers and role searches
-7. **Lookalike rotation** checks whether extraction sources are exhausted and rotates to fresh seed accounts
+1. **Auto-enrollment** moves qualified leads into sequences
+2. **Buyer expansion** discovers new prospects daily from your seed sources
+3. **Monitor resurfacing** re-checks lower-scored leads for new buying signals
+4. **Lookalike rotation** finds fresh seed accounts when existing sources are exhausted
+5. **Signal search** runs intent-based searches to surface prospects posting about your pain points
 
-This cycle runs continuously. Your only job is reviewing conversations in your Inbox and closing deals.
+These run alongside the standard enrichment, scoring, and sequence execution that every lead goes through. Your only job is reviewing conversations in your Inbox and closing deals. See [Continuous Operations](continuous-operations.md) for details.
 
 ## Autopilot Is Optional
 

@@ -4,7 +4,7 @@ The AutoReach Chrome Extension is the central tool for connecting your social ac
 
 ## Installation
 
-1. Visit the [AutoReach Chrome Extension](https://chromewebstore.google.com/detail/autoreach) page on the Chrome Web Store
+1. Visit the [AutoReach Chrome Extension](https://chromewebstore.google.com/detail/autoreach/gokfpebaahgioniohencjfoknidmadmh) page on the Chrome Web Store
 2. Click **Add to Chrome**
 3. In the popup, click **Add extension**
 4. The AutoReach icon will appear in your Chrome toolbar
