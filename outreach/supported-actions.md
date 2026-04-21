@@ -177,6 +177,7 @@ Every action moves through these states:
 | Completed | Successfully executed |
 | Skipped | Bypassed (no content, missing platform data, blacklisted, error) |
 | Failed | Could not complete (rarely used-  most failures become skipped) |
+| Cancelled | Action cancelled before execution (e.g., sequence paused, lead removed, superseded by a manual action) |
 | Deferred | Rate-limited connection requests; auto-resumes the next day |
 
 After every completed or skipped action, the next step is queued based on the flow graph.

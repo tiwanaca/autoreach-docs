@@ -263,6 +263,23 @@ Click on any lead within a sequence to see their individual action timeline. The
 
 When an action fails (due to rate limits, network errors, or platform issues), you can retry it by clicking the retry button on the failed action in the lead timeline. Retried actions are rescheduled and re-enter the execution queue.
 
+### Filtering Sequence Leads
+
+The sequence leads table supports filters to help you focus on specific subsets of the enrolled audience:
+
+| Filter | Description |
+|---|---|
+| Status | Lead lifecycle status (Pending, Active, Replied, Meeting Booked, etc.) |
+| Current step | Which step the lead is currently on |
+| Has replied / Has meeting / Contacted | Boolean filters for common outcomes |
+| Followers range | Filter by follower count (min / max) |
+| Enrolled date | Filter by enrollment timestamp (after / before) |
+| Next action type | What action is scheduled next (DM, Like, Connection Request, etc.) |
+| Scheduled | When the next action is due (e.g., today, next 7 days) |
+| Connection | LinkedIn connection state: Pending (Sent), Pending (Received), Connected, Withdrawn |
+
+Active filters appear as removable chips above the table. Use the sort dropdown alongside to reorder by last action time, score, name, or enrollment date.
+
 ## Next Steps
 
 - **[Supported Actions](supported-actions.md)**: Detailed reference for each action type

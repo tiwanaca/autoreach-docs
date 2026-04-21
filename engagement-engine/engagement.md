@@ -22,7 +22,7 @@ Engagement uses keywords derived from your offer and content pillars to find rel
 
 ## Smart Targeting
 
-The Engagement Engine focuses on mid-tier and emerging voices where your interaction is likely to be noticed and reciprocated. Very large accounts are skipped since your interaction will not stand out among thousands.
+The Engagement Engine prioritizes accounts where your interaction is most likely to be noticed and reciprocated, optimizing for visibility and response rate.
 
 ## Engagement and Outreach Are Independent
 

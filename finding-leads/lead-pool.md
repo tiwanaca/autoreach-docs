@@ -36,6 +36,10 @@ Lead Pool matching is **not zero-cost**. While platform API costs are zero (lead
 
 See pool-sourced leads by filtering the **All** tab on the Leads page by "Pool DB" source.
 
+### Progress During LinkedIn Searches
+
+When a LinkedIn search runs, pool matches triggered by that search are counted alongside the profiles fetched during the search. The processing banner shows the combined count so you can see the full result set as it is built.
+
 ### Best Practices
 
 1. **Build the database first.** Lead Pool is most effective with a large base of enriched leads. Start with discovery searches before relying on pool matching.

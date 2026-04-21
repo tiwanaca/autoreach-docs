@@ -137,7 +137,7 @@ Each lead's profile includes:
 The All Leads view and Sequence Leads view support filtering by:
 
 - **Buyer state** (Ready, Emerging, Low Priority, etc.)
-- **Connection status** (Pending Sent, Connected, Pending Received, Not Connected) - filter by LinkedIn connection state
+- **Connection status** (Pending Sent, Connected, Pending Received, Withdrawn, Not Connected) - filter by LinkedIn connection state
 - **Next action** - filter sequence leads by their upcoming action type
 
 Connection status badges appear inline next to lead names for quick visibility.

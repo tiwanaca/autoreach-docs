@@ -31,14 +31,11 @@ AutoReach automatically pauses an account when it detects severe issues (bot det
 
 ## Browser Identity Management
 
-Each connected account is assigned a consistent browser identity that persists over time. This includes user agent rotation and platform-appropriate headers, making activity indistinguishable from normal browser use.
+Each connected account is assigned a consistent browser identity that persists over time, making activity appear as normal browser use rather than automated traffic.
 
 ## Human Behavior Simulation
 
-All actions include realistic timing:
-- Randomized delays between interactions
-- Session pattern variation
-- Natural pacing that mimics real human browsing
+All actions include realistic timing and pacing designed to mirror normal human browsing patterns rather than automated scripts.
 
 ## Negative Content Screening
 

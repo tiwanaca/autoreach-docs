@@ -4,7 +4,7 @@ AutoReach uses AI to generate targeted search queries from your offer definition
 
 ## How It Works
 
-Keyword generation is a multi-layered system. For X, it produces simple keywords, structured intent query clusters, competitor keywords, and niche jargon. For LinkedIn, it produces search queries organized by intent category. Each layer is optimized for the platform's search capabilities.
+Keyword generation is a multi-layered system. For X, it produces simple conversational keywords alongside structured intent-based queries, competitor keywords, and niche jargon. For LinkedIn, it produces professional search phrases organized by buyer intent. Each layer is optimized for the platform's search capabilities.
 
 ### Where Keywords Come From
 
@@ -25,18 +25,7 @@ Short conversational phrases in first-person style ("my X keeps breaking", "need
 
 ### Intent Query Clusters
 
-Structured search queries organized by intent category. The AI selects the most relevant categories for your offer:
-
-| Intent Category | What It Targets |
-|---|---|
-| Operational Pain | Day-to-day frustrations and inefficiencies |
-| Budget Pressure | Cost concerns and budget constraints |
-| Hiring & Scaling | Growth challenges and team scaling |
-| Buying Evaluation | Actively comparing or evaluating solutions |
-| Competitor Switch | Switching away from or frustrated with competitors |
-| Growth Signals | Expansion, new markets, scaling needs |
-| Security & Compliance | Regulatory, security, or compliance concerns |
-| Vertical Specific | Industry-specific pain points |
+Structured search queries organized by buyer intent. The AI selects categories relevant to your offer, covering common B2B signals like operational pain, evaluation and buying activity, growth and hiring signals, and industry-specific concerns.
 
 ### Competitor Keywords
 
@@ -50,19 +39,9 @@ Industry-specific insider terminology-  tools, certifications, acronyms, confere
 
 LinkedIn queries are short professional phrases without search operators-  optimized for LinkedIn's content search.
 
-### LinkedIn Intent Categories
+### LinkedIn Intent Coverage
 
-The AI generates queries across these intents:
-
-| Intent | Description |
-|---|---|
-| Pain Points | Operational challenges and frustrations |
-| Hiring Signals | Recruiting, team expansion, skill gaps |
-| Solution Seeking | Evaluating tools, asking for recommendations |
-| Buying Intent | Budget allocation, vendor selection |
-| Growth Signals | Revenue growth, market expansion |
-
-All intent categories are searched automatically when you start a LinkedIn content search.
+The AI generates queries spanning a range of buyer intents (operational pain, solution-seeking, buying signals, growth and hiring signals) so you capture prospects at different stages. All relevant categories are searched automatically when you start a LinkedIn content search.
 
 ### Key Differences from X
 
@@ -108,15 +87,15 @@ When Buyer Expansion is enabled, keywords are **regenerated fresh** on each dail
 - "Adaptive Insights alternative"
 
 **X Intent Clusters might include:**
-- **Operational Pain:** queries about manual spreadsheet processes
-- **Buying Evaluation:** queries about evaluating FP&A tools
-- **Budget Pressure:** queries about slow budget cycles
+- Queries about manual spreadsheet processes
+- Queries about evaluating FP&A tools
+- Queries about slow budget cycles
 
 **LinkedIn Queries might include:**
-- (Pain Points) "financial planning manual process"
-- (Solution Seeking) "FP&A software recommendation"
-- (Growth Signals) "scaling finance team"
-- (Hiring Signals) "hiring FP&A analyst"
+- "financial planning manual process"
+- "FP&A software recommendation"
+- "scaling finance team"
+- "hiring FP&A analyst"
 
 **Result:** Multi-layered queries across both platforms, running daily with fresh keyword rotation to surface CFOs, FP&A leaders, and finance operators.
 

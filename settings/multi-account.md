@@ -56,6 +56,18 @@ Each account card displays:
 
 Check the Accounts page regularly. Error indicators may signal proxy issues or authentication expiration.
 
+## Deleting Accounts
+
+From an account's detail page, click **Delete Account** to permanently remove it. Deletion is irreversible and removes:
+
+- The account connection
+- All associated conversations, sequence enrollments, and warmup state for that account
+- The dedicated proxy assigned to the account (if one was configured), which is also canceled
+
+You will see a confirmation modal listing the consequences before the delete proceeds. Active campaigns using the account are affected.
+
+**Base account protection**-  the primary account on your workspace cannot be deleted. If you need to remove it, contact support. A separate modal blocks the action and explains this.
+
 ## Next Steps
 
 - **[Account Safety](account-safety.md)**: Error handling, cooldowns, and cascade pause behavior
