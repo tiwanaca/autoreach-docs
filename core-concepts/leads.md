@@ -25,11 +25,12 @@ Search for keywords on X using natural language. AutoReach finds tweets matching
 
 ### 2. LinkedIn Search
 
-Powerful LinkedIn search across content, people, and job changes.
+Multiple LinkedIn discovery methods covering content, people, companies, and hiring signals.
 
 * **Content search:** Find people posting about keywords (hiring, switching to competitor, etc.)
-* **People search (By Role):** Target by job title, company, location, industry, or custom fields
-* **Job search:** Find people who recently started a new role
+* **People search (By Role):** Target by job title, location, industry, and other filters
+* **Company search (By Company):** Find companies matching descriptors (e.g., "B2B SaaS Sales Tooling") and add the top decision-maker from each as a lead
+* **Job search (Hiring Signals):** Find companies actively hiring for relevant roles, then extract the most senior decision-maker at each. Integrated into Content Search as the Hiring Signals intent category
 
 ### 3. Lookalike Audiences
 

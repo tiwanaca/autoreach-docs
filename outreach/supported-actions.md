@@ -4,15 +4,16 @@ Reference for all sequence action types, how they execute on each platform, and 
 
 ## Actions Reference
 
-| Action | X | LinkedIn | Description |
-|---|---|---|---|
-| Like | Y | Y | Like/react to a lead's recent post |
-| Comment |-  | Y | Comment on a lead's LinkedIn post |
-| Follow | Y |-  | Follow the account |
-| DM | Y | Y | Send a direct message |
-| Connection Request |-  | Y | Send a LinkedIn connection request |
-| Withdraw Connection |-  | Y | Withdraw a pending or accepted connection |
-| Condition | Y | Y | Branch based on lead status |
+| Action | X | LinkedIn | Email | Description |
+|---|---|---|---|---|
+| Like | Y | Y |-  | Like/react to a lead's recent post |
+| Comment |-  | Y |-  | Comment on a lead's LinkedIn post |
+| Follow | Y |-  |-  | Follow the account |
+| DM | Y | Y |-  | Send a direct message |
+| Email |-  |-  | Y | Send an email through your connected mailbox |
+| Connection Request |-  | Y |-  | Send a LinkedIn connection request |
+| Withdraw Connection |-  | Y |-  | Withdraw a pending or accepted connection |
+| Condition | Y | Y | Y | Branch based on lead status |
 
 ## Action Details
 
@@ -98,13 +99,36 @@ Sends a direct message to the lead. The message template is personalized using l
 
 ---
 
+### Send Email
+
+**Platforms:** Email (Gmail and/or Outlook)
+
+Sends an email to the lead from one of your connected mailboxes. Subject and body support the same template variables and AI personalization as DMs.
+
+**Mailbox routing:**
+- Recipients on `@gmail.com` send from your Gmail account
+- Recipients on `@outlook.com` / `@hotmail.com` / `@live.com` send from your Outlook account
+- Everyone else sends from the **Primary** mailbox (you set this from the **Email** card on the parent account's detail page)
+
+**Execution:**
+- Validates the lead has an email address. If missing, the action is skipped.
+- Confirms the relevant mailbox is connected and active. If not, the action is skipped.
+- Skips leads with a recorded bounce on a previous send.
+- Renders the subject and body templates, applies AI personalization if enabled, then sends.
+
+**Reply handling:** Inbound replies are detected on the next mailbox poll and matched to the conversation. The reply appears in the unified Inbox.
+
+See [Email Channel](email-channel.md) and [Connecting Email](../getting-started/connecting-email.md) for setup and configuration details.
+
+---
+
 ### Connection Request
 
 **Platforms:** LinkedIn only
 
 Sends a LinkedIn connection request, optionally with a personalized note.
 
-**Daily limits:** You can set a daily connection request limit per account. Options are 10, 15, 20, or 25 per day (default 15). Choose a limit that matches your account type and risk tolerance.
+**Daily limits:** You can set a daily connection request limit per account to any whole number from 1 to 100 (default 15, which is the recommended starting point). Choose a limit that matches your account type and risk tolerance.
 
 If the daily limit is reached, the action enters Deferred status and remaining connection request actions are deferred to the next day.
 
@@ -163,7 +187,7 @@ Before every action executes, the system runs these checks in order:
 | Daily action limit not exceeded | Reschedule for tomorrow |
 | Lead has required platform data for action type | Skip |
 
-Daily limits are platform-specific: X and LinkedIn have separate counters. If a limit is reached, the action is rescheduled for the next day at a random time within the activity window.
+Each sequence has a single unified daily action counter that covers all channels (X, LinkedIn, email). If the limit is reached, the action is rescheduled for the next day at a random time within the activity window.
 
 ## Action Lifecycle
 

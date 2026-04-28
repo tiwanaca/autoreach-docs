@@ -41,12 +41,11 @@ Daily limits are **per-sequence** (not per-account). Each sequence has its own c
 
 ### Action Limits
 
-| Limit | Default | Maximum |
-|---|---|---|
-| LinkedIn daily actions | 20 | 100 |
-| X daily actions | 40 | 100 |
+Each sequence has a single unified daily action limit covering **all** outreach actions: likes, comments, follows, DMs, connection requests, and emails. Condition steps do not count.
 
-All action types count toward their platform's limit: like, comment, follow, DM, connection request. Condition steps do not count.
+In addition to the per-sequence daily limit, email sends are paced per mailbox at one in-flight send at a time and up to 10 sends per minute to keep delivery clean.
+
+LinkedIn connection requests are tracked separately per-account — see [Daily Connection Limits](#daily-connection-limits-linkedin) below.
 
 ### Enforcement
 

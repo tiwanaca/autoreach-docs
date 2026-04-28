@@ -48,7 +48,7 @@ Add a lead by their X username. The lead is queued for enrichment and scoring.
 
 ## LinkedIn Discovery Methods
 
-When you select LinkedIn, five options appear:
+When you select LinkedIn, six options appear:
 
 ### From a Lookalike
 
@@ -62,9 +62,19 @@ Search LinkedIn for people by job title in your offer's target locations. Uses y
 
 Enable **Buyer Expansion** to automatically rotate through different roles daily and continuously find new leads.
 
-**Best for:** Systematic targeting of specific roles at specific companies.
+**Best for:** Systematic targeting by role, location, and industry. To target specific companies, use **By Company** instead.
 
 [Learn more about LinkedIn People Search →](linkedin-people-search.md)
+
+### By Company
+
+Search for companies matching descriptors like "B2B SaaS Sales Tooling" or "Lead Generation Agency", then add the top decision-maker from each as a lead. AI can generate descriptors from your offer, or you can enter your own.
+
+Enable **Buyer Expansion** to re-run each descriptor daily and capture new companies as they appear.
+
+**Best for:** When you know the *type* of company you want to reach but not the people yet. Returns one focused lead per company instead of many.
+
+[Learn more about LinkedIn Company Search →](linkedin-company-search.md)
 
 ### From Signals (Intent Stream)
 
@@ -105,7 +115,7 @@ From the **Lookalikes** tab, click **New Lookalike** to discover relevant accoun
 - **By Offer**-  AutoReach uses your offer's target audience to find influencers, thought leaders, and communities whose audiences match your ICP
 - **By Profile URL**-  Provide a specific influencer or competitor profile URL
 
-The search returns up to 3 candidate accounts with follower counts and audience categories. Select which to save, then use them as seed accounts for extraction via the "From a Lookalike" option.
+The search returns up to 10 candidate accounts with follower counts and audience categories. Select which to save, then use them as seed accounts for extraction via the "From a Lookalike" option.
 
 Works on both X and LinkedIn.
 
@@ -139,6 +149,7 @@ Cross-platform matching (finding X profiles for LinkedIn leads and vice versa) i
 |--------|----------|----------|
 | From a Lookalike | Both | Scaling via relevant community audiences |
 | By Role | LinkedIn | Systematic targeting by role/location/industry |
+| By Company | LinkedIn | One decision-maker per matching company |
 | From Signals | Both | Intent signals from active discussions |
 | From a Link | Both | Capturing engagement on specific posts |
 | Add Manually | Both | Adding individual prospects |

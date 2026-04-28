@@ -39,6 +39,18 @@ The Engagement Engine generates a randomized mix of actions each day. Action cou
 
 See **[Engagement Automation and Daily Actions](engagement.md)** for more details on daily activity patterns.
 
+## Engagement Pod (LinkedIn only)
+
+Engagement Pod is an opt-in LinkedIn feature where AutoReach users automatically engage with each other's posts to boost algorithmic reach. When you publish a LinkedIn post, AutoReach detects it and schedules a small group of pod members to like and comment on it within a 60-minute window. The same happens in reverse for posts from other pod members.
+
+How it works:
+
+- Up to 5 pod members are selected per post, with at least a 3-minute gap between their engagements to keep the pattern natural
+- AI-generated comments are tailored using each pod member's offer context and persona, so they don't look templated
+- A 3-day cooldown prevents the same author/engager pair from showing up repeatedly, which would look reciprocal
+
+The Engagement Pod toggle lives on each LinkedIn account's Engagement Engine card and is **on by default**. Turn it off if you don't want your account participating - you'll lose the inbound engagement boost on your own posts as well.
+
 ## Content Approval
 
 All generated content enters an approval queue by default. You can:

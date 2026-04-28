@@ -40,9 +40,11 @@ A centralized guide for diagnosing and fixing common issues in AutoReach. Each s
 
 **Symptom:** All LinkedIn activity has stopped and the account shows as paused.
 
-**Likely Cause:** AutoReach detected an automation warning from LinkedIn (rate limit, bot detection, or IP block) and paused the account to protect it.
+**Likely Cause:** AutoReach detected an issue with the account (rate limit, bot detection, IP block, captcha, or session expired) and paused all associated automation - sequences, warmup, and pending actions are all halted.
 
-**Fix:** AutoReach automatically applies cooldown periods to protect your account. Do not attempt to bypass the pause. AutoReach will automatically resume activity once the cooldown expires.
+**Fix:** What to do depends on the error type shown on the Accounts page:
+- **Auto-recoverable** (rate limit, timeout, proxy error, IP block, expired auth): cooldowns range from 2h to 7 days. Activity resumes automatically once the cooldown expires - do not attempt to bypass the pause.
+- **Manual fix required** (bot detection, captcha, AI provider out of credits): you will receive an email and must address the underlying issue, then manually resume the account from the Accounts page. Bot detection in particular is serious - treat repeat occurrences as a sign to reduce activity significantly.
 
 ---
 
@@ -145,11 +147,11 @@ A centralized guide for diagnosing and fixing common issues in AutoReach. Each s
 
 **Likely Cause (1):** Your AI provider's API key is invalid or out of credits.
 
-**Fix:** Check the health warnings on the Dashboard for provider errors. Verify your API keys are correct in Settings > API Keys and that you have available credits.
+**Fix:** Check the health warnings on the Dashboard for provider errors. Verify your API keys are correct in **Settings > AI & Models** and that you have available credits.
 
 **Likely Cause (2):** Both your primary and fallback AI models are down.
 
-**Fix:** This is rare but can happen during provider outages. AutoReach will show a health warning. Wait for the provider to recover, or switch your model configuration in Settings > AI Models.
+**Fix:** This is rare but can happen during provider outages. AutoReach will show a health warning. Wait for the provider to recover, or switch your model configuration in **Settings > AI & Models**.
 
 ---
 
@@ -208,11 +210,12 @@ A centralized guide for diagnosing and fixing common issues in AutoReach. Each s
 
 **Likely Cause:** The platform flagged a pattern of activity that looks automated (too many actions in rapid succession, unusual hours, or suspicious IP).
 
-**Fix:**
-1. Wait for the full cooldown period to expire - do not try to bypass it
-2. After the cooldown, reduce your daily limits significantly
+**Fix:** Bot detection is treated as a serious event that requires manual intervention - AutoReach will email you and the account stays paused until you manually resume it from the Accounts page. Before resuming:
+1. Investigate what the platform flagged (the error message on the account is your best clue)
+2. Reduce your daily action limits significantly
 3. Make sure your activity window matches realistic usage patterns
 4. Verify your proxy is working (residential IPs are safest)
+5. Manually resume the account from the Accounts page once you have addressed the underlying cause
 
 > **Warning:** Repeated bot detection warnings can lead to permanent account suspension. Take them seriously and reduce your activity levels.
 

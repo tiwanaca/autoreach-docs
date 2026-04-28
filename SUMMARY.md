@@ -10,6 +10,7 @@
 
 * [Quickstart](getting-started/quickstart.md)
 * [Connecting Your Accounts](getting-started/connecting-accounts.md)
+* [Connecting Email (Gmail & Outlook)](getting-started/connecting-email.md)
 * [Creating Your First Offer](getting-started/create-offer.md)
 * [Installing the Chrome Extension](getting-started/chrome-extension.md)
 * [Getting Results (Day 2+)](getting-started/getting-results.md)
@@ -27,6 +28,7 @@
 * [X/Twitter Tweet Search](finding-leads/tweet-search.md)
 * [LinkedIn Content Search](finding-leads/linkedin-content-search.md)
 * [LinkedIn People Search](finding-leads/linkedin-people-search.md)
+* [LinkedIn Company Search (By Company)](finding-leads/linkedin-company-search.md)
 * [LinkedIn Job Search](finding-leads/linkedin-job-search.md)
 * [Lookalike Audience Discovery](finding-leads/lookalike-audiences.md)
 * [Lead Pool (Instant Matching)](finding-leads/lead-pool.md)
@@ -46,6 +48,7 @@
 * [Building Sequences (Flow Editor)](outreach/building-sequences.md)
 * [Supported Actions by Platform](outreach/supported-actions.md)
 * [DM Personalization](outreach/dm-personalization.md)
+* [Email Channel](outreach/email-channel.md)
 * [Scheduling & Send Limits](outreach/scheduling.md)
 * [Simulation & A/B Testing](outreach/simulation-and-testing.md)
 

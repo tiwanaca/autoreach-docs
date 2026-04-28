@@ -33,7 +33,7 @@ AutoReach searches X for tweets matching your queries. Results are automatically
 
 | Parameter | Default | Description |
 |---|---|---|
-| Max tweets | 100 | Total tweets to collect |
+| Max tweets | 250 | Total tweets to collect (range 10-300) |
 | Days back | 60 | How far back to search |
 | Include replies | enabled | Extract commenters from matching tweets |
 | Max replies | 100 | Max replies to check per tweet |

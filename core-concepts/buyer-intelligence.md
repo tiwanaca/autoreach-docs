@@ -157,7 +157,7 @@ Signals are data points that indicate a lead is interested, actively buying, or 
 
 - **Competitor Engagement** - Lead engaged with content from competitor companies
 - **Engagement Pattern** - Lead has high engagement on posts related to your category
-- **Own Post Engagement** - Lead engaged with YOUR posts (inbound signal). AutoReach detects replies, likes, retweets, new follows (X) and reactions, comments, mentions, connection requests (LinkedIn)
+- **Own Post Engagement** - Lead engaged with YOUR posts (inbound signal). AutoReach detects replies, likes, retweets, new follows (X) and reactions, comments, mentions of you, new connections, and profile views (LinkedIn)
 - **Competitor Customer** - Lead is a confirmed user of a competing product
 - **Interaction Orbit** - Lead suddenly starts engaging with multiple competitor or adjacent vendor accounts in a short time window, indicating active evaluation. See [Account Signals](../settings/account-signals.md) for details
 
@@ -217,7 +217,7 @@ AutoReach applies rules that override normal scoring:
 
 - **Industry mismatch:** If a lead is in the wrong industry, their fit score is reduced
 - **Competitors:** If a lead works at a competitor company, they are scored as Poor Fit with zeroed scores
-- **Internal builders:** If a lead is building a competing product, they are scored as Poor Fit with zeroed scores
+- **Internal builders:** If a lead is actively building an in-house solution that overlaps with what you sell (e.g., a CTO building their own AI platform when you sell AI tools), they're flagged as not a buyer (right company, wrong persona) and land in Poor Fit
 
 > **Note:** You can manually override scoring rules via the UI (set "Manual Outreach" state) if you want to reach someone despite these filters.
 

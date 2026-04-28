@@ -140,7 +140,7 @@ The **Conversation Analyzer** is an AI system that reviews your outreach convers
  - **Add tone example**-  new conversation samples to guide AI voice
  - **Modify tone example**-  adjust existing examples based on what worked
  - **Remove tone example**-  drop examples that are hurting performance
- - **Modify prompt**-  changes to AI prompts (DM generation, warmup, or response prompts)
+ - **Modify prompt**-  changes to AI prompts (AI Prompt, DM Generation Prompt, or How AI Comments on Posts)
 
 The analyzer focuses on tone examples and prompts, not offer-level fields like pain points or personalization settings.
 

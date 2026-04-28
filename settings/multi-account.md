@@ -33,13 +33,33 @@ LinkedIn accounts connect through the Chrome Extension, same as X.
 
 ### Connection Limits
 
-LinkedIn connection requests have a daily limit tracked per-account. You can set the daily connection limit on each LinkedIn account (options: 10, 15, 20, or 25 per day, default 15). See [Supported Actions](../outreach/supported-actions.md#connection-request) for deferral behavior.
+LinkedIn connection requests have a daily limit tracked per-account. You can set the daily connection limit on each LinkedIn account to any whole number from 1 to 100 (default 15, which is the recommended starting point). See [Supported Actions](../outreach/supported-actions.md#connection-request) for deferral behavior.
 
 ### Proxy Configuration
 
 Each LinkedIn account stores its own proxy configuration (host, port, credentials, and type). If no proxy is configured, a fallback proxy is used.
 
 Using dedicated proxies is strongly recommended for LinkedIn accounts.
+
+### Antidetect Browsers
+
+If you run AutoReach inside an antidetect browser (SunBrowser, GoLogin, Multilogin, Dolphin Anty, Incogniton, Kameleo, AdsPower, and similar tools), you must configure your proxy inside the antidetect browser itself, not through the AutoReach extension.
+
+These browsers manage proxies at the browser launch layer and block extensions from calling Chrome's proxy API. If the extension tries to apply proxy settings, the browser kills the popup process before any error can be caught, which looks like the extension crashing or closing instantly.
+
+How AutoReach handles this:
+
+- The extension tries to auto-detect antidetect browsers from the user agent and skips proxy API calls when it matches
+- Detection is best-effort. Most antidetect browsers spoof their user agent to look like vanilla Chrome, which is the whole point of using one, so auto-detection will often miss them on first launch
+- Your proxy still works normally because the antidetect browser routes traffic through it at the network layer
+
+What you need to do before opening the extension on an antidetect browser:
+
+1. Configure the proxy inside your antidetect browser profile first (this is the default workflow for these tools)
+2. Do not configure a separate proxy in the extension popup. Leave proxy settings empty or set to "browser-managed"
+3. If the popup closes instantly the first time you open it, that is the proxy API being called before detection kicks in. Set `__skip_proxy_api` to `true` in the extension's `chrome.storage.local`, then reopen the popup
+
+If you hit this crash, contact support with your browser name and version so we can add it to the detection keyword list and prevent it for other users.
 
 ## Pausing and Resuming
 

@@ -1,6 +1,6 @@
 # Inbox and Manual Controls
 
-The Inbox is your unified view of all conversations across X and LinkedIn. Every DM and reply flows through here, with real-time message detection and AI status indicators. You always have full control to step in, override AI responses, and handle conversations that need a human touch.
+The Inbox is your unified view of all conversations across X, LinkedIn, and email. Every DM, email, and reply flows through here, with real-time message detection and AI status indicators. You always have full control to step in, override AI responses, and handle conversations that need a human touch.
 
 ## Conversation List
 
@@ -30,7 +30,7 @@ Combine filters to narrow your view. For example, show only "Replied" conversati
 
 ## Message Detection
 
-New messages on X are detected via Twitter's DM connection. LinkedIn messages are detected through periodic polling.
+New messages on X are detected via Twitter's DM connection. LinkedIn messages are detected through periodic polling. Email replies are detected by polling your connected Gmail or Outlook mailboxes; bounces are flagged automatically and future sends to bounced addresses are skipped.
 
 ## AI Status Indicators
 

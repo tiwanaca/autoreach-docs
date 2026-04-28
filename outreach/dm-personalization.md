@@ -1,6 +1,8 @@
-# DM Personalization and Template Variables
+# DM and Email Personalization
 
-When a DM step executes in a sequence, AutoReach generates a personalized message for each lead. It takes your DM template with `{{variable}}` placeholders, enriches it with lead data, and uses AI to produce a natural, personalized message.
+When a DM or Email step executes in a sequence, AutoReach generates a personalized message for each lead. It takes your template with `{{variable}}` placeholders, enriches it with lead data, and uses AI to produce a natural, personalized message.
+
+The variable system documented here applies to **both DMs (X / LinkedIn) and Email steps** (subject and body). Email-specific routing details are covered in [Email Channel](email-channel.md).
 
 ## Personalization Flow
 

@@ -44,7 +44,7 @@ Replies appear in your **Inbox** (Conversations section). Each reply shows:
 - **AI is on by default**: If you left AI responses enabled, AutoReach will automatically reply to incoming messages using your offer context and tone examples. Review the AI's responses early on to make sure the tone matches what you want.
 - **Take over manually**: Click on any conversation to read the thread. You can toggle AI off for that conversation and respond yourself whenever a lead shows genuine buying interest.
 - **Add tone examples**: If the AI's tone is not quite right, go to your sequence settings and add tone examples - these teach the AI how you actually talk.
-- **Mark as meeting booked**: When a lead agrees to a call, mark the conversation accordingly so it reflects in your metrics.
+- **Meeting tracking**: When a lead books a call through your Calendly or Cal.com link, AutoReach automatically marks the lead as Meeting Booked via webhook. If you use a custom booking URL (no webhook), open the lead in the Chrome Extension CRM panel and drag it to the Meeting stage so the metrics update.
 
 > **Tip:** For your first few days, manually review every AI response before the next one goes out. This helps you tune the AI's style and catch anything off-brand.
 

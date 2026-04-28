@@ -10,7 +10,7 @@ AutoReach continuously monitors account health and classifies errors into action
 
 AutoReach classifies errors into categories-  some are auto-recoverable (like rate limits and timeouts), while others require manual review (like bot detection or captcha challenges). Each category has an appropriate cooldown period before retrying.
 
-Errors that are auto-recoverable resolve on their own after the cooldown. Serious issues like bot detection or IP blocks trigger an emergency pause and require you to manually resume the account after investigating.
+Errors that are auto-recoverable resolve on their own after the cooldown (rate limits, timeouts, expired auth, proxy errors, IP blocks). Bot detection, captcha challenges, and AI-provider credit exhaustion are flagged as manual-fix-required - the account stays paused until you address the root cause and resume it from the Accounts page.
 
 ### Email Notifications
 
@@ -22,12 +22,12 @@ When a serious error occurs, AutoReach pauses not just the account but all assoc
 
 ## Emergency Pause
 
-AutoReach automatically pauses an account when it detects severe issues (bot detection, IP blocks, captcha challenges). When emergency pause activates:
+AutoReach automatically pauses an account when it detects severe issues (bot detection, captcha challenges, IP blocks). When emergency pause activates:
 
 1. All pending actions are cancelled
 2. Account shows paused status
-3. You receive a notification
-4. Manual resume required
+3. You receive a notification (for bot detection, captcha, and AI-provider credit issues - which require manual review)
+4. **Manual resume** is required for bot detection, captcha, and AI-provider issues. **Auto-resume** happens for IP blocks, expired auth, and proxy errors once their cooldown expires
 
 ## Browser Identity Management
 

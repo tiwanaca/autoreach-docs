@@ -1,6 +1,6 @@
 # LinkedIn People Search
 
-Find decision-makers using LinkedIn's search. Systematically target specific roles, companies, locations, and industries to build highly filtered prospect lists.
+Find decision-makers using LinkedIn's search. Systematically target specific roles, locations, and industries to build highly filtered prospect lists. (To target by company, use [LinkedIn Company Search](linkedin-company-search.md) instead.)
 
 ## How It Works
 
@@ -31,7 +31,7 @@ Note: **Company size** and **network distance** are not search filters - they ar
 | **Role** |-  | Job title keyword (required for direct role searches) |
 | **Offer** |-  | Resolves location + industry filters from the offer |
 | **Industries** | from offer | Override offer's industry IDs |
-| **Max Results** | 500 | Max results to collect (slider: 50–5,000) |
+| **Max Results** | 250 | Max results to collect (slider: 50–5,000) |
 | **Enrichment Options** |-  | Whether to run enrichment and deep analysis on discovered leads |
 | **Buyer Expansion** | disabled | Enable daily autopilot with role rotation |
 
@@ -101,7 +101,7 @@ Results are queued for enrichment based on your enrichment settings.
 ## Troubleshooting
 
 **Getting too many results?**
-- Add more filter criteria (industry, company, location)
+- Add more filter criteria (industry, location)
 - Use more specific title keywords
 - Narrow geographic scope
 

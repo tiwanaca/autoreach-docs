@@ -75,6 +75,7 @@ Saving is **manual**-  click the "Save Sequence" button. An "Unsaved changes" in
 | Comment | LinkedIn | Comment on a lead's LinkedIn post (AI-generated from post content) |
 | Follow | X | Follow the account |
 | DM | X, LinkedIn | Send a direct message |
+| Email | Gmail, Outlook | Send an email from a connected mailbox |
 | Condition |-  | Branch based on lead status |
 | Connection Request | LinkedIn | Send a connection request |
 | Withdraw Connection | LinkedIn | Withdraw a pending or accepted connection |
@@ -102,6 +103,16 @@ Total delay = (days x 24 hours) + minutes. Displayed on the node as "Delay: 1d 1
 | AI prompt | Optional-  custom AI instructions for personalization |
 
 Use the variable picker to browse available placeholders. The AI personalizes the template for each lead using their profile data, recent activity, and offer context.
+
+### Email Configuration
+
+| Setting | Description |
+|---|---|
+| Subject | Required. Email subject line, supports `{{variable}}` placeholders |
+| Body | Required. Email body, supports `{{variable}}` placeholders |
+| AI personalization | Optional. When on, AI rewrites the body per lead using profile and offer context |
+
+Email steps require at least one connected mailbox (Gmail or Outlook). Recipient domain determines which mailbox sends; neutral domains use your Primary mailbox. See [Email Channel](email-channel.md) for full details.
 
 ### Comment Configuration
 
@@ -173,7 +184,7 @@ Beyond the flow itself, configure overall sequence behavior:
 
 ### Daily Limits
 
-Each sequence has configurable daily action limits (combined, LinkedIn-specific, and X-specific). See [Scheduling](scheduling.md) for the full limits table and enforcement details.
+Each sequence has a single unified daily action limit covering all channels (likes, comments, follows, DMs, connection requests, and emails). LinkedIn connection requests are also tracked per-account separately. See [Scheduling](scheduling.md) for full enforcement details.
 
 ### AI Temperature
 
@@ -215,13 +226,12 @@ Configure the sender identity and sales flow used by AI when generating messages
 
 **Sales Flow** defines the steps in your closing flow (e.g., video call, free tool, website). Each step has a type, label, link, and an optional description explaining when to use that step. The AI references these steps when guiding leads toward a booking.
 
-## Starting, Pausing, and Stopping
+## Starting and Pausing
 
 | Action | Effect |
 |---|---|
 | **Start** | Sets status to Active, triggers background scheduling of actions for enrolled leads |
 | **Pause** | Temporarily stops all pending actions without losing progress. Can be resumed. |
-| **Stop** | Permanently ends the sequence. Cannot be restarted-  create a new sequence or duplicate. |
 
 ## Common Sequence Patterns
 

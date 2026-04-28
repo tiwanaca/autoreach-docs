@@ -28,7 +28,11 @@ Yes. Autopilot is a convenience feature that automates initial setup. You can ma
 
 ### Where do leads come from?
 
-AutoReach discovers leads from multiple sources: X tweet search, LinkedIn content search, LinkedIn people search, LinkedIn job search, lookalike audience discovery, follower extraction, comment extraction, the Lead Pool, CSV import, manual add, and the Chrome Extension. See [Finding Leads](finding-leads/overview.md) for a breakdown of each method.
+AutoReach discovers leads from multiple sources: X tweet search, LinkedIn content search, LinkedIn people search, LinkedIn company search (By Company), LinkedIn job search, lookalike audience discovery, follower extraction, comment extraction, the Lead Pool, CSV import, manual add, and the Chrome Extension. See [Finding Leads](finding-leads/overview.md) for a breakdown of each method.
+
+### Can I search by company on LinkedIn?
+
+Yes. Use **By Company** when adding a LinkedIn lead source. Enter descriptors like "B2B SaaS Sales Tooling" or "Lead Generation Agency" (or generate them from your offer with AI), and AutoReach finds matching companies and adds the top decision-maker from each. See [LinkedIn Company Search](finding-leads/linkedin-company-search.md).
 
 ### How many leads should I target at once?
 
@@ -78,9 +82,9 @@ A sequence is a multi-step outreach campaign that you build visually in the flow
 
 When a daily limit is reached, remaining actions are automatically rescheduled to the next day at a random time within your activity window. Leads stay in the sequence and no actions are lost. Limits reset at midnight in your timezone. See [Scheduling & Send Limits](outreach/scheduling.md).
 
-### What is the difference between pausing and stopping a sequence?
+### How do I pause a sequence?
 
-Pausing temporarily stops all pending actions without losing progress. You can resume a paused sequence and it picks up where it left off. Stopping permanently ends the sequence. A stopped sequence cannot be restarted. To run the same campaign again, duplicate the sequence and start the copy. See [Building Sequences](outreach/building-sequences.md).
+Pausing temporarily halts all pending actions without losing progress. You can resume a paused sequence and it picks up where it left off. To run the same campaign against a different audience, duplicate the sequence and start the copy. See [Building Sequences](outreach/building-sequences.md).
 
 ### How do I duplicate a sequence?
 
@@ -105,6 +109,34 @@ Add tone examples to your sequence. These are conversation samples that teach th
 ### What does "max AI responses = 0" mean?
 
 A value of 0 means unlimited. The AI will continue responding to a conversation for as long as it remains active, with no cap on the number of replies. Set it to a positive number (like 3 or 5) to limit how many times the AI auto-replies in a single conversation before stopping. See [Scheduling & Send Limits](outreach/scheduling.md).
+
+---
+
+## Email
+
+### Can I send emails through AutoReach?
+
+Yes. Open a parent X or LinkedIn account from the **Accounts** page, connect Gmail or Outlook from the **Email** card, then add an email step to any sequence. Subject and body support the same template variables and AI personalization that DMs use. Replies appear in the unified Inbox alongside X and LinkedIn conversations. See [Email Channel](outreach/email-channel.md).
+
+### How do I connect Gmail?
+
+Gmail uses an App Password rather than OAuth. Enable 2-Step Verification on your Google account, generate an App Password named "AutoReach", and paste it into the connect dialog along with your Gmail address. Workspace admins may need to enable IMAP and App Passwords. See [Connecting Email](getting-started/connecting-email.md).
+
+### How do I connect Outlook?
+
+Outlook uses Microsoft OAuth. Click **Connect Outlook**, sign in through the popup, and grant permissions. AutoReach refreshes tokens automatically.
+
+### Can I connect both Gmail and Outlook?
+
+Yes. When both are connected, AutoReach routes outbound mail by recipient domain (Gmail recipients use Gmail, Outlook recipients use Outlook, everyone else uses your **Primary** mailbox). This improves deliverability and authenticity.
+
+### Are bounces handled automatically?
+
+Yes. Bounces are detected on inbound mail and the lead is flagged. Future sends to a bounced address are skipped automatically.
+
+### Do email actions count toward my daily limit?
+
+Yes. Email sends count toward the same per-sequence daily action limit that covers DMs, likes, comments, follows, and connection requests. On top of that, each mailbox is rate-paced at one send at a time and up to 10 per minute to keep delivery clean.
 
 ---
 
@@ -172,4 +204,4 @@ Three strategies: disable web enrichment for leads that don't need it (it's the 
 
 ### How do I set up webhooks for meeting tracking?
 
-Go to Settings and configure your calendar integration. For Calendly, add your booking link and follow the instructions to get the Personal Access Token with all scopes enabled. For Cal.com, copy the webhook URL generated by AutoReach and paste it into Cal.com. The webhook allows AutoReach to automatically detect when meetings are booked and update lead status. See [Meeting Booking](meetings/meetings.md).
+Calendar configuration is **per-account** - open an account from the Accounts page and use the Calendar section. Add your booking URL, then in your booking platform add the custom invitee question shown in the form (this is what AutoReach uses to match bookings back to a lead). For Calendly, paste a Personal Access Token, click Auto-fetch to retrieve your Organization URI, then click Register webhook - AutoReach creates the webhook for you (Calendly paid plan required). For Cal.com, copy the webhook URL AutoReach generates and paste it into Cal.com. See [Meeting Booking](meetings/meetings.md).

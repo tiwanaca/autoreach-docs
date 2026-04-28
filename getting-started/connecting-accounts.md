@@ -1,8 +1,10 @@
 # Connecting Your Social Accounts
 
-Connect your X (Twitter) and LinkedIn accounts to AutoReach through the Chrome Extension. This is the only supported method for linking accounts.
+Connect your X (Twitter) and LinkedIn accounts to AutoReach through the Chrome Extension. This is the only supported method for linking social accounts.
 
 > **Important:** Make sure you have [installed the Chrome Extension](chrome-extension.md) and activated your license key first.
+
+> **Email accounts:** Gmail and Outlook are connected separately, not through the Chrome Extension. See [Connecting Email](connecting-email.md) for setup.
 
 ---
 
@@ -41,7 +43,7 @@ ISP residential static proxies use real internet service provider IPs, making yo
 
 LinkedIn enforces daily limits on connection requests. AutoReach tracks these automatically:
 
-AutoReach lets you set a daily connection request limit per account. Options are 10, 15, 20, or 25 per day (default 15). Choose a limit that matches your account type and risk tolerance - lower limits are safer for new or free accounts.
+AutoReach lets you set a daily connection request limit per account. Any whole number from 1 to 100 is allowed (default 15, which is the recommended starting point). Choose a limit that matches your account type and risk tolerance - lower limits are safer for new or free accounts.
 
 These limits reset daily. AutoReach tracks your usage and pauses connection requests when you approach the limit. If a connection request gets rate-limited, it enters a **deferred state** and automatically resumes the next day.
 
@@ -51,9 +53,9 @@ These limits reset daily. AutoReach tracks your usage and pauses connection requ
 
 AutoReach monitors your accounts for inbound engagement and processes it as buying signals.
 
-**X (Twitter):** Replies to your tweets, mentions, retweets, quote tweets, likes on your posts, and new followers.
+**X (Twitter):** Replies to your tweets, retweets, likes on your posts, and new followers.
 
-**LinkedIn:** Reactions on your posts, comments on your content, mentions, and connection requests received.
+**LinkedIn:** Reactions on your posts, comments on your content, mentions of you, new connections, and profile views.
 
 Someone engaging with your content may be a potential buyer. AutoReach can automatically create leads from high-intent engagers and update signals on existing leads.
 
@@ -88,6 +90,7 @@ AutoReach continuously monitors your account health and warns you when something
 
 Once your accounts are connected:
 
-1. **[Create an Offer](create-offer.md)** to define your target audience and message tone
-2. **[Build a Sequence](../outreach/building-sequences.md)** to automate outreach
-3. **[Launch Autopilot](../autopilot/overview.md)** for fully automated pipeline management
+1. **[Connect Email](connecting-email.md)** to add Gmail and/or Outlook as a third channel (optional but recommended)
+2. **[Create an Offer](create-offer.md)** to define your target audience and message tone
+3. **[Build a Sequence](../outreach/building-sequences.md)** to automate outreach
+4. **[Launch Autopilot](../autopilot/overview.md)** for fully automated pipeline management

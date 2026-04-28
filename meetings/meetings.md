@@ -12,19 +12,24 @@ AutoReach integrates with Calendly and Cal.com to detect when leads book meeting
 - **Cal.com** - free, no paid subscription required
 - **Custom booking URLs** - any scheduling page (no automatic tracking)
 
+Calendar configuration is **per-account**. Open an account from the **Accounts** page and use the Calendar section. The form has two parts: (1) the booking page (provider + URL), and (2) meeting tracking (provider-specific webhook setup, surfaced once the booking page is saved).
+
 ### Calendly Setup
 
-1. Add your Calendly booking link in **Settings > Meeting & Calendar**
-2. Follow the instructions to get the webhook **Personal Access Token**
-3. Enable **all scopes** for permissions
-4. Save. AutoReach will receive booking events automatically
+Calendly webhooks require a paid Calendly plan (Standard, Teams, or Enterprise).
+
+1. In the account's Calendar section, choose **Calendly** and add your booking URL
+2. In Calendly, open the event's invitee form and add a required **One Line** question with the identifier shown in AutoReach - this is how bookings are matched back to a lead
+3. Generate a Personal Access Token in [Calendly API settings](https://calendly.com/integrations/api_webhooks) and paste it into AutoReach
+4. Click **Auto-fetch** to populate your Organization URI (or paste it manually)
+5. Click **Register webhook** - AutoReach creates the webhook for you via the Calendly API
 
 ### Cal.com Setup
 
-1. Add your Cal.com booking URL in **Settings > Meeting & Calendar**
-2. AutoReach generates a **webhook URL** for you
-3. Copy the webhook URL into your Cal.com webhook settings
-4. Save. Bookings are tracked automatically
+1. In the account's Calendar section, choose **Cal.com** and add your booking URL
+2. In Cal.com, open the event's Advanced > Booking Questions and add a required custom field with the identifier shown in AutoReach - this is how bookings are matched back to a lead
+3. Copy the webhook URL AutoReach generates
+4. Paste it into Cal.com's webhook settings. Bookings are tracked automatically
 
 ### Custom Booking URLs
 
@@ -124,8 +129,8 @@ Leads move through a visual pipeline. The typical progression is **New → Reque
 |---|---|
 | New | Freshly added to AutoReach |
 | On Hold | Temporarily paused |
-| Requested | Connection request or first message sent |
-| Accepted | Connection accepted or first reply received |
+| Requested | Connection request sent |
+| Accepted | Connection request accepted |
 | Contacted | Ongoing conversation started |
 | Replied | Lead has engaged with your outreach |
 | Meeting | Meeting booked |
@@ -136,7 +141,7 @@ Leads auto-progress through stages as sequence activity occurs. You can manually
 
 ### Adding Leads
 
-On LinkedIn profile pages, the extension injects an **"Add to Leads"** button. You can also add leads from posts and comments in the LinkedIn feed. Lead addition is manual: you identify prospects and add them via the extension panel.
+On LinkedIn profile pages, the extension injects an **"Add to Leads"** button. Lead addition is manual: you identify prospects and add them via the extension panel.
 
 The extension is a **CRM tool**, not an automated lead generator. It does not scan feeds or match ICPs automatically.
 
