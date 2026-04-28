@@ -141,8 +141,8 @@ Metrics are updated automatically when lead statuses change. Step-level executio
 
 | Setting | Description |
 |---|---|
-| LinkedIn Daily Limit | Max LinkedIn actions per day (default 20) |
-| X Daily Limit | Max X actions per day (default 40) |
+| Daily Actions | Max total LinkedIn + X actions per day (likes, comments, follows, DMs, connection requests). Default 20. |
+| Daily Email Sends | Separate per-sequence email send cap. Default 50. |
 | Auto-Enroll Active Buyers | Automatically add leads scored as active for this offer |
 | AI Prompt | Custom AI instructions for message generation |
 | DM Generation Prompt | Specific prompt for cold DM generation |

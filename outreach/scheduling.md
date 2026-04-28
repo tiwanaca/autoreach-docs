@@ -45,8 +45,11 @@ Daily limits are **per-sequence** (not per-account). Each sequence has its own c
 |---|---|---|
 | LinkedIn daily actions | 20 | 100 |
 | X daily actions | 40 | 100 |
+| Email daily sends (separate counter) | 50 | configurable |
 
-All action types count toward their platform's limit: like, comment, follow, DM, connection request. Condition steps do not count.
+LinkedIn and X share a unified daily limit covering likes, comments, follows, DMs, and connection requests. Condition steps do not count.
+
+**Email has its own daily counter** (`daily_action_limit_email`) and does NOT consume the unified LinkedIn/X budget. Email sends are also paced per mailbox at one in-flight send at a time and up to 10 sends per minute.
 
 ### Enforcement
 

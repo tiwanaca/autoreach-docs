@@ -44,6 +44,10 @@ Key terms used throughout AutoReach, listed alphabetically.
 
 **DM Template**-  A message template with `{{variable}}` placeholders that AutoReach fills with real lead data at send-time. Templates use a two-pass system: direct substitution for known variables, then AI inference for custom placeholders. See [DM Personalization](outreach/dm-personalization.md).
 
+**Email Channel**-  A native outreach channel that lets you send and receive emails through your connected Gmail and Outlook mailboxes. Email steps in sequences support the same template variables and AI personalization as DMs. Inbound replies, bounces, and auto-responses are handled automatically. See [Email Channel](outreach/email-channel.md).
+
+**Email Step**-  A sequence action that sends an email from a connected mailbox. Configurable with a subject template, body template, AI personalization toggle, and step delay. See [Email Channel](outreach/email-channel.md).
+
 **Engagement Engine**-  A system that builds social credibility on your accounts by automatically posting content, engaging with relevant posts (likes, replies, comments, follows), and maintaining human-like activity patterns. See [Engagement Engine Overview](engagement-engine/overview.md).
 
 **Enrichment**-  The automatic process of gathering additional data about a lead after discovery. Includes profile enrichment (bio, experience, skills), activity enrichment (recent posts), cross-platform matching, web enrichment, email finding, and website finding. See [The Enrichment Pipeline](enrichment/pipeline.md).
@@ -67,6 +71,8 @@ Key terms used throughout AutoReach, listed alphabetically.
 **Lead**-  A unified profile of a potential buyer that combines data from X and LinkedIn. Leads are automatically discovered, enriched, scored, and tracked throughout the outreach lifecycle. See [How Leads Work](core-concepts/leads.md).
 
 **Lead Pool**-  A global database of pre-enriched lead profiles stored as vector embeddings. When you create an offer, AutoReach uses semantic similarity search to instantly match existing profiles against your ICP, delivering scored leads in seconds. See [Lead Pool](finding-leads/lead-pool.md).
+
+**LinkedIn Company Search (By Company)**-  A LinkedIn lead discovery method that finds companies matching your descriptors (e.g., "B2B SaaS Sales Tooling") and adds the top decision-maker from each as a lead. See [LinkedIn Company Search](finding-leads/linkedin-company-search.md).
 
 **Lookalike Audience**-  A set of leads discovered by finding influencers, thought leaders, or communities whose audiences match your ICP, then extracting their followers. AutoReach uses AI to find the right seed accounts automatically. See [Lookalike Audiences](finding-leads/lookalike-audiences.md).
 
@@ -101,5 +107,7 @@ Key terms used throughout AutoReach, listed alphabetically.
 **Tone Summary**-  An AI-generated style guide extracted from your tone examples. It analyzes vocabulary, brevity, value-led approach, and anti-patterns. Auto-regenerated as new winning examples are captured. See [Tone & Knowledge](conversations/tone-and-knowledge.md).
 
 **Warmup**-  The process of building a credible social presence on your accounts before launching outreach. The Engagement Engine handles warmup by posting content, engaging with relevant posts, and growing visibility with human-like patterns. See [Engagement Engine Overview](engagement-engine/overview.md).
+
+**Primary Mailbox**-  When you have multiple email accounts connected, the Primary mailbox is used to send to recipients on neutral domains (anything that is not an obvious Gmail or Outlook domain). Set it from **Accounts > Email**. See [Connecting Email](getting-started/connecting-email.md).
 
 **Webhook**-  An integration that allows external services (Calendly, Cal.com) to notify AutoReach when events occur, such as meeting bookings. Webhooks enable automatic lead status updates when meetings are booked. See [Meeting Booking](meetings/meetings.md).

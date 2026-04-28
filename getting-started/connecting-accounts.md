@@ -1,8 +1,10 @@
 # Connecting Your Social Accounts
 
-Connect your X (Twitter) and LinkedIn accounts to AutoReach through the Chrome Extension. This is the only supported method for linking accounts.
+Connect your X (Twitter) and LinkedIn accounts to AutoReach through the Chrome Extension. This is the only supported method for linking social accounts.
 
 > **Important:** Make sure you have [installed the Chrome Extension](chrome-extension.md) and activated your license key first.
+
+> **Email accounts:** Gmail and Outlook are connected separately, not through the Chrome Extension. See [Connecting Email](connecting-email.md) for setup.
 
 ---
 
@@ -88,6 +90,7 @@ AutoReach continuously monitors your account health and warns you when something
 
 Once your accounts are connected:
 
-1. **[Create an Offer](create-offer.md)** to define your target audience and message tone
-2. **[Build a Sequence](../outreach/building-sequences.md)** to automate outreach
-3. **[Launch Autopilot](../autopilot/overview.md)** for fully automated pipeline management
+1. **[Connect Email](connecting-email.md)** to add Gmail and/or Outlook as a third channel (optional but recommended)
+2. **[Create an Offer](create-offer.md)** to define your target audience and message tone
+3. **[Build a Sequence](../outreach/building-sequences.md)** to automate outreach
+4. **[Launch Autopilot](../autopilot/overview.md)** for fully automated pipeline management

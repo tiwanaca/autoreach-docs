@@ -75,6 +75,8 @@ The extension will automatically extract your session cookies and link your X ac
 
 > **Tip:** You can connect one or both platforms. At minimum, you need one social account connected to use AutoReach.
 
+> **Tip:** You can also add email as a channel. See [Connecting Email](connecting-email.md) to link Gmail and/or Outlook.
+
 ## Step 10: Create Your First Offer
 
 Once your accounts are connected, the onboarding wizard will guide you to create your first Offer. An **Offer** describes what you sell, who you're targeting, and what you want to achieve.
