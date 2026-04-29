@@ -43,7 +43,7 @@ Sequences are your outreach campaigns. Structure them to build familiarity befor
 - **Keep sequences to 3-5 steps.** Longer sequences are not necessarily better. A focused flow of like, follow, then DM often outperforms complex 10-step campaigns.
 - **Use conditions to branch intelligently.** On LinkedIn, always add a condition step after a connection request to check if it was accepted before sending a DM. This avoids wasting messages on unconnected leads.
 - **Set appropriate delays between steps.** Same-day engagement followed by a next-day DM feels natural. A DM within minutes of a like feels automated.
-- **Start with conservative daily limits.** Begin with 15-20 actions per day per sequence and increase gradually. Sudden spikes in activity look suspicious to platforms.
+- **Mind the total across sequences.** Daily limits are set per sequence, but your account's safe ceiling is a single number. If you run two sequences on the same account at 20/day each, that's 40 daily actions on the account — size each sequence's limit so the combined total stays within your account-level threshold. See [Account Safety](#6-account-safety) below for starting limits.
 - **Use the simulation tool before launching.** Test your DM template with 3-5 different leads to check variable substitution, tone, and edge cases where data might be missing. See [Simulation & A/B Testing](outreach/simulation-and-testing.md).
 - **Associate an offer with each sequence.** This connects your sequence to the right scoring and personalization context.
 

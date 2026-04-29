@@ -157,7 +157,7 @@ Signals are data points that indicate a lead is interested, actively buying, or 
 
 - **Competitor Engagement** - Lead engaged with content from competitor companies
 - **Engagement Pattern** - Lead has high engagement on posts related to your category
-- **Own Post Engagement** - Lead engaged with YOUR posts (inbound signal). AutoReach detects replies, likes, retweets, new follows (X) and reactions, comments, mentions of you, new connections, and profile views (LinkedIn)
+- **Own Post Engagement** - Lead engaged with YOUR posts (inbound signal). AutoReach detects likes, retweets, new follows (X) and reactions, comments, mentions of you, and new connections (LinkedIn)
 - **Competitor Customer** - Lead is a confirmed user of a competing product
 - **Interaction Orbit** - Lead suddenly starts engaging with multiple competitor or adjacent vendor accounts in a short time window, indicating active evaluation. See [Account Signals](../settings/account-signals.md) for details
 

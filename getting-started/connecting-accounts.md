@@ -53,9 +53,9 @@ These limits reset daily. AutoReach tracks your usage and pauses connection requ
 
 AutoReach monitors your accounts for inbound engagement and processes it as buying signals.
 
-**X (Twitter):** Replies to your tweets, retweets, likes on your posts, and new followers.
+**X (Twitter):** Retweets, likes on your posts, and new followers.
 
-**LinkedIn:** Reactions on your posts, comments on your content, mentions of you, new connections, and profile views.
+**LinkedIn:** Reactions on your posts, comments on your content, mentions of you, and new connections.
 
 Someone engaging with your content may be a potential buyer. AutoReach can automatically create leads from high-intent engagers and update signals on existing leads.
 
