@@ -2,6 +2,16 @@
 
 AutoReach protects your accounts using browser identity management, rate limiting, health monitoring, and human behavior simulation.
 
+## How to Stay Safe (the short version)
+
+Most account issues come from a small set of avoidable mistakes. Three rules cover the majority of them:
+
+1. **Start with low daily limits and ramp slowly.** Begin at 15-20 actions per day per account, then increase gradually over weeks, not days. Sudden jumps to 50+ on a fresh account are the #1 cause of bot detection.
+2. **Run the [Engagement Engine](../engagement-engine/overview.md) for 1-2 weeks before launching sequences on new or inactive accounts.** Outreach from a silent account looks suspicious to the platform.
+3. **Don't run AutoReach and manual mass-actions at the same time.** If you're manually liking 50 posts while AutoReach is also active, the combined activity can trigger rate limits.
+
+The rest of this page covers what AutoReach does automatically when something goes wrong, and what requires your intervention. **You don't need to read it preemptively** — come back when you see an error status on an account or get a notification email.
+
 ## Account Health Monitoring
 
 AutoReach continuously monitors account health and classifies errors into actionable categories.

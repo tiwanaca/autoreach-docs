@@ -2,6 +2,16 @@
 
 Find decision-makers using LinkedIn's search. Systematically target specific roles, locations, and industries to build highly filtered prospect lists. (To target by company, use [LinkedIn Company Search](linkedin-company-search.md) instead.)
 
+## When to Use This vs. Other LinkedIn Searches
+
+LinkedIn has three search methods and they answer different questions:
+
+- **People Search (this page)** — Use when you know the *role* you want to reach ("VP of Sales", "Head of Demand Gen") and want a steady stream of people matching that role across companies in your target industries and locations. Best for systematic, high-volume role-based prospecting.
+- **[Company Search](linkedin-company-search.md)** — Use when you know the *type of company* you want to reach ("B2B SaaS sales tooling", "lead gen agencies") but don't know who specifically. Returns one decision-maker per matching company. Lower volume, more focused.
+- **[Content Search](linkedin-content-search.md)** — Use when you want *high-intent leads* who are actively discussing problems your offer solves. Highest signal strength, lower volume than role-based search.
+
+A common pattern: start with Content Search to get a few warm replies fast, then layer People Search on top for steady volume once you've validated the offer is landing.
+
 ## How It Works
 
 LinkedIn People Search lets you directly query LinkedIn's search with precise targeting criteria. Rather than inferring prospects from content, you explicitly define who you're looking for.

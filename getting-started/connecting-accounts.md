@@ -84,6 +84,10 @@ AutoReach continuously monitors your account health and warns you when something
 
 **"Rate Limited"** - You have hit the platform's action limit. Wait for the cooldown to expire. Consider lowering your daily limits.
 
+**LinkedIn account keeps disconnecting** - The most common cause is signing in to the same LinkedIn account from multiple browsers, phones, or devices. Each new sign-in causes LinkedIn to rotate your session token and invalidate the cookies AutoReach is using. Open LinkedIn and go to **Settings & Privacy > Sign In & Security > Where you're signed in**, then end any sessions you do not actively use. Going forward, keep LinkedIn signed in on a single browser only. See [Troubleshooting: LinkedIn Account: Repeatedly Disconnects](../troubleshooting.md#linkedin-account-repeatedly-disconnects) for the full procedure.
+
+**AutoReach's proxy is not visible in LinkedIn's "Where you're signed in" list** - This is expected. AutoReach reuses your browser's session cookie rather than performing a full login, so no separate session entry is created in LinkedIn. The Accounts page in AutoReach is the source of truth for connection health.
+
 ---
 
 ## Next Steps

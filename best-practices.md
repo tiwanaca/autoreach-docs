@@ -4,6 +4,35 @@ Practical tips for getting the most out of AutoReach. Each section covers a key 
 
 ---
 
+## Where to Focus First
+
+If you only do five things, do these. Everything else is optimization.
+
+1. **Spend 30 minutes on your Offer.** It drives lead scoring, message personalization, and AI responses. Vague offer = generic everything. → [Setting Up Your Offer](#1-setting-up-your-offer)
+2. **Use intent-driven lead sources, not cold CSV imports.** Tweet/content search + lookalikes outscore mass imports. → [Finding the Right Leads](#2-finding-the-right-leads)
+3. **Warm up new accounts for 1-2 weeks before outreach.** Cold DMs from a silent account get ignored or flagged. → [Account Safety](#6-account-safety)
+4. **Start at 15-20 actions/day and ramp slowly.** Sudden spikes trigger bot detection. → [Account Safety](#6-account-safety)
+5. **Run Simulation before launching any sequence.** Catch broken templates and weak personalization before 200 leads see them. → [Writing Better DMs](#4-writing-better-dms)
+
+Skip ahead to [Common Mistakes to Avoid](#8-common-mistakes-to-avoid) if you want the same advice in negative form.
+
+---
+
+## Sections
+
+| # | Section | When to read |
+|---|---|---|
+| 1 | [Setting Up Your Offer](#1-setting-up-your-offer) | Before launching anything |
+| 2 | [Finding the Right Leads](#2-finding-the-right-leads) | Choosing discovery methods |
+| 3 | [Building Effective Sequences](#3-building-effective-sequences) | Designing your outreach flow |
+| 4 | [Writing Better DMs](#4-writing-better-dms) | Reply rate is low or you're tuning templates |
+| 5 | [Managing Conversations](#5-managing-conversations) | Replies are coming in |
+| 6 | [Account Safety](#6-account-safety) | Before launching, and weekly thereafter |
+| 7 | [Measuring Success](#7-measuring-success) | Reading dashboards, deciding what to fix |
+| 8 | [Common Mistakes to Avoid](#8-common-mistakes-to-avoid) | Quick troubleshooting checklist |
+
+---
+
 ## 1. Setting Up Your Offer
 
 Your Offer is the foundation that powers everything in AutoReach: lead discovery, scoring, DM personalization, and AI responses. Time spent here pays off across the entire platform.
@@ -92,6 +121,8 @@ Protecting your social accounts is non-negotiable. AutoReach has built-in protec
 - **Monitor the Accounts page regularly.** Check error rates, cooldown status, and account health indicators. Catching issues early prevents escalation.
 - **Respect emergency pauses.** When AutoReach pauses an account for bot detection or IP blocks, do not immediately resume. Wait for the full cooldown period and investigate the cause.
 - **Keep your Chrome Extension active.** Session cookies expire. Keep the extension running to ensure your accounts stay connected.
+- **Sign in to LinkedIn from one browser only.** LinkedIn rotates its session token (`li_at`) every time the same account signs in from a new browser, phone, or device. That rotation invalidates the cookies AutoReach holds and forces a reconnection. Pick one browser as your daily LinkedIn workspace and avoid logging in elsewhere. To audit existing sessions, open LinkedIn and go to **Settings & Privacy > Sign In & Security > Where you're signed in**, then end any sessions you do not actively use.
+- **AutoReach's proxy will not appear in LinkedIn's "Where you're signed in" list.** This is normal. AutoReach reuses your browser's existing session cookie rather than logging in again, so no new session entry is created. As long as the Accounts page shows the account as active, the connection is healthy.
 - **Do not run AutoReach and manual mass-actions simultaneously.** If you are manually liking 50 posts while AutoReach is also running engagement, the combined activity can trigger rate limits.
 
 See [Account Safety](settings/account-safety.md) and [Engagement Engine Overview](engagement-engine/overview.md).

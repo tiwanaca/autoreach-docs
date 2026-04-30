@@ -1,6 +1,10 @@
 # Building Sequences (Flow Editor)
 
+A sequence is your outreach playbook: an ordered list of actions (likes, follows, connection requests, DMs, emails) that AutoReach runs against every lead enrolled in it. You build one sequence, and it runs the same flow for hundreds of leads on your behalf — that's how outreach scales.
+
 The flow editor is a visual sequence builder. You design sequences as connected nodes on a canvas, configure each step's action and timing, then save and start the sequence.
+
+> **You usually don't start here.** If you're new, let Autopilot create your first sequence — it picks the right default flow for your platform. Open the flow editor when you want to customize the steps, change timing, add branching, or build a sequence that doesn't match the default templates below.
 
 ## Creating a New Sequence
 

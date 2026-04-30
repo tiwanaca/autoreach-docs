@@ -84,6 +84,8 @@ Key terms used throughout AutoReach, listed alphabetically.
 
 **Offer**-  The foundation of AutoReach. An Offer describes what you sell, who you are targeting, and your outreach goals. It powers lead discovery, scoring, DM personalization, and AI responses. You can create multiple Offers, each with its own pipeline and settings. See [Offers & Knowledge Base](core-concepts/offers-and-knowledge-base.md).
 
+**Offer Refinement**-  A feedback flow triggered by clicking "Should be a buyer" or "Should NOT be a buyer" on a lead's detail view. AutoReach analyzes why the score was off and suggests edits to your offer's target audience, pain points, or ICP criteria. Once applied, the offer is updated and the lead is rescored. See [Score Feedback](core-concepts/buyer-intelligence.md#score-feedback).
+
 **Pipeline**-  The end-to-end flow a lead moves through: discovery, enrichment, scoring, engagement, response, and resurfacing. Also refers to the enrichment pipeline that processes leads through profile data collection, activity fetching, and scoring.
 
 **Poor Fit**-  A buyer state for leads with low Buyer Scores who still have some baseline relevance. Poor Fit leads are monitored periodically and can be promoted if new signals appear. See [Buyer Intelligence](core-concepts/buyer-intelligence.md).
@@ -113,3 +115,5 @@ Key terms used throughout AutoReach, listed alphabetically.
 **Primary Mailbox**-  When you have multiple email accounts connected under a parent X or LinkedIn account, the Primary mailbox is used to send to recipients on neutral domains (anything that is not an obvious Gmail or Outlook domain). Set it from the Email card on the parent account's detail page. See [Connecting Email](getting-started/connecting-email.md).
 
 **Webhook**-  An integration that allows external services (Calendly, Cal.com) to notify AutoReach when events occur, such as meeting bookings. Webhooks enable automatic lead status updates when meetings are booked. See [Meeting Booking](meetings/meetings.md).
+
+**Withdraw Connection**-  A LinkedIn-only action that withdraws a pending connection request. Automatically scheduled by a Connection Request step's auto-withdraw setting; not available in the flow builder palette and cannot be added to sequences manually. Does not count toward sequence progress. See [Supported Actions](outreach/supported-actions.md).

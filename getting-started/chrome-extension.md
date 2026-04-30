@@ -218,7 +218,7 @@ Improve a message you have already drafted.
 - **Enhance**: Make your draft more compelling and persuasive
 - The result popup also offers Shorten and Regenerate options
 
-#### 5. Analyse Lead
+#### 5. Analyze Lead
 
 Opens the SDR Co-pilot with the prompt "Tell me everything you know about this person." Gives you a complete breakdown of the lead based on all available data.
 

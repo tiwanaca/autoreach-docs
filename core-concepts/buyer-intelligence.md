@@ -2,6 +2,22 @@
 
 AutoReach's Buyer Intelligence system is the heart of smart outreach. Instead of blasting everyone, it scores each lead across three dimensions (fit, intent, and timing), assigns a buyer state, and uses dozens of signals to predict who is most likely to buy right now.
 
+> **When to read this page:** You wonder why a specific lead scored low (or high) and want to understand which dimension is dragging the score. You're tuning your offer and want to know how each input affects scoring. Or your reply rates are low and you suspect targeting — this page tells you what AutoReach is actually evaluating, so you know what to fix in your offer. You don't need to read it before you start outreach; the system works automatically.
+
+---
+
+## The 30-Second Version
+
+If you only read this section:
+
+- Every lead is scored on three dimensions, each 0-100: **Fit** (do they match your ICP?), **Intent** (are they actively looking?), and **Timing** (is now the right moment?).
+- The three scores combine into a **buyer state**. **Active** = ready for outreach. **Monitor** = watch for new signals (auto-rechecked on a schedule). **Poor Fit** = not a match today, but still re-evaluated when new signals appear. **Disqualified** = filtered out and not auto-rescored. **Manual Outreach** = you overrode the rules.
+- **Your Offer drives all of this.** Sharper target audience and pain points produce sharper scoring. New leads always score against your current offer. Existing leads behave differently: Monitor and Poor Fit leads get re-evaluated automatically over time; already-enrolled Active leads keep their score until you trigger a manual rescore.
+- **If a score looks wrong**, open the lead and click **Should be a buyer** / **Should NOT be a buyer**. This launches the [Offer Refinement](#score-feedback) flow, which suggests offer edits to fix the misclassification.
+- **Where to spend your time:** Active leads convert best. Monitor leads are your near-future Active list — they'll get promoted as new signals appear. Don't manually outreach Poor Fit; let resurfacing handle them, or use Manual Outreach for specific high-value accounts you want to reach despite the filters.
+
+The rest of this page is the detail behind those five points — read on if you want to know exactly what signals feed each score, how state transitions work, or how to tune the system.
+
 ---
 
 ## The Three Scoring Dimensions

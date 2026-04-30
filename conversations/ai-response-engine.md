@@ -2,6 +2,24 @@
 
 The AI Response Engine generates contextual, stage-aware replies to incoming messages across X and LinkedIn.
 
+## When AI Should Reply vs. When You Should
+
+The AI is built to handle the routine middle of a conversation, not the moments that make or break a deal. A good rule of thumb:
+
+**Let the AI handle:**
+- The first 2-3 replies after someone responds to your cold DM (acknowledging, asking discovery questions, handling common objections).
+- Mid-funnel leads who went silent — the AI's automatic follow-ups have a fresh angle each time.
+- High-volume, low-stakes back-and-forth where speed of response matters more than perfect wording.
+
+**Take over manually:**
+- A lead who asks detailed product questions or shows strong buying intent — these conversations deserve your attention.
+- Conversations where the lead pushes back on something nuanced (pricing negotiation, custom terms, technical depth the AI doesn't have).
+- Anything where getting the next sentence wrong loses the deal.
+
+Toggle AI on/off per conversation from the Inbox. AutoReach will keep tracking the conversation either way — turning AI off just stops it from sending replies on your behalf.
+
+> **Tip:** You don't have to choose all-or-nothing. Let AI handle openers and discovery, then take over once a lead is clearly qualified and ready to talk specifics.
+
 ## Response Flow
 
 When a new inbound message is detected, AutoReach:

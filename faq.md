@@ -110,6 +110,10 @@ Add tone examples to your sequence. These are conversation samples that teach th
 
 A value of 0 means unlimited. The AI will continue responding to a conversation for as long as it remains active, with no cap on the number of replies. Set it to a positive number (like 3 or 5) to limit how many times the AI auto-replies in a single conversation before stopping. See [Scheduling & Send Limits](outreach/scheduling.md).
 
+### What's a healthy reply rate?
+
+A reply rate above 10% on cold DMs indicates good targeting and messaging. Below 5% usually means your ICP is too broad or your message needs work. The 5-10% range is typical for cold outreach in most B2B niches. If you're stuck below 5%, the [Low Reply Rates](troubleshooting.md#low-reply-rates) section walks through the diagnostic loop.
+
 ---
 
 ## Email

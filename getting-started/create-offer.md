@@ -197,42 +197,17 @@ When prospects reply, AutoReach:
 - Generates smart replies that stay on-brand
 - Maintains your outreach voice across conversations
 
-## Best Practices
+## Quality Bar: Weak vs. Strong Examples
 
-### Make Your Offer Description Detailed
+Quick gut-check before saving. If your fields read like the weak column, the AI will produce generic outreach.
 
-The more specific your description, the better AutoReach's AI personalizes outreach.
+| Field | Weak | Strong |
+|---|---|---|
+| Description | "We help businesses with automation." | "We automate repetitive B2B workflows using AI. Save your team 20+ hours/week on email, data entry, and report generation." |
+| Target Audience | "Marketing professionals" | "VP of Demand Gen at B2B SaaS companies with $10M+ ARR, focused on ABM strategy" |
+| Pain Points | "Help with revenue" | "Reduce time to close deals", "Improve sales team visibility", "Decrease win-loss variance" |
 
-**Weak**: "We help businesses with automation."
-**Strong**: "We automate repetitive B2B workflows using AI. Save your team 20+ hours/week on email, data entry, and report generation."
-
-### Be Clear About Your Target Audience
-
-Vague ICPs lead to unfocused outreach.
-
-**Weak**: "Marketing professionals"
-**Strong**: "VP of Demand Gen at B2B SaaS companies with $10M+ ARR, focused on ABM strategy"
-
-### Include Specific Pain Points
-
-Prospects resonate with solutions that name their exact problems.
-
-**Weak**: "Help with revenue"
-**Strong**: "Reduce time to close deals", "Improve sales team visibility", "Decrease win-loss variance"
-
-### Upload Real Case Studies to Knowledge Base
-
-Real examples make your AI responses more credible.
-
-**Upload**:
-- A 1-page case study showing a client's problem, your solution, and results
-- Testimonial highlighting the specific value you deliver
-
-### Review and Update Your Offer Regularly
-
-As your business evolves, update your Offer:
-- Quarterly: Review target audience and adjust based on who's converting
-- Quarterly: Add new case studies to your knowledge base
+For broader strategy on offer setup, knowledge base content, and quarterly review cadence, see [Best Practices: Setting Up Your Offer](../best-practices.md#1-setting-up-your-offer).
 
 ## Next Steps
 

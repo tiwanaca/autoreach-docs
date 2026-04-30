@@ -2,6 +2,17 @@
 
 Discover high-intent decision-makers through LinkedIn posts and comments. AutoReach generates intent-organized search queries, searches LinkedIn's content feed, and extracts both post authors and commenters as leads.
 
+## When to Use This vs. People or Company Search
+
+Content Search is the highest-intent way to find leads on LinkedIn. Instead of asking "who has this title?" it asks "who is *right now* posting or commenting about the problems my offer solves?" Authors are warm. Commenters are sometimes even warmer — they took the time to engage publicly.
+
+Use Content Search when:
+- You want your first few replies fast — these leads have inherent intent signal and tend to score and convert higher than role-only matches.
+- Your offer solves a problem people complain about publicly (most B2B pain points qualify).
+- You want to mine engagement on a specific influencer's posts (use **From a Link** in [Finding Leads Overview](overview.md#from-a-link) for that — Content Search casts a wider net).
+
+Use [People Search](linkedin-people-search.md) instead when you need volume by role, or [Company Search](linkedin-company-search.md) when you're targeting a specific company type. Most pipelines benefit from running Content Search alongside one of the others rather than choosing one — Content for intent, the others for steady volume.
+
 ## How It Works
 
 ### 1. Intent-Based Query Generation
@@ -84,7 +95,7 @@ While a content search runs, progress is tracked and updated in real time. You c
 
 3. **Keep commenters on.** LinkedIn commenters are often highly engaged decision-makers. Leave commenter extraction enabled.
 
-5. **Run recurring searches.** Set up daily LinkedIn content searches to capture new prospects continuously with fresh query rotation.
+4. **Run recurring searches.** Set up daily LinkedIn content searches to capture new prospects continuously with fresh query rotation.
 
 ## Example Workflow
 

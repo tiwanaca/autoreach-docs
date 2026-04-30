@@ -2,6 +2,17 @@
 
 Tone examples and the knowledge base are the two tools you use to control how the AI communicates on your behalf. Tone examples teach the AI *how* to sound. The knowledge base teaches the AI *what* to say.
 
+## Which Should You Set Up First?
+
+Both matter eventually, but they solve different problems:
+
+- **Start with the Knowledge Base** if your offer has nuanced positioning, common objections, or details the AI needs to get right (pricing tiers, specific case studies, technical answers). Without it, the AI improvises — and improvisation on cold facts is risky. Even a single well-written 1-page positioning doc dramatically improves response quality.
+- **Start with Tone Examples** if your AI replies sound technically correct but feel robotic or off-brand. Tone examples are the fastest way to make the AI sound like you.
+
+Most users get the most value from a small Knowledge Base (2-3 documents) plus 5-10 tone examples. AutoReach also auto-captures tone examples from conversations that lead to booked meetings, so this library grows over time without manual work.
+
+If you're brand new and not sure where to start: skip both, let your sequence run for a week, then come back here. AutoReach will have auto-captured your first tone examples by then, and you'll know which knowledge gaps the AI keeps stumbling on.
+
 ---
 
 ## Tone Examples

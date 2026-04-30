@@ -2,6 +2,16 @@
 
 Web Intelligence uses AI-powered web search to gather additional context about leads - company details, social profiles, contact information, recent news, and professional achievements. It is a **separate, optional process** that is not part of the standard enrichment pipeline.
 
+## When to Use Web Enrichment
+
+Web Enrichment is **opt-in and costs extra AI usage**, so most users don't run it on every lead. Reach for it when:
+
+- You're working a small list of **high-value accounts** and the default LinkedIn/X enrichment data feels too thin to write a great message.
+- A specific lead's **company isn't well-known** and you need funding stage, tech stack, or recent news for context.
+- You want to find **additional contact channels** (GitHub, Substack, podcast appearances) for a lead you can't reach via DM.
+
+Skip it when you're running high-volume outreach where standard enrichment is good enough — the cost adds up across hundreds of leads, and the lift in personalization quality is marginal for most B2B offers.
+
 ## How It Works
 
 Web Intelligence uses AI web search to gather three categories of data:

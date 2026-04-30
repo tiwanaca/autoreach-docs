@@ -2,6 +2,12 @@
 
 Email finding and website finding are **optional enrichment steps** that are not part of the standard pipeline. You trigger them explicitly from the Leads page.
 
+## When You Need These
+
+Run these only if you want to **add email as an outreach channel** for leads you found on LinkedIn or X. Without an email address, you can only reach a lead on the platform where they were discovered. With one, email becomes available as a sequence step. If you're staying with LinkedIn/X-only outreach, you can skip both steps entirely.
+
+If you do want email outreach, **order matters**: run website finding first, then email finding. Email finding searches against a known company domain, so if the website hasn't been discovered yet, email finding has much lower hit rates.
+
 ---
 
 ## Website Finding

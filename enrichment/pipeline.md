@@ -2,6 +2,30 @@
 
 The enrichment pipeline transforms raw leads into rich, actionable profiles. Starting with just a name and platform URL, AutoReach progressively layers on social profiles, work history, recent activity, and scoring to build a complete picture of every lead.
 
+## Before and After
+
+A typical lead enters the pipeline like this:
+
+```
+Name: Jane Doe
+LinkedIn URL: linkedin.com/in/janedoe
+```
+
+After the pipeline runs, the same lead looks like this:
+
+```
+Jane Doe
+Role: VP of Demand Generation at Acme SaaS
+Location: San Francisco, CA
+Company: 250 employees, $30M revenue, B2B software
+Recent activity: 4 posts in last 30 days, including 2 about
+  outbound automation and 1 mentioning a competitor of yours
+Fit score: 87 / Intent score: 72 / Timing score: 65
+Buyer state: Active
+```
+
+That transformation — name + URL into a scored, contextualized profile — is what enrichment does. The phases below explain how it gets there. **You don't trigger this manually.** Every lead AutoReach discovers runs through the pipeline automatically.
+
 ## Pipeline Architecture
 
 The pipeline runs all enrichment phases sequentially in a single job per lead. Each lead progresses through the phases below in order.

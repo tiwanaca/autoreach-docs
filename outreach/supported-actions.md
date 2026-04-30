@@ -2,6 +2,14 @@
 
 Reference for all sequence action types, how they execute on each platform, and the checks and behaviors that govern them.
 
+## How to Use This Page
+
+This is a reference, not a tutorial. You'll come here to answer specific questions like *"can I send a comment on X?"* (no — LinkedIn only) or *"what does Withdraw Connection actually do?"* (cleans up unanswered connection requests so you can retry later).
+
+If you're building your first sequence, start with the default templates in [Building Sequences](building-sequences.md) — they already combine these actions in proven flows (e.g., Like → Follow → DM on X, or Connection Request → DM on LinkedIn). Come back here when you want to add or replace a step and need to know what's available, what platform supports it, and what guardrails apply.
+
+The platform support matrix is the table below. Anything marked with `-` isn't available on that platform — for example, you can't send a Comment on X or a Connection Request on email.
+
 ## Actions Reference
 
 | Action | X | LinkedIn | Email | Description |

@@ -4,6 +4,19 @@ When a DM or Email step executes in a sequence, AutoReach generates a personaliz
 
 The variable system documented here applies to **both DMs (X / LinkedIn) and Email steps** (subject and body). Email-specific routing details are covered in [Email Channel](email-channel.md).
 
+## When You Need This Page
+
+You don't have to read this whole page to get started. Autopilot generates a working DM template for you, and the defaults are fine for the first run.
+
+Come back here when:
+
+- **Your reply rate is low** and you want to add more relevant references to your messages (a recent post, a specific role, a pain point).
+- **You're writing your own template from scratch** and need to know which `{{variables}}` are available.
+- **Messages are coming out generic** because you're missing the variables that drive personalization (typically `{{post}}` for X, `{{current_role}}` + `{{company_name}}` for LinkedIn, or a custom `{{pain_point}}` placeholder the AI fills from your offer).
+- **A variable isn't substituting** and you need to know whether it's a known variable (direct fill from lead data) or a custom one (AI-inferred from context).
+
+If your first sequence is sending and getting replies, you can skip this page entirely.
+
 ## Personalization Flow
 
 Message personalization follows three passes:

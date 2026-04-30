@@ -2,6 +2,15 @@
 
 AutoReach integrates with Calendly and Cal.com to detect when leads book meetings, and generates AI-powered call briefs to prepare you for every conversation.
 
+## When to Set This Up
+
+Set up meeting tracking **early — ideally during onboarding** — even if you don't think you need it yet. Two reasons:
+
+- **Without a webhook, AutoReach can't know when a lead books.** It will still send your booking link in messages, and leads will still book meetings, but those bookings don't get marked in your pipeline automatically. You end up tracking meetings in your head or in a spreadsheet.
+- **Meeting status feeds back into the system.** When a conversation reaches Meeting Booked, AutoReach extracts the winning exchanges as tone examples for future replies. Without webhook tracking, the AI doesn't learn from your wins.
+
+If you don't have a paid Calendly plan, use **Cal.com** — it's free and webhook setup is one step. If you only have a custom booking URL, you can still inject it into messages via `{{booking_link}}`, but you'll need to track bookings manually.
+
 ---
 
 ## Booking Integration

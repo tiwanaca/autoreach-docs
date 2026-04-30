@@ -79,12 +79,19 @@ Choose your calendar provider:
 
 ## Step 10: Create Your First Offer
 
+> **This is the most important step.** Steps 1-9 are mechanical setup that takes minutes. Your Offer is the one thing that compounds: it shapes which leads AutoReach finds, how they get scored, what your DMs say, and how the AI replies on your behalf. A vague offer produces vague results everywhere downstream — a sharp offer makes every other feature work better. Plan to spend ~30 minutes here, not 5.
+
 Once your accounts are connected, the onboarding wizard will guide you to create your first Offer. An **Offer** describes what you sell, who you're targeting, and what you want to achieve.
 
 1. The easiest way: **add your website URL** and AutoReach will auto-populate your offer details. Review and modify what's needed.
 2. Or fill in the details manually: name, description, target audience, goal, pain points, etc.
 
-See [Creating Your First Offer](create-offer.md) for a detailed guide.
+What to focus on:
+- **Target audience** — be specific about who to target *and who to avoid*. "VP of Demand Gen at B2B SaaS, 50+ employees, avoid agencies" beats "marketing leaders."
+- **Pain points** — name the exact problems your buyers feel. These drive intent matching and message personalization.
+- **Known competitors** — leads engaging with competitor content is one of the strongest buying signals AutoReach detects.
+
+See [Creating Your First Offer](create-offer.md) for a detailed guide with examples.
 
 ## Step 11: Start Autopilot
 
@@ -107,6 +114,7 @@ When you enable Autopilot, it automatically:
 
 Your outreach is now running on autopilot. Here's what to do:
 
+- **Read the [Day 2 Guide](getting-results.md)** — what to expect in the first 24-48 hours, when first replies arrive, and how to read your early metrics. Read this *before* you start refreshing your dashboard.
 - **Check your Inbox**: Replies and conversations appear here in real-time.
 - **Review the Buyers page**: See scored leads before they're enrolled (when auto-enroll is off).
 - **Monitor Autopilot**: Check the [Autopilot Dashboard](../autopilot/overview.md) for stats and activity.

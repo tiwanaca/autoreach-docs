@@ -4,6 +4,8 @@
 
 Enabling Autopilot is a one-click process. The setup runs in the background and completes in 1-2 minutes.
 
+> **What Autopilot replaces vs. what's still on you:** Autopilot creates the searches, sequences, tone examples, and enrollment rules so you don't have to. It does **not** replace daily limit configuration, conversation review in your Inbox, Engagement Engine content approval (unless you turn on auto-post), or meeting tracking setup. Think of it as automating the *setup and discovery* loop — the human-judgment parts (tone tuning, replying to hot leads, deciding when to scale up) still belong to you.
+
 ### Prerequisites
 
 - At least one **Offer** created with your ICP and value proposition

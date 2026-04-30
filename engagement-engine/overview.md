@@ -2,6 +2,15 @@
 
 The Engagement Engine builds a credible social presence on your accounts before you start outreach. It automatically posts content, engages with relevant posts, and grows your visibility so that when leads receive your messages, they see an active account with genuine engagement history.
 
+## When to Run It
+
+The Engagement Engine matters most in two situations:
+
+- **Before you launch sequences on a new or inactive account.** Cold DMs from an empty account get ignored or flagged. Run the Engagement Engine for **at least 1-2 weeks** on a fresh account to build a posting history before you start sending outreach. Skipping this step is one of the most common reasons reply rates stay disappointingly low.
+- **Continuously, alongside your outreach.** Even on established accounts, ongoing engagement keeps you visible in your prospects' feeds. When a lead sees your account commenting on a post they care about, then receives a DM from you, the message lands as a follow-up to existing presence rather than as a cold outreach.
+
+You can run sequences without the Engagement Engine — it's not a hard requirement — but reply rates are typically meaningfully higher when you do.
+
 ## What the Engagement Engine Does
 
 The Engagement Engine automatically:

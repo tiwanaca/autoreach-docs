@@ -52,7 +52,7 @@ Replies appear in your **Inbox** (Conversations section). Each reply shows:
 
 ## Adjusting Your Sequence if Reply Rates Are Low
 
-If your reply rate is below 3% after the first 50-100 DMs, try these adjustments:
+If your reply rate is below 3% after the first 50-100 DMs, try these adjustments. **Start at the top** — message quality and targeting account for most low-reply problems. Timing and channel are less common causes but worth checking if the first three don't help. For a deeper diagnostic flow, see [Low Reply Rates in Troubleshooting](../troubleshooting.md#low-reply-rates).
 
 ### Check Your Message Quality
 Use the **Simulation** feature to preview what your DMs look like for specific leads. If they sound generic, add more personalization to your DM template or refine your AI prompt.

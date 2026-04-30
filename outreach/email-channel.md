@@ -4,6 +4,20 @@ Email is a first-class outreach channel in AutoReach alongside X and LinkedIn. Y
 
 > **Setup required:** Connect Gmail and/or Outlook before email steps are available. See [Connecting Email](../getting-started/connecting-email.md).
 
+## When to Use Email vs. DMs
+
+Email isn't a replacement for X or LinkedIn DMs — it's a complement. Each channel has different strengths:
+
+| Channel | Best for | Requires |
+|---|---|---|
+| **LinkedIn DM** | Professional credibility, decision-makers in B2B | Connection accepted |
+| **X DM** | Faster, more casual, high-volume engagement-first outreach | Lead has DMs open |
+| **Email** | Long-form messages, follow-ups outside the platform, leads who aren't active on social | A verified email address (run [Email Finding](../enrichment/optional-enrichment.md) first) |
+
+The most effective sequences often combine channels rather than picking one. A common pattern: open with a LinkedIn engagement step (like + follow) → connection request → if accepted, send a LinkedIn DM → if no reply after several days, follow up via email.
+
+You don't need email to use AutoReach — many users run LinkedIn-only or X-only outreach successfully. Add email when you want a third channel for follow-ups or to reach leads who don't respond on social.
+
 ## Email as a Sequence Step
 
 When building a sequence, **Email** appears as an action type when at least one email mailbox is connected.
