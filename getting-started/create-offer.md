@@ -1,0 +1,218 @@
+# Creating Your First Offer
+
+An **Offer** is the foundation of AutoReach. It describes your product or service, your target audience, and your outreach goals. AutoReach uses your Offer to power AI personalization, lead scoring, and DM generation.
+
+## What Is an Offer?
+
+Think of an Offer as your "outreach profile." It contains:
+
+- **What you sell**: Your product or service description
+- **Who you're targeting**: Your ideal customer profile (ICP)
+- **Context about your business**: Pain points you solve, competitors, locations, industry focus
+
+AutoReach's AI uses this information to:
+
+1. **Find the right leads**: Score prospects based on how well they match your ICP
+2. **Personalize messages**: Generate DMs that reference the prospect's situation and your Offer
+3. **Guide conversations**: Provide context to AI auto-replies so they stay on-brand
+4. **Optimize outreach**: Learn what works and suggest refinements
+
+## Creating Your Offer
+
+Go to **Offers** and click **New Offer**. You'll see two modes at the top:
+
+- **Website** (default)-  Paste your website URL and click **Extract**. AutoReach's AI visits your site and extracts your product description, target audience, pain points, competitors, and industries. Review and adjust what's needed, then save.
+- **Manual**-  Fill in all the details yourself from scratch.
+
+### AI-Assisted Creation
+
+Most fields include a **Generate** (or **Regenerate**) button that uses AI to create or refine content based on your description. The description field has an **Enhance** button that rewrites your text to be clearer and more specific. You can regenerate individual fields as many times as you like without affecting the others.
+
+For new offers, the **Target Audience** field starts as a **Generate from description** button. Click it to have AI create your target audience from your description-  you can then edit the result. This is required before you can save.
+
+> **Tip:** Start by pasting your URL and letting the AI do the first pass. Then spend a few minutes reviewing and tweaking - this produces better results than writing everything from scratch.
+
+## Offer Fields
+
+### Name
+
+The name of your offer or product. Keep it short and clear.
+
+**Examples**:
+- "SaaS Security Audits"
+- "Fractional CFO Services"
+- "AI Content Writing Tool"
+
+### Description
+
+A detailed description of what you do, what you offer, and your pricing. Be specific about the transformation or value you provide. You can use the **Enhance** button to improve your description with AI.
+
+This field supports longer descriptions. Include your value proposition, key features, and pricing details so AutoReach's AI has full context for personalization.
+
+**Good descriptions include**:
+- What your product or service does
+- Key benefits and differentiators
+- Pricing structure and what's included
+- Any relevant details for outreach conversations
+
+**Avoid**:
+- Generic descriptions ("We're a software company")
+- Marketing fluff ("Industry-leading solution")
+- Jargon without context ("SaaS optimization platform")
+
+### Target Audience
+
+Who you're trying to reach (required). For new offers, this starts as a **Generate from description** button-  click it to have AI create your ICP, then edit the result. Use **Regenerate** to get a fresh suggestion.
+
+You can be as descriptive as you want. This is not just a list of titles. You can include who to target, who to avoid, and any other context that helps AutoReach understand your ideal buyer. For example, you can write "Avoid freelancers and solopreneurs" or "Only target companies with 50+ employees" or "Do not reach out to agencies."
+
+**Example**:
+> Owners, Directors, MDs, CROs, VP Sales, VP Business Development, VP-level leaders responsible for lead generation or pipeline growth, Sales Directors, Head of Revenue, Head of Demand Gen, SDR Directors, Sales Managers, and other senior leaders directly accountable for outbound pipeline at B2B SaaS companies and professional services firms. Avoid freelancers, solopreneurs, and companies with fewer than 10 employees.
+
+### Pain Points You Solve
+
+A list of problems your offer fixes. These help AI match leads who mention these issues on social media and personalize messages accordingly. Type a pain point and click the **+** button (or press Enter) to add it. Use the **Generate** button to have AI suggest pain points.
+
+**Examples**:
+- "Lead generation quality is inconsistent"
+- "Building sales funnels takes too long"
+- "Hard to identify high-intent buyers at scale"
+- "Outbound outreach timing is guesswork"
+- "Too much time spent on unqualified leads"
+
+### Known Competitors
+
+Companies or tools that compete with you. This helps AI detect leads who engage with competitors and understand your market position. Type a competitor name and click the **+** button (or press Enter) to add it. Use the **Generate** button to have AI suggest competitors.
+
+**Examples**:
+- Common Room
+- 6sense
+- ZoomInfo Copilot
+- Clay
+
+### Target Industries
+
+LinkedIn industries to filter people search. These are used in "By Role" and Lookalike searches to find prospects in specific sectors. Use the **Generate** button to have AI suggest industries.
+
+**Examples**:
+- Computer Software
+- Marketing and Advertising
+- Information Technology and Services
+- Management Consulting
+- Staffing and Recruiting
+
+### Deal Value
+
+The monetary value of your offer (e.g., $5,000). This helps AutoReach estimate pipeline value.
+
+### Locations
+
+Geographic regions where you want to focus outreach. Toggle between **Lead** location and **Company HQ** location to control how leads are matched. Search and add countries, regions, or cities.
+
+Leave blank for global targeting.
+
+### Target Language
+
+The language for your outreach messages. Choose from English, Italian, Spanish, French, German, or Portuguese. AutoReach will generate DMs and responses in this language.
+
+### Website
+
+Your website URL (e.g., https://yoursite.com). Used by the Enhance and Generate features to extract business details.
+
+### Active Toggle
+
+Toggle your offer on or off. Only active offers are used by Autopilot and sequences for lead scoring and outreach.
+
+## Knowledge Base
+
+Upload your strategy docs, case studies, and other context. AutoReach's AI uses these documents to generate personalized, contextual responses.
+
+### What to Upload
+
+Upload up to 10 documents (PDF, DOCX, or TXT) with:
+
+- **Case studies**: How you solved problems for past clients
+- **Playbooks**: Your outreach strategy, sales process, or methodology
+- **Price sheets**: Pricing information (optional, for discovery calls)
+- **Product guides**: Overview of your product or service
+- **Strategy docs**: How your offer solves specific problems
+
+### How to Upload
+
+1. On the Offers page, click **Knowledge Base** on your offer card
+2. Click or drag a file into the upload area (PDF, DOCX, or TXT, max 10MB)
+3. The document is processed automatically-  you'll see it move from "Processing" to "Ready"
+
+AutoReach will:
+- Chunk your document into sections
+- Generate vector embeddings for each chunk
+- Index them for semantic search
+
+When someone replies to your outreach, AutoReach's AI will search your knowledge base for relevant context and use it to generate smart, personalized responses.
+
+> **Tip:** The more detailed your knowledge base, the better AutoReach's AI performs. Include real examples of your work, your problem-solving approach, and customer success stories.
+
+### How Knowledge Base Powers AI Responses
+
+When a prospect replies, AutoReach:
+
+1. **Searches your knowledge base** for relevant sections (e.g., if they ask about pricing, it finds your price sheet)
+2. **Includes the context** in the AI prompt
+3. **Generates a response** that is personalized and grounded in your actual strategy
+
+**Example**:
+- Prospect asks: "How do you handle data security?"
+- AutoReach searches your knowledge base and finds your security playbook
+- AI generates a response citing your specific approach
+- Response is sent automatically or queued for your review
+
+## How Your Offer Powers AutoReach
+
+### 1. Lead Scoring
+
+When a lead enters the system, AutoReach scores them based on:
+- Profile data (role, company, location)
+- Social signals (recent posts, engagement)
+- Match to your Offer's target audience and pain points
+
+Higher scores mean a stronger fit with your ICP.
+
+### 2. Keyword Generation
+
+AutoReach automatically generates search keywords from your offer's description and pain points, then uses them to:
+- Search for relevant prospects on X and LinkedIn
+- Filter leads in Autopilot
+
+### 3. DM Personalization
+
+When sending DMs, AutoReach:
+- Looks up the prospect's profile and recent activity
+- References relevant pain points from your Offer
+- Crafts a personalized opener matching your outreach tone
+
+### 4. AI Response Context
+
+When prospects reply, AutoReach:
+- Searches your knowledge base for context
+- Generates smart replies that stay on-brand
+- Maintains your outreach voice across conversations
+
+## Quality Bar: Weak vs. Strong Examples
+
+Quick gut-check before saving. If your fields read like the weak column, the AI will produce generic outreach.
+
+| Field | Weak | Strong |
+|---|---|---|
+| Description | "We help businesses with automation." | "We automate repetitive B2B workflows using AI. Save your team 20+ hours/week on email, data entry, and report generation." |
+| Target Audience | "Marketing professionals" | "VP of Demand Gen at B2B SaaS companies with $10M+ ARR, focused on ABM strategy" |
+| Pain Points | "Help with revenue" | "Reduce time to close deals", "Improve sales team visibility", "Decrease win-loss variance" |
+
+For broader strategy on offer setup, knowledge base content, and quarterly review cadence, see [Best Practices: Setting Up Your Offer](../best-practices.md#1-setting-up-your-offer).
+
+## Next Steps
+
+1. **Configure your accounts**: Go to the Accounts page to enable inbound engagement detection, set your limits, and start the Engagement Engine
+2. **Start Autopilot**: Let AutoReach find and engage leads automatically
+3. **Review your Sequence**: Check the prompt, configuration, and tone examples in Advanced Settings
+
+See [Quickstart](quickstart.md) for the full setup flow.

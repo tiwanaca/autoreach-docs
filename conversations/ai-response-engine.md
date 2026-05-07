@@ -1,0 +1,117 @@
+# AI Response Engine
+
+The AI Response Engine generates contextual, stage-aware replies to incoming messages across X and LinkedIn.
+
+## When AI Should Reply vs. When You Should
+
+The AI is built to handle the routine middle of a conversation, not the moments that make or break a deal. A good rule of thumb:
+
+**Let the AI handle:**
+- The first 2-3 replies after someone responds to your cold DM (acknowledging, asking discovery questions, handling common objections).
+- Mid-funnel leads who went silent — the AI's automatic follow-ups have a fresh angle each time.
+- High-volume, low-stakes back-and-forth where speed of response matters more than perfect wording.
+
+**Take over manually:**
+- A lead who asks detailed product questions or shows strong buying intent — these conversations deserve your attention.
+- Conversations where the lead pushes back on something nuanced (pricing negotiation, custom terms, technical depth the AI doesn't have).
+- Anything where getting the next sentence wrong loses the deal.
+
+Toggle AI on/off per conversation from the Inbox. AutoReach will keep tracking the conversation either way — turning AI off just stops it from sending replies on your behalf.
+
+> **Tip:** You don't have to choose all-or-nothing. Let AI handle openers and discovery, then take over once a lead is clearly qualified and ready to talk specifics.
+
+## Response Flow
+
+When a new inbound message is detected, AutoReach:
+
+1. **Classifies the conversation stage** (Opener Reply, Discovery, Objection Handling, etc.)
+2. **Retrieves relevant context** from your knowledge base and tone examples
+3. **Generates a response** tailored to the stage, lead context, and your voice
+4. **Sends with natural timing** to avoid instant robotic replies
+
+## Conversation Stages
+
+AutoReach classifies conversations into 7 stages. Each stage has its own tone and goals. The AI detects the current stage and adapts its responses accordingly.
+
+### 1. Opener Reply
+
+**Triggered**: Lead just responded to your cold DM.
+**Goal**: Acknowledge their message, show genuine interest, keep it light. No pitching.
+
+### 2. Discovery
+
+**Triggered**: You are learning about their situation.
+**Goal**: Ask targeted questions about their pain points, timeline, and constraints.
+
+### 3. Value Prop
+
+**Triggered**: Lead is asking about your solution or you are introducing it.
+**Goal**: Connect your value directly to what the lead mentioned, using relevant proof points from your knowledge base.
+
+### 4. Objection Handling
+
+**Triggered**: Lead raises a concern, budget question, or pushback.
+**Goal**: Validate the concern first, then address it with a specific counter-point and clear next step.
+
+### 5. Soft Close
+
+**Triggered**: Lead seems ready to move forward or book a call.
+**Goal**: Ask if they are open to a call first. Only share a booking link after they agree - never send it unsolicited.
+
+### 6. Follow Up
+
+**Triggered**: Lead went silent for a configurable period.
+**Goal**: Re-engage with a fresh angle or new information that gives the lead a reason to respond.
+
+### 7. Graceful Exit
+
+**Triggered**: Lead declines or the conversation has reached a dead end.
+**Goal**: Exit respectfully and leave the door open for the future.
+
+### Stage Detection
+
+The AI classifies the current stage based on the full conversation history. Conversations can move between stages non-linearly. For example, from Soft Close back to Objection Handling if the lead raises new concerns. The classifier re-evaluates on every new message.
+
+## Prompt Priority
+
+Your custom AI prompt (set in sequence settings) takes the **highest priority** in response generation. It overrides stage guidance and default behavior, including word limits. Use it to enforce specific rules, tone, or messaging strategy that the AI must always follow.
+
+Stage guidance (the conversation stages above) acts as secondary tactical guidance - it shapes the AI's approach but yields to your custom rules.
+
+## Anti-Fabrication
+
+The AI never fabricates client stories, case studies, statistics, or results. It only references proof points that exist in your knowledge base. If the AI does not have a relevant example, it speaks in general terms rather than inventing specifics.
+
+## Anti-Consulting Guardrails
+
+The AI is designed to avoid giving away too much value before qualifying a prospect. It redirects detailed technical questions toward a call or meeting rather than answering everything in a DM. This keeps conversations moving toward a booking rather than becoming free consulting sessions.
+
+## Max AI Responses Per Conversation
+
+The "Max AI responses per conversation" setting on each sequence limits how many AI replies are sent in a single conversation:
+
+- Value 0 = unlimited responses
+- When the count is reached, AI is disabled on that conversation
+- Also checked before queuing follow-up messages
+
+## Conversation Follow-Ups
+
+When a lead goes silent, the follow-up scheduler can automatically re-engage:
+
+| Setting | Default | Range |
+|---|---|---|
+| Follow-up enabled | false | - |
+| Wait days | 3 | 1-30 |
+| Max follow-ups | 2 | 1-10 |
+
+When a lead has not responded within the configured wait period, a follow-up message is generated with a fresh angle and sent automatically.
+
+Follow-ups respect:
+- The max follow-up count per conversation
+- The max AI responses per conversation limit
+- Your activity window
+
+## Next Steps
+
+- **[Tone and Knowledge Base](tone-and-knowledge.md)**: Customize the AI's voice and provide sales context
+- **[Conversation Analyzer](conversation-analyzer.md)**: AI suggestions for improving your sequences
