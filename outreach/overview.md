@@ -71,7 +71,9 @@ Sequence execution uses natural pacing - actions are spaced across the day, grou
 
 ### Activity Window
 
-Outreach only executes during the configured activity window. Defaults to **09:00–21:00** in the user's timezone. Actions outside the window are deferred to the next open slot.
+Outreach only executes during the configured activity window. Activity windows are **per-account** — each connected LinkedIn, X, and Instagram account has its own start/end times and timezone (default **09:00–21:00**). When an account acts on a lead, the acting account's window governs the schedule. Actions outside the window are deferred to the next open slot.
+
+Configure per-account in **Accounts → [account] → Configuration → Activity Window**.
 
 ## Lead Statuses in a Sequence
 

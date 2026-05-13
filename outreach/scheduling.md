@@ -6,13 +6,18 @@ AutoReach schedules sequence actions to look like natural human behavior-  spaci
 
 The activity window defines when outreach actions execute. Actions scheduled outside the window are deferred until the window opens.
 
-The start and end times are configured in your Settings along with your timezone.
+Activity windows are **per-account**, not per-user. Each connected account (LinkedIn, X, Instagram) has its own start time, end time, and timezone. This lets you run accounts on independent schedules — for example, a US LinkedIn account on EST business hours and an EU X account on CET business hours.
+
+Configure an account's window from the **Accounts** page → open the account → **Configuration** tab → **Activity Window** card.
 
 | Setting | Default |
 |---|---|
 | Start | 09:00 |
 | End | 21:00 |
-| Timezone | User-configured |
+| Timezone | Account-configured |
+| Max window | 8 hours/day |
+
+If an account has not been customized, AutoReach falls back to the user-level window for that user. Once you save a per-account window, that account uses its own schedule independently.
 
 Actions scheduled outside the window are automatically deferred until the window opens.
 
@@ -49,7 +54,7 @@ LinkedIn connection requests are tracked separately per-account — see [Daily C
 
 ### Enforcement
 
-Limits reset at **midnight in your timezone**. If a limit is reached, remaining actions are deferred to the next day.
+Limits reset at **midnight in the acting account's timezone**. If a limit is reached, remaining actions are deferred to the next day.
 
 ## Daily Connection Limits (LinkedIn)
 

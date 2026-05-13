@@ -64,7 +64,7 @@ Review your scored leads. If most leads have low buyer scores, your ICP definiti
 If you are going straight to DM, consider adding engagement steps first (like, follow, reply to a post). Leads are more likely to respond to someone whose name they recognize.
 
 ### Adjust Timing
-If your DMs are going out at odd hours, review your activity window settings. Messages sent during business hours tend to get higher response rates.
+If your DMs are going out at odd hours, review the activity window on the sending account (Accounts → [account] → Configuration → Activity Window). Each account has its own window, so check the right one. Messages sent during business hours tend to get higher response rates.
 
 ### Try a Different Channel
 If X DMs are not working, try LinkedIn (or vice versa). Some audiences are more responsive on one platform than the other.
@@ -118,7 +118,7 @@ See [Engagement Engine Overview](../engagement-engine/overview.md) for setup ins
 ### "My sequence is active but no actions are happening"
 - Check that your connected accounts are healthy (no paused or error status on the **Accounts** page)
 - Verify you have leads enrolled in the sequence (open the sequence and check the Leads tab)
-- Check your activity window - actions only execute during your configured hours
+- Check the activity window on the sending account (Accounts → [account] → Configuration) - actions only execute during the account's configured hours
 - Make sure your daily action limits have not been reached for today
 
 ### "DMs are sending but nobody is replying"

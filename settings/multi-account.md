@@ -22,7 +22,9 @@ X accounts connect through the AutoReach Chrome Extension, which links your acti
 ### Configuration
 
 - **Daily action limits**-  configurable per account
-- **Activity window**-  time frame when actions execute (default 9:00–21:00)
+- **Activity window**-  time frame when actions execute (default 9:00–21:00) — **per-account**, each X account can have its own start/end/timezone (max 8h/day). Set on the account's detail page under the Configuration tab.
+- **Calendar**-  per-account booking link and webhook setup (Calendly or Cal.com)
+- **Browser fingerprint**-  per-account OS spoofing (Auto/macOS/Windows/Linux)
 - **Proxy**-  dedicated proxy per account (recommended)
 
 ## LinkedIn Accounts
@@ -30,6 +32,10 @@ X accounts connect through the AutoReach Chrome Extension, which links your acti
 ### Authentication
 
 LinkedIn accounts connect through the Chrome Extension, same as X.
+
+### Configuration
+
+Each LinkedIn account exposes the same per-account configuration as X (activity window, calendar, browser fingerprint, proxy) from **Accounts → [account] → Configuration**.
 
 ### Connection Limits
 

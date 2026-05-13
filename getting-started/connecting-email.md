@@ -23,7 +23,7 @@ Gmail uses an **App Password** (not OAuth). This is faster to set up and works f
    - Visit [myaccount.google.com/apppasswords](https://myaccount.google.com/apppasswords)
    - Name it "AutoReach"
    - Copy the 16-character password
-3. In AutoReach, open the parent X or LinkedIn account from the **Accounts** page, find the **Email** card in the Settings section, and click **Connect Gmail**
+3. In AutoReach, open the parent X or LinkedIn account from the **Accounts** page, find the **Email** card on the **Configuration** tab, and click **Connect Gmail**
 4. Enter your full Gmail address and the App Password
 5. Click **Connect**
 
@@ -46,7 +46,7 @@ Outlook uses Microsoft OAuth. AutoReach never sees your password.
 
 ### Setup
 
-1. In AutoReach, open the parent X or LinkedIn account from the **Accounts** page, find the **Email** card in the Settings section, and click **Connect Outlook**
+1. In AutoReach, open the parent X or LinkedIn account from the **Accounts** page, find the **Email** card on the **Configuration** tab, and click **Connect Outlook**
 2. A popup opens to the Microsoft sign-in page
 3. Sign in and grant the permissions AutoReach requests (read mail, send mail, manage profile)
 4. The popup closes automatically once authorization succeeds
@@ -61,7 +61,7 @@ Outlook tokens are refreshed automatically in the background. If a token can no 
 
 ## Managing Email Accounts
 
-Open the parent X or LinkedIn account from the **Accounts** page and use the **Email** card in the Settings section. The card lists every mailbox connected under that parent account with provider icons (Gmail / Outlook), the email address, a primary badge when applicable, and per-mailbox controls.
+Open the parent X or LinkedIn account from the **Accounts** page and use the **Email** card on the **Configuration** tab. The card lists every mailbox connected under that parent account with provider icons (Gmail / Outlook), the email address, a primary badge when applicable, and per-mailbox controls.
 
 ### Available Actions
 

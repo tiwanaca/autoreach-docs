@@ -118,9 +118,9 @@ LinkedIn's "Where you're signed in" page only shows sessions that completed a fu
 
 **Fix:** Open the sequence, go to the Leads tab, and add leads from your pipeline.
 
-**Likely Cause (2):** Your activity window is closed. Actions only execute during your configured activity hours.
+**Likely Cause (2):** The acting account's activity window is closed. Actions only execute during the account's configured activity hours.
 
-**Fix:** Check your activity window in Settings. If it is set to business hours and it is currently outside those hours, actions will resume when the window opens.
+**Fix:** Activity windows are per-account. Open **Accounts → [account] → Configuration → Activity Window** and check the start/end/timezone. If it is set to business hours and it is currently outside those hours, actions will resume when the window opens.
 
 **Likely Cause (3):** Your daily action limit has been reached for today.
 
@@ -232,7 +232,7 @@ LinkedIn's "Where you're signed in" page only shows sessions that completed a fu
 
 **Likely Cause (4):** Wrong platform or timing.
 
-**Fix:** Try switching to the other platform (X vs. LinkedIn). Also review your activity window to ensure messages arrive during business hours in the lead's time zone.
+**Fix:** Try switching to the other platform (X vs. LinkedIn). Also review the sending account's activity window (per-account, set on the account's Configuration tab) to ensure messages arrive during business hours in the lead's time zone.
 
 ---
 
@@ -257,7 +257,7 @@ LinkedIn's "Where you're signed in" page only shows sessions that completed a fu
 **Fix:** Bot detection is treated as a serious event that requires manual intervention - AutoReach will email you and the account stays paused until you manually resume it from the Accounts page. Before resuming:
 1. Investigate what the platform flagged (the error message on the account is your best clue)
 2. Reduce your daily action limits significantly
-3. Make sure your activity window matches realistic usage patterns
+3. Make sure the account's activity window (per-account, on the Configuration tab) matches realistic usage patterns
 4. Verify your proxy is working (residential IPs are safest)
 5. Manually resume the account from the Accounts page once you have addressed the underlying cause
 

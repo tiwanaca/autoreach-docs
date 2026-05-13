@@ -23,22 +23,42 @@ If you don't have a paid Calendly plan, use **Cal.com** — it's free and webhoo
 
 Calendar configuration is **per-account**. Open an account from the **Accounts** page and use the Calendar section. The form has two parts: (1) the booking page (provider + URL), and (2) meeting tracking (provider-specific webhook setup, surfaced once the booking page is saved).
 
-### Calendly Setup
+### Calendly Setup (Easier — No Form Field Required)
 
 Calendly webhooks require a paid Calendly plan (Standard, Teams, or Enterprise).
 
-1. In the account's Calendar section, choose **Calendly** and add your booking URL
-2. In Calendly, open the event's invitee form and add a required **One Line** question with the identifier shown in AutoReach - this is how bookings are matched back to a lead
-3. Generate a Personal Access Token in [Calendly API settings](https://calendly.com/integrations/api_webhooks) and paste it into AutoReach
-4. Click **Auto-fetch** to populate your Organization URI (or paste it manually)
-5. Click **Register webhook** - AutoReach creates the webhook for you via the Calendly API
+AutoReach now uses an **invisible attribution** approach for Calendly. You no longer need to add a custom form field to your event — bookers see Calendly's default name and email fields only.
+
+1. In the account's Calendar section, choose **Calendly** and paste your booking URL
+2. Generate a Personal Access Token in [Calendly API settings](https://calendly.com/integrations/api_webhooks) and paste it into AutoReach
+3. Click **Auto-fetch** to populate your Organization URI (or paste it manually)
+4. Click **Register webhook** - AutoReach creates the webhook for you via the Calendly API
+
+Attribution happens invisibly: AutoReach appends `utm_content=<platform>:<username>` to the booking URL injected via `{{booking_link}}`, and the webhook handler reads it from the booking's tracking metadata. Bookers see no extra fields and there is no friction at the booking step.
+
+> **Legacy events:** If you previously added a "Username" form question, you can leave it or remove it — AutoReach falls back to the first form answer when `utm_content` is not present.
 
 ### Cal.com Setup
 
-1. In the account's Calendar section, choose **Cal.com** and add your booking URL
-2. In Cal.com, open the event's Advanced > Booking Questions and add a required custom field with the identifier shown in AutoReach - this is how bookings are matched back to a lead
-3. Copy the webhook URL AutoReach generates
-4. Paste it into Cal.com's webhook settings. Bookings are tracked automatically
+Cal.com is free and does not require a paid plan. Setup is a two-step process:
+
+**Step 1 — Register the webhook**
+
+1. In the account's Calendar section, choose **Cal.com** and paste your booking URL
+2. Copy the webhook URL AutoReach generates
+3. In Cal.com, go to **Settings → Developer → Webhooks → New Webhook**
+4. Paste the webhook URL, subscribe to the `BOOKING_CREATED` event, and save
+
+**Step 2 — Add a hidden username field to each event type**
+
+Bookings need a `username` identifier so AutoReach can match them to a lead. To keep the field invisible:
+
+1. In Cal.com, open the event type → **Advanced → Booking Questions**
+2. Click **Add a question** with type **Short Text** and identifier `username`
+3. Check **Disable input if the URL identifier is prefilled** — this hides the field from bookers
+4. Save
+
+AutoReach prefills `username` via the `{{booking_link}}` URL, so the field is filled invisibly and bookers never see it. Repeat step 2 for every event type you want to track.
 
 ### Custom Booking URLs
 
@@ -150,7 +170,7 @@ Leads auto-progress through stages as sequence activity occurs. You can manually
 
 ### Adding Leads
 
-On LinkedIn profile pages, the extension injects an **"Add to Leads"** button. Lead addition is manual: you identify prospects and add them via the extension panel.
+On both LinkedIn and X profile pages, the extension injects an **"Add to Leads"** button into the profile action row. Lead addition is manual: you identify prospects and add them via the extension panel.
 
 The extension is a **CRM tool**, not an automated lead generator. It does not scan feeds or match ICPs automatically.
 

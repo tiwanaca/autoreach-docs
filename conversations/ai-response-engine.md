@@ -109,7 +109,7 @@ When a lead has not responded within the configured wait period, a follow-up mes
 Follow-ups respect:
 - The max follow-up count per conversation
 - The max AI responses per conversation limit
-- Your activity window
+- The activity window of the account that owns the conversation (per-account)
 
 ## Next Steps
 

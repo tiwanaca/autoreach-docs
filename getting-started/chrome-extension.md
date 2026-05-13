@@ -21,53 +21,39 @@ After installation, activate your license key:
 
 ## Platform Modes
 
-The extension automatically detects which platform you are on and adjusts its interface:
+The extension automatically detects which platform you are on and adjusts its interface. **X (Twitter) now has full feature parity with LinkedIn** — the same CRM pipeline, AI messaging assistant, profile lead capture, and account management are available on both platforms.
 
-- **LinkedIn**: Full CRM pipeline, AI messaging assistant, connection tracking, profile scraping, account management, and proxy detection
-- **X/Twitter**: Account connection, reconnection, PIN management, and proxy detection
+- **LinkedIn**: Full CRM pipeline, AI messaging assistant, profile "Add to Leads" button, comment/post reply assist, connection tracking, account management, and proxy detection
+- **X/Twitter**: Full CRM pipeline, AI messaging assistant, profile "Add to Leads" button, tweet reply assist, DM reply assist, account management, and proxy detection
 - **Other sites**: Extension popup is not active
-
-On X/Twitter, the CRM and Settings tabs are hidden. Only the Accounts tab is shown.
 
 ---
 
-## Features on X/Twitter
+## Features on Both X and LinkedIn
 
-On X, the extension provides:
+The features below work the same way on both platforms. Subsequent sections only flag platform-specific differences.
 
 ### Account Connection
 
-- Connect your X account by entering your name and a 4-digit PIN for DM Chat
-- The extension automatically extracts session cookies from your browser
-- See [Connecting Accounts](connecting-accounts.md) for details
+- **X**: Enter your name and a 4-digit PIN (used for DM Chat encryption). Cookies extracted automatically.
+- **LinkedIn**: Enter your first and last name. Cookies extracted automatically.
+- See [Connecting Accounts](connecting-accounts.md) for details.
 
 ### Account Management
 
-- **Reconnect**: When cookies expire, click the three dots next to your account and click Reconnect
+- **Reconnect**: When cookies expire, click the three dots next to the account and click Reconnect
 - **Enable/Disable**: Toggle accounts on or off
-- **Edit PIN**: Update your 4-digit DM encryption PIN
-- **Status display**: See account health (Healthy, Inactive, Expired, Paused, Rate Limited)
+- **Edit PIN** (X only): Update your 4-digit DM encryption PIN
+- **Status display**: Healthy, Inactive, Expired, Paused, Rate Limited
 
 ### Proxy Detection
 
 - The extension detects and displays your current proxy configuration
 - Supports AutoReach provisioned proxies and external proxy managers (GoLogin, Multilogin)
 
----
+### First-Run Tour
 
-## Features on LinkedIn
-
-On LinkedIn, the extension provides the full AutoReach experience.
-
-### Account Connection
-
-- Connect your LinkedIn account by entering your first and last name
-- The extension automatically extracts session cookies
-- See [Connecting Accounts](connecting-accounts.md) for details
-
-### Account Management
-
-Same as X: reconnect, enable/disable, status display, and proxy detection.
+The first time you open the extension on a new platform (X or LinkedIn), an interactive 4-step tour walks you through the profile button, message assist buttons, and sequence picker.
 
 ---
 
@@ -139,10 +125,10 @@ When a conversation is open, the extension uses AI to analyze the lead's message
 
 ### Add to Leads
 
-On any LinkedIn profile page, the extension injects an **Add to Leads** button directly into the profile actions row (next to Connect, Message, and More).
+On any LinkedIn or X profile page, the extension injects an **Add to Leads** button directly into the profile actions row (next to Connect/Message/More on LinkedIn, next to Follow/Message/More on X).
 
 - Click **Add to Leads** to create a new lead from the profile
-- The extension automatically scrapes: name, headline, company, location, bio, and profile image
+- The extension automatically scrapes: name, handle/headline, company, location, bio, and profile image
 - If the person is already in your CRM, the button shows **In CRM**
 
 ---
@@ -183,7 +169,7 @@ Manage pending connection requests that have not been accepted:
 
 ### AI Messaging Assistant
 
-On LinkedIn, the extension injects an AutoReach button into the message composer. Click it to open the assistant menu with six options:
+On both LinkedIn and X, the extension injects an AutoReach button into the message composer (LinkedIn DMs, X DMs, and X tweet reply composers). Click it to open the assistant menu with six options:
 
 #### 1. First Message
 
@@ -243,14 +229,13 @@ All AI-generated messages appear in a shared suggestion popup with these actions
 
 ---
 
-### Post and Comment Reply Suggestions
+### Post / Tweet and Comment Reply Suggestions
 
-The extension injects AI assist buttons into LinkedIn feed comment areas.
+The extension injects AI assist buttons into the comment/reply composers on both platforms.
 
-- Click the AutoReach button next to any comment input on a post
-- The extension extracts the post text and author
-- If the post has highlighted comments, a picker lets you choose whether to reply to the post or a specific comment
-- AI generates a contextual comment based on the post content and your offer
+- **LinkedIn:** AutoReach button next to any comment input on a feed post. If the post has highlighted comments, a picker lets you choose whether to reply to the post or to a specific comment.
+- **X:** AutoReach button on the tweet reply composer. Reads the tweet context and (where present) the parent thread.
+- AI generates a contextual comment/reply based on the post content, your offer, and the active sequence's prompt
 
 ---
 
@@ -266,7 +251,7 @@ Click the analytics icon in the CRM to see a pipeline overview:
 
 ### Settings
 
-The Settings tab (LinkedIn only) includes:
+The Settings tab (available on both LinkedIn and X) includes:
 
 - **Reply prompt**: Configure the AI reply prompt
 - **First message template**: Set your default outreach template

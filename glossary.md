@@ -6,7 +6,7 @@ Key terms used throughout AutoReach, listed alphabetically.
 
 **Active**-  A buyer state assigned to leads with a high Buyer Score. Active leads are considered ready for outreach and are eligible for automatic enrollment into sequences. See [Buyer Intelligence](core-concepts/buyer-intelligence.md).
 
-**Activity Window**-  The time range during which AutoReach executes outreach actions (e.g., 9:00 AM to 9:00 PM). Actions scheduled outside this window are deferred until it reopens. Configured in Settings along with your timezone. See [Scheduling & Send Limits](outreach/scheduling.md).
+**Activity Window**-  The time range during which AutoReach executes outreach actions (e.g., 9:00 AM to 9:00 PM). Actions scheduled outside this window are deferred until it reopens. Configured **per-account** on each connected LinkedIn/X/Instagram account from the Accounts page → Configuration tab → Activity Window. Falls back to the user-level window if not customized. See [Scheduling & Send Limits](outreach/scheduling.md).
 
 **Auto-Enrollment**-  Auto-enrollment periodically adds newly scored Active leads into a running sequence. See [Continuous Operations](autopilot/continuous-operations.md).
 
@@ -26,7 +26,7 @@ Key terms used throughout AutoReach, listed alphabetically.
 
 **Call Brief**-  An AI-generated preparation document for an upcoming meeting with a lead. It pulls data from the lead's profile, conversation history, and buyer intelligence to give you talking points. See [Meetings](meetings/meetings.md).
 
-**Chrome Extension**-  A browser extension required to connect your X and LinkedIn accounts to AutoReach. It extracts session cookies from your logged-in browser sessions. On LinkedIn, it also provides an "Add to Leads" button on profile pages. See [Installing the Chrome Extension](getting-started/chrome-extension.md).
+**Chrome Extension**-  A browser extension required to connect your X and LinkedIn accounts to AutoReach. It extracts session cookies from your logged-in browser sessions. On both LinkedIn and X, it also provides an "Add to Leads" button on profile pages, a full CRM Kanban pipeline, and an AI messaging assistant (first message, reply suggestion, follow-up, proofread, lead analysis, SDR co-pilot) in DM and reply composers. See [Installing the Chrome Extension](getting-started/chrome-extension.md).
 
 **Cold DM**-  The first direct message sent to a lead who has not previously interacted with you. AutoReach generates personalized cold DMs using AI, your offer context, lead profile data, and knowledge base content. See [DM Personalization](outreach/dm-personalization.md).
 

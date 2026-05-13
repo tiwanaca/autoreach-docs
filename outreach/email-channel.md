@@ -102,7 +102,7 @@ In addition to the per-sequence limit, each mailbox is rate-paced at the provide
 - **One in-flight send per mailbox** at a time (sends are serialized, not blasted in parallel)
 - **Up to 10 sends per minute per mailbox** (token bucket)
 
-Sends are spread across your activity window with natural gaps to avoid spam patterns.
+Sends are spread across the sending account's activity window (per-account) with natural gaps to avoid spam patterns.
 
 ---
 
